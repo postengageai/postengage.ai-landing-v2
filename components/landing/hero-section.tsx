@@ -5,6 +5,7 @@ import Image from 'next/image';
 import { Button } from '@/components/ui/button';
 import { ArrowRight, MessageCircle, Heart, Send, Clock } from 'lucide-react';
 import { useEffect, useState } from 'react';
+import { APP_URL } from '@/lib/constants';
 
 const AVATARS = [
   '/indian-woman-fashion-creator.jpg',
@@ -80,7 +81,7 @@ export function HeroSection() {
                 className='min-w-[200px] h-12 text-base'
                 asChild
               >
-                <Link href={`${process.env.NEXT_PUBLIC_APP_URL || ''}/signup`}>
+                <Link href={`${APP_URL}/signup`}>
                   Start Replying Now
                   <ArrowRight className='ml-2 h-4 w-4' />
                 </Link>

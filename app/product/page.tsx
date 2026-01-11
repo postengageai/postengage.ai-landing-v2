@@ -4,6 +4,7 @@ import { PageHeader } from '@/components/marketing/page-header';
 import { Button } from '@/components/ui/button';
 import { Shield, Clock, Fingerprint } from 'lucide-react';
 import Link from 'next/link';
+import { APP_URL } from '@/lib/constants';
 
 export default function ProductPage() {
   return (
@@ -21,7 +22,7 @@ export default function ProductPage() {
 
           <div className='mt-10 flex justify-center gap-4'>
             <Button size='lg' asChild>
-              <Link href='/signup'>Start Engaging Smarter</Link>
+              <Link href={`${APP_URL}/signup`}>Start Engaging Smarter</Link>
             </Button>
             <Button size='lg' variant='outline' asChild>
               <Link href='/features'>See Features</Link>
@@ -199,7 +200,7 @@ export default function ProductPage() {
               Start with free credits. No commitment required.
             </p>
             <Button size='lg' asChild>
-              <Link href='/signup'>Start Engaging Smarter</Link>
+              <Link href={`${APP_URL}/signup`}>Start Engaging Smarter</Link>
             </Button>
           </div>
         </section>

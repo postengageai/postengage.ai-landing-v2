@@ -60,7 +60,7 @@ export function PricingPreviewSection() {
               className='w-full sm:w-auto min-w-[200px]'
               asChild
             >
-              <Link href='/signup'>
+              <Link href={`${APP_URL}/signup`}>
                 Start Free Trial
                 <ArrowRight className='ml-2 h-4 w-4' />
               </Link>

@@ -11,6 +11,7 @@ import {
   Coins,
 } from 'lucide-react';
 import Link from 'next/link';
+import { APP_URL } from '@/lib/constants';
 
 export default function FeaturesPage() {
   const features = [
@@ -180,7 +181,7 @@ export default function FeaturesPage() {
                 {index === 0 && (
                   <div className='mt-6'>
                     <Link
-                      href='/signup'
+                      href={`${APP_URL}/signup`}
                       className='text-sm text-primary hover:underline'
                     >
                       See how this works →

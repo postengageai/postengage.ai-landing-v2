@@ -4,6 +4,7 @@ import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 import { ArrowRight, Clock } from 'lucide-react';
 import { useEffect, useState } from 'react';
+import { APP_URL } from '@/lib/constants';
 
 export function CTASection() {
   const [lostComments, setLostComments] = useState(0);
@@ -56,7 +57,7 @@ export function CTASection() {
                 className='min-w-[240px] h-12 text-base'
                 asChild
               >
-                <Link href={`${process.env.NEXT_PUBLIC_APP_URL || ''}/signup`}>
+                <Link href={`${APP_URL}/signup`}>
                   Start Your Free Trial
                   <ArrowRight className='ml-2 h-4 w-4' />
                 </Link>

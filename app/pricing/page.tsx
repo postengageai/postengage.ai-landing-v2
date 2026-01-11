@@ -5,6 +5,7 @@ import { Button } from '@/components/ui/button';
 import { Check, Coins, MessageCircle, Send, HelpCircle } from 'lucide-react';
 import Link from 'next/link';
 import { httpClient } from '@/lib/http/client';
+import { APP_URL } from '@/lib/constants';
 
 interface Package {
   _id: string;
@@ -245,9 +246,7 @@ export default async function PricingPage() {
                     variant={pack.popular ? 'default' : 'outline'}
                     asChild
                   >
-                    <Link
-                      href={`${process.env.NEXT_PUBLIC_APP_URL || ''}/signup?plan=${pack._id}`}
-                    >
+                    <Link href={`${APP_URL}/signup?plan=${pack._id}`}>
                       Get Started
                     </Link>
                   </Button>
@@ -403,7 +402,9 @@ export default async function PricingPage() {
               Start with 20 free credits. Buy more when you're ready.
             </p>
             <Button size='lg' asChild>
-              <Link href='/signup'>Buy Credits When You're Ready</Link>
+              <Link href={`${APP_URL}/signup`}>
+                Buy Credits When You're Ready
+              </Link>
             </Button>
           </div>
         </section>

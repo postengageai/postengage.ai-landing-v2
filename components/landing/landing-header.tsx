@@ -10,6 +10,7 @@ import {
   DropdownMenuItem,
   DropdownMenuTrigger,
 } from '@/components/ui/dropdown-menu';
+import { APP_URL } from '@/lib/constants';
 
 export function LandingHeader() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -72,10 +73,10 @@ export function LandingHeader() {
           {/* Desktop CTA */}
           <div className='hidden items-center gap-3 md:flex'>
             <Button variant='ghost' size='sm' asChild>
-              <Link href={`${process.env.NEXT_PUBLIC_APP_URL || ''}/login`}>Sign In</Link>
+              <Link href={`${APP_URL}/login`}>Sign In</Link>
             </Button>
             <Button size='sm' asChild>
-              <Link href={`${process.env.NEXT_PUBLIC_APP_URL || ''}/signup`}>Get Started</Link>
+              <Link href={`${APP_URL}/signup`}>Get Started</Link>
             </Button>
           </div>
 
@@ -120,10 +121,10 @@ export function LandingHeader() {
               </Link>
               <div className='flex flex-col gap-2 pt-4'>
                 <Button variant='ghost' size='sm' asChild>
-                  <Link href='/login'>Sign In</Link>
+                  <Link href={`${APP_URL}/login`}>Sign In</Link>
                 </Button>
                 <Button size='sm' asChild>
-                  <Link href='/signup'>Get Started</Link>
+                  <Link href={`${APP_URL}/signup`}>Get Started</Link>
                 </Button>
               </div>
             </nav>
