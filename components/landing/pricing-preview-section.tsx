@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 import { Check, ArrowRight } from 'lucide-react';
+import { APP_URL } from '@/lib/constants';
 
 export function PricingPreviewSection() {
   return (
