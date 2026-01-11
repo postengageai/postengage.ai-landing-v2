@@ -1,75 +1,261 @@
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
-import { Check, ArrowRight } from 'lucide-react';
-import { APP_URL } from '@/lib/constants';
+import {
+  Check,
+  ArrowRight,
+  Zap,
+  Sparkles,
+  MessageCircle,
+  Send,
+  Bot,
+} from 'lucide-react';
+import {
+  CREDIT_PACKS,
+  CREDIT_COSTS,
+  calculateActions,
+} from '@/lib/config/credit-pricing';
 
 export function PricingPreviewSection() {
   return (
-    <section className='py-16 sm:py-24 border-t border-border'>
-      <div className='mx-auto max-w-4xl px-4 sm:px-6'>
-        <div className='text-center max-w-2xl mx-auto mb-12'>
-          <h2 className='text-2xl sm:text-3xl font-bold tracking-tight'>
+    <section id='pricing' className='py-20 sm:py-32 border-t border-border/50'>
+      <div className='mx-auto max-w-6xl px-4 sm:px-6'>
+        {/* Header */}
+        <div className='text-center max-w-2xl mx-auto mb-16'>
+          <div className='inline-flex items-center gap-2 rounded-full bg-primary/10 border border-primary/20 px-4 py-1.5 text-sm text-primary mb-6'>
+            <Zap className='w-3.5 h-3.5' />
+            Simple Pricing
+          </div>
+          <h2 className='text-3xl sm:text-4xl font-bold tracking-tight text-balance'>
             Simple, credit-based pricing
           </h2>
-          <p className='mt-3 text-muted-foreground'>
+          <p className='mt-4 text-lg text-muted-foreground'>
             Pay for what you use. No subscriptions. No surprises.
           </p>
         </div>
 
-        <div className='rounded-2xl border border-border bg-card p-8 sm:p-10'>
-          <div className='flex flex-col sm:flex-row items-center justify-between gap-6 mb-8 pb-8 border-b border-border'>
-            <div>
-              <div className='text-sm text-muted-foreground mb-1'>
-                Starting at
+        {/* Credit Cost Breakdown */}
+        <div className='mb-16'>
+          <div className='rounded-2xl border border-border bg-card p-6 sm:p-8'>
+            <div className='flex items-center gap-3 mb-6'>
+              <div className='w-10 h-10 rounded-xl bg-primary/10 flex items-center justify-center'>
+                <Sparkles className='w-5 h-5 text-primary' />
               </div>
-              <div className='flex items-baseline gap-2'>
-                <span className='text-4xl sm:text-5xl font-bold'>$9</span>
-                <span className='text-muted-foreground'>/ 100 credits</span>
+              <div>
+                <h3 className='font-semibold'>How credits work</h3>
+                <p className='text-sm text-muted-foreground'>
+                  Transparent pricing per action
+                </p>
               </div>
             </div>
-            <div className='text-center sm:text-right'>
-              <div className='text-2xl font-bold text-primary'>
-                1 credit = 1 action
+
+            <div className='grid gap-4 sm:grid-cols-2 lg:grid-cols-4'>
+              {/* Basic Reply */}
+              <div className='flex items-center gap-4 rounded-xl border border-border bg-background/50 px-4 py-3'>
+                <div className='w-9 h-9 rounded-lg bg-muted flex items-center justify-center shrink-0'>
+                  <MessageCircle className='w-4 h-4 text-muted-foreground' />
+                </div>
+                <div className='min-w-0'>
+                  <div className='text-sm font-medium truncate'>
+                    Comment Reply
+                  </div>
+                  <div className='text-xs text-muted-foreground'>
+                    {CREDIT_COSTS.REPLY_COMMENT} credits
+                  </div>
+                </div>
               </div>
-              <div className='text-sm text-muted-foreground'>
-                Comment reply or DM sent
+
+              {/* AI Reply */}
+              <div className='flex items-center gap-4 rounded-xl border border-primary/30 bg-primary/5 px-4 py-3'>
+                <div className='w-9 h-9 rounded-lg bg-primary/10 flex items-center justify-center shrink-0'>
+                  <Bot className='w-4 h-4 text-primary' />
+                </div>
+                <div className='min-w-0'>
+                  <div className='text-sm font-medium truncate'>AI Reply</div>
+                  <div className='text-xs text-muted-foreground'>
+                    {CREDIT_COSTS.AI_REPLY_COMMENT} credits
+                  </div>
+                </div>
+              </div>
+
+              {/* Basic DM */}
+              <div className='flex items-center gap-4 rounded-xl border border-border bg-background/50 px-4 py-3'>
+                <div className='w-9 h-9 rounded-lg bg-muted flex items-center justify-center shrink-0'>
+                  <Send className='w-4 h-4 text-muted-foreground' />
+                </div>
+                <div className='min-w-0'>
+                  <div className='text-sm font-medium truncate'>Auto DM</div>
+                  <div className='text-xs text-muted-foreground'>
+                    {CREDIT_COSTS.SEND_DM} credits
+                  </div>
+                </div>
+              </div>
+
+              {/* AI DM */}
+              <div className='flex items-center gap-4 rounded-xl border border-primary/30 bg-primary/5 px-4 py-3'>
+                <div className='w-9 h-9 rounded-lg bg-primary/10 flex items-center justify-center shrink-0'>
+                  <Bot className='w-4 h-4 text-primary' />
+                </div>
+                <div className='min-w-0'>
+                  <div className='text-sm font-medium truncate'>AI DM</div>
+                  <div className='text-xs text-muted-foreground'>
+                    {CREDIT_COSTS.AI_SEND_DM} credits
+                  </div>
+                </div>
               </div>
             </div>
           </div>
+        </div>
 
-          <div className='grid sm:grid-cols-2 gap-4 mb-8'>
+        {/* Pricing Cards */}
+        <div className='grid gap-6 lg:grid-cols-3'>
+          {CREDIT_PACKS.map(pack => {
+            const perCredit = pack.price / pack.credits;
+            const basicActions = calculateActions(pack.credits, false);
+            const aiActions = calculateActions(pack.credits, true);
+
+            return (
+              <div
+                key={pack.id}
+                className={`relative group rounded-2xl border p-8 transition-all duration-300 hover:translate-y-[-4px] ${
+                  pack.popular
+                    ? 'border-primary/50 bg-gradient-to-b from-primary/10 via-primary/5 to-transparent shadow-xl shadow-primary/10'
+                    : 'border-border bg-card hover:border-border/80 hover:shadow-lg'
+                }`}
+              >
+                {pack.popular && (
+                  <div className='absolute -top-3.5 left-1/2 -translate-x-1/2'>
+                    <div className='rounded-full bg-primary px-4 py-1.5 text-xs font-semibold text-primary-foreground shadow-lg shadow-primary/30'>
+                      Most Popular
+                    </div>
+                  </div>
+                )}
+
+                {pack.savings && (
+                  <div className='absolute top-4 right-4'>
+                    <div className='rounded-full bg-success/10 text-success px-2.5 py-1 text-xs font-semibold'>
+                      Save {pack.savings}
+                    </div>
+                  </div>
+                )}
+
+                <div>
+                  {/* Pack Name & Description */}
+                  <div className='mb-6'>
+                    <h3 className='text-xl font-semibold mb-2'>{pack.name}</h3>
+                    <p className='text-sm text-muted-foreground'>
+                      {pack.description}
+                    </p>
+                  </div>
+
+                  {/* Price */}
+                  <div className='mb-6'>
+                    <div className='flex items-baseline gap-1'>
+                      <span className='text-4xl font-bold'>
+                        ₹{pack.price.toLocaleString('en-IN')}
+                      </span>
+                    </div>
+                    <div className='text-sm text-muted-foreground mt-1'>
+                      one-time purchase
+                    </div>
+                  </div>
+
+                  {/* Credits & Actions */}
+                  <div className='space-y-3 mb-8 pb-8 border-b border-border'>
+                    <div className='flex items-center justify-between'>
+                      <span className='text-muted-foreground'>Credits</span>
+                      <span className='font-semibold'>
+                        {pack.credits.toLocaleString()}
+                      </span>
+                    </div>
+                    <div className='flex items-center justify-between'>
+                      <span className='text-muted-foreground'>
+                        Basic actions
+                      </span>
+                      <span className='font-semibold'>
+                        {basicActions.toLocaleString()}
+                      </span>
+                    </div>
+                    <div className='flex items-center justify-between'>
+                      <span className='text-muted-foreground'>AI actions</span>
+                      <span className='font-semibold text-primary'>
+                        {aiActions.toLocaleString()}
+                      </span>
+                    </div>
+                    <div className='flex items-center justify-between'>
+                      <span className='text-muted-foreground'>Per credit</span>
+                      <span className='text-sm'>₹{perCredit.toFixed(2)}</span>
+                    </div>
+                  </div>
+
+                  {/* Features */}
+                  <div className='space-y-3 mb-8'>
+                    {[
+                      'Credits never expire',
+                      'All features included',
+                      'Priority support',
+                    ].map((feature, i) => (
+                      <div key={i} className='flex items-center gap-3'>
+                        <div className='w-5 h-5 rounded-full bg-success/10 flex items-center justify-center shrink-0'>
+                          <Check className='w-3 h-3 text-success' />
+                        </div>
+                        <span className='text-sm text-muted-foreground'>
+                          {feature}
+                        </span>
+                      </div>
+                    ))}
+                  </div>
+
+                  {/* CTA */}
+                  <Button
+                    className='w-full'
+                    variant={pack.popular ? 'default' : 'outline'}
+                    size='lg'
+                    asChild
+                  >
+                    <Link href='/signup'>
+                      Get {pack.name}
+                      <ArrowRight className='ml-2 h-4 w-4' />
+                    </Link>
+                  </Button>
+                </div>
+              </div>
+            );
+          })}
+        </div>
+
+        {/* Features */}
+        <div className='rounded-2xl border border-border bg-card/50 p-8 mt-6'>
+          <div className='grid gap-4 sm:grid-cols-2 lg:grid-cols-3'>
             {[
               '50 free credits to start',
-              'No monthly commitment',
               'Credits never expire',
+              'No monthly commitment',
               'Bulk discounts available',
               'Cancel anytime',
-              'Priority support included',
+              'Priority support',
             ].map((feature, i) => (
               <div key={i} className='flex items-center gap-3'>
                 <div className='w-5 h-5 rounded-full bg-success/10 flex items-center justify-center shrink-0'>
                   <Check className='w-3 h-3 text-success' />
                 </div>
-                <span className='text-sm'>{feature}</span>
+                <span className='text-sm text-muted-foreground'>{feature}</span>
               </div>
             ))}
           </div>
+        </div>
 
-          <div className='flex flex-col sm:flex-row items-center gap-4'>
-            <Button
-              size='lg'
-              className='w-full sm:w-auto min-w-[200px]'
-              asChild
-            >
-              <Link href={`${APP_URL}/signup`}>
-                Start Free Trial
-                <ArrowRight className='ml-2 h-4 w-4' />
-              </Link>
-            </Button>
-            <Button variant='ghost' className='w-full sm:w-auto' asChild>
-              <Link href='/pricing'>See full pricing</Link>
-            </Button>
-          </div>
+        {/* See Full Pricing */}
+        <div className='text-center mt-10'>
+          <Button
+            variant='ghost'
+            className='text-muted-foreground hover:text-foreground'
+            asChild
+          >
+            <Link href='/pricing'>
+              See full pricing details
+              <ArrowRight className='ml-2 h-4 w-4' />
+            </Link>
+          </Button>
         </div>
       </div>
     </section>

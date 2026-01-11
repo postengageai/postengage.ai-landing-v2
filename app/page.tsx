@@ -9,6 +9,7 @@ import { TestimonialsSection } from '@/components/landing/testimonials-section';
 import { PricingPreviewSection } from '@/components/landing/pricing-preview-section';
 import { CTASection } from '@/components/landing/cta-section';
 import { LandingFooter } from '@/components/landing/landing-footer';
+import { ComparisonSection } from '@/components/landing/comparison-section';
 
 export default function LandingPage() {
   return (
@@ -80,6 +81,9 @@ export default function LandingPage() {
 
           {/* Proof: Real results from real creators */}
           <TestimonialsSection />
+
+          {/* Trust: Why PostEngageAI over alternatives */}
+          <ComparisonSection />
 
           {/* Value: Simple pricing preview */}
           <PricingPreviewSection />
