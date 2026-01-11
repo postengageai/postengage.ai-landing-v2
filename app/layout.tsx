@@ -13,6 +13,7 @@ const jetbrainsMono = JetBrains_Mono({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL('https://postengage.ai'),
   title: {
     template: '%s | PostEngage.ai',
     default:

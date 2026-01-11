@@ -1,3 +1,5 @@
+'use client';
+
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 import {
@@ -9,13 +11,22 @@ import {
   Send,
   Bot,
 } from 'lucide-react';
-import {
-  CREDIT_PACKS,
-  CREDIT_COSTS,
-  calculateActions,
-} from '@/lib/config/credit-pricing';
+import { usePricing } from '@/hooks/use-pricing';
+import { PricingCard } from '@/components/pricing/pricing-card';
+import { Skeleton } from '@/components/ui/skeleton';
+
+// Fallback costs if loading
+const DEFAULT_COSTS = {
+  REPLY_COMMENT: 2,
+  AI_REPLY_COMMENT: 4,
+  SEND_DM: 2,
+  AI_SEND_DM: 4,
+};
 
 export function PricingPreviewSection() {
+  const { data: pricing, isLoading } = usePricing();
+  const costs = pricing?.costs || DEFAULT_COSTS;
+
   return (
     <section id='pricing' className='py-20 sm:py-32 border-t border-border/50'>
       <div className='mx-auto max-w-6xl px-4 sm:px-6'>
@@ -59,7 +70,7 @@ export function PricingPreviewSection() {
                     Comment Reply
                   </div>
                   <div className='text-xs text-muted-foreground'>
-                    {CREDIT_COSTS.REPLY_COMMENT} credits
+                    {costs.REPLY_COMMENT} credits
                   </div>
                 </div>
               </div>
@@ -72,7 +83,7 @@ export function PricingPreviewSection() {
                 <div className='min-w-0'>
                   <div className='text-sm font-medium truncate'>AI Reply</div>
                   <div className='text-xs text-muted-foreground'>
-                    {CREDIT_COSTS.AI_REPLY_COMMENT} credits
+                    {costs.AI_REPLY_COMMENT} credits
                   </div>
                 </div>
               </div>
@@ -85,7 +96,7 @@ export function PricingPreviewSection() {
                 <div className='min-w-0'>
                   <div className='text-sm font-medium truncate'>Auto DM</div>
                   <div className='text-xs text-muted-foreground'>
-                    {CREDIT_COSTS.SEND_DM} credits
+                    {costs.SEND_DM} credits
                   </div>
                 </div>
               </div>
@@ -98,7 +109,7 @@ export function PricingPreviewSection() {
                 <div className='min-w-0'>
                   <div className='text-sm font-medium truncate'>AI DM</div>
                   <div className='text-xs text-muted-foreground'>
-                    {CREDIT_COSTS.AI_SEND_DM} credits
+                    {costs.AI_SEND_DM} credits
                   </div>
                 </div>
               </div>
@@ -108,119 +119,26 @@ export function PricingPreviewSection() {
 
         {/* Pricing Cards */}
         <div className='grid gap-6 lg:grid-cols-3'>
-          {CREDIT_PACKS.map(pack => {
-            const perCredit = pack.price / pack.credits;
-            const basicActions = calculateActions(pack.credits, false);
-            const aiActions = calculateActions(pack.credits, true);
-
-            return (
-              <div
-                key={pack.id}
-                className={`relative group rounded-2xl border p-8 transition-all duration-300 hover:translate-y-[-4px] ${
-                  pack.popular
-                    ? 'border-primary/50 bg-gradient-to-b from-primary/10 via-primary/5 to-transparent shadow-xl shadow-primary/10'
-                    : 'border-border bg-card hover:border-border/80 hover:shadow-lg'
-                }`}
-              >
-                {pack.popular && (
-                  <div className='absolute -top-3.5 left-1/2 -translate-x-1/2'>
-                    <div className='rounded-full bg-primary px-4 py-1.5 text-xs font-semibold text-primary-foreground shadow-lg shadow-primary/30'>
-                      Most Popular
-                    </div>
+          {isLoading
+            ? [1, 2, 3].map(i => (
+                <div
+                  key={i}
+                  className='rounded-2xl border border-border bg-card p-8'
+                >
+                  <Skeleton className='h-8 w-1/2 mb-4' />
+                  <Skeleton className='h-4 w-3/4 mb-8' />
+                  <Skeleton className='h-12 w-1/3 mb-6' />
+                  <div className='space-y-4'>
+                    <Skeleton className='h-4 w-full' />
+                    <Skeleton className='h-4 w-full' />
+                    <Skeleton className='h-4 w-full' />
                   </div>
-                )}
-
-                {pack.savings && (
-                  <div className='absolute top-4 right-4'>
-                    <div className='rounded-full bg-success/10 text-success px-2.5 py-1 text-xs font-semibold'>
-                      Save {pack.savings}
-                    </div>
-                  </div>
-                )}
-
-                <div>
-                  {/* Pack Name & Description */}
-                  <div className='mb-6'>
-                    <h3 className='text-xl font-semibold mb-2'>{pack.name}</h3>
-                    <p className='text-sm text-muted-foreground'>
-                      {pack.description}
-                    </p>
-                  </div>
-
-                  {/* Price */}
-                  <div className='mb-6'>
-                    <div className='flex items-baseline gap-1'>
-                      <span className='text-4xl font-bold'>
-                        ₹{pack.price.toLocaleString('en-IN')}
-                      </span>
-                    </div>
-                    <div className='text-sm text-muted-foreground mt-1'>
-                      one-time purchase
-                    </div>
-                  </div>
-
-                  {/* Credits & Actions */}
-                  <div className='space-y-3 mb-8 pb-8 border-b border-border'>
-                    <div className='flex items-center justify-between'>
-                      <span className='text-muted-foreground'>Credits</span>
-                      <span className='font-semibold'>
-                        {pack.credits.toLocaleString()}
-                      </span>
-                    </div>
-                    <div className='flex items-center justify-between'>
-                      <span className='text-muted-foreground'>
-                        Basic actions
-                      </span>
-                      <span className='font-semibold'>
-                        {basicActions.toLocaleString()}
-                      </span>
-                    </div>
-                    <div className='flex items-center justify-between'>
-                      <span className='text-muted-foreground'>AI actions</span>
-                      <span className='font-semibold text-primary'>
-                        {aiActions.toLocaleString()}
-                      </span>
-                    </div>
-                    <div className='flex items-center justify-between'>
-                      <span className='text-muted-foreground'>Per credit</span>
-                      <span className='text-sm'>₹{perCredit.toFixed(2)}</span>
-                    </div>
-                  </div>
-
-                  {/* Features */}
-                  <div className='space-y-3 mb-8'>
-                    {[
-                      'Credits never expire',
-                      'All features included',
-                      'Priority support',
-                    ].map((feature, i) => (
-                      <div key={i} className='flex items-center gap-3'>
-                        <div className='w-5 h-5 rounded-full bg-success/10 flex items-center justify-center shrink-0'>
-                          <Check className='w-3 h-3 text-success' />
-                        </div>
-                        <span className='text-sm text-muted-foreground'>
-                          {feature}
-                        </span>
-                      </div>
-                    ))}
-                  </div>
-
-                  {/* CTA */}
-                  <Button
-                    className='w-full'
-                    variant={pack.popular ? 'default' : 'outline'}
-                    size='lg'
-                    asChild
-                  >
-                    <Link href='/signup'>
-                      Get {pack.name}
-                      <ArrowRight className='ml-2 h-4 w-4' />
-                    </Link>
-                  </Button>
+                  <Skeleton className='h-12 w-full mt-8' />
                 </div>
-              </div>
-            );
-          })}
+              ))
+            : pricing?.packs.map(pack => (
+                <PricingCard key={pack.id} pack={pack} />
+              ))}
         </div>
 
         {/* Features */}
