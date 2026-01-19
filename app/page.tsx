@@ -58,6 +58,11 @@ export default function LandingPage() {
           }),
         }}
       />
+      <script
+        src='https://analytics.ahrefs.com/analytics.js'
+        data-key='O2+6Avr4IoWf6dlPe6uMCQ'
+        async
+      ></script>
       <div className='min-h-screen bg-background'>
         <LandingHeader />
         <main>
