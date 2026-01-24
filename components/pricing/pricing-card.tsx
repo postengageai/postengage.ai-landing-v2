@@ -3,6 +3,7 @@ import { Button } from '@/components/ui/button';
 import { Check, ArrowRight } from 'lucide-react';
 import { CreditPackage } from '@/lib/types/pricing';
 import { calculateActions } from '@/lib/config/credit-pricing';
+import { APP_URL } from '@/lib/constants';
 
 interface PricingCardProps {
   pack: CreditPackage;
@@ -117,7 +118,7 @@ export function PricingCard({ pack }: PricingCardProps) {
           size='lg'
           asChild
         >
-          <Link href='/signup'>
+          <Link href={`${APP_URL}/signup`}>
             Get {pack.name}
             <ArrowRight className='ml-2 h-4 w-4' />
           </Link>

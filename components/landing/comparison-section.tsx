@@ -10,6 +10,7 @@ import {
 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import Link from 'next/link';
+import { APP_URL } from '@/lib/constants';
 
 const competitors = [
   {
@@ -293,7 +294,7 @@ export function ComparisonSection() {
             Join thousands of Indian creators who switched to PostEngageAI
           </p>
           <Button size='lg' asChild>
-            <Link href='/signup'>
+            <Link href={`${APP_URL}/signup`}>
               Start Free with 50 Credits
               <Zap className='ml-2 h-4 w-4' />
             </Link>

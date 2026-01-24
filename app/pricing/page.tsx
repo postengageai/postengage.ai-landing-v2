@@ -18,6 +18,7 @@ import Link from 'next/link';
 import { usePricing } from '@/hooks/use-pricing';
 import { PricingCard } from '@/components/pricing/pricing-card';
 import { Skeleton } from '@/components/ui/skeleton';
+import { APP_URL } from '@/lib/constants';
 
 const DEFAULT_COSTS = {
   REPLY_COMMENT: 2,
@@ -396,7 +397,7 @@ export default function PricingPage() {
               </p>
               <div className='flex flex-col sm:flex-row items-center justify-center gap-4'>
                 <Button size='lg' className='w-full sm:w-auto' asChild>
-                  <Link href='/signup'>
+                  <Link href={`${APP_URL}/signup`}>
                     Get Started for Free
                     <ArrowRight className='ml-2 h-4 w-4' />
                   </Link>
