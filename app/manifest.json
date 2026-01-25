@@ -1,0 +1,24 @@
+{
+  "name": "PostEngage.ai - Instagram Automation Platform",
+  "short_name": "PostEngage.ai",
+  "description": "Stop ignoring comments. Automate DMs in your voice, schedule posts, and track analytics. The all-in-one growth engine for creators.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#0070f3",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "/logo.jpeg",
+      "sizes": "192x192",
+      "type": "image/jpeg"
+    },
+    {
+      "src": "/logo.jpeg",
+      "sizes": "512x512",
+      "type": "image/jpeg"
+    }
+  ],
+  "categories": ["productivity", "social", "business"],
+  "lang": "en-US"
+}

@@ -45,14 +45,6 @@ export const metadata: Metadata = {
     url: 'https://postengage.ai',
     siteName: 'PostEngage.ai',
     type: 'website',
-    images: [
-      {
-        url: '/logo.jpeg',
-        width: 1200,
-        height: 630,
-        alt: 'PostEngage.ai Dashboard',
-      },
-    ],
   },
   twitter: {
     card: 'summary_large_image',
@@ -74,15 +66,6 @@ export const metadata: Metadata = {
       'max-video-preview': -1,
       'max-image-preview': 'large',
       'max-snippet': -1,
-    },
-  },
-  icons: {
-    icon: '/logo.jpeg',
-    shortcut: '/logo.jpeg',
-    apple: '/logo.jpeg',
-    other: {
-      rel: 'apple-touch-icon-precomposed',
-      url: '/logo.jpeg',
     },
   },
 };
