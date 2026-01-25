@@ -1,6 +1,8 @@
 {
   "name": "postengage.ai-landing",
   "version": "0.1.0",
+  "description": "PostEngage.ai Landing Page",
+  "author": "PostEngage.ai",
   "private": true,
   "scripts": {
     "build": "next build",
