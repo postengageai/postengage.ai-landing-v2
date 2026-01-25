@@ -41,6 +41,32 @@ export function HeroSection() {
       </div>
 
       <div className='relative mx-auto max-w-6xl px-4 sm:px-6'>
+        <div className='flex flex-col sm:flex-row items-center justify-center gap-4 mb-8'>
+          <a
+            href='https://www.producthunt.com/posts/postengageai?embed=true&utm_source=badge-featured&utm_medium=badge&utm_campaign=badge-postengageai'
+            target='_blank'
+            rel='noopener noreferrer'
+          >
+            <Image
+              src='https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=1030613&theme=light&t=1769350991305'
+              alt='PostEngageAi - Revolutionize Your Social Media Game | Product Hunt'
+              width='250'
+              height='54'
+              className='h-[54px] w-[250px]'
+              unoptimized={true}
+            />
+          </a>
+          <div className='inline-flex items-center gap-3 rounded-full border border-primary/30 bg-primary/5 px-4 py-2'>
+            <MessageCircle className='w-4 h-4 text-primary' />
+            <span className='text-sm text-muted-foreground'>
+              <span className='font-bold text-foreground'>
+                70% of followers
+              </span>{' '}
+              expect a reply within 24 hours
+            </span>
+          </div>
+        </div>
+
         {/* Live counter badge */}
         <div className='flex justify-center mb-8'>
           <div className='inline-flex items-center gap-3 rounded-full border border-warning/30 bg-warning/5 px-4 py-2'>
