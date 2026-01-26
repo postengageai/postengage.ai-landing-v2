@@ -43,19 +43,19 @@ export function HeroSection() {
       <div className='relative mx-auto max-w-6xl px-4 sm:px-6'>
         <div className='flex flex-col sm:flex-row items-center justify-center gap-4 mb-8'>
           <a
-            href='https://www.producthunt.com/posts/postengageai?embed=true&utm_source=badge-featured&utm_medium=badge&utm_campaign=badge-postengageai'
+            href='https://www.producthunt.com/products/postengageai?embed=true&amp;utm_source=badge-featured&amp;utm_medium=badge&amp;utm_campaign=badge-postengageai-2'
             target='_blank'
             rel='noopener noreferrer'
           >
             <Image
-              src='https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=1030613&theme=light&t=1769350991305'
-              alt='PostEngageAi - Revolutionize Your Social Media Game | Product Hunt'
+              alt='PostEngageAI - Auto-reply to Instagram comments &amp; DMs in your own voice | Product Hunt'
               width='250'
               height='54'
-              className='h-[54px] w-[250px]'
+              src='https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=1067654&amp;theme=light&amp;t=1769428844503'
               unoptimized={true}
             />
           </a>
+
           <div className='inline-flex items-center gap-3 rounded-full border border-primary/30 bg-primary/5 px-4 py-2'>
             <MessageCircle className='w-4 h-4 text-primary' />
             <span className='text-sm text-muted-foreground'>
