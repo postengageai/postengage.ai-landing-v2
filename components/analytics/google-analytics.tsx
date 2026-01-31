@@ -1,12 +1,13 @@
 'use client';
 
 import Script from 'next/script';
+import { GA_MEASUREMENT_ID } from '@/lib/constants';
 
 export function GoogleAnalytics() {
   return (
     <>
       <Script
-        src='https://www.googletagmanager.com/gtag/js?id=G-STDJEWJJT2'
+        src={`https://www.googletagmanager.com/gtag/js?id=${GA_MEASUREMENT_ID}`}
         strategy='afterInteractive'
       />
       <Script id='google-analytics' strategy='afterInteractive'>
@@ -15,7 +16,7 @@ export function GoogleAnalytics() {
           function gtag(){dataLayer.push(arguments);}
           gtag('js', new Date());
 
-          gtag('config', 'G-STDJEWJJT2');
+          gtag('config', '${GA_MEASUREMENT_ID}');
         `}
       </Script>
     </>

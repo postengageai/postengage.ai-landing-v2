@@ -1,7 +1,4 @@
-import {
-  organizationSchema,
-  softwareApplicationSchema,
-} from '@/lib/schema';
+import { organizationSchema, softwareApplicationSchema } from '@/lib/schema';
 
 export function JsonLd() {
   return (

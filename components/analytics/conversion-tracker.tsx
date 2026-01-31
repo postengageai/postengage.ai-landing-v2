@@ -1,6 +1,7 @@
 'use client';
 
 import { useEffect } from 'react';
+import { IS_DEV } from '@/lib/constants';
 
 // Conversion event types
 export type ConversionEvent =
@@ -39,7 +40,7 @@ export function trackConversion(
   };
 
   // Log to console in development
-  if (process.env.NODE_ENV === 'development') {
+  if (IS_DEV) {
     // eslint-disable-next-line no-console
     console.log('[Conversion]', data);
   }

@@ -97,6 +97,7 @@ export default function RootLayout({
       >
         <JsonLd />
         <GoogleAnalytics />
+        <MicrosoftClarity />
         <ConversionTracker />
         <ScrollTracker />
         <PageViewTracker />
