@@ -5,4 +5,4 @@ export const IS_DEV = process.env.NODE_ENV === 'development';
 export const CLARITY_PROJECT_ID =
   process.env.NEXT_PUBLIC_CLARITY_PROJECT_ID || '';
 export const GA_MEASUREMENT_ID =
-  process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID || 'G-STDJEWJJT2';
+  process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID || '';
