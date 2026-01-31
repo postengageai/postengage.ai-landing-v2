@@ -15,7 +15,6 @@ import {
   Bot,
 } from 'lucide-react';
 import Link from 'next/link';
-import { usePricing } from '@/hooks/use-pricing';
 import { useLandingConfig } from '@/hooks/use-landing-config';
 import { PricingCard } from '@/components/pricing/pricing-card';
 import { Skeleton } from '@/components/ui/skeleton';
@@ -31,9 +30,8 @@ const DEFAULT_COSTS = {
 };
 
 export default function PricingPage() {
-  const { data: pricing, isLoading } = usePricing();
-  const { data: landingConfig } = useLandingConfig();
-  const costs = pricing?.costs || DEFAULT_COSTS;
+  const { data: landingConfig, isLoading } = useLandingConfig();
+  const costs = landingConfig?.costs || DEFAULT_COSTS;
   const signupBonus = landingConfig?.signup_bonus || 500;
   const basicActions = Math.floor(signupBonus / costs.REPLY_COMMENT);
   const aiActions = Math.floor(signupBonus / costs.AI_REPLY_COMMENT);
@@ -234,7 +232,7 @@ export default function PricingPage() {
                       <Skeleton className='h-12 w-full mt-8' />
                     </div>
                   ))
-                : pricing?.packs.map(pack => (
+                : landingConfig?.packs.map(pack => (
                     <PricingCard key={pack.id} pack={pack} />
                   ))}
             </div>
