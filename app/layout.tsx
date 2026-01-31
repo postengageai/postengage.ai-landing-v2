@@ -55,8 +55,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    site: '@postengage_ai',
-    creator: '@postengage_ai',
+    site: '@postengageai',
+    creator: '@postengageai',
     title: 'PostEngage.ai - AI Automation, Scheduling & Analytics',
     description:
       'Stop ignoring comments. Automate DMs in your voice, schedule posts, and track growth. Join 2,400+ creators saving 47 hours/month.',

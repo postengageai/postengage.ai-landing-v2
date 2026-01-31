@@ -89,21 +89,27 @@ export function LandingFooter() {
           </p>
           <div className='flex gap-4'>
             <Link
-              href='#'
+              href='https://x.com/postengageai'
+              target='_blank'
+              rel='noopener noreferrer'
               className='text-sm text-muted-foreground hover:text-foreground'
-              onClick={() => handleSocialClick('Twitter')}
+              onClick={() => handleSocialClick('X')}
             >
-              Twitter
+              X (Twitter)
             </Link>
             <Link
-              href='#'
+              href='https://www.instagram.com/postengage.ai/'
+              target='_blank'
+              rel='noopener noreferrer'
               className='text-sm text-muted-foreground hover:text-foreground'
               onClick={() => handleSocialClick('Instagram')}
             >
               Instagram
             </Link>
             <Link
-              href='#'
+              href='https://www.linkedin.com/company/postengageai'
+              target='_blank'
+              rel='noopener noreferrer'
               className='text-sm text-muted-foreground hover:text-foreground'
               onClick={() => handleSocialClick('LinkedIn')}
             >
