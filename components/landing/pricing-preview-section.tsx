@@ -11,7 +11,7 @@ import {
   Send,
   Bot,
 } from 'lucide-react';
-import { usePricing } from '@/hooks/use-pricing';
+import { useLandingConfig } from '@/hooks/use-landing-config';
 import { PricingCard } from '@/components/pricing/pricing-card';
 import { Skeleton } from '@/components/ui/skeleton';
 import { useTrackSectionView } from '@/hooks/use-track-section-view';
@@ -26,8 +26,8 @@ const DEFAULT_COSTS = {
 
 export function PricingPreviewSection() {
   const ref = useTrackSectionView('pricing_section');
-  const { data: pricing, isLoading } = usePricing();
-  const costs = pricing?.costs || DEFAULT_COSTS;
+  const { data: config, isLoading } = useLandingConfig();
+  const costs = config?.costs || DEFAULT_COSTS;
 
   return (
     <section
@@ -142,7 +142,7 @@ export function PricingPreviewSection() {
                   <Skeleton className='h-12 w-full mt-8' />
                 </div>
               ))
-            : pricing?.packs.map(pack => (
+            : config?.packs.map(pack => (
                 <PricingCard key={pack.id} pack={pack} />
               ))}
         </div>

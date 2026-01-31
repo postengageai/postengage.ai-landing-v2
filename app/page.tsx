@@ -10,7 +10,7 @@ import { PricingPreviewSection } from '@/components/landing/pricing-preview-sect
 import { CTASection } from '@/components/landing/cta-section';
 import { LandingFooter } from '@/components/landing/landing-footer';
 import { ComparisonSection } from '@/components/landing/comparison-section';
-import { FAQSection } from '@/components/landing/faq-section';
+import { FaqSection } from '@/components/landing/faq-section';
 import { ExitIntentPopup } from '@/components/conversion/exit-intent-popup';
 import { organizationSchema, faqSchema } from '@/lib/schema';
 
@@ -110,7 +110,7 @@ export default function LandingPage() {
           <PricingPreviewSection />
 
           {/* FAQ: Address common objections */}
-          <FAQSection />
+          <FaqSection />
 
           {/* Urgency: Final push with live counter */}
           <CTASection />

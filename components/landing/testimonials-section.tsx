@@ -4,14 +4,9 @@ import Image from 'next/image';
 import { Quote } from 'lucide-react';
 import { useTrackSectionView } from '@/hooks/use-track-section-view';
 import { sendGAEvent } from '@/lib/gtag';
-
-interface Testimonial {
-  quote: string;
-  author: string;
-  role: string;
-  metric: string;
-  avatar: string;
-}
+import { useLandingConfig } from '@/hooks/use-landing-config';
+import { Skeleton } from '@/components/ui/skeleton';
+import { Testimonial } from '@/lib/types/landing';
 
 function TestimonialCard({
   testimonial,
@@ -66,73 +61,57 @@ function TestimonialCard({
   );
 }
 
+function TestimonialSkeleton() {
+  return (
+    <div className='relative rounded-xl border border-border bg-card p-6 flex flex-col'>
+      <Skeleton className='w-8 h-8 mb-4' />
+      <Skeleton className='w-full h-20 mb-4' />
+      <Skeleton className='w-full h-12 mb-4' />
+      <div className='flex items-center gap-3 pt-4 border-t border-border'>
+        <Skeleton className='w-10 h-10 rounded-full' />
+        <div className='space-y-2'>
+          <Skeleton className='w-24 h-4' />
+          <Skeleton className='w-20 h-3' />
+        </div>
+      </div>
+    </div>
+  );
+}
+
 export function TestimonialsSection() {
   const ref = useTrackSectionView('testimonials_section');
-  const testimonials = [
-    {
-      quote:
-        "I used to spend 3 hours daily on comments. Now it's 10 minutes reviewing what AI handled. I got my mornings back.",
-      author: 'Priya Sharma',
-      role: 'Fashion Creator',
-      metric: '47 hours saved last month',
-      avatar: '/indian-woman-fashion-creator.jpg',
-    },
-    {
-      quote:
-        "The AI actually uses my 'lol' and '😭' correctly. My audience thinks I'm just really on top of things now.",
-      author: 'Marcus Chen',
-      role: 'Tech Reviewer',
-      metric: '890 comments/week handled',
-      avatar: '/asian-man-tech-youtuber.jpg',
-    },
-    {
-      quote:
-        'DM conversions went up 40% because replies happen in seconds, not hours. This paid for itself day one.',
-      author: 'Sofia Rodriguez',
-      role: 'Course Creator',
-      metric: '$12K extra revenue',
-      avatar: '/latina-woman-entrepreneur.jpg',
-    },
-    {
-      quote:
-        'The flow builder is incredibly intuitive. I set up my entire sales funnel in 30 minutes without writing a single line of code.',
-      author: 'David Kim',
-      role: 'SaaS Founder',
-      metric: '300+ leads/month',
-      avatar: '/professional-man-portrait.png',
-    },
-    {
-      quote:
-        'PostEngage.ai has completely transformed how I handle customer support on Instagram. No more copy-pasting answers all day.',
-      author: 'Sarah Johnson',
-      role: 'Small Business Owner',
-      metric: '95% response rate',
-      avatar: '/business-woman-portrait.png',
-    },
-    {
-      quote:
-        'Finally, a tool that understands the creator economy. The analytics help me prove ROI to brands I work with.',
-      author: 'Alex Rivera',
-      role: 'Lifestyle Influencer',
-      metric: '2x brand deal value',
-      avatar: '/lifestyle-instagram-avatar.jpg',
-    },
-  ];
+  const { data: config, isLoading } = useLandingConfig();
+  const testimonials = config?.testimonials || [];
 
   return (
-    <section ref={ref} className='py-16 sm:py-24 bg-secondary/30'>
-      <div className='mx-auto max-w-6xl px-4 sm:px-6'>
-        <div className='text-center max-w-2xl mx-auto mb-12'>
-          <h2 className='text-2xl sm:text-3xl font-bold tracking-tight'>
-            Creators who got their{' '}
-            <span className='text-primary'>time back</span>
+    <section ref={ref} id='testimonials' className='py-20 sm:py-32'>
+      <div className='mx-auto max-w-7xl px-4 sm:px-6'>
+        <div className='mx-auto max-w-2xl text-center mb-16'>
+          <h2 className='text-3xl font-bold tracking-tight sm:text-4xl'>
+            Trusted by creators who value their time
           </h2>
+          <p className='mt-6 text-lg leading-8 text-muted-foreground'>
+            See how PostEngage.ai is helping creators and businesses scale their
+            engagement without burnout.
+          </p>
         </div>
-
-        <div className='grid md:grid-cols-3 gap-6'>
-          {testimonials.map((testimonial, i) => (
-            <TestimonialCard key={i} testimonial={testimonial} index={i} />
-          ))}
+        <div className='mx-auto mt-16 grid max-w-2xl grid-cols-1 gap-8 lg:mx-0 lg:max-w-none lg:grid-cols-2'>
+          {isLoading ? (
+            <>
+              <TestimonialSkeleton />
+              <TestimonialSkeleton />
+              <TestimonialSkeleton />
+              <TestimonialSkeleton />
+            </>
+          ) : (
+            testimonials.map((testimonial, index) => (
+              <TestimonialCard
+                key={testimonial.id || index}
+                testimonial={testimonial}
+                index={index}
+              />
+            ))
+          )}
         </div>
       </div>
     </section>
