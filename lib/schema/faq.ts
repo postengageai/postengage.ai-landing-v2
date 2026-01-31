@@ -44,7 +44,7 @@ export const faqSchema = {
       name: 'Can I try PostEngage.ai for free?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'Yes! New users receive 50 free credits to test all features. No credit card required to start. Setup takes less than 5 minutes.',
+        text: 'Yes! New users receive 500 free credits to test all features. No credit card required to start. Setup takes less than 5 minutes.',
       },
     },
     {

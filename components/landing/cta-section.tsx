@@ -8,7 +8,11 @@ import { APP_URL } from '@/lib/constants';
 import { sendGAEvent } from '@/lib/gtag';
 import { useTrackSectionView } from '@/hooks/use-track-section-view';
 
+import { useLandingConfig } from '@/hooks/use-landing-config';
+
 export function CTASection() {
+  const { data: landingConfig } = useLandingConfig();
+  const signupBonus = landingConfig?.signup_bonus || 500;
   const ref = useTrackSectionView('cta_section');
   const bannerRef = useTrackSectionView('cta_urgency_banner');
   const [lostComments, setLostComments] = useState(0);
@@ -79,7 +83,7 @@ export function CTASection() {
                 </Link>
               </Button>
               <span className='text-sm text-muted-foreground'>
-                50 free credits • Setup in 5 min • Cancel anytime
+                {signupBonus} free credits • Setup in 5 min • Cancel anytime
               </span>
             </div>
           </div>

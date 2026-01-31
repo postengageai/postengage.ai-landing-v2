@@ -16,7 +16,11 @@ const AVATARS = [
   '/business-woman-portrait.png',
 ];
 
+import { useLandingConfig } from '@/hooks/use-landing-config';
+
 export function HeroSection() {
+  const { data: landingConfig } = useLandingConfig();
+  const signupBonus = landingConfig?.signup_bonus || 500;
   const [ignoredCount, setIgnoredCount] = useState(2847);
   const [showReply, setShowReply] = useState(false);
 
@@ -142,7 +146,7 @@ export function HeroSection() {
                 </Link>
               </Button>
               <span className='text-sm text-muted-foreground'>
-                50 free replies • No credit card
+                {signupBonus} free replies • No credit card
               </span>
             </div>
 

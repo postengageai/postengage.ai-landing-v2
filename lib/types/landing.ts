@@ -20,4 +20,5 @@ export interface LandingConfigResponse {
   packs: CreditPackage[];
   testimonials: Testimonial[];
   faqs: FaqItem[];
+  signup_bonus: number;
 }

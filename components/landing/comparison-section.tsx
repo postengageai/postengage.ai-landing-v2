@@ -15,50 +15,7 @@ import Link from 'next/link';
 import { APP_URL } from '@/lib/constants';
 import { useTrackSectionView } from '@/hooks/use-track-section-view';
 import { sendGAEvent } from '@/lib/gtag';
-
-const competitors = [
-  {
-    name: 'Manychat',
-    pricing: '$15+/mo',
-    pricingType: 'subscription',
-    instagram: true,
-    aiReplies: false,
-    indianPayments: false,
-    freeTier: 'Limited',
-    support: 'Email only',
-  },
-  {
-    name: 'SendPulse',
-    pricing: '$12+/mo',
-    pricingType: 'subscription',
-    instagram: true,
-    aiReplies: false,
-    indianPayments: false,
-    freeTier: 'Limited',
-    support: 'Email only',
-  },
-  {
-    name: 'InstantDM',
-    pricing: '$29+/mo',
-    pricingType: 'subscription',
-    instagram: true,
-    aiReplies: true,
-    indianPayments: false,
-    freeTier: 'No',
-    support: 'Email only',
-  },
-  {
-    name: 'PostEngageAI',
-    pricing: '₹499+',
-    pricingType: 'credits',
-    instagram: true,
-    aiReplies: true,
-    indianPayments: true,
-    freeTier: '50 credits',
-    support: 'Priority',
-    highlighted: true,
-  },
-];
+import { useLandingConfig } from '@/hooks/use-landing-config';
 
 const advantages = [
   {
@@ -101,6 +58,52 @@ const advantages = [
 export function ComparisonSection() {
   const ref = useTrackSectionView('comparison_section');
   const tableRef = useTrackSectionView('comparison_table_view');
+  const { data: landingConfig } = useLandingConfig();
+  const signupBonus = landingConfig?.signup_bonus || 500;
+
+  const competitors = [
+    {
+      name: 'Manychat',
+      pricing: '$15+/mo',
+      pricingType: 'subscription',
+      instagram: true,
+      aiReplies: false,
+      indianPayments: false,
+      freeTier: 'Limited',
+      support: 'Email only',
+    },
+    {
+      name: 'SendPulse',
+      pricing: '$12+/mo',
+      pricingType: 'subscription',
+      instagram: true,
+      aiReplies: false,
+      indianPayments: false,
+      freeTier: 'Limited',
+      support: 'Email only',
+    },
+    {
+      name: 'InstantDM',
+      pricing: '$29+/mo',
+      pricingType: 'subscription',
+      instagram: true,
+      aiReplies: true,
+      indianPayments: false,
+      freeTier: 'No',
+      support: 'Email only',
+    },
+    {
+      name: 'PostEngageAI',
+      pricing: '₹499+',
+      pricingType: 'credits',
+      instagram: true,
+      aiReplies: true,
+      indianPayments: true,
+      freeTier: `${signupBonus} credits`,
+      support: 'Priority',
+      highlighted: true,
+    },
+  ];
 
   return (
     <section ref={ref} className='py-20 sm:py-32 border-t border-border/50'>

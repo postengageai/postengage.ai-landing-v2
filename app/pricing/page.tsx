@@ -16,6 +16,7 @@ import {
 } from 'lucide-react';
 import Link from 'next/link';
 import { usePricing } from '@/hooks/use-pricing';
+import { useLandingConfig } from '@/hooks/use-landing-config';
 import { PricingCard } from '@/components/pricing/pricing-card';
 import { Skeleton } from '@/components/ui/skeleton';
 import { APP_URL } from '@/lib/constants';
@@ -31,7 +32,11 @@ const DEFAULT_COSTS = {
 
 export default function PricingPage() {
   const { data: pricing, isLoading } = usePricing();
+  const { data: landingConfig } = useLandingConfig();
   const costs = pricing?.costs || DEFAULT_COSTS;
+  const signupBonus = landingConfig?.signup_bonus || 500;
+  const basicActions = Math.floor(signupBonus / costs.REPLY_COMMENT);
+  const aiActions = Math.floor(signupBonus / costs.AI_REPLY_COMMENT);
 
   const usageExamples = [
     {
@@ -76,7 +81,7 @@ export default function PricingPage() {
     },
     {
       q: 'Is there a free trial?',
-      a: 'Yes! New accounts get 50 free credits to test the service - enough for 25 basic actions or 12 AI actions.',
+      a: `Yes! New accounts get ${signupBonus} free credits to test the service - enough for ${basicActions} basic actions or ${aiActions} AI actions.`,
     },
     {
       q: 'Do you support UPI / Indian payments?',
@@ -392,8 +397,9 @@ export default function PricingPage() {
                 Ready to automate your engagement?
               </h2>
               <p className='text-lg text-muted-foreground mb-8 max-w-xl mx-auto'>
-                Start with 50 free credits. That's 25 basic actions or 12
-                AI-powered replies to test the waters.
+                Start with {signupBonus} free credits. That&apos;s{' '}
+                {basicActions} basic actions or {aiActions} AI-powered replies
+                to test the waters.
               </p>
               <div className='flex flex-col sm:flex-row items-center justify-center gap-4'>
                 <Button size='lg' className='w-full sm:w-auto' asChild>

@@ -28,6 +28,7 @@ export function PricingPreviewSection() {
   const ref = useTrackSectionView('pricing_section');
   const { data: config, isLoading } = useLandingConfig();
   const costs = config?.costs || DEFAULT_COSTS;
+  const signupBonus = config?.signup_bonus || 500;
 
   return (
     <section
@@ -151,7 +152,7 @@ export function PricingPreviewSection() {
         <div className='rounded-2xl border border-border bg-card/50 p-8 mt-6'>
           <div className='grid gap-4 sm:grid-cols-2 lg:grid-cols-3'>
             {[
-              '50 free credits to start',
+              `${signupBonus} free credits to start`,
               'Credits never expire',
               'No monthly commitment',
               'Bulk discounts available',

@@ -11,6 +11,7 @@ import { ScrollTracker } from '@/components/analytics/scroll-tracker';
 import { PageViewTracker } from '@/components/analytics/page-view-tracker';
 import { TimeOnPageTracker } from '@/components/analytics/time-on-page-tracker';
 import { JsonLd } from '@/components/seo/json-ld';
+import { MicrosoftClarity } from '@/components/analytics/clarity';
 
 const inter = Inter({ subsets: ['latin'], variable: '--font-inter' });
 const jetbrainsMono = JetBrains_Mono({

@@ -7,10 +7,14 @@ import { X, Gift, Clock } from 'lucide-react';
 import { APP_URL } from '@/lib/constants';
 import { trackConversion } from '@/components/analytics/conversion-tracker';
 import { sendGAEvent } from '@/lib/gtag';
+import { useLandingConfig } from '@/hooks/use-landing-config';
 
 export function ExitIntentPopup() {
   const [isVisible, setIsVisible] = useState(false);
   const [hasShown, setHasShown] = useState(false);
+  const { data: landingConfig } = useLandingConfig();
+  const signupBonus = landingConfig?.signup_bonus || 500;
+  const totalCredits = signupBonus * 2;
 
   const handleMouseLeave = useCallback(
     (e: MouseEvent) => {
@@ -92,10 +96,10 @@ export function ExitIntentPopup() {
           <p className='text-muted-foreground mb-6 max-w-sm mx-auto'>
             Get{' '}
             <span className='font-semibold text-foreground'>
-              100 bonus credits
+              {totalCredits} bonus credits
             </span>{' '}
-            when you sign up today. That&apos;s 50 extra credits on top of your
-            free trial!
+            when you sign up today. That&apos;s {signupBonus} extra credits on
+            top of your free trial!
           </p>
 
           {/* Urgency */}
@@ -125,7 +129,7 @@ export function ExitIntentPopup() {
               }}
             >
               <Link href={`${APP_URL}/signup?ref=exit_intent`}>
-                Claim My 100 Credits
+                Claim My {totalCredits} Credits
               </Link>
             </Button>
             <Button
