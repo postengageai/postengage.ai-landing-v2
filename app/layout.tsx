@@ -7,6 +7,7 @@ import './globals.css';
 import { ScrollToTop } from '@/components/scroll-to-top';
 import { ConversionTracker } from '@/components/analytics/conversion-tracker';
 import { GoogleAnalytics } from '@/components/analytics/google-analytics';
+import { GoogleTagManager } from '@/components/analytics/google-tag-manager';
 import { ScrollTracker } from '@/components/analytics/scroll-tracker';
 import { PageViewTracker } from '@/components/analytics/page-view-tracker';
 import { TimeOnPageTracker } from '@/components/analytics/time-on-page-tracker';
@@ -97,6 +98,7 @@ export default function RootLayout({
         className={`${inter.variable} ${jetbrainsMono.variable} font-sans antialiased`}
       >
         <JsonLd />
+        <GoogleTagManager />
         <GoogleAnalytics />
         <MicrosoftClarity />
         <ConversionTracker />

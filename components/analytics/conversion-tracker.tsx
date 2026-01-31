@@ -3,6 +3,12 @@
 import { useEffect } from 'react';
 import { IS_DEV } from '@/lib/constants';
 
+declare global {
+  interface Window {
+    dataLayer: Record<string, unknown>[];
+  }
+}
+
 // Conversion event types
 export type ConversionEvent =
   | 'page_view'
@@ -51,6 +57,15 @@ export function trackConversion(
     window.va('event', {
       name: event,
       data: additionalData,
+    });
+  }
+
+  // Send to Google Tag Manager
+  if (typeof window !== 'undefined') {
+    window.dataLayer = window.dataLayer || [];
+    window.dataLayer.push({
+      event: event,
+      ...additionalData,
     });
   }
 
