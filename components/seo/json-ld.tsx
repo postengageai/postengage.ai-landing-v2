@@ -1,0 +1,23 @@
+import {
+  organizationSchema,
+  softwareApplicationSchema,
+} from '@/lib/schema';
+
+export function JsonLd() {
+  return (
+    <>
+      <script
+        type='application/ld+json'
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(organizationSchema),
+        }}
+      />
+      <script
+        type='application/ld+json'
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(softwareApplicationSchema),
+        }}
+      />
+    </>
+  );
+}

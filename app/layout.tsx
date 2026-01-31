@@ -10,6 +10,7 @@ import { GoogleAnalytics } from '@/components/analytics/google-analytics';
 import { ScrollTracker } from '@/components/analytics/scroll-tracker';
 import { PageViewTracker } from '@/components/analytics/page-view-tracker';
 import { TimeOnPageTracker } from '@/components/analytics/time-on-page-tracker';
+import { JsonLd } from '@/components/seo/json-ld';
 
 const inter = Inter({ subsets: ['latin'], variable: '--font-inter' });
 const jetbrainsMono = JetBrains_Mono({
@@ -94,6 +95,7 @@ export default function RootLayout({
       <body
         className={`${inter.variable} ${jetbrainsMono.variable} font-sans antialiased`}
       >
+        <JsonLd />
         <GoogleAnalytics />
         <ConversionTracker />
         <ScrollTracker />
