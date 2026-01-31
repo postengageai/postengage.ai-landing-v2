@@ -5,6 +5,10 @@ import { Analytics } from '@vercel/analytics/next';
 import { Providers } from '@/components/providers';
 import './globals.css';
 import { ScrollToTop } from '@/components/scroll-to-top';
+import { ConversionTracker } from '@/components/analytics/conversion-tracker';
+import { GoogleAnalytics } from '@/components/analytics/google-analytics';
+import { ScrollTracker } from '@/components/analytics/scroll-tracker';
+import { PageViewTracker } from '@/components/analytics/page-view-tracker';
 
 const inter = Inter({ subsets: ['latin'], variable: '--font-inter' });
 const jetbrainsMono = JetBrains_Mono({
@@ -89,6 +93,10 @@ export default function RootLayout({
       <body
         className={`${inter.variable} ${jetbrainsMono.variable} font-sans antialiased`}
       >
+        <GoogleAnalytics />
+        <ConversionTracker />
+        <ScrollTracker />
+        <PageViewTracker />
         <ScrollToTop />
         <Providers>{children}</Providers>
         <Analytics />

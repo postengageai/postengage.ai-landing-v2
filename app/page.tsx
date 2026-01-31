@@ -10,6 +10,9 @@ import { PricingPreviewSection } from '@/components/landing/pricing-preview-sect
 import { CTASection } from '@/components/landing/cta-section';
 import { LandingFooter } from '@/components/landing/landing-footer';
 import { ComparisonSection } from '@/components/landing/comparison-section';
+import { FAQSection } from '@/components/landing/faq-section';
+import { ExitIntentPopup } from '@/components/conversion/exit-intent-popup';
+import { organizationSchema, faqSchema } from '@/lib/schema';
 
 export default function LandingPage() {
   return (
@@ -63,6 +66,19 @@ export default function LandingPage() {
         data-key='O2+6Avr4IoWf6dlPe6uMCQ'
         async
       ></script>
+      <script
+        type='application/ld+json'
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(organizationSchema),
+        }}
+      />
+      <script
+        type='application/ld+json'
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(faqSchema),
+        }}
+      />
+      <ExitIntentPopup />
       <div className='min-h-screen bg-background'>
         <LandingHeader />
         <main>
@@ -92,6 +108,9 @@ export default function LandingPage() {
 
           {/* Value: Simple pricing preview */}
           <PricingPreviewSection />
+
+          {/* FAQ: Address common objections */}
+          <FAQSection />
 
           {/* Urgency: Final push with live counter */}
           <CTASection />

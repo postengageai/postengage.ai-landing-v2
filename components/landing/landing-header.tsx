@@ -11,9 +11,34 @@ import {
   DropdownMenuTrigger,
 } from '@/components/ui/dropdown-menu';
 import { APP_URL } from '@/lib/constants';
+import { sendGAEvent } from '@/lib/gtag';
 
 export function LandingHeader() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+
+  const handleNavClick = (linkName: string) => {
+    sendGAEvent({
+      action: 'click_nav_link',
+      category: 'navigation',
+      label: linkName,
+    });
+  };
+
+  const handleSignInClick = () => {
+    sendGAEvent({
+      action: 'click_signin',
+      category: 'navigation',
+      label: 'header_signin',
+    });
+  };
+
+  const handleSignUpClick = () => {
+    sendGAEvent({
+      action: 'click_signup',
+      category: 'navigation',
+      label: 'header_signup',
+    });
+  };
 
   return (
     <header className='fixed top-0 left-0 right-0 z-50 border-b border-border/50 bg-background/80 backdrop-blur-xl'>
@@ -34,18 +59,21 @@ export function LandingHeader() {
             <Link
               href='/product'
               className='text-sm text-muted-foreground transition-colors hover:text-foreground'
+              onClick={() => handleNavClick('product')}
             >
               Product
             </Link>
             <Link
               href='/features'
               className='text-sm text-muted-foreground transition-colors hover:text-foreground'
+              onClick={() => handleNavClick('features')}
             >
               Features
             </Link>
             <Link
               href='/pricing'
               className='text-sm text-muted-foreground transition-colors hover:text-foreground'
+              onClick={() => handleNavClick('pricing')}
             >
               Pricing
             </Link>
@@ -72,10 +100,15 @@ export function LandingHeader() {
 
           {/* Desktop CTA */}
           <div className='hidden items-center gap-3 md:flex'>
-            <Button variant='ghost' size='sm' asChild>
+            <Button
+              variant='ghost'
+              size='sm'
+              asChild
+              onClick={handleSignInClick}
+            >
               <Link href={`${APP_URL}/login`}>Sign In</Link>
             </Button>
-            <Button size='sm' asChild>
+            <Button size='sm' asChild onClick={handleSignUpClick}>
               <Link href={`${APP_URL}/signup`}>Get Started</Link>
             </Button>
           </div>

@@ -1,6 +1,49 @@
-import { Link2, Sliders, Sparkles, Coffee } from 'lucide-react';
+'use client';
+
+import { Link2, Sliders, Sparkles, Coffee, LucideIcon } from 'lucide-react';
+import { useTrackSectionView } from '@/hooks/use-track-section-view';
+
+interface Step {
+  icon: LucideIcon;
+  step: string;
+  title: string;
+  description: string;
+}
+
+function HowItWorksStep({ step, index }: { step: Step; index: number }) {
+  const ref = useTrackSectionView(`step_${index + 1}`);
+
+  return (
+    <div
+      ref={ref as React.RefObject<HTMLDivElement>}
+      className='relative lg:grid lg:grid-cols-2 lg:gap-12'
+    >
+      {/* Content - alternating sides */}
+      <div
+        className={`${index % 2 === 0 ? 'lg:text-right' : 'lg:col-start-2'}`}
+      >
+        <div
+          className={`flex items-start gap-4 ${index % 2 === 0 ? 'lg:flex-row-reverse' : ''}`}
+        >
+          <div className='flex h-16 w-16 shrink-0 items-center justify-center rounded-xl border border-border bg-card'>
+            <step.icon className='h-6 w-6 text-primary' />
+          </div>
+          <div>
+            <span className='font-mono text-sm text-primary'>{step.step}</span>
+            <h3 className='mt-1 text-xl font-semibold'>{step.title}</h3>
+            <p className='mt-2 text-muted-foreground'>{step.description}</p>
+          </div>
+        </div>
+      </div>
+
+      {/* Timeline dot */}
+      <div className='absolute left-8 top-6 hidden h-4 w-4 -translate-x-1/2 rounded-full border-2 border-primary bg-background lg:left-1/2 lg:block' />
+    </div>
+  );
+}
 
 export function HowItWorksSection() {
+  const ref = useTrackSectionView('how_it_works');
   const steps = [
     {
       icon: Link2,
@@ -34,6 +77,7 @@ export function HowItWorksSection() {
 
   return (
     <section
+      ref={ref}
       id='how-it-works'
       className='border-t border-border bg-secondary/10 py-20 sm:py-32'
     >
@@ -55,37 +99,7 @@ export function HowItWorksSection() {
 
           <div className='space-y-12 lg:space-y-0'>
             {steps.map((step, i) => (
-              <div
-                key={i}
-                className='relative lg:grid lg:grid-cols-2 lg:gap-12'
-              >
-                {/* Content - alternating sides */}
-                <div
-                  className={`${i % 2 === 0 ? 'lg:text-right' : 'lg:col-start-2'}`}
-                >
-                  <div
-                    className={`flex items-start gap-4 ${i % 2 === 0 ? 'lg:flex-row-reverse' : ''}`}
-                  >
-                    <div className='flex h-16 w-16 shrink-0 items-center justify-center rounded-xl border border-border bg-card'>
-                      <step.icon className='h-6 w-6 text-primary' />
-                    </div>
-                    <div>
-                      <span className='font-mono text-sm text-primary'>
-                        {step.step}
-                      </span>
-                      <h3 className='mt-1 text-xl font-semibold'>
-                        {step.title}
-                      </h3>
-                      <p className='mt-2 text-muted-foreground'>
-                        {step.description}
-                      </p>
-                    </div>
-                  </div>
-                </div>
-
-                {/* Timeline dot */}
-                <div className='absolute left-8 top-6 hidden h-4 w-4 -translate-x-1/2 rounded-full border-2 border-primary bg-background lg:left-1/2 lg:block' />
-              </div>
+              <HowItWorksStep key={i} step={step} index={i} />
             ))}
           </div>
         </div>

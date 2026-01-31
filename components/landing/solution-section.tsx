@@ -2,8 +2,11 @@
 
 import { Check, Sparkles, MessageCircle, Send, Brain } from 'lucide-react';
 import { useState } from 'react';
+import { useTrackSectionView } from '@/hooks/use-track-section-view';
+import { sendGAEvent } from '@/lib/gtag';
 
 export function SolutionSection() {
+  const ref = useTrackSectionView('solution_section');
   const [activeFeature, setActiveFeature] = useState(0);
 
   const features = [
@@ -42,7 +45,7 @@ export function SolutionSection() {
   ];
 
   return (
-    <section className='py-16 sm:py-24 bg-secondary/30'>
+    <section ref={ref} className='py-16 sm:py-24 bg-secondary/30'>
       <div className='mx-auto max-w-6xl px-4 sm:px-6'>
         <div className='text-center max-w-2xl mx-auto mb-12'>
           <div className='inline-flex items-center gap-2 px-3 py-1 rounded-full bg-success/10 text-success text-sm font-medium mb-4'>
@@ -63,7 +66,14 @@ export function SolutionSection() {
             {features.map((feature, i) => (
               <button
                 key={i}
-                onClick={() => setActiveFeature(i)}
+                onClick={() => {
+                  setActiveFeature(i);
+                  sendGAEvent({
+                    action: 'feature_accordion_expand',
+                    category: 'content',
+                    label: feature.title,
+                  });
+                }}
                 className={`w-full text-left p-4 rounded-xl border transition-all ${
                   activeFeature === i
                     ? 'border-primary bg-primary/5'

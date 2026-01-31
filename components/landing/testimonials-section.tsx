@@ -1,7 +1,73 @@
+'use client';
+
 import Image from 'next/image';
-import { Star, Quote } from 'lucide-react';
+import { Quote } from 'lucide-react';
+import { useTrackSectionView } from '@/hooks/use-track-section-view';
+import { sendGAEvent } from '@/lib/gtag';
+
+interface Testimonial {
+  quote: string;
+  author: string;
+  role: string;
+  metric: string;
+  avatar: string;
+}
+
+function TestimonialCard({
+  testimonial,
+  index,
+}: {
+  testimonial: Testimonial;
+  index: number;
+}) {
+  const ref = useTrackSectionView(`testimonial_card_${index + 1}`);
+
+  return (
+    <div
+      ref={ref as React.RefObject<HTMLDivElement>}
+      className='relative rounded-xl border border-border bg-card p-6 flex flex-col'
+    >
+      <Quote className='w-8 h-8 text-primary/20 mb-4' />
+
+      <blockquote className='text-foreground flex-1'>
+        "{testimonial.quote}"
+      </blockquote>
+
+      {/* Metric highlight */}
+      <div className='my-4 py-3 px-4 rounded-lg bg-success/10 border border-success/20'>
+        <p className='text-sm font-semibold text-success'>
+          {testimonial.metric}
+        </p>
+      </div>
+
+      <div className='flex items-center gap-3 pt-4 border-t border-border'>
+        <Image
+          src={testimonial.avatar || '/placeholder.svg'}
+          alt={testimonial.author}
+          width={40}
+          height={40}
+          className='rounded-full bg-secondary object-cover'
+        />
+        <div
+          className='cursor-pointer'
+          onClick={() => {
+            sendGAEvent({
+              action: 'testimonial_author_click',
+              category: 'content',
+              label: testimonial.author,
+            });
+          }}
+        >
+          <p className='font-medium text-sm'>{testimonial.author}</p>
+          <p className='text-xs text-muted-foreground'>{testimonial.role}</p>
+        </div>
+      </div>
+    </div>
+  );
+}
 
 export function TestimonialsSection() {
+  const ref = useTrackSectionView('testimonials_section');
   const testimonials = [
     {
       quote:
@@ -54,7 +120,7 @@ export function TestimonialsSection() {
   ];
 
   return (
-    <section className='py-16 sm:py-24 bg-secondary/30'>
+    <section ref={ref} className='py-16 sm:py-24 bg-secondary/30'>
       <div className='mx-auto max-w-6xl px-4 sm:px-6'>
         <div className='text-center max-w-2xl mx-auto mb-12'>
           <h2 className='text-2xl sm:text-3xl font-bold tracking-tight'>
@@ -65,47 +131,7 @@ export function TestimonialsSection() {
 
         <div className='grid md:grid-cols-3 gap-6'>
           {testimonials.map((testimonial, i) => (
-            <div
-              key={i}
-              className='relative rounded-xl border border-border bg-card p-6 flex flex-col'
-            >
-              <Quote className='w-8 h-8 text-primary/20 mb-4' />
-
-              <blockquote className='text-foreground flex-1'>
-                "{testimonial.quote}"
-              </blockquote>
-
-              {/* Metric highlight */}
-              <div className='my-4 py-3 px-4 rounded-lg bg-success/10 border border-success/20'>
-                <p className='text-sm font-semibold text-success'>
-                  {testimonial.metric}
-                </p>
-              </div>
-
-              <div className='flex items-center gap-3 pt-4 border-t border-border'>
-                <Image
-                  src={testimonial.avatar || '/placeholder.svg'}
-                  alt={testimonial.author}
-                  width={40}
-                  height={40}
-                  className='rounded-full bg-secondary object-cover'
-                />
-                <div>
-                  <p className='font-medium text-sm'>{testimonial.author}</p>
-                  <p className='text-xs text-muted-foreground'>
-                    {testimonial.role}
-                  </p>
-                </div>
-                <div className='ml-auto flex gap-0.5'>
-                  {[...Array(5)].map((_, j) => (
-                    <Star
-                      key={j}
-                      className='w-3 h-3 fill-primary text-primary'
-                    />
-                  ))}
-                </div>
-              </div>
-            </div>
+            <TestimonialCard key={i} testimonial={testimonial} index={i} />
           ))}
         </div>
       </div>

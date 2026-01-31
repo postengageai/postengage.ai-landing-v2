@@ -6,6 +6,7 @@ import { Button } from '@/components/ui/button';
 import { ArrowRight, MessageCircle, Heart, Send, Clock } from 'lucide-react';
 import { useEffect, useState } from 'react';
 import { APP_URL } from '@/lib/constants';
+import { sendGAEvent } from '@/lib/gtag';
 
 const AVATARS = [
   '/indian-woman-fashion-creator.jpg',
@@ -33,6 +34,32 @@ export function HeroSection() {
     return () => clearTimeout(timeout);
   }, []);
 
+  useEffect(() => {
+    if (ignoredCount > 0) {
+      sendGAEvent({
+        action: 'hero_live_counter_view',
+        category: 'content',
+        label: 'live_counter_active',
+      });
+    }
+  }, []);
+
+  const handleProductHuntClick = () => {
+    sendGAEvent({
+      action: 'click_product_hunt',
+      category: 'social',
+      label: 'hero_badge',
+    });
+  };
+
+  const handleCtaClick = () => {
+    sendGAEvent({
+      action: 'click_cta_hero',
+      category: 'conversion',
+      label: 'hero_signup',
+    });
+  };
+
   return (
     <section className='relative overflow-hidden pt-28 pb-16 sm:pt-36 sm:pb-24'>
       {/* Subtle radial gradient */}
@@ -46,6 +73,7 @@ export function HeroSection() {
             href='https://www.producthunt.com/products/postengageai?embed=true&amp;utm_source=badge-featured&amp;utm_medium=badge&amp;utm_campaign=badge-postengageai-2'
             target='_blank'
             rel='noopener noreferrer'
+            onClick={handleProductHuntClick}
           >
             <Image
               alt='PostEngageAI - Auto-reply to Instagram comments &amp; DMs in your own voice | Product Hunt'
@@ -106,6 +134,7 @@ export function HeroSection() {
                 size='lg'
                 className='min-w-[200px] h-12 text-base'
                 asChild
+                onClick={handleCtaClick}
               >
                 <Link href={`${APP_URL}/signup`}>
                   Start Replying Now

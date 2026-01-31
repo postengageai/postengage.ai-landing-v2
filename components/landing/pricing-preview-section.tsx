@@ -14,6 +14,7 @@ import {
 import { usePricing } from '@/hooks/use-pricing';
 import { PricingCard } from '@/components/pricing/pricing-card';
 import { Skeleton } from '@/components/ui/skeleton';
+import { useTrackSectionView } from '@/hooks/use-track-section-view';
 
 // Fallback costs if loading
 const DEFAULT_COSTS = {
@@ -24,11 +25,16 @@ const DEFAULT_COSTS = {
 };
 
 export function PricingPreviewSection() {
+  const ref = useTrackSectionView('pricing_section');
   const { data: pricing, isLoading } = usePricing();
   const costs = pricing?.costs || DEFAULT_COSTS;
 
   return (
-    <section id='pricing' className='py-20 sm:py-32 border-t border-border/50'>
+    <section
+      ref={ref}
+      id='pricing'
+      className='py-20 sm:py-32 border-t border-border/50'
+    >
       <div className='mx-auto max-w-6xl px-4 sm:px-6'>
         {/* Header */}
         <div className='text-center max-w-2xl mx-auto mb-16'>

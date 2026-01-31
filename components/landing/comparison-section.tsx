@@ -1,3 +1,5 @@
+'use client';
+
 import {
   Check,
   X,
@@ -11,6 +13,8 @@ import {
 import { Button } from '@/components/ui/button';
 import Link from 'next/link';
 import { APP_URL } from '@/lib/constants';
+import { useTrackSectionView } from '@/hooks/use-track-section-view';
+import { sendGAEvent } from '@/lib/gtag';
 
 const competitors = [
   {
@@ -95,8 +99,11 @@ const advantages = [
 ];
 
 export function ComparisonSection() {
+  const ref = useTrackSectionView('comparison_section');
+  const tableRef = useTrackSectionView('comparison_table_view');
+
   return (
-    <section className='py-20 sm:py-32 border-t border-border/50'>
+    <section ref={ref} className='py-20 sm:py-32 border-t border-border/50'>
       <div className='mx-auto max-w-6xl px-4 sm:px-6'>
         {/* Header */}
         <div className='text-center max-w-2xl mx-auto mb-16'>
@@ -114,7 +121,10 @@ export function ComparisonSection() {
         </div>
 
         {/* Comparison Table */}
-        <div className='mb-20 overflow-hidden rounded-2xl border border-border'>
+        <div
+          ref={tableRef as React.RefObject<HTMLDivElement>}
+          className='mb-20 overflow-hidden rounded-2xl border border-border'
+        >
           <div className='overflow-x-auto'>
             <table className='w-full'>
               <thead>
@@ -125,7 +135,14 @@ export function ComparisonSection() {
                   {competitors.map(c => (
                     <th
                       key={c.name}
-                      className={`px-4 py-4 text-center text-sm font-semibold ${c.highlighted ? 'bg-primary/10' : ''}`}
+                      className={`px-4 py-4 text-center text-sm font-semibold ${c.highlighted ? 'bg-primary/10' : ''} cursor-default`}
+                      onMouseEnter={() => {
+                        sendGAEvent({
+                          action: 'competitor_logo_hover',
+                          category: 'content',
+                          label: c.name,
+                        });
+                      }}
                     >
                       <div className={c.highlighted ? 'text-primary' : ''}>
                         {c.name}

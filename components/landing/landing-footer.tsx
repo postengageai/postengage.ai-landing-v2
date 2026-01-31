@@ -1,7 +1,12 @@
+'use client';
+
 import Link from 'next/link';
 import { Zap } from 'lucide-react';
+import { sendGAEvent } from '@/lib/gtag';
+import { useTrackSectionView } from '@/hooks/use-track-section-view';
 
 export function LandingFooter() {
+  const ref = useTrackSectionView('footer_view');
   const footerLinks = {
     Product: [
       { label: 'Product', href: '/product' },
@@ -21,8 +26,24 @@ export function LandingFooter() {
     ],
   };
 
+  const handleLinkClick = (category: string, label: string) => {
+    sendGAEvent({
+      action: 'click_footer_link',
+      category: 'navigation',
+      label: `${category.toLowerCase()}_${label.toLowerCase().replace(/\s+/g, '_')}`,
+    });
+  };
+
+  const handleSocialClick = (platform: string) => {
+    sendGAEvent({
+      action: 'click_social_link',
+      category: 'social',
+      label: platform.toLowerCase(),
+    });
+  };
+
   return (
-    <footer className='border-t border-border py-12'>
+    <footer ref={ref} className='border-t border-border py-12'>
       <div className='mx-auto max-w-6xl px-4 sm:px-6'>
         <div className='grid gap-8 md:grid-cols-2 lg:grid-cols-5'>
           {/* Brand */}
@@ -51,6 +72,7 @@ export function LandingFooter() {
                     <Link
                       href={link.href}
                       className='text-sm text-muted-foreground transition-colors hover:text-foreground'
+                      onClick={() => handleLinkClick(category, link.label)}
                     >
                       {link.label}
                     </Link>
@@ -69,18 +91,21 @@ export function LandingFooter() {
             <Link
               href='#'
               className='text-sm text-muted-foreground hover:text-foreground'
+              onClick={() => handleSocialClick('Twitter')}
             >
               Twitter
             </Link>
             <Link
               href='#'
               className='text-sm text-muted-foreground hover:text-foreground'
+              onClick={() => handleSocialClick('Instagram')}
             >
               Instagram
             </Link>
             <Link
               href='#'
               className='text-sm text-muted-foreground hover:text-foreground'
+              onClick={() => handleSocialClick('LinkedIn')}
             >
               LinkedIn
             </Link>
