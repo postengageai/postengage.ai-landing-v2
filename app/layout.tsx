@@ -9,6 +9,7 @@ import { ConversionTracker } from '@/components/analytics/conversion-tracker';
 import { GoogleAnalytics } from '@/components/analytics/google-analytics';
 import { ScrollTracker } from '@/components/analytics/scroll-tracker';
 import { PageViewTracker } from '@/components/analytics/page-view-tracker';
+import { TimeOnPageTracker } from '@/components/analytics/time-on-page-tracker';
 
 const inter = Inter({ subsets: ['latin'], variable: '--font-inter' });
 const jetbrainsMono = JetBrains_Mono({
@@ -97,6 +98,7 @@ export default function RootLayout({
         <ConversionTracker />
         <ScrollTracker />
         <PageViewTracker />
+        <TimeOnPageTracker />
         <ScrollToTop />
         <Providers>{children}</Providers>
         <Analytics />
