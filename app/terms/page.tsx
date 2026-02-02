@@ -156,8 +156,8 @@ export default function TermsPage() {
                   That AI responses will always be appropriate or accurate
                 </li>
                 <li>
-                  Continued access to Instagram features if Meta changes their
-                  policies
+                  Continued access to platform features if third-party policies
+                  change
                 </li>
               </ul>
               <p className='text-muted-foreground mt-4'>
@@ -176,7 +176,23 @@ export default function TermsPage() {
               </p>
 
               <h2 className='text-xl font-semibold mt-12 mb-4'>
-                10. Contact Information
+                10. Business Information
+              </h2>
+              <p className='text-muted-foreground'>
+                This service is owned and operated by:
+              </p>
+              <div className='mt-4 p-4 bg-muted/50 rounded-lg'>
+                <p className='font-medium text-foreground'>PostEngageAI</p>
+                <p className='text-muted-foreground text-sm mt-1'>
+                  Email: postengage.ai@gmail.com
+                </p>
+                <p className='text-muted-foreground text-sm'>
+                  Website: https://postengage.ai
+                </p>
+              </div>
+
+              <h2 className='text-xl font-semibold mt-12 mb-4'>
+                11. Contact Information
               </h2>
               <p className='text-muted-foreground'>
                 For questions about these terms:
