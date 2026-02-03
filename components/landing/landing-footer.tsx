@@ -24,6 +24,7 @@ export function LandingFooter() {
       { label: 'Terms of Service', href: '/terms' },
       { label: 'Security', href: '/security' },
       { label: 'Data Deletion', href: '/data-deletion' },
+      { label: 'Unsubscribe', href: '/newsletter/unsubscribe' },
     ],
   };
 

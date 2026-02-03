@@ -1,10 +1,9 @@
 import { LandingHeader } from '@/components/landing/landing-header';
 import { LandingFooter } from '@/components/landing/landing-footer';
 import { PageHeader } from '@/components/marketing/page-header';
-import { Button } from '@/components/ui/button';
-import { Input } from '@/components/ui/input';
 import { Metadata } from 'next';
 import { BlogList } from '@/components/blog/blog-list';
+import { NewsletterForm } from '@/components/blog/newsletter-form';
 
 export const metadata: Metadata = {
   title: 'Blog - PostEngage.ai',
@@ -28,7 +27,7 @@ export default function BlogPage() {
       title: 'PostEngage.ai x RecentReborn: Bridging Discovery & Engagement',
       excerpt:
         'We are partnering with RecentReborn to solve the two biggest challenges in Instagram growth: getting found and staying connected.',
-      date: 'Oct 24, 2025',
+      date: 'Feb 3, 2026',
       category: 'Partnership',
       readTime: '4 min read',
       image: '/blog/postengage-recentreborn-cover.png',
@@ -58,16 +57,16 @@ export default function BlogPage() {
       featured: false,
     },
     {
-        slug: '#',
-        title: 'From 0 to 10k Followers: The Engineering Behind Scale',
-        excerpt:
-          'How we built a system capable of handling millions of webhook events per second without crashing.',
-        date: 'Coming Soon',
-        category: 'Engineering',
-        readTime: '6 min read',
-        image: null,
-        featured: false,
-    }
+      slug: '#',
+      title: 'From 0 to 10k Followers: The Engineering Behind Scale',
+      excerpt:
+        'How we built a system capable of handling millions of webhook events per second without crashing.',
+      date: 'Coming Soon',
+      category: 'Engineering',
+      readTime: '6 min read',
+      image: null,
+      featured: false,
+    },
   ];
 
   return (
@@ -86,24 +85,21 @@ export default function BlogPage() {
 
         {/* Blog List (Client Component) */}
         <section className='px-4 sm:px-6 mb-20'>
-            <BlogList initialPosts={posts} />
+          <BlogList initialPosts={posts} />
         </section>
 
         {/* Newsletter Section */}
         <section className='mt-24 px-4 sm:px-6'>
-           <div className='mx-auto max-w-4xl rounded-3xl bg-primary/5 border border-primary/10 p-8 md:p-12 text-center'>
-             <h2 className='text-2xl font-bold mb-4'>Subscribe to our newsletter</h2>
-             <p className='text-muted-foreground mb-8 max-w-lg mx-auto'>
-               Get the latest tips on Instagram growth, automation strategies, and product updates delivered to your inbox.
-             </p>
-             <div className='flex flex-col sm:flex-row gap-3 max-w-md mx-auto'>
-               <Input placeholder='Enter your email' className='bg-background h-10' />
-               <Button>Subscribe</Button>
-             </div>
-             <p className='text-xs text-muted-foreground mt-4'>
-               We respect your privacy. Unsubscribe at any time.
-             </p>
-           </div>
+          <div className='mx-auto max-w-4xl rounded-3xl bg-primary/5 border border-primary/10 p-8 md:p-12 text-center'>
+            <h2 className='text-2xl font-bold mb-4'>
+              Subscribe to our newsletter
+            </h2>
+            <p className='text-muted-foreground mb-8 max-w-lg mx-auto'>
+              Get the latest tips on Instagram growth, automation strategies,
+              and product updates delivered to your inbox.
+            </p>
+            <NewsletterForm />
+          </div>
         </section>
       </main>
 

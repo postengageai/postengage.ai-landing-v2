@@ -8,7 +8,6 @@ import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import {
   ArrowLeft,
-  CheckCircle2,
   TrendingUp,
   Search,
   MessageCircle,
@@ -16,6 +15,8 @@ import {
 } from 'lucide-react';
 import { Metadata } from 'next';
 import { SocialShareButtons } from '@/components/blog/social-share-buttons';
+import { TableOfContents } from '@/components/blog/table-of-contents';
+import { NewsletterForm } from '@/components/blog/newsletter-form';
 
 export const metadata: Metadata = {
   title: 'The End of "Post and Pray": PostEngage.ai x RecentReborn',
@@ -56,8 +57,8 @@ export default function BlogPostPage() {
     '@type': 'BlogPosting',
     headline: 'The End of "Post and Pray": PostEngage.ai x RecentReborn',
     image: ['https://postengage.ai/blog/postengage-recentreborn-cover.png'],
-    datePublished: '2025-10-24T12:00:00.000Z',
-    dateModified: '2025-10-24T12:00:00.000Z',
+    datePublished: '2026-02-03T12:00:00.000Z',
+    dateModified: '2026-02-03T12:00:00.000Z',
     author: [
       {
         '@type': 'Organization',
@@ -93,37 +94,37 @@ export default function BlogPostPage() {
           </div>
 
           {/* Header Section */}
-          <header className='mb-12 text-center max-w-4xl mx-auto'>
+          <header className='mx-auto mb-12 max-w-4xl text-center'>
             <div className='mb-8 flex flex-wrap items-center justify-center gap-3'>
               <Badge
                 variant='default'
-                className='bg-primary/10 text-primary hover:bg-primary/20 border-0 px-3 py-1 text-sm'
+                className='border-0 bg-primary/10 px-3 py-1 text-sm text-primary hover:bg-primary/20'
               >
                 Strategic Partnership
               </Badge>
               <Badge
                 variant='outline'
-                className='border-border text-muted-foreground px-3 py-1 text-sm'
+                className='border-border px-3 py-1 text-sm text-muted-foreground'
               >
                 5 min read
               </Badge>
             </div>
 
-            <h1 className='mb-8 text-4xl font-extrabold tracking-tight sm:text-5xl md:text-6xl lg:text-7xl text-balance leading-[1.1]'>
+            <h1 className='text-balance mb-8 text-4xl font-extrabold tracking-tight leading-[1.1] sm:text-5xl md:text-6xl lg:text-7xl'>
               The End of "Post and Pray": <br className='hidden md:block' />
-              <span className='text-transparent bg-clip-text bg-gradient-to-r from-primary via-purple-500 to-blue-600'>
+              <span className='bg-gradient-to-r from-primary via-purple-500 to-blue-600 bg-clip-text text-transparent'>
                 Why Discovery is the New Engagement
               </span>
             </h1>
 
-            <p className='text-xl text-muted-foreground max-w-2xl mx-auto leading-relaxed mb-8'>
+            <p className='mx-auto mb-8 max-w-2xl text-xl leading-relaxed text-muted-foreground'>
               We are partnering with RecentReborn to solve the two biggest
               challenges in Instagram growth: getting found and staying
               connected.
             </p>
 
             <div className='flex items-center justify-center gap-4'>
-              <div className='flex items-center gap-3 bg-muted/50 rounded-full pl-2 pr-6 py-2 border border-border/50'>
+              <div className='flex items-center gap-3 rounded-full border border-border/50 bg-muted/50 py-2 pl-2 pr-6'>
                 <Avatar className='h-10 w-10 border-2 border-background shadow-sm'>
                   <AvatarImage src='/logo.jpeg' alt='PostEngage.ai' />
                   <AvatarFallback>PE</AvatarFallback>
@@ -133,7 +134,7 @@ export default function BlogPostPage() {
                     PostEngage.ai Team
                   </p>
                   <p className='text-xs text-muted-foreground'>
-                    October 24, 2025
+                    February 3, 2026
                   </p>
                 </div>
               </div>
@@ -170,7 +171,10 @@ export default function BlogPostPage() {
                   connection.
                 </p>
 
-                <div className='bg-red-50 dark:bg-red-900/10 border-l-4 border-red-500 p-6 my-8 rounded-r-lg'>
+                <div
+                  id='discovery-deficit'
+                  className='bg-red-50 dark:bg-red-900/10 border-l-4 border-red-500 p-6 my-8 rounded-r-lg'
+                >
                   <p className='font-bold text-red-800 dark:text-red-300 m-0 text-lg'>
                     The Problem: The Discovery Deficit
                   </p>
@@ -200,7 +204,10 @@ export default function BlogPostPage() {
                   .
                 </p>
 
-                <h2 className='text-3xl font-bold mt-12 mb-6'>
+                <h2
+                  id='why-recentreborn'
+                  className='text-3xl font-bold mt-12 mb-6'
+                >
                   Why RecentReborn Changes Everything
                 </h2>
 
@@ -252,7 +259,10 @@ export default function BlogPostPage() {
                   </Card>
                 </div>
 
-                <h2 className='text-3xl font-bold mt-12 mb-6'>
+                <h2
+                  id='visibility-velocity'
+                  className='text-3xl font-bold mt-12 mb-6'
+                >
                   The "Visibility Velocity" Framework
                 </h2>
 
@@ -308,7 +318,10 @@ export default function BlogPostPage() {
                   </li>
                 </ol>
 
-                <h2 className='text-3xl font-bold mt-12 mb-6'>
+                <h2
+                  id='exclusive-offer'
+                  className='text-3xl font-bold mt-12 mb-6'
+                >
                   Exclusive Partnership Offer
                 </h2>
 
@@ -385,36 +398,26 @@ export default function BlogPostPage() {
                   </CardTitle>
                 </CardHeader>
                 <CardContent>
-                  <nav className='flex flex-col space-y-3 text-sm'>
-                    <a
-                      href='#'
-                      className='text-foreground hover:text-primary transition-colors flex items-center gap-2'
-                    >
-                      <CheckCircle2 className='h-4 w-4 text-primary' />
-                      The Discovery Deficit
-                    </a>
-                    <a
-                      href='#'
-                      className='text-muted-foreground hover:text-primary transition-colors flex items-center gap-2'
-                    >
-                      <div className='h-1.5 w-1.5 rounded-full bg-border' />
-                      Why RecentReborn?
-                    </a>
-                    <a
-                      href='#'
-                      className='text-muted-foreground hover:text-primary transition-colors flex items-center gap-2'
-                    >
-                      <div className='h-1.5 w-1.5 rounded-full bg-border' />
-                      Visibility Velocity Framework
-                    </a>
-                    <a
-                      href='#'
-                      className='text-muted-foreground hover:text-primary transition-colors flex items-center gap-2'
-                    >
-                      <div className='h-1.5 w-1.5 rounded-full bg-border' />
-                      Exclusive Offer
-                    </a>
-                  </nav>
+                  <TableOfContents
+                    items={[
+                      {
+                        id: 'discovery-deficit',
+                        title: 'The Discovery Deficit',
+                      },
+                      {
+                        id: 'why-recentreborn',
+                        title: 'Why RecentReborn?',
+                      },
+                      {
+                        id: 'visibility-velocity',
+                        title: 'Visibility Velocity Framework',
+                      },
+                      {
+                        id: 'exclusive-offer',
+                        title: 'Exclusive Offer',
+                      },
+                    ]}
+                  />
                 </CardContent>
               </Card>
 
@@ -430,16 +433,7 @@ export default function BlogPostPage() {
                     Get the latest growth hacks and automation strategies
                     delivered to your inbox weekly.
                   </p>
-                  <div className='space-y-2'>
-                    <input
-                      type='email'
-                      placeholder='Enter your email'
-                      className='w-full h-10 px-3 rounded-md border-0 bg-background/20 text-primary-foreground placeholder:text-primary-foreground/60 focus:outline-none focus:ring-2 focus:ring-background/50'
-                    />
-                    <Button variant='secondary' className='w-full font-bold'>
-                      Subscribe Free
-                    </Button>
-                  </div>
+                  <NewsletterForm variant='mini' />
                 </CardContent>
               </Card>
             </aside>

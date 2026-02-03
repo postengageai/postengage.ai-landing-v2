@@ -7,6 +7,7 @@ import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import { CardContent } from '@/components/ui/card';
 import { Input } from '@/components/ui/input';
+import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 import { ArrowRight, Calendar, Clock, Search, X } from 'lucide-react';
 
 interface BlogPost {
@@ -27,11 +28,10 @@ interface BlogListProps {
 export function BlogList({ initialPosts }: BlogListProps) {
   const [searchQuery, setSearchQuery] = useState('');
   const [selectedCategory, setSelectedCategory] = useState('All');
-  
   const categories = ['All', 'Product', 'Partnership', 'Guide', 'Engineering'];
 
   const filteredPosts = useMemo(() => {
-    return initialPosts.filter((post) => {
+    return initialPosts.filter(post => {
       const matchesCategory =
         selectedCategory === 'All' || post.category === selectedCategory;
       const matchesSearch =
@@ -41,16 +41,16 @@ export function BlogList({ initialPosts }: BlogListProps) {
     });
   }, [initialPosts, searchQuery, selectedCategory]);
 
-  const featuredPost = filteredPosts.find((p) => p.featured);
-  const regularPosts = filteredPosts.filter((p) => p !== featuredPost);
+  const featuredPost = filteredPosts.find(p => p.featured);
+  const regularPosts = filteredPosts.filter(p => p !== featuredPost);
 
   return (
     <div className='space-y-12'>
       {/* Search & Categories */}
       <div className='mx-auto max-w-4xl'>
-        <div className='flex flex-col md:flex-row gap-6 items-center justify-between'>
+        <div className='flex flex-col items-center justify-between gap-6 md:flex-row'>
           <div className='flex flex-wrap justify-center gap-2'>
-            {categories.map((cat) => (
+            {categories.map(cat => (
               <Button
                 key={cat}
                 variant={selectedCategory === cat ? 'default' : 'ghost'}
@@ -63,13 +63,13 @@ export function BlogList({ initialPosts }: BlogListProps) {
             ))}
           </div>
           <div className='relative w-full md:w-72'>
-            <Search className='absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground pointer-events-none' />
+            <Search className='absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 pointer-events-none text-muted-foreground' />
             <Input
               type='text'
               value={searchQuery}
-              onChange={(e) => setSearchQuery(e.target.value)}
+              onChange={e => setSearchQuery(e.target.value)}
               placeholder='Search articles...'
-              className='pl-9 pr-9 rounded-full bg-muted/50 focus:bg-background transition-colors'
+              className='rounded-full bg-muted/50 pl-9 pr-9 transition-colors focus:bg-background'
             />
             {searchQuery && (
               <button
@@ -86,18 +86,16 @@ export function BlogList({ initialPosts }: BlogListProps) {
       {/* Results Count (only show if filtering) */}
       {(searchQuery || selectedCategory !== 'All') && (
         <div className='text-center text-sm text-muted-foreground'>
-          Found {filteredPosts.length} {filteredPosts.length === 1 ? 'article' : 'articles'}
+          Found {filteredPosts.length}{' '}
+          {filteredPosts.length === 1 ? 'article' : 'articles'}
         </div>
       )}
 
       {/* Featured Post (only show if it exists in filtered results) */}
       {featuredPost && (
         <section className='mx-auto max-w-7xl animate-in fade-in slide-in-from-bottom-4 duration-500'>
-          <Link
-            href={`/blog/${featuredPost.slug}`}
-            className='group block'
-          >
-            <div className='grid md:grid-cols-2 gap-8 items-center rounded-3xl border border-border bg-card/50 p-6 md:p-10 transition-all hover:border-primary/50 hover:shadow-xl hover:bg-card'>
+          <Link href={`/blog/${featuredPost.slug}`} className='group block'>
+            <div className='grid items-center gap-8 rounded-3xl border border-border bg-card/50 p-6 transition-all hover:border-primary/50 hover:bg-card hover:shadow-xl md:grid-cols-2 md:p-10'>
               <div className='relative aspect-video w-full overflow-hidden rounded-2xl bg-muted shadow-sm'>
                 {featuredPost.image ? (
                   <Image
@@ -108,35 +106,39 @@ export function BlogList({ initialPosts }: BlogListProps) {
                     priority
                   />
                 ) : (
-                  <div className='absolute inset-0 flex items-center justify-center text-muted-foreground bg-secondary/30'>
+                  <div className='absolute inset-0 flex items-center justify-center bg-secondary/30 text-muted-foreground'>
                     <span className='font-medium'>Image Coming Soon</span>
                   </div>
                 )}
               </div>
               <div className='flex flex-col justify-center space-y-6'>
                 <div className='flex items-center gap-3'>
-                  <Badge variant='default' className='rounded-full bg-primary/10 text-primary hover:bg-primary/20 border-0'>
+                  <Badge
+                    variant='default'
+                    className='rounded-full border-0 bg-primary/10 text-primary hover:bg-primary/20'
+                  >
                     {featuredPost.category}
                   </Badge>
-                  <span className='text-sm text-muted-foreground flex items-center gap-1.5'>
+                  <span className='flex items-center gap-1.5 text-sm text-muted-foreground'>
                     <Calendar className='h-3.5 w-3.5' /> {featuredPost.date}
                   </span>
                 </div>
-                <h2 className='text-3xl md:text-4xl font-extrabold tracking-tight group-hover:text-primary transition-colors leading-tight'>
+                <h2 className='text-3xl font-extrabold leading-tight tracking-tight transition-colors group-hover:text-primary md:text-4xl'>
                   {featuredPost.title}
                 </h2>
-                <p className='text-lg text-muted-foreground line-clamp-3 leading-relaxed'>
+                <p className='line-clamp-3 text-lg leading-relaxed text-muted-foreground'>
                   {featuredPost.excerpt}
                 </p>
                 <div className='flex items-center gap-4 pt-2'>
                   <div className='flex items-center gap-2 text-sm font-medium'>
-                    <div className='h-8 w-8 rounded-full bg-gradient-to-br from-primary to-purple-600 flex items-center justify-center text-primary-foreground font-bold text-xs shadow-sm'>
-                      PE
-                    </div>
+                    <Avatar className='h-8 w-8 border border-border shadow-sm'>
+                      <AvatarImage src='/logo.jpeg' alt='PostEngage.ai' />
+                      <AvatarFallback>PE</AvatarFallback>
+                    </Avatar>
                     <span>PostEngage.ai Team</span>
                   </div>
                   <span className='h-1 w-1 rounded-full bg-border'></span>
-                  <span className='text-sm text-muted-foreground flex items-center gap-1.5'>
+                  <span className='flex items-center gap-1.5 text-sm text-muted-foreground'>
                     <Clock className='h-3.5 w-3.5' /> {featuredPost.readTime}
                   </span>
                 </div>
@@ -154,11 +156,13 @@ export function BlogList({ initialPosts }: BlogListProps) {
               <Link
                 key={post.slug + i}
                 href={post.slug !== '#' ? `/blog/${post.slug}` : '#'}
-                className={`group flex flex-col h-full overflow-hidden rounded-2xl border border-border bg-card transition-all hover:border-primary/50 hover:shadow-lg hover:-translate-y-1 duration-300 ${
-                  post.slug === '#' ? 'opacity-70 pointer-events-none grayscale' : ''
+                className={`group flex h-full flex-col overflow-hidden rounded-2xl border border-border bg-card transition-all duration-300 hover:-translate-y-1 hover:border-primary/50 hover:shadow-lg ${
+                  post.slug === '#'
+                    ? 'pointer-events-none grayscale opacity-70'
+                    : ''
                 }`}
               >
-                <div className='relative aspect-video w-full overflow-hidden bg-muted border-b border-border/50'>
+                <div className='relative aspect-video w-full overflow-hidden border-b border-border/50 bg-muted'>
                   {post.image ? (
                     <Image
                       src={post.image}
@@ -167,33 +171,47 @@ export function BlogList({ initialPosts }: BlogListProps) {
                       className='object-cover transition-transform duration-500 group-hover:scale-105'
                     />
                   ) : (
-                    <div className='absolute inset-0 flex items-center justify-center text-muted-foreground bg-secondary/30'>
-                      <span className='font-medium text-sm'>Coming Soon</span>
+                    <div className='absolute inset-0 flex items-center justify-center bg-secondary/30 text-muted-foreground'>
+                      <span className='text-sm font-medium'>Coming Soon</span>
                     </div>
                   )}
-                  <div className='absolute top-4 left-4'>
-                     <Badge variant="secondary" className="backdrop-blur-md bg-background/80 hover:bg-background/90 shadow-sm border-0">
-                        {post.category}
-                     </Badge>
+                  <div className='absolute left-4 top-4'>
+                    <Badge
+                      variant='secondary'
+                      className='border-0 bg-background/80 shadow-sm backdrop-blur-md hover:bg-background/90'
+                    >
+                      {post.category}
+                    </Badge>
                   </div>
                 </div>
                 <CardContent className='flex flex-1 flex-col p-6'>
-                  <div className='mb-4 flex items-center gap-3 text-xs text-muted-foreground font-medium'>
+                  <div className='mb-4 flex items-center gap-3 text-xs font-medium text-muted-foreground'>
                     <time className='flex items-center gap-1.5'>
-                        <Calendar className='h-3.5 w-3.5' /> {post.date}
+                      <Calendar className='h-3.5 w-3.5' /> {post.date}
                     </time>
                     <span>•</span>
                     <span className='flex items-center gap-1.5'>
-                         <Clock className='h-3.5 w-3.5' /> {post.readTime}
+                      <Clock className='h-3.5 w-3.5' /> {post.readTime}
                     </span>
                   </div>
-                  <h3 className='mb-3 text-xl font-bold leading-tight group-hover:text-primary transition-colors line-clamp-2'>
+                  <h3 className='mb-3 line-clamp-2 text-xl font-bold leading-tight transition-colors group-hover:text-primary'>
                     {post.title}
                   </h3>
-                  <p className='mb-6 flex-1 text-sm text-muted-foreground line-clamp-3 leading-relaxed'>
+                  <p className='mb-6 flex-1 line-clamp-3 text-sm leading-relaxed text-muted-foreground'>
                     {post.excerpt}
                   </p>
-                  <div className='mt-auto pt-4 border-t border-border/50 flex items-center text-sm font-semibold text-primary group-hover:translate-x-1 transition-transform'>
+
+                  <div className='mb-4 flex items-center gap-2'>
+                    <Avatar className='h-6 w-6 border border-border shadow-sm'>
+                      <AvatarImage src='/logo.jpeg' alt='PostEngage.ai' />
+                      <AvatarFallback>PE</AvatarFallback>
+                    </Avatar>
+                    <span className='text-xs font-medium text-muted-foreground'>
+                      PostEngage.ai Team
+                    </span>
+                  </div>
+
+                  <div className='mt-auto flex items-center border-t border-border/50 pt-4 text-sm font-semibold text-primary transition-transform group-hover:translate-x-1'>
                     Read Article <ArrowRight className='ml-1.5 h-4 w-4' />
                   </div>
                 </CardContent>
@@ -202,19 +220,21 @@ export function BlogList({ initialPosts }: BlogListProps) {
           </div>
         ) : (
           !featuredPost && (
-             <div className='text-center py-20 bg-muted/30 rounded-3xl border border-dashed border-border'>
-                <p className='text-muted-foreground text-lg'>No articles found matching your criteria.</p>
-                <Button 
-                    variant="link" 
-                    onClick={() => {
-                        setSearchQuery('');
-                        setSelectedCategory('All');
-                    }}
-                    className="mt-2"
-                >
-                    Clear filters
-                </Button>
-             </div>
+            <div className='rounded-3xl border border-dashed border-border bg-muted/30 py-20 text-center'>
+              <p className='text-lg text-muted-foreground'>
+                No articles found matching your criteria.
+              </p>
+              <Button
+                variant='link'
+                onClick={() => {
+                  setSearchQuery('');
+                  setSelectedCategory('All');
+                }}
+                className='mt-2'
+              >
+                Clear filters
+              </Button>
+            </div>
           )
         )}
       </section>
