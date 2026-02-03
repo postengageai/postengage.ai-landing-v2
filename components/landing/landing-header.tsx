@@ -86,6 +86,9 @@ export function LandingHeader() {
                   <Link href='/about'>About</Link>
                 </DropdownMenuItem>
                 <DropdownMenuItem asChild>
+                  <Link href='/blog'>Blog</Link>
+                </DropdownMenuItem>
+                <DropdownMenuItem asChild>
                   <Link href='/roadmap'>Roadmap</Link>
                 </DropdownMenuItem>
                 <DropdownMenuItem asChild>

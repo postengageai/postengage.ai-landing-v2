@@ -15,6 +15,7 @@ export function LandingFooter() {
     ],
     Company: [
       { label: 'About', href: '/about' },
+      { label: 'Blog', href: '/blog' },
       { label: 'Roadmap', href: '/roadmap' },
       { label: 'Changelog', href: '/changelog' },
     ],
