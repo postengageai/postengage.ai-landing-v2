@@ -67,7 +67,7 @@ export function ComparisonSection() {
       pricing: '$15+/mo',
       pricingType: 'subscription',
       instagram: true,
-      aiReplies: false,
+      aiReplies: true,
       indianPayments: false,
       freeTier: 'Limited',
       support: 'Email only',
@@ -315,7 +315,7 @@ export function ComparisonSection() {
           </p>
           <Button size='lg' asChild>
             <Link href={`${APP_URL}/signup`}>
-              Start Free with 50 Credits
+              Start Free with 500 Credits
               <Zap className='ml-2 h-4 w-4' />
             </Link>
           </Button>

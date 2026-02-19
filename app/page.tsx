@@ -1,11 +1,11 @@
 import { LandingHeader } from '@/components/landing/landing-header';
 import { HeroSection } from '@/components/landing/hero-section';
-import { SocialProofSection } from '@/components/landing/social-proof-section';
+// import { SocialProofSection } from '@/components/landing/social-proof-section';
 import { ProblemSection } from '@/components/landing/problem-section';
 import { SolutionSection } from '@/components/landing/solution-section';
 import { HowItWorksSection } from '@/components/landing/how-it-works-section';
 import { FeaturesSection } from '@/components/landing/features-section';
-import { TestimonialsSection } from '@/components/landing/testimonials-section';
+// import { TestimonialsSection } from '@/components/landing/testimonials-section';
 import { PricingPreviewSection } from '@/components/landing/pricing-preview-section';
 import { CTASection } from '@/components/landing/cta-section';
 import { LandingFooter } from '@/components/landing/landing-footer';
@@ -86,7 +86,7 @@ export default function LandingPage() {
           <HeroSection />
 
           {/* Trust: Quick brand validation */}
-          <SocialProofSection />
+          {/* <SocialProofSection /> */}
 
           {/* Pain: Show the cost of inaction */}
           <ProblemSection />
@@ -101,7 +101,7 @@ export default function LandingPage() {
           <FeaturesSection />
 
           {/* Proof: Real results from real creators */}
-          <TestimonialsSection />
+          {/* <TestimonialsSection /> */}
 
           {/* Trust: Why PostEngageAI over alternatives */}
           <ComparisonSection />

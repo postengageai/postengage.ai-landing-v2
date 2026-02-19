@@ -14,7 +14,6 @@ export function ExitIntentPopup() {
   const [hasShown, setHasShown] = useState(false);
   const { data: landingConfig } = useLandingConfig();
   const signupBonus = landingConfig?.signup_bonus || 500;
-  const totalCredits = signupBonus * 2;
 
   const handleMouseLeave = useCallback(
     (e: MouseEvent) => {
@@ -96,10 +95,9 @@ export function ExitIntentPopup() {
           <p className='text-muted-foreground mb-6 max-w-sm mx-auto'>
             Get{' '}
             <span className='font-semibold text-foreground'>
-              {totalCredits} bonus credits
+              {signupBonus} free credits
             </span>{' '}
-            when you sign up today. That&apos;s {signupBonus} extra credits on
-            top of your free trial!
+            when you sign up today. No credit card required to start.
           </p>
 
           {/* Urgency */}
@@ -129,7 +127,7 @@ export function ExitIntentPopup() {
               }}
             >
               <Link href={`${APP_URL}/signup?ref=exit_intent`}>
-                Claim My {totalCredits} Credits
+                Claim My {signupBonus} Credits
               </Link>
             </Button>
             <Button
