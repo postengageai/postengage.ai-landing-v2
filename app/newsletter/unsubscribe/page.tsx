@@ -65,10 +65,7 @@ function UnsubscribeForm() {
         <p className='text-muted-foreground max-w-sm mx-auto'>
           We're sorry to see you go. You won't receive any more emails from us.
         </p>
-        <Button
-          variant='outline'
-          onClick={() => window.location.href = '/'}
-        >
+        <Button variant='outline' onClick={() => (window.location.href = '/')}>
           Return to Home
         </Button>
       </div>
@@ -82,7 +79,7 @@ function UnsubscribeForm() {
           type='email'
           placeholder='Enter your email address'
           value={email}
-          onChange={(e) => setEmail(e.target.value)}
+          onChange={e => setEmail(e.target.value)}
           disabled={isLoading}
           required
         />

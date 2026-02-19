@@ -16,8 +16,8 @@ export function TableOfContents({ items }: TableOfContentsProps) {
 
   useEffect(() => {
     const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
+      entries => {
+        entries.forEach(entry => {
           if (entry.isIntersecting) {
             setActiveId(entry.target.id);
           }
@@ -26,7 +26,7 @@ export function TableOfContents({ items }: TableOfContentsProps) {
       { rootMargin: '-100px 0px -40% 0px' }
     );
 
-    items.forEach((item) => {
+    items.forEach(item => {
       const element = document.getElementById(item.id);
       if (element) {
         observer.observe(element);
@@ -40,21 +40,21 @@ export function TableOfContents({ items }: TableOfContentsProps) {
     e.preventDefault();
     const element = document.getElementById(id);
     if (element) {
-        const offset = 100; // Adjust for sticky header
-        const elementPosition = element.getBoundingClientRect().top;
-        const offsetPosition = elementPosition + window.pageYOffset - offset;
-  
-        window.scrollTo({
-          top: offsetPosition,
-          behavior: "smooth"
-        });
-        setActiveId(id);
+      const offset = 100; // Adjust for sticky header
+      const elementPosition = element.getBoundingClientRect().top;
+      const offsetPosition = elementPosition + window.pageYOffset - offset;
+
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: 'smooth',
+      });
+      setActiveId(id);
     }
   };
 
   return (
     <nav className='flex flex-col space-y-3 text-sm'>
-      {items.map((item) => {
+      {items.map(item => {
         const isActive = activeId === item.id;
         return (
           <a
