@@ -1,12 +1,52 @@
 'use client';
 
-import Image from 'next/image';
 import { Quote } from 'lucide-react';
 import { useTrackSectionView } from '@/hooks/use-track-section-view';
 import { sendGAEvent } from '@/lib/gtag';
-import { useLandingConfig } from '@/hooks/use-landing-config';
-import { Skeleton } from '@/components/ui/skeleton';
-import { Testimonial } from '@/lib/types/landing';
+import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
+import { Card } from '@/components/ui/card';
+
+interface Testimonial {
+  id: string;
+  quote: string;
+  author: string;
+  role: string;
+  metric: string;
+  avatar: string;
+  initials: string;
+}
+
+const TESTIMONIALS: Testimonial[] = [
+  {
+    id: '1',
+    quote:
+      "Finally an automation tool that doesn't feel like a bot. My engagement has doubled.",
+    author: 'Priya M.',
+    role: 'Fashion Creator',
+    metric: '2x Engagement',
+    avatar: '/indian-woman-fashion-creator.jpg',
+    initials: 'PM',
+  },
+  {
+    id: '2',
+    quote:
+      'I used to spend 2 hours a day replying to DMs. Now it takes 15 minutes.',
+    author: 'Rahul S.',
+    role: 'Tech Reviewer',
+    metric: 'Save 10hrs/week',
+    avatar: '/asian-man-tech-youtuber.jpg',
+    initials: 'RS',
+  },
+  {
+    id: '3',
+    quote: 'The best investment for my personal brand. It just works.',
+    author: 'Anika T.',
+    role: 'Lifestyle Vlogger',
+    metric: '30% More Leads',
+    avatar: '/lifestyle-instagram-avatar.jpg',
+    initials: 'AT',
+  },
+];
 
 function TestimonialCard({
   testimonial,
@@ -18,31 +58,28 @@ function TestimonialCard({
   const ref = useTrackSectionView(`testimonial_card_${index + 1}`);
 
   return (
-    <div
+    <Card
       ref={ref as React.RefObject<HTMLDivElement>}
-      className='relative rounded-xl border border-border bg-card p-6 flex flex-col'
+      className='relative p-6 flex flex-col h-full'
     >
       <Quote className='w-8 h-8 text-primary/20 mb-4' />
 
-      <blockquote className='text-foreground flex-1'>
+      <blockquote className='text-foreground flex-1 mb-6 text-lg'>
         "{testimonial.quote}"
       </blockquote>
 
       {/* Metric highlight */}
-      <div className='my-4 py-3 px-4 rounded-lg bg-success/10 border border-success/20'>
+      <div className='mb-6 py-2 px-3 rounded-lg bg-success/10 border border-success/20 w-fit'>
         <p className='text-sm font-semibold text-success'>
           {testimonial.metric}
         </p>
       </div>
 
-      <div className='flex items-center gap-3 pt-4 border-t border-border'>
-        <Image
-          src={testimonial.avatar || '/placeholder.svg'}
-          alt={testimonial.author}
-          width={40}
-          height={40}
-          className='rounded-full bg-secondary object-cover'
-        />
+      <div className='flex items-center gap-3 pt-4 border-t border-border mt-auto'>
+        <Avatar>
+          <AvatarImage src={testimonial.avatar} alt={testimonial.author} />
+          <AvatarFallback>{testimonial.initials}</AvatarFallback>
+        </Avatar>
         <div
           className='cursor-pointer'
           onClick={() => {
@@ -57,31 +94,12 @@ function TestimonialCard({
           <p className='text-xs text-muted-foreground'>{testimonial.role}</p>
         </div>
       </div>
-    </div>
-  );
-}
-
-function TestimonialSkeleton() {
-  return (
-    <div className='relative rounded-xl border border-border bg-card p-6 flex flex-col'>
-      <Skeleton className='w-8 h-8 mb-4' />
-      <Skeleton className='w-full h-20 mb-4' />
-      <Skeleton className='w-full h-12 mb-4' />
-      <div className='flex items-center gap-3 pt-4 border-t border-border'>
-        <Skeleton className='w-10 h-10 rounded-full' />
-        <div className='space-y-2'>
-          <Skeleton className='w-24 h-4' />
-          <Skeleton className='w-20 h-3' />
-        </div>
-      </div>
-    </div>
+    </Card>
   );
 }
 
 export function TestimonialsSection() {
   const ref = useTrackSectionView('testimonials_section');
-  const { data: config, isLoading } = useLandingConfig();
-  const testimonials = config?.testimonials || [];
 
   return (
     <section ref={ref} id='testimonials' className='py-20 sm:py-32'>
@@ -95,24 +113,20 @@ export function TestimonialsSection() {
             engagement without burnout.
           </p>
         </div>
-        <div className='mx-auto mt-16 grid max-w-2xl grid-cols-1 gap-8 lg:mx-0 lg:max-w-none lg:grid-cols-2'>
-          {isLoading ? (
-            <>
-              <TestimonialSkeleton />
-              <TestimonialSkeleton />
-              <TestimonialSkeleton />
-              <TestimonialSkeleton />
-            </>
-          ) : (
-            testimonials.map((testimonial, index) => (
-              <TestimonialCard
-                key={testimonial.id || index}
-                testimonial={testimonial}
-                index={index}
-              />
-            ))
-          )}
+
+        <div className='mx-auto mt-16 grid max-w-2xl grid-cols-1 gap-8 lg:mx-0 lg:max-w-none lg:grid-cols-3'>
+          {TESTIMONIALS.map((testimonial, index) => (
+            <TestimonialCard
+              key={testimonial.id}
+              testimonial={testimonial}
+              index={index}
+            />
+          ))}
         </div>
+
+        <p className='text-center text-xs text-muted-foreground mt-12 opacity-60'>
+          * Results may vary based on account size and engagement strategy.
+        </p>
       </div>
     </section>
   );

@@ -78,7 +78,7 @@ export function CTASection() {
                 onClick={handleCtaClick}
               >
                 <Link href={`${APP_URL}/signup`}>
-                  Start Your Free Trial
+                  Get 500 free credits
                   <ArrowRight className='ml-2 h-4 w-4' />
                 </Link>
               </Button>

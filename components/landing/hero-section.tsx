@@ -7,7 +7,7 @@ import { ArrowRight, MessageCircle } from 'lucide-react';
 import { useEffect, useState } from 'react';
 import { APP_URL } from '@/lib/constants';
 import { sendGAEvent } from '@/lib/gtag';
-import { VideoDemo } from '@/components/landing/video-demo';
+import { LiveReplyDemo } from '@/components/landing/live-reply-demo';
 import { useLandingConfig } from '@/hooks/use-landing-config';
 
 const AVATARS = [
@@ -134,7 +134,7 @@ export function HeroSection() {
                 onClick={handleCtaClick}
               >
                 <Link href={`${APP_URL}/signup`}>
-                  Start Replying Now
+                  Get 500 free credits
                   <ArrowRight className='ml-2 h-4 w-4' />
                 </Link>
               </Button>
@@ -164,9 +164,8 @@ export function HeroSection() {
                 </div>
                 <div className='text-sm'>
                   <span className='font-semibold text-foreground'>12</span>{' '}
-                  <span className='text-muted-foreground'>creators in</span>{' '}
-                  <span className='font-semibold text-foreground'>
-                    early access
+                  <span className='text-muted-foreground'>
+                    creators in early access • Growing daily
                   </span>
                 </div>
               </div>
@@ -175,7 +174,7 @@ export function HeroSection() {
 
           {/* Right: Video Demo */}
           <div className='relative flex items-center justify-center'>
-            <VideoDemo />
+            <LiveReplyDemo />
           </div>
         </div>
       </div>

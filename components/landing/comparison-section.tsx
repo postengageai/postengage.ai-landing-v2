@@ -311,11 +311,11 @@ export function ComparisonSection() {
         {/* CTA */}
         <div className='text-center'>
           <p className='text-muted-foreground mb-6'>
-            Join thousands of Indian creators who switched to PostEngageAI
+            Join 12 creators already in early access
           </p>
           <Button size='lg' asChild>
             <Link href={`${APP_URL}/signup`}>
-              Start Free with 500 Credits
+              Get 500 free credits
               <Zap className='ml-2 h-4 w-4' />
             </Link>
           </Button>

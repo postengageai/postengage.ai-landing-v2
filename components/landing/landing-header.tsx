@@ -112,7 +112,7 @@ export function LandingHeader() {
               <Link href={`${APP_URL}/login`}>Sign In</Link>
             </Button>
             <Button size='sm' asChild onClick={handleSignUpClick}>
-              <Link href={`${APP_URL}/signup`}>Get Started</Link>
+              <Link href={`${APP_URL}/signup`}>Get 500 free credits</Link>
             </Button>
           </div>
 
@@ -160,7 +160,7 @@ export function LandingHeader() {
                   <Link href={`${APP_URL}/login`}>Sign In</Link>
                 </Button>
                 <Button size='sm' asChild>
-                  <Link href={`${APP_URL}/signup`}>Get Started</Link>
+                  <Link href={`${APP_URL}/signup`}>Get 500 free credits</Link>
                 </Button>
               </div>
             </nav>
