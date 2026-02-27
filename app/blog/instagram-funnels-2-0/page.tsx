@@ -179,19 +179,29 @@ export default function BlogPostPage() {
             <div className='lg:col-span-9'>
               <div className='prose prose-lg prose-neutral dark:prose-invert max-w-none'>
                 <p className='lead text-xl text-muted-foreground mb-8'>
-                  For a decade, the "Link in Bio" was the holy grail of Instagram marketing. It was also the biggest bottleneck. Asking a user to leave their feed, go to your profile, click a link, wait for a browser to load, and then find the product? That's asking too much.
+                  For a decade, the "Link in Bio" was the holy grail of
+                  Instagram marketing. It was also the biggest bottleneck.
+                  Asking a user to leave their feed, go to your profile, click a
+                  link, wait for a browser to load, and then find the product?
+                  That's asking too much.
                 </p>
 
-                <h2 id='death-of-link-in-bio' className='scroll-mt-24 text-2xl font-bold mt-12 mb-6'>
+                <h2
+                  id='death-of-link-in-bio'
+                  className='scroll-mt-24 text-2xl font-bold mt-12 mb-6'
+                >
                   The Death of "Link in Bio"
                 </h2>
                 <p>
-                  In 2026, friction is the enemy. Every click you force a user to make drops your conversion rate by 50%. The "Link in Bio" requires 4 clicks.
+                  In 2026, friction is the enemy. Every click you force a user
+                  to make drops your conversion rate by 50%. The "Link in Bio"
+                  requires 4 clicks.
                 </p>
                 <p>
                   <strong>The Old Way (4 Clicks):</strong>
                   <br />
-                  Tap Profile &rarr; Tap Link &rarr; Tap Product &rarr; Add to Cart.
+                  Tap Profile &rarr; Tap Link &rarr; Tap Product &rarr; Add to
+                  Cart.
                 </p>
                 <p>
                   <strong>The New Way (1 Action):</strong>
@@ -199,11 +209,15 @@ export default function BlogPostPage() {
                   Comment "SHOES" &rarr; Get DM with Checkout Link.
                 </p>
 
-                <h2 id='the-new-funnel' className='scroll-mt-24 text-2xl font-bold mt-12 mb-6'>
+                <h2
+                  id='the-new-funnel'
+                  className='scroll-mt-24 text-2xl font-bold mt-12 mb-6'
+                >
                   The New Funnel: Comment to DM
                 </h2>
                 <p>
-                  This is "Conversational Commerce". It keeps the user on the platform they love (Instagram) until the very last second.
+                  This is "Conversational Commerce". It keeps the user on the
+                  platform they love (Instagram) until the very last second.
                 </p>
                 <div className='my-6 p-6 bg-card border rounded-xl shadow-sm'>
                   <h3 className='text-lg font-bold mb-4 flex items-center'>
@@ -212,56 +226,92 @@ export default function BlogPostPage() {
                   </h3>
                   <ol className='space-y-4'>
                     <li className='flex gap-3'>
-                      <span className='flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-primary/10 text-xs font-bold text-primary'>1</span>
+                      <span className='flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-primary/10 text-xs font-bold text-primary'>
+                        1
+                      </span>
                       <span>You post a Reel showcasing a product.</span>
                     </li>
                     <li className='flex gap-3'>
-                      <span className='flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-primary/10 text-xs font-bold text-primary'>2</span>
-                      <span>CTA: "Comment <strong>SUMMER</strong> to get the look."</span>
+                      <span className='flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-primary/10 text-xs font-bold text-primary'>
+                        2
+                      </span>
+                      <span>
+                        CTA: "Comment <strong>SUMMER</strong> to get the look."
+                      </span>
                     </li>
                     <li className='flex gap-3'>
-                      <span className='flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-primary/10 text-xs font-bold text-primary'>3</span>
-                      <span>PostEngage.ai detects the keyword and instantly sends a DM.</span>
+                      <span className='flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-primary/10 text-xs font-bold text-primary'>
+                        3
+                      </span>
+                      <span>
+                        PostEngage.ai detects the keyword and instantly sends a
+                        DM.
+                      </span>
                     </li>
                     <li className='flex gap-3'>
-                      <span className='flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-primary/10 text-xs font-bold text-primary'>4</span>
-                      <span>User opens DM, sees a beautiful card with a "Buy Now" button.</span>
+                      <span className='flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-primary/10 text-xs font-bold text-primary'>
+                        4
+                      </span>
+                      <span>
+                        User opens DM, sees a beautiful card with a "Buy Now"
+                        button.
+                      </span>
                     </li>
                   </ol>
                 </div>
 
-                <h2 id='keyword-triggers' className='scroll-mt-24 text-2xl font-bold mt-12 mb-6'>
+                <h2
+                  id='keyword-triggers'
+                  className='scroll-mt-24 text-2xl font-bold mt-12 mb-6'
+                >
                   Magic Keywords
                 </h2>
                 <p>
-                  The key to this strategy is the <strong>Keyword Trigger</strong>. It turns passive engagement (viewing) into active engagement (commenting).
+                  The key to this strategy is the{' '}
+                  <strong>Keyword Trigger</strong>. It turns passive engagement
+                  (viewing) into active engagement (commenting).
                 </p>
                 <p>
-                  Bonus: The algorithm LOVES comments. By asking people to comment, you are signaling to Instagram that your content is engaging, which pushes it to more people. It's a flywheel effect.
+                  Bonus: The algorithm LOVES comments. By asking people to
+                  comment, you are signaling to Instagram that your content is
+                  engaging, which pushes it to more people. It's a flywheel
+                  effect.
                 </p>
 
-                <h2 id='auto-qualification' className='scroll-mt-24 text-2xl font-bold mt-12 mb-6'>
+                <h2
+                  id='auto-qualification'
+                  className='scroll-mt-24 text-2xl font-bold mt-12 mb-6'
+                >
                   Auto-Qualifying Leads
                 </h2>
                 <p>
-                  For service businesses, you don't just want to send a link. You want to qualify the lead.
+                  For service businesses, you don't just want to send a link.
+                  You want to qualify the lead.
                 </p>
                 <p>
-                  With PostEngage.ai, you can build a mini-chat funnel inside the DM:
+                  With PostEngage.ai, you can build a mini-chat funnel inside
+                  the DM:
                 </p>
                 <div className='bg-muted/50 p-4 rounded-lg font-mono text-sm space-y-2'>
                   <p className='text-muted-foreground'>User: "COACHING"</p>
-                  <p className='text-primary'>Bot: "Hey! 👋 Ready to scale? First, what is your current monthly revenue?"</p>
+                  <p className='text-primary'>
+                    Bot: "Hey! 👋 Ready to scale? First, what is your current
+                    monthly revenue?"
+                  </p>
                   <p className='text-muted-foreground'>User: "$10k"</p>
-                  <p className='text-primary'>Bot: "Awesome. We help businesses between $5k-$50k. Here is the link to book a call!"</p>
+                  <p className='text-primary'>
+                    Bot: "Awesome. We help businesses between $5k-$50k. Here is
+                    the link to book a call!"
+                  </p>
                 </div>
 
-                <h2 id='results' className='scroll-mt-24 text-2xl font-bold mt-12 mb-6'>
+                <h2
+                  id='results'
+                  className='scroll-mt-24 text-2xl font-bold mt-12 mb-6'
+                >
                   The Results
                 </h2>
-                <p>
-                  Brands switching to Funnels 2.0 are seeing:
-                </p>
+                <p>Brands switching to Funnels 2.0 are seeing:</p>
                 <ul className='grid sm:grid-cols-2 gap-4 not-prose my-6'>
                   <li className='flex items-center gap-2 p-3 bg-green-500/10 rounded-lg border border-green-500/20'>
                     <CheckCircle2 className='h-5 w-5 text-green-600' />
@@ -280,9 +330,10 @@ export default function BlogPostPage() {
                     <span className='font-medium'>24/7 Sales Agent</span>
                   </li>
                 </ul>
-                
+
                 <p>
-                  Ready to stop losing sales to friction? Build your first funnel today.
+                  Ready to stop losing sales to friction? Build your first
+                  funnel today.
                 </p>
               </div>
 

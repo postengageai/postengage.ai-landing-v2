@@ -5,12 +5,7 @@ import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import {
-  ArrowLeft,
-  Users,
-  BarChart2,
-  Handshake,
-} from 'lucide-react';
+import { ArrowLeft, Users, BarChart2, Handshake } from 'lucide-react';
 import { Metadata } from 'next';
 import { SocialShareButtons } from '@/components/blog/social-share-buttons';
 import { TableOfContents } from '@/components/blog/table-of-contents';
