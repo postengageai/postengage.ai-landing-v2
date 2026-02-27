@@ -79,6 +79,29 @@ export default function BlogPage() {
       featured: false,
     },
     {
+      slug: 'dm-to-dollar-pipeline',
+      title:
+        "The 'DM-to-Dollar' Pipeline: How to Monetize Instagram DMs in 2026",
+      excerpt:
+        'Stop leaving money on the table. A step-by-step guide to turning casual DM conversations into high-ticket sales.',
+      date: 'Mar 12, 2026',
+      category: 'Monetization',
+      readTime: '7 min read',
+      image: '/blog/dm-to-dollar-cover.png',
+      featured: true,
+    },
+    {
+      slug: 'ai-community-manager-2026',
+      title: "Why 2026 is the Year of the 'AI Community Manager'",
+      excerpt:
+        'Forget chatbots. The new wave of AI Community Managers can understand context, tone, and intent, handling 90% of your engagement automatically.',
+      date: 'Mar 10, 2026',
+      category: 'Future Trends',
+      readTime: '6 min read',
+      image: '/blog/ai-community-manager-cover.png',
+      featured: false,
+    },
+    {
       slug: 'stop-using-link-in-bio',
       title:
         'Stop Using Link in Bio: Why DM Automation Conversions Are 5x Higher',

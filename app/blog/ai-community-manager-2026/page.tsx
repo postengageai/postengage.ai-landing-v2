@@ -5,7 +5,7 @@ import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import { ArrowLeft, Users, MessageCircle, Bot } from 'lucide-react';
+import { ArrowLeft, Users, Bot } from 'lucide-react';
 import { Metadata } from 'next';
 import { SocialShareButtons } from '@/components/blog/social-share-buttons';
 import { TableOfContents } from '@/components/blog/table-of-contents';
@@ -117,7 +117,8 @@ export default function BlogPostPage() {
           <div className='relative mx-auto mb-16 aspect-[21/9] max-w-5xl overflow-hidden rounded-2xl border bg-muted/30 shadow-sm'>
             <div className='absolute inset-0 flex items-center justify-center bg-gradient-to-br from-primary/5 via-transparent to-primary/5'>
               <span className='text-muted-foreground/20 font-medium'>
-                Featured Image: AI Robot shaking hands with a human (Future Style)
+                Featured Image: AI Robot shaking hands with a human (Future
+                Style)
               </span>
             </div>
           </div>
@@ -168,9 +169,9 @@ export default function BlogPostPage() {
             <div className='lg:col-span-9'>
               <div className='prose prose-lg prose-neutral dark:prose-invert max-w-none'>
                 <p className='lead text-xl text-muted-foreground mb-8'>
-                  If you've ever interacted with a customer support bot from 2023,
-                  you know the frustration. "I didn't understand that. Can you
-                  rephrase?" Those days are gone.
+                  If you've ever interacted with a customer support bot from
+                  2023, you know the frustration. "I didn't understand that. Can
+                  you rephrase?" Those days are gone.
                 </p>
 
                 <h2
@@ -201,9 +202,9 @@ export default function BlogPostPage() {
                   What separates a bot from a manager? <strong>Memory.</strong>
                 </p>
                 <p>
-                  An AI Community Manager remembers that User A bought your course
-                  last week and is asking about module 3. It doesn't treat them
-                  like a stranger.
+                  An AI Community Manager remembers that User A bought your
+                  course last week and is asking about module 3. It doesn't
+                  treat them like a stranger.
                 </p>
                 <ul className='list-disc pl-5 space-y-2'>
                   <li>
@@ -215,8 +216,8 @@ export default function BlogPostPage() {
                     login issue sorted yesterday!"
                   </li>
                   <li>
-                    <strong>Brand Voice:</strong> It speaks like <em>you</em>, not
-                    a robot.
+                    <strong>Brand Voice:</strong> It speaks like <em>you</em>,
+                    not a robot.
                   </li>
                 </ul>
 
@@ -231,8 +232,8 @@ export default function BlogPostPage() {
                   upgrade them.
                 </p>
                 <p>
-                  Your human team stops answering "What is the price?" 50 times a
-                  day. Instead, they focus on:
+                  Your human team stops answering "What is the price?" 50 times
+                  a day. Instead, they focus on:
                 </p>
                 <div className='grid gap-4 my-8 not-prose'>
                   <div className='flex items-center p-4 bg-card border rounded-lg'>
@@ -240,7 +241,8 @@ export default function BlogPostPage() {
                     <div>
                       <div className='font-bold'>AI Handles:</div>
                       <div className='text-sm text-muted-foreground'>
-                        FAQs, Order Status, Basic Troubleshooting, Lead Qualification
+                        FAQs, Order Status, Basic Troubleshooting, Lead
+                        Qualification
                       </div>
                     </div>
                   </div>
@@ -249,7 +251,8 @@ export default function BlogPostPage() {
                     <div>
                       <div className='font-bold'>Humans Handle:</div>
                       <div className='text-sm text-muted-foreground'>
-                        Complex Issues, VIP Clients, Strategic Partnerships, Crisis Management
+                        Complex Issues, VIP Clients, Strategic Partnerships,
+                        Crisis Management
                       </div>
                     </div>
                   </div>
@@ -261,9 +264,7 @@ export default function BlogPostPage() {
                 >
                   ROI of AI Community Management
                 </h2>
-                <p>
-                  The math is simple.
-                </p>
+                <p>The math is simple.</p>
                 <ul className='list-disc pl-5 space-y-2'>
                   <li>
                     <strong>Response Time:</strong> From hours to seconds.
