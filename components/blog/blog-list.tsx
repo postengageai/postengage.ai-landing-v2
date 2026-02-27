@@ -39,6 +39,8 @@ export function BlogList({ initialPosts }: BlogListProps) {
     'Automation Guide',
     'Ads Strategy',
     'Growth Hacks',
+    'Coaching',
+    'Events',
     'E-commerce',
     'Real Estate',
     'Agency Growth',

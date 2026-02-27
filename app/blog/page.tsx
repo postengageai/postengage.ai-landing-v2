@@ -23,15 +23,59 @@ export const metadata: Metadata = {
 export default function BlogPage() {
   const posts = [
     {
-      slug: 'agency-automation-scaling',
-      title: 'How Agencies Are Scaling to $50k/mo with DM Automation Services',
+      slug: 'webinar-registration-instagram-dm',
+      title: 'Webinar Automation: How to Fill Seats Using Instagram DMs',
       excerpt:
-        'Stop selling hours. Start selling systems. Learn how agencies are productizing Instagram automation to retain clients and increase MRR.',
-      date: 'Mar 4, 2026',
-      category: 'Agency Growth',
-      readTime: '9 min read',
-      image: '/blog/agency-scaling-cover.png',
+        'Landing pages convert at 20%. DM conversations convert at 60%. Learn how to double your webinar show-up rate with automation.',
+      date: 'Mar 16, 2026',
+      category: 'Events',
+      readTime: '6 min read',
+      image: '/blog/webinar-automation-cover.png',
       featured: true,
+    },
+    {
+      slug: 'high-ticket-coaching-automation',
+      title: 'High-Ticket Sales: Selling $5k+ Coaching Programs in DMs',
+      excerpt:
+        'Stop chasing low-ticket sales. Learn how to use automated qualification to fill your calendar with high-value coaching prospects.',
+      date: 'Mar 14, 2026',
+      category: 'Coaching',
+      readTime: '8 min read',
+      image: '/blog/high-ticket-cover.png',
+      featured: false,
+    },
+    {
+      slug: 'dm-to-dollar-pipeline',
+      title: "The 'DM-to-Dollar' Pipeline: How to Monetize Instagram DMs in 2026",
+      excerpt:
+        'Stop leaving money on the table. A step-by-step guide to turning casual DM conversations into high-ticket sales.',
+      date: 'Mar 12, 2026',
+      category: 'Monetization',
+      readTime: '7 min read',
+      image: '/blog/dm-to-dollar-cover.png',
+      featured: false,
+    },
+    {
+      slug: 'ai-community-manager-2026',
+      title: "Why 2026 is the Year of the 'AI Community Manager'",
+      excerpt:
+        'Forget chatbots. The new wave of AI Community Managers can understand context, tone, and intent, handling 90% of your engagement automatically.',
+      date: 'Mar 10, 2026',
+      category: 'Future Trends',
+      readTime: '6 min read',
+      image: '/blog/ai-community-manager-cover.png',
+      featured: false,
+    },
+    {
+      slug: 'instagram-seo-2026',
+      title: 'Instagram SEO 2026: Ranking #1 on Explore',
+      excerpt:
+        'Hashtags are out. Keywords are in. Learn the new rules of Instagram SEO to get your content seen by millions of non-followers.',
+      date: 'Mar 9, 2026',
+      category: 'Growth Hacks',
+      readTime: '6 min read',
+      image: '/blog/instagram-seo-cover.png',
+      featured: false,
     },
     {
       slug: 'instagram-story-automation-guide',
