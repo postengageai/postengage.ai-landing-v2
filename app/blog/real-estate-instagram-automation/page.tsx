@@ -5,40 +5,40 @@ import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import { ArrowLeft, Search, Hash } from 'lucide-react';
+import { ArrowLeft } from 'lucide-react';
 import { Metadata } from 'next';
 import { SocialShareButtons } from '@/components/blog/social-share-buttons';
 import { TableOfContents } from '@/components/blog/table-of-contents';
 
 export const metadata: Metadata = {
-  title: 'Instagram SEO: How to Rank Your Content in 2026',
+  title: "The Realtor's Guide to Automating Open House Leads on Instagram",
   description:
-    'Hashtags are dead. Discover the new ranking factors for Instagram in 2026: Keywords, Alt Text, and User Intent.',
+    'Stop chasing sign-in sheets. Learn how to capture, qualify, and follow up with every open house visitor automatically.',
   openGraph: {
-    title: 'Instagram SEO: How to Rank Your Content in 2026',
+    title: "The Realtor's Guide to Automating Open House Leads on Instagram",
     description:
-      'Hashtags are dead. Discover the new ranking factors for Instagram in 2026: Keywords, Alt Text, and User Intent.',
-    url: 'https://postengage.ai/blog/instagram-seo-2026',
+      'Stop chasing sign-in sheets. Learn how to capture, qualify, and follow up with every open house visitor automatically.',
+    url: 'https://postengage.ai/blog/real-estate-instagram-automation',
     siteName: 'PostEngage.ai',
     locale: 'en_US',
     type: 'article',
-    publishedTime: '2026-03-15T09:00:00.000Z',
+    publishedTime: '2026-03-16T09:00:00.000Z',
     authors: ['PostEngageAI Team'],
     images: [
       {
-        url: '/blog/instagram-seo-cover.png',
+        url: '/blog/real-estate-automation-cover.png',
         width: 1200,
         height: 630,
-        alt: 'Instagram SEO 2026',
+        alt: 'Real Estate Automation',
       },
     ],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Instagram SEO: How to Rank Your Content in 2026',
+    title: "The Realtor's Guide to Automating Open House Leads on Instagram",
     description:
-      'Hashtags are dead. Discover the new ranking factors for Instagram in 2026.',
-    images: ['/blog/instagram-seo-cover.png'],
+      'Stop chasing sign-in sheets. Automate your open house follow-up.',
+    images: ['/blog/real-estate-automation-cover.png'],
     creator: '@postengageai',
   },
 };
@@ -47,10 +47,10 @@ export default function BlogPostPage() {
   const jsonLd = {
     '@context': 'https://schema.org',
     '@type': 'BlogPosting',
-    headline: 'Instagram SEO: How to Rank Your Content in 2026',
-    image: ['/blog/instagram-seo-cover.png'],
-    datePublished: '2026-03-15T09:00:00.000Z',
-    dateModified: '2026-03-15T09:00:00.000Z',
+    headline: "The Realtor's Guide to Automating Open House Leads on Instagram",
+    image: ['/blog/real-estate-automation-cover.png'],
+    datePublished: '2026-03-16T09:00:00.000Z',
+    dateModified: '2026-03-16T09:00:00.000Z',
     author: [
       {
         '@type': 'Person',
@@ -80,8 +80,8 @@ export default function BlogPostPage() {
               Back to Blog
             </Link>
             <SocialShareButtons
-              title='Instagram SEO: How to Rank Your Content in 2026'
-              url='https://postengage.ai/blog/instagram-seo-2026'
+              title="The Realtor's Guide to Automating Open House Leads on Instagram"
+              url='https://postengage.ai/blog/real-estate-instagram-automation'
             />
           </div>
 
@@ -92,24 +92,24 @@ export default function BlogPostPage() {
                 variant='default'
                 className='bg-primary/10 text-primary hover:bg-primary/20 px-3 py-1 text-sm font-medium border-none'
               >
-                Growth Strategy
+                Real Estate
               </Badge>
               <Badge
                 variant='outline'
                 className='border-primary/20 text-muted-foreground'
               >
-                6 min read
+                5 min read
               </Badge>
               <span className='text-sm text-muted-foreground'>
-                Updated Mar 15, 2026
+                Updated Mar 16, 2026
               </span>
             </div>
             <h1 className='mb-6 text-4xl font-extrabold tracking-tight sm:text-5xl lg:text-6xl bg-gradient-to-r from-foreground via-foreground/90 to-muted-foreground bg-clip-text text-transparent'>
-              Instagram SEO: How to Rank Your Content in 2026
+              The Realtor's Guide to Automating Open House Leads
             </h1>
             <p className='mx-auto max-w-2xl text-xl text-muted-foreground leading-relaxed'>
-              Stop spamming hashtags. Start optimizing for search intent. Here
-              is the definitive guide to getting discovered on the Explore page.
+              Paper sign-in sheets are where leads go to die. Here is how top
+              agents use QR codes and DM automation to capture 100% of visitors.
             </p>
           </header>
 
@@ -117,7 +117,8 @@ export default function BlogPostPage() {
           <div className='relative mx-auto mb-16 aspect-[21/9] max-w-5xl overflow-hidden rounded-2xl border bg-muted/30 shadow-sm'>
             <div className='absolute inset-0 flex items-center justify-center bg-gradient-to-br from-primary/5 via-transparent to-primary/5'>
               <span className='text-muted-foreground/20 font-medium'>
-                Featured Image: Search Interface on Mobile showing Top Results
+                Featured Image: Modern House with 'Sold' Sign and Phone
+                Notification
               </span>
             </div>
           </div>
@@ -129,35 +130,35 @@ export default function BlogPostPage() {
                 <TableOfContents
                   items={[
                     {
-                      id: 'hashtags-vs-keywords',
-                      title: 'Hashtags vs. Keywords',
+                      id: 'the-qr-code-trick',
+                      title: 'The QR Code Strategy',
                     },
                     {
-                      id: 'ranking-factors',
-                      title: 'The 3 Ranking Factors',
+                      id: 'instant-follow-up',
+                      title: 'Instant Follow-Up',
                     },
                     {
-                      id: 'alt-text',
-                      title: 'Why Alt Text Matters',
+                      id: 'qualification',
+                      title: 'Buyer or Lookie-Loo?',
                     },
                     {
-                      id: 'voice-search',
-                      title: 'Optimizing for Voice',
+                      id: 'case-study',
+                      title: 'Agent Success Story',
                     },
                   ]}
                 />
                 <Card className='bg-primary/5 border-primary/10 shadow-none'>
                   <CardHeader>
                     <CardTitle className='text-sm font-medium text-primary'>
-                      Boost Your Reach?
+                      Automate Your Listings?
                     </CardTitle>
                   </CardHeader>
                   <CardContent className='space-y-4'>
                     <p className='text-xs text-muted-foreground'>
-                      Our AI automatically suggests SEO-friendly captions.
+                      Get our Real Estate template pack.
                     </p>
                     <Button className='w-full text-xs' size='sm' asChild>
-                      <Link href='/dashboard'>Try AI Caption Writer</Link>
+                      <Link href='/dashboard'>Get Templates</Link>
                     </Button>
                   </CardContent>
                 </Card>
@@ -168,100 +169,114 @@ export default function BlogPostPage() {
             <div className='lg:col-span-9'>
               <div className='prose prose-lg prose-neutral dark:prose-invert max-w-none'>
                 <p className='lead text-xl text-muted-foreground mb-8'>
-                  Remember when you could just slap #fyp #viral on a post and
-                  get 10k views? Those days are gone. Instagram is now a search
-                  engine, not just a feed.
+                  It's Sunday afternoon. 30 people walked through your listing.
+                  You have 5 scribbled names on a piece of paper. You can't read
+                  3 of them. Sound familiar?
                 </p>
 
                 <h2
-                  id='hashtags-vs-keywords'
+                  id='the-qr-code-trick'
                   className='scroll-mt-24 text-2xl font-bold mt-12 mb-6'
                 >
-                  Hashtags vs. Keywords
+                  The QR Code Strategy
                 </h2>
                 <p>
-                  In 2026, the Instagram algorithm reads your content like
-                  Google reads a website.
+                  Put a QR code at the entrance. "Scan for Price, Photos &
+                  Disclosures."
                 </p>
-                <div className='grid grid-cols-1 md:grid-cols-2 gap-6 my-8 not-prose'>
-                  <div className='p-6 bg-red-500/10 border border-red-500/20 rounded-xl'>
-                    <h3 className='text-lg font-bold text-red-600 mb-2 flex items-center'>
-                      <Hash className='w-5 h-5 mr-2' /> Old Way (Hashtags)
-                    </h3>
-                    <p className='text-sm text-muted-foreground'>
-                      #marketing #business #growth #money #success
-                    </p>
-                    <p className='text-xs mt-2 text-red-500 font-medium'>
-                      Result: Spammy, low intent traffic.
-                    </p>
+                <div className='flex items-center p-4 bg-muted rounded-lg my-6'>
+                  <div className='bg-background p-2 rounded mr-4 border'>
+                    <div className='w-16 h-16 bg-foreground/10 flex items-center justify-center text-xs text-muted-foreground'>
+                      QR
+                    </div>
                   </div>
-                  <div className='p-6 bg-green-500/10 border border-green-500/20 rounded-xl'>
-                    <h3 className='text-lg font-bold text-green-600 mb-2 flex items-center'>
-                      <Search className='w-5 h-5 mr-2' /> New Way (Keywords)
-                    </h3>
-                    <p className='text-sm text-muted-foreground'>
-                      "Best marketing strategies for small business owners in
-                      2026"
-                    </p>
-                    <p className='text-xs mt-2 text-green-500 font-medium'>
-                      Result: High intent, searchable traffic.
+                  <div>
+                    <h3 className='font-bold text-lg m-0'>The Flow</h3>
+                    <p className='text-sm m-0 text-muted-foreground'>
+                      Scan QR &gt; Opens Instagram DM &gt; Sends Keyword
+                      "OPENHOUSE"
                     </p>
                   </div>
                 </div>
+                <p>
+                  When they scan, it opens their Instagram DM with a pre-filled
+                  message. They hit send, and PostEngage.ai takes over.
+                </p>
 
                 <h2
-                  id='ranking-factors'
+                  id='instant-follow-up'
                   className='scroll-mt-24 text-2xl font-bold mt-12 mb-6'
                 >
-                  The 3 Ranking Factors
-                </h2>
-                <ol className='list-decimal pl-5 space-y-4'>
-                  <li>
-                    <strong>Caption Keywords:</strong> Include your target
-                    phrase in the first sentence of your caption.
-                  </li>
-                  <li>
-                    <strong>Profile Bio:</strong> Your bio name and description
-                    are searchable. Don't just put "CEO". Put "Real Estate Agent
-                    in Austin".
-                  </li>
-                  <li>
-                    <strong>Engagement Velocity:</strong> How quickly people
-                    save and share your post tells the algorithm it's valuable.
-                  </li>
-                </ol>
-
-                <h2
-                  id='alt-text'
-                  className='scroll-mt-24 text-2xl font-bold mt-12 mb-6'
-                >
-                  Why Alt Text Matters
+                  Instant Follow-Up
                 </h2>
                 <p>
-                  Alt text was designed for accessibility, but it's a goldmine
-                  for SEO. It explicitly tells the algorithm what is in your
-                  image.
+                  While they are walking through the kitchen, your AI agent
+                  sends them the full property PDF and asks:
                 </p>
                 <blockquote className='border-l-4 border-primary pl-4 italic my-4'>
-                  Pro Tip: Don't leave Alt Text blank. Describe the image using
-                  your target keywords naturally.
+                  "Welcome to 123 Main St! I just sent you the brochure. What do
+                  you think of the kitchen renovation?"
                 </blockquote>
+                <p>
+                  This engages them immediately while their interest is highest.
+                </p>
 
                 <h2
-                  id='voice-search'
+                  id='qualification'
                   className='scroll-mt-24 text-2xl font-bold mt-12 mb-6'
                 >
-                  Optimizing for Voice
+                  Buyer or Lookie-Loo?
+                </h2>
+                <p>PostEngage can ask qualification questions automatically:</p>
+                <ul className='list-disc pl-5 space-y-2'>
+                  <li>"Are you working with an agent?"</li>
+                  <li>"Are you pre-approved?"</li>
+                  <li>"When are you looking to move?"</li>
+                </ul>
+                <p>
+                  If they answer "No agent" and "Pre-approved", you get a
+                  notification: <strong>HOT LEAD</strong>. Go find them in the
+                  living room and introduce yourself.
+                </p>
+
+                <h2
+                  id='case-study'
+                  className='scroll-mt-24 text-2xl font-bold mt-12 mb-6'
+                >
+                  Agent Success Story
                 </h2>
                 <p>
-                  With the rise of smart glasses and voice assistants, people
-                  are searching Instagram with their voice.
+                  Sarah Jenkins, a Realtor in Miami, switched to this system in
+                  2025.
                 </p>
-                <p>"Hey Instagram, show me vegan restaurants near me."</p>
-                <p>
-                  If your bio and content don't contain "vegan restaurant" and
-                  location data, you are invisible.
-                </p>
+                <div className='bg-card border rounded-xl p-6 shadow-sm'>
+                  <div className='grid grid-cols-3 gap-4 text-center'>
+                    <div>
+                      <div className='text-2xl font-bold text-primary'>
+                        300%
+                      </div>
+                      <div className='text-xs text-muted-foreground uppercase tracking-wider'>
+                        More Leads Captured
+                      </div>
+                    </div>
+                    <div>
+                      <div className='text-2xl font-bold text-primary'>
+                        2 hrs
+                      </div>
+                      <div className='text-xs text-muted-foreground uppercase tracking-wider'>
+                        Saved Per Open House
+                      </div>
+                    </div>
+                    <div>
+                      <div className='text-2xl font-bold text-primary'>
+                        $2.4M
+                      </div>
+                      <div className='text-xs text-muted-foreground uppercase tracking-wider'>
+                        Closed from DMs
+                      </div>
+                    </div>
+                  </div>
+                </div>
               </div>
 
               {/* Author Bio */}
@@ -274,7 +289,7 @@ export default function BlogPostPage() {
                   <div>
                     <div className='font-semibold'>PostEngageAI Team</div>
                     <div className='text-sm text-muted-foreground'>
-                      Growth Team
+                      Real Estate Vertical
                     </div>
                   </div>
                 </div>

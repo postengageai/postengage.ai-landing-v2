@@ -5,40 +5,40 @@ import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import { ArrowLeft, Search, Hash } from 'lucide-react';
+import { ArrowLeft } from 'lucide-react';
 import { Metadata } from 'next';
 import { SocialShareButtons } from '@/components/blog/social-share-buttons';
 import { TableOfContents } from '@/components/blog/table-of-contents';
 
 export const metadata: Metadata = {
-  title: 'Instagram SEO: How to Rank Your Content in 2026',
+  title: 'Recovering Abandoned Carts via Instagram DMs: A 2026 Strategy',
   description:
-    'Hashtags are dead. Discover the new ranking factors for Instagram in 2026: Keywords, Alt Text, and User Intent.',
+    'Email open rates are plummeting. DM open rates are 90%+. Here is how to use Instagram to save lost sales.',
   openGraph: {
-    title: 'Instagram SEO: How to Rank Your Content in 2026',
+    title: 'Recovering Abandoned Carts via Instagram DMs: A 2026 Strategy',
     description:
-      'Hashtags are dead. Discover the new ranking factors for Instagram in 2026: Keywords, Alt Text, and User Intent.',
-    url: 'https://postengage.ai/blog/instagram-seo-2026',
+      'Email open rates are plummeting. DM open rates are 90%+. Here is how to use Instagram to save lost sales.',
+    url: 'https://postengage.ai/blog/ecommerce-cart-recovery-dm',
     siteName: 'PostEngage.ai',
     locale: 'en_US',
     type: 'article',
-    publishedTime: '2026-03-15T09:00:00.000Z',
+    publishedTime: '2026-03-17T09:00:00.000Z',
     authors: ['PostEngageAI Team'],
     images: [
       {
-        url: '/blog/instagram-seo-cover.png',
+        url: '/blog/ecommerce-recovery-cover.png',
         width: 1200,
         height: 630,
-        alt: 'Instagram SEO 2026',
+        alt: 'Ecommerce Cart Recovery',
       },
     ],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Instagram SEO: How to Rank Your Content in 2026',
+    title: 'Recovering Abandoned Carts via Instagram DMs: A 2026 Strategy',
     description:
-      'Hashtags are dead. Discover the new ranking factors for Instagram in 2026.',
-    images: ['/blog/instagram-seo-cover.png'],
+      'Email open rates are plummeting. Recover lost sales with DMs.',
+    images: ['/blog/ecommerce-recovery-cover.png'],
     creator: '@postengageai',
   },
 };
@@ -47,10 +47,10 @@ export default function BlogPostPage() {
   const jsonLd = {
     '@context': 'https://schema.org',
     '@type': 'BlogPosting',
-    headline: 'Instagram SEO: How to Rank Your Content in 2026',
-    image: ['/blog/instagram-seo-cover.png'],
-    datePublished: '2026-03-15T09:00:00.000Z',
-    dateModified: '2026-03-15T09:00:00.000Z',
+    headline: 'Recovering Abandoned Carts via Instagram DMs: A 2026 Strategy',
+    image: ['/blog/ecommerce-recovery-cover.png'],
+    datePublished: '2026-03-17T09:00:00.000Z',
+    dateModified: '2026-03-17T09:00:00.000Z',
     author: [
       {
         '@type': 'Person',
@@ -80,8 +80,8 @@ export default function BlogPostPage() {
               Back to Blog
             </Link>
             <SocialShareButtons
-              title='Instagram SEO: How to Rank Your Content in 2026'
-              url='https://postengage.ai/blog/instagram-seo-2026'
+              title='Recovering Abandoned Carts via Instagram DMs: A 2026 Strategy'
+              url='https://postengage.ai/blog/ecommerce-cart-recovery-dm'
             />
           </div>
 
@@ -92,24 +92,24 @@ export default function BlogPostPage() {
                 variant='default'
                 className='bg-primary/10 text-primary hover:bg-primary/20 px-3 py-1 text-sm font-medium border-none'
               >
-                Growth Strategy
+                E-commerce
               </Badge>
               <Badge
                 variant='outline'
                 className='border-primary/20 text-muted-foreground'
               >
-                6 min read
+                4 min read
               </Badge>
               <span className='text-sm text-muted-foreground'>
-                Updated Mar 15, 2026
+                Updated Mar 17, 2026
               </span>
             </div>
             <h1 className='mb-6 text-4xl font-extrabold tracking-tight sm:text-5xl lg:text-6xl bg-gradient-to-r from-foreground via-foreground/90 to-muted-foreground bg-clip-text text-transparent'>
-              Instagram SEO: How to Rank Your Content in 2026
+              Recovering Abandoned Carts via Instagram DMs
             </h1>
             <p className='mx-auto max-w-2xl text-xl text-muted-foreground leading-relaxed'>
-              Stop spamming hashtags. Start optimizing for search intent. Here
-              is the definitive guide to getting discovered on the Explore page.
+              Your customers live in their DMs, not their Inbox. Learn why
+              PostEngage.ai is the new Klaviyo for Instagram.
             </p>
           </header>
 
@@ -117,7 +117,7 @@ export default function BlogPostPage() {
           <div className='relative mx-auto mb-16 aspect-[21/9] max-w-5xl overflow-hidden rounded-2xl border bg-muted/30 shadow-sm'>
             <div className='absolute inset-0 flex items-center justify-center bg-gradient-to-br from-primary/5 via-transparent to-primary/5'>
               <span className='text-muted-foreground/20 font-medium'>
-                Featured Image: Search Interface on Mobile showing Top Results
+                Featured Image: Shopping Cart Icon with DM Notification Badge
               </span>
             </div>
           </div>
@@ -129,35 +129,31 @@ export default function BlogPostPage() {
                 <TableOfContents
                   items={[
                     {
-                      id: 'hashtags-vs-keywords',
-                      title: 'Hashtags vs. Keywords',
+                      id: 'email-is-dying',
+                      title: 'Why Email is Dying',
                     },
                     {
-                      id: 'ranking-factors',
-                      title: 'The 3 Ranking Factors',
+                      id: 'the-dm-strategy',
+                      title: 'The DM Strategy',
                     },
                     {
-                      id: 'alt-text',
-                      title: 'Why Alt Text Matters',
-                    },
-                    {
-                      id: 'voice-search',
-                      title: 'Optimizing for Voice',
+                      id: 'compliance',
+                      title: 'Staying Compliant',
                     },
                   ]}
                 />
                 <Card className='bg-primary/5 border-primary/10 shadow-none'>
                   <CardHeader>
                     <CardTitle className='text-sm font-medium text-primary'>
-                      Boost Your Reach?
+                      Shopify Store Owner?
                     </CardTitle>
                   </CardHeader>
                   <CardContent className='space-y-4'>
                     <p className='text-xs text-muted-foreground'>
-                      Our AI automatically suggests SEO-friendly captions.
+                      Connect your store to Instagram DMs.
                     </p>
                     <Button className='w-full text-xs' size='sm' asChild>
-                      <Link href='/dashboard'>Try AI Caption Writer</Link>
+                      <Link href='/integrations/shopify'>View Integration</Link>
                     </Button>
                   </CardContent>
                 </Card>
@@ -168,99 +164,82 @@ export default function BlogPostPage() {
             <div className='lg:col-span-9'>
               <div className='prose prose-lg prose-neutral dark:prose-invert max-w-none'>
                 <p className='lead text-xl text-muted-foreground mb-8'>
-                  Remember when you could just slap #fyp #viral on a post and
-                  get 10k views? Those days are gone. Instagram is now a search
-                  engine, not just a feed.
+                  The average e-commerce store loses 70% of sales at checkout.
+                  You send an email. It goes to the "Promotions" tab. They never
+                  see it.
                 </p>
 
                 <h2
-                  id='hashtags-vs-keywords'
+                  id='email-is-dying'
                   className='scroll-mt-24 text-2xl font-bold mt-12 mb-6'
                 >
-                  Hashtags vs. Keywords
+                  Why Email is Dying
                 </h2>
-                <p>
-                  In 2026, the Instagram algorithm reads your content like
-                  Google reads a website.
-                </p>
-                <div className='grid grid-cols-1 md:grid-cols-2 gap-6 my-8 not-prose'>
-                  <div className='p-6 bg-red-500/10 border border-red-500/20 rounded-xl'>
-                    <h3 className='text-lg font-bold text-red-600 mb-2 flex items-center'>
-                      <Hash className='w-5 h-5 mr-2' /> Old Way (Hashtags)
-                    </h3>
-                    <p className='text-sm text-muted-foreground'>
-                      #marketing #business #growth #money #success
-                    </p>
-                    <p className='text-xs mt-2 text-red-500 font-medium'>
-                      Result: Spammy, low intent traffic.
-                    </p>
+                <div className='grid grid-cols-2 gap-4 my-8 not-prose'>
+                  <div className='text-center p-6 border rounded-lg'>
+                    <div className='text-4xl font-bold text-muted-foreground mb-2'>
+                      21%
+                    </div>
+                    <div className='text-sm text-muted-foreground'>
+                      Avg Email Open Rate
+                    </div>
                   </div>
-                  <div className='p-6 bg-green-500/10 border border-green-500/20 rounded-xl'>
-                    <h3 className='text-lg font-bold text-green-600 mb-2 flex items-center'>
-                      <Search className='w-5 h-5 mr-2' /> New Way (Keywords)
-                    </h3>
-                    <p className='text-sm text-muted-foreground'>
-                      "Best marketing strategies for small business owners in
-                      2026"
-                    </p>
-                    <p className='text-xs mt-2 text-green-500 font-medium'>
-                      Result: High intent, searchable traffic.
-                    </p>
+                  <div className='text-center p-6 border rounded-lg bg-primary/5 border-primary/20'>
+                    <div className='text-4xl font-bold text-primary mb-2'>
+                      88%
+                    </div>
+                    <div className='text-sm text-primary font-medium'>
+                      Avg DM Open Rate
+                    </div>
                   </div>
                 </div>
+                <p>
+                  The numbers don't lie. If you want to recover sales, you need
+                  to reach customers where they are paying attention.
+                </p>
 
                 <h2
-                  id='ranking-factors'
+                  id='the-dm-strategy'
                   className='scroll-mt-24 text-2xl font-bold mt-12 mb-6'
                 >
-                  The 3 Ranking Factors
+                  The DM Strategy
                 </h2>
+                <p>
+                  You can't just DM anyone who abandons a cart (that's spam).
+                  But you CAN DM anyone who has engaged with you.
+                </p>
+                <h3 className='text-xl font-bold mt-6 mb-4'>
+                  The "Save My Cart" Flow
+                </h3>
                 <ol className='list-decimal pl-5 space-y-4'>
                   <li>
-                    <strong>Caption Keywords:</strong> Include your target
-                    phrase in the first sentence of your caption.
+                    <strong>Opt-In:</strong> Add a "Send to Messenger" checkbox
+                    on your product page or cart drawer.
                   </li>
                   <li>
-                    <strong>Profile Bio:</strong> Your bio name and description
-                    are searchable. Don't just put "CEO". Put "Real Estate Agent
-                    in Austin".
+                    <strong>Trigger:</strong> If they don't checkout in 30
+                    minutes, PostEngage fires a DM.
                   </li>
                   <li>
-                    <strong>Engagement Velocity:</strong> How quickly people
-                    save and share your post tells the algorithm it's valuable.
+                    <strong>Offer:</strong> "Hey [Name], did you forget this?
+                    Here is a 5% code to complete your order: [LINK]"
                   </li>
                 </ol>
 
                 <h2
-                  id='alt-text'
+                  id='compliance'
                   className='scroll-mt-24 text-2xl font-bold mt-12 mb-6'
                 >
-                  Why Alt Text Matters
+                  Staying Compliant
                 </h2>
                 <p>
-                  Alt text was designed for accessibility, but it's a goldmine
-                  for SEO. It explicitly tells the algorithm what is in your
-                  image.
+                  Meta has strict rules about promotional messages. You must use
+                  the "One-Time Notification" (OTN) or recurring notification
+                  tokens.
                 </p>
-                <blockquote className='border-l-4 border-primary pl-4 italic my-4'>
-                  Pro Tip: Don't leave Alt Text blank. Describe the image using
-                  your target keywords naturally.
-                </blockquote>
-
-                <h2
-                  id='voice-search'
-                  className='scroll-mt-24 text-2xl font-bold mt-12 mb-6'
-                >
-                  Optimizing for Voice
-                </h2>
                 <p>
-                  With the rise of smart glasses and voice assistants, people
-                  are searching Instagram with their voice.
-                </p>
-                <p>"Hey Instagram, show me vegan restaurants near me."</p>
-                <p>
-                  If your bio and content don't contain "vegan restaurant" and
-                  location data, you are invisible.
+                  PostEngage handles all of this complexity for you, ensuring
+                  you never get blocked.
                 </p>
               </div>
 
@@ -274,7 +253,7 @@ export default function BlogPostPage() {
                   <div>
                     <div className='font-semibold'>PostEngageAI Team</div>
                     <div className='text-sm text-muted-foreground'>
-                      Growth Team
+                      E-commerce Specialists
                     </div>
                   </div>
                 </div>

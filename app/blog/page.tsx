@@ -101,6 +101,61 @@ export default function BlogPage() {
       featured: false,
     },
     {
+      slug: 'event-marketing-automation',
+      title: 'Automating Event RSVPs: From Story Reply to Calendar Invite',
+      excerpt:
+        'Hosting a webinar, workshop, or live event? Learn how to fill your seats using Instagram Stories and DM automation.',
+      date: 'Mar 19, 2026',
+      category: 'Event Marketing',
+      readTime: '4 min read',
+      image: '/blog/event-marketing-cover.png',
+      featured: true,
+    },
+    {
+      slug: 'coaching-sales-automation',
+      title: 'How High-Ticket Coaches are Booking 50+ Calls/Month with AI',
+      excerpt:
+        'Stop paying appointment setters $3k/month. Automate your outreach and booking flow with Instagram DM automation.',
+      date: 'Mar 18, 2026',
+      category: 'Coaching & Consulting',
+      readTime: '8 min read',
+      image: '/blog/coaching-sales-cover.png',
+      featured: false,
+    },
+    {
+      slug: 'ecommerce-cart-recovery-dm',
+      title: 'Recovering Abandoned Carts via Instagram DMs: A 2026 Strategy',
+      excerpt:
+        'Email open rates are plummeting. DM open rates are 90%+. Here is how to use Instagram to save lost sales.',
+      date: 'Mar 17, 2026',
+      category: 'E-commerce',
+      readTime: '4 min read',
+      image: '/blog/ecommerce-recovery-cover.png',
+      featured: false,
+    },
+    {
+      slug: 'real-estate-instagram-automation',
+      title: "The Realtor's Guide to Automating Open House Leads on Instagram",
+      excerpt:
+        'Stop chasing sign-in sheets. Learn how to capture, qualify, and follow up with every open house visitor automatically.',
+      date: 'Mar 16, 2026',
+      category: 'Real Estate',
+      readTime: '5 min read',
+      image: '/blog/real-estate-automation-cover.png',
+      featured: false,
+    },
+    {
+      slug: 'instagram-seo-2026',
+      title: 'Instagram SEO: How to Rank Your Content in 2026',
+      excerpt:
+        'Hashtags are dead. Discover the new ranking factors for Instagram in 2026: Keywords, Alt Text, and User Intent.',
+      date: 'Mar 15, 2026',
+      category: 'Growth Strategy',
+      readTime: '6 min read',
+      image: '/blog/instagram-seo-cover.png',
+      featured: true,
+    },
+    {
       slug: 'dm-to-dollar-pipeline',
       title:
         "The 'DM-to-Dollar' Pipeline: How to Monetize Instagram DMs in 2026",
