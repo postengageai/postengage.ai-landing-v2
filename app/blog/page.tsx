@@ -23,6 +23,28 @@ export const metadata: Metadata = {
 export default function BlogPage() {
   const posts = [
     {
+      slug: 'click-to-dm-ads-guide',
+      title: 'Why Click-to-DM Ads Are Killing Landing Pages in 2026',
+      excerpt:
+        'Landing pages have a 2% conversion rate. DM Ads have 10%+. Here is why the "Conversation Funnel" is the new standard for paid social.',
+      date: 'Mar 2, 2026',
+      category: 'Ads Strategy',
+      readTime: '8 min read',
+      image: '/blog/dm-ads-cover.png',
+      featured: true,
+    },
+    {
+      slug: 'instagram-giveaways-2026',
+      title: 'Instagram Giveaways in 2026: The Anti-Spam Automation Guide',
+      excerpt:
+        'Stop asking for "Tag 3 friends". Learn the new, compliant way to run viral giveaways that actually build a qualified list.',
+      date: 'Mar 1, 2026',
+      category: 'Growth Hacks',
+      readTime: '6 min read',
+      image: '/blog/giveaway-2026-cover.png',
+      featured: false,
+    },
+    {
       slug: 'ai-social-media-manager-automation',
       title:
         'The Rise of the AI Social Media Manager: What to Automate vs. What to Keep Human',
@@ -32,7 +54,7 @@ export default function BlogPage() {
       category: 'Future Trends',
       readTime: '8 min read',
       image: '/blog/ai-manager-cover.png',
-      featured: true,
+      featured: false,
     },
     {
       slug: 'stop-using-link-in-bio',
