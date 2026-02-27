@@ -67,6 +67,28 @@ export default function BlogPage() {
       featured: false,
     },
     {
+      slug: 'real-estate-instagram-leads',
+      title: 'Real Estate Lead Gen 2026: Automate Your Instagram DMs',
+      excerpt:
+        'Speed to lead is everything. Learn how top agents are using Instagram automation to qualify buyers and book showings 24/7.',
+      date: 'Mar 8, 2026',
+      category: 'Real Estate',
+      readTime: '6 min read',
+      image: '/blog/real-estate-cover.png',
+      featured: true,
+    },
+    {
+      slug: 'ecommerce-instagram-automation',
+      title: 'E-commerce Automation 2026: Sync Shopify to Instagram DMs',
+      excerpt:
+        'Stop losing sales to "Link in Bio". Learn how to sync your Shopify catalog to Instagram and sell directly in DMs with AI.',
+      date: 'Mar 6, 2026',
+      category: 'E-commerce',
+      readTime: '7 min read',
+      image: '/blog/ecommerce-cover.png',
+      featured: true,
+    },
+    {
       slug: 'ai-social-media-manager-automation',
       title:
         'The Rise of the AI Social Media Manager: What to Automate vs. What to Keep Human',
