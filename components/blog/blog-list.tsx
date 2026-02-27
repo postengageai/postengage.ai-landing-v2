@@ -45,6 +45,8 @@ export function BlogList({ initialPosts }: BlogListProps) {
     'Real Estate',
     'Agency Growth',
     'Engagement',
+    'Local Business',
+    'UGC Strategy',
   ];
 
   const filteredPosts = useMemo(() => {

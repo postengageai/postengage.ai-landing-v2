@@ -23,6 +23,28 @@ export const metadata: Metadata = {
 export default function BlogPage() {
   const posts = [
     {
+      slug: 'ultimate-guide-ugc-automation',
+      title: 'The Ultimate Guide to UGC Automation: Turn Customers into Advocates',
+      excerpt:
+        'User Generated Content (UGC) is the most powerful social proof. Learn how to automate rewards for Story mentions, post tags, and viral sharing.',
+      date: 'Mar 20, 2026',
+      category: 'UGC Strategy',
+      readTime: '8 min read',
+      image: '/blog/ugc-automation-cover.png',
+      featured: true,
+    },
+    {
+      slug: 'instagram-automation-local-business',
+      title: 'Instagram Automation for Restaurants & Local Biz: Bookings on Autopilot',
+      excerpt:
+        'Stop missing reservations and appointments. Learn how local businesses use Instagram DM automation to fill tables and calendars 24/7.',
+      date: 'Mar 18, 2026',
+      category: 'Local Business',
+      readTime: '6 min read',
+      image: '/blog/local-business-cover.png',
+      featured: false,
+    },
+    {
       slug: 'webinar-registration-instagram-dm',
       title: 'Webinar Automation: How to Fill Seats Using Instagram DMs',
       excerpt:
@@ -31,7 +53,7 @@ export default function BlogPage() {
       category: 'Events',
       readTime: '6 min read',
       image: '/blog/webinar-automation-cover.png',
-      featured: true,
+      featured: false,
     },
     {
       slug: 'high-ticket-coaching-automation',
