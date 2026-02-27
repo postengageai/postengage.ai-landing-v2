@@ -23,6 +23,28 @@ export const metadata: Metadata = {
 export default function BlogPage() {
   const posts = [
     {
+      slug: 'story-mentions-brand-ambassadors',
+      title: 'Turning Story Mentions into Brand Ambassadors with Auto-DMs',
+      excerpt:
+        'Never miss a Story mention again. Learn how to automatically thank fans and invite them to your ambassador program.',
+      date: 'Mar 22, 2026',
+      category: 'Engagement',
+      readTime: '4 min read',
+      image: '/blog/story-mentions-cover.png',
+      featured: true,
+    },
+    {
+      slug: 'viral-giveaways-2-0',
+      title: 'Viral Giveaways 2.0: Using Comment Automation to Explode Growth',
+      excerpt:
+        'Forget manual tracking. Learn how to run automated Instagram giveaways that generate 10x more comments and leads.',
+      date: 'Mar 21, 2026',
+      category: 'Growth Hacks',
+      readTime: '5 min read',
+      image: '/blog/giveaway-automation-cover.png',
+      featured: false,
+    },
+    {
       slug: 'ultimate-guide-ugc-automation',
       title: 'The Ultimate Guide to UGC Automation: Turn Customers into Advocates',
       excerpt:
@@ -31,7 +53,7 @@ export default function BlogPage() {
       category: 'UGC Strategy',
       readTime: '8 min read',
       image: '/blog/ugc-automation-cover.png',
-      featured: true,
+      featured: false,
     },
     {
       slug: 'instagram-automation-local-business',
