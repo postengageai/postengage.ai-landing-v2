@@ -39,6 +39,8 @@ export function BlogList({ initialPosts }: BlogListProps) {
     'Automation Guide',
     'Ads Strategy',
     'Growth Hacks',
+    'Agency Growth',
+    'Engagement',
   ];
 
   const filteredPosts = useMemo(() => {

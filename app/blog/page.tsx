@@ -23,6 +23,28 @@ export const metadata: Metadata = {
 export default function BlogPage() {
   const posts = [
     {
+      slug: 'agency-automation-scaling',
+      title: 'How Agencies Are Scaling to $50k/mo with DM Automation Services',
+      excerpt:
+        'Stop selling hours. Start selling systems. Learn how agencies are productizing Instagram automation to retain clients and increase MRR.',
+      date: 'Mar 4, 2026',
+      category: 'Agency Growth',
+      readTime: '9 min read',
+      image: '/blog/agency-scaling-cover.png',
+      featured: true,
+    },
+    {
+      slug: 'instagram-story-automation-guide',
+      title: 'Instagram Story Automation: How to Turn Views into Leads (2026)',
+      excerpt:
+        'Stories have the highest engagement but the lowest retention. Learn how to use automation to capture leads before they swipe away.',
+      date: 'Mar 3, 2026',
+      category: 'Engagement',
+      readTime: '5 min read',
+      image: '/blog/story-automation-cover.png',
+      featured: false,
+    },
+    {
       slug: 'click-to-dm-ads-guide',
       title: 'Why Click-to-DM Ads Are Killing Landing Pages in 2026',
       excerpt:
@@ -31,7 +53,7 @@ export default function BlogPage() {
       category: 'Ads Strategy',
       readTime: '8 min read',
       image: '/blog/dm-ads-cover.png',
-      featured: true,
+      featured: false,
     },
     {
       slug: 'instagram-giveaways-2026',

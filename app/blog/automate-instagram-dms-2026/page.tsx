@@ -55,7 +55,8 @@ export default function BlogPostPage() {
   const jsonLd = {
     '@context': 'https://schema.org',
     '@type': 'BlogPosting',
-    headline: 'How to Automate Instagram DMs Without Getting Banned (2026 Guide)',
+    headline:
+      'How to Automate Instagram DMs Without Getting Banned (2026 Guide)',
     image: ['/blog/automate-dms-cover.png'],
     datePublished: '2026-02-15T09:00:00.000Z',
     dateModified: '2026-02-15T09:00:00.000Z',
@@ -167,10 +168,13 @@ export default function BlogPostPage() {
                   </CardHeader>
                   <CardContent className='space-y-4'>
                     <p className='text-xs text-muted-foreground'>
-                      PostEngage.ai handles the safety limits for you automatically.
+                      PostEngage.ai handles the safety limits for you
+                      automatically.
                     </p>
                     <Button className='w-full text-xs' size='sm' asChild>
-                      <Link href='/dashboard/automations/new'>Start Free Trial</Link>
+                      <Link href='/dashboard/automations/new'>
+                        Start Free Trial
+                      </Link>
                     </Button>
                   </CardContent>
                 </Card>
@@ -181,24 +185,43 @@ export default function BlogPostPage() {
             <div className='lg:col-span-9'>
               <div className='prose prose-lg prose-neutral dark:prose-invert max-w-none'>
                 <p className='lead text-xl text-muted-foreground mb-8'>
-                  In 2026, the question isn't <em>if</em> you should automate your Instagram DMs, but <em>how</em>. With algorithm updates prioritizing authentic engagement, the old "spammy" bots are a one-way ticket to a shadowban. But smart, AI-driven automation is the key to scaling your business.
+                  In 2026, the question isn't <em>if</em> you should automate
+                  your Instagram DMs, but <em>how</em>. With algorithm updates
+                  prioritizing authentic engagement, the old "spammy" bots are a
+                  one-way ticket to a shadowban. But smart, AI-driven automation
+                  is the key to scaling your business.
                 </p>
 
-                <h2 id='why-automation-is-essential' className='scroll-mt-24 text-2xl font-bold mt-12 mb-6'>
+                <h2
+                  id='why-automation-is-essential'
+                  className='scroll-mt-24 text-2xl font-bold mt-12 mb-6'
+                >
                   Why Automation is Essential in 2026
                 </h2>
                 <p>
-                  Let's face it: your customers expect instant responses. A study by HubSpot in late 2025 showed that <strong>82% of consumers expect an immediate response</strong> to sales or marketing questions. "Immediate" means 10 minutes or less.
+                  Let's face it: your customers expect instant responses. A
+                  study by HubSpot in late 2025 showed that{' '}
+                  <strong>82% of consumers expect an immediate response</strong>{' '}
+                  to sales or marketing questions. "Immediate" means 10 minutes
+                  or less.
                 </p>
                 <p>
-                  If you're sleeping, eating, or just living your life, you're missing leads. Automation bridges that gap. But Instagram (Meta) has become incredibly sophisticated at detecting non-human behavior.
+                  If you're sleeping, eating, or just living your life, you're
+                  missing leads. Automation bridges that gap. But Instagram
+                  (Meta) has become incredibly sophisticated at detecting
+                  non-human behavior.
                 </p>
 
-                <h2 id='the-human-in-the-loop' className='scroll-mt-24 text-2xl font-bold mt-12 mb-6'>
+                <h2
+                  id='the-human-in-the-loop'
+                  className='scroll-mt-24 text-2xl font-bold mt-12 mb-6'
+                >
                   The "Human-in-the-Loop" Approach
                 </h2>
                 <p>
-                  The safest way to automate is to treat AI as an assistant, not a replacement. This is the core philosophy behind PostEngage.ai.
+                  The safest way to automate is to treat AI as an assistant, not
+                  a replacement. This is the core philosophy behind
+                  PostEngage.ai.
                 </p>
                 <div className='my-8 grid gap-4 sm:grid-cols-2'>
                   <Card>
@@ -233,60 +256,98 @@ export default function BlogPostPage() {
                   </Card>
                 </div>
 
-                <h2 id='understanding-limits' className='scroll-mt-24 text-2xl font-bold mt-12 mb-6'>
+                <h2
+                  id='understanding-limits'
+                  className='scroll-mt-24 text-2xl font-bold mt-12 mb-6'
+                >
                   Understanding Instagram's Limits
                 </h2>
                 <p>
-                  While Meta doesn't publish exact numbers (to prevent gaming the system), our data from millions of interactions on PostEngage.ai suggests these safe zones for 2026:
+                  While Meta doesn't publish exact numbers (to prevent gaming
+                  the system), our data from millions of interactions on
+                  PostEngage.ai suggests these safe zones for 2026:
                 </p>
                 <ul className='space-y-4 my-6'>
                   <li className='flex items-start'>
                     <Clock className='mr-3 h-6 w-6 text-primary flex-shrink-0 mt-1' />
                     <div>
-                      <strong className='text-foreground'>The 2-Minute Rule:</strong> Never send more than one automated DM to the same user within 2 minutes unless they are actively replying.
+                      <strong className='text-foreground'>
+                        The 2-Minute Rule:
+                      </strong>{' '}
+                      Never send more than one automated DM to the same user
+                      within 2 minutes unless they are actively replying.
                     </div>
                   </li>
                   <li className='flex items-start'>
                     <Activity className='mr-3 h-6 w-6 text-primary flex-shrink-0 mt-1' />
                     <div>
-                      <strong className='text-foreground'>Daily Caps:</strong> For new accounts, limit outbound DMs to 20-30 per day. Established accounts can handle 80-100, but ramp up slowly.
+                      <strong className='text-foreground'>Daily Caps:</strong>{' '}
+                      For new accounts, limit outbound DMs to 20-30 per day.
+                      Established accounts can handle 80-100, but ramp up
+                      slowly.
                     </div>
                   </li>
                   <li className='flex items-start'>
                     <ShieldCheck className='mr-3 h-6 w-6 text-primary flex-shrink-0 mt-1' />
                     <div>
-                      <strong className='text-foreground'>Variation is Key:</strong> Use "Spintax" or AI rewriting to ensure no two messages are exactly alike. Instagram's hash-matching algorithms flag identical strings quickly.
+                      <strong className='text-foreground'>
+                        Variation is Key:
+                      </strong>{' '}
+                      Use "Spintax" or AI rewriting to ensure no two messages
+                      are exactly alike. Instagram's hash-matching algorithms
+                      flag identical strings quickly.
                     </div>
                   </li>
                 </ul>
 
-                <h2 id='using-ai-context' className='scroll-mt-24 text-2xl font-bold mt-12 mb-6'>
+                <h2
+                  id='using-ai-context'
+                  className='scroll-mt-24 text-2xl font-bold mt-12 mb-6'
+                >
                   Using AI for Contextual Replies
                 </h2>
                 <p>
-                  This is where <strong>PostEngage.ai</strong> shines. Instead of a hardcoded "Thanks for following!", our AI analyzes the user's public bio and their last few posts to craft a relevant opener.
+                  This is where <strong>PostEngage.ai</strong> shines. Instead
+                  of a hardcoded "Thanks for following!", our AI analyzes the
+                  user's public bio and their last few posts to craft a relevant
+                  opener.
                 </p>
                 <blockquote className='border-l-4 border-primary pl-4 italic text-muted-foreground my-6'>
-                  "Hey [Name], loved your recent shot of the latte art! ☕ Quick question: are you using a specific preset for your edits?"
+                  "Hey [Name], loved your recent shot of the latte art! ☕ Quick
+                  question: are you using a specific preset for your edits?"
                 </blockquote>
                 <p>
-                  This type of message gets a 45% higher response rate than generic greetings because it proves you (or your AI) actually looked at their content.
+                  This type of message gets a 45% higher response rate than
+                  generic greetings because it proves you (or your AI) actually
+                  looked at their content.
                 </p>
 
-                <h2 id='monitoring-health' className='scroll-mt-24 text-2xl font-bold mt-12 mb-6'>
+                <h2
+                  id='monitoring-health'
+                  className='scroll-mt-24 text-2xl font-bold mt-12 mb-6'
+                >
                   Monitoring Your Account Health
                 </h2>
                 <p>
-                  Always keep an eye on your "Action Blocks". If Instagram temporarily blocks you from liking or commenting, <strong>pause all automation immediately</strong> for at least 24-48 hours.
+                  Always keep an eye on your "Action Blocks". If Instagram
+                  temporarily blocks you from liking or commenting,{' '}
+                  <strong>pause all automation immediately</strong> for at least
+                  24-48 hours.
                 </p>
                 <p>
-                  Our dashboard includes a "Health Score" for your connected accounts. If we detect unusual API error rates, we automatically throttle your automation speed to protect your account.
+                  Our dashboard includes a "Health Score" for your connected
+                  accounts. If we detect unusual API error rates, we
+                  automatically throttle your automation speed to protect your
+                  account.
                 </p>
 
                 <div className='mt-12 rounded-xl bg-muted/50 p-6'>
-                  <h3 className='text-lg font-semibold mb-2'>Ready to automate safely?</h3>
+                  <h3 className='text-lg font-semibold mb-2'>
+                    Ready to automate safely?
+                  </h3>
                   <p className='text-muted-foreground mb-4'>
-                    Start your free trial with PostEngage.ai and let our intelligent safeguards handle the heavy lifting.
+                    Start your free trial with PostEngage.ai and let our
+                    intelligent safeguards handle the heavy lifting.
                   </p>
                   <Button size='lg' asChild>
                     <Link href='/signup'>Get Started for Free</Link>
