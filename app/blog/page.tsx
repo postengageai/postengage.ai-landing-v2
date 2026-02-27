@@ -47,6 +47,39 @@ export default function BlogPage() {
       featured: false,
     },
     {
+      slug: 'algorithm-shift-saves-vs-likes',
+      title: "The Algorithmic Shift: Why 'Saves' Are the New 'Likes' in 2026",
+      excerpt:
+        'The Instagram algorithm has changed. Vanity metrics are out. Retention metrics are in. Learn how to optimize for Saves and Shares.',
+      date: 'Feb 23, 2026',
+      category: 'Algorithm',
+      readTime: '7 min read',
+      image: '/blog/algorithm-shift-cover.png',
+      featured: false,
+    },
+    {
+      slug: 'instagram-funnels-2-0',
+      title: 'Instagram Funnels 2.0: From Viewer to Customer in 3 Clicks',
+      excerpt:
+        'The "Link in Bio" is dead. Learn how to build automated sales funnels that convert 5x higher using Keyword Triggers and DM Automation.',
+      date: 'Feb 22, 2026',
+      category: 'Strategy',
+      readTime: '6 min read',
+      image: '/blog/funnels-2-0-cover.png',
+      featured: false,
+    },
+    {
+      slug: 'micro-influencer-scale',
+      title: 'Micro-Influencer Scale: Automating Outreach Without Losing Soul',
+      excerpt:
+        'How to scale your influencer marketing program from 10 to 1,000 partners using intelligent automation and personalized outreach.',
+      date: 'Feb 21, 2026',
+      category: 'Influencer Marketing',
+      readTime: '5 min read',
+      image: '/blog/micro-influencer-cover.png',
+      featured: false,
+    },
+    {
       slug: 'postengage-recentreborn-partnership',
       title: 'PostEngage.ai x RecentReborn: Bridging Discovery & Engagement',
       excerpt:
