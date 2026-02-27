@@ -23,6 +23,30 @@ export const metadata: Metadata = {
 export default function BlogPage() {
   const posts = [
     {
+      slug: 'ai-social-media-manager-automation',
+      title:
+        'The Rise of the AI Social Media Manager: What to Automate vs. What to Keep Human',
+      excerpt:
+        "AI is changing the game, but it's not replacing you. Learn the perfect balance between automated efficiency and human connection.",
+      date: 'Mar 5, 2026',
+      category: 'Future Trends',
+      readTime: '8 min read',
+      image: '/blog/ai-manager-cover.png',
+      featured: true,
+    },
+    {
+      slug: 'stop-using-link-in-bio',
+      title:
+        'Stop Using Link in Bio: Why DM Automation Conversions Are 5x Higher',
+      excerpt:
+        'The "Link in Bio" is dead. Discover why top creators are switching to DM automation to skyrocket their sales and engagement.',
+      date: 'Mar 1, 2026',
+      category: 'Strategy',
+      readTime: '6 min read',
+      image: '/blog/link-in-bio-dead-cover.png',
+      featured: false,
+    },
+    {
       slug: 'postengage-recentreborn-partnership',
       title: 'PostEngage.ai x RecentReborn: Bridging Discovery & Engagement',
       excerpt:
@@ -31,7 +55,7 @@ export default function BlogPage() {
       category: 'Partnership',
       readTime: '4 min read',
       image: '/blog/postengage-recentreborn-cover.png',
-      featured: true,
+      featured: false,
     },
     {
       slug: 'future-social-support-ai',
