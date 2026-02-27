@@ -33,38 +33,71 @@ export default function BlogPage() {
       image: '/blog/postengage-recentreborn-cover.png',
       featured: true,
     },
-    // Mock future posts
     {
-      slug: '#',
+      slug: 'future-social-support-ai',
+      title: 'The Future of Social Customer Support: AI vs Human Agents',
+      excerpt:
+        "Will AI replace human support teams? We explore the hybrid model that's winning in 2026.",
+      date: 'Feb 20, 2026',
+      category: 'Customer Experience',
+      readTime: '6 min read',
+      image: '/blog/future-support-cover.png',
+      featured: false,
+    },
+    {
+      slug: 'lead-gen-ai-comments',
+      title: 'Maximizing Lead Generation with AI-Powered Instagram Comments',
+      excerpt:
+        'Turn every comment into a qualified lead. Learn how to use AI to identify intent and start DM conversations.',
+      date: 'Feb 18, 2026',
+      category: 'Lead Generation',
+      readTime: '8 min read',
+      image: '/blog/lead-gen-comments-cover.png',
+      featured: false,
+    },
+    {
+      slug: 'automate-instagram-dms-2026',
+      title:
+        'How to Automate Instagram DMs Without Getting Banned (2026 Guide)',
+      excerpt:
+        'Learn the safe way to automate Instagram DMs in 2026. Avoid shadowbans and boost engagement.',
+      date: 'Feb 15, 2026',
+      category: 'Automation Guide',
+      readTime: '10 min read',
+      image: '/blog/automate-dms-cover.png',
+      featured: false,
+    },
+    {
+      slug: 'instagram-automation-rules-2026',
       title: 'The Ultimate Guide to Instagram Automation Rules in 2026',
       excerpt:
         'How to automate your engagement without risking your account health. The definitive guide for modern creators.',
-      date: 'Coming Soon',
+      date: 'Feb 10, 2026',
       category: 'Guide',
       readTime: '8 min read',
-      image: null, // Fallback
+      image: '/blog/automation-rules-cover.png',
       featured: false,
     },
     {
-      slug: '#',
+      slug: 'smart-replies-ai-context',
       title: 'Introducing Smart Replies: AI Context Awareness',
       excerpt:
         'Our new AI engine understands context better than ever before. Learn how it can save you 10+ hours a week.',
-      date: 'Coming Soon',
+      date: 'Feb 15, 2026',
       category: 'Product',
       readTime: '3 min read',
-      image: null, // Fallback
+      image: '/blog/smart-replies-cover.png',
       featured: false,
     },
     {
-      slug: '#',
+      slug: 'engineering-scale-0-to-10k',
       title: 'From 0 to 10k Followers: The Engineering Behind Scale',
       excerpt:
         'How we built a system capable of handling millions of webhook events per second without crashing.',
-      date: 'Coming Soon',
+      date: 'Feb 20, 2026',
       category: 'Engineering',
       readTime: '6 min read',
-      image: null,
+      image: '/blog/engineering-scale-cover.png',
       featured: false,
     },
   ];

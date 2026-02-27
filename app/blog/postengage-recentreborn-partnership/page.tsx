@@ -62,7 +62,7 @@ export default function BlogPostPage() {
     author: [
       {
         '@type': 'Organization',
-        name: 'PostEngage.ai Team',
+        name: 'PostEngageAI Team',
         url: 'https://postengage.ai',
       },
     ],
@@ -126,12 +126,12 @@ export default function BlogPostPage() {
             <div className='flex items-center justify-center gap-4'>
               <div className='flex items-center gap-3 rounded-full border border-border/50 bg-muted/50 py-2 pl-2 pr-6'>
                 <Avatar className='h-10 w-10 border-2 border-background shadow-sm'>
-                  <AvatarImage src='/logo.jpeg' alt='PostEngage.ai' />
+                  <AvatarImage src='/logo.jpeg' alt='PostEngageAI Team' />
                   <AvatarFallback>PE</AvatarFallback>
                 </Avatar>
                 <div className='text-left'>
                   <p className='text-sm font-semibold text-foreground'>
-                    PostEngage.ai Team
+                    PostEngageAI Team
                   </p>
                   <p className='text-xs text-muted-foreground'>
                     February 3, 2026

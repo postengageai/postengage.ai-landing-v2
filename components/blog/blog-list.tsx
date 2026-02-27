@@ -28,7 +28,16 @@ interface BlogListProps {
 export function BlogList({ initialPosts }: BlogListProps) {
   const [searchQuery, setSearchQuery] = useState('');
   const [selectedCategory, setSelectedCategory] = useState('All');
-  const categories = ['All', 'Product', 'Partnership', 'Guide', 'Engineering'];
+  const categories = [
+    'All',
+    'Product',
+    'Partnership',
+    'Guide',
+    'Engineering',
+    'Customer Experience',
+    'Lead Generation',
+    'Automation Guide',
+  ];
 
   const filteredPosts = useMemo(() => {
     return initialPosts.filter(post => {
