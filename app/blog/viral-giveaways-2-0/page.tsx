@@ -3,7 +3,7 @@ import { LandingHeader } from '@/components/landing/landing-header';
 import { LandingFooter } from '@/components/landing/landing-footer';
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
-import { ArrowLeft, Gift, Zap, Users } from 'lucide-react';
+import { ArrowLeft, Zap, Users } from 'lucide-react';
 import { Metadata } from 'next';
 import { SocialShareButtons } from '@/components/blog/social-share-buttons';
 
@@ -105,7 +105,8 @@ export default function BlogPostPage() {
             <div className='relative mx-auto mb-16 aspect-[21/9] max-w-5xl overflow-hidden rounded-2xl border bg-muted/30 shadow-sm'>
               <div className='absolute inset-0 flex items-center justify-center bg-gradient-to-br from-primary/5 via-transparent to-primary/5'>
                 <span className='text-muted-foreground/20 font-medium'>
-                  Featured Image: Viral loop diagram showing comment &gt; DM &gt; Share
+                  Featured Image: Viral loop diagram showing comment &gt; DM
+                  &gt; Share
                 </span>
               </div>
             </div>
@@ -161,13 +162,14 @@ export default function BlogPostPage() {
               <div className='lg:col-span-9'>
                 <div className='prose prose-lg dark:prose-invert max-w-none'>
                   <p className='lead text-xl text-muted-foreground mb-8'>
-                    Running an Instagram giveaway used to be a headache. You post
-                    a picture, ask people to "tag 3 friends", and then spend 4
-                    hours manually scrolling through comments to pick a winner.
+                    Running an Instagram giveaway used to be a headache. You
+                    post a picture, ask people to "tag 3 friends", and then
+                    spend 4 hours manually scrolling through comments to pick a
+                    winner.
                   </p>
                   <p>
-                    Worse, you got zero data. No emails, no phone numbers, just a
-                    temporary spike in likes.
+                    Worse, you got zero data. No emails, no phone numbers, just
+                    a temporary spike in likes.
                   </p>
                   <p>
                     Enter <strong>Giveaways 2.0</strong>. By using PostEngage.ai
@@ -213,20 +215,21 @@ export default function BlogPostPage() {
                     Viral Mechanics Explained
                   </h2>
                   <p>
-                    Why does this work better? It leverages the Instagram algorithm
-                    in two ways:
+                    Why does this work better? It leverages the Instagram
+                    algorithm in two ways:
                   </p>
                   <ol className='list-decimal pl-5 space-y-4 my-6'>
                     <li>
-                      <strong>Comment Velocity:</strong> Asking for a single keyword
-                      comment (e.g., "WIN") is easy. You get hundreds of comments
-                      in minutes, signaling to the algorithm that your post is
-                      hot.
+                      <strong>Comment Velocity:</strong> Asking for a single
+                      keyword comment (e.g., "WIN") is easy. You get hundreds of
+                      comments in minutes, signaling to the algorithm that your
+                      post is hot.
                     </li>
                     <li>
                       <strong>DM Engagement:</strong> When people reply to your
-                      automated DM, it creates a "close connection" signal. Instagram
-                      will show your future posts to these people first.
+                      automated DM, it creates a "close connection" signal.
+                      Instagram will show your future posts to these people
+                      first.
                     </li>
                   </ol>
 
@@ -246,7 +249,8 @@ export default function BlogPostPage() {
                           The Workflow
                         </h3>
                         <p className='text-muted-foreground mb-4'>
-                          <strong>Trigger:</strong> User comments "GIFT" on your post.
+                          <strong>Trigger:</strong> User comments "GIFT" on your
+                          post.
                         </p>
                         <div className='space-y-4 border-l-2 border-muted pl-4 ml-2'>
                           <div className='relative'>
@@ -254,8 +258,9 @@ export default function BlogPostPage() {
                               1
                             </span>
                             <p className='text-sm'>
-                              <strong>Bot:</strong> "Hey! 👋 You are one step away
-                              from entering! Just tap below to confirm your entry."
+                              <strong>Bot:</strong> "Hey! 👋 You are one step
+                              away from entering! Just tap below to confirm your
+                              entry."
                             </p>
                           </div>
                           <div className='relative'>
@@ -271,8 +276,8 @@ export default function BlogPostPage() {
                               3
                             </span>
                             <p className='text-sm'>
-                              <strong>Bot:</strong> "Awesome! What is your best email
-                              address so we can notify you if you win?"
+                              <strong>Bot:</strong> "Awesome! What is your best
+                              email address so we can notify you if you win?"
                             </p>
                           </div>
                           <div className='relative'>
@@ -280,7 +285,8 @@ export default function BlogPostPage() {
                               4
                             </span>
                             <p className='text-sm'>
-                              <strong>User:</strong> Enters email &gt; Added to Mailchimp/Klaviyo.
+                              <strong>User:</strong> Enters email &gt; Added to
+                              Mailchimp/Klaviyo.
                             </p>
                           </div>
                         </div>
@@ -294,9 +300,7 @@ export default function BlogPostPage() {
                   >
                     Case Study: 5k Followers in 48h
                   </h2>
-                  <p>
-                    We ran this exact playbook for a D2C jewelry brand.
-                  </p>
+                  <p>We ran this exact playbook for a D2C jewelry brand.</p>
                   <ul className='list-disc pl-6 space-y-2 my-6'>
                     <li>
                       <strong>Prize:</strong> $500 Gift Card
@@ -316,15 +320,21 @@ export default function BlogPostPage() {
                     <div className='grid grid-cols-3 gap-4 text-center'>
                       <div>
                         <div className='text-2xl font-bold'>3,402</div>
-                        <div className='text-xs text-muted-foreground'>Comments</div>
+                        <div className='text-xs text-muted-foreground'>
+                          Comments
+                        </div>
                       </div>
                       <div>
                         <div className='text-2xl font-bold'>2,890</div>
-                        <div className='text-xs text-muted-foreground'>Emails</div>
+                        <div className='text-xs text-muted-foreground'>
+                          Emails
+                        </div>
                       </div>
                       <div>
                         <div className='text-2xl font-bold'>+5,100</div>
-                        <div className='text-xs text-muted-foreground'>New Followers</div>
+                        <div className='text-xs text-muted-foreground'>
+                          New Followers
+                        </div>
                       </div>
                     </div>
                   </div>
@@ -335,8 +345,8 @@ export default function BlogPostPage() {
                     Launch Your Viral Giveaway
                   </h3>
                   <p className='text-muted-foreground mb-8 max-w-xl mx-auto'>
-                    Use our pre-built "Viral Giveaway" template to set this up in
-                    minutes.
+                    Use our pre-built "Viral Giveaway" template to set this up
+                    in minutes.
                   </p>
                   <div className='flex flex-col sm:flex-row gap-4 justify-center'>
                     <Button size='lg' className='font-semibold'>

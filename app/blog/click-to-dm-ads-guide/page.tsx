@@ -36,7 +36,10 @@ export default function BlogPost() {
   const readTime = '8 min read';
 
   const tableOfContents = [
-    { id: 'the-death-of-landing-pages', title: 'The Death of the Landing Page' },
+    {
+      id: 'the-death-of-landing-pages',
+      title: 'The Death of the Landing Page',
+    },
     { id: 'what-are-click-to-dm-ads', title: 'What Are Click-to-DM Ads?' },
     { id: 'why-they-convert-better', title: 'Why They Convert 5x Better' },
     { id: 'retargeting-goldmine', title: 'The Retargeting Goldmine' },
@@ -77,8 +80,9 @@ export default function BlogPost() {
               Why Click-to-DM Ads Are Killing Landing Pages in 2026
             </h1>
             <p className='mx-auto max-w-2xl text-xl text-muted-foreground leading-relaxed'>
-              The era of "Click {'->'} Wait {'->'} Read {'->'} Fill Form" is over.
-              Meet the "Conversation Funnel" that's getting 10%+ conversion rates.
+              The era of "Click {'->'} Wait {'->'} Read {'->'} Fill Form" is
+              over. Meet the "Conversation Funnel" that's getting 10%+
+              conversion rates.
             </p>
           </header>
 
@@ -113,17 +117,22 @@ export default function BlogPost() {
               <div className='prose prose-lg dark:prose-invert max-w-none'>
                 {/* Introduction */}
                 <p>
-                  For the last decade, the playbook was simple: Run an ad, send traffic to a landing page, and pray they fill out the form.
+                  For the last decade, the playbook was simple: Run an ad, send
+                  traffic to a landing page, and pray they fill out the form.
                 </p>
                 <p>
-                  But in 2026, user patience is at an all-time low. Asking a mobile user to leave Instagram, wait for a site to load,
-                  and pinch-zoom to fill out a form? That is asking for a bounce.
+                  But in 2026, user patience is at an all-time low. Asking a
+                  mobile user to leave Instagram, wait for a site to load, and
+                  pinch-zoom to fill out a form? That is asking for a bounce.
                 </p>
                 <p>
                   Enter <strong>Click-to-DM Ads</strong>.
                 </p>
 
-                <h2 id='the-death-of-landing-pages' className='scroll-mt-24 text-2xl font-bold mt-12 mb-6'>
+                <h2
+                  id='the-death-of-landing-pages'
+                  className='scroll-mt-24 text-2xl font-bold mt-12 mb-6'
+                >
                   The Death of the Landing Page
                 </h2>
                 <div className='grid gap-4 my-8 not-prose'>
@@ -132,7 +141,8 @@ export default function BlogPost() {
                     <div>
                       <div className='font-bold'>Traditional Funnel</div>
                       <div className='text-sm text-muted-foreground mt-1'>
-                        Ad {'->'} External Site (Load Time) {'->'} Read Long Copy {'->'} Form {'->'} Email Confirmation.
+                        Ad {'->'} External Site (Load Time) {'->'} Read Long
+                        Copy {'->'} Form {'->'} Email Confirmation.
                         <br />
                         <strong>Result:</strong> 2-3% Conversion Rate.
                       </div>
@@ -141,9 +151,12 @@ export default function BlogPost() {
                   <div className='flex items-start p-4 bg-primary/10 border border-primary/20 rounded-lg'>
                     <MessageCircle className='h-6 w-6 text-primary mr-4 shrink-0 mt-1' />
                     <div>
-                      <div className='font-bold text-primary'>Conversational Funnel</div>
+                      <div className='font-bold text-primary'>
+                        Conversational Funnel
+                      </div>
                       <div className='text-sm text-muted-foreground mt-1'>
-                        Ad {'->'} DM Window Opens {'->'} Chatbot Qualifies Lead {'->'} Sale.
+                        Ad {'->'} DM Window Opens {'->'} Chatbot Qualifies Lead{' '}
+                        {'->'} Sale.
                         <br />
                         <strong>Result:</strong> 10-15% Conversion Rate.
                       </div>
@@ -151,56 +164,89 @@ export default function BlogPost() {
                   </div>
                 </div>
 
-                <h2 id='what-are-click-to-dm-ads' className='scroll-mt-24 text-2xl font-bold mt-12 mb-6'>
+                <h2
+                  id='what-are-click-to-dm-ads'
+                  className='scroll-mt-24 text-2xl font-bold mt-12 mb-6'
+                >
                   What Are Click-to-DM Ads?
                 </h2>
                 <p>
-                  These are standard Facebook or Instagram ads (Feed, Stories, Reels), but the call-to-action button
-                  isn't "Learn More"—it's "Send Message".
+                  These are standard Facebook or Instagram ads (Feed, Stories,
+                  Reels), but the call-to-action button isn't "Learn More"—it's
+                  "Send Message".
                 </p>
                 <p>
-                  When a user clicks, they aren't taken to a website. Instead, their Instagram Direct Message window opens
-                  with a pre-filled message ready to send (e.g., "I want the discount code").
+                  When a user clicks, they aren't taken to a website. Instead,
+                  their Instagram Direct Message window opens with a pre-filled
+                  message ready to send (e.g., "I want the discount code").
                 </p>
 
-                <h2 id='why-they-convert-better' className='scroll-mt-24 text-2xl font-bold mt-12 mb-6'>
+                <h2
+                  id='why-they-convert-better'
+                  className='scroll-mt-24 text-2xl font-bold mt-12 mb-6'
+                >
                   Why They Convert 5x Better
                 </h2>
                 <ul className='list-disc pl-6 space-y-2 text-muted-foreground'>
-                  <li><strong>Zero Load Time:</strong> It's instant. No waiting for a slow mobile site.</li>
-                  <li><strong>Native Experience:</strong> Users trust Instagram more than your unknown website.</li>
-                  <li><strong>Micro-Commitments:</strong> Replying to a chat feels easier than "Submitting a Form".</li>
+                  <li>
+                    <strong>Zero Load Time:</strong> It's instant. No waiting
+                    for a slow mobile site.
+                  </li>
+                  <li>
+                    <strong>Native Experience:</strong> Users trust Instagram
+                    more than your unknown website.
+                  </li>
+                  <li>
+                    <strong>Micro-Commitments:</strong> Replying to a chat feels
+                    easier than "Submitting a Form".
+                  </li>
                 </ul>
 
-                <h2 id='retargeting-goldmine' className='scroll-mt-24 text-2xl font-bold mt-12 mb-6'>
+                <h2
+                  id='retargeting-goldmine'
+                  className='scroll-mt-24 text-2xl font-bold mt-12 mb-6'
+                >
                   The Retargeting Goldmine
                 </h2>
                 <p>
-                  Here is the best part. When someone visits your landing page and leaves, you have to pay to retarget them with ads.
+                  Here is the best part. When someone visits your landing page
+                  and leaves, you have to pay to retarget them with ads.
                 </p>
                 <p>
-                  When someone clicks a DM Ad and sends a message, <strong>you have an open conversation thread</strong>.
+                  When someone clicks a DM Ad and sends a message,{' '}
+                  <strong>you have an open conversation thread</strong>.
                 </p>
                 <div className='my-8 rounded-xl border bg-card p-6 shadow-sm not-prose flex items-center gap-4'>
                   <Zap className='h-10 w-10 text-yellow-500' />
                   <div>
                     <h4 className='font-semibold'>The 24-Hour Rule</h4>
                     <p className='text-muted-foreground text-sm'>
-                      Once they message you, you have 24 hours to message them back for free (via automation).
-                      After that, you can use "Sponsored Messages" to re-engage them at a fraction of the cost of feed ads.
+                      Once they message you, you have 24 hours to message them
+                      back for free (via automation). After that, you can use
+                      "Sponsored Messages" to re-engage them at a fraction of
+                      the cost of feed ads.
                     </p>
                   </div>
                 </div>
 
-                <h2 id='setting-it-up' className='scroll-mt-24 text-2xl font-bold mt-12 mb-6'>
+                <h2
+                  id='setting-it-up'
+                  className='scroll-mt-24 text-2xl font-bold mt-12 mb-6'
+                >
                   How to Set It Up
                 </h2>
-                <p>
-                  You need two things:
-                </p>
+                <p>You need two things:</p>
                 <ol className='list-decimal pl-6 space-y-2 text-muted-foreground'>
-                  <li><strong>Meta Ads Manager:</strong> Select the "Engagement" objective and choose "Messaging Apps" as the conversion location.</li>
-                  <li><strong>Automation Tool (PostEngage.ai):</strong> Connect your tool to handle the influx of messages instantly. You cannot rely on manual replies at scale.</li>
+                  <li>
+                    <strong>Meta Ads Manager:</strong> Select the "Engagement"
+                    objective and choose "Messaging Apps" as the conversion
+                    location.
+                  </li>
+                  <li>
+                    <strong>Automation Tool (PostEngage.ai):</strong> Connect
+                    your tool to handle the influx of messages instantly. You
+                    cannot rely on manual replies at scale.
+                  </li>
                 </ol>
 
                 <Card className='my-12 bg-primary/5 border-primary/20'>
@@ -212,7 +258,8 @@ export default function BlogPost() {
                   </CardHeader>
                   <CardContent>
                     <p className='mb-6 text-muted-foreground'>
-                      Stop wasting budget on bounce rates. Switch to Click-to-DM ads and let PostEngage.ai handle the conversations 24/7.
+                      Stop wasting budget on bounce rates. Switch to Click-to-DM
+                      ads and let PostEngage.ai handle the conversations 24/7.
                     </p>
                     <div className='flex flex-col gap-4 sm:flex-row'>
                       <Button asChild size='lg'>
@@ -230,7 +277,10 @@ export default function BlogPost() {
               <div className='mt-12 border-t pt-12'>
                 <div className='flex items-center gap-4'>
                   <Avatar className='h-12 w-12'>
-                    <AvatarImage src='/team-avatar.png' alt='PostEngageAI Team' />
+                    <AvatarImage
+                      src='/team-avatar.png'
+                      alt='PostEngageAI Team'
+                    />
                     <AvatarFallback>PE</AvatarFallback>
                   </Avatar>
                   <div>

@@ -1,6 +1,12 @@
 import { LandingHeader } from '@/components/landing/landing-header';
 import { LandingFooter } from '@/components/landing/landing-footer';
-import { ArrowLeft, BrainCircuit, Target, Sparkles, Filter } from 'lucide-react';
+import {
+  ArrowLeft,
+  BrainCircuit,
+  Target,
+  Sparkles,
+  Filter,
+} from 'lucide-react';
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
@@ -106,7 +112,9 @@ export default function BlogPostPage() {
                   Instagram Quiz Funnels: Segment Your Audience on Autopilot
                 </h1>
                 <p className='text-xl text-muted-foreground leading-relaxed border-l-4 border-primary/20 pl-6 italic'>
-                  One-size-fits-all marketing is dead. Use interactive quizzes in DMs to discover exactly what your followers want, then sell it to them.
+                  One-size-fits-all marketing is dead. Use interactive quizzes
+                  in DMs to discover exactly what your followers want, then sell
+                  it to them.
                 </p>
               </header>
 
@@ -128,10 +136,16 @@ export default function BlogPostPage() {
                   The Power of Micro-Commitments
                 </h2>
                 <p className='leading-relaxed text-muted-foreground'>
-                  Asking for a sale immediately is like proposing on the first date. A quiz is a conversation. It's a series of micro-commitments. Each tap of an option is a small "yes" that builds momentum towards the final offer.
+                  Asking for a sale immediately is like proposing on the first
+                  date. A quiz is a conversation. It's a series of
+                  micro-commitments. Each tap of an option is a small "yes" that
+                  builds momentum towards the final offer.
                 </p>
                 <p className='leading-relaxed text-muted-foreground mt-4'>
-                  Quizzes are inherently engaging. People love to learn about themselves. By framing your sales qualification as a "Personality Test" or "Assessment", you lower resistance and increase participation.
+                  Quizzes are inherently engaging. People love to learn about
+                  themselves. By framing your sales qualification as a
+                  "Personality Test" or "Assessment", you lower resistance and
+                  increase participation.
                 </p>
 
                 <h2 className='scroll-m-20 text-3xl font-bold tracking-tight mt-16 mb-6 flex items-center gap-3'>
@@ -141,7 +155,8 @@ export default function BlogPostPage() {
                   How It Works: The Skin Care Example
                 </h2>
                 <p className='leading-relaxed text-muted-foreground'>
-                  Let's say you sell skincare products. Instead of blasting "Buy our moisturizer!" to everyone, you run a "Skin Type Quiz".
+                  Let's say you sell skincare products. Instead of blasting "Buy
+                  our moisturizer!" to everyone, you run a "Skin Type Quiz".
                 </p>
                 <div className='grid gap-6 my-8'>
                   <Card className='bg-background/50 backdrop-blur border-l-4 border-l-blue-500'>
@@ -162,7 +177,8 @@ export default function BlogPostPage() {
                       <h3 className='font-bold text-lg mb-2'>Result & Offer</h3>
                       <p className='text-muted-foreground'>
                         If they tap <strong>Dryness</strong>: <br />
-                        "Got it! Hydration is key. We recommend our Hyaluronic Acid Serum. Here is a 10% off code just for you."
+                        "Got it! Hydration is key. We recommend our Hyaluronic
+                        Acid Serum. Here is a 10% off code just for you."
                       </p>
                     </CardContent>
                   </Card>
@@ -175,25 +191,37 @@ export default function BlogPostPage() {
                   Building the Logic in PostEngage.ai
                 </h2>
                 <p className='leading-relaxed text-muted-foreground'>
-                  With PostEngage.ai's visual flow builder, creating these quizzes is drag-and-drop simple.
+                  With PostEngage.ai's visual flow builder, creating these
+                  quizzes is drag-and-drop simple.
                 </p>
                 <ul className='space-y-4 my-8'>
                   <li className='flex items-start gap-3'>
                     <Target className='w-6 h-6 text-primary mt-1' />
                     <div>
-                      <strong className='text-foreground'>Tagging:</strong> Apply tags based on answers (e.g., 'Skin: Dry', 'Skin: Oily'). This builds your customer data profile for future marketing.
+                      <strong className='text-foreground'>Tagging:</strong>{' '}
+                      Apply tags based on answers (e.g., 'Skin: Dry', 'Skin:
+                      Oily'). This builds your customer data profile for future
+                      marketing.
                     </div>
                   </li>
                   <li className='flex items-start gap-3'>
                     <Filter className='w-6 h-6 text-primary mt-1' />
                     <div>
-                      <strong className='text-foreground'>Conditional Logic:</strong> Show different questions based on previous answers.
+                      <strong className='text-foreground'>
+                        Conditional Logic:
+                      </strong>{' '}
+                      Show different questions based on previous answers.
                     </div>
                   </li>
                   <li className='flex items-start gap-3'>
                     <Sparkles className='w-6 h-6 text-primary mt-1' />
                     <div>
-                      <strong className='text-foreground'>AI Recommendations:</strong> Use our AI integration to analyze their answers and generate a personalized paragraph explaining <em>why</em> this product is perfect for them.
+                      <strong className='text-foreground'>
+                        AI Recommendations:
+                      </strong>{' '}
+                      Use our AI integration to analyze their answers and
+                      generate a personalized paragraph explaining <em>why</em>{' '}
+                      this product is perfect for them.
                     </div>
                   </li>
                 </ul>
@@ -205,7 +233,11 @@ export default function BlogPostPage() {
                   Retargeting Based on Quiz Data
                 </h2>
                 <p className='leading-relaxed text-muted-foreground'>
-                  The value does not stop at the first interaction. Now that you know 500 of your followers have "Dry Skin", you can send a broadcast DM (within the 24-hour window or via sponsored message) specifically to that segment when you launch a new hydrating mask.
+                  The value does not stop at the first interaction. Now that you
+                  know 500 of your followers have "Dry Skin", you can send a
+                  broadcast DM (within the 24-hour window or via sponsored
+                  message) specifically to that segment when you launch a new
+                  hydrating mask.
                 </p>
 
                 <div className='my-12 p-8 rounded-3xl bg-gradient-to-br from-primary/10 via-background to-primary/5 border border-primary/20 text-center'>
@@ -213,10 +245,15 @@ export default function BlogPostPage() {
                     Start segmenting your audience today
                   </h3>
                   <p className='text-muted-foreground mb-8 max-w-lg mx-auto'>
-                    Build your first Instagram DM Quiz in minutes with PostEngage.ai templates.
+                    Build your first Instagram DM Quiz in minutes with
+                    PostEngage.ai templates.
                   </p>
-                  <Button size='lg' className='rounded-full px-8 h-12 text-base'>
-                    Build My Quiz <ArrowLeft className='ml-2 w-4 h-4 rotate-180' />
+                  <Button
+                    size='lg'
+                    className='rounded-full px-8 h-12 text-base'
+                  >
+                    Build My Quiz{' '}
+                    <ArrowLeft className='ml-2 w-4 h-4 rotate-180' />
                   </Button>
                 </div>
               </div>

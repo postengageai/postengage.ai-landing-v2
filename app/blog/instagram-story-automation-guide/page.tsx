@@ -76,8 +76,9 @@ export default function BlogPost() {
               Instagram Story Automation: How to Turn Views into Leads (2026)
             </h1>
             <p className='mx-auto max-w-2xl text-xl text-muted-foreground leading-relaxed'>
-              500 million people watch Stories every day. But 99% of brands just let them swipe past.
-              Here is how to stop the scroll and start the conversation.
+              500 million people watch Stories every day. But 99% of brands just
+              let them swipe past. Here is how to stop the scroll and start the
+              conversation.
             </p>
           </header>
 
@@ -112,24 +113,32 @@ export default function BlogPost() {
               <div className='prose prose-lg dark:prose-invert max-w-none'>
                 {/* Introduction */}
                 <p>
-                  Stories are ephemeral. They disappear in 24 hours. This creates urgency, but it also means
-                  your window of opportunity is tiny.
+                  Stories are ephemeral. They disappear in 24 hours. This
+                  creates urgency, but it also means your window of opportunity
+                  is tiny.
                 </p>
                 <p>
-                  If someone watches your story, they are interested. If they reply to your story, they are <strong>hot leads</strong>.
-                  But if you don't reply instantly, that lead goes cold in minutes.
+                  If someone watches your story, they are interested. If they
+                  reply to your story, they are <strong>hot leads</strong>. But
+                  if you don't reply instantly, that lead goes cold in minutes.
                 </p>
 
-                <h2 id='why-stories-matter' className='scroll-mt-24 text-2xl font-bold mt-12 mb-6'>
+                <h2
+                  id='why-stories-matter'
+                  className='scroll-mt-24 text-2xl font-bold mt-12 mb-6'
+                >
                   Why Stories are the New Landing Page
                 </h2>
                 <div className='grid gap-4 my-8 not-prose'>
                   <div className='flex items-start p-4 bg-primary/10 border border-primary/20 rounded-lg'>
                     <CircleDashed className='h-6 w-6 text-primary mr-4 shrink-0 mt-1' />
                     <div>
-                      <div className='font-bold text-primary'>Highest Engagement Surface</div>
+                      <div className='font-bold text-primary'>
+                        Highest Engagement Surface
+                      </div>
                       <div className='text-sm text-muted-foreground mt-1'>
-                        More users watch Stories than scroll the Feed in 2026. It is where the attention is.
+                        More users watch Stories than scroll the Feed in 2026.
+                        It is where the attention is.
                       </div>
                     </div>
                   </div>
@@ -138,28 +147,38 @@ export default function BlogPost() {
                     <div>
                       <div className='font-bold'>Direct DM Entry</div>
                       <div className='text-sm text-muted-foreground mt-1'>
-                        Replying to a Story starts a DM conversation automatically. It is the lowest friction entry point.
+                        Replying to a Story starts a DM conversation
+                        automatically. It is the lowest friction entry point.
                       </div>
                     </div>
                   </div>
                 </div>
 
-                <h2 id='story-reply-automation' className='scroll-mt-24 text-2xl font-bold mt-12 mb-6'>
+                <h2
+                  id='story-reply-automation'
+                  className='scroll-mt-24 text-2xl font-bold mt-12 mb-6'
+                >
                   The "Story Reply" Strategy
                 </h2>
                 <p>
-                  The strategy is simple: <strong>Ask for a keyword reply.</strong>
+                  The strategy is simple:{' '}
+                  <strong>Ask for a keyword reply.</strong>
                 </p>
                 <p>
-                  Instead of using the "Link Sticker" (which takes them out of the app to a slow website), use a text overlay:
+                  Instead of using the "Link Sticker" (which takes them out of
+                  the app to a slow website), use a text overlay:
                   <em>"Reply 'GUIDE' to get this PDF sent to your DMs."</em>
                 </p>
                 <p>
-                  Why? Because the algorithm loves DM replies. It signals that people care about your content,
-                  boosting your future Story views.
+                  Why? Because the algorithm loves DM replies. It signals that
+                  people care about your content, boosting your future Story
+                  views.
                 </p>
 
-                <h2 id='automation-examples' className='scroll-mt-24 text-2xl font-bold mt-12 mb-6'>
+                <h2
+                  id='automation-examples'
+                  className='scroll-mt-24 text-2xl font-bold mt-12 mb-6'
+                >
                   3 Automation Examples
                 </h2>
 
@@ -176,7 +195,8 @@ export default function BlogPost() {
                         <strong>Trigger:</strong> User replies "SALE"
                       </p>
                       <p className='text-sm'>
-                        <strong>Bot:</strong> "You made it just in time! ⚡ Here is your 24-hour secret link: [Link]"
+                        <strong>Bot:</strong> "You made it just in time! ⚡ Here
+                        is your 24-hour secret link: [Link]"
                       </p>
                     </CardContent>
                   </Card>
@@ -193,19 +213,33 @@ export default function BlogPost() {
                         <strong>Trigger:</strong> User votes "Yes" on a poll
                       </p>
                       <p className='text-sm'>
-                        <strong>Bot:</strong> "Saw you voted Yes! 🙌 Would you like me to send you the details?"
+                        <strong>Bot:</strong> "Saw you voted Yes! 🙌 Would you
+                        like me to send you the details?"
                       </p>
                     </CardContent>
                   </Card>
                 </div>
 
-                <h2 id='mistakes-to-avoid' className='scroll-mt-24 text-2xl font-bold mt-12 mb-6'>
+                <h2
+                  id='mistakes-to-avoid'
+                  className='scroll-mt-24 text-2xl font-bold mt-12 mb-6'
+                >
                   Mistakes to Avoid
                 </h2>
                 <ul className='list-disc pl-6 space-y-2 text-muted-foreground'>
-                  <li><strong>Don't automate every reply:</strong> Only trigger on specific keywords. Let generic replies go to your inbox.</li>
-                  <li><strong>Don't be robotic:</strong> Use emojis, GIFs, and casual language. It's a Story, not a press release.</li>
-                  <li><strong>Don't forget the CTA:</strong> You must tell them <em>what</em> to reply. "Reply YES" is better than "Let me know".</li>
+                  <li>
+                    <strong>Don't automate every reply:</strong> Only trigger on
+                    specific keywords. Let generic replies go to your inbox.
+                  </li>
+                  <li>
+                    <strong>Don't be robotic:</strong> Use emojis, GIFs, and
+                    casual language. It's a Story, not a press release.
+                  </li>
+                  <li>
+                    <strong>Don't forget the CTA:</strong> You must tell them{' '}
+                    <em>what</em> to reply. "Reply YES" is better than "Let me
+                    know".
+                  </li>
                 </ul>
 
                 <Card className='my-12 bg-primary/5 border-primary/20'>
@@ -217,7 +251,8 @@ export default function BlogPost() {
                   </CardHeader>
                   <CardContent>
                     <p className='mb-6 text-muted-foreground'>
-                      PostEngage.ai listens for Story replies and sends instant DMs, 24/7. Never miss a lead again.
+                      PostEngage.ai listens for Story replies and sends instant
+                      DMs, 24/7. Never miss a lead again.
                     </p>
                     <div className='flex flex-col gap-4 sm:flex-row'>
                       <Button asChild size='lg'>
@@ -235,7 +270,10 @@ export default function BlogPost() {
               <div className='mt-12 border-t pt-12'>
                 <div className='flex items-center gap-4'>
                   <Avatar className='h-12 w-12'>
-                    <AvatarImage src='/team-avatar.png' alt='PostEngageAI Team' />
+                    <AvatarImage
+                      src='/team-avatar.png'
+                      alt='PostEngageAI Team'
+                    />
                     <AvatarFallback>PE</AvatarFallback>
                   </Avatar>
                   <div>

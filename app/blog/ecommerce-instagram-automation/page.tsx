@@ -77,7 +77,8 @@ export default function BlogPost() {
             </h1>
             <p className='mx-auto max-w-2xl text-xl text-muted-foreground leading-relaxed'>
               Your customers are on Instagram. Your products are on Shopify.
-              Here is how to bridge the gap and close sales without them ever leaving the chat.
+              Here is how to bridge the gap and close sales without them ever
+              leaving the chat.
             </p>
           </header>
 
@@ -112,14 +113,19 @@ export default function BlogPost() {
               <div className='prose prose-lg dark:prose-invert max-w-none'>
                 {/* Introduction */}
                 <p>
-                  DTC brands love Instagram for brand building, but hate it for conversion tracking.
-                  "Link in Bio" is a leaky bucket. Stories disappear.
+                  DTC brands love Instagram for brand building, but hate it for
+                  conversion tracking. "Link in Bio" is a leaky bucket. Stories
+                  disappear.
                 </p>
                 <p>
-                  But in 2026, the best brands aren't sending traffic to their store. They are bringing their store to the DMs.
+                  But in 2026, the best brands aren't sending traffic to their
+                  store. They are bringing their store to the DMs.
                 </p>
 
-                <h2 id='the-friction-problem' className='scroll-mt-24 text-2xl font-bold mt-12 mb-6'>
+                <h2
+                  id='the-friction-problem'
+                  className='scroll-mt-24 text-2xl font-bold mt-12 mb-6'
+                >
                   The Friction Problem
                 </h2>
                 <div className='grid gap-4 my-8 not-prose'>
@@ -128,7 +134,8 @@ export default function BlogPost() {
                     <div>
                       <div className='font-bold'>Old Way</div>
                       <div className='text-sm text-muted-foreground mt-1'>
-                        See Post {'->'} Visit Profile {'->'} Click Link {'->'} Search for Product {'->'} Add to Cart.
+                        See Post {'->'} Visit Profile {'->'} Click Link {'->'}{' '}
+                        Search for Product {'->'} Add to Cart.
                         <br />
                         <strong>Result:</strong> High drop-off at every step.
                       </div>
@@ -137,9 +144,12 @@ export default function BlogPost() {
                   <div className='flex items-start p-4 bg-primary/10 border border-primary/20 rounded-lg'>
                     <Zap className='h-6 w-6 text-primary mr-4 shrink-0 mt-1' />
                     <div>
-                      <div className='font-bold text-primary'>New Way (Automation)</div>
+                      <div className='font-bold text-primary'>
+                        New Way (Automation)
+                      </div>
                       <div className='text-sm text-muted-foreground mt-1'>
-                        Comment "BUY" {'->'} Receive DM with Product Card {'->'} One-Click Checkout.
+                        Comment "BUY" {'->'} Receive DM with Product Card {'->'}{' '}
+                        One-Click Checkout.
                         <br />
                         <strong>Result:</strong> Instant conversion.
                       </div>
@@ -147,29 +157,44 @@ export default function BlogPost() {
                   </div>
                 </div>
 
-                <h2 id='shopify-integration' className='scroll-mt-24 text-2xl font-bold mt-12 mb-6'>
+                <h2
+                  id='shopify-integration'
+                  className='scroll-mt-24 text-2xl font-bold mt-12 mb-6'
+                >
                   Shopify + DM Automation
                 </h2>
                 <p>
-                  With tools like PostEngage.ai, you can sync your Shopify catalog directly to your automation.
+                  With tools like PostEngage.ai, you can sync your Shopify
+                  catalog directly to your automation.
                 </p>
                 <p>
-                  When a user asks "Do you have this in blue?", your AI agent checks your real-time Shopify inventory
-                  and replies: <em>"Yes! We have 3 left in Blue (Size M). Want the link?"</em>
+                  When a user asks "Do you have this in blue?", your AI agent
+                  checks your real-time Shopify inventory and replies:{' '}
+                  <em>
+                    "Yes! We have 3 left in Blue (Size M). Want the link?"
+                  </em>
                 </p>
 
-                <h2 id='abandoned-cart-recovery' className='scroll-mt-24 text-2xl font-bold mt-12 mb-6'>
+                <h2
+                  id='abandoned-cart-recovery'
+                  className='scroll-mt-24 text-2xl font-bold mt-12 mb-6'
+                >
                   Abandoned Cart Recovery via DM
                 </h2>
+                <p>Email open rates are 20%. DM open rates are 90%.</p>
                 <p>
-                  Email open rates are 20%. DM open rates are 90%.
-                </p>
-                <p>
-                  If a user interacts with your automation but doesn't buy, you can trigger a follow-up DM 1 hour later:
-                  <em>"Hey! Saw you checking out the Summer Dress. Here is a 10% code to finish your order: [CODE]"</em>
+                  If a user interacts with your automation but doesn't buy, you
+                  can trigger a follow-up DM 1 hour later:
+                  <em>
+                    "Hey! Saw you checking out the Summer Dress. Here is a 10%
+                    code to finish your order: [CODE]"
+                  </em>
                 </p>
 
-                <h2 id='comment-to-sale' className='scroll-mt-24 text-2xl font-bold mt-12 mb-6'>
+                <h2
+                  id='comment-to-sale'
+                  className='scroll-mt-24 text-2xl font-bold mt-12 mb-6'
+                >
                   The "Comment to Sale" Flow
                 </h2>
                 <div className='space-y-6 my-8 not-prose'>
@@ -183,9 +208,15 @@ export default function BlogPost() {
                     <CardContent>
                       <ol className='list-decimal pl-4 space-y-2 text-sm'>
                         <li>Post a Reel of your new product.</li>
-                        <li>Caption: "Comment <strong>NEED</strong> to get the link."</li>
+                        <li>
+                          Caption: "Comment <strong>NEED</strong> to get the
+                          link."
+                        </li>
                         <li>User comments "NEED".</li>
-                        <li>Automation sends a DM with a "Buy Now" card linked directly to that Shopify product page.</li>
+                        <li>
+                          Automation sends a DM with a "Buy Now" card linked
+                          directly to that Shopify product page.
+                        </li>
                       </ol>
                     </CardContent>
                   </Card>
@@ -219,7 +250,10 @@ export default function BlogPost() {
               <div className='mt-12 border-t pt-12'>
                 <div className='flex items-center gap-4'>
                   <Avatar className='h-12 w-12'>
-                    <AvatarImage src='/team-avatar.png' alt='PostEngageAI Team' />
+                    <AvatarImage
+                      src='/team-avatar.png'
+                      alt='PostEngageAI Team'
+                    />
                     <AvatarFallback>PE</AvatarFallback>
                   </Avatar>
                   <div>

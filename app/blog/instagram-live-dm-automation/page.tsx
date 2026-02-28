@@ -8,7 +8,8 @@ import { Metadata } from 'next';
 import { SocialShareButtons } from '@/components/blog/social-share-buttons';
 
 export const metadata: Metadata = {
-  title: 'Instagram Live DM Automation: How to Drive Sales in Real-Time (2026 Guide)',
+  title:
+    'Instagram Live DM Automation: How to Drive Sales in Real-Time (2026 Guide)',
   description:
     'Learn how to use Instagram Live DM automation to turn viewers into buyers instantly. The ultimate guide for creators and brands.',
   openGraph: {
@@ -105,8 +106,8 @@ export default function BlogPostPage() {
             <div className='relative mx-auto mb-16 aspect-[21/9] max-w-5xl overflow-hidden rounded-2xl border bg-muted/30 shadow-sm'>
               <div className='absolute inset-0 flex items-center justify-center bg-gradient-to-br from-primary/5 via-transparent to-primary/5'>
                 <span className='text-muted-foreground/20 font-medium'>
-                  Featured Image: Split screen showing IG Live host and automated DM
-                  notification
+                  Featured Image: Split screen showing IG Live host and
+                  automated DM notification
                 </span>
               </div>
             </div>
@@ -162,20 +163,21 @@ export default function BlogPostPage() {
               <div className='lg:col-span-9'>
                 <div className='prose prose-lg dark:prose-invert max-w-none'>
                   <p className='lead text-xl text-muted-foreground mb-8'>
-                    Imagine this: You are hosting an Instagram Live. You have 500
-                    people watching. You just pitched your new course/product.
-                    Excitement is high. Then you say: "Okay everyone, now close
-                    this live stream, go to my profile, click the link in my bio,
-                    scroll down to find the right button..."
+                    Imagine this: You are hosting an Instagram Live. You have
+                    500 people watching. You just pitched your new
+                    course/product. Excitement is high. Then you say: "Okay
+                    everyone, now close this live stream, go to my profile,
+                    click the link in my bio, scroll down to find the right
+                    button..."
                   </p>
                   <p>
-                    And just like that, you lost 80% of your potential sales. Friction
-                    kills conversion.
+                    And just like that, you lost 80% of your potential sales.
+                    Friction kills conversion.
                   </p>
                   <p>
-                    In 2026, the smartest creators are not sending people to their
-                    bio. They are bringing the checkout to the DMs, triggered by a
-                    single keyword comment during the Live.
+                    In 2026, the smartest creators are not sending people to
+                    their bio. They are bringing the checkout to the DMs,
+                    triggered by a single keyword comment during the Live.
                   </p>
 
                   <h2
@@ -185,9 +187,9 @@ export default function BlogPostPage() {
                     The Problem with "Link in Bio" During Live Streams
                   </h2>
                   <p>
-                    Instagram Live is an immersive format. Viewers are engaged in
-                    the moment. Asking them to leave that environment to perform a
-                    complex navigation task is asking for churn.
+                    Instagram Live is an immersive format. Viewers are engaged
+                    in the moment. Asking them to leave that environment to
+                    perform a complex navigation task is asking for churn.
                   </p>
                   <ul className='list-disc pl-6 space-y-2 my-6'>
                     <li>
@@ -199,8 +201,8 @@ export default function BlogPostPage() {
                       cluttered with 20 different links.
                     </li>
                     <li>
-                      <strong>Drop-off:</strong> Every extra click reduces conversion
-                      by ~20-50%.
+                      <strong>Drop-off:</strong> Every extra click reduces
+                      conversion by ~20-50%.
                     </li>
                   </ul>
 
@@ -211,8 +213,9 @@ export default function BlogPostPage() {
                     How Live Automation Works
                   </h2>
                   <p>
-                    With PostEngage.ai (and similar tools like ManyChat), you can
-                    set up a trigger specifically for Instagram Live comments.
+                    With PostEngage.ai (and similar tools like ManyChat), you
+                    can set up a trigger specifically for Instagram Live
+                    comments.
                   </p>
                   <div className='my-8 rounded-xl border bg-card p-6 shadow-sm'>
                     <div className='flex items-start gap-4'>
@@ -229,8 +232,8 @@ export default function BlogPostPage() {
                             <span className='font-mono font-bold text-primary'>
                               VIP
                             </span>{' '}
-                            below to get the discount link sent to your DMs right
-                            now!"
+                            below to get the discount link sent to your DMs
+                            right now!"
                           </li>
                           <li>Viewer comments "VIP".</li>
                           <li>
@@ -262,20 +265,18 @@ export default function BlogPostPage() {
                     The "Hook" Script
                   </h3>
                   <blockquote className='border-l-4 border-primary pl-4 italic my-4 bg-muted/30 p-4 rounded-r-lg'>
-                    "I don't want you to miss any of this training by trying to find
-                    the link in my bio. Just comment the word{' '}
+                    "I don't want you to miss any of this training by trying to
+                    find the link in my bio. Just comment the word{' '}
                     <strong>WORKBOOK</strong> right now in the chat, and my team
-                    (aka my AI bot) will DM you the PDF instantly. You don't even
-                    have to leave the stream."
+                    (aka my AI bot) will DM you the PDF instantly. You don't
+                    even have to leave the stream."
                   </blockquote>
 
                   <h3 className='text-xl font-semibold mt-8 mb-4 flex items-center gap-2'>
                     <Zap className='h-5 w-5 text-primary' />
                     The DM Sequence
                   </h3>
-                  <p>
-                    Don't just send a link. Start a conversation.
-                  </p>
+                  <p>Don't just send a link. Start a conversation.</p>
                   <ul className='list-disc pl-6 space-y-2 my-6'>
                     <li>
                       <strong>Message 1:</strong> "Hey! 👋 Saw you on the Live!
@@ -283,13 +284,13 @@ export default function BlogPostPage() {
                       stream so far?"
                     </li>
                     <li>
-                      <strong>Follow-up (if they click):</strong> "Awesome, let me
-                      know if you have questions!"
+                      <strong>Follow-up (if they click):</strong> "Awesome, let
+                      me know if you have questions!"
                     </li>
                     <li>
                       <strong>Follow-up (if no click after 15m):</strong> "Just
-                      wanted to make sure you got this? We are about to cover the
-                      best part on the Live stream!"
+                      wanted to make sure you got this? We are about to cover
+                      the best part on the Live stream!"
                     </li>
                   </ul>
 
@@ -326,8 +327,8 @@ export default function BlogPostPage() {
                     </div>
                   </div>
                   <p>
-                    That is an <strong>8x increase</strong> in conversions just by
-                    removing friction.
+                    That is an <strong>8x increase</strong> in conversions just
+                    by removing friction.
                   </p>
                 </div>
 

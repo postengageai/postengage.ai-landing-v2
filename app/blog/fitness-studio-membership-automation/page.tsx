@@ -86,7 +86,9 @@ export default function BlogPostPage() {
               Back to Blog
             </Link>
             <span>/</span>
-            <span className='text-foreground font-medium'>Fitness Automation</span>
+            <span className='text-foreground font-medium'>
+              Fitness Automation
+            </span>
           </div>
 
           <div className='grid grid-cols-1 lg:grid-cols-12 gap-12'>
@@ -106,7 +108,9 @@ export default function BlogPostPage() {
                   Gym & Fitness Automation: How to Fill Classes on Autopilot
                 </h1>
                 <p className='text-xl text-muted-foreground leading-relaxed border-l-4 border-primary/20 pl-6 italic'>
-                  Your front desk is busy. You miss calls. You miss DMs. And you lose members. It's time to automate the member acquisition flow.
+                  Your front desk is busy. You miss calls. You miss DMs. And you
+                  lose members. It's time to automate the member acquisition
+                  flow.
                 </p>
               </header>
 
@@ -128,13 +132,18 @@ export default function BlogPostPage() {
                   The "Free Pass" Funnel
                 </h2>
                 <p className='leading-relaxed text-muted-foreground'>
-                  The most effective offer for gyms is a free day pass or trial class. But the friction of filling out a web form kills conversions.
+                  The most effective offer for gyms is a free day pass or trial
+                  class. But the friction of filling out a web form kills
+                  conversions.
                 </p>
                 <div className='bg-muted/30 p-6 rounded-xl border border-border/50 my-6'>
                   <h3 className='font-bold mb-2'>Automated Workflow:</h3>
                   <ul className='list-disc pl-5 space-y-2 text-muted-foreground'>
                     <li>User comments "SWEAT" on your reel.</li>
-                    <li>DM sent: "Hey! Ready to crush a workout? Tap below to claim your Free Day Pass."</li>
+                    <li>
+                      DM sent: "Hey! Ready to crush a workout? Tap below to
+                      claim your Free Day Pass."
+                    </li>
                     <li>User taps "Claim Pass".</li>
                     <li>We capture their Name/Phone number automatically.</li>
                     <li>QR Code for entry is sent instantly to their DM.</li>
@@ -148,14 +157,19 @@ export default function BlogPostPage() {
                   Story Mentions = Member Referrals
                 </h2>
                 <p className='leading-relaxed text-muted-foreground'>
-                  Your current members are your best marketers. Incentivize them to post about their workout.
+                  Your current members are your best marketers. Incentivize them
+                  to post about their workout.
                 </p>
                 <p className='leading-relaxed text-muted-foreground mt-4'>
-                  <strong>Trigger:</strong> Member mentions @YourGym in their Story. <br />
-                  <strong>Automation:</strong> "Thanks for repping us! Here is a free smoothie voucher for your next visit. 🥤"
+                  <strong>Trigger:</strong> Member mentions @YourGym in their
+                  Story. <br />
+                  <strong>Automation:</strong> "Thanks for repping us! Here is a
+                  free smoothie voucher for your next visit. 🥤"
                 </p>
                 <p className='leading-relaxed text-muted-foreground mt-4'>
-                  This encourages them to post <em>more often</em>, giving you free exposure to their local friends (who are your ideal leads).
+                  This encourages them to post <em>more often</em>, giving you
+                  free exposure to their local friends (who are your ideal
+                  leads).
                 </p>
 
                 <h2 className='scroll-m-20 text-3xl font-bold tracking-tight mt-16 mb-6 flex items-center gap-3'>
@@ -165,7 +179,8 @@ export default function BlogPostPage() {
                   Re-engaging Cancelled Members
                 </h2>
                 <p className='leading-relaxed text-muted-foreground'>
-                  Win-back campaigns are hard via email. But via DM? They are personal.
+                  Win-back campaigns are hard via email. But via DM? They are
+                  personal.
                 </p>
                 <div className='grid sm:grid-cols-2 gap-6 my-8'>
                   <Card className='bg-background/50 backdrop-blur'>
@@ -175,7 +190,8 @@ export default function BlogPostPage() {
                         <h3 className='font-bold'>The Offer</h3>
                       </div>
                       <p className='text-sm text-muted-foreground'>
-                        "Hey [Name], we missed you! We upgraded our equipment. Come back for a free week?"
+                        "Hey [Name], we missed you! We upgraded our equipment.
+                        Come back for a free week?"
                       </p>
                     </CardContent>
                   </Card>
@@ -188,7 +204,9 @@ export default function BlogPostPage() {
                   Class Booking Integration
                 </h2>
                 <p className='leading-relaxed text-muted-foreground'>
-                  Connect PostEngage.ai to your booking software (MindBody, etc.). Allow members to book or cancel classes simply by messaging "Book 6pm Yoga".
+                  Connect PostEngage.ai to your booking software (MindBody,
+                  etc.). Allow members to book or cancel classes simply by
+                  messaging "Book 6pm Yoga".
                 </p>
 
                 <div className='my-12 p-8 rounded-3xl bg-gradient-to-br from-primary/10 via-background to-primary/5 border border-primary/20 text-center'>
@@ -196,9 +214,13 @@ export default function BlogPostPage() {
                     Fill your classes automatically
                   </h3>
                   <p className='text-muted-foreground mb-8 max-w-lg mx-auto'>
-                    Focus on training your clients, let PostEngage.ai handle the bookings and leads.
+                    Focus on training your clients, let PostEngage.ai handle the
+                    bookings and leads.
                   </p>
-                  <Button size='lg' className='rounded-full px-8 h-12 text-base'>
+                  <Button
+                    size='lg'
+                    className='rounded-full px-8 h-12 text-base'
+                  >
                     Get Fitness Templates <Trophy className='ml-2 w-4 h-4' />
                   </Button>
                 </div>

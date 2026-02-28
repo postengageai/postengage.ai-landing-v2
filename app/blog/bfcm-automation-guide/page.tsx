@@ -10,13 +10,15 @@ import { TableOfContents } from '@/components/blog/table-of-contents';
 import { SocialShareButtons } from '@/components/blog/social-share-buttons';
 
 export const metadata: Metadata = {
-  title: 'BFCM Automation Guide: How to 10x Your Black Friday Sales on Instagram',
+  title:
+    'BFCM Automation Guide: How to 10x Your Black Friday Sales on Instagram',
   description:
-    'Don\'t rely on email alone this Black Friday. Learn how to use Instagram DM automation to cut through the noise and drive record-breaking sales.',
+    "Don't rely on email alone this Black Friday. Learn how to use Instagram DM automation to cut through the noise and drive record-breaking sales.",
   openGraph: {
-    title: 'BFCM Automation Guide: How to 10x Your Black Friday Sales on Instagram',
+    title:
+      'BFCM Automation Guide: How to 10x Your Black Friday Sales on Instagram',
     description:
-      'Don\'t rely on email alone this Black Friday. Learn how to use Instagram DM automation to cut through the noise and drive record-breaking sales.',
+      "Don't rely on email alone this Black Friday. Learn how to use Instagram DM automation to cut through the noise and drive record-breaking sales.",
     url: 'https://postengage.ai/blog/bfcm-automation-guide',
     siteName: 'PostEngage.ai',
     locale: 'en_US',
@@ -34,9 +36,10 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'BFCM Automation Guide: How to 10x Your Black Friday Sales on Instagram',
+    title:
+      'BFCM Automation Guide: How to 10x Your Black Friday Sales on Instagram',
     description:
-      'Don\'t rely on email alone this Black Friday. Learn how to use Instagram DM automation to cut through the noise and drive record-breaking sales.',
+      "Don't rely on email alone this Black Friday. Learn how to use Instagram DM automation to cut through the noise and drive record-breaking sales.",
     images: ['https://postengage.ai/blog/bfcm-automation-cover.png'],
   },
 };
@@ -45,7 +48,8 @@ export default function BlogPostPage() {
   const jsonLd = {
     '@context': 'https://schema.org',
     '@type': 'BlogPosting',
-    headline: 'BFCM Automation Guide: How to 10x Your Black Friday Sales on Instagram',
+    headline:
+      'BFCM Automation Guide: How to 10x Your Black Friday Sales on Instagram',
     image: 'https://postengage.ai/blog/bfcm-automation-cover.png',
     datePublished: '2026-03-25T00:00:00.000Z',
     dateModified: '2026-03-25T00:00:00.000Z',
@@ -63,7 +67,7 @@ export default function BlogPostPage() {
       },
     },
     description:
-      'Don\'t rely on email alone this Black Friday. Learn how to use Instagram DM automation to cut through the noise and drive record-breaking sales.',
+      "Don't rely on email alone this Black Friday. Learn how to use Instagram DM automation to cut through the noise and drive record-breaking sales.",
   };
 
   return (
@@ -106,7 +110,9 @@ export default function BlogPostPage() {
                   BFCM Automation: How to 10x Your Black Friday Sales
                 </h1>
                 <p className='text-xl text-muted-foreground leading-relaxed border-l-4 border-primary/20 pl-6 italic'>
-                  During Black Friday, inboxes are flooded. Attention is expensive. The brands that win are the ones that start the conversation <em>before</em> the sale begins.
+                  During Black Friday, inboxes are flooded. Attention is
+                  expensive. The brands that win are the ones that start the
+                  conversation <em>before</em> the sale begins.
                 </p>
               </header>
 
@@ -128,14 +134,19 @@ export default function BlogPostPage() {
                   Phase 1: The Waitlist (Early November)
                 </h2>
                 <p className='leading-relaxed text-muted-foreground'>
-                  Don't just send traffic to a "Coming Soon" page. Build a DM VIP List.
+                  Don't just send traffic to a "Coming Soon" page. Build a DM
+                  VIP List.
                 </p>
                 <div className='bg-muted/30 p-6 rounded-xl border border-border/50 my-6'>
                   <h3 className='font-bold mb-2'>The Strategy:</h3>
                   <ul className='list-disc pl-5 space-y-2 text-muted-foreground'>
-                    <li>Post a Story: "Want early access to our 50% OFF sale?"</li>
+                    <li>
+                      Post a Story: "Want early access to our 50% OFF sale?"
+                    </li>
                     <li>CTA: "Reply VIP to get on the list."</li>
-                    <li>Automation: Tag user as 'BFCM_VIP' and confirm their spot.</li>
+                    <li>
+                      Automation: Tag user as 'BFCM_VIP' and confirm their spot.
+                    </li>
                   </ul>
                 </div>
 
@@ -146,14 +157,17 @@ export default function BlogPostPage() {
                   Phase 2: The Early Access Drop (24h Before)
                 </h2>
                 <p className='leading-relaxed text-muted-foreground'>
-                  This is where the magic happens. While your competitors are scheduling emails that won't be opened for hours, you send a Broadcast DM to your VIP list.
+                  This is where the magic happens. While your competitors are
+                  scheduling emails that won't be opened for hours, you send a
+                  Broadcast DM to your VIP list.
                 </p>
                 <p className='leading-relaxed text-muted-foreground mt-4'>
                   <strong>Open rates on DMs: 80-90%.</strong> <br />
                   <strong>Open rates on BFCM Emails: 10-15%.</strong>
                 </p>
                 <p className='leading-relaxed text-muted-foreground mt-4'>
-                  "Hey [Name]! The VIP sale is LIVE. Here is your secret link: [Link]"
+                  "Hey [Name]! The VIP sale is LIVE. Here is your secret link:
+                  [Link]"
                 </p>
 
                 <h2 className='scroll-m-20 text-3xl font-bold tracking-tight mt-16 mb-6 flex items-center gap-3'>
@@ -163,7 +177,8 @@ export default function BlogPostPage() {
                   Phase 3: The Scarcity Push (Cyber Monday)
                 </h2>
                 <p className='leading-relaxed text-muted-foreground'>
-                  Use automation to answer FAQs instantly. "Does this ship to UK?", "What size am I?".
+                  Use automation to answer FAQs instantly. "Does this ship to
+                  UK?", "What size am I?".
                 </p>
                 <div className='grid sm:grid-cols-2 gap-6 my-8'>
                   <Card className='bg-background/50 backdrop-blur'>
@@ -184,7 +199,8 @@ export default function BlogPostPage() {
                         <h3 className='font-bold'>Support</h3>
                       </div>
                       <p className='text-sm text-muted-foreground'>
-                        AI Bot handles "Where is my order?" and sizing questions instantly, freeing up your team.
+                        AI Bot handles "Where is my order?" and sizing questions
+                        instantly, freeing up your team.
                       </p>
                     </CardContent>
                   </Card>
@@ -197,13 +213,15 @@ export default function BlogPostPage() {
                   Case Study: Fashion Brand "X"
                 </h2>
                 <p className='leading-relaxed text-muted-foreground'>
-                  Last year, a mid-sized fashion brand used PostEngage.ai for BFCM. They built a VIP list of 5,000 people via DMs.
+                  Last year, a mid-sized fashion brand used PostEngage.ai for
+                  BFCM. They built a VIP list of 5,000 people via DMs.
                 </p>
                 <ul className='space-y-4 my-8'>
                   <li className='flex items-start gap-3'>
                     <TrendingUp className='w-6 h-6 text-green-500 mt-1' />
                     <div>
-                      <strong className='text-foreground'>Result:</strong> $150k in sales in the first hour of Early Access.
+                      <strong className='text-foreground'>Result:</strong> $150k
+                      in sales in the first hour of Early Access.
                     </div>
                   </li>
                 </ul>
@@ -213,9 +231,13 @@ export default function BlogPostPage() {
                     Prepare for the biggest sales day of the year
                   </h3>
                   <p className='text-muted-foreground mb-8 max-w-lg mx-auto'>
-                    Setup your BFCM automation flows now and rest easy when the sales start rolling in.
+                    Setup your BFCM automation flows now and rest easy when the
+                    sales start rolling in.
                   </p>
-                  <Button size='lg' className='rounded-full px-8 h-12 text-base'>
+                  <Button
+                    size='lg'
+                    className='rounded-full px-8 h-12 text-base'
+                  >
                     Get BFCM Templates <ShoppingBag className='ml-2 w-4 h-4' />
                   </Button>
                 </div>

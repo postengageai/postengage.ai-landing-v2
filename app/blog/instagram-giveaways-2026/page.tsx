@@ -5,13 +5,7 @@ import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import {
-  ArrowLeft,
-  Gift,
-  ShieldCheck,
-  MessageSquare,
-  Users,
-} from 'lucide-react';
+import { ArrowLeft, Gift, ShieldCheck, Users } from 'lucide-react';
 import { Metadata } from 'next';
 import { SocialShareButtons } from '@/components/blog/social-share-buttons';
 import { TableOfContents } from '@/components/blog/table-of-contents';
@@ -36,7 +30,10 @@ export default function BlogPost() {
   const readTime = '6 min read';
 
   const tableOfContents = [
-    { id: 'the-problem-with-viral-giveaways', title: 'The Problem with "Tag 3 Friends"' },
+    {
+      id: 'the-problem-with-viral-giveaways',
+      title: 'The Problem with "Tag 3 Friends"',
+    },
     { id: 'the-new-rules', title: 'The New Rules of 2026' },
     { id: 'automated-entry-system', title: 'The Automated Entry System' },
     { id: 'qualification-flow', title: 'Filtering Freeloaders vs Leads' },
@@ -77,8 +74,9 @@ export default function BlogPost() {
               Instagram Giveaways in 2026: The Anti-Spam Automation Guide
             </h1>
             <p className='mx-auto max-w-2xl text-xl text-muted-foreground leading-relaxed'>
-              Most giveaways attract bots and freeloaders who unfollow you the next day.
-              Here is how to run a "Smart Giveaway" that builds a qualified customer list.
+              Most giveaways attract bots and freeloaders who unfollow you the
+              next day. Here is how to run a "Smart Giveaway" that builds a
+              qualified customer list.
             </p>
           </header>
 
@@ -86,7 +84,8 @@ export default function BlogPost() {
           <div className='relative mx-auto mb-16 aspect-[21/9] max-w-5xl overflow-hidden rounded-2xl border bg-muted/30 shadow-sm'>
             <div className='absolute inset-0 flex items-center justify-center bg-linear-to-br from-primary/5 via-transparent to-primary/5'>
               <span className='text-muted-foreground/20 font-medium'>
-                Featured Image: Giveaway Flow (Post {'->'} Keyword {'->'} DM Entry)
+                Featured Image: Giveaway Flow (Post {'->'} Keyword {'->'} DM
+                Entry)
               </span>
             </div>
           </div>
@@ -113,59 +112,81 @@ export default function BlogPost() {
               <div className='prose prose-lg dark:prose-invert max-w-none'>
                 {/* Introduction */}
                 <p>
-                  We have all seen them. The "Tag 3 friends, follow us, share to your story, and comment DONE" giveaways.
+                  We have all seen them. The "Tag 3 friends, follow us, share to
+                  your story, and comment DONE" giveaways.
                 </p>
                 <p>
-                  In 2023, these worked great for vanity metrics. In 2026, they are a recipe for disaster.
-                  Why? Because Instagram's algorithm now penalizes "engagement bait" that feels spammy, and more importantly,
-                  tagging random people annoys users and leads to spam reports.
+                  In 2023, these worked great for vanity metrics. In 2026, they
+                  are a recipe for disaster. Why? Because Instagram's algorithm
+                  now penalizes "engagement bait" that feels spammy, and more
+                  importantly, tagging random people annoys users and leads to
+                  spam reports.
                 </p>
                 <p>
-                  Plus, you end up with thousands of followers who only want free stuff and will never buy from you.
-                  Let's fix that.
+                  Plus, you end up with thousands of followers who only want
+                  free stuff and will never buy from you. Let's fix that.
                 </p>
 
-                <h2 id='the-problem-with-viral-giveaways' className='scroll-mt-24 text-2xl font-bold mt-12 mb-6'>
+                <h2
+                  id='the-problem-with-viral-giveaways'
+                  className='scroll-mt-24 text-2xl font-bold mt-12 mb-6'
+                >
                   The Problem with "Tag 3 Friends"
                 </h2>
                 <div className='grid gap-4 my-8 not-prose'>
                   <div className='flex items-start p-4 bg-red-500/10 border border-red-500/20 rounded-lg'>
                     <Users className='h-6 w-6 text-red-500 mr-4 shrink-0 mt-1' />
                     <div>
-                      <div className='font-bold text-red-700 dark:text-red-400'>Low Quality Followers</div>
+                      <div className='font-bold text-red-700 dark:text-red-400'>
+                        Low Quality Followers
+                      </div>
                       <div className='text-sm text-muted-foreground mt-1'>
-                        People follow just to win. Once the winner is announced, you see a massive "unfollow spike" that hurts your account health.
+                        People follow just to win. Once the winner is announced,
+                        you see a massive "unfollow spike" that hurts your
+                        account health.
                       </div>
                     </div>
                   </div>
                   <div className='flex items-start p-4 bg-red-500/10 border border-red-500/20 rounded-lg'>
                     <ShieldCheck className='h-6 w-6 text-red-500 mr-4 shrink-0 mt-1' />
                     <div>
-                      <div className='font-bold text-red-700 dark:text-red-400'>Spam Risks</div>
+                      <div className='font-bold text-red-700 dark:text-red-400'>
+                        Spam Risks
+                      </div>
                       <div className='text-sm text-muted-foreground mt-1'>
-                        Forcing users to tag people who don't know your brand is the fastest way to get blocked or reported for spam.
+                        Forcing users to tag people who don't know your brand is
+                        the fastest way to get blocked or reported for spam.
                       </div>
                     </div>
                   </div>
                 </div>
 
-                <h2 id='the-new-rules' className='scroll-mt-24 text-2xl font-bold mt-12 mb-6'>
+                <h2
+                  id='the-new-rules'
+                  className='scroll-mt-24 text-2xl font-bold mt-12 mb-6'
+                >
                   The New Rules of 2026
                 </h2>
                 <p>
-                  The best brands are now running <strong>Automated Giveaways</strong>. The goal isn't just "more followers"—it's
-                  "more leads".
+                  The best brands are now running{' '}
+                  <strong>Automated Giveaways</strong>. The goal isn't just
+                  "more followers"—it's "more leads".
                 </p>
                 <p>
-                  Instead of asking for a tag, you ask for a <strong>Keyword</strong>. This keeps the comment section clean
+                  Instead of asking for a tag, you ask for a{' '}
+                  <strong>Keyword</strong>. This keeps the comment section clean
                   and signals high intent to the algorithm without being spammy.
                 </p>
 
-                <h2 id='automated-entry-system' className='scroll-mt-24 text-2xl font-bold mt-12 mb-6'>
+                <h2
+                  id='automated-entry-system'
+                  className='scroll-mt-24 text-2xl font-bold mt-12 mb-6'
+                >
                   The Automated Entry System
                 </h2>
                 <p>
-                  Here is the workflow that PostEngage.ai users are using to get 500+ leads from a single post:
+                  Here is the workflow that PostEngage.ai users are using to get
+                  500+ leads from a single post:
                 </p>
 
                 <div className='my-8 rounded-xl border bg-card p-6 shadow-sm not-prose'>
@@ -176,7 +197,8 @@ export default function BlogPost() {
                       </span>
                       <h4 className='font-semibold'>The Hook</h4>
                       <p className='text-muted-foreground text-sm mt-1'>
-                        "We are giving away a [High Value Bundle]. Comment <strong>WIN</strong> to enter."
+                        "We are giving away a [High Value Bundle]. Comment{' '}
+                        <strong>WIN</strong> to enter."
                       </p>
                     </div>
                     <div className='relative pl-10'>
@@ -185,7 +207,9 @@ export default function BlogPost() {
                       </span>
                       <h4 className='font-semibold'>Instant DM Response</h4>
                       <p className='text-muted-foreground text-sm mt-1'>
-                        User comments "WIN". PostEngage.ai instantly replies to the comment ("Check your DMs! 🎁") and sends a private message.
+                        User comments "WIN". PostEngage.ai instantly replies to
+                        the comment ("Check your DMs! 🎁") and sends a private
+                        message.
                       </p>
                     </div>
                     <div className='relative pl-10'>
@@ -194,7 +218,8 @@ export default function BlogPost() {
                       </span>
                       <h4 className='font-semibold'>The Entry Form (in DM)</h4>
                       <p className='text-muted-foreground text-sm mt-1'>
-                        "Hey! To enter the giveaway, just tap the button below to confirm your email."
+                        "Hey! To enter the giveaway, just tap the button below
+                        to confirm your email."
                       </p>
                     </div>
                     <div className='relative pl-10'>
@@ -203,42 +228,79 @@ export default function BlogPost() {
                       </span>
                       <h4 className='font-semibold'>Bonus Entry</h4>
                       <p className='text-muted-foreground text-sm mt-1'>
-                        "Want an extra entry? Share this post to your story and tag us!" (Optional, but now it's a choice, not a requirement).
+                        "Want an extra entry? Share this post to your story and
+                        tag us!" (Optional, but now it's a choice, not a
+                        requirement).
                       </p>
                     </div>
                   </div>
                 </div>
 
-                <h2 id='qualification-flow' className='scroll-mt-24 text-2xl font-bold mt-12 mb-6'>
+                <h2
+                  id='qualification-flow'
+                  className='scroll-mt-24 text-2xl font-bold mt-12 mb-6'
+                >
                   Filtering Freeloaders vs Leads
                 </h2>
                 <p>
-                  The magic happens in the DM. Since you have their attention, you can ask a qualifying question <em>before</em> confirming their entry.
+                  The magic happens in the DM. Since you have their attention,
+                  you can ask a qualifying question <em>before</em> confirming
+                  their entry.
                 </p>
                 <div className='bg-muted/50 p-4 rounded-lg border my-6 font-mono text-sm'>
-                  <p className='text-primary font-bold mb-2'>Example Chat Flow:</p>
-                  <p><strong>Bot:</strong> "You are almost entered! Just one quick question to make sure this prize is right for you..."</p>
-                  <p><strong>Bot:</strong> "Are you currently using Instagram for business?"</p>
-                  <p className='ml-4 text-muted-foreground'>[Button: Yes] [Button: No, Personal Use]</p>
-                  <p className='mt-2'><strong>User:</strong> Taps "Yes"</p>
-                  <p><strong>Bot:</strong> "Awesome! You are entered. By the way, since you are a business owner, here is a 20% off coupon just for entering."</p>
+                  <p className='text-primary font-bold mb-2'>
+                    Example Chat Flow:
+                  </p>
+                  <p>
+                    <strong>Bot:</strong> "You are almost entered! Just one
+                    quick question to make sure this prize is right for you..."
+                  </p>
+                  <p>
+                    <strong>Bot:</strong> "Are you currently using Instagram for
+                    business?"
+                  </p>
+                  <p className='ml-4 text-muted-foreground'>
+                    [Button: Yes] [Button: No, Personal Use]
+                  </p>
+                  <p className='mt-2'>
+                    <strong>User:</strong> Taps "Yes"
+                  </p>
+                  <p>
+                    <strong>Bot:</strong> "Awesome! You are entered. By the way,
+                    since you are a business owner, here is a 20% off coupon
+                    just for entering."
+                  </p>
                 </div>
                 <p>
-                  Now, even if they don't win the main prize, you have identified them as a business owner and given them a reason to buy immediately.
-                  You turned a "contestant" into a "prospect".
+                  Now, even if they don't win the main prize, you have
+                  identified them as a business owner and given them a reason to
+                  buy immediately. You turned a "contestant" into a "prospect".
                 </p>
 
-                <h2 id='picking-winners' className='scroll-mt-24 text-2xl font-bold mt-12 mb-6'>
+                <h2
+                  id='picking-winners'
+                  className='scroll-mt-24 text-2xl font-bold mt-12 mb-6'
+                >
                   Picking Winners Fairly
                 </h2>
                 <p>
-                  Transparency is key. With automation tools like PostEngage.ai, you can export the list of all users who successfully
+                  Transparency is key. With automation tools like PostEngage.ai,
+                  you can export the list of all users who successfully
                   completed the DM flow.
                 </p>
                 <ul className='list-disc pl-6 space-y-2 text-muted-foreground'>
-                  <li>Do not manually scroll through comments (you will miss people).</li>
-                  <li>Do not use sketchy "random comment picker" sites that sell data.</li>
-                  <li>Use your verified DM list to pick a winner and announce it via Story (and DM the winner directly!).</li>
+                  <li>
+                    Do not manually scroll through comments (you will miss
+                    people).
+                  </li>
+                  <li>
+                    Do not use sketchy "random comment picker" sites that sell
+                    data.
+                  </li>
+                  <li>
+                    Use your verified DM list to pick a winner and announce it
+                    via Story (and DM the winner directly!).
+                  </li>
                 </ul>
 
                 <Card className='my-12 bg-primary/5 border-primary/20'>
@@ -250,8 +312,9 @@ export default function BlogPost() {
                   </CardHeader>
                   <CardContent>
                     <p className='mb-6 text-muted-foreground'>
-                      Ready to launch a giveaway that builds your email list and sales pipeline?
-                      PostEngage.ai handles the comments, DMs, and entry tracking for you.
+                      Ready to launch a giveaway that builds your email list and
+                      sales pipeline? PostEngage.ai handles the comments, DMs,
+                      and entry tracking for you.
                     </p>
                     <div className='flex flex-col gap-4 sm:flex-row'>
                       <Button asChild size='lg'>
@@ -269,7 +332,10 @@ export default function BlogPost() {
               <div className='mt-12 border-t pt-12'>
                 <div className='flex items-center gap-4'>
                   <Avatar className='h-12 w-12'>
-                    <AvatarImage src='/team-avatar.png' alt='PostEngageAI Team' />
+                    <AvatarImage
+                      src='/team-avatar.png'
+                      alt='PostEngageAI Team'
+                    />
                     <AvatarFallback>PE</AvatarFallback>
                   </Avatar>
                   <div>

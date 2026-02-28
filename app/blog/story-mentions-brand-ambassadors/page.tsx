@@ -95,8 +95,9 @@ export default function BlogPostPage() {
                 Turning Story Mentions into Brand Ambassadors with Auto-DMs
               </h1>
               <p className='mx-auto max-w-2xl text-xl text-muted-foreground leading-relaxed'>
-                The most valuable lead is the one who publicly endorses you. Here
-                is how to instantly reward them and recruit them to your team.
+                The most valuable lead is the one who publicly endorses you.
+                Here is how to instantly reward them and recruit them to your
+                team.
               </p>
             </header>
 
@@ -104,7 +105,8 @@ export default function BlogPostPage() {
             <div className='relative mx-auto mb-16 aspect-[21/9] max-w-5xl overflow-hidden rounded-2xl border bg-muted/30 shadow-sm'>
               <div className='absolute inset-0 flex items-center justify-center bg-gradient-to-br from-primary/5 via-transparent to-primary/5'>
                 <span className='text-muted-foreground/20 font-medium'>
-                  Featured Image: Story Mention Notification &gt; Auto DM &gt; Ambassador Signup
+                  Featured Image: Story Mention Notification &gt; Auto DM &gt;
+                  Ambassador Signup
                 </span>
               </div>
             </div>
@@ -164,15 +166,14 @@ export default function BlogPostPage() {
                     Stories. They are showing off your product, unboxing your
                     package, or visiting your store.
                   </p>
-                  <p>
-                    Most brands do one of two things:
-                  </p>
+                  <p>Most brands do one of two things:</p>
                   <ol className='list-decimal pl-5 space-y-2 mb-6'>
                     <li>Ignore it (Criminal!)</li>
                     <li>Manually repost it 6 hours later (Too slow)</li>
                   </ol>
                   <p>
-                    There is a third option: <strong>Instant Gratification</strong>.
+                    There is a third option:{' '}
+                    <strong>Instant Gratification</strong>.
                   </p>
 
                   <h2
@@ -183,12 +184,12 @@ export default function BlogPostPage() {
                   </h2>
                   <p>
                     When someone tags you, they are at peak excitement. They are
-                    publicly vouching for you. This is the <em>perfect</em> moment
-                    to deepen the relationship.
+                    publicly vouching for you. This is the <em>perfect</em>{' '}
+                    moment to deepen the relationship.
                   </p>
                   <p>
-                    If you wait hours to respond, the moment is gone. If you reply
-                    instantly, you create a "Wow" moment.
+                    If you wait hours to respond, the moment is gone. If you
+                    reply instantly, you create a "Wow" moment.
                   </p>
 
                   <h2
@@ -212,8 +213,8 @@ export default function BlogPostPage() {
                               1
                             </span>
                             <p className='text-sm'>
-                              <strong>Trigger:</strong> User mentions @YourBrand in
-                              their Story.
+                              <strong>Trigger:</strong> User mentions @YourBrand
+                              in their Story.
                             </p>
                           </div>
                           <div className='relative'>
@@ -221,8 +222,8 @@ export default function BlogPostPage() {
                               2
                             </span>
                             <p className='text-sm'>
-                              <strong>Bot (Instant):</strong> "Omg! 😍 We love this
-                              photo! Thank you so much for sharing."
+                              <strong>Bot (Instant):</strong> "Omg! 😍 We love
+                              this photo! Thank you so much for sharing."
                             </p>
                           </div>
                           <div className='relative'>
@@ -230,9 +231,9 @@ export default function BlogPostPage() {
                               3
                             </span>
                             <p className='text-sm'>
-                              <strong>Bot (Delay 5s):</strong> "Since you clearly
-                              have great taste... want to join our Ambassador
-                              Program and earn cash for referrals?"
+                              <strong>Bot (Delay 5s):</strong> "Since you
+                              clearly have great taste... want to join our
+                              Ambassador Program and earn cash for referrals?"
                             </p>
                           </div>
                           <div className='relative'>
@@ -255,8 +256,8 @@ export default function BlogPostPage() {
                     Filtering for Quality
                   </h2>
                   <p>
-                    You might not want <em>everyone</em> to be an ambassador. With
-                    PostEngage.ai, you can filter who gets the invite.
+                    You might not want <em>everyone</em> to be an ambassador.
+                    With PostEngage.ai, you can filter who gets the invite.
                   </p>
                   <ul className='list-disc pl-6 space-y-2 my-6'>
                     <li>
@@ -285,8 +286,8 @@ export default function BlogPostPage() {
                       Why this works
                     </h4>
                     <p className='text-sm text-muted-foreground mb-4'>
-                      Recruiting ambassadors manually takes ~20 minutes per person
-                      (finding them, DMing, emailing).
+                      Recruiting ambassadors manually takes ~20 minutes per
+                      person (finding them, DMing, emailing).
                     </p>
                     <p className='text-sm text-muted-foreground'>
                       <strong>With Automation:</strong> 0 minutes.

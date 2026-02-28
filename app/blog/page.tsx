@@ -24,7 +24,8 @@ export default function BlogPage() {
   const posts = [
     {
       slug: 'instagram-follow-to-dm-guide',
-      title: "The 'Silent' Lead Magnet: How Follow-to-DM Automation is Changing the Game",
+      title:
+        "The 'Silent' Lead Magnet: How Follow-to-DM Automation is Changing the Game",
       excerpt:
         'Turn new followers into leads instantly. Learn how to legally and effectively use the "Follow to DM" trigger to grow your email list.',
       date: 'Mar 27, 2026',
@@ -35,7 +36,8 @@ export default function BlogPage() {
     },
     {
       slug: 'bfcm-automation-guide',
-      title: 'BFCM Automation Guide: How to 10x Your Black Friday Sales on Instagram',
+      title:
+        'BFCM Automation Guide: How to 10x Your Black Friday Sales on Instagram',
       excerpt:
         "Don't rely on email alone this Black Friday. Learn how to use Instagram DM automation to cut through the noise and drive record-breaking sales.",
       date: 'Mar 26, 2026',
@@ -101,7 +103,8 @@ export default function BlogPage() {
     },
     {
       slug: 'ultimate-guide-ugc-automation',
-      title: 'The Ultimate Guide to UGC Automation: Turn Customers into Advocates',
+      title:
+        'The Ultimate Guide to UGC Automation: Turn Customers into Advocates',
       excerpt:
         'User Generated Content (UGC) is the most powerful social proof. Learn how to automate rewards for Story mentions, post tags, and viral sharing.',
       date: 'Mar 20, 2026',
@@ -112,7 +115,8 @@ export default function BlogPage() {
     },
     {
       slug: 'instagram-automation-local-business',
-      title: 'Instagram Automation for Restaurants & Local Biz: Bookings on Autopilot',
+      title:
+        'Instagram Automation for Restaurants & Local Biz: Bookings on Autopilot',
       excerpt:
         'Stop missing reservations and appointments. Learn how local businesses use Instagram DM automation to fill tables and calendars 24/7.',
       date: 'Mar 18, 2026',
@@ -145,7 +149,8 @@ export default function BlogPage() {
     },
     {
       slug: 'dm-to-dollar-pipeline',
-      title: "The 'DM-to-Dollar' Pipeline: How to Monetize Instagram DMs in 2026",
+      title:
+        "The 'DM-to-Dollar' Pipeline: How to Monetize Instagram DMs in 2026",
       excerpt:
         'Stop leaving money on the table. A step-by-step guide to turning casual DM conversations into high-ticket sales.',
       date: 'Mar 12, 2026',

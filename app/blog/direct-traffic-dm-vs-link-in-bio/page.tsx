@@ -3,7 +3,12 @@ import { LandingHeader } from '@/components/landing/landing-header';
 import { LandingFooter } from '@/components/landing/landing-footer';
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
-import { ArrowLeft, MousePointer, ExternalLink, Link as LinkIcon } from 'lucide-react';
+import {
+  ArrowLeft,
+  MousePointer,
+  ExternalLink,
+  Link as LinkIcon,
+} from 'lucide-react';
 import { Metadata } from 'next';
 import { SocialShareButtons } from '@/components/blog/social-share-buttons';
 
@@ -95,9 +100,9 @@ export default function BlogPostPage() {
                 The "Link in Bio" is Dead: Direct Traffic via DM Automation
               </h1>
               <p className='mx-auto max-w-2xl text-xl text-muted-foreground leading-relaxed'>
-                Instagram hates it when you send users off-platform via your bio.
-                But they LOVE it when you keep users in the DMs. Here is the
-                loophole.
+                Instagram hates it when you send users off-platform via your
+                bio. But they LOVE it when you keep users in the DMs. Here is
+                the loophole.
               </p>
             </header>
 
@@ -166,13 +171,11 @@ export default function BlogPostPage() {
                     companies solving this problem.
                   </p>
                   <p>
-                    But there is a flaw. It requires <strong>intent</strong>. The
-                    user has to stop scrolling, go to your profile, click the link,
-                    and find the content.
+                    But there is a flaw. It requires <strong>intent</strong>.
+                    The user has to stop scrolling, go to your profile, click
+                    the link, and find the content.
                   </p>
-                  <p>
-                    Most don't.
-                  </p>
+                  <p>Most don't.</p>
 
                   <h2
                     id='why-bio-links-fail'
@@ -210,18 +213,22 @@ export default function BlogPostPage() {
                     The DM Traffic Strategy
                   </h2>
                   <p>
-                    Instead of sending them to a generic menu, you send the specific
-                    link directly to their inbox.
+                    Instead of sending them to a generic menu, you send the
+                    specific link directly to their inbox.
                   </p>
                   <p>
                     <strong>The New Flow:</strong>
                   </p>
                   <ol className='list-decimal pl-5 space-y-2 my-6'>
                     <li>User sees post.</li>
-                    <li>Caption says: "Comment <strong>GUIDE</strong> for the link."</li>
+                    <li>
+                      Caption says: "Comment <strong>GUIDE</strong> for the
+                      link."
+                    </li>
                     <li>User comments "GUIDE".</li>
                     <li>
-                      <strong>Bot:</strong> Sends direct link to the guide in DMs.
+                      <strong>Bot:</strong> Sends direct link to the guide in
+                      DMs.
                     </li>
                     <li>User clicks link (high intent).</li>
                   </ol>
@@ -261,9 +268,7 @@ export default function BlogPostPage() {
                   >
                     Implementation Guide
                   </h2>
-                  <p>
-                    You can set this up for:
-                  </p>
+                  <p>You can set this up for:</p>
                   <div className='grid grid-cols-1 md:grid-cols-3 gap-4 my-6 not-prose'>
                     <div className='p-4 border rounded-lg text-center'>
                       <MousePointer className='h-8 w-8 mx-auto mb-2 text-primary' />
@@ -288,9 +293,9 @@ export default function BlogPostPage() {
                     </div>
                   </div>
                   <p>
-                    Stop fighting the algorithm. Work with it. Keep users engaged
-                    on your post (comments) and in the DMs (messages), and Instagram
-                    will reward you with more reach.
+                    Stop fighting the algorithm. Work with it. Keep users
+                    engaged on your post (comments) and in the DMs (messages),
+                    and Instagram will reward you with more reach.
                   </p>
                 </div>
 

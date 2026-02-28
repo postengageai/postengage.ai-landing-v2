@@ -106,7 +106,9 @@ export default function BlogPostPage() {
                   Influencer ROI Tracking: The Missing Link in Your Campaigns
                 </h1>
                 <p className='text-xl text-muted-foreground leading-relaxed border-l-4 border-primary/20 pl-6 italic'>
-                  Vanity metrics (likes, comments) are useless if they don't convert. Here is how to track the only metric that matters: Sales.
+                  Vanity metrics (likes, comments) are useless if they don't
+                  convert. Here is how to track the only metric that matters:
+                  Sales.
                 </p>
               </header>
 
@@ -128,7 +130,10 @@ export default function BlogPostPage() {
                   The Problem with Discount Codes
                 </h2>
                 <p className='leading-relaxed text-muted-foreground'>
-                  Traditional influencer tracking relies on discount codes (e.g., "SARAH20"). But what if the user sees the post, forgets the code, and buys later? Or clicks the link in bio but doesn't use the code? You lose the attribution data.
+                  Traditional influencer tracking relies on discount codes
+                  (e.g., "SARAH20"). But what if the user sees the post, forgets
+                  the code, and buys later? Or clicks the link in bio but
+                  doesn't use the code? You lose the attribution data.
                 </p>
 
                 <h2 className='scroll-m-20 text-3xl font-bold tracking-tight mt-16 mb-6 flex items-center gap-3'>
@@ -138,14 +143,24 @@ export default function BlogPostPage() {
                   The Solution: Keyword Attribution
                 </h2>
                 <p className='leading-relaxed text-muted-foreground'>
-                  With PostEngage.ai, you assign a unique keyword to each influencer.
+                  With PostEngage.ai, you assign a unique keyword to each
+                  influencer.
                 </p>
                 <div className='bg-muted/30 p-6 rounded-xl border border-border/50 my-6'>
                   <h3 className='font-bold mb-2'>Example Workflow:</h3>
                   <ul className='list-disc pl-5 space-y-2 text-muted-foreground'>
-                    <li>Influencer A posts: "Comment 'GLOW' for my skincare routine."</li>
-                    <li>Influencer B posts: "Comment 'SHINE' for my skincare routine."</li>
-                    <li>PostEngage.ai tracks exactly how many DMs were triggered by 'GLOW' vs 'SHINE'.</li>
+                    <li>
+                      Influencer A posts: "Comment 'GLOW' for my skincare
+                      routine."
+                    </li>
+                    <li>
+                      Influencer B posts: "Comment 'SHINE' for my skincare
+                      routine."
+                    </li>
+                    <li>
+                      PostEngage.ai tracks exactly how many DMs were triggered
+                      by 'GLOW' vs 'SHINE'.
+                    </li>
                   </ul>
                 </div>
 
@@ -156,7 +171,8 @@ export default function BlogPostPage() {
                   Tracking the Funnel Deep Dive
                 </h2>
                 <p className='leading-relaxed text-muted-foreground'>
-                  We don't just track the start of the conversation. We track how deep they go.
+                  We don't just track the start of the conversation. We track
+                  how deep they go.
                 </p>
                 <div className='grid gap-6 my-8'>
                   <Card className='bg-background/50 backdrop-blur'>
@@ -182,7 +198,10 @@ export default function BlogPostPage() {
                   Automated Payouts (Coming Soon)
                 </h2>
                 <p className='leading-relaxed text-muted-foreground'>
-                  Imagine a system where your influencers are paid automatically based on the <em>qualified leads</em> they generate, not just sales. This opens up new partnership models (Cost Per Lead) that are fairer for both brands and creators.
+                  Imagine a system where your influencers are paid automatically
+                  based on the <em>qualified leads</em> they generate, not just
+                  sales. This opens up new partnership models (Cost Per Lead)
+                  that are fairer for both brands and creators.
                 </p>
 
                 <div className='my-12 p-8 rounded-3xl bg-gradient-to-br from-primary/10 via-background to-primary/5 border border-primary/20 text-center'>
@@ -190,9 +209,13 @@ export default function BlogPostPage() {
                     Stop wasting budget on low-performing influencers
                   </h3>
                   <p className='text-muted-foreground mb-8 max-w-lg mx-auto'>
-                    Get granular data on your influencer campaigns with PostEngage.ai Analytics.
+                    Get granular data on your influencer campaigns with
+                    PostEngage.ai Analytics.
                   </p>
-                  <Button size='lg' className='rounded-full px-8 h-12 text-base'>
+                  <Button
+                    size='lg'
+                    className='rounded-full px-8 h-12 text-base'
+                  >
                     See Dashboard Demo <DollarSign className='ml-2 w-4 h-4' />
                   </Button>
                 </div>

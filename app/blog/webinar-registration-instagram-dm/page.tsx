@@ -5,13 +5,7 @@ import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import {
-  ArrowLeft,
-  Users,
-  Video,
-  Ticket,
-  TrendingUp,
-} from 'lucide-react';
+import { ArrowLeft, Video, Ticket, TrendingUp } from 'lucide-react';
 import { Metadata } from 'next';
 import { SocialShareButtons } from '@/components/blog/social-share-buttons';
 import { TableOfContents } from '@/components/blog/table-of-contents';
@@ -36,7 +30,10 @@ export default function BlogPost() {
   const readTime = '6 min read';
 
   const tableOfContents = [
-    { id: 'webinar-landing-page-dead', title: 'The Webinar Landing Page is Dead' },
+    {
+      id: 'webinar-landing-page-dead',
+      title: 'The Webinar Landing Page is Dead',
+    },
     { id: 'one-click-registration', title: 'One-Click Registration' },
     { id: 'show-up-sequence', title: 'The Show-Up Sequence' },
     { id: 'post-webinar-sales', title: 'Post-Webinar Sales' },
@@ -76,8 +73,8 @@ export default function BlogPost() {
               Webinar Automation: How to Fill Seats Using Instagram DMs
             </h1>
             <p className='mx-auto max-w-2xl text-xl text-muted-foreground leading-relaxed'>
-              Stop asking people to "Click the Link in Bio to Register".
-              Make it frictionless. Make it conversational. Make it fill up.
+              Stop asking people to "Click the Link in Bio to Register". Make it
+              frictionless. Make it conversational. Make it fill up.
             </p>
           </header>
 
@@ -85,7 +82,8 @@ export default function BlogPost() {
           <div className='relative mx-auto mb-16 aspect-[21/9] max-w-5xl overflow-hidden rounded-2xl border bg-muted/30 shadow-sm'>
             <div className='absolute inset-0 flex items-center justify-center bg-linear-to-br from-primary/5 via-transparent to-primary/5'>
               <span className='text-muted-foreground/20 font-medium'>
-                Featured Image: Webinar Funnel (Comment {'->'} DM Registration {'->'} Reminder)
+                Featured Image: Webinar Funnel (Comment {'->'} DM Registration{' '}
+                {'->'} Reminder)
               </span>
             </div>
           </div>
@@ -112,14 +110,20 @@ export default function BlogPost() {
               <div className='prose prose-lg dark:prose-invert max-w-none'>
                 {/* Introduction */}
                 <p>
-                  We analyzed 500 webinars in 2025. The #1 reason for low attendance?
+                  We analyzed 500 webinars in 2025. The #1 reason for low
+                  attendance?
                   <strong>Friction.</strong>
                 </p>
                 <p>
-                  Every click costs you 50% of your traffic. Sending people from Instagram {'->'} LinkTree {'->'} Landing Page {'->'} Form is suicide for your conversion rate.
+                  Every click costs you 50% of your traffic. Sending people from
+                  Instagram {'->'} LinkTree {'->'} Landing Page {'->'} Form is
+                  suicide for your conversion rate.
                 </p>
 
-                <h2 id='webinar-landing-page-dead' className='scroll-mt-24 text-2xl font-bold mt-12 mb-6'>
+                <h2
+                  id='webinar-landing-page-dead'
+                  className='scroll-mt-24 text-2xl font-bold mt-12 mb-6'
+                >
                   The Webinar Landing Page is Dead
                 </h2>
                 <div className='grid gap-4 my-8 not-prose'>
@@ -137,50 +141,75 @@ export default function BlogPost() {
                   <div className='flex items-start p-4 bg-primary/10 border border-primary/20 rounded-lg'>
                     <Video className='h-6 w-6 text-primary mr-4 shrink-0 mt-1' />
                     <div>
-                      <div className='font-bold text-primary'>DM Registration</div>
+                      <div className='font-bold text-primary'>
+                        DM Registration
+                      </div>
                       <div className='text-sm text-muted-foreground mt-1'>
                         1 Step. 60% Registration Rate.
                         <br />
-                        <strong>User Experience:</strong> "Just reply 'YES' to attend."
+                        <strong>User Experience:</strong> "Just reply 'YES' to
+                        attend."
                       </div>
                     </div>
                   </div>
                 </div>
 
-                <h2 id='one-click-registration' className='scroll-mt-24 text-2xl font-bold mt-12 mb-6'>
+                <h2
+                  id='one-click-registration'
+                  className='scroll-mt-24 text-2xl font-bold mt-12 mb-6'
+                >
                   One-Click Registration
                 </h2>
                 <p>
-                  With PostEngage.ai, you can capture their email directly in the chat.
+                  With PostEngage.ai, you can capture their email directly in
+                  the chat.
                 </p>
                 <ol className='list-decimal pl-6 space-y-2 text-muted-foreground'>
-                  <li><strong>Post a Reel:</strong> "I'm hosting a masterclass on scaling ads. Comment <strong>LIVE</strong> to join."</li>
-                  <li><strong>Bot DMs User:</strong> "Hey! Excited to see you there. Tap below to confirm your spot."</li>
-                  <li><strong>User Taps Button:</strong> Their email is automatically sent to your webinar platform (Zoom/ZoomWebinar).</li>
+                  <li>
+                    <strong>Post a Reel:</strong> "I'm hosting a masterclass on
+                    scaling ads. Comment <strong>LIVE</strong> to join."
+                  </li>
+                  <li>
+                    <strong>Bot DMs User:</strong> "Hey! Excited to see you
+                    there. Tap below to confirm your spot."
+                  </li>
+                  <li>
+                    <strong>User Taps Button:</strong> Their email is
+                    automatically sent to your webinar platform
+                    (Zoom/ZoomWebinar).
+                  </li>
                 </ol>
 
-                <h2 id='show-up-sequence' className='scroll-mt-24 text-2xl font-bold mt-12 mb-6'>
+                <h2
+                  id='show-up-sequence'
+                  className='scroll-mt-24 text-2xl font-bold mt-12 mb-6'
+                >
                   The Show-Up Sequence
                 </h2>
+                <p>Emails get buried in "Promotions". DMs get read.</p>
                 <p>
-                  Emails get buried in "Promotions". DMs get read.
+                  Set your automation to send a DM reminder 15 minutes before
+                  you go live:
+                  <em>
+                    "We are starting in 15! 🚀 Here is the direct link to the
+                    room: [LINK]"
+                  </em>
                 </p>
-                <p>
-                  Set your automation to send a DM reminder 15 minutes before you go live:
-                  <em>"We are starting in 15! 🚀 Here is the direct link to the room: [LINK]"</em>
-                </p>
-                <p>
-                  This single tactic can double your live attendance.
-                </p>
+                <p>This single tactic can double your live attendance.</p>
 
-                <h2 id='post-webinar-sales' className='scroll-mt-24 text-2xl font-bold mt-12 mb-6'>
+                <h2
+                  id='post-webinar-sales'
+                  className='scroll-mt-24 text-2xl font-bold mt-12 mb-6'
+                >
                   Post-Webinar Sales
                 </h2>
                 <p>
-                  After the webinar, trigger a follow-up DM to everyone who registered but didn't buy.
+                  After the webinar, trigger a follow-up DM to everyone who
+                  registered but didn't buy.
                 </p>
                 <p>
-                  <strong>Bot:</strong> "Hope you enjoyed the session! Did you have any questions about the offer before the cart closes?"
+                  <strong>Bot:</strong> "Hope you enjoyed the session! Did you
+                  have any questions about the offer before the cart closes?"
                 </p>
 
                 <Card className='my-12 bg-primary/5 border-primary/20'>
@@ -211,7 +240,10 @@ export default function BlogPost() {
               <div className='mt-12 border-t pt-12'>
                 <div className='flex items-center gap-4'>
                   <Avatar className='h-12 w-12'>
-                    <AvatarImage src='/team-avatar.png' alt='PostEngageAI Team' />
+                    <AvatarImage
+                      src='/team-avatar.png'
+                      alt='PostEngageAI Team'
+                    />
                     <AvatarFallback>PE</AvatarFallback>
                   </Avatar>
                   <div>

@@ -76,8 +76,9 @@ export default function BlogPost() {
               How Agencies Are Scaling to $50k/mo with DM Automation Services
             </h1>
             <p className='mx-auto max-w-2xl text-xl text-muted-foreground leading-relaxed'>
-              Content creation is a commodity. Automation is an asset.
-              Discover how smart agencies are pivoting to high-margin "Chat Funnel" services.
+              Content creation is a commodity. Automation is an asset. Discover
+              how smart agencies are pivoting to high-margin "Chat Funnel"
+              services.
             </p>
           </header>
 
@@ -112,15 +113,22 @@ export default function BlogPost() {
               <div className='prose prose-lg dark:prose-invert max-w-none'>
                 {/* Introduction */}
                 <p>
-                  If you run a social media agency, you know the struggle. Clients want viral posts, but they measure success in leads.
-                  You spend hours creating Reels, but if they don't convert, you get fired.
+                  If you run a social media agency, you know the struggle.
+                  Clients want viral posts, but they measure success in leads.
+                  You spend hours creating Reels, but if they don't convert, you
+                  get fired.
                 </p>
                 <p>
-                  The problem isn't your content. It's the <strong>conversion mechanism</strong>.
-                  Agencies that add "DM Automation" to their stack are seeing 3x longer retention and 5x higher margins.
+                  The problem isn't your content. It's the{' '}
+                  <strong>conversion mechanism</strong>. Agencies that add "DM
+                  Automation" to their stack are seeing 3x longer retention and
+                  5x higher margins.
                 </p>
 
-                <h2 id='the-agency-trap' className='scroll-mt-24 text-2xl font-bold mt-12 mb-6'>
+                <h2
+                  id='the-agency-trap'
+                  className='scroll-mt-24 text-2xl font-bold mt-12 mb-6'
+                >
                   The "Retainer" Trap
                 </h2>
                 <div className='grid gap-4 my-8 not-prose'>
@@ -138,32 +146,49 @@ export default function BlogPost() {
                   <div className='flex items-start p-4 bg-primary/10 border border-primary/20 rounded-lg'>
                     <Briefcase className='h-6 w-6 text-primary mr-4 shrink-0 mt-1' />
                     <div>
-                      <div className='font-bold text-primary'>Automation Agency</div>
+                      <div className='font-bold text-primary'>
+                        Automation Agency
+                      </div>
                       <div className='text-sm text-muted-foreground mt-1'>
                         Sells: "Customer Acquisition Systems".
                         <br />
-                        Benefit: Clear ROI (Leads Generated). Sticky software lock-in.
+                        Benefit: Clear ROI (Leads Generated). Sticky software
+                        lock-in.
                       </div>
                     </div>
                   </div>
                 </div>
 
-                <h2 id='the-new-offer' className='scroll-mt-24 text-2xl font-bold mt-12 mb-6'>
+                <h2
+                  id='the-new-offer'
+                  className='scroll-mt-24 text-2xl font-bold mt-12 mb-6'
+                >
                   The New Offer: "Growth Systems"
                 </h2>
                 <p>
-                  Stop pitching "3 posts a week". Start pitching "The 24/7 Sales Agent".
+                  Stop pitching "3 posts a week". Start pitching "The 24/7 Sales
+                  Agent".
                 </p>
-                <p>
-                  Your new package includes:
-                </p>
+                <p>Your new package includes:</p>
                 <ul className='list-disc pl-6 space-y-2 text-muted-foreground'>
-                  <li><strong>Comment-to-DM Setup:</strong> "We turn every comment into a lead."</li>
-                  <li><strong>Story Auto-Reply:</strong> "We monetize your story views."</li>
-                  <li><strong>FAQ Bot:</strong> "We save your team 10 hours a week on support."</li>
+                  <li>
+                    <strong>Comment-to-DM Setup:</strong> "We turn every comment
+                    into a lead."
+                  </li>
+                  <li>
+                    <strong>Story Auto-Reply:</strong> "We monetize your story
+                    views."
+                  </li>
+                  <li>
+                    <strong>FAQ Bot:</strong> "We save your team 10 hours a week
+                    on support."
+                  </li>
                 </ul>
 
-                <h2 id='pricing-models' className='scroll-mt-24 text-2xl font-bold mt-12 mb-6'>
+                <h2
+                  id='pricing-models'
+                  className='scroll-mt-24 text-2xl font-bold mt-12 mb-6'
+                >
                   Pricing Models that Work
                 </h2>
                 <div className='space-y-6 my-8 not-prose'>
@@ -177,22 +202,28 @@ export default function BlogPost() {
                     <CardContent>
                       <p className='text-sm text-muted-foreground'>
                         Charge $1,500 - $3,000 for the initial "Funnel Build".
-                        Then charge $300/mo for "Maintenance & Software" (using PostEngage.ai).
+                        Then charge $300/mo for "Maintenance & Software" (using
+                        PostEngage.ai).
                       </p>
                     </CardContent>
                   </Card>
                 </div>
 
-                <h2 id='whitelabel-automation' className='scroll-mt-24 text-2xl font-bold mt-12 mb-6'>
+                <h2
+                  id='whitelabel-automation'
+                  className='scroll-mt-24 text-2xl font-bold mt-12 mb-6'
+                >
                   Whitelabeling Automation
                 </h2>
                 <p>
-                  The secret weapon for 2026 is whitelabeling. Instead of telling clients "Go sign up for Tool X",
-                  you provide the tool as <em>your</em> proprietary technology.
+                  The secret weapon for 2026 is whitelabeling. Instead of
+                  telling clients "Go sign up for Tool X", you provide the tool
+                  as <em>your</em> proprietary technology.
                 </p>
                 <p>
-                  This increases your perceived value and makes it incredibly hard for clients to leave,
-                  because their entire lead system runs on your platform.
+                  This increases your perceived value and makes it incredibly
+                  hard for clients to leave, because their entire lead system
+                  runs on your platform.
                 </p>
 
                 <Card className='my-12 bg-primary/5 border-primary/20'>
@@ -204,8 +235,8 @@ export default function BlogPost() {
                   </CardHeader>
                   <CardContent>
                     <p className='mb-6 text-muted-foreground'>
-                      We offer a dedicated Agency Partner Program with bulk pricing and priority support.
-                      Scale your agency today.
+                      We offer a dedicated Agency Partner Program with bulk
+                      pricing and priority support. Scale your agency today.
                     </p>
                     <div className='flex flex-col gap-4 sm:flex-row'>
                       <Button asChild size='lg'>
@@ -223,7 +254,10 @@ export default function BlogPost() {
               <div className='mt-12 border-t pt-12'>
                 <div className='flex items-center gap-4'>
                   <Avatar className='h-12 w-12'>
-                    <AvatarImage src='/team-avatar.png' alt='PostEngageAI Team' />
+                    <AvatarImage
+                      src='/team-avatar.png'
+                      alt='PostEngageAI Team'
+                    />
                     <AvatarFallback>PE</AvatarFallback>
                   </Avatar>
                   <div>

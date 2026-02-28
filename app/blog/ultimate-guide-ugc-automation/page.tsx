@@ -21,7 +21,8 @@ export const metadata: Metadata = {
   description:
     'User Generated Content (UGC) is the most powerful social proof. Learn how to automate rewards for Story mentions, post tags, and viral sharing.',
   openGraph: {
-    title: 'The Ultimate Guide to UGC Automation: Turn Customers into Advocates',
+    title:
+      'The Ultimate Guide to UGC Automation: Turn Customers into Advocates',
     description:
       'User Generated Content (UGC) is the most powerful social proof. Learn how to automate rewards for Story mentions, post tags, and viral sharing.',
     type: 'article',
@@ -37,7 +38,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'The Ultimate Guide to UGC Automation: Turn Customers into Advocates',
+    title:
+      'The Ultimate Guide to UGC Automation: Turn Customers into Advocates',
     description:
       'User Generated Content (UGC) is the most powerful social proof. Learn how to automate rewards for Story mentions, post tags, and viral sharing.',
     images: ['/blog/ugc-automation-guide.jpg'],
@@ -68,11 +70,16 @@ export default function BlogPost() {
             {/* Sidebar (TOC) */}
             <aside className='hidden lg:block lg:col-span-3 lg:sticky lg:top-32 lg:self-start space-y-8'>
               <div className='flex items-center gap-2 text-sm text-muted-foreground mb-4'>
-                <Link href='/blog' className='hover:text-primary transition-colors'>
+                <Link
+                  href='/blog'
+                  className='hover:text-primary transition-colors'
+                >
                   Blog
                 </Link>
                 <span>/</span>
-                <span className='text-foreground font-medium'>UGC Strategy</span>
+                <span className='text-foreground font-medium'>
+                  UGC Strategy
+                </span>
               </div>
               <TableOfContents items={tocItems} />
             </aside>
@@ -80,11 +87,15 @@ export default function BlogPost() {
             {/* Main Content */}
             <article className='lg:col-span-7 prose prose-lg dark:prose-invert max-w-none'>
               <header className='mb-12 not-prose'>
-                <Badge variant='secondary' className='mb-6 text-sm font-medium px-3 py-1'>
+                <Badge
+                  variant='secondary'
+                  className='mb-6 text-sm font-medium px-3 py-1'
+                >
                   UGC Strategy
                 </Badge>
                 <h1 className='text-4xl md:text-5xl font-extrabold tracking-tight mb-6 leading-tight'>
-                  The Ultimate Guide to UGC Automation: Turn Customers into Advocates
+                  The Ultimate Guide to UGC Automation: Turn Customers into
+                  Advocates
                 </h1>
                 <div className='flex items-center gap-6 text-muted-foreground'>
                   <div className='flex items-center gap-2'>
@@ -92,7 +103,9 @@ export default function BlogPost() {
                       <Camera className='h-5 w-5 text-primary' />
                     </div>
                     <div>
-                      <p className='text-sm font-medium text-foreground'>PostEngageAI Team</p>
+                      <p className='text-sm font-medium text-foreground'>
+                        PostEngageAI Team
+                      </p>
                       <p className='text-xs'>Automation Experts</p>
                     </div>
                   </div>
@@ -111,23 +124,34 @@ export default function BlogPost() {
                 <div className='absolute inset-0 flex items-center justify-center bg-gradient-to-br from-gray-900 to-gray-800 text-white'>
                   <div className='text-center p-8'>
                     <Users className='h-16 w-16 mx-auto mb-4 text-primary/80' />
-                    <p className='text-xl font-medium text-white/80'>UGC Automation Strategy</p>
+                    <p className='text-xl font-medium text-white/80'>
+                      UGC Automation Strategy
+                    </p>
                   </div>
                 </div>
               </div>
 
               <div className='lead text-xl text-muted-foreground mb-12 leading-relaxed'>
-                User Generated Content (UGC) is the holy grail of marketing. It's authentic, it's trusted, and it's free. But tracking every story mention and rewarding every loyal customer is a logistical nightmare.
+                User Generated Content (UGC) is the holy grail of marketing.
+                It's authentic, it's trusted, and it's free. But tracking every
+                story mention and rewarding every loyal customer is a logistical
+                nightmare.
                 <br />
                 <br />
-                Until now. Discover how to automate the entire UGC loop—from "Thanks for sharing!" to delivering rewards—instantly in the DMs.
+                Until now. Discover how to automate the entire UGC loop—from
+                "Thanks for sharing!" to delivering rewards—instantly in the
+                DMs.
               </div>
 
-              <h2 id='why-ugc-matters' className='scroll-mt-24 text-2xl font-bold mt-12 mb-6'>
+              <h2
+                id='why-ugc-matters'
+                className='scroll-mt-24 text-2xl font-bold mt-12 mb-6'
+              >
                 Why UGC is King
               </h2>
               <p>
-                People trust people, not brands. When a customer posts a photo of your product, their followers pay attention.
+                People trust people, not brands. When a customer posts a photo
+                of your product, their followers pay attention.
               </p>
               <ul className='space-y-2 my-6'>
                 {[
@@ -142,14 +166,20 @@ export default function BlogPost() {
                 ))}
               </ul>
 
-              <h2 id='story-mention-automation' className='scroll-mt-24 text-2xl font-bold mt-12 mb-6'>
+              <h2
+                id='story-mention-automation'
+                className='scroll-mt-24 text-2xl font-bold mt-12 mb-6'
+              >
                 Automating Story Mentions
               </h2>
               <p>
-                The biggest missed opportunity on Instagram is the Story Mention. When someone tags you (@yourbrand), they are shouting you out to their audience.
+                The biggest missed opportunity on Instagram is the Story
+                Mention. When someone tags you (@yourbrand), they are shouting
+                you out to their audience.
               </p>
               <p>
-                Most brands just "Heart" the story manually 6 hours later. That's boring.
+                Most brands just "Heart" the story manually 6 hours later.
+                That's boring.
               </p>
               <div className='bg-muted/50 p-6 rounded-xl border border-border my-8'>
                 <h4 className='font-semibold mb-4 flex items-center gap-2'>
@@ -157,63 +187,103 @@ export default function BlogPost() {
                   The "Instant Gratification" Flow
                 </h4>
                 <ol className='list-decimal pl-5 space-y-3 text-sm'>
-                  <li>User posts a Story and tags <strong>@YourBrand</strong>.</li>
+                  <li>
+                    User posts a Story and tags <strong>@YourBrand</strong>.
+                  </li>
                   <li>PostEngageAI detects the mention instantly (24/7).</li>
-                  <li>Bot sends a DM: "Omg! We love this photo! 😍 Thanks for the shoutout."</li>
-                  <li><strong>The Reward:</strong> "As a thank you, here is 10% off your next order: [CODE: UGC10]"</li>
+                  <li>
+                    Bot sends a DM: "Omg! We love this photo! 😍 Thanks for the
+                    shoutout."
+                  </li>
+                  <li>
+                    <strong>The Reward:</strong> "As a thank you, here is 10%
+                    off your next order: [CODE: UGC10]"
+                  </li>
                 </ol>
               </div>
               <p>
                 This turns a passive "tag" into a repeat purchase immediately.
               </p>
 
-              <h2 id='post-comment-rewards' className='scroll-mt-24 text-2xl font-bold mt-12 mb-6'>
+              <h2
+                id='post-comment-rewards'
+                className='scroll-mt-24 text-2xl font-bold mt-12 mb-6'
+              >
                 Post Comment Rewards
               </h2>
+              <p>Want to flood your own comments section? Incentivize it.</p>
               <p>
-                Want to flood your own comments section? Incentivize it.
+                <strong>Strategy:</strong> Post a photo and say "Tag us in your
+                photos wearing our gear! Comment <strong>ADVOCATE</strong> below
+                to join our ambassador program."
               </p>
               <p>
-                <strong>Strategy:</strong> Post a photo and say "Tag us in your photos wearing our gear! Comment <strong>ADVOCATE</strong> below to join our ambassador program."
-              </p>
-              <p>
-                When they comment <strong>ADVOCATE</strong>, the bot DMs them a link to your ambassador application or a guide on how to take great photos for your brand.
+                When they comment <strong>ADVOCATE</strong>, the bot DMs them a
+                link to your ambassador application or a guide on how to take
+                great photos for your brand.
               </p>
 
-              <h2 id='viral-giveaways' className='scroll-mt-24 text-2xl font-bold mt-12 mb-6'>
+              <h2
+                id='viral-giveaways'
+                className='scroll-mt-24 text-2xl font-bold mt-12 mb-6'
+              >
                 Viral "Share to Win" Contests
               </h2>
               <p>
-                Giveaways often attract low-quality leads. But not if you structure them around UGC.
+                Giveaways often attract low-quality leads. But not if you
+                structure them around UGC.
               </p>
               <p>
                 <strong>The Automation Setup:</strong>
               </p>
               <ul className='list-disc pl-6 space-y-2 text-muted-foreground'>
-                <li><strong>Entry Rule:</strong> "Share this post to your Story and tag us to enter!"</li>
-                <li><strong>Validation:</strong> The bot listens for the Story Mention.</li>
-                <li><strong>Confirmation:</strong> Bot DMs the user: "You're in! 🎟️ Good luck!"</li>
+                <li>
+                  <strong>Entry Rule:</strong> "Share this post to your Story
+                  and tag us to enter!"
+                </li>
+                <li>
+                  <strong>Validation:</strong> The bot listens for the Story
+                  Mention.
+                </li>
+                <li>
+                  <strong>Confirmation:</strong> Bot DMs the user: "You're in!
+                  🎟️ Good luck!"
+                </li>
               </ul>
               <p>
-                This guarantees that every entrant is actually spreading the word, creating a viral loop.
+                This guarantees that every entrant is actually spreading the
+                word, creating a viral loop.
               </p>
 
-              <h2 id='tracking-roi' className='scroll-mt-24 text-2xl font-bold mt-12 mb-6'>
+              <h2
+                id='tracking-roi'
+                className='scroll-mt-24 text-2xl font-bold mt-12 mb-6'
+              >
                 Tracking UGC ROI
               </h2>
-              <p>
-                How do you know it's working? PostEngageAI tracks:
-              </p>
+              <p>How do you know it's working? PostEngageAI tracks:</p>
               <ul className='space-y-2 my-6'>
-                <li><strong>Mentions Count:</strong> How many stories were you tagged in?</li>
-                <li><strong>DM Open Rates:</strong> Did they read your thank you note?</li>
-                <li><strong>Coupon Redemptions:</strong> How many sales came from that 10% code?</li>
+                <li>
+                  <strong>Mentions Count:</strong> How many stories were you
+                  tagged in?
+                </li>
+                <li>
+                  <strong>DM Open Rates:</strong> Did they read your thank you
+                  note?
+                </li>
+                <li>
+                  <strong>Coupon Redemptions:</strong> How many sales came from
+                  that 10% code?
+                </li>
               </ul>
 
               <div className='bg-primary/5 p-8 rounded-2xl border border-primary/20 my-12'>
-                <h3 className='text-2xl font-bold mb-4'>Turn Customers into Superfans</h3>
+                <h3 className='text-2xl font-bold mb-4'>
+                  Turn Customers into Superfans
+                </h3>
                 <p className='mb-6'>
-                  Don't let another shoutout go unnoticed. Automate your UGC rewards and build a community that sells for you.
+                  Don't let another shoutout go unnoticed. Automate your UGC
+                  rewards and build a community that sells for you.
                 </p>
                 <Button size='lg' className='w-full sm:w-auto text-lg px-8'>
                   Start Automating UGC <ArrowRight className='ml-2 h-5 w-5' />

@@ -77,7 +77,8 @@ export default function BlogPost() {
             </h1>
             <p className='mx-auto max-w-2xl text-xl text-muted-foreground leading-relaxed'>
               You don't need a complex webinar funnel. You need conversations.
-              Here is how to automate the "Setter" role and book qualified calls 24/7.
+              Here is how to automate the "Setter" role and book qualified calls
+              24/7.
             </p>
           </header>
 
@@ -85,7 +86,8 @@ export default function BlogPost() {
           <div className='relative mx-auto mb-16 aspect-[21/9] max-w-5xl overflow-hidden rounded-2xl border bg-muted/30 shadow-sm'>
             <div className='absolute inset-0 flex items-center justify-center bg-linear-to-br from-primary/5 via-transparent to-primary/5'>
               <span className='text-muted-foreground/20 font-medium'>
-                Featured Image: High Ticket Funnel (Content {'->'} DM {'->'} Call)
+                Featured Image: High Ticket Funnel (Content {'->'} DM {'->'}{' '}
+                Call)
               </span>
             </div>
           </div>
@@ -112,15 +114,20 @@ export default function BlogPost() {
               <div className='prose prose-lg dark:prose-invert max-w-none'>
                 {/* Introduction */}
                 <p>
-                  Selling a $27 ebook is easy. Selling a $5,000 coaching program requires trust.
-                  And trust is built in conversations, not on sales pages.
+                  Selling a $27 ebook is easy. Selling a $5,000 coaching program
+                  requires trust. And trust is built in conversations, not on
+                  sales pages.
                 </p>
                 <p>
-                  The problem? You can't spend all day chatting with people who can't afford you.
-                  You need a system to filter the "tire kickers" from the "action takers."
+                  The problem? You can't spend all day chatting with people who
+                  can't afford you. You need a system to filter the "tire
+                  kickers" from the "action takers."
                 </p>
 
-                <h2 id='the-high-ticket-problem' className='scroll-mt-24 text-2xl font-bold mt-12 mb-6'>
+                <h2
+                  id='the-high-ticket-problem'
+                  className='scroll-mt-24 text-2xl font-bold mt-12 mb-6'
+                >
                   The High-Ticket Problem
                 </h2>
                 <div className='grid gap-4 my-8 not-prose'>
@@ -129,7 +136,8 @@ export default function BlogPost() {
                     <div>
                       <div className='font-bold'>Manual DMing</div>
                       <div className='text-sm text-muted-foreground mt-1'>
-                        You spend 30 mins chatting, only to find out they have $0 budget.
+                        You spend 30 mins chatting, only to find out they have
+                        $0 budget.
                         <br />
                         <strong>Result:</strong> Burnout and empty calendar.
                       </div>
@@ -138,9 +146,12 @@ export default function BlogPost() {
                   <div className='flex items-start p-4 bg-primary/10 border border-primary/20 rounded-lg'>
                     <Gem className='h-6 w-6 text-primary mr-4 shrink-0 mt-1' />
                     <div>
-                      <div className='font-bold text-primary'>Automated Triage</div>
+                      <div className='font-bold text-primary'>
+                        Automated Triage
+                      </div>
                       <div className='text-sm text-muted-foreground mt-1'>
-                        AI asks 3 qualifying questions. Only books calls with qualified leads.
+                        AI asks 3 qualifying questions. Only books calls with
+                        qualified leads.
                         <br />
                         <strong>Result:</strong> You only talk to buyers.
                       </div>
@@ -148,32 +159,57 @@ export default function BlogPost() {
                   </div>
                 </div>
 
-                <h2 id='automated-triage' className='scroll-mt-24 text-2xl font-bold mt-12 mb-6'>
+                <h2
+                  id='automated-triage'
+                  className='scroll-mt-24 text-2xl font-bold mt-12 mb-6'
+                >
                   Automated Triage: Filter the Noise
                 </h2>
                 <p>
-                  Your automation should act like a digital "Setter". It asks the awkward questions so you don't have to.
+                  Your automation should act like a digital "Setter". It asks
+                  the awkward questions so you don't have to.
                 </p>
                 <ul className='list-disc pl-6 space-y-2 text-muted-foreground'>
-                  <li><strong>The Goal Question:</strong> "What are you looking to achieve in the next 90 days?"</li>
-                  <li><strong>The Obstacle Question:</strong> "What is stopping you from doing it on your own?"</li>
-                  <li><strong>The Investment Question:</strong> "Are you ready to invest in a mentor to get there faster?"</li>
+                  <li>
+                    <strong>The Goal Question:</strong> "What are you looking to
+                    achieve in the next 90 days?"
+                  </li>
+                  <li>
+                    <strong>The Obstacle Question:</strong> "What is stopping
+                    you from doing it on your own?"
+                  </li>
+                  <li>
+                    <strong>The Investment Question:</strong> "Are you ready to
+                    invest in a mentor to get there faster?"
+                  </li>
                 </ul>
 
-                <h2 id='the-hand-raiser-post' className='scroll-mt-24 text-2xl font-bold mt-12 mb-6'>
+                <h2
+                  id='the-hand-raiser-post'
+                  className='scroll-mt-24 text-2xl font-bold mt-12 mb-6'
+                >
                   The "Hand Raiser" Content Strategy
                 </h2>
                 <p>
-                  Don't say "Link in Bio". Post a result you got for a client (e.g., "How John added $10k/mo").
+                  Don't say "Link in Bio". Post a result you got for a client
+                  (e.g., "How John added $10k/mo").
                 </p>
                 <p>
-                  Then say: <em>"Comment <strong>SCALE</strong> and I'll send you the exact roadmap we used."</em>
+                  Then say:{' '}
+                  <em>
+                    "Comment <strong>SCALE</strong> and I'll send you the exact
+                    roadmap we used."
+                  </em>
                 </p>
                 <p>
-                  This triggers the DM automation. They asked for value, you give it to them, and <em>then</em> you qualify them.
+                  This triggers the DM automation. They asked for value, you
+                  give it to them, and <em>then</em> you qualify them.
                 </p>
 
-                <h2 id='booking-flow' className='scroll-mt-24 text-2xl font-bold mt-12 mb-6'>
+                <h2
+                  id='booking-flow'
+                  className='scroll-mt-24 text-2xl font-bold mt-12 mb-6'
+                >
                   The Booking Flow that Converts
                 </h2>
                 <div className='space-y-6 my-8 not-prose'>
@@ -186,12 +222,16 @@ export default function BlogPost() {
                     </CardHeader>
                     <CardContent>
                       <p className='text-sm text-muted-foreground mb-2'>
-                        <strong>Bot:</strong> "Based on your answers, it sounds like you are a perfect fit for our Accelerator."
+                        <strong>Bot:</strong> "Based on your answers, it sounds
+                        like you are a perfect fit for our Accelerator."
                       </p>
                       <p className='text-sm mb-2'>
-                        <strong>Bot:</strong> "I have opened up a few spots on my calendar for a strategy session. Want to grab one?"
+                        <strong>Bot:</strong> "I have opened up a few spots on
+                        my calendar for a strategy session. Want to grab one?"
                       </p>
-                      <Button size='sm' className='mt-2'>Book Strategy Call</Button>
+                      <Button size='sm' className='mt-2'>
+                        Book Strategy Call
+                      </Button>
                     </CardContent>
                   </Card>
                 </div>
@@ -205,8 +245,8 @@ export default function BlogPost() {
                   </CardHeader>
                   <CardContent>
                     <p className='mb-6 text-muted-foreground'>
-                      Stop manual setting. Start automated selling.
-                      Try PostEngage.ai free for 14 days.
+                      Stop manual setting. Start automated selling. Try
+                      PostEngage.ai free for 14 days.
                     </p>
                     <div className='flex flex-col gap-4 sm:flex-row'>
                       <Button asChild size='lg'>
@@ -224,7 +264,10 @@ export default function BlogPost() {
               <div className='mt-12 border-t pt-12'>
                 <div className='flex items-center gap-4'>
                   <Avatar className='h-12 w-12'>
-                    <AvatarImage src='/team-avatar.png' alt='PostEngageAI Team' />
+                    <AvatarImage
+                      src='/team-avatar.png'
+                      alt='PostEngageAI Team'
+                    />
                     <AvatarFallback>PE</AvatarFallback>
                   </Avatar>
                   <div>

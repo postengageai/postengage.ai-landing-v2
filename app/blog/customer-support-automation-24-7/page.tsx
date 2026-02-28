@@ -96,8 +96,8 @@ export default function BlogPostPage() {
               </h1>
               <p className='mx-auto max-w-2xl text-xl text-muted-foreground leading-relaxed'>
                 Customers expect a reply in 5 minutes, not 5 hours. Learn how to
-                use AI and automation to deliver 24/7 support without hiring more
-                staff.
+                use AI and automation to deliver 24/7 support without hiring
+                more staff.
               </p>
             </header>
 
@@ -173,8 +173,8 @@ export default function BlogPostPage() {
                     waste of human talent.
                   </p>
                   <p>
-                    In 2026, automation handles the repetitive stuff so your team
-                    can focus on complex issues.
+                    In 2026, automation handles the repetitive stuff so your
+                    team can focus on complex issues.
                   </p>
 
                   <h2
@@ -184,15 +184,16 @@ export default function BlogPostPage() {
                     The Expectation Gap
                   </h2>
                   <p>
-                    A study by Sprout Social found that 40% of consumers expect a
-                    response on social media within <strong>1 hour</strong>. The
-                    average brand takes <strong>10 hours</strong>.
+                    A study by Sprout Social found that 40% of consumers expect
+                    a response on social media within <strong>1 hour</strong>.
+                    The average brand takes <strong>10 hours</strong>.
                   </p>
                   <div className='my-6 p-4 border-l-4 border-destructive bg-destructive/10'>
                     <p className='font-bold text-destructive'>The Risk:</p>
                     <p className='text-sm'>
-                      If you don't answer quickly, they go to your competitor who
-                      will. Speed is the #1 factor in conversion for impulse buys.
+                      If you don't answer quickly, they go to your competitor
+                      who will. Speed is the #1 factor in conversion for impulse
+                      buys.
                     </p>
                   </div>
 
@@ -213,13 +214,13 @@ export default function BlogPostPage() {
                         <h3 className='font-semibold'>Shipping Query</h3>
                       </div>
                       <p className='text-sm text-muted-foreground mb-2'>
-                        <strong>Trigger Keywords:</strong> "shipping", "delivery",
-                        "arrive"
+                        <strong>Trigger Keywords:</strong> "shipping",
+                        "delivery", "arrive"
                       </p>
                       <div className='bg-muted p-3 rounded-lg text-sm'>
-                        "Hi! 👋 We ship worldwide! Domestic orders take 2-3 days.
-                        International takes 5-7 days. Track your order here:
-                        [Link]"
+                        "Hi! 👋 We ship worldwide! Domestic orders take 2-3
+                        days. International takes 5-7 days. Track your order
+                        here: [Link]"
                       </div>
                     </div>
                     <div className='p-6 rounded-xl border bg-card'>
@@ -232,8 +233,9 @@ export default function BlogPostPage() {
                         "exchange"
                       </p>
                       <div className='bg-muted p-3 rounded-lg text-sm'>
-                        "No worries! We have a 30-day return policy. Just head to
-                        our returns portal here: [Link] to start the process."
+                        "No worries! We have a 30-day return policy. Just head
+                        to our returns portal here: [Link] to start the
+                        process."
                       </div>
                     </div>
                   </div>
@@ -253,9 +255,9 @@ export default function BlogPostPage() {
                     answer, it can automatically tag a human agent.
                   </p>
                   <blockquote className='border-l-4 border-primary pl-4 italic my-4'>
-                    "I see you have a specific issue with your order #12345. Let me
-                    grab a human agent to help you out! 👤 They will be with you
-                    shortly."
+                    "I see you have a specific issue with your order #12345. Let
+                    me grab a human agent to help you out! 👤 They will be with
+                    you shortly."
                   </blockquote>
 
                   <h2
@@ -266,20 +268,20 @@ export default function BlogPostPage() {
                   </h2>
                   <ol className='list-decimal pl-5 space-y-4 my-6'>
                     <li>
-                      <strong>Audit your DMs:</strong> Look at the last 50 messages.
-                      What are the top 3 questions?
+                      <strong>Audit your DMs:</strong> Look at the last 50
+                      messages. What are the top 3 questions?
                     </li>
                     <li>
-                      <strong>Write the answers:</strong> Keep them friendly, short,
-                      and helpful. Use emojis!
+                      <strong>Write the answers:</strong> Keep them friendly,
+                      short, and helpful. Use emojis!
                     </li>
                     <li>
                       <strong>Set up keywords:</strong> Add variations (e.g.,
                       "ship", "shipping", "delivery").
                     </li>
                     <li>
-                      <strong>Test it:</strong> Send a DM from a personal account to
-                      verify it works.
+                      <strong>Test it:</strong> Send a DM from a personal
+                      account to verify it works.
                     </li>
                   </ol>
                   <div className='bg-muted/30 p-6 rounded-xl border mt-8'>
@@ -288,8 +290,9 @@ export default function BlogPostPage() {
                       Impact
                     </h4>
                     <p className='text-sm text-muted-foreground'>
-                      Brands using this system report a <strong>70-80% reduction</strong> in manual
-                      support tickets within the first week.
+                      Brands using this system report a{' '}
+                      <strong>70-80% reduction</strong> in manual support
+                      tickets within the first week.
                     </p>
                   </div>
                 </div>
