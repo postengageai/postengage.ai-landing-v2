@@ -23,6 +23,50 @@ export const metadata: Metadata = {
 export default function BlogPage() {
   const posts = [
     {
+      slug: 'bfcm-automation-guide',
+      title: 'BFCM Automation Guide: How to 10x Your Black Friday Sales on Instagram',
+      excerpt:
+        "Don't rely on email alone this Black Friday. Learn how to use Instagram DM automation to cut through the noise and drive record-breaking sales.",
+      date: 'Mar 26, 2026',
+      category: 'E-commerce',
+      readTime: '9 min read',
+      image: '/blog/bfcm-automation-cover.png',
+      featured: true,
+    },
+    {
+      slug: 'instagram-quiz-funnels',
+      title: 'Instagram Quiz Funnels: The Viral Lead Magnet No One Is Using',
+      excerpt:
+        'Stop asking for emails immediately. Use interactive quizzes in DMs to qualify leads, segment audiences, and double your opt-in rate.',
+      date: 'Mar 25, 2026',
+      category: 'Growth Hacks',
+      readTime: '6 min read',
+      image: '/blog/quiz-funnels-cover.png',
+      featured: false,
+    },
+    {
+      slug: 'influencer-roi-tracking',
+      title: 'Influencer ROI: How to Track Every Dollar from Your Partnerships',
+      excerpt:
+        "Vanity metrics are out. Learn how to use unique automation links and discount codes to measure the exact revenue impact of your influencers.",
+      date: 'Mar 24, 2026',
+      category: 'Partnership',
+      readTime: '7 min read',
+      image: '/blog/influencer-roi-cover.png',
+      featured: false,
+    },
+    {
+      slug: 'fitness-studio-membership-automation',
+      title: 'Gym & Fitness Automation: How to Fill Classes on Autopilot',
+      excerpt:
+        'Stop relying on walk-ins. Learn how gyms and fitness studios are using Instagram DM automation to book trials and sell memberships 24/7.',
+      date: 'Mar 23, 2026',
+      category: 'Local Business',
+      readTime: '5 min read',
+      image: '/blog/fitness-automation-cover.png',
+      featured: false,
+    },
+    {
       slug: 'story-mentions-brand-ambassadors',
       title: 'Turning Story Mentions into Brand Ambassadors with Auto-DMs',
       excerpt:
@@ -31,7 +75,7 @@ export default function BlogPage() {
       category: 'Engagement',
       readTime: '4 min read',
       image: '/blog/story-mentions-cover.png',
-      featured: true,
+      featured: false,
     },
     {
       slug: 'viral-giveaways-2-0',
