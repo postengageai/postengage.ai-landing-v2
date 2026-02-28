@@ -23,6 +23,17 @@ export const metadata: Metadata = {
 export default function BlogPage() {
   const posts = [
     {
+      slug: 'instagram-follow-to-dm-guide',
+      title: "The 'Silent' Lead Magnet: How Follow-to-DM Automation is Changing the Game",
+      excerpt:
+        'Turn new followers into leads instantly. Learn how to legally and effectively use the "Follow to DM" trigger to grow your email list.',
+      date: 'Mar 27, 2026',
+      category: 'Growth Hacks',
+      readTime: '5 min read',
+      image: '/blog/follow-to-dm-cover.png',
+      featured: true,
+    },
+    {
       slug: 'bfcm-automation-guide',
       title: 'BFCM Automation Guide: How to 10x Your Black Friday Sales on Instagram',
       excerpt:
@@ -31,7 +42,7 @@ export default function BlogPage() {
       category: 'E-commerce',
       readTime: '9 min read',
       image: '/blog/bfcm-automation-cover.png',
-      featured: true,
+      featured: false,
     },
     {
       slug: 'instagram-quiz-funnels',
@@ -48,7 +59,7 @@ export default function BlogPage() {
       slug: 'influencer-roi-tracking',
       title: 'Influencer ROI: How to Track Every Dollar from Your Partnerships',
       excerpt:
-        "Vanity metrics are out. Learn how to use unique automation links and discount codes to measure the exact revenue impact of your influencers.",
+        'Vanity metrics are out. Learn how to use unique automation links and discount codes to measure the exact revenue impact of your influencers.',
       date: 'Mar 24, 2026',
       category: 'Partnership',
       readTime: '7 min read',
