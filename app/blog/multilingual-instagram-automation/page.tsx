@@ -147,8 +147,22 @@ export default function BlogPost() {
 
                 <p className='text-lg leading-relaxed'>
                   The good news? Multilingual automation is easier to set up
-                  than you think. And it can unlock an entirely new revenue
-                  stream from audiences you already have.
+                  than you think using our{' '}
+                  <Link
+                    href='/blog/getting-started-postengage-guide'
+                    className='font-medium text-primary underline underline-offset-4 hover:text-primary/80'
+                  >
+                    getting started guide
+                  </Link>
+                  . And with features like{' '}
+                  <Link
+                    href='/blog/voice-dna-instagram-replies'
+                    className='font-medium text-primary underline underline-offset-4 hover:text-primary/80'
+                  >
+                    Voice DNA
+                  </Link>
+                  , it can unlock an entirely new revenue stream from audiences
+                  you already have.
                 </p>
 
                 <h2

@@ -505,7 +505,14 @@ export default function BlogPost() {
                   <p className='text-lg leading-relaxed'>
                     B2B Instagram is only worth it if it generates revenue.
                     Here's how to measure whether your Instagram DM funnel is
-                    actually working:
+                    actually working, using{' '}
+                    <Link
+                      href='/blog/instagram-automation-kpis'
+                      className='font-medium text-primary underline underline-offset-4 hover:text-primary/80'
+                    >
+                      the right KPIs
+                    </Link>{' '}
+                    to track:
                   </p>
 
                   <Card className='my-8'>
@@ -681,10 +688,16 @@ export default function BlogPost() {
                     B2B Instagram is the untapped goldmine of 2026. LinkedIn is
                     saturated. Cold email is dead. But Instagram? B2B
                     decision-makers are there, consuming content, ready to talk
-                    to companies they respect. DM automation lets you nurture
-                    and qualify them at scale. Your competitors still think
-                    Instagram is only for B2C. You can have the entire B2B DM
-                    opportunity to yourself.
+                    to companies they respect. If you're a{' '}
+                    <Link
+                      href='/blog/instagram-for-saas-startups'
+                      className='font-medium text-primary underline underline-offset-4 hover:text-primary/80'
+                    >
+                      SaaS company on Instagram
+                    </Link>
+                    , DM automation lets you nurture and qualify them at scale.
+                    Your competitors still think Instagram is only for B2C. You
+                    can have the entire B2B DM opportunity to yourself.
                   </p>
                 </div>
 

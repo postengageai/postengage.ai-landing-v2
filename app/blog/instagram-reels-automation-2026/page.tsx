@@ -349,8 +349,14 @@ export default function BlogPost() {
                   </h2>
                   <p className='text-lg leading-relaxed'>
                     The trigger word is crucial. It needs to be clear, easy to
-                    remember, and aligned with your offer. Here are the trigger
-                    words that are currently crushing it in 2026:
+                    remember, and aligned with your offer. Here are the{' '}
+                    <Link
+                      href='/blog/trigger-word-strategy-2026'
+                      className='font-medium text-primary underline underline-offset-4 hover:text-primary/80'
+                    >
+                      50 proven trigger words that convert
+                    </Link>{' '}
+                    in 2026:
                   </p>
 
                   <div className='my-8 grid grid-cols-1 gap-4 md:grid-cols-2'>
@@ -748,9 +754,16 @@ export default function BlogPost() {
                   <p className='text-lg leading-relaxed mb-6'>
                     In 2026, viral Reels are a dime a dozen. But viral Reels
                     that convert? Those are rare. The difference is automation.
-                    By connecting your Reels to a comment-to-DM strategy, you're
-                    turning massive reach into actual revenue. Your Reels
-                    finally work harder for your business.
+                    By connecting your Reels to a comment-to-DM strategy paired
+                    with an{' '}
+                    <Link
+                      href='/blog/organic-instagram-growth-2026'
+                      className='font-medium text-primary underline underline-offset-4 hover:text-primary/80'
+                    >
+                      organic growth strategy
+                    </Link>
+                    , you're turning massive reach into actual revenue. Your
+                    Reels finally work harder for your business.
                   </p>
                 </div>
 

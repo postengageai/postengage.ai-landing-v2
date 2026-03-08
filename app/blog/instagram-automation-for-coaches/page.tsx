@@ -129,7 +129,28 @@ export default function BlogPost() {
                     Valid concerns. But here's the truth: you can use automation
                     to handle the administrative tasks so you have more time and
                     energy for the actual coaching/therapy work. The key is
-                    knowing WHAT to automate and what to keep human.
+                    knowing WHAT to automate and what to keep human. Follow our{' '}
+                    <Link
+                      href='/blog/getting-started-postengage-guide'
+                      className='font-medium text-primary underline underline-offset-4 hover:text-primary/80'
+                    >
+                      getting started guide
+                    </Link>{' '}
+                    to implement{' '}
+                    <Link
+                      href='/blog/personal-brand-automation-guide'
+                      className='font-medium text-primary underline underline-offset-4 hover:text-primary/80'
+                    >
+                      personal brand automation
+                    </Link>{' '}
+                    ethically, and{' '}
+                    <Link
+                      href='/blog/instagram-email-list-building'
+                      className='font-medium text-primary underline underline-offset-4 hover:text-primary/80'
+                    >
+                      build your email list
+                    </Link>{' '}
+                    from Instagram.
                   </p>
                 </section>
 

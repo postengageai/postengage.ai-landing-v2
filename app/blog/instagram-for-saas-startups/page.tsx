@@ -339,7 +339,21 @@ export default function BlogPost() {
                   Notice the pattern: 95% of content builds trust and
                   demonstrates value. Only 5% asks for action. This is the
                   opposite of traditional SaaS marketing, which is 5% value and
-                  95% sales pitch.
+                  95% sales pitch. This approach mirrors{' '}
+                  <Link
+                    href='/blog/b2b-instagram-lead-generation'
+                    className='font-medium text-primary underline underline-offset-4 hover:text-primary/80'
+                  >
+                    B2B lead generation
+                  </Link>{' '}
+                  best practices, and you'll want to{' '}
+                  <Link
+                    href='/blog/instagram-automation-kpis'
+                    className='font-medium text-primary underline underline-offset-4 hover:text-primary/80'
+                  >
+                    track the right metrics
+                  </Link>{' '}
+                  to measure success.
                 </p>
 
                 <h2 id='dm-trial-conversion-funnel'>

@@ -208,7 +208,14 @@ export default function BlogPost() {
                 <p>
                   The highest-converting DM sequences follow a 5-step framework
                   called Hook → Value → Question → Bridge → CTA. Let me break
-                  down each step:
+                  down each step. Combined with{' '}
+                  <Link
+                    href='/blog/trigger-word-strategy-2026'
+                    className='font-medium text-primary underline underline-offset-4 hover:text-primary/80'
+                  >
+                    trigger words
+                  </Link>
+                  , this framework becomes even more powerful.
                 </p>
 
                 <Card className='not-prose my-8 bg-primary/5 border-primary/20'>
@@ -442,7 +449,16 @@ export default function BlogPost() {
                   rates.
                 </p>
 
-                <p>Here's what to A/B test and track:</p>
+                <p>
+                  Here's what to A/B test and track using metrics to help{' '}
+                  <Link
+                    href='/blog/instagram-automation-kpis'
+                    className='font-medium text-primary underline underline-offset-4 hover:text-primary/80'
+                  >
+                    track your KPIs
+                  </Link>
+                  :
+                </p>
 
                 <div className='not-prose my-8 space-y-4'>
                   <Card>

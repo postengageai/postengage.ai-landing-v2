@@ -397,7 +397,14 @@ export default function BlogPost() {
                     Here's where the real money is: abandoned cart recovery. 29%
                     of people who add items to their Instagram Shopping cart
                     never complete the purchase. That's free money left on the
-                    table.
+                    table. With the right{' '}
+                    <Link
+                      href='/blog/dm-conversion-rate-optimization'
+                      className='font-medium text-primary underline underline-offset-4 hover:text-primary/80'
+                    >
+                      DM conversion rate optimization
+                    </Link>
+                    , you can recover 15-25% of those carts.
                   </p>
 
                   <p className='text-lg leading-relaxed'>
@@ -683,7 +690,15 @@ export default function BlogPost() {
                     automation, you create a frictionless sales machine. Your
                     followers see products, express interest, receive
                     personalized follow-up, and convert into customers—all
-                    without you running ads or managing it manually.
+                    without you running ads or managing it manually. You can
+                    also pair this with{' '}
+                    <Link
+                      href='/blog/instagram-email-list-building'
+                      className='font-medium text-primary underline underline-offset-4 hover:text-primary/80'
+                    >
+                      building your email list
+                    </Link>{' '}
+                    from the same traffic.
                   </p>
                 </div>
 

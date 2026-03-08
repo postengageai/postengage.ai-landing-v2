@@ -132,7 +132,28 @@ export default function BlogPost() {
                     roadmap to scaling organically. We'll cover exactly what the
                     algorithm prioritizes now, how to create content that gets
                     saved (not just liked), and how DM automation amplifies it
-                    all.
+                    all. You'll learn about{' '}
+                    <Link
+                      href='/blog/instagram-reels-automation-2026'
+                      className='font-medium text-primary underline underline-offset-4 hover:text-primary/80'
+                    >
+                      Reels automation
+                    </Link>
+                    ,{' '}
+                    <Link
+                      href='/blog/trigger-word-strategy-2026'
+                      className='font-medium text-primary underline underline-offset-4 hover:text-primary/80'
+                    >
+                      trigger words
+                    </Link>
+                    , and how to{' '}
+                    <Link
+                      href='/blog/getting-started-postengage-guide'
+                      className='font-medium text-primary underline underline-offset-4 hover:text-primary/80'
+                    >
+                      get started with PostEngage
+                    </Link>
+                    .
                   </p>
                 </section>
 

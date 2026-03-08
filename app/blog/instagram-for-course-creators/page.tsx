@@ -170,8 +170,15 @@ export default function BlogPost() {
                   <p>
                     Meanwhile, you have 25,000 Instagram followers. But those
                     are just followers, right? You can't directly sell to them.
+                    Or can you? One effective strategy is to{' '}
+                    <Link
+                      href='/blog/instagram-email-list-building'
+                      className='font-medium text-primary underline underline-offset-4 hover:text-primary/80'
+                    >
+                      build your email list
+                    </Link>{' '}
+                    directly from Instagram DMs.
                   </p>
-                  <p>Or can you?</p>
 
                   <h3 className='mt-6'>The Stat That Changes Everything</h3>
                   <div className='not-prose my-6'>
@@ -487,6 +494,18 @@ export default function BlogPost() {
                       </p>
                     </div>
                   </div>
+
+                  <h3 className='mt-8'>Optimizing Your DM Close Rate</h3>
+                  <p>
+                    The goal is to{' '}
+                    <Link
+                      href='/blog/dm-conversion-rate-optimization'
+                      className='font-medium text-primary underline underline-offset-4 hover:text-primary/80'
+                    >
+                      optimize your DM close rate
+                    </Link>{' '}
+                    throughout the launch sequence.
+                  </p>
 
                   <h3 className='mt-8'>
                     Real Results from a Course Creator Launch

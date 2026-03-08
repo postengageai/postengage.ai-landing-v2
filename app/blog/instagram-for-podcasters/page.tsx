@@ -209,7 +209,21 @@ export default function BlogPost() {
                         relationship-building. When someone gets a personal
                         message with a Spotify link, they feel like you care
                         about them listening. It's a conversation, not a
-                        broadcast.
+                        broadcast. You can combine this with{' '}
+                        <Link
+                          href='/blog/instagram-email-list-building'
+                          className='font-medium text-primary underline underline-offset-4 hover:text-primary/80'
+                        >
+                          building your email list
+                        </Link>{' '}
+                        and developing your{' '}
+                        <Link
+                          href='/blog/personal-brand-automation-guide'
+                          className='font-medium text-primary underline underline-offset-4 hover:text-primary/80'
+                        >
+                          personal brand automation
+                        </Link>{' '}
+                        strategy.
                       </p>
                     </CardContent>
                   </Card>

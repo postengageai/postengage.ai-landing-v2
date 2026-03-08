@@ -466,7 +466,14 @@ export default function BlogPost() {
                   <p className='text-lg leading-relaxed'>
                     The setup process is intentionally simple. Voice DNA is
                     designed to be accessible to creators and businesses of all
-                    technical levels. Here's exactly how it works:
+                    technical levels. Here's exactly how it works, and you can{' '}
+                    <Link
+                      href='/blog/getting-started-postengage-guide'
+                      className='font-medium text-primary underline underline-offset-4 hover:text-primary/80'
+                    >
+                      set up Voice DNA in under 30 minutes
+                    </Link>
+                    .
                   </p>
 
                   <Card className='my-8 border-primary/20 bg-primary/5'>
@@ -568,7 +575,14 @@ export default function BlogPost() {
                     indistinguishable from you—because it's built on your unique
                     linguistic fingerprint. Your followers stay engaged. Your
                     response rate stays authentic. And you finally get your time
-                    back.
+                    back. Learn more about{' '}
+                    <Link
+                      href='/blog/personal-brand-automation-guide'
+                      className='font-medium text-primary underline underline-offset-4 hover:text-primary/80'
+                    >
+                      authentic personal brand automation
+                    </Link>
+                    .
                   </p>
                 </div>
 

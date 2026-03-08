@@ -364,7 +364,14 @@ export default function BlogPost() {
                   <p className='text-lg leading-relaxed'>
                     I was skeptical. Another AI tool promising to sound like me?
                     I'd heard that pitch before. But I had nothing to lose, so I
-                    signed up.
+                    signed up. What I discovered was{' '}
+                    <Link
+                      href='/blog/voice-dna-instagram-replies'
+                      className='font-medium text-primary underline underline-offset-4 hover:text-primary/80'
+                    >
+                      Voice DNA technology
+                    </Link>{' '}
+                    that actually works.
                   </p>
 
                   <p className='text-lg leading-relaxed'>
@@ -655,8 +662,14 @@ export default function BlogPost() {
                     in my story—200 DMs a day, response rate tanking, anxiety
                     spiking, joy draining—you have options. You don't have to
                     choose between growth and mental health. You don't have to
-                    lose authenticity to save time. There's a third path:
-                    automation that sounds like you.
+                    lose authenticity to save time. There's a third path:{' '}
+                    <Link
+                      href='/blog/personal-brand-automation-guide'
+                      className='font-medium text-primary underline underline-offset-4 hover:text-primary/80'
+                    >
+                      stay authentic while automating
+                    </Link>
+                    .
                   </p>
                 </div>
 

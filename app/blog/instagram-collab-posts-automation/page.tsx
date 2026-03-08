@@ -148,8 +148,22 @@ export default function BlogPost() {
 
                 <p className='text-lg leading-relaxed'>
                   That's where DM automation enters. When you pair collab posts
-                  with instant DM messaging, you convert every curious visitor
-                  into a conversation. And conversations turn into sales.
+                  with instant DM messaging as part of your{' '}
+                  <Link
+                    href='/blog/organic-instagram-growth-2026'
+                    className='font-medium text-primary underline underline-offset-4 hover:text-primary/80'
+                  >
+                    organic growth
+                  </Link>{' '}
+                  strategy, or combine it with{' '}
+                  <Link
+                    href='/blog/instagram-reels-automation-2026'
+                    className='font-medium text-primary underline underline-offset-4 hover:text-primary/80'
+                  >
+                    Reels automation
+                  </Link>
+                  , you convert every curious visitor into a conversation. And
+                  conversations turn into sales.
                 </p>
 
                 <h2

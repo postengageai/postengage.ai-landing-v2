@@ -116,7 +116,15 @@ export default function BlogPost() {
                     Example: You post about productivity hacks. In the caption,
                     you write "Comment PLANNER for your free download." Someone
                     comments PLANNER. Instantly, PostEngage.ai sends them a
-                    private message with your link.
+                    private message with your link. This works especially well
+                    in{' '}
+                    <Link
+                      href='/blog/instagram-reels-automation-2026'
+                      className='font-medium text-primary underline underline-offset-4 hover:text-primary/80'
+                    >
+                      Reels automation
+                    </Link>
+                    .
                   </p>
 
                   <div className='not-prose my-8'>
@@ -404,6 +412,18 @@ export default function BlogPost() {
                       "Comment YES if you're ready to level up. I'm sharing my
                       top 5 resources in your DM"
                     </em>
+                  </p>
+
+                  <h3 className='mt-8'>Impact on DM Conversion Rate</h3>
+                  <p>
+                    The right trigger words directly impact your{' '}
+                    <Link
+                      href='/blog/dm-conversion-rate-optimization'
+                      className='font-medium text-primary underline underline-offset-4 hover:text-primary/80'
+                    >
+                      DM conversion rate
+                    </Link>
+                    . Higher engagement words lead to more quality conversions.
                   </p>
 
                   <h3 className='mt-8'>

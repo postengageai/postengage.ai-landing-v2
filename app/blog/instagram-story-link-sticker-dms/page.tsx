@@ -183,7 +183,22 @@ export default function BlogPost() {
                   <p className='text-lg text-muted-foreground mb-6'>
                     The difference? People feel more comfortable DM-ing you.
                     They get a personalized response. And you get a conversation
-                    that can convert, not just a one-time click.
+                    that can convert, not just a one-time click. This is
+                    especially powerful when combined with{' '}
+                    <Link
+                      href='/blog/instagram-broadcast-channels-automation'
+                      className='font-medium text-primary underline underline-offset-4 hover:text-primary/80'
+                    >
+                      broadcast channels
+                    </Link>{' '}
+                    and{' '}
+                    <Link
+                      href='/blog/instagram-reels-automation-2026'
+                      className='font-medium text-primary underline underline-offset-4 hover:text-primary/80'
+                    >
+                      Reels automation
+                    </Link>
+                    .
                   </p>
                 </section>
 

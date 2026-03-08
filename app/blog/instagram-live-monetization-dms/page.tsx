@@ -380,7 +380,21 @@ export default function BlogPost() {
                 <p>
                   Notice the CTAs are soft and spaced out. You're not
                   aggressive. But you're giving people 3 clear opportunities to
-                  take action.
+                  take action. This approach works well for{' '}
+                  <Link
+                    href='/blog/instagram-reels-automation-2026'
+                    className='font-medium text-primary underline underline-offset-4 hover:text-primary/80'
+                  >
+                    Reels automation
+                  </Link>{' '}
+                  and is especially powerful for{' '}
+                  <Link
+                    href='/blog/instagram-for-course-creators'
+                    className='font-medium text-primary underline underline-offset-4 hover:text-primary/80'
+                  >
+                    course creators
+                  </Link>{' '}
+                  launching cohorts.
                 </p>
 
                 <Card className='not-prose my-8 bg-blue-500/5 border-blue-500/20'>

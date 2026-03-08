@@ -155,7 +155,15 @@ export default function BlogPost() {
 
                   <p>
                     Now let's break down the details so you can make the best
-                    choice for your specific situation.
+                    choice for your specific situation. To get started either
+                    way, check out our{' '}
+                    <Link
+                      href='/blog/getting-started-postengage-guide'
+                      className='font-medium text-primary underline underline-offset-4 hover:text-primary/80'
+                    >
+                      getting started guide
+                    </Link>
+                    .
                   </p>
                 </section>
 
@@ -475,8 +483,15 @@ export default function BlogPost() {
                     The Feature That Changes Everything: Voice DNA
                   </h3>
                   <p>
-                    PostEngage.ai's Voice DNA is genuinely new in 2026. ManyChat
-                    doesn't have an equivalent.
+                    PostEngage.ai's{' '}
+                    <Link
+                      href='/blog/voice-dna-instagram-replies'
+                      className='font-medium text-primary underline underline-offset-4 hover:text-primary/80'
+                    >
+                      Voice DNA
+                    </Link>{' '}
+                    is genuinely new in 2026. ManyChat doesn't have an
+                    equivalent.
                   </p>
                   <p>
                     ManyChat uses templates. You write a template, and it gets

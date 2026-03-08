@@ -135,7 +135,22 @@ export default function BlogPost() {
                   But what if you could send a DM to everyone who engaged with
                   your food posts? "Hey! Saw you loved our risotto. We're
                   running a Tuesday night special at 6 PM tonight — comment
-                  SPECIAL for your reservation link."
+                  SPECIAL for your reservation link." This works best when you
+                  use{' '}
+                  <Link
+                    href='/blog/trigger-word-strategy-2026'
+                    className='font-medium text-primary underline underline-offset-4 hover:text-primary/80'
+                  >
+                    trigger words
+                  </Link>{' '}
+                  and follow our guide for{' '}
+                  <Link
+                    href='/blog/getting-started-postengage-guide'
+                    className='font-medium text-primary underline underline-offset-4 hover:text-primary/80'
+                  >
+                    setting up your first automation
+                  </Link>
+                  .
                 </p>
 
                 <p className='text-lg leading-relaxed'>

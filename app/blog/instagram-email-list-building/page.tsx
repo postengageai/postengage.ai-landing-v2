@@ -161,7 +161,14 @@ export default function BlogPost() {
                   <p>
                     The DM-to-email funnel is the bridge between these two
                     worlds. You use Instagram's massive engagement to build a
-                    list you actually own.
+                    list you actually own. Learn more in our{' '}
+                    <Link
+                      href='/blog/getting-started-postengage-guide'
+                      className='font-medium text-primary underline underline-offset-4 hover:text-primary/80'
+                    >
+                      getting started with PostEngage guide
+                    </Link>
+                    .
                   </p>
                 </section>
 
@@ -597,7 +604,14 @@ export default function BlogPost() {
                     </li>
                     <li>
                       <strong>Test different keywords:</strong> Try "EMAIL",
-                      "CHECKLIST", "GUIDE". See what your audience responds to.
+                      "CHECKLIST", "GUIDE". Research{' '}
+                      <Link
+                        href='/blog/trigger-word-strategy-2026'
+                        className='font-medium text-primary underline underline-offset-4 hover:text-primary/80'
+                      >
+                        the right trigger words
+                      </Link>{' '}
+                      to see what your audience responds to.
                     </li>
                     <li>
                       <strong>Segment your list:</strong> Tag each DM sign-up

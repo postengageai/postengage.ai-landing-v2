@@ -200,7 +200,24 @@ export default function BlogPost() {
                   mechanism, but no reach.
                 </p>
 
-                <p>Combined, they're unstoppable.</p>
+                <p>
+                  Combined, they're unstoppable. Broadcast channels work
+                  especially well with{' '}
+                  <Link
+                    href='/blog/instagram-story-link-sticker-dms'
+                    className='font-medium text-primary underline underline-offset-4 hover:text-primary/80'
+                  >
+                    Story DM automation
+                  </Link>{' '}
+                  and as part of an{' '}
+                  <Link
+                    href='/blog/organic-instagram-growth-2026'
+                    className='font-medium text-primary underline underline-offset-4 hover:text-primary/80'
+                  >
+                    organic growth
+                  </Link>{' '}
+                  strategy.
+                </p>
 
                 <Card className='not-prose my-8 bg-primary/5 border-primary/20'>
                   <CardHeader>

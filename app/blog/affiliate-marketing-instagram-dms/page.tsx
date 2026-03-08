@@ -209,11 +209,24 @@ export default function BlogPost() {
                 </div>
 
                 <p className='text-lg leading-relaxed'>
-                  DM automation solves all of these problems. Your
-                  recommendation arrives when they're most engaged (right after
-                  they interact with your content), it's personalized to their
-                  needs, and it feels like a direct conversation, not a hard
-                  sell.
+                  DM automation solves all of these problems. Using{' '}
+                  <Link
+                    href='/blog/instagram-story-link-sticker-dms'
+                    className='font-medium text-primary underline underline-offset-4 hover:text-primary/80'
+                  >
+                    Story link sticker
+                  </Link>{' '}
+                  strategies combined with DM automation, your recommendation
+                  arrives when they're most engaged. It's personalized to their
+                  needs, and it feels like a direct conversation from someone
+                  building their{' '}
+                  <Link
+                    href='/blog/personal-brand-automation-guide'
+                    className='font-medium text-primary underline underline-offset-4 hover:text-primary/80'
+                  >
+                    personal brand
+                  </Link>
+                  , not a hard sell.
                 </p>
 
                 <h2

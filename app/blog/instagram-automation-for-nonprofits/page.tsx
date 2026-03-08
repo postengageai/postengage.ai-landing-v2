@@ -187,7 +187,21 @@ export default function BlogPost() {
                     automation to replace human connection. You use it to scale
                     it. To make sure every interested donor, every passionate
                     volunteer, gets a personalized welcome and the information
-                    they need to take the next step.
+                    they need to take the next step. You can{' '}
+                    <Link
+                      href='/blog/instagram-email-list-building'
+                      className='font-medium text-primary underline underline-offset-4 hover:text-primary/80'
+                    >
+                      build your email list
+                    </Link>{' '}
+                    from DMs and follow our{' '}
+                    <Link
+                      href='/blog/getting-started-postengage-guide'
+                      className='font-medium text-primary underline underline-offset-4 hover:text-primary/80'
+                    >
+                      getting started
+                    </Link>{' '}
+                    guide to set it up quickly.
                   </p>
                 </section>
 

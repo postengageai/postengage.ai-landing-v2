@@ -429,8 +429,14 @@ export default function BlogPost() {
                         <p className='text-sm text-muted-foreground'>
                           A 25% improvement in each KPI = 5x multiplier on total
                           revenue. If you started at $2.14 revenue/conversation
-                          and improve each KPI by 25%, you hit
-                          $10.70/conversation.
+                          and{' '}
+                          <Link
+                            href='/blog/dm-conversion-rate-optimization'
+                            className='font-medium text-primary underline underline-offset-4 hover:text-primary/80'
+                          >
+                            improve your conversion rate
+                          </Link>{' '}
+                          by 25%, you hit $10.70/conversation.
                         </p>
                       </div>
                     </div>
@@ -443,7 +449,14 @@ export default function BlogPost() {
 
                 <p>
                   You can't manage what you don't measure. Set up a weekly KPI
-                  review. Here's the template:
+                  review. If you're just getting started, our{' '}
+                  <Link
+                    href='/blog/getting-started-postengage-guide'
+                    className='font-medium text-primary underline underline-offset-4 hover:text-primary/80'
+                  >
+                    guide will help you set up your first automation
+                  </Link>
+                  . Here's the template:
                 </p>
 
                 <Card className='not-prose my-8'>

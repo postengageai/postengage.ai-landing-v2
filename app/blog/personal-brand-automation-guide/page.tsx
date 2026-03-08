@@ -186,12 +186,18 @@ export default function BlogPost() {
                     Satisfaction score: 34%.
                   </p>
                   <p>
-                    After implementing automation with Voice DNA: Alex responds
-                    to all 2,400 DMs automatically (initial responses). But
-                    here's the key: Alex personally engages the "hot leads" —
-                    people asking specific questions about services,
-                    collaborations, or deep conversations. Alex manually
-                    responds to about 50 of those daily.
+                    After implementing automation with{' '}
+                    <Link
+                      href='/blog/voice-dna-instagram-replies'
+                      className='font-medium text-primary underline underline-offset-4 hover:text-primary/80'
+                    >
+                      Voice DNA
+                    </Link>
+                    : Alex responds to all 2,400 DMs automatically (initial
+                    responses). But here's the key: Alex personally engages the
+                    "hot leads" — people asking specific questions about
+                    services, collaborations, or deep conversations. Alex
+                    manually responds to about 50 of those daily.
                   </p>
                   <p>
                     The difference? Now those 50 conversations are ACTUALLY
@@ -677,7 +683,14 @@ export default function BlogPost() {
                   The top personal brands in 2026 aren't the ones who respond to
                   every DM manually. They're the ones who automated the routine,
                   so they could be deeply personal with the important
-                  conversations.
+                  conversations. If you're worried about{' '}
+                  <Link
+                    href='/blog/creator-burnout-automation-solution'
+                    className='font-medium text-primary underline underline-offset-4 hover:text-primary/80'
+                  >
+                    creator burnout
+                  </Link>
+                  , automation is the solution.
                 </p>
                 <p>
                   That's not fake. That's scaled authenticity. And your audience

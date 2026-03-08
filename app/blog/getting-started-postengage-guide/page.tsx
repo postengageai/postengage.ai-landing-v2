@@ -153,7 +153,28 @@ export default function BlogPost() {
                   <p className='text-lg text-muted-foreground mb-8'>
                     First day goal: Get your Instagram account connected to
                     PostEngage.ai. This is the foundation everything else builds
-                    on.
+                    on. After setup, you'll unlock features like{' '}
+                    <Link
+                      href='/blog/voice-dna-instagram-replies'
+                      className='font-medium text-primary underline underline-offset-4 hover:text-primary/80'
+                    >
+                      Voice DNA
+                    </Link>
+                    ,{' '}
+                    <Link
+                      href='/blog/trigger-word-strategy-2026'
+                      className='font-medium text-primary underline underline-offset-4 hover:text-primary/80'
+                    >
+                      50 proven trigger words
+                    </Link>
+                    , and the ability to{' '}
+                    <Link
+                      href='/blog/instagram-automation-kpis'
+                      className='font-medium text-primary underline underline-offset-4 hover:text-primary/80'
+                    >
+                      track the right KPIs
+                    </Link>
+                    .
                   </p>
 
                   <div className='space-y-6 not-prose'>
