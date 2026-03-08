@@ -47,7 +47,7 @@ export function NewsletterForm({
       toast.success('Successfully subscribed to the newsletter!');
       setEmail('');
     } catch (error) {
-      console.error(error);
+      console.error(error); // eslint-disable-line no-console
       toast.error('Failed to subscribe. Please try again.');
     } finally {
       setIsLoading(false);

@@ -449,6 +449,304 @@ export default function BlogPage() {
       image: '/blog/engineering-scale-cover.png',
       featured: false,
     },
+    {
+      slug: 'voice-dna-instagram-replies',
+      title:
+        'Voice DNA: The Technology That Makes Your Instagram Bot Sound Exactly Like You',
+      excerpt:
+        'Discover how Voice DNA technology analyzes your writing style to create AI replies that sound indistinguishable from you — even to your closest followers.',
+      date: 'Mar 9, 2026',
+      category: 'AI Technology',
+      readTime: '7 min read',
+      image: '/blog/voice-dna-cover.png',
+      featured: false,
+    },
+    {
+      slug: 'instagram-reels-automation-2026',
+      title:
+        'Instagram Reels Automation in 2026: Turn Every View into a Conversation',
+      excerpt:
+        "Reels get views. But views don't pay bills. Learn the comment-to-DM strategy turning Reel virality into real revenue in 2026.",
+      date: 'Mar 8, 2026',
+      category: 'Reels Strategy',
+      readTime: '8 min read',
+      image: '/blog/reels-automation-cover.png',
+      featured: false,
+    },
+    {
+      slug: 'instagram-shopping-dm-automation',
+      title: 'Instagram Shopping + DM Automation: The $0 Ads Sales Machine',
+      excerpt:
+        'Stop paying for Instagram ads when your existing followers are ready to buy. Combine Instagram Shopping tags with DM automation to sell 24/7 without ad spend.',
+      date: 'Mar 7, 2026',
+      category: 'E-commerce',
+      readTime: '9 min read',
+      image: '/blog/shopping-dm-cover.png',
+      featured: false,
+    },
+    {
+      slug: 'creator-burnout-automation-solution',
+      title:
+        "I Was Burnt Out Replying to DMs. Here's How Automation Saved My Creator Business",
+      excerpt:
+        'Replying to 200+ DMs a day was destroying my mental health. This is how I automated my Instagram without losing the personal touch my audience loves.',
+      date: 'Mar 6, 2026',
+      category: 'Creator Economy',
+      readTime: '6 min read',
+      image: '/blog/creator-burnout-cover.png',
+      featured: false,
+    },
+    {
+      slug: 'b2b-instagram-lead-generation',
+      title:
+        'B2B Instagram Lead Generation: How to Get Enterprise Clients from Your DMs',
+      excerpt:
+        "Instagram isn't just for B2C. Discover the exact DM automation playbook B2B companies are using to book sales calls and generate six-figure pipeline.",
+      date: 'Mar 5, 2026',
+      category: 'B2B Marketing',
+      readTime: '10 min read',
+      image: '/blog/b2b-lead-gen-cover.png',
+      featured: false,
+    },
+    {
+      slug: 'instagram-email-list-building',
+      title:
+        'Instagram to Email: How to Build a 10,000-Person List Using DM Automation',
+      excerpt:
+        'Your Instagram following is rented land. Learn how to convert followers into email subscribers using DM automation — and own your audience forever.',
+      date: 'Mar 9, 2026',
+      category: 'List Building',
+      readTime: '7 min read',
+      image: '/blog/email-list-cover.png',
+      featured: false,
+    },
+    {
+      slug: 'personal-brand-automation-guide',
+      title:
+        'The Personal Brand Automation Playbook: Stay Authentic While Scaling to Millions',
+      excerpt:
+        'The biggest fear with automation is "sounding fake." Here\'s how top personal brand creators use AI to scale without losing the voice their audience fell in love with.',
+      date: 'Mar 8, 2026',
+      category: 'Personal Branding',
+      readTime: '8 min read',
+      image: '/blog/personal-brand-cover.png',
+      featured: false,
+    },
+    {
+      slug: 'trigger-word-strategy-2026',
+      title:
+        '50 Instagram Trigger Words That Convert: The Ultimate 2026 Swipe File',
+      excerpt:
+        'Stop guessing which CTAs work. Here are 50 proven Instagram trigger words organized by niche — with caption templates you can copy and use today.',
+      date: 'Mar 7, 2026',
+      category: 'Strategy',
+      readTime: '10 min read',
+      image: '/blog/trigger-words-cover.png',
+      featured: false,
+    },
+    {
+      slug: 'postengage-vs-manychat-2026',
+      title:
+        'PostEngage.ai vs ManyChat in 2026: An Honest Comparison for Instagram Creators',
+      excerpt:
+        'ManyChat is the industry standard — but is it still the best choice for Instagram automation in 2026? We break down pricing, features, and who each tool is built for.',
+      date: 'Mar 6, 2026',
+      category: 'Comparison',
+      readTime: '9 min read',
+      image: '/blog/vs-manychat-cover.png',
+      featured: false,
+    },
+    {
+      slug: 'instagram-for-course-creators',
+      title:
+        'How Course Creators Are Filling Cohorts with Instagram DM Automation',
+      excerpt:
+        "Launching a cohort and terrified it won't fill? Learn how course creators are using Instagram DM automation to go from waitlist to sold-out in 72 hours.",
+      date: 'Mar 5, 2026',
+      category: 'Course Creators',
+      readTime: '8 min read',
+      image: '/blog/course-creators-cover.png',
+      featured: false,
+    },
+    {
+      slug: 'dm-conversion-rate-optimization',
+      title:
+        'DM Conversion Rate Optimization: How to Go from 10% to 30%+ Close Rate',
+      excerpt:
+        'Most Instagram DM conversations die after the first message. Learn the CRO principles that triple DM close rates without being pushy or salesy.',
+      date: 'Mar 9, 2026',
+      category: 'Optimization',
+      readTime: '8 min read',
+      image: '/blog/dm-cro-cover.png',
+      featured: false,
+    },
+    {
+      slug: 'instagram-automation-kpis',
+      title:
+        'The 5 Instagram Automation KPIs That Actually Matter (And How to Track Them)',
+      excerpt:
+        'Follower count is a vanity metric. These 5 Instagram automation KPIs reveal whether your DM system is actually generating revenue — and how to improve each one.',
+      date: 'Mar 8, 2026',
+      category: 'Analytics',
+      readTime: '7 min read',
+      image: '/blog/automation-kpis-cover.png',
+      featured: false,
+    },
+    {
+      slug: 'instagram-broadcast-channels-automation',
+      title:
+        "Instagram Broadcast Channels + DM Automation: The 1-2 Punch Nobody's Using",
+      excerpt:
+        'Instagram Broadcast Channels have 10x the reach of feed posts. Combine them with DM automation and you have the most powerful engagement system on any platform.',
+      date: 'Mar 7, 2026',
+      category: 'Advanced Strategy',
+      readTime: '8 min read',
+      image: '/blog/broadcast-channels-cover.png',
+      featured: false,
+    },
+    {
+      slug: 'instagram-for-saas-startups',
+      title:
+        'Instagram for SaaS: How to Get Trial Signups from DMs (Without Ads)',
+      excerpt:
+        "B2B SaaS brands are ignoring Instagram's 2 billion users. Learn the exact playbook for converting Instagram followers into trial signups using DM automation.",
+      date: 'Mar 6, 2026',
+      category: 'SaaS Marketing',
+      readTime: '9 min read',
+      image: '/blog/saas-instagram-cover.png',
+      featured: false,
+    },
+    {
+      slug: 'instagram-live-monetization-dms',
+      title:
+        'How to Monetize Instagram Lives with DM Automation (Step-by-Step)',
+      excerpt:
+        "Instagram Lives generate massive engagement but most creators earn nothing from them. Here's how to use DM automation to convert live viewers into paying customers.",
+      date: 'Mar 5, 2026',
+      category: 'Monetization',
+      readTime: '7 min read',
+      image: '/blog/live-monetization-cover.png',
+      featured: false,
+    },
+    {
+      slug: 'affiliate-marketing-instagram-dms',
+      title:
+        'Affiliate Marketing on Instagram: How to Earn Passive Commissions with DM Automation',
+      excerpt:
+        "Stop putting affiliate links in your bio and hoping for the best. Here's how Instagram DM automation creates a passive commission engine that earns while you sleep.",
+      date: 'Mar 9, 2026',
+      category: 'Affiliate Marketing',
+      readTime: '7 min read',
+      image: '/blog/affiliate-dms-cover.png',
+      featured: false,
+    },
+    {
+      slug: 'instagram-for-podcasters',
+      title:
+        "The Podcaster's Instagram Playbook: Turn Followers into Loyal Subscribers",
+      excerpt:
+        "Podcasters with huge Instagram followings often have tiny listener counts. Here's the DM automation strategy that converts Instagram followers into podcast subscribers.",
+      date: 'Mar 8, 2026',
+      category: 'Podcasting',
+      readTime: '7 min read',
+      image: '/blog/podcasters-instagram-cover.png',
+      featured: false,
+    },
+    {
+      slug: 'restaurant-instagram-dm-automation',
+      title:
+        'Restaurant Instagram DM Automation: Fill Tables and Increase Reservations on Autopilot',
+      excerpt:
+        'Empty tables on Tuesday nights? Learn how restaurants are using Instagram DM automation to fill slow periods, push specials, and increase reservations without paid ads.',
+      date: 'Mar 7, 2026',
+      category: 'Local Business',
+      readTime: '6 min read',
+      image: '/blog/restaurant-automation-cover.png',
+      featured: false,
+    },
+    {
+      slug: 'instagram-collab-posts-automation',
+      title:
+        'Instagram Collab Posts + DM Automation: The Viral Growth Hack for 2026',
+      excerpt:
+        "Collab posts give you access to another creator's audience. Add DM automation and you can convert every new follower from the collab into a warm lead within minutes.",
+      date: 'Mar 6, 2026',
+      category: 'Growth Strategy',
+      readTime: '8 min read',
+      image: '/blog/collab-posts-cover.png',
+      featured: false,
+    },
+    {
+      slug: 'multilingual-instagram-automation',
+      title:
+        'Multilingual Instagram Automation: How to Serve a Global Audience in Any Language',
+      excerpt:
+        'Your audience speaks multiple languages, but your automation only speaks one. Learn how to set up multilingual DM sequences that feel local to every follower.',
+      date: 'Mar 5, 2026',
+      category: 'Global Strategy',
+      readTime: '7 min read',
+      image: '/blog/multilingual-automation-cover.png',
+      featured: false,
+    },
+    {
+      slug: 'instagram-automation-for-nonprofits',
+      title:
+        'Instagram Automation for Nonprofits: How to Grow Your Donor Base with DMs',
+      excerpt:
+        "Nonprofits that master Instagram DM automation are raising more, spending less, and building stronger donor relationships. Here's how to do it ethically.",
+      date: 'Mar 9, 2026',
+      category: 'Nonprofits',
+      readTime: '7 min read',
+      image: '/blog/nonprofit-automation-cover.png',
+      featured: false,
+    },
+    {
+      slug: 'getting-started-postengage-guide',
+      title: 'Getting Started with PostEngage.ai: Your First Week Setup Guide',
+      excerpt:
+        'New to PostEngage.ai? This step-by-step first-week guide will have you automating Instagram DMs and comments in under 30 minutes — no technical experience needed.',
+      date: 'Mar 8, 2026',
+      category: 'Tutorial',
+      readTime: '10 min read',
+      image: '/blog/getting-started-cover.png',
+      featured: false,
+    },
+    {
+      slug: 'instagram-story-link-sticker-dms',
+      title:
+        'Instagram Story Link Sticker + DM Automation: The Ultimate Traffic Combo',
+      excerpt:
+        'The link sticker gets clicks, but DMs start conversations. Learn how to combine Instagram Story link stickers with DM automation for maximum conversion.',
+      date: 'Mar 7, 2026',
+      category: 'Stories Strategy',
+      readTime: '6 min read',
+      image: '/blog/story-link-sticker-cover.png',
+      featured: false,
+    },
+    {
+      slug: 'organic-instagram-growth-2026',
+      title:
+        'Organic Instagram Growth in 2026: The Complete Algorithm Guide + DM Strategy',
+      excerpt:
+        "Paid ads are expensive. Organic Instagram growth in 2026 requires mastering the algorithm, Reels, and DM automation. Here's the complete playbook.",
+      date: 'Mar 6, 2026',
+      category: 'Growth',
+      readTime: '12 min read',
+      image: '/blog/organic-growth-cover.png',
+      featured: false,
+    },
+    {
+      slug: 'instagram-automation-for-coaches',
+      title:
+        'Instagram Automation for Coaches and Therapists: Grow Your Practice Ethically',
+      excerpt:
+        "Coaches and therapists have unique ethical obligations around client communication. Here's how to use Instagram DM automation to grow your practice without compromising integrity.",
+      date: 'Mar 5, 2026',
+      category: 'Coaches & Therapists',
+      readTime: '8 min read',
+      image: '/blog/coaches-automation-cover.png',
+      featured: false,
+    },
   ];
 
   return (

@@ -48,7 +48,7 @@ function UnsubscribeForm() {
       setIsSuccess(true);
       toast.success('Successfully unsubscribed from the newsletter.');
     } catch (error) {
-      console.error(error);
+      console.error(error); // eslint-disable-line no-console
       toast.error('Failed to unsubscribe. Please try again.');
     } finally {
       setIsLoading(false);

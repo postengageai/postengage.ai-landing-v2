@@ -37,7 +37,7 @@ export function SocialShareButtons({ title, url }: SocialShareButtonsProps) {
           url: url,
         });
       } catch (err) {
-        console.error('Error sharing:', err);
+        console.error('Error sharing:', err); // eslint-disable-line no-console
       }
     } else {
       // Fallback: Copy to clipboard

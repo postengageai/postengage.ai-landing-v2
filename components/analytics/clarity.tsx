@@ -9,6 +9,7 @@ export function MicrosoftClarity() {
     if (CLARITY_PROJECT_ID) {
       Clarity.init(CLARITY_PROJECT_ID);
     } else if (IS_DEV) {
+      // eslint-disable-next-line no-console
       console.warn(
         '[Clarity] Project ID is missing. Please set NEXT_PUBLIC_CLARITY_PROJECT_ID in your .env file.'
       );
