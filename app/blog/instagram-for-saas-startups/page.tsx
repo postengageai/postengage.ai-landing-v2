@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import Link from 'next/link';
 import { LandingHeader } from '@/components/landing/landing-header';
 import { LandingFooter } from '@/components/landing/landing-footer';
@@ -80,12 +81,14 @@ export default function BlogPost() {
           </header>
 
           {/* Featured Image */}
-          <div className='relative mx-auto mb-16 aspect-[21/9] max-w-5xl overflow-hidden rounded-2xl border bg-muted/30 shadow-sm'>
-            <div className='absolute inset-0 flex items-center justify-center bg-gradient-to-br from-primary/5 via-transparent to-primary/5'>
-              <span className='text-muted-foreground/20 font-medium'>
-                SaaS Trial Acquisition via Instagram
-              </span>
-            </div>
+          <div className='relative mx-auto mb-16 aspect-[21/9] max-w-5xl overflow-hidden rounded-2xl border shadow-sm'>
+            <Image
+              src='/blog/saas-instagram-cover.png'
+              alt='Instagram For Saas Startups'
+              fill
+              className='object-cover'
+              priority
+            />
           </div>
 
           <div className='grid grid-cols-1 gap-12 lg:grid-cols-12'>
