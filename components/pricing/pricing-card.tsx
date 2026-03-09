@@ -4,6 +4,7 @@ import { Check, ArrowRight } from 'lucide-react';
 import { CreditPackage } from '@/lib/types/pricing';
 import { calculateActions } from '@/lib/config/credit-pricing';
 import { APP_URL } from '@/lib/constants';
+import { sendGAEvent } from '@/lib/gtag';
 
 interface PricingCardProps {
   pack: CreditPackage;
@@ -27,6 +28,15 @@ export function PricingCard({ pack }: PricingCardProps) {
     minimumFractionDigits: 2,
     maximumFractionDigits: 2,
   }).format(perCredit);
+
+  const handlePlanSelect = () => {
+    sendGAEvent({
+      action: 'select_plan',
+      category: 'ecommerce',
+      label: pack.name.toLowerCase().replace(/\s+/g, '_'),
+      value: pack.price,
+    });
+  };
 
   return (
     <div
@@ -117,6 +127,7 @@ export function PricingCard({ pack }: PricingCardProps) {
           variant={pack.popular ? 'default' : 'outline'}
           size='lg'
           asChild
+          onClick={handlePlanSelect}
         >
           <Link href={`${APP_URL}/signup`}>
             Get {pack.name}

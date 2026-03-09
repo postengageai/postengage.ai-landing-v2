@@ -1,8 +1,53 @@
 'use client';
 
-import { Clock, TrendingDown, AlertCircle, Users } from 'lucide-react';
+import {
+  Clock,
+  TrendingDown,
+  AlertCircle,
+  Users,
+  LucideIcon,
+} from 'lucide-react';
+import { useTrackSectionView } from '@/hooks/use-track-section-view';
+import { sendGAEvent } from '@/lib/gtag';
+
+interface Problem {
+  icon: LucideIcon;
+  stat: string;
+  label: string;
+  description: string;
+}
+
+function ProblemCard({ problem, index }: { problem: Problem; index: number }) {
+  const ref = useTrackSectionView(`problem_stat_card_${index + 1}`);
+
+  return (
+    <div
+      ref={ref as React.RefObject<HTMLDivElement>}
+      className='group relative rounded-xl border border-border bg-card p-6 hover:border-warning/50 transition-colors'
+      onMouseEnter={() => {
+        sendGAEvent({
+          action: 'problem_stat_card_hover',
+          category: 'content',
+          label: problem.label,
+        });
+      }}
+    >
+      <div className='w-10 h-10 rounded-lg bg-warning/10 flex items-center justify-center mb-4'>
+        <problem.icon className='w-5 h-5 text-warning' />
+      </div>
+      <div className='text-3xl font-bold text-foreground'>{problem.stat}</div>
+      <div className='text-sm font-medium text-foreground mt-1'>
+        {problem.label}
+      </div>
+      <div className='text-sm text-muted-foreground mt-2'>
+        {problem.description}
+      </div>
+    </div>
+  );
+}
 
 export function ProblemSection() {
+  const ref = useTrackSectionView('problem_section');
   const problems = [
     {
       icon: Clock,
@@ -31,7 +76,7 @@ export function ProblemSection() {
   ];
 
   return (
-    <section className='py-16 sm:py-24 border-t border-border'>
+    <section ref={ref} className='py-16 sm:py-24 border-t border-border'>
       <div className='mx-auto max-w-6xl px-4 sm:px-6'>
         <div className='text-center max-w-2xl mx-auto mb-12'>
           <h2 className='text-2xl sm:text-3xl font-bold tracking-tight'>
@@ -45,23 +90,7 @@ export function ProblemSection() {
 
         <div className='grid sm:grid-cols-2 lg:grid-cols-4 gap-6'>
           {problems.map((problem, i) => (
-            <div
-              key={i}
-              className='group relative rounded-xl border border-border bg-card p-6 hover:border-warning/50 transition-colors'
-            >
-              <div className='w-10 h-10 rounded-lg bg-warning/10 flex items-center justify-center mb-4'>
-                <problem.icon className='w-5 h-5 text-warning' />
-              </div>
-              <div className='text-3xl font-bold text-foreground'>
-                {problem.stat}
-              </div>
-              <div className='text-sm font-medium text-foreground mt-1'>
-                {problem.label}
-              </div>
-              <div className='text-sm text-muted-foreground mt-2'>
-                {problem.description}
-              </div>
-            </div>
+            <ProblemCard key={i} problem={problem} index={i} />
           ))}
         </div>
       </div>

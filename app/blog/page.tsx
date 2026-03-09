@@ -1,0 +1,789 @@
+import { LandingHeader } from '@/components/landing/landing-header';
+import { LandingFooter } from '@/components/landing/landing-footer';
+import { PageHeader } from '@/components/marketing/page-header';
+import { Metadata } from 'next';
+import { BlogList } from '@/components/blog/blog-list';
+import { NewsletterForm } from '@/components/blog/newsletter-form';
+
+export const metadata: Metadata = {
+  title: 'Blog - PostEngage.ai',
+  description:
+    'Insights, updates, and guides on Instagram engagement, automation, and community growth.',
+  openGraph: {
+    title: 'Blog - PostEngage.ai',
+    description:
+      'Insights, updates, and guides on Instagram engagement, automation, and community growth.',
+    url: 'https://postengage.ai/blog',
+    siteName: 'PostEngage.ai',
+    locale: 'en_US',
+    type: 'website',
+  },
+};
+
+export default function BlogPage() {
+  const posts = [
+    {
+      slug: 'instagram-follow-to-dm-guide',
+      title:
+        "The 'Silent' Lead Magnet: How Follow-to-DM Automation is Changing the Game",
+      excerpt:
+        'Turn new followers into leads instantly. Learn how to legally and effectively use the "Follow to DM" trigger to grow your email list.',
+      date: 'Mar 27, 2026',
+      category: 'Growth Hacks',
+      readTime: '5 min read',
+      image: '/blog/follow-to-dm-cover.png',
+      featured: true,
+    },
+    {
+      slug: 'bfcm-automation-guide',
+      title:
+        'BFCM Automation Guide: How to 10x Your Black Friday Sales on Instagram',
+      excerpt:
+        "Don't rely on email alone this Black Friday. Learn how to use Instagram DM automation to cut through the noise and drive record-breaking sales.",
+      date: 'Mar 26, 2026',
+      category: 'E-commerce',
+      readTime: '9 min read',
+      image: '/blog/bfcm-automation-cover.png',
+      featured: false,
+    },
+    {
+      slug: 'instagram-quiz-funnels',
+      title: 'Instagram Quiz Funnels: The Viral Lead Magnet No One Is Using',
+      excerpt:
+        'Stop asking for emails immediately. Use interactive quizzes in DMs to qualify leads, segment audiences, and double your opt-in rate.',
+      date: 'Mar 25, 2026',
+      category: 'Growth Hacks',
+      readTime: '6 min read',
+      image: '/blog/quiz-funnels-cover.png',
+      featured: false,
+    },
+    {
+      slug: 'influencer-roi-tracking',
+      title: 'Influencer ROI: How to Track Every Dollar from Your Partnerships',
+      excerpt:
+        'Vanity metrics are out. Learn how to use unique automation links and discount codes to measure the exact revenue impact of your influencers.',
+      date: 'Mar 24, 2026',
+      category: 'Partnership',
+      readTime: '7 min read',
+      image: '/blog/influencer-roi-cover.png',
+      featured: false,
+    },
+    {
+      slug: 'fitness-studio-membership-automation',
+      title: 'Gym & Fitness Automation: How to Fill Classes on Autopilot',
+      excerpt:
+        'Stop relying on walk-ins. Learn how gyms and fitness studios are using Instagram DM automation to book trials and sell memberships 24/7.',
+      date: 'Mar 23, 2026',
+      category: 'Local Business',
+      readTime: '5 min read',
+      image: '/blog/fitness-automation-cover.png',
+      featured: false,
+    },
+    {
+      slug: 'story-mentions-brand-ambassadors',
+      title: 'Turning Story Mentions into Brand Ambassadors with Auto-DMs',
+      excerpt:
+        'Never miss a Story mention again. Learn how to automatically thank fans and invite them to your ambassador program.',
+      date: 'Mar 22, 2026',
+      category: 'Engagement',
+      readTime: '4 min read',
+      image: '/blog/story-mentions-cover.png',
+      featured: false,
+    },
+    {
+      slug: 'viral-giveaways-2-0',
+      title: 'Viral Giveaways 2.0: Using Comment Automation to Explode Growth',
+      excerpt:
+        'Forget manual tracking. Learn how to run automated Instagram giveaways that generate 10x more comments and leads.',
+      date: 'Mar 21, 2026',
+      category: 'Growth Hacks',
+      readTime: '5 min read',
+      image: '/blog/giveaway-automation-cover.png',
+      featured: false,
+    },
+    {
+      slug: 'ultimate-guide-ugc-automation',
+      title:
+        'The Ultimate Guide to UGC Automation: Turn Customers into Advocates',
+      excerpt:
+        'User Generated Content (UGC) is the most powerful social proof. Learn how to automate rewards for Story mentions, post tags, and viral sharing.',
+      date: 'Mar 20, 2026',
+      category: 'UGC Strategy',
+      readTime: '8 min read',
+      image: '/blog/ugc-automation-cover.png',
+      featured: false,
+    },
+    {
+      slug: 'instagram-automation-local-business',
+      title:
+        'Instagram Automation for Restaurants & Local Biz: Bookings on Autopilot',
+      excerpt:
+        'Stop missing reservations and appointments. Learn how local businesses use Instagram DM automation to fill tables and calendars 24/7.',
+      date: 'Mar 18, 2026',
+      category: 'Local Business',
+      readTime: '6 min read',
+      image: '/blog/local-business-cover.png',
+      featured: false,
+    },
+    {
+      slug: 'webinar-registration-instagram-dm',
+      title: 'Webinar Automation: How to Fill Seats Using Instagram DMs',
+      excerpt:
+        'Landing pages convert at 20%. DM conversations convert at 60%. Learn how to double your webinar show-up rate with automation.',
+      date: 'Mar 16, 2026',
+      category: 'Events',
+      readTime: '6 min read',
+      image: '/blog/webinar-automation-cover.png',
+      featured: false,
+    },
+    {
+      slug: 'high-ticket-coaching-automation',
+      title: 'High-Ticket Sales: Selling $5k+ Coaching Programs in DMs',
+      excerpt:
+        'Stop chasing low-ticket sales. Learn how to use automated qualification to fill your calendar with high-value coaching prospects.',
+      date: 'Mar 14, 2026',
+      category: 'Coaching',
+      readTime: '8 min read',
+      image: '/blog/high-ticket-cover.png',
+      featured: false,
+    },
+    {
+      slug: 'dm-to-dollar-pipeline',
+      title:
+        "The 'DM-to-Dollar' Pipeline: How to Monetize Instagram DMs in 2026",
+      excerpt:
+        'Stop leaving money on the table. A step-by-step guide to turning casual DM conversations into high-ticket sales.',
+      date: 'Mar 12, 2026',
+      category: 'Monetization',
+      readTime: '7 min read',
+      image: '/blog/dm-to-dollar-cover.png',
+      featured: false,
+    },
+    {
+      slug: 'ai-community-manager-2026',
+      title: "Why 2026 is the Year of the 'AI Community Manager'",
+      excerpt:
+        'Forget chatbots. The new wave of AI Community Managers can understand context, tone, and intent, handling 90% of your engagement automatically.',
+      date: 'Mar 10, 2026',
+      category: 'Future Trends',
+      readTime: '6 min read',
+      image: '/blog/ai-community-manager-cover.png',
+      featured: false,
+    },
+    {
+      slug: 'instagram-seo-2026',
+      title: 'Instagram SEO 2026: Ranking #1 on Explore',
+      excerpt:
+        'Hashtags are out. Keywords are in. Learn the new rules of Instagram SEO to get your content seen by millions of non-followers.',
+      date: 'Mar 9, 2026',
+      category: 'Growth Hacks',
+      readTime: '6 min read',
+      image: '/blog/instagram-seo-cover.png',
+      featured: false,
+    },
+    {
+      slug: 'instagram-story-automation-guide',
+      title: 'Instagram Story Automation: How to Turn Views into Leads (2026)',
+      excerpt:
+        'Stories have the highest engagement but the lowest retention. Learn how to use automation to capture leads before they swipe away.',
+      date: 'Mar 3, 2026',
+      category: 'Engagement',
+      readTime: '5 min read',
+      image: '/blog/story-automation-cover.png',
+      featured: false,
+    },
+    {
+      slug: 'click-to-dm-ads-guide',
+      title: 'Why Click-to-DM Ads Are Killing Landing Pages in 2026',
+      excerpt:
+        'Landing pages have a 2% conversion rate. DM Ads have 10%+. Here is why the "Conversation Funnel" is the new standard for paid social.',
+      date: 'Mar 2, 2026',
+      category: 'Ads Strategy',
+      readTime: '8 min read',
+      image: '/blog/dm-ads-cover.png',
+      featured: false,
+    },
+    {
+      slug: 'instagram-giveaways-2026',
+      title: 'Instagram Giveaways in 2026: The Anti-Spam Automation Guide',
+      excerpt:
+        'Stop asking for "Tag 3 friends". Learn the new, compliant way to run viral giveaways that actually build a qualified list.',
+      date: 'Mar 1, 2026',
+      category: 'Growth Hacks',
+      readTime: '6 min read',
+      image: '/blog/giveaway-2026-cover.png',
+      featured: false,
+    },
+    {
+      slug: 'real-estate-instagram-leads',
+      title: 'Real Estate Lead Gen 2026: Automate Your Instagram DMs',
+      excerpt:
+        'Speed to lead is everything. Learn how top agents are using Instagram automation to qualify buyers and book showings 24/7.',
+      date: 'Mar 8, 2026',
+      category: 'Real Estate',
+      readTime: '6 min read',
+      image: '/blog/real-estate-cover.png',
+      featured: true,
+    },
+    {
+      slug: 'ecommerce-instagram-automation',
+      title: 'E-commerce Automation 2026: Sync Shopify to Instagram DMs',
+      excerpt:
+        'Stop losing sales to "Link in Bio". Learn how to sync your Shopify catalog to Instagram and sell directly in DMs with AI.',
+      date: 'Mar 6, 2026',
+      category: 'E-commerce',
+      readTime: '7 min read',
+      image: '/blog/ecommerce-cover.png',
+      featured: true,
+    },
+    {
+      slug: 'ai-social-media-manager-automation',
+      title:
+        'The Rise of the AI Social Media Manager: What to Automate vs. What to Keep Human',
+      excerpt:
+        "AI is changing the game, but it's not replacing you. Learn the perfect balance between automated efficiency and human connection.",
+      date: 'Mar 5, 2026',
+      category: 'Future Trends',
+      readTime: '8 min read',
+      image: '/blog/ai-manager-cover.png',
+      featured: false,
+    },
+    {
+      slug: 'event-marketing-automation',
+      title: 'Automating Event RSVPs: From Story Reply to Calendar Invite',
+      excerpt:
+        'Hosting a webinar, workshop, or live event? Learn how to fill your seats using Instagram Stories and DM automation.',
+      date: 'Mar 19, 2026',
+      category: 'Event Marketing',
+      readTime: '4 min read',
+      image: '/blog/event-marketing-cover.png',
+      featured: true,
+    },
+    {
+      slug: 'coaching-sales-automation',
+      title: 'How High-Ticket Coaches are Booking 50+ Calls/Month with AI',
+      excerpt:
+        'Stop paying appointment setters $3k/month. Automate your outreach and booking flow with Instagram DM automation.',
+      date: 'Mar 18, 2026',
+      category: 'Coaching & Consulting',
+      readTime: '8 min read',
+      image: '/blog/coaching-sales-cover.png',
+      featured: false,
+    },
+    {
+      slug: 'ecommerce-cart-recovery-dm',
+      title: 'Recovering Abandoned Carts via Instagram DMs: A 2026 Strategy',
+      excerpt:
+        'Email open rates are plummeting. DM open rates are 90%+. Here is how to use Instagram to save lost sales.',
+      date: 'Mar 17, 2026',
+      category: 'E-commerce',
+      readTime: '4 min read',
+      image: '/blog/ecommerce-recovery-cover.png',
+      featured: false,
+    },
+    {
+      slug: 'real-estate-instagram-automation',
+      title: "The Realtor's Guide to Automating Open House Leads on Instagram",
+      excerpt:
+        'Stop chasing sign-in sheets. Learn how to capture, qualify, and follow up with every open house visitor automatically.',
+      date: 'Mar 16, 2026',
+      category: 'Real Estate',
+      readTime: '5 min read',
+      image: '/blog/real-estate-automation-cover.png',
+      featured: false,
+    },
+    {
+      slug: 'instagram-seo-2026',
+      title: 'Instagram SEO: How to Rank Your Content in 2026',
+      excerpt:
+        'Hashtags are dead. Discover the new ranking factors for Instagram in 2026: Keywords, Alt Text, and User Intent.',
+      date: 'Mar 15, 2026',
+      category: 'Growth Strategy',
+      readTime: '6 min read',
+      image: '/blog/instagram-seo-cover.png',
+      featured: true,
+    },
+    {
+      slug: 'dm-to-dollar-pipeline',
+      title:
+        "The 'DM-to-Dollar' Pipeline: How to Monetize Instagram DMs in 2026",
+      excerpt:
+        'Stop leaving money on the table. A step-by-step guide to turning casual DM conversations into high-ticket sales.',
+      date: 'Mar 12, 2026',
+      category: 'Monetization',
+      readTime: '7 min read',
+      image: '/blog/dm-to-dollar-cover.png',
+      featured: true,
+    },
+    {
+      slug: 'ai-community-manager-2026',
+      title: "Why 2026 is the Year of the 'AI Community Manager'",
+      excerpt:
+        'Forget chatbots. The new wave of AI Community Managers can understand context, tone, and intent, handling 90% of your engagement automatically.',
+      date: 'Mar 10, 2026',
+      category: 'Future Trends',
+      readTime: '6 min read',
+      image: '/blog/ai-community-manager-cover.png',
+      featured: false,
+    },
+    {
+      slug: 'stop-using-link-in-bio',
+      title:
+        'Stop Using Link in Bio: Why DM Automation Conversions Are 5x Higher',
+      excerpt:
+        'The "Link in Bio" is dead. Discover why top creators are switching to DM automation to skyrocket their sales and engagement.',
+      date: 'Mar 1, 2026',
+      category: 'Strategy',
+      readTime: '6 min read',
+      image: '/blog/link-in-bio-dead-cover.png',
+      featured: false,
+    },
+    {
+      slug: 'algorithm-shift-saves-vs-likes',
+      title: "The Algorithmic Shift: Why 'Saves' Are the New 'Likes' in 2026",
+      excerpt:
+        'The Instagram algorithm has changed. Vanity metrics are out. Retention metrics are in. Learn how to optimize for Saves and Shares.',
+      date: 'Feb 23, 2026',
+      category: 'Algorithm',
+      readTime: '7 min read',
+      image: '/blog/algorithm-shift-cover.png',
+      featured: false,
+    },
+    {
+      slug: 'instagram-funnels-2-0',
+      title: 'Instagram Funnels 2.0: From Viewer to Customer in 3 Clicks',
+      excerpt:
+        'The "Link in Bio" is dead. Learn how to build automated sales funnels that convert 5x higher using Keyword Triggers and DM Automation.',
+      date: 'Feb 22, 2026',
+      category: 'Strategy',
+      readTime: '6 min read',
+      image: '/blog/funnels-2-0-cover.png',
+      featured: false,
+    },
+    {
+      slug: 'micro-influencer-scale',
+      title: 'Micro-Influencer Scale: Automating Outreach Without Losing Soul',
+      excerpt:
+        'How to scale your influencer marketing program from 10 to 1,000 partners using intelligent automation and personalized outreach.',
+      date: 'Feb 21, 2026',
+      category: 'Influencer Marketing',
+      readTime: '5 min read',
+      image: '/blog/micro-influencer-cover.png',
+      featured: false,
+    },
+    {
+      slug: 'postengage-recentreborn-partnership',
+      title: 'PostEngage.ai x RecentReborn: Bridging Discovery & Engagement',
+      excerpt:
+        'We are partnering with RecentReborn to solve the two biggest challenges in Instagram growth: getting found and staying connected.',
+      date: 'Feb 3, 2026',
+      category: 'Partnership',
+      readTime: '4 min read',
+      image: '/blog/postengage-recentreborn-cover.png',
+      featured: false,
+    },
+    {
+      slug: 'future-social-support-ai',
+      title: 'The Future of Social Customer Support: AI vs Human Agents',
+      excerpt:
+        "Will AI replace human support teams? We explore the hybrid model that's winning in 2026.",
+      date: 'Feb 20, 2026',
+      category: 'Customer Experience',
+      readTime: '6 min read',
+      image: '/blog/future-support-cover.png',
+      featured: false,
+    },
+    {
+      slug: 'lead-gen-ai-comments',
+      title: 'Maximizing Lead Generation with AI-Powered Instagram Comments',
+      excerpt:
+        'Turn every comment into a qualified lead. Learn how to use AI to identify intent and start DM conversations.',
+      date: 'Feb 18, 2026',
+      category: 'Lead Generation',
+      readTime: '8 min read',
+      image: '/blog/lead-gen-comments-cover.png',
+      featured: false,
+    },
+    {
+      slug: 'automate-instagram-dms-2026',
+      title:
+        'How to Automate Instagram DMs Without Getting Banned (2026 Guide)',
+      excerpt:
+        'Learn the safe way to automate Instagram DMs in 2026. Avoid shadowbans and boost engagement.',
+      date: 'Feb 15, 2026',
+      category: 'Automation Guide',
+      readTime: '10 min read',
+      image: '/blog/automate-dms-cover.png',
+      featured: false,
+    },
+    {
+      slug: 'instagram-automation-rules-2026',
+      title: 'The Ultimate Guide to Instagram Automation Rules in 2026',
+      excerpt:
+        'How to automate your engagement without risking your account health. The definitive guide for modern creators.',
+      date: 'Feb 10, 2026',
+      category: 'Guide',
+      readTime: '8 min read',
+      image: '/blog/automation-rules-cover.png',
+      featured: false,
+    },
+    {
+      slug: 'smart-replies-ai-context',
+      title: 'Introducing Smart Replies: AI Context Awareness',
+      excerpt:
+        'Our new AI engine understands context better than ever before. Learn how it can save you 10+ hours a week.',
+      date: 'Feb 15, 2026',
+      category: 'Product',
+      readTime: '3 min read',
+      image: '/blog/smart-replies-cover.png',
+      featured: false,
+    },
+    {
+      slug: 'engineering-scale-0-to-10k',
+      title: 'From 0 to 10k Followers: The Engineering Behind Scale',
+      excerpt:
+        'How we built a system capable of handling millions of webhook events per second without crashing.',
+      date: 'Feb 20, 2026',
+      category: 'Engineering',
+      readTime: '6 min read',
+      image: '/blog/engineering-scale-cover.png',
+      featured: false,
+    },
+    {
+      slug: 'voice-dna-instagram-replies',
+      title:
+        'Voice DNA: The Technology That Makes Your Instagram Bot Sound Exactly Like You',
+      excerpt:
+        'Discover how Voice DNA technology analyzes your writing style to create AI replies that sound indistinguishable from you — even to your closest followers.',
+      date: 'Mar 9, 2026',
+      category: 'AI Technology',
+      readTime: '7 min read',
+      image: '/blog/voice-dna-cover.png',
+      featured: false,
+    },
+    {
+      slug: 'instagram-reels-automation-2026',
+      title:
+        'Instagram Reels Automation in 2026: Turn Every View into a Conversation',
+      excerpt:
+        "Reels get views. But views don't pay bills. Learn the comment-to-DM strategy turning Reel virality into real revenue in 2026.",
+      date: 'Mar 8, 2026',
+      category: 'Reels Strategy',
+      readTime: '8 min read',
+      image: '/blog/reels-automation-cover.png',
+      featured: false,
+    },
+    {
+      slug: 'instagram-shopping-dm-automation',
+      title: 'Instagram Shopping + DM Automation: The $0 Ads Sales Machine',
+      excerpt:
+        'Stop paying for Instagram ads when your existing followers are ready to buy. Combine Instagram Shopping tags with DM automation to sell 24/7 without ad spend.',
+      date: 'Mar 7, 2026',
+      category: 'E-commerce',
+      readTime: '9 min read',
+      image: '/blog/shopping-dm-cover.png',
+      featured: false,
+    },
+    {
+      slug: 'creator-burnout-automation-solution',
+      title:
+        "I Was Burnt Out Replying to DMs. Here's How Automation Saved My Creator Business",
+      excerpt:
+        'Replying to 200+ DMs a day was destroying my mental health. This is how I automated my Instagram without losing the personal touch my audience loves.',
+      date: 'Mar 6, 2026',
+      category: 'Creator Economy',
+      readTime: '6 min read',
+      image: '/blog/creator-burnout-cover.png',
+      featured: false,
+    },
+    {
+      slug: 'b2b-instagram-lead-generation',
+      title:
+        'B2B Instagram Lead Generation: How to Get Enterprise Clients from Your DMs',
+      excerpt:
+        "Instagram isn't just for B2C. Discover the exact DM automation playbook B2B companies are using to book sales calls and generate six-figure pipeline.",
+      date: 'Mar 5, 2026',
+      category: 'B2B Marketing',
+      readTime: '10 min read',
+      image: '/blog/b2b-lead-gen-cover.png',
+      featured: false,
+    },
+    {
+      slug: 'instagram-email-list-building',
+      title:
+        'Instagram to Email: How to Build a 10,000-Person List Using DM Automation',
+      excerpt:
+        'Your Instagram following is rented land. Learn how to convert followers into email subscribers using DM automation — and own your audience forever.',
+      date: 'Mar 9, 2026',
+      category: 'List Building',
+      readTime: '7 min read',
+      image: '/blog/email-list-cover.png',
+      featured: false,
+    },
+    {
+      slug: 'personal-brand-automation-guide',
+      title:
+        'The Personal Brand Automation Playbook: Stay Authentic While Scaling to Millions',
+      excerpt:
+        'The biggest fear with automation is "sounding fake." Here\'s how top personal brand creators use AI to scale without losing the voice their audience fell in love with.',
+      date: 'Mar 8, 2026',
+      category: 'Personal Branding',
+      readTime: '8 min read',
+      image: '/blog/personal-brand-cover.png',
+      featured: false,
+    },
+    {
+      slug: 'trigger-word-strategy-2026',
+      title:
+        '50 Instagram Trigger Words That Convert: The Ultimate 2026 Swipe File',
+      excerpt:
+        'Stop guessing which CTAs work. Here are 50 proven Instagram trigger words organized by niche — with caption templates you can copy and use today.',
+      date: 'Mar 7, 2026',
+      category: 'Strategy',
+      readTime: '10 min read',
+      image: '/blog/trigger-words-cover.png',
+      featured: false,
+    },
+    {
+      slug: 'postengage-vs-manychat-2026',
+      title:
+        'PostEngage.ai vs ManyChat in 2026: An Honest Comparison for Instagram Creators',
+      excerpt:
+        'ManyChat is the industry standard — but is it still the best choice for Instagram automation in 2026? We break down pricing, features, and who each tool is built for.',
+      date: 'Mar 6, 2026',
+      category: 'Comparison',
+      readTime: '9 min read',
+      image: '/blog/vs-manychat-cover.png',
+      featured: false,
+    },
+    {
+      slug: 'instagram-for-course-creators',
+      title:
+        'How Course Creators Are Filling Cohorts with Instagram DM Automation',
+      excerpt:
+        "Launching a cohort and terrified it won't fill? Learn how course creators are using Instagram DM automation to go from waitlist to sold-out in 72 hours.",
+      date: 'Mar 5, 2026',
+      category: 'Course Creators',
+      readTime: '8 min read',
+      image: '/blog/course-creators-cover.png',
+      featured: false,
+    },
+    {
+      slug: 'dm-conversion-rate-optimization',
+      title:
+        'DM Conversion Rate Optimization: How to Go from 10% to 30%+ Close Rate',
+      excerpt:
+        'Most Instagram DM conversations die after the first message. Learn the CRO principles that triple DM close rates without being pushy or salesy.',
+      date: 'Mar 9, 2026',
+      category: 'Optimization',
+      readTime: '8 min read',
+      image: '/blog/dm-cro-cover.png',
+      featured: false,
+    },
+    {
+      slug: 'instagram-automation-kpis',
+      title:
+        'The 5 Instagram Automation KPIs That Actually Matter (And How to Track Them)',
+      excerpt:
+        'Follower count is a vanity metric. These 5 Instagram automation KPIs reveal whether your DM system is actually generating revenue — and how to improve each one.',
+      date: 'Mar 8, 2026',
+      category: 'Analytics',
+      readTime: '7 min read',
+      image: '/blog/automation-kpis-cover.png',
+      featured: false,
+    },
+    {
+      slug: 'instagram-broadcast-channels-automation',
+      title:
+        "Instagram Broadcast Channels + DM Automation: The 1-2 Punch Nobody's Using",
+      excerpt:
+        'Instagram Broadcast Channels have 10x the reach of feed posts. Combine them with DM automation and you have the most powerful engagement system on any platform.',
+      date: 'Mar 7, 2026',
+      category: 'Advanced Strategy',
+      readTime: '8 min read',
+      image: '/blog/broadcast-channels-cover.png',
+      featured: false,
+    },
+    {
+      slug: 'instagram-for-saas-startups',
+      title:
+        'Instagram for SaaS: How to Get Trial Signups from DMs (Without Ads)',
+      excerpt:
+        "B2B SaaS brands are ignoring Instagram's 2 billion users. Learn the exact playbook for converting Instagram followers into trial signups using DM automation.",
+      date: 'Mar 6, 2026',
+      category: 'SaaS Marketing',
+      readTime: '9 min read',
+      image: '/blog/saas-instagram-cover.png',
+      featured: false,
+    },
+    {
+      slug: 'instagram-live-monetization-dms',
+      title:
+        'How to Monetize Instagram Lives with DM Automation (Step-by-Step)',
+      excerpt:
+        "Instagram Lives generate massive engagement but most creators earn nothing from them. Here's how to use DM automation to convert live viewers into paying customers.",
+      date: 'Mar 5, 2026',
+      category: 'Monetization',
+      readTime: '7 min read',
+      image: '/blog/live-monetization-cover.png',
+      featured: false,
+    },
+    {
+      slug: 'affiliate-marketing-instagram-dms',
+      title:
+        'Affiliate Marketing on Instagram: How to Earn Passive Commissions with DM Automation',
+      excerpt:
+        "Stop putting affiliate links in your bio and hoping for the best. Here's how Instagram DM automation creates a passive commission engine that earns while you sleep.",
+      date: 'Mar 9, 2026',
+      category: 'Affiliate Marketing',
+      readTime: '7 min read',
+      image: '/blog/affiliate-dms-cover.png',
+      featured: false,
+    },
+    {
+      slug: 'instagram-for-podcasters',
+      title:
+        "The Podcaster's Instagram Playbook: Turn Followers into Loyal Subscribers",
+      excerpt:
+        "Podcasters with huge Instagram followings often have tiny listener counts. Here's the DM automation strategy that converts Instagram followers into podcast subscribers.",
+      date: 'Mar 8, 2026',
+      category: 'Podcasting',
+      readTime: '7 min read',
+      image: '/blog/podcasters-instagram-cover.png',
+      featured: false,
+    },
+    {
+      slug: 'restaurant-instagram-dm-automation',
+      title:
+        'Restaurant Instagram DM Automation: Fill Tables and Increase Reservations on Autopilot',
+      excerpt:
+        'Empty tables on Tuesday nights? Learn how restaurants are using Instagram DM automation to fill slow periods, push specials, and increase reservations without paid ads.',
+      date: 'Mar 7, 2026',
+      category: 'Local Business',
+      readTime: '6 min read',
+      image: '/blog/restaurant-automation-cover.png',
+      featured: false,
+    },
+    {
+      slug: 'instagram-collab-posts-automation',
+      title:
+        'Instagram Collab Posts + DM Automation: The Viral Growth Hack for 2026',
+      excerpt:
+        "Collab posts give you access to another creator's audience. Add DM automation and you can convert every new follower from the collab into a warm lead within minutes.",
+      date: 'Mar 6, 2026',
+      category: 'Growth Strategy',
+      readTime: '8 min read',
+      image: '/blog/collab-posts-cover.png',
+      featured: false,
+    },
+    {
+      slug: 'multilingual-instagram-automation',
+      title:
+        'Multilingual Instagram Automation: How to Serve a Global Audience in Any Language',
+      excerpt:
+        'Your audience speaks multiple languages, but your automation only speaks one. Learn how to set up multilingual DM sequences that feel local to every follower.',
+      date: 'Mar 5, 2026',
+      category: 'Global Strategy',
+      readTime: '7 min read',
+      image: '/blog/multilingual-automation-cover.png',
+      featured: false,
+    },
+    {
+      slug: 'instagram-automation-for-nonprofits',
+      title:
+        'Instagram Automation for Nonprofits: How to Grow Your Donor Base with DMs',
+      excerpt:
+        "Nonprofits that master Instagram DM automation are raising more, spending less, and building stronger donor relationships. Here's how to do it ethically.",
+      date: 'Mar 9, 2026',
+      category: 'Nonprofits',
+      readTime: '7 min read',
+      image: '/blog/nonprofit-automation-cover.png',
+      featured: false,
+    },
+    {
+      slug: 'getting-started-postengage-guide',
+      title: 'Getting Started with PostEngage.ai: Your First Week Setup Guide',
+      excerpt:
+        'New to PostEngage.ai? This step-by-step first-week guide will have you automating Instagram DMs and comments in under 30 minutes — no technical experience needed.',
+      date: 'Mar 8, 2026',
+      category: 'Tutorial',
+      readTime: '10 min read',
+      image: '/blog/getting-started-cover.png',
+      featured: false,
+    },
+    {
+      slug: 'instagram-story-link-sticker-dms',
+      title:
+        'Instagram Story Link Sticker + DM Automation: The Ultimate Traffic Combo',
+      excerpt:
+        'The link sticker gets clicks, but DMs start conversations. Learn how to combine Instagram Story link stickers with DM automation for maximum conversion.',
+      date: 'Mar 7, 2026',
+      category: 'Stories Strategy',
+      readTime: '6 min read',
+      image: '/blog/story-link-sticker-cover.png',
+      featured: false,
+    },
+    {
+      slug: 'organic-instagram-growth-2026',
+      title:
+        'Organic Instagram Growth in 2026: The Complete Algorithm Guide + DM Strategy',
+      excerpt:
+        "Paid ads are expensive. Organic Instagram growth in 2026 requires mastering the algorithm, Reels, and DM automation. Here's the complete playbook.",
+      date: 'Mar 6, 2026',
+      category: 'Growth',
+      readTime: '12 min read',
+      image: '/blog/organic-growth-cover.png',
+      featured: false,
+    },
+    {
+      slug: 'instagram-automation-for-coaches',
+      title:
+        'Instagram Automation for Coaches and Therapists: Grow Your Practice Ethically',
+      excerpt:
+        "Coaches and therapists have unique ethical obligations around client communication. Here's how to use Instagram DM automation to grow your practice without compromising integrity.",
+      date: 'Mar 5, 2026',
+      category: 'Coaches & Therapists',
+      readTime: '8 min read',
+      image: '/blog/coaches-automation-cover.png',
+      featured: false,
+    },
+  ];
+
+  return (
+    <div className='min-h-screen bg-background text-foreground flex flex-col font-sans'>
+      <LandingHeader />
+
+      <main className='flex-1 pt-32 pb-20'>
+        {/* Header Section */}
+        <section className='px-4 sm:px-6 mb-16'>
+          <PageHeader
+            badge='Blog'
+            title='Latest Updates & Insights'
+            description='News, strategies, and stories from the PostEngage.ai team.'
+          />
+        </section>
+
+        {/* Blog List (Client Component) */}
+        <section className='px-4 sm:px-6 mb-20'>
+          <BlogList initialPosts={posts} />
+        </section>
+
+        {/* Newsletter Section */}
+        <section className='mt-24 px-4 sm:px-6'>
+          <div className='mx-auto max-w-4xl rounded-3xl bg-primary/5 border border-primary/10 p-8 md:p-12 text-center'>
+            <h2 className='text-2xl font-bold mb-4'>
+              Subscribe to our newsletter
+            </h2>
+            <p className='text-muted-foreground mb-8 max-w-lg mx-auto'>
+              Get the latest tips on Instagram growth, automation strategies,
+              and product updates delivered to your inbox.
+            </p>
+            <NewsletterForm />
+          </div>
+        </section>
+      </main>
+
+      <LandingFooter />
+    </div>
+  );
+}

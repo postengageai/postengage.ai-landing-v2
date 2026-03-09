@@ -5,6 +5,14 @@ import { Analytics } from '@vercel/analytics/next';
 import { Providers } from '@/components/providers';
 import './globals.css';
 import { ScrollToTop } from '@/components/scroll-to-top';
+import { ConversionTracker } from '@/components/analytics/conversion-tracker';
+import { GoogleAnalytics } from '@/components/analytics/google-analytics';
+import { GoogleTagManager } from '@/components/analytics/google-tag-manager';
+import { ScrollTracker } from '@/components/analytics/scroll-tracker';
+import { PageViewTracker } from '@/components/analytics/page-view-tracker';
+import { TimeOnPageTracker } from '@/components/analytics/time-on-page-tracker';
+import { JsonLd } from '@/components/seo/json-ld';
+import { MicrosoftClarity } from '@/components/analytics/clarity';
 
 const inter = Inter({ subsets: ['latin'], variable: '--font-inter' });
 const jetbrainsMono = JetBrains_Mono({
@@ -48,8 +56,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    site: '@postengage_ai',
-    creator: '@postengage_ai',
+    site: '@postengageai',
+    creator: '@postengageai',
     title: 'PostEngage.ai - AI Automation, Scheduling & Analytics',
     description:
       'Stop ignoring comments. Automate DMs in your voice, schedule posts, and track growth. Join 2,400+ creators saving 47 hours/month.',
@@ -89,6 +97,14 @@ export default function RootLayout({
       <body
         className={`${inter.variable} ${jetbrainsMono.variable} font-sans antialiased`}
       >
+        <JsonLd />
+        <GoogleTagManager />
+        <GoogleAnalytics />
+        <MicrosoftClarity />
+        <ConversionTracker />
+        <ScrollTracker />
+        <PageViewTracker />
+        <TimeOnPageTracker />
         <ScrollToTop />
         <Providers>{children}</Providers>
         <Analytics />

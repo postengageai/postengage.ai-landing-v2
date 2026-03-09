@@ -18,13 +18,3 @@ export interface CreditCosts {
   AI_PRIVATE_REPLY: number;
   AI_SEND_DM: number;
 }
-
-export interface PricingResponse {
-  costs: CreditCosts;
-  packs: CreditPackage[];
-  location: {
-    country: string;
-    country_code: string;
-    currency: string;
-  } | null;
-}

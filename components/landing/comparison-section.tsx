@@ -1,3 +1,5 @@
+'use client';
+
 import {
   Check,
   X,
@@ -11,50 +13,9 @@ import {
 import { Button } from '@/components/ui/button';
 import Link from 'next/link';
 import { APP_URL } from '@/lib/constants';
-
-const competitors = [
-  {
-    name: 'Manychat',
-    pricing: '$15+/mo',
-    pricingType: 'subscription',
-    instagram: true,
-    aiReplies: false,
-    indianPayments: false,
-    freeTier: 'Limited',
-    support: 'Email only',
-  },
-  {
-    name: 'SendPulse',
-    pricing: '$12+/mo',
-    pricingType: 'subscription',
-    instagram: true,
-    aiReplies: false,
-    indianPayments: false,
-    freeTier: 'Limited',
-    support: 'Email only',
-  },
-  {
-    name: 'InstantDM',
-    pricing: '$29+/mo',
-    pricingType: 'subscription',
-    instagram: true,
-    aiReplies: true,
-    indianPayments: false,
-    freeTier: 'No',
-    support: 'Email only',
-  },
-  {
-    name: 'PostEngageAI',
-    pricing: '₹499+',
-    pricingType: 'credits',
-    instagram: true,
-    aiReplies: true,
-    indianPayments: true,
-    freeTier: '50 credits',
-    support: 'Priority',
-    highlighted: true,
-  },
-];
+import { useTrackSectionView } from '@/hooks/use-track-section-view';
+import { sendGAEvent } from '@/lib/gtag';
+import { useLandingConfig } from '@/hooks/use-landing-config';
 
 const advantages = [
   {
@@ -95,8 +56,57 @@ const advantages = [
 ];
 
 export function ComparisonSection() {
+  const ref = useTrackSectionView('comparison_section');
+  const tableRef = useTrackSectionView('comparison_table_view');
+  const { data: landingConfig } = useLandingConfig();
+  const signupBonus = landingConfig?.signup_bonus || 500;
+
+  const competitors = [
+    {
+      name: 'Manychat',
+      pricing: '$15+/mo',
+      pricingType: 'subscription',
+      instagram: true,
+      aiReplies: true,
+      indianPayments: false,
+      freeTier: 'Limited',
+      support: 'Email only',
+    },
+    {
+      name: 'SendPulse',
+      pricing: '$12+/mo',
+      pricingType: 'subscription',
+      instagram: true,
+      aiReplies: false,
+      indianPayments: false,
+      freeTier: 'Limited',
+      support: 'Email only',
+    },
+    {
+      name: 'InstantDM',
+      pricing: '$29+/mo',
+      pricingType: 'subscription',
+      instagram: true,
+      aiReplies: true,
+      indianPayments: false,
+      freeTier: 'No',
+      support: 'Email only',
+    },
+    {
+      name: 'PostEngageAI',
+      pricing: '₹499+',
+      pricingType: 'credits',
+      instagram: true,
+      aiReplies: true,
+      indianPayments: true,
+      freeTier: `${signupBonus} credits`,
+      support: 'Priority',
+      highlighted: true,
+    },
+  ];
+
   return (
-    <section className='py-20 sm:py-32 border-t border-border/50'>
+    <section ref={ref} className='py-20 sm:py-32 border-t border-border/50'>
       <div className='mx-auto max-w-6xl px-4 sm:px-6'>
         {/* Header */}
         <div className='text-center max-w-2xl mx-auto mb-16'>
@@ -114,7 +124,10 @@ export function ComparisonSection() {
         </div>
 
         {/* Comparison Table */}
-        <div className='mb-20 overflow-hidden rounded-2xl border border-border'>
+        <div
+          ref={tableRef as React.RefObject<HTMLDivElement>}
+          className='mb-20 overflow-hidden rounded-2xl border border-border'
+        >
           <div className='overflow-x-auto'>
             <table className='w-full'>
               <thead>
@@ -125,7 +138,14 @@ export function ComparisonSection() {
                   {competitors.map(c => (
                     <th
                       key={c.name}
-                      className={`px-4 py-4 text-center text-sm font-semibold ${c.highlighted ? 'bg-primary/10' : ''}`}
+                      className={`px-4 py-4 text-center text-sm font-semibold ${c.highlighted ? 'bg-primary/10' : ''} cursor-default`}
+                      onMouseEnter={() => {
+                        sendGAEvent({
+                          action: 'competitor_logo_hover',
+                          category: 'content',
+                          label: c.name,
+                        });
+                      }}
                     >
                       <div className={c.highlighted ? 'text-primary' : ''}>
                         {c.name}
@@ -291,11 +311,11 @@ export function ComparisonSection() {
         {/* CTA */}
         <div className='text-center'>
           <p className='text-muted-foreground mb-6'>
-            Join thousands of Indian creators who switched to PostEngageAI
+            Join 12 creators already in early access
           </p>
           <Button size='lg' asChild>
             <Link href={`${APP_URL}/signup`}>
-              Start Free with 50 Credits
+              Get 500 free credits
               <Zap className='ml-2 h-4 w-4' />
             </Link>
           </Button>

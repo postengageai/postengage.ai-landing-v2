@@ -1,19 +1,19 @@
 import { useQuery } from '@tanstack/react-query';
 import { httpClient } from '@/lib/http/client';
-import { PricingResponse } from '@/lib/types/pricing';
+import { LandingConfigResponse } from '@/lib/types/landing';
 
-export function usePricing() {
+export function useLandingConfig() {
   return useQuery({
-    queryKey: ['pricing-packages'],
+    queryKey: ['landing-config'],
     queryFn: async () => {
-      const response = await httpClient.get<PricingResponse>(
-        'api/v1/payments/packages'
+      const response = await httpClient.get<LandingConfigResponse>(
+        'api/v1/landing/config'
       );
       if (response.error) {
         throw new Error(response.error.message);
       }
       return response.data.data;
     },
-    // staleTime: 1000 * 60 * 60, // 1 hour
+    staleTime: 1000 * 60 * 60, // 1 hour
   });
 }

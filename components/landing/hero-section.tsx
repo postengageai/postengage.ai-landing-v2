@@ -3,9 +3,12 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import { Button } from '@/components/ui/button';
-import { ArrowRight, MessageCircle, Heart, Send, Clock } from 'lucide-react';
+import { ArrowRight, MessageCircle } from 'lucide-react';
 import { useEffect, useState } from 'react';
 import { APP_URL } from '@/lib/constants';
+import { sendGAEvent } from '@/lib/gtag';
+import { LiveReplyDemo } from '@/components/landing/live-reply-demo';
+import { useLandingConfig } from '@/hooks/use-landing-config';
 
 const AVATARS = [
   '/indian-woman-fashion-creator.jpg',
@@ -16,8 +19,9 @@ const AVATARS = [
 ];
 
 export function HeroSection() {
+  const { data: landingConfig } = useLandingConfig();
+  const signupBonus = landingConfig?.signup_bonus || 500;
   const [ignoredCount, setIgnoredCount] = useState(2847);
-  const [showReply, setShowReply] = useState(false);
 
   // Simulate comments being ignored in real-time
   useEffect(() => {
@@ -27,17 +31,37 @@ export function HeroSection() {
     return () => clearInterval(interval);
   }, []);
 
-  // Show AI reply animation
   useEffect(() => {
-    const timeout = setTimeout(() => setShowReply(true), 1500);
-    return () => clearTimeout(timeout);
+    if (ignoredCount > 0) {
+      sendGAEvent({
+        action: 'hero_live_counter_view',
+        category: 'content',
+        label: 'live_counter_active',
+      });
+    }
   }, []);
+
+  const handleProductHuntClick = () => {
+    sendGAEvent({
+      action: 'click_product_hunt',
+      category: 'social',
+      label: 'hero_badge',
+    });
+  };
+
+  const handleCtaClick = () => {
+    sendGAEvent({
+      action: 'click_cta_hero',
+      category: 'conversion',
+      label: 'hero_signup',
+    });
+  };
 
   return (
     <section className='relative overflow-hidden pt-28 pb-16 sm:pt-36 sm:pb-24'>
       {/* Subtle radial gradient */}
       <div className='pointer-events-none absolute inset-0'>
-        <div className='absolute top-0 left-1/2 -translate-x-1/2 w-[1000px] h-[600px] bg-gradient-to-b from-primary/8 via-primary/3 to-transparent rounded-full blur-3xl' />
+        <div className='absolute top-0 left-1/2 -translate-x-1/2 w-[1000px] h-[600px] bg-linear-to-b from-primary/8 via-primary/3 to-transparent rounded-full blur-3xl' />
       </div>
 
       <div className='relative mx-auto max-w-6xl px-4 sm:px-6'>
@@ -46,6 +70,7 @@ export function HeroSection() {
             href='https://www.producthunt.com/products/postengageai?embed=true&amp;utm_source=badge-featured&amp;utm_medium=badge&amp;utm_campaign=badge-postengageai-2'
             target='_blank'
             rel='noopener noreferrer'
+            onClick={handleProductHuntClick}
           >
             <Image
               alt='PostEngageAI - Auto-reply to Instagram comments &amp; DMs in your own voice | Product Hunt'
@@ -97,7 +122,7 @@ export function HeroSection() {
               dying algorithm.
               <span className='text-foreground font-medium'>
                 {' '}
-                PostEngageAI replies in your voice — automatically.
+                Set it up in 5 minutes. Reply to every comment while you sleep.
               </span>
             </p>
 
@@ -106,14 +131,15 @@ export function HeroSection() {
                 size='lg'
                 className='min-w-[200px] h-12 text-base'
                 asChild
+                onClick={handleCtaClick}
               >
                 <Link href={`${APP_URL}/signup`}>
-                  Start Replying Now
+                  Get 500 free credits
                   <ArrowRight className='ml-2 h-4 w-4' />
                 </Link>
               </Button>
               <span className='text-sm text-muted-foreground'>
-                50 free replies • No credit card
+                {signupBonus} free credits • No credit card
               </span>
             </div>
 
@@ -137,127 +163,18 @@ export function HeroSection() {
                   ))}
                 </div>
                 <div className='text-sm'>
-                  <span className='font-semibold text-foreground'>2,400+</span>
+                  <span className='font-semibold text-foreground'>12</span>{' '}
                   <span className='text-muted-foreground'>
-                    {' '}
-                    creators saving{' '}
-                  </span>
-                  <span className='font-semibold text-foreground'>
-                    47 hours/month
+                    creators in early access • Growing daily
                   </span>
                 </div>
               </div>
             </div>
           </div>
 
-          {/* Right: Instagram-like demo */}
-          <div className='relative'>
-            {/* Phone frame */}
-            <div className='relative mx-auto max-w-[320px] lg:max-w-[360px]'>
-              <div className='rounded-[2.5rem] border border-border bg-card p-2 shadow-2xl shadow-black/20'>
-                <div className='rounded-[2rem] overflow-hidden bg-background'>
-                  {/* Instagram post header */}
-                  <div className='flex items-center gap-3 p-3 border-b border-border'>
-                    <div className='w-8 h-8 rounded-full bg-gradient-to-br from-primary to-primary/60' />
-                    <div className='flex-1'>
-                      <p className='text-sm font-semibold'>your_brand</p>
-                    </div>
-                  </div>
-
-                  {/* Post image placeholder */}
-                  <div className='aspect-square bg-secondary/50 flex items-center justify-center'>
-                    <div className='text-center p-4'>
-                      <div className='w-16 h-16 mx-auto mb-3 rounded-xl bg-primary/10 flex items-center justify-center'>
-                        <Heart className='w-8 h-8 text-primary' />
-                      </div>
-                      <p className='text-sm text-muted-foreground'>
-                        Your latest post
-                      </p>
-                    </div>
-                  </div>
-
-                  {/* Engagement bar */}
-                  <div className='flex items-center gap-4 p-3 border-b border-border'>
-                    <Heart className='w-6 h-6' />
-                    <MessageCircle className='w-6 h-6' />
-                    <Send className='w-6 h-6' />
-                  </div>
-
-                  {/* Comments section */}
-                  <div className='p-3 space-y-3 min-h-[180px]'>
-                    {/* Incoming comment */}
-                    <div className='flex gap-2'>
-                      <div className='w-7 h-7 rounded-full bg-secondary shrink-0' />
-                      <div>
-                        <p className='text-sm'>
-                          <span className='font-semibold'>@sarah_creates</span>
-                          <span className='text-muted-foreground ml-2'>
-                            Omg love this! Where did you get that? 😍
-                          </span>
-                        </p>
-                        <p className='text-xs text-muted-foreground mt-0.5 flex items-center gap-2'>
-                          <Clock className='w-3 h-3' /> 2s ago
-                        </p>
-                      </div>
-                    </div>
-
-                    {/* AI Reply - animated */}
-                    <div
-                      className={`flex gap-2 transition-all duration-500 ${
-                        showReply
-                          ? 'opacity-100 translate-y-0'
-                          : 'opacity-0 translate-y-2'
-                      }`}
-                    >
-                      <div className='w-7 h-7 rounded-full bg-gradient-to-br from-primary to-primary/60 shrink-0 flex items-center justify-center'>
-                        <span className='text-[10px] text-white font-bold'>
-                          AI
-                        </span>
-                      </div>
-                      <div className='flex-1'>
-                        <div className='bg-primary/10 rounded-xl rounded-tl-none p-2.5'>
-                          <p className='text-sm'>
-                            <span className='font-semibold text-primary'>
-                              your_brand
-                            </span>
-                            <span className='text-foreground ml-2'>
-                              Thank you Sarah! 💕 It's from the new collection -
-                              link in bio! DM me if you need help picking a size
-                              🛍️
-                            </span>
-                          </p>
-                        </div>
-                        <div className='flex items-center gap-2 mt-1'>
-                          <span className='text-[10px] px-1.5 py-0.5 rounded bg-success/10 text-success font-medium'>
-                            Replied by AI
-                          </span>
-                          <span className='text-xs text-muted-foreground'>
-                            just now
-                          </span>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              {/* Floating notification */}
-              <div
-                className={`absolute -right-4 top-20 bg-card border border-border rounded-lg p-3 shadow-lg transition-all duration-700 ${showReply ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-4'}`}
-              >
-                <div className='flex items-center gap-2'>
-                  <div className='w-8 h-8 rounded-full bg-success/10 flex items-center justify-center'>
-                    <MessageCircle className='w-4 h-4 text-success' />
-                  </div>
-                  <div>
-                    <p className='text-xs font-medium'>Comment Handled</p>
-                    <p className='text-[10px] text-muted-foreground'>
-                      In your voice
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
+          {/* Right: Video Demo */}
+          <div className='relative flex items-center justify-center'>
+            <LiveReplyDemo />
           </div>
         </div>
       </div>

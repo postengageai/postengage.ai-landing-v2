@@ -11,9 +11,10 @@ import {
   Send,
   Bot,
 } from 'lucide-react';
-import { usePricing } from '@/hooks/use-pricing';
+import { useLandingConfig } from '@/hooks/use-landing-config';
 import { PricingCard } from '@/components/pricing/pricing-card';
 import { Skeleton } from '@/components/ui/skeleton';
+import { useTrackSectionView } from '@/hooks/use-track-section-view';
 
 // Fallback costs if loading
 const DEFAULT_COSTS = {
@@ -24,11 +25,17 @@ const DEFAULT_COSTS = {
 };
 
 export function PricingPreviewSection() {
-  const { data: pricing, isLoading } = usePricing();
-  const costs = pricing?.costs || DEFAULT_COSTS;
+  const ref = useTrackSectionView('pricing_section');
+  const { data: config, isLoading } = useLandingConfig();
+  const costs = config?.costs || DEFAULT_COSTS;
+  const signupBonus = config?.signup_bonus || 500;
 
   return (
-    <section id='pricing' className='py-20 sm:py-32 border-t border-border/50'>
+    <section
+      ref={ref}
+      id='pricing'
+      className='py-20 sm:py-32 border-t border-border/50'
+    >
       <div className='mx-auto max-w-6xl px-4 sm:px-6'>
         {/* Header */}
         <div className='text-center max-w-2xl mx-auto mb-16'>
@@ -136,7 +143,7 @@ export function PricingPreviewSection() {
                   <Skeleton className='h-12 w-full mt-8' />
                 </div>
               ))
-            : pricing?.packs.map(pack => (
+            : config?.packs.map(pack => (
                 <PricingCard key={pack.id} pack={pack} />
               ))}
         </div>
@@ -145,7 +152,7 @@ export function PricingPreviewSection() {
         <div className='rounded-2xl border border-border bg-card/50 p-8 mt-6'>
           <div className='grid gap-4 sm:grid-cols-2 lg:grid-cols-3'>
             {[
-              '50 free credits to start',
+              `${signupBonus} free credits to start`,
               'Credits never expire',
               'No monthly commitment',
               'Bulk discounts available',

@@ -1,113 +1,132 @@
-import Image from 'next/image';
-import { Star, Quote } from 'lucide-react';
+'use client';
 
-export function TestimonialsSection() {
-  const testimonials = [
-    {
-      quote:
-        "I used to spend 3 hours daily on comments. Now it's 10 minutes reviewing what AI handled. I got my mornings back.",
-      author: 'Priya Sharma',
-      role: 'Fashion Creator',
-      metric: '47 hours saved last month',
-      avatar: '/indian-woman-fashion-creator.jpg',
-    },
-    {
-      quote:
-        "The AI actually uses my 'lol' and '😭' correctly. My audience thinks I'm just really on top of things now.",
-      author: 'Marcus Chen',
-      role: 'Tech Reviewer',
-      metric: '890 comments/week handled',
-      avatar: '/asian-man-tech-youtuber.jpg',
-    },
-    {
-      quote:
-        'DM conversions went up 40% because replies happen in seconds, not hours. This paid for itself day one.',
-      author: 'Sofia Rodriguez',
-      role: 'Course Creator',
-      metric: '$12K extra revenue',
-      avatar: '/latina-woman-entrepreneur.jpg',
-    },
-    {
-      quote:
-        'The flow builder is incredibly intuitive. I set up my entire sales funnel in 30 minutes without writing a single line of code.',
-      author: 'David Kim',
-      role: 'SaaS Founder',
-      metric: '300+ leads/month',
-      avatar: '/professional-man-portrait.png',
-    },
-    {
-      quote:
-        'PostEngage.ai has completely transformed how I handle customer support on Instagram. No more copy-pasting answers all day.',
-      author: 'Sarah Johnson',
-      role: 'Small Business Owner',
-      metric: '95% response rate',
-      avatar: '/business-woman-portrait.png',
-    },
-    {
-      quote:
-        'Finally, a tool that understands the creator economy. The analytics help me prove ROI to brands I work with.',
-      author: 'Alex Rivera',
-      role: 'Lifestyle Influencer',
-      metric: '2x brand deal value',
-      avatar: '/lifestyle-instagram-avatar.jpg',
-    },
-  ];
+import { Quote } from 'lucide-react';
+import { useTrackSectionView } from '@/hooks/use-track-section-view';
+import { sendGAEvent } from '@/lib/gtag';
+import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
+import { Card } from '@/components/ui/card';
+
+interface Testimonial {
+  id: string;
+  quote: string;
+  author: string;
+  role: string;
+  metric: string;
+  avatar: string;
+  initials: string;
+}
+
+const TESTIMONIALS: Testimonial[] = [
+  {
+    id: '1',
+    quote:
+      "Finally an automation tool that doesn't feel like a bot. My engagement has doubled.",
+    author: 'Priya M.',
+    role: 'Fashion Creator',
+    metric: '2x Engagement',
+    avatar: '/indian-woman-fashion-creator.jpg',
+    initials: 'PM',
+  },
+  {
+    id: '2',
+    quote:
+      'I used to spend 2 hours a day replying to DMs. Now it takes 15 minutes.',
+    author: 'Rahul S.',
+    role: 'Tech Reviewer',
+    metric: 'Save 10hrs/week',
+    avatar: '/asian-man-tech-youtuber.jpg',
+    initials: 'RS',
+  },
+  {
+    id: '3',
+    quote: 'The best investment for my personal brand. It just works.',
+    author: 'Anika T.',
+    role: 'Lifestyle Vlogger',
+    metric: '30% More Leads',
+    avatar: '/lifestyle-instagram-avatar.jpg',
+    initials: 'AT',
+  },
+];
+
+function TestimonialCard({
+  testimonial,
+  index,
+}: {
+  testimonial: Testimonial;
+  index: number;
+}) {
+  const ref = useTrackSectionView(`testimonial_card_${index + 1}`);
 
   return (
-    <section className='py-16 sm:py-24 bg-secondary/30'>
-      <div className='mx-auto max-w-6xl px-4 sm:px-6'>
-        <div className='text-center max-w-2xl mx-auto mb-12'>
-          <h2 className='text-2xl sm:text-3xl font-bold tracking-tight'>
-            Creators who got their{' '}
-            <span className='text-primary'>time back</span>
+    <Card
+      ref={ref as React.RefObject<HTMLDivElement>}
+      className='relative p-6 flex flex-col h-full'
+    >
+      <Quote className='w-8 h-8 text-primary/20 mb-4' />
+
+      <blockquote className='text-foreground flex-1 mb-6 text-lg'>
+        "{testimonial.quote}"
+      </blockquote>
+
+      {/* Metric highlight */}
+      <div className='mb-6 py-2 px-3 rounded-lg bg-success/10 border border-success/20 w-fit'>
+        <p className='text-sm font-semibold text-success'>
+          {testimonial.metric}
+        </p>
+      </div>
+
+      <div className='flex items-center gap-3 pt-4 border-t border-border mt-auto'>
+        <Avatar>
+          <AvatarImage src={testimonial.avatar} alt={testimonial.author} />
+          <AvatarFallback>{testimonial.initials}</AvatarFallback>
+        </Avatar>
+        <div
+          className='cursor-pointer'
+          onClick={() => {
+            sendGAEvent({
+              action: 'testimonial_author_click',
+              category: 'content',
+              label: testimonial.author,
+            });
+          }}
+        >
+          <p className='font-medium text-sm'>{testimonial.author}</p>
+          <p className='text-xs text-muted-foreground'>{testimonial.role}</p>
+        </div>
+      </div>
+    </Card>
+  );
+}
+
+export function TestimonialsSection() {
+  const ref = useTrackSectionView('testimonials_section');
+
+  return (
+    <section ref={ref} id='testimonials' className='py-20 sm:py-32'>
+      <div className='mx-auto max-w-7xl px-4 sm:px-6'>
+        <div className='mx-auto max-w-2xl text-center mb-16'>
+          <h2 className='text-3xl font-bold tracking-tight sm:text-4xl'>
+            Trusted by creators who value their time
           </h2>
+          <p className='mt-6 text-lg leading-8 text-muted-foreground'>
+            See how PostEngage.ai is helping creators and businesses scale their
+            engagement without burnout.
+          </p>
         </div>
 
-        <div className='grid md:grid-cols-3 gap-6'>
-          {testimonials.map((testimonial, i) => (
-            <div
-              key={i}
-              className='relative rounded-xl border border-border bg-card p-6 flex flex-col'
-            >
-              <Quote className='w-8 h-8 text-primary/20 mb-4' />
-
-              <blockquote className='text-foreground flex-1'>
-                "{testimonial.quote}"
-              </blockquote>
-
-              {/* Metric highlight */}
-              <div className='my-4 py-3 px-4 rounded-lg bg-success/10 border border-success/20'>
-                <p className='text-sm font-semibold text-success'>
-                  {testimonial.metric}
-                </p>
-              </div>
-
-              <div className='flex items-center gap-3 pt-4 border-t border-border'>
-                <Image
-                  src={testimonial.avatar || '/placeholder.svg'}
-                  alt={testimonial.author}
-                  width={40}
-                  height={40}
-                  className='rounded-full bg-secondary object-cover'
-                />
-                <div>
-                  <p className='font-medium text-sm'>{testimonial.author}</p>
-                  <p className='text-xs text-muted-foreground'>
-                    {testimonial.role}
-                  </p>
-                </div>
-                <div className='ml-auto flex gap-0.5'>
-                  {[...Array(5)].map((_, j) => (
-                    <Star
-                      key={j}
-                      className='w-3 h-3 fill-primary text-primary'
-                    />
-                  ))}
-                </div>
-              </div>
-            </div>
+        <div className='mx-auto mt-16 grid max-w-2xl grid-cols-1 gap-8 lg:mx-0 lg:max-w-none lg:grid-cols-3'>
+          {TESTIMONIALS.map((testimonial, index) => (
+            <TestimonialCard
+              key={testimonial.id}
+              testimonial={testimonial}
+              index={index}
+            />
           ))}
         </div>
+
+        <p className='text-center text-xs text-muted-foreground mt-12 opacity-60'>
+          * Results may vary based on account size and engagement strategy.
+        </p>
       </div>
     </section>
   );

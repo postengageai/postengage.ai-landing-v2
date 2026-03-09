@@ -127,37 +127,89 @@ export default function PrivacyPage() {
               <ul className='list-disc pl-6 space-y-2 text-muted-foreground mt-4'>
                 <li>Access your personal data</li>
                 <li>Correct inaccurate data</li>
-                <li>Request deletion of your data</li>
-                <li>Disconnect your Instagram account at any time</li>
+                <li>Request deletion of your data (Right to be Forgotten)</li>
+                <li>
+                  Disconnect your social media accounts at any time via our
+                  dashboard or the social platform's settings
+                </li>
                 <li>Export your data</li>
               </ul>
 
               <h2 className='text-xl font-semibold mt-12 mb-4'>
-                Data Security
+                Data Deletion Instructions
               </h2>
               <p className='text-muted-foreground'>
-                We implement industry-standard security measures including:
+                You may request the deletion of your data at any time:
               </p>
               <ul className='list-disc pl-6 space-y-2 text-muted-foreground mt-4'>
-                <li>Encryption in transit (TLS) and at rest</li>
-                <li>Regular security audits</li>
-                <li>Access controls and authentication</li>
-                <li>Secure infrastructure on trusted cloud providers</li>
+                <li>
+                  <strong>Automated:</strong> Use the "Delete Account" option
+                  within your PostEngageAI account settings. This will remove
+                  your account and associated data immediately.
+                </li>
+                <li>
+                  <strong>Manual Request:</strong> Email us at{' '}
+                  <a
+                    href='mailto:postengage.ai@gmail.com'
+                    className='text-primary hover:underline'
+                  >
+                    postengage.ai@gmail.com
+                  </a>{' '}
+                  with the subject "Data Deletion Request". We will process your
+                  request within 30 days.
+                </li>
+                <li>
+                  <strong>Platform Data:</strong> To remove our access to your
+                  social media data, you can remove the PostEngageAI app from
+                  your account settings on the respective platform (e.g.,
+                  Instagram or Facebook Business Integrations).
+                </li>
               </ul>
 
               <h2 className='text-xl font-semibold mt-12 mb-4'>
-                Instagram / Meta Platform Compliance
+                Platform Compliance (Meta & Others)
               </h2>
               <p className='text-muted-foreground'>
-                Our use of Instagram data is governed by Meta's Platform Terms.
-                We:
+                Our use of data received from social platforms is governed by
+                their respective Platform Terms.
               </p>
-              <ul className='list-disc pl-6 space-y-2 text-muted-foreground mt-4'>
-                <li>Only access data you explicitly authorize</li>
-                <li>Use official APIs exclusively</li>
-                <li>Comply with all Meta data handling requirements</li>
-                <li>Process data deletion requests per Meta's requirements</li>
+              <h3 className='text-lg font-medium mt-4 mb-2'>
+                Meta (Facebook/Instagram) Compliance
+              </h3>
+              <ul className='list-disc pl-6 space-y-2 text-muted-foreground'>
+                <li>
+                  We only access data you explicitly authorize via official Meta
+                  APIs.
+                </li>
+                <li>
+                  We do not use Platform Data for surveillance or to
+                  discriminate based on sensitive characteristics.
+                </li>
+                <li>
+                  We comply with Meta's Platform Terms regarding data retention
+                  and security.
+                </li>
+                <li>
+                  We act as a Service Provider for your business in the context
+                  of processing your social media interactions.
+                </li>
               </ul>
+
+              <h2 className='text-xl font-semibold mt-12 mb-4'>
+                Business Information
+              </h2>
+              <p className='text-muted-foreground'>
+                This service is owned and operated by:
+              </p>
+              <div className='mt-4 p-4 bg-muted/50 rounded-lg'>
+                <p className='font-medium text-foreground'>PostEngageAI</p>
+                <p className='text-muted-foreground text-sm mt-1'>
+                  Email: postengage.ai@gmail.com
+                </p>
+                <p className='text-muted-foreground text-sm'>
+                  Website: https://postengage.ai
+                </p>
+              </div>
 
               <h2 className='text-xl font-semibold mt-12 mb-4'>
                 Contact Information
