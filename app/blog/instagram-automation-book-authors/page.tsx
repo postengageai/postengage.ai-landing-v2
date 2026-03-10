@@ -103,11 +103,16 @@ export default function BlogPostPage() {
               Your book needs readers. Here's how authors are using Instagram DM automation to build launch lists and sell more copies.
             </p>
           </header>
-          <div className="relative mx-auto mb-16 aspect-[21/9] max-w-5xl overflow-hidden rounded-2xl border bg-muted/30 shadow-sm">
-            <div className="absolute inset-0 flex items-center justify-center bg-gradient-to-br from-primary/5 via-transparent to-primary/5">
-              <span className="text-muted-foreground/20 font-medium">
-                Author engaging with readers through Instagram DM automation
-              </span>
+          <div className='relative mx-auto mb-16 aspect-[21/9] max-w-5xl overflow-hidden rounded-2xl border shadow-sm bg-gradient-to-br from-amber-500/20 via-orange-500/10 to-yellow-500/5'>
+            <div className='absolute inset-0 flex flex-col items-center justify-center gap-4'>
+              <div className='flex h-16 w-16 items-center justify-center rounded-2xl bg-background/60 border border-border/40 shadow-inner'>
+                <BookOpen className='h-8 w-8 text-primary/70' />
+              </div>
+              <div className='flex items-center gap-2'>
+                <div className='h-1.5 w-1.5 rounded-full bg-primary/40' />
+                <div className='h-1.5 w-12 rounded-full bg-primary/20' />
+                <div className='h-1.5 w-1.5 rounded-full bg-primary/40' />
+              </div>
             </div>
           </div>
           <div className="grid grid-cols-1 gap-12 lg:grid-cols-12">
@@ -115,12 +120,12 @@ export default function BlogPostPage() {
               <div className="sticky top-32 space-y-8">
                 <TableOfContents
                   items={[
-                    { id: 'book-marketing-challenge', label: 'The Book Marketing Challenge' },
-                    { id: 'dm-automation-advantage', label: 'The DM Automation Advantage' },
-                    { id: 'building-launch-lists', label: 'Building Pre-Order Launch Lists' },
-                    { id: 'reader-engagement', label: 'Keeping Readers Engaged' },
-                    { id: 'real-results', label: 'Real Author Results' },
-                    { id: 'getting-started', label: 'Getting Started' },
+                    { id: 'book-marketing-challenge', title: 'The Book Marketing Challenge' },
+                    { id: 'dm-automation-advantage', title: 'The DM Automation Advantage' },
+                    { id: 'building-launch-lists', title: 'Building Pre-Order Launch Lists' },
+                    { id: 'reader-engagement', title: 'Keeping Readers Engaged' },
+                    { id: 'real-results', title: 'Real Author Results' },
+                    { id: 'getting-started', title: 'Getting Started' },
                   ]}
                 />
                 <Card className="bg-primary/5 border-primary/10 shadow-none">

@@ -15,6 +15,7 @@ import { LandingHeader } from '@/components/landing/landing-header';
 import { LandingFooter } from '@/components/landing/landing-footer';
 import { TableOfContents } from '@/components/blog/table-of-contents';
 import { SocialShareButtons } from '@/components/blog/social-share-buttons';
+import { NewsletterForm } from '@/components/blog/newsletter-form';
 
 export const metadata: Metadata = {
   title: 'The Ultimate Guide to UGC Automation: Turn Customers into Advocates',
@@ -305,6 +306,7 @@ export default function BlogPost() {
             </aside>
           </div>
         </div>
+        <NewsletterForm />
       </main>
 
       <LandingFooter />

@@ -103,11 +103,16 @@ export default function BlogPostPage() {
               Parents discover children's educational tools on Instagram. Here's how to automate the parent-to-enrollment conversation.
             </p>
           </header>
-          <div className="relative mx-auto mb-16 aspect-[21/9] max-w-5xl overflow-hidden rounded-2xl border bg-muted/30 shadow-sm">
-            <div className="absolute inset-0 flex items-center justify-center bg-gradient-to-br from-primary/5 via-transparent to-primary/5">
-              <span className="text-muted-foreground/20 font-medium">
-                EdTech brand connecting with parents through Instagram DM automation
-              </span>
+          <div className='relative mx-auto mb-16 aspect-[21/9] max-w-5xl overflow-hidden rounded-2xl border shadow-sm bg-gradient-to-br from-primary/20 via-primary/10 to-muted/20'>
+            <div className='absolute inset-0 flex flex-col items-center justify-center gap-4'>
+              <div className='flex h-16 w-16 items-center justify-center rounded-2xl bg-background/60 border border-border/40 shadow-inner'>
+                <BookMarked className='h-8 w-8 text-primary/70' />
+              </div>
+              <div className='flex items-center gap-2'>
+                <div className='h-1.5 w-1.5 rounded-full bg-primary/40' />
+                <div className='h-1.5 w-12 rounded-full bg-primary/20' />
+                <div className='h-1.5 w-1.5 rounded-full bg-primary/40' />
+              </div>
             </div>
           </div>
           <div className="grid grid-cols-1 gap-12 lg:grid-cols-12">
@@ -115,12 +120,12 @@ export default function BlogPostPage() {
               <div className="sticky top-32 space-y-8">
                 <TableOfContents
                   items={[
-                    { id: 'parent-buying-behavior', label: 'Where Parents Buy EdTech' },
-                    { id: 'dms-trust-education', label: 'Why DMs Build Trust for Education' },
-                    { id: 'parent-conversion-funnel', label: 'The Parent Conversion Funnel' },
-                    { id: 'enrollment-automation', label: 'Setting Up Enrollment Automation' },
-                    { id: 'retention-strategy', label: 'Parent Retention & Referrals' },
-                    { id: 'real-results-edtech', label: 'Real EdTech Success Stories' },
+                    { id: 'parent-buying-behavior', title: 'Where Parents Buy EdTech' },
+                    { id: 'dms-trust-education', title: 'Why DMs Build Trust for Education' },
+                    { id: 'parent-conversion-funnel', title: 'The Parent Conversion Funnel' },
+                    { id: 'enrollment-automation', title: 'Setting Up Enrollment Automation' },
+                    { id: 'retention-strategy', title: 'Parent Retention & Referrals' },
+                    { id: 'real-results-edtech', title: 'Real EdTech Success Stories' },
                   ]}
                 />
                 <Card className="bg-primary/5 border-primary/10 shadow-none">

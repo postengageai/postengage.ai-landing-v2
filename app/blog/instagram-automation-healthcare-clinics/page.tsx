@@ -103,11 +103,16 @@ export default function BlogPostPage() {
               Patients discover healthcare providers on Instagram before calling. Here's how to automate that first touchpoint.
             </p>
           </header>
-          <div className="relative mx-auto mb-16 aspect-[21/9] max-w-5xl overflow-hidden rounded-2xl border bg-muted/30 shadow-sm">
-            <div className="absolute inset-0 flex items-center justify-center bg-gradient-to-br from-primary/5 via-transparent to-primary/5">
-              <span className="text-muted-foreground/20 font-medium">
-                Healthcare provider managing appointment requests through Instagram DMs
-              </span>
+          <div className='relative mx-auto mb-16 aspect-[21/9] max-w-5xl overflow-hidden rounded-2xl border shadow-sm bg-gradient-to-br from-rose-500/20 via-pink-500/10 to-red-500/5'>
+            <div className='absolute inset-0 flex flex-col items-center justify-center gap-4'>
+              <div className='flex h-16 w-16 items-center justify-center rounded-2xl bg-background/60 border border-border/40 shadow-inner'>
+                <Heart className='h-8 w-8 text-primary/70' />
+              </div>
+              <div className='flex items-center gap-2'>
+                <div className='h-1.5 w-1.5 rounded-full bg-primary/40' />
+                <div className='h-1.5 w-12 rounded-full bg-primary/20' />
+                <div className='h-1.5 w-1.5 rounded-full bg-primary/40' />
+              </div>
             </div>
           </div>
           <div className="grid grid-cols-1 gap-12 lg:grid-cols-12">
@@ -115,12 +120,12 @@ export default function BlogPostPage() {
               <div className="sticky top-32 space-y-8">
                 <TableOfContents
                   items={[
-                    { id: 'patient-discovery', label: 'Where Patients Find You' },
-                    { id: 'automation-benefits', label: 'The Appointment Automation Edge' },
-                    { id: 'booking-workflow', label: 'Setting Up Your Booking Workflow' },
-                    { id: 'patient-trust', label: 'Building Patient Trust Digitally' },
-                    { id: 'real-clinics', label: 'Real Clinic Results' },
-                    { id: 'compliance', label: 'Staying HIPAA Compliant' },
+                    { id: 'patient-discovery', title: 'Where Patients Find You' },
+                    { id: 'automation-benefits', title: 'The Appointment Automation Edge' },
+                    { id: 'booking-workflow', title: 'Setting Up Your Booking Workflow' },
+                    { id: 'patient-trust', title: 'Building Patient Trust Digitally' },
+                    { id: 'real-clinics', title: 'Real Clinic Results' },
+                    { id: 'compliance', title: 'Staying HIPAA Compliant' },
                   ]}
                 />
                 <Card className="bg-primary/5 border-primary/10 shadow-none">

@@ -103,11 +103,16 @@ export default function BlogPostPage() {
               Your followers speak different languages. PostEngage.ai can reply to all of them — in the right language, automatically.
             </p>
           </header>
-          <div className="relative mx-auto mb-16 aspect-[21/9] max-w-5xl overflow-hidden rounded-2xl border bg-muted/30 shadow-sm">
-            <div className="absolute inset-0 flex items-center justify-center bg-gradient-to-br from-primary/5 via-transparent to-primary/5">
-              <span className="text-muted-foreground/20 font-medium">
-                Global creator managing multilingual DM automation
-              </span>
+          <div className='relative mx-auto mb-16 aspect-[21/9] max-w-5xl overflow-hidden rounded-2xl border shadow-sm bg-gradient-to-br from-cyan-500/20 via-sky-500/10 to-blue-500/5'>
+            <div className='absolute inset-0 flex flex-col items-center justify-center gap-4'>
+              <div className='flex h-16 w-16 items-center justify-center rounded-2xl bg-background/60 border border-border/40 shadow-inner'>
+                <Globe className='h-8 w-8 text-primary/70' />
+              </div>
+              <div className='flex items-center gap-2'>
+                <div className='h-1.5 w-1.5 rounded-full bg-primary/40' />
+                <div className='h-1.5 w-12 rounded-full bg-primary/20' />
+                <div className='h-1.5 w-1.5 rounded-full bg-primary/40' />
+              </div>
             </div>
           </div>
           <div className="grid grid-cols-1 gap-12 lg:grid-cols-12">
@@ -115,12 +120,12 @@ export default function BlogPostPage() {
               <div className="sticky top-32 space-y-8">
                 <TableOfContents
                   items={[
-                    { id: 'global-opportunity', label: 'The Global Opportunity' },
-                    { id: 'language-challenge', label: 'Why Language Matters' },
-                    { id: 'multilingual-automation', label: 'Multilingual Automation Setup' },
-                    { id: 'localization-strategy', label: 'More Than Translation' },
-                    { id: 'scaling-teams', label: 'Scaling with Teams' },
-                    { id: 'global-success', label: 'Global Creator Results' },
+                    { id: 'global-opportunity', title: 'The Global Opportunity' },
+                    { id: 'language-challenge', title: 'Why Language Matters' },
+                    { id: 'multilingual-automation', title: 'Multilingual Automation Setup' },
+                    { id: 'localization-strategy', title: 'More Than Translation' },
+                    { id: 'scaling-teams', title: 'Scaling with Teams' },
+                    { id: 'global-success', title: 'Global Creator Results' },
                   ]}
                 />
                 <Card className="bg-primary/5 border-primary/10 shadow-none">

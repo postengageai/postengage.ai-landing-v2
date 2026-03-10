@@ -52,15 +52,22 @@ export default function BlogPostPage() {
             <h1 className='mb-6 text-4xl font-extrabold tracking-tight sm:text-5xl lg:text-6xl bg-gradient-to-r from-foreground via-foreground/90 to-muted-foreground bg-clip-text text-transparent'>Car Dealerships on Instagram: Using DM Automation to Generate Test Drive Bookings</h1>
             <p className='mx-auto max-w-2xl text-xl text-muted-foreground leading-relaxed'>Turn Instagram vehicle showcases into booked test drives with instant DM responses, qualified lead routing, and automated scheduling.</p>
           </header>
-          <div className='relative mx-auto mb-16 aspect-[21/9] max-w-5xl overflow-hidden rounded-2xl border bg-muted/30 shadow-sm'>
-            <div className='absolute inset-0 flex items-center justify-center bg-gradient-to-br from-primary/5 via-transparent to-primary/5'>
-              <span className='text-muted-foreground/20 font-medium'>Car dealership automating test drive inquiries through Instagram DMs</span>
+          <div className='relative mx-auto mb-16 aspect-[21/9] max-w-5xl overflow-hidden rounded-2xl border shadow-sm bg-gradient-to-br from-slate-500/20 via-gray-500/10 to-zinc-500/5'>
+            <div className='absolute inset-0 flex flex-col items-center justify-center gap-4'>
+              <div className='flex h-16 w-16 items-center justify-center rounded-2xl bg-background/60 border border-border/40 shadow-inner'>
+                <Car className='h-8 w-8 text-primary/70' />
+              </div>
+              <div className='flex items-center gap-2'>
+                <div className='h-1.5 w-1.5 rounded-full bg-primary/40' />
+                <div className='h-1.5 w-12 rounded-full bg-primary/20' />
+                <div className='h-1.5 w-1.5 rounded-full bg-primary/40' />
+              </div>
             </div>
           </div>
           <div className='grid grid-cols-1 gap-12 lg:grid-cols-12'>
             <aside className='hidden lg:col-span-3 lg:block'>
               <div className='sticky top-32 space-y-8'>
-                <TableOfContents items={[{ id: 'dealership-challenge', label: 'The Challenge' }, { id: 'instagram-automotive', label: 'Instagram for Dealerships' }, { id: 'automation-strategy', label: 'Automation Strategy' }, { id: 'lead-qualification', label: 'Lead Qualification' }, { id: 'dealer-results', label: 'Dealer Results' }]} />
+                <TableOfContents items={[{ id: 'dealership-challenge', title: 'The Challenge' }, { id: 'instagram-automotive', title: 'Instagram for Dealerships' }, { id: 'automation-strategy', title: 'Automation Strategy' }, { id: 'lead-qualification', title: 'Lead Qualification' }, { id: 'dealer-results', title: 'Dealer Results' }]} />
                 <Card className='bg-primary/5 border-primary/10 shadow-none'>
                   <CardHeader><CardTitle className='text-sm font-medium text-primary'>Ready to automate?</CardTitle></CardHeader>
                   <CardContent className='space-y-4'>

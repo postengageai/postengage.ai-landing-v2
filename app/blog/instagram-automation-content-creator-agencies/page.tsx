@@ -103,11 +103,16 @@ export default function BlogPostPage() {
               Managing 10+ creator accounts? Here's how agencies use PostEngage.ai to automate DMs at scale without losing the personal touch.
             </p>
           </header>
-          <div className="relative mx-auto mb-16 aspect-[21/9] max-w-5xl overflow-hidden rounded-2xl border bg-muted/30 shadow-sm">
-            <div className="absolute inset-0 flex items-center justify-center bg-gradient-to-br from-primary/5 via-transparent to-primary/5">
-              <span className="text-muted-foreground/20 font-medium">
-                Agency managing multiple creator accounts with DM automation
-              </span>
+          <div className='relative mx-auto mb-16 aspect-[21/9] max-w-5xl overflow-hidden rounded-2xl border shadow-sm bg-gradient-to-br from-blue-500/20 via-indigo-500/10 to-violet-500/5'>
+            <div className='absolute inset-0 flex flex-col items-center justify-center gap-4'>
+              <div className='flex h-16 w-16 items-center justify-center rounded-2xl bg-background/60 border border-border/40 shadow-inner'>
+                <Users className='h-8 w-8 text-primary/70' />
+              </div>
+              <div className='flex items-center gap-2'>
+                <div className='h-1.5 w-1.5 rounded-full bg-primary/40' />
+                <div className='h-1.5 w-12 rounded-full bg-primary/20' />
+                <div className='h-1.5 w-1.5 rounded-full bg-primary/40' />
+              </div>
             </div>
           </div>
           <div className="grid grid-cols-1 gap-12 lg:grid-cols-12">
@@ -115,12 +120,12 @@ export default function BlogPostPage() {
               <div className="sticky top-32 space-y-8">
                 <TableOfContents
                   items={[
-                    { id: 'agency-challenge', label: 'The Agency Scaling Problem' },
-                    { id: 'dms-revenue', label: 'Why DMs Drive Agency Revenue' },
-                    { id: 'multi-account', label: 'Managing Multiple Accounts' },
-                    { id: 'creator-authenticity', label: 'Maintaining Authenticity' },
-                    { id: 'automation-setup', label: 'Setting Up at Scale' },
-                    { id: 'metrics-reporting', label: 'Metrics That Matter' },
+                    { id: 'agency-challenge', title: 'The Agency Scaling Problem' },
+                    { id: 'dms-revenue', title: 'Why DMs Drive Agency Revenue' },
+                    { id: 'multi-account', title: 'Managing Multiple Accounts' },
+                    { id: 'creator-authenticity', title: 'Maintaining Authenticity' },
+                    { id: 'automation-setup', title: 'Setting Up at Scale' },
+                    { id: 'metrics-reporting', title: 'Metrics That Matter' },
                   ]}
                 />
                 <Card className="bg-primary/5 border-primary/10 shadow-none">

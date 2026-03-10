@@ -103,11 +103,16 @@ export default function BlogPostPage() {
               Email open rates are at 21%. Instagram DM open rates are at 88%. Here's the full comparison and how to use both.
             </p>
           </header>
-          <div className="relative mx-auto mb-16 aspect-[21/9] max-w-5xl overflow-hidden rounded-2xl border bg-muted/30 shadow-sm">
-            <div className="absolute inset-0 flex items-center justify-center bg-gradient-to-br from-primary/5 via-transparent to-primary/5">
-              <span className="text-muted-foreground/20 font-medium">
-                Comparing Instagram DMs and Email marketing performance
-              </span>
+          <div className='relative mx-auto mb-16 aspect-[21/9] max-w-5xl overflow-hidden rounded-2xl border shadow-sm bg-gradient-to-br from-violet-500/20 via-purple-500/10 to-indigo-500/5'>
+            <div className='absolute inset-0 flex flex-col items-center justify-center gap-4'>
+              <div className='flex h-16 w-16 items-center justify-center rounded-2xl bg-background/60 border border-border/40 shadow-inner'>
+                <MessageCircle className='h-8 w-8 text-primary/70' />
+              </div>
+              <div className='flex items-center gap-2'>
+                <div className='h-1.5 w-1.5 rounded-full bg-primary/40' />
+                <div className='h-1.5 w-12 rounded-full bg-primary/20' />
+                <div className='h-1.5 w-1.5 rounded-full bg-primary/40' />
+              </div>
             </div>
           </div>
           <div className="grid grid-cols-1 gap-12 lg:grid-cols-12">
@@ -115,12 +120,12 @@ export default function BlogPostPage() {
               <div className="sticky top-32 space-y-8">
                 <TableOfContents
                   items={[
-                    { id: 'open-rates', label: 'Open Rates: The Raw Data' },
-                    { id: 'metrics-comparison', label: 'Beyond Open Rates' },
-                    { id: 'strengths-dm', label: 'DM Strengths' },
-                    { id: 'strengths-email', label: 'Email Strengths' },
-                    { id: 'hybrid-strategy', label: 'The Winning Strategy' },
-                    { id: 'implementation', label: 'Implementation Guide' },
+                    { id: 'open-rates', title: 'Open Rates: The Raw Data' },
+                    { id: 'metrics-comparison', title: 'Beyond Open Rates' },
+                    { id: 'strengths-dm', title: 'DM Strengths' },
+                    { id: 'strengths-email', title: 'Email Strengths' },
+                    { id: 'hybrid-strategy', title: 'The Winning Strategy' },
+                    { id: 'implementation', title: 'Implementation Guide' },
                   ]}
                 />
                 <Card className="bg-primary/5 border-primary/10 shadow-none">

@@ -103,11 +103,16 @@ export default function BlogPostPage() {
               VAs help others automate. Here's how to use that same automation knowledge to grow your own client base.
             </p>
           </header>
-          <div className="relative mx-auto mb-16 aspect-[21/9] max-w-5xl overflow-hidden rounded-2xl border bg-muted/30 shadow-sm">
-            <div className="absolute inset-0 flex items-center justify-center bg-gradient-to-br from-primary/5 via-transparent to-primary/5">
-              <span className="text-muted-foreground/20 font-medium">
-                VA using Instagram DM automation to grow service business
-              </span>
+          <div className='relative mx-auto mb-16 aspect-[21/9] max-w-5xl overflow-hidden rounded-2xl border shadow-sm bg-gradient-to-br from-slate-500/20 via-gray-500/10 to-zinc-500/5'>
+            <div className='absolute inset-0 flex flex-col items-center justify-center gap-4'>
+              <div className='flex h-16 w-16 items-center justify-center rounded-2xl bg-background/60 border border-border/40 shadow-inner'>
+                <Briefcase className='h-8 w-8 text-primary/70' />
+              </div>
+              <div className='flex items-center gap-2'>
+                <div className='h-1.5 w-1.5 rounded-full bg-primary/40' />
+                <div className='h-1.5 w-12 rounded-full bg-primary/20' />
+                <div className='h-1.5 w-1.5 rounded-full bg-primary/40' />
+              </div>
             </div>
           </div>
           <div className="grid grid-cols-1 gap-12 lg:grid-cols-12">
@@ -115,12 +120,12 @@ export default function BlogPostPage() {
               <div className="sticky top-32 space-y-8">
                 <TableOfContents
                   items={[
-                    { id: 'va-problem', label: 'The VA Problem' },
-                    { id: 'client-acquisition', label: 'Client Acquisition at Scale' },
-                    { id: 'positioning', label: 'Positioning on Instagram' },
-                    { id: 'automation-strategy', label: 'The DM Automation Strategy' },
-                    { id: 'qualification', label: 'Qualifying High-Value Clients' },
-                    { id: 'pricing-power', label: 'Using Automation to Raise Your Rates' },
+                    { id: 'va-problem', title: 'The VA Problem' },
+                    { id: 'client-acquisition', title: 'Client Acquisition at Scale' },
+                    { id: 'positioning', title: 'Positioning on Instagram' },
+                    { id: 'automation-strategy', title: 'The DM Automation Strategy' },
+                    { id: 'qualification', title: 'Qualifying High-Value Clients' },
+                    { id: 'pricing-power', title: 'Using Automation to Raise Your Rates' },
                   ]}
                 />
                 <Card className="bg-primary/5 border-primary/10 shadow-none">

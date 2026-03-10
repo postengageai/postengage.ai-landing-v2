@@ -103,11 +103,16 @@ export default function BlogPostPage() {
               Threads hit 200M+ monthly users. Here's the cross-platform strategy to drive Threads followers into your Instagram DM funnel.
             </p>
           </header>
-          <div className="relative mx-auto mb-16 aspect-[21/9] max-w-5xl overflow-hidden rounded-2xl border bg-muted/30 shadow-sm">
-            <div className="absolute inset-0 flex items-center justify-center bg-gradient-to-br from-primary/5 via-transparent to-primary/5">
-              <span className="text-muted-foreground/20 font-medium">
-                Cross-platform growth strategy using Threads and Instagram DMs
-              </span>
+          <div className='relative mx-auto mb-16 aspect-[21/9] max-w-5xl overflow-hidden rounded-2xl border shadow-sm bg-gradient-to-br from-cyan-500/20 via-sky-500/10 to-blue-500/5'>
+            <div className='absolute inset-0 flex flex-col items-center justify-center gap-4'>
+              <div className='flex h-16 w-16 items-center justify-center rounded-2xl bg-background/60 border border-border/40 shadow-inner'>
+                <Globe className='h-8 w-8 text-primary/70' />
+              </div>
+              <div className='flex items-center gap-2'>
+                <div className='h-1.5 w-1.5 rounded-full bg-primary/40' />
+                <div className='h-1.5 w-12 rounded-full bg-primary/20' />
+                <div className='h-1.5 w-1.5 rounded-full bg-primary/40' />
+              </div>
             </div>
           </div>
           <div className="grid grid-cols-1 gap-12 lg:grid-cols-12">
@@ -115,12 +120,12 @@ export default function BlogPostPage() {
               <div className="sticky top-32 space-y-8">
                 <TableOfContents
                   items={[
-                    { id: 'threads-opportunity', label: 'The Threads Opportunity' },
-                    { id: 'cross-platform-funnel', label: 'Building Your Funnel' },
-                    { id: 'content-strategy', label: 'Content Strategy Across Platforms' },
-                    { id: 'automation-bridge', label: 'Automation as the Bridge' },
-                    { id: 'conversion-tactics', label: 'Conversion Tactics' },
-                    { id: 'metrics-tracking', label: 'Tracking What Works' },
+                    { id: 'threads-opportunity', title: 'The Threads Opportunity' },
+                    { id: 'cross-platform-funnel', title: 'Building Your Funnel' },
+                    { id: 'content-strategy', title: 'Content Strategy Across Platforms' },
+                    { id: 'automation-bridge', title: 'Automation as the Bridge' },
+                    { id: 'conversion-tactics', title: 'Conversion Tactics' },
+                    { id: 'metrics-tracking', title: 'Tracking What Works' },
                   ]}
                 />
                 <Card className="bg-primary/5 border-primary/10 shadow-none">
