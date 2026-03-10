@@ -28,7 +28,7 @@ export const metadata: Metadata = {
       'PostEngage.ai - Stop Ignoring Your Comments | Instagram Automation',
   },
   description:
-    'Stop ignoring comments. PostEngage.ai automates DMs & comments in your unique voice, schedules content, and tracks analytics. The all-in-one growth engine for creators.',
+    'Stop ignoring comments. PostEngage.ai automates Instagram DMs & replies in your unique voice, schedules content, and tracks analytics.',
   keywords: [
     'Instagram Automation',
     'ManyChat Alternative',
@@ -61,9 +61,6 @@ export const metadata: Metadata = {
     title: 'PostEngage.ai - AI Automation, Scheduling & Analytics',
     description:
       'Stop ignoring comments. Automate DMs in your voice, schedule posts, and track growth. Join 2,400+ creators saving 47 hours/month.',
-  },
-  alternates: {
-    canonical: 'https://postengage.ai',
   },
   robots: {
     index: true,

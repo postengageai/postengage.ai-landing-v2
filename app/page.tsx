@@ -1,5 +1,12 @@
+import type { Metadata } from 'next';
 import { LandingHeader } from '@/components/landing/landing-header';
 import { HeroSection } from '@/components/landing/hero-section';
+
+export const metadata: Metadata = {
+  alternates: {
+    canonical: 'https://postengage.ai',
+  },
+};
 import { ProblemSection } from '@/components/landing/problem-section';
 import { SolutionSection } from '@/components/landing/solution-section';
 import { HowItWorksSection } from '@/components/landing/how-it-works-section';
