@@ -60,31 +60,31 @@ export function ProblemSection() {
   const problems: Problem[] = [
     {
       icon: Clock,
-      stat: '3+ hours',
-      label: 'daily on comments',
+      stat: '15+ hours',
+      label: 'lost every week',
       description:
-        'Time you could spend creating content, building your brand, or living your life.',
+        'Manual replies become a second full-time job for creators and small teams.',
     },
     {
       icon: TrendingDown,
-      stat: '70%',
-      label: 'drop in reach',
+      stat: '80%',
+      label: 'DMs unanswered',
       description:
-        "Instagram's algorithm punishes accounts that don't engage back. Fast.",
+        'Most incoming messages are missed in the first hour, where conversion intent is highest.',
     },
     {
       icon: AlertCircle,
-      stat: '24 hrs',
-      label: 'comment window',
+      stat: '0.3s vs hours',
+      label: 'response speed gap',
       description:
-        'After that, the algorithm moves on. Your post is buried. Opportunity lost.',
+        'Fast replies win trust and sales. Slow replies push leads to competitors.',
     },
     {
       icon: Users,
-      stat: '1 in 4',
-      label: 'followers lost',
+      stat: '1,840',
+      label: 'messages missed/week',
       description:
-        'Feel ignored, unfollow. Your silence is the loudest message they ever get.',
+        'For active creators, unanswered comments and DMs quietly leak growth every week.',
     },
   ];
 
@@ -94,10 +94,10 @@ export function ProblemSection() {
         <div className='text-center max-w-2xl mx-auto mb-14'>
           <div className='inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-warning/8 border border-warning/20 text-warning text-sm font-medium mb-5'>
             <AlertCircle className='w-4 h-4' />
-            The Real Cost of Silence
+            Honestly? Managing Instagram is exhausting
           </div>
           <h2 className='text-3xl sm:text-4xl font-bold tracking-tight'>
-            Your silence is{' '}
+            Manual engagement is{' '}
             <span
               className='text-transparent bg-clip-text'
               style={{
@@ -105,12 +105,12 @@ export function ProblemSection() {
                   'linear-gradient(135deg, #f59e0b 0%, #ff6b35 100%)',
               }}
             >
-              costing you
+              costing you growth
             </span>
           </h2>
           <p className='mt-4 text-lg text-muted-foreground'>
-            Every comment you ignore sends a signal — to your followers and to
-            the algorithm.
+            Every delayed reply hurts reach, trust, and conversion while your
+            best leads cool off.
           </p>
         </div>
 
@@ -123,11 +123,11 @@ export function ProblemSection() {
         {/* Bottom callout */}
         <div className='mt-10 mx-auto max-w-2xl rounded-2xl border border-warning/20 bg-warning/5 p-6 text-center'>
           <p className='text-sm font-medium text-warning/90'>
-            💡 The average creator misses{' '}
+            💡 Creators using automation report up to{' '}
             <span className='font-bold text-warning'>
-              847 engagement opportunities
+              47 hours saved per month
             </span>{' '}
-            every week due to slow or no replies.
+            by removing manual reply work from their day.
           </p>
         </div>
       </div>

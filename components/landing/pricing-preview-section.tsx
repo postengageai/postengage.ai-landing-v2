@@ -18,10 +18,10 @@ import { useTrackSectionView } from '@/hooks/use-track-section-view';
 
 // Fallback costs if loading
 const DEFAULT_COSTS = {
-  REPLY_COMMENT: 2,
-  AI_REPLY_COMMENT: 4,
-  SEND_DM: 2,
-  AI_SEND_DM: 4,
+  REPLY_COMMENT: 0,
+  AI_REPLY_COMMENT: 6,
+  SEND_DM: 0,
+  AI_SEND_DM: 13,
 };
 
 export function PricingPreviewSection() {
@@ -44,10 +44,11 @@ export function PricingPreviewSection() {
             Simple Pricing
           </div>
           <h2 className='text-3xl sm:text-4xl font-bold tracking-tight text-balance'>
-            Simple, credit-based pricing
+            Free forever automation + transparent AI credits
           </h2>
           <p className='mt-4 text-lg text-muted-foreground'>
-            Pay for what you use. No subscriptions. No surprises.
+            Auto comment reply and keyword DM are free forever. Credits are used
+            only for AI-personalised replies.
           </p>
         </div>
 
@@ -61,7 +62,7 @@ export function PricingPreviewSection() {
               <div>
                 <h3 className='font-semibold'>How credits work</h3>
                 <p className='text-sm text-muted-foreground'>
-                  Transparent pricing per action
+                  Free basics + pay only for AI
                 </p>
               </div>
             </div>
@@ -77,7 +78,7 @@ export function PricingPreviewSection() {
                     Comment Reply
                   </div>
                   <div className='text-xs text-muted-foreground'>
-                    {costs.REPLY_COMMENT} credits
+                    Free forever
                   </div>
                 </div>
               </div>
@@ -90,7 +91,7 @@ export function PricingPreviewSection() {
                 <div className='min-w-0'>
                   <div className='text-sm font-medium truncate'>AI Reply</div>
                   <div className='text-xs text-muted-foreground'>
-                    {costs.AI_REPLY_COMMENT} credits
+                    {costs.AI_REPLY_COMMENT} to {costs.AI_SEND_DM} credits
                   </div>
                 </div>
               </div>
@@ -103,7 +104,7 @@ export function PricingPreviewSection() {
                 <div className='min-w-0'>
                   <div className='text-sm font-medium truncate'>Auto DM</div>
                   <div className='text-xs text-muted-foreground'>
-                    {costs.SEND_DM} credits
+                    Free forever
                   </div>
                 </div>
               </div>
@@ -116,7 +117,7 @@ export function PricingPreviewSection() {
                 <div className='min-w-0'>
                   <div className='text-sm font-medium truncate'>AI DM</div>
                   <div className='text-xs text-muted-foreground'>
-                    {costs.AI_SEND_DM} credits
+                    up to {costs.AI_SEND_DM} credits
                   </div>
                 </div>
               </div>
@@ -152,11 +153,12 @@ export function PricingPreviewSection() {
         <div className='rounded-2xl border border-border bg-card/50 p-8 mt-6'>
           <div className='grid gap-4 sm:grid-cols-2 lg:grid-cols-3'>
             {[
+              'Auto comment reply + keyword DM free forever',
               `${signupBonus} free credits to start`,
+              'AI-personalised replies use 6–13 credits',
               'Credits never expire',
               'No monthly commitment',
               'Bulk discounts available',
-              'Cancel anytime',
               'Priority support',
             ].map((feature, i) => (
               <div key={i} className='flex items-center gap-3'>

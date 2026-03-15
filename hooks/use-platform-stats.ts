@@ -19,7 +19,7 @@ export function usePlatformStats() {
       }
       return response.data.data;
     },
-    staleTime: 1000 * 60 * 5, // 5 minutes — refresh more often for live feel
+    staleTime: 1000 * 60 * 5,
     refetchInterval: 1000 * 60 * 5,
   });
 }

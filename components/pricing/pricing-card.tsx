@@ -12,7 +12,6 @@ interface PricingCardProps {
 
 export function PricingCard({ pack }: PricingCardProps) {
   const perCredit = pack.price / pack.credits;
-  const basicActions = calculateActions(pack.credits, false);
   const aiActions = calculateActions(pack.credits, true);
 
   // Format currency
@@ -88,13 +87,11 @@ export function PricingCard({ pack }: PricingCardProps) {
             </span>
           </div>
           <div className='flex items-center justify-between'>
-            <span className='text-muted-foreground'>Basic actions</span>
-            <span className='font-semibold'>
-              {basicActions.toLocaleString()}
-            </span>
+            <span className='text-muted-foreground'>Free actions</span>
+            <span className='font-semibold'>Unlimited</span>
           </div>
           <div className='flex items-center justify-between'>
-            <span className='text-muted-foreground'>AI actions</span>
+            <span className='text-muted-foreground'>AI replies</span>
             <span className='font-semibold text-primary'>
               {aiActions.toLocaleString()}
             </span>
@@ -108,8 +105,9 @@ export function PricingCard({ pack }: PricingCardProps) {
         {/* Features */}
         <div className='space-y-3 mb-8'>
           {[
+            'Auto DM + comment reply free forever',
             'Credits never expire',
-            'All features included',
+            'AI replies use credits only',
             'Priority support',
           ].map((feature, i) => (
             <div key={i} className='flex items-center gap-3'>

@@ -4,7 +4,7 @@ import {
   Shield,
   Gauge,
   GitBranch,
-  Calendar,
+  Send,
   BarChart3,
   Repeat2,
   BrainCircuit,
@@ -36,8 +36,8 @@ export function FeaturesSection() {
             </span>
           </h2>
           <p className='mt-4 text-lg text-muted-foreground'>
-            A complete Instagram growth platform — from AI replies to analytics
-            to scheduling.
+            Built for engagement automation, lead capture, and faster response
+            times.
           </p>
         </div>
 
@@ -117,23 +117,26 @@ export function FeaturesSection() {
               </div>
               <h3 className='text-lg font-bold mb-2'>Speed = Algorithm Love</h3>
               <p className='text-sm text-muted-foreground leading-relaxed'>
-                Replies in under 10 seconds. Instagram rewards fast engagement
+                Replies in around 0.3 seconds. Instagram rewards fast engagement
                 with 3× more reach. Simple math.
               </p>
             </div>
           </div>
 
-          {/* Content Scheduling */}
+          {/* Free DM automation */}
           <div className='group relative rounded-2xl border border-border/60 bg-card overflow-hidden p-6 hover:border-primary/40 transition-all duration-300'>
             <div className='pointer-events-none absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-[radial-gradient(ellipse_at_top_left,#6c47ff0f_0%,transparent_70%)]' />
             <div className='relative'>
               <div className='w-11 h-11 rounded-xl bg-primary/10 border border-primary/20 flex items-center justify-center mb-4'>
-                <Calendar className='w-5 h-5 text-primary' />
+                <Send className='w-5 h-5 text-primary' />
               </div>
-              <h3 className='text-lg font-bold mb-2'>Instagram Scheduling</h3>
+              <h3 className='text-lg font-bold mb-2'>
+                Auto DM Triggers — Free Forever
+              </h3>
               <p className='text-sm text-muted-foreground leading-relaxed'>
-                Plan and schedule your posts for peak engagement times. Posts,
-                Stories, and Reels from one dashboard.
+                When someone comments a keyword like &ldquo;price&rdquo; or
+                &ldquo;link&rdquo;, PostEngage.ai automatically sends your DM
+                with the right offer.
               </p>
             </div>
           </div>

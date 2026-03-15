@@ -33,8 +33,8 @@ export default function PricingPage() {
   const { data: landingConfig, isLoading } = useLandingConfig();
   const costs = landingConfig?.costs || DEFAULT_COSTS;
   const signupBonus = landingConfig?.signup_bonus || 500;
-  const basicActions = Math.floor(signupBonus / costs.REPLY_COMMENT);
   const aiActions = Math.floor(signupBonus / costs.AI_REPLY_COMMENT);
+  const aiActionsAtMaxCost = Math.floor(signupBonus / costs.AI_SEND_DM);
 
   const usageExamples = [
     {
@@ -67,7 +67,7 @@ export default function PricingPage() {
     },
     {
       q: "What's the difference between basic and AI actions?",
-      a: `Basic actions (reply/DM with templates) cost ${costs.REPLY_COMMENT} credits. AI-powered personalized replies cost ${costs.AI_REPLY_COMMENT} credits.`,
+      a: `Basic actions (comment reply + auto DM) are free forever. AI-powered personalized replies use ${costs.AI_REPLY_COMMENT}-${costs.AI_SEND_DM} credits based on complexity.`,
     },
     {
       q: 'Can I get a refund?',
@@ -79,7 +79,7 @@ export default function PricingPage() {
     },
     {
       q: 'Is there a free trial?',
-      a: `Yes! New accounts get ${signupBonus} free credits to test the service - enough for ${basicActions} basic actions or ${aiActions} AI actions.`,
+      a: `Yes. New accounts get ${signupBonus} free credits to test AI features, which is about ${aiActionsAtMaxCost}-${aiActions} AI replies depending on action type.`,
     },
     {
       q: 'Do you support UPI / Indian payments?',
@@ -100,10 +100,11 @@ export default function PricingPage() {
               Simple Pricing
             </div>
             <h1 className='text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-balance mb-6'>
-              Simple, credit-based pricing
+              Free forever basics + pay only for AI
             </h1>
             <p className='text-xl text-muted-foreground max-w-2xl mx-auto'>
-              Pay for what you use. No subscriptions. No surprises.
+              Auto comment reply and auto DM are always free. Credits are used
+              only for AI-personalised replies.
             </p>
           </div>
         </section>
@@ -138,24 +139,24 @@ export default function PricingPage() {
                       <span className='text-sm text-muted-foreground'>
                         Comment Reply
                       </span>
-                      <span className='font-semibold'>
-                        {costs.REPLY_COMMENT} credits
+                      <span className='font-semibold text-success'>
+                        Free forever
                       </span>
                     </div>
                     <div className='flex items-center justify-between'>
                       <span className='text-sm text-muted-foreground'>
                         Private Reply (DM)
                       </span>
-                      <span className='font-semibold'>
-                        {costs.PRIVATE_REPLY} credits
+                      <span className='font-semibold text-success'>
+                        Free forever
                       </span>
                     </div>
                     <div className='flex items-center justify-between'>
                       <span className='text-sm text-muted-foreground'>
                         Auto DM
                       </span>
-                      <span className='font-semibold'>
-                        {costs.SEND_DM} credits
+                      <span className='font-semibold text-success'>
+                        Free forever
                       </span>
                     </div>
                   </div>
@@ -173,7 +174,7 @@ export default function PricingPage() {
                         AI Comment Reply
                       </span>
                       <span className='font-semibold text-primary'>
-                        {costs.AI_REPLY_COMMENT} credits
+                        from {costs.AI_REPLY_COMMENT} credits
                       </span>
                     </div>
                     <div className='flex items-center justify-between'>
@@ -189,7 +190,7 @@ export default function PricingPage() {
                         AI DM
                       </span>
                       <span className='font-semibold text-primary'>
-                        {costs.AI_SEND_DM} credits
+                        up to {costs.AI_SEND_DM} credits
                       </span>
                     </div>
                   </div>
@@ -197,8 +198,8 @@ export default function PricingPage() {
               </div>
 
               <p className='text-sm text-muted-foreground mt-6 text-center'>
-                AI actions cost +2 credits more because they use advanced
-                language models to personalize each reply
+                Only AI actions consume credits. Standard automation stays free
+                forever.
               </p>
             </div>
           </div>
@@ -395,9 +396,8 @@ export default function PricingPage() {
                 Ready to automate your engagement?
               </h2>
               <p className='text-lg text-muted-foreground mb-8 max-w-xl mx-auto'>
-                Start with {signupBonus} free credits. That&apos;s{' '}
-                {basicActions} basic actions or {aiActions} AI-powered replies
-                to test the waters.
+                Start with {signupBonus} free credits for AI. Basic auto DM and
+                comment reply remain free forever.
               </p>
               <div className='flex flex-col sm:flex-row items-center justify-center gap-4'>
                 <Button size='lg' className='w-full sm:w-auto' asChild>

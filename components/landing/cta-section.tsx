@@ -60,7 +60,7 @@ export function CTASection() {
               <span>
                 {lostComments > 0 && (
                   <span className='font-mono font-bold'>
-                    {lostComments} comments
+                    {lostComments} leads
                   </span>
                 )}{' '}
                 went cold while you read this page
@@ -69,16 +69,14 @@ export function CTASection() {
 
             {/* Main headline */}
             <h2 className='text-3xl sm:text-5xl font-bold tracking-tight mb-4'>
-              Every minute you wait,
+              Go live once,
               <br />
-              <span className='text-muted-foreground'>
-                another follower moves on.
-              </span>
+              <span className='text-muted-foreground'>auto-reply forever.</span>
             </h2>
 
             <p className='text-lg text-muted-foreground max-w-lg mx-auto mb-10'>
-              Start replying in 5 minutes. No credit card. No commitment. Just
-              faster engagement that compounds every single day.
+              Auto comment reply and keyword DM are free forever. Use AI credits
+              only when you need personalisation.
             </p>
 
             {/* CTA button */}
@@ -96,7 +94,7 @@ export function CTASection() {
               >
                 <Link href={`${APP_URL}/signup`}>
                   <span className='flex items-center gap-2'>
-                    Get {signupBonus} free credits
+                    Start free forever
                     <ArrowRight className='h-5 w-5 transition-transform group-hover:translate-x-1' />
                   </span>
                 </Link>
@@ -110,7 +108,7 @@ export function CTASection() {
                 </div>
                 <div className='flex items-center gap-1.5'>
                   <Zap className='w-4 h-4 text-primary' />
-                  <span>Setup in 5 minutes</span>
+                  <span>Setup in 3 minutes</span>
                 </div>
                 <div className='flex items-center gap-1.5'>
                   <Shield className='w-4 h-4 text-success' />
@@ -119,8 +117,8 @@ export function CTASection() {
               </div>
 
               <p className='text-xs text-muted-foreground/60'>
-                {signupBonus} credits included • Meta-approved platform •
-                Official Instagram API
+                Free forever automation • +{signupBonus} AI credits • Official
+                Instagram API
               </p>
             </div>
           </div>

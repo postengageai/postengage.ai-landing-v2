@@ -15,31 +15,31 @@ export function LiveReplyDemo() {
 
   const EXAMPLES = [
     {
-      user: { name: 'john_doe', initials: 'JD', color: 'bg-blue-500' },
-      comment: 'How do I get access to the early beta? 🚀',
-      reply: `Hey John! 👋 Check your DMs, I just sent you a personal invite code with ${signupBonus} free credits!`,
-      trigger: 'Triggered by "beta"',
+      user: { name: 'nina_creates', initials: 'NC', color: 'bg-blue-500' },
+      comment: 'price please 👀',
+      reply: `Sent you a DM with the pricing and setup steps. You also get ${signupBonus} free AI credits on signup ✨`,
+      trigger: 'Triggered by "price"',
     },
     {
       user: { name: 'sarah_design', initials: 'SD', color: 'bg-purple-500' },
-      comment: 'Does this work for Indian creators? 🇮🇳',
+      comment: 'Does this work for creators in India and abroad? 🌍',
       reply:
-        'Yes Sarah! We support INR payments via UPI and have servers in Mumbai for low latency.',
-      trigger: 'Triggered by "Indian"',
+        'Yes! We support INR + UPI, and teams across multiple countries use the same workflows.',
+      trigger: 'Triggered by "India"',
     },
     {
       user: { name: 'mike_tech', initials: 'MT', color: 'bg-green-500' },
-      comment: 'What is the pricing model? 💰',
+      comment: 'Is auto-reply really free forever? 💬',
       reply:
-        "Hi Mike! It's pay-as-you-go. No monthly fees. Credits start at ₹1/credit. Sent you the link!",
-      trigger: 'Triggered by "pricing"',
+        'Yes, auto comment reply and keyword DM are free forever. AI personalisation runs on credits when needed.',
+      trigger: 'Triggered by "free"',
     },
     {
       user: { name: 'priya_vlogs', initials: 'PV', color: 'bg-orange-500' },
-      comment: 'Can I auto-reply to Story mentions too?',
+      comment: 'How fast does it reply to comments?',
       reply:
-        'Absolutely Priya! We handle comments, DMs, and Story mentions. Full automation suite. ✨',
-      trigger: 'Triggered by "Story"',
+        'Replies usually go out in around 0.3 seconds, so hot leads get a response before they bounce.',
+      trigger: 'Triggered by "fast"',
     },
   ];
 

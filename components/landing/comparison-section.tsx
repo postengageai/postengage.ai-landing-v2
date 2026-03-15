@@ -15,15 +15,14 @@ import Link from 'next/link';
 import { APP_URL } from '@/lib/constants';
 import { useTrackSectionView } from '@/hooks/use-track-section-view';
 import { sendGAEvent } from '@/lib/gtag';
-import { useLandingConfig } from '@/hooks/use-landing-config';
 import { usePlatformStats } from '@/hooks/use-platform-stats';
 
 const advantages = [
   {
     icon: IndianRupee,
-    title: 'Made for India',
+    title: 'Local + global friendly',
     description:
-      'INR pricing, UPI payments, Razorpay integration. No forex markup or hidden fees.',
+      'INR pricing and UPI support for Indian creators, with workflows used by global teams too.',
   },
   {
     icon: Zap,
@@ -52,16 +51,14 @@ const advantages = [
     icon: Users,
     title: 'Built by creators, for creators',
     description:
-      'We understand the Indian creator economy. Features designed for your workflow.',
+      'Created from real creator workflows: comments, inbox, and lead capture in one place.',
   },
 ];
 
 export function ComparisonSection() {
   const ref = useTrackSectionView('comparison_section');
   const tableRef = useTrackSectionView('comparison_table_view');
-  const { data: landingConfig } = useLandingConfig();
   const { data: platformStats } = usePlatformStats();
-  const signupBonus = landingConfig?.signup_bonus ?? 500;
   const activeUsers = platformStats?.active_users;
 
   const competitors = [
@@ -97,12 +94,12 @@ export function ComparisonSection() {
     },
     {
       name: 'PostEngageAI',
-      pricing: '₹499+',
-      pricingType: 'credits',
+      pricing: 'Free + credits',
+      pricingType: 'free_credits',
       instagram: true,
       aiReplies: true,
       indianPayments: true,
-      freeTier: `${signupBonus} credits`,
+      freeTier: 'Free forever',
       support: 'Priority',
       highlighted: true,
     },
@@ -118,7 +115,7 @@ export function ComparisonSection() {
             Why PostEngageAI?
           </div>
           <h2 className='text-3xl sm:text-4xl font-bold tracking-tight'>
-            The only automation tool{' '}
+            Automation that combines speed, control, and{' '}
             <span
               className='text-transparent bg-clip-text'
               style={{
@@ -126,12 +123,12 @@ export function ComparisonSection() {
                   'linear-gradient(135deg, #a78bfa 0%, #6c47ff 100%)',
               }}
             >
-              built for Indian creators
+              transparent pricing
             </span>
           </h2>
           <p className='mt-4 text-lg text-muted-foreground'>
-            While others charge in dollars with monthly subscriptions, we offer
-            INR pricing with pay-as-you-go credits.
+            Start free forever, then pay only for AI usage when your volume
+            grows.
           </p>
         </div>
 
@@ -186,8 +183,10 @@ export function ComparisonSection() {
                         </div>
                         <div className='text-xs text-muted-foreground mt-0.5'>
                           {c.pricingType === 'credits'
-                            ? 'one-time'
-                            : 'per month'}
+                            ? 'pay as you go'
+                            : c.pricingType === 'free_credits'
+                              ? 'free forever + usage'
+                              : 'per month'}
                         </div>
                       </>
                     ),
@@ -297,7 +296,7 @@ export function ComparisonSection() {
             <span className='font-semibold text-foreground'>
               {activeUsers != null ? `${activeUsers}+` : 'hundreds of'}
             </span>{' '}
-            creators already automating their growth
+            creators already automating replies
           </p>
           <Button
             size='lg'
@@ -309,7 +308,7 @@ export function ComparisonSection() {
             asChild
           >
             <Link href={`${APP_URL}/signup`}>
-              Get {signupBonus} free credits
+              Start free forever
               <Zap className='ml-2 h-4 w-4' />
             </Link>
           </Button>

@@ -12,27 +12,27 @@ export function SolutionSection() {
   const features = [
     {
       icon: MessageCircle,
-      title: 'Smart Comment Replies',
+      title: 'Auto Comment Reply',
       description:
-        'AI reads context, tone, and intent. Replies like you would — because it learned from you.',
+        'Reply to every comment instantly with your saved voice and guardrails.',
       demo: {
         comment: "Is this still available? What's the price?",
         reply:
           "Hey! Yes it's available 🙌 Check the link in my bio for pricing, or DM me and I'll send it directly!",
-        time: '4 seconds',
-        credits: '2 credits',
+        time: '0.3 seconds',
+        credits: 'Free forever',
       },
     },
     {
       icon: Send,
       title: 'Trigger-Based DMs',
       description:
-        'Someone comments a keyword? Auto-send a personalized DM with your lead magnet or offer.',
+        'When someone comments a keyword, automatically send the right DM and capture intent.',
       demo: {
         comment: 'I need this! How do I get started?',
         reply: 'Just sent you a DM with the full guide! Check your requests 📩',
-        time: '2 seconds',
-        credits: '4 credits',
+        time: '0.3 seconds',
+        credits: 'Free forever',
       },
     },
     {
@@ -44,8 +44,8 @@ export function SolutionSection() {
         comment: 'This is so helpful thank you!!',
         reply:
           "Ahh you're so welcome! 💕 Means everything that this helped you. More coming soon!",
-        time: '3 seconds',
-        credits: '4 credits',
+        time: '0.4 seconds',
+        credits: 'AI credits',
       },
     },
   ];
@@ -59,7 +59,7 @@ export function SolutionSection() {
             The Solution
           </div>
           <h2 className='text-3xl sm:text-4xl font-bold tracking-tight'>
-            AI that{' '}
+            Engagement automation that{' '}
             <span
               className='text-transparent bg-clip-text'
               style={{
@@ -71,8 +71,7 @@ export function SolutionSection() {
             </span>
           </h2>
           <p className='mt-4 text-lg text-muted-foreground'>
-            Not generic. Not robotic. Trained on your unique style — emojis,
-            slang, tone and all.
+            Keep replies fast, personal, and on-brand.
           </p>
         </div>
 

@@ -137,7 +137,7 @@ export function HeroSection() {
               <span className='font-mono font-bold'>
                 {ignoredCount.toLocaleString()}
               </span>{' '}
-              comments ignored today
+              leads waiting right now
             </span>
           </div>
         </div>
@@ -147,10 +147,8 @@ export function HeroSection() {
           <div className='inline-flex items-center gap-2.5 rounded-full border border-primary/25 bg-primary/8 px-5 py-2.5'>
             <MessageCircle className='w-4 h-4 text-primary' />
             <span className='text-sm text-muted-foreground'>
-              <span className='font-semibold text-foreground'>
-                70% of followers
-              </span>{' '}
-              expect a reply within 24 hours — are you keeping up?
+              <span className='font-semibold text-foreground'>80% of DMs</span>{' '}
+              go unanswered in the first hour
             </span>
           </div>
         </div>
@@ -160,7 +158,7 @@ export function HeroSection() {
           {/* Left: Copy */}
           <div className='text-center lg:text-left'>
             <h1 className='text-5xl sm:text-6xl lg:text-7xl font-bold tracking-tight leading-[1.05]'>
-              <span className='text-muted-foreground'>Stop ignoring</span>
+              <span className='text-muted-foreground'>Never miss another</span>
               <br />
               <span
                 className='text-transparent bg-clip-text'
@@ -169,15 +167,14 @@ export function HeroSection() {
                     'linear-gradient(135deg, #c4b5fd 0%, #6c47ff 50%, #6d28d9 100%)',
                 }}
               >
-                your comments.
+                Instagram lead.
               </span>
             </h1>
 
             <p className='mt-6 text-lg sm:text-xl text-muted-foreground max-w-lg mx-auto lg:mx-0 leading-relaxed'>
-              Every unanswered comment is a lost follower, a missed sale, a
-              dying algorithm.{' '}
+              Auto comment reply and keyword DM are free forever.{' '}
               <span className='text-foreground font-medium'>
-                Set it up in 5 minutes. Reply to every comment while you sleep.
+                Set up in 3 minutes and reply in your voice, 24/7.
               </span>
             </p>
 
@@ -196,7 +193,7 @@ export function HeroSection() {
               >
                 <Link href={`${APP_URL}/signup`}>
                   <span className='relative z-10 flex items-center gap-2'>
-                    Get {signupBonus} free credits
+                    Start free
                     <ArrowRight className='h-4 w-4 transition-transform group-hover:translate-x-1' />
                   </span>
                 </Link>
@@ -211,7 +208,7 @@ export function HeroSection() {
                   ))}
                 </div>
                 <span className='text-xs text-muted-foreground'>
-                  No credit card • Setup in 5 min
+                  No credit card • Setup in 3 min
                 </span>
               </div>
             </div>
@@ -247,11 +244,14 @@ export function HeroSection() {
                     )}
                   </span>{' '}
                   <span className='text-muted-foreground'>
-                    creators automating their growth
+                    creators automating replies
                   </span>
                 </div>
               </div>
             </div>
+            <p className='mt-3 text-xs text-muted-foreground'>
+              + {signupBonus} free AI credits on signup
+            </p>
           </div>
 
           {/* Right: Demo */}

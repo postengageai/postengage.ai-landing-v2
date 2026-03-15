@@ -1,6 +1,6 @@
 'use client';
 
-import { Link2, Sliders, Sparkles, Coffee, LucideIcon } from 'lucide-react';
+import { Link2, Sliders, Sparkles, LucideIcon } from 'lucide-react';
 import { useTrackSectionView } from '@/hooks/use-track-section-view';
 
 interface Step {
@@ -18,36 +18,27 @@ const steps: Step[] = [
     step: '01',
     title: 'Connect Instagram',
     description:
-      'Secure OAuth connection via the official Meta API. We never store your password. Takes 30 seconds.',
+      'Connect with official Meta OAuth and choose which posts and inboxes to automate.',
     detail: 'Official Meta API · Zero credentials stored',
     trackId: 'step_1',
   },
   {
     icon: Sliders,
     step: '02',
-    title: 'Set Your Voice',
+    title: 'Choose Triggers',
     description:
-      'Answer a few questions about your tone, style, and emoji habits. Our AI learns how you communicate in minutes.',
-    detail: 'AI voice training · Learns your emojis & slang',
+      'Set comment keywords like "price" or "link" and map each trigger to a DM or reply flow.',
+    detail: 'Keyword triggers · DM templates · Rule-based replies',
     trackId: 'step_2',
   },
   {
     icon: Sparkles,
     step: '03',
-    title: 'Activate Automation',
+    title: 'Go Live',
     description:
-      'Choose which posts to monitor. Set DM triggers with keywords. Review or auto-approve replies.',
-    detail: 'Visual flow builder · Keyword triggers · Review mode',
+      'Turn on automation and start replying in 0.3 seconds while your AI voice handles personalisation.',
+    detail: 'Auto comment reply · Auto DM · AI voice replies',
     trackId: 'step_3',
-  },
-  {
-    icon: Coffee,
-    step: '04',
-    title: 'Relax & Grow',
-    description:
-      'Watch engagement happen automatically. Check your analytics dashboard. Focus on creating content.',
-    detail: 'Real-time analytics · Growth tracking · 24/7 replies',
-    trackId: 'step_4',
   },
 ];
 
@@ -91,7 +82,7 @@ export function HowItWorksSection() {
             How It Works
           </div>
           <h2 className='text-3xl sm:text-4xl font-bold tracking-tight'>
-            From setup to autopilot{' '}
+            From chaos to autopilot{' '}
             <span
               className='text-transparent bg-clip-text'
               style={{
@@ -99,19 +90,16 @@ export function HowItWorksSection() {
                   'linear-gradient(135deg, #a78bfa 0%, #6c47ff 100%)',
               }}
             >
-              in 5 minutes
+              in 3 steps
             </span>
           </h2>
           <p className='mx-auto mt-4 max-w-xl text-muted-foreground text-lg'>
-            No complex configurations. No learning curve. Just connect and let
-            AI handle the rest.
+            Connect once, set your triggers, and let PostEngage.ai handle
+            replies and lead capture 24/7.
           </p>
         </div>
 
-        {/* Steps grid */}
-        <div className='grid sm:grid-cols-2 lg:grid-cols-4 gap-6 relative'>
-          {/* Connection line (desktop) */}
-          <div className='absolute top-8 left-[12.5%] right-[12.5%] h-px bg-gradient-to-r from-transparent via-primary/30 to-transparent hidden lg:block' />
+        <div className='grid sm:grid-cols-2 lg:grid-cols-3 gap-6'>
           {steps.map(step => (
             <StepCard key={step.step} step={step} />
           ))}
@@ -125,14 +113,14 @@ export function HowItWorksSection() {
               <span className='text-sm text-muted-foreground'>
                 Average setup time:{' '}
                 <span className='font-semibold text-foreground'>
-                  4 minutes 32 seconds
+                  under 3 minutes
                 </span>
               </span>
             </div>
             <div className='w-px h-4 bg-border hidden sm:block' />
             <span className='text-sm text-muted-foreground'>
               First automated reply within{' '}
-              <span className='font-semibold text-foreground'>10 minutes</span>
+              <span className='font-semibold text-foreground'>0.3 seconds</span>
             </span>
           </div>
         </div>
