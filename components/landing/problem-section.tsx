@@ -23,7 +23,7 @@ function ProblemCard({ problem, index }: { problem: Problem; index: number }) {
   return (
     <div
       ref={ref as React.RefObject<HTMLDivElement>}
-      className='group relative rounded-xl border border-border bg-card p-6 hover:border-warning/50 transition-colors'
+      className='group relative rounded-2xl border border-border/60 bg-card overflow-hidden p-6 hover:border-warning/40 transition-all duration-300 hover:-translate-y-0.5'
       onMouseEnter={() => {
         sendGAEvent({
           action: 'problem_stat_card_hover',
@@ -32,15 +32,24 @@ function ProblemCard({ problem, index }: { problem: Problem; index: number }) {
         });
       }}
     >
-      <div className='w-10 h-10 rounded-lg bg-warning/10 flex items-center justify-center mb-4'>
-        <problem.icon className='w-5 h-5 text-warning' />
-      </div>
-      <div className='text-3xl font-bold text-foreground'>{problem.stat}</div>
-      <div className='text-sm font-medium text-foreground mt-1'>
-        {problem.label}
-      </div>
-      <div className='text-sm text-muted-foreground mt-2'>
-        {problem.description}
+      {/* Hover glow */}
+      <div className='pointer-events-none absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-[radial-gradient(ellipse_at_top_left,oklch(0.75_0.15_70/0.06)_0%,transparent_70%)]' />
+      {/* Top accent line */}
+      <div className='absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-warning/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300' />
+
+      <div className='relative'>
+        <div className='w-11 h-11 rounded-xl bg-warning/10 border border-warning/20 flex items-center justify-center mb-5'>
+          <problem.icon className='w-5 h-5 text-warning' />
+        </div>
+        <div className='text-4xl font-bold text-foreground tracking-tight'>
+          {problem.stat}
+        </div>
+        <div className='text-sm font-semibold text-foreground/80 mt-1.5'>
+          {problem.label}
+        </div>
+        <div className='text-sm text-muted-foreground mt-2 leading-relaxed'>
+          {problem.description}
+        </div>
       </div>
     </div>
   );
@@ -48,50 +57,78 @@ function ProblemCard({ problem, index }: { problem: Problem; index: number }) {
 
 export function ProblemSection() {
   const ref = useTrackSectionView('problem_section');
-  const problems = [
+  const problems: Problem[] = [
     {
       icon: Clock,
       stat: '3+ hours',
       label: 'daily on comments',
-      description: 'Time you could spend creating',
+      description:
+        'Time you could spend creating content, building your brand, or living your life.',
     },
     {
       icon: TrendingDown,
       stat: '70%',
       label: 'drop in reach',
-      description: 'When engagement slows down',
+      description:
+        "Instagram's algorithm punishes accounts that don't engage back. Fast.",
     },
     {
       icon: AlertCircle,
       stat: '24 hrs',
       label: 'comment window',
-      description: 'After that, algorithm ignores you',
+      description:
+        'After that, the algorithm moves on. Your post is buried. Opportunity lost.',
     },
     {
       icon: Users,
       stat: '1 in 4',
       label: 'followers lost',
-      description: 'Due to ignored comments',
+      description:
+        'Feel ignored, unfollow. Your silence is the loudest message they ever get.',
     },
   ];
 
   return (
-    <section ref={ref} className='py-16 sm:py-24 border-t border-border'>
+    <section ref={ref} className='py-20 sm:py-28 border-t border-border/50'>
       <div className='mx-auto max-w-6xl px-4 sm:px-6'>
-        <div className='text-center max-w-2xl mx-auto mb-12'>
-          <h2 className='text-2xl sm:text-3xl font-bold tracking-tight'>
-            The cost of <span className='text-warning'>silence</span>
+        <div className='text-center max-w-2xl mx-auto mb-14'>
+          <div className='inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-warning/8 border border-warning/20 text-warning text-sm font-medium mb-5'>
+            <AlertCircle className='w-4 h-4' />
+            The Real Cost of Silence
+          </div>
+          <h2 className='text-3xl sm:text-4xl font-bold tracking-tight'>
+            Your silence is{' '}
+            <span
+              className='text-transparent bg-clip-text'
+              style={{
+                backgroundImage:
+                  'linear-gradient(135deg, oklch(0.75 0.15 70) 0%, oklch(0.65 0.2 45) 100%)',
+              }}
+            >
+              costing you
+            </span>
           </h2>
-          <p className='mt-3 text-muted-foreground'>
-            Every comment you ignore sends a signal — to followers and
-            algorithms.
+          <p className='mt-4 text-lg text-muted-foreground'>
+            Every comment you ignore sends a signal — to your followers and to
+            the algorithm.
           </p>
         </div>
 
-        <div className='grid sm:grid-cols-2 lg:grid-cols-4 gap-6'>
+        <div className='grid sm:grid-cols-2 lg:grid-cols-4 gap-5'>
           {problems.map((problem, i) => (
             <ProblemCard key={i} problem={problem} index={i} />
           ))}
+        </div>
+
+        {/* Bottom callout */}
+        <div className='mt-10 mx-auto max-w-2xl rounded-2xl border border-warning/20 bg-warning/5 p-6 text-center'>
+          <p className='text-sm font-medium text-warning/90'>
+            💡 The average creator misses{' '}
+            <span className='font-bold text-warning'>
+              847 engagement opportunities
+            </span>{' '}
+            every week due to slow or no replies.
+          </p>
         </div>
       </div>
     </section>

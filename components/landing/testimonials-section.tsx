@@ -1,52 +1,30 @@
 'use client';
 
-import { Quote } from 'lucide-react';
+import { Quote, Star } from 'lucide-react';
 import { useTrackSectionView } from '@/hooks/use-track-section-view';
 import { sendGAEvent } from '@/lib/gtag';
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
-import { Card } from '@/components/ui/card';
+import { useLandingConfig } from '@/hooks/use-landing-config';
+import { Skeleton } from '@/components/ui/skeleton';
+import type { Testimonial } from '@/lib/types/landing';
 
-interface Testimonial {
-  id: string;
-  quote: string;
-  author: string;
-  role: string;
-  metric: string;
-  avatar: string;
-  initials: string;
+function TestimonialSkeleton() {
+  return (
+    <div className='rounded-2xl border border-border/60 bg-card p-6 space-y-4'>
+      <Skeleton className='h-5 w-24 rounded' />
+      <Skeleton className='h-6 w-6 rounded' />
+      <Skeleton className='h-20 w-full rounded' />
+      <Skeleton className='h-7 w-32 rounded-full' />
+      <div className='flex items-center gap-3 pt-4 border-t border-border'>
+        <Skeleton className='w-10 h-10 rounded-full' />
+        <div className='space-y-1.5'>
+          <Skeleton className='h-4 w-28' />
+          <Skeleton className='h-3 w-20' />
+        </div>
+      </div>
+    </div>
+  );
 }
-
-const TESTIMONIALS: Testimonial[] = [
-  {
-    id: '1',
-    quote:
-      "Finally an automation tool that doesn't feel like a bot. My engagement has doubled.",
-    author: 'Priya M.',
-    role: 'Fashion Creator',
-    metric: '2x Engagement',
-    avatar: '/indian-woman-fashion-creator.jpg',
-    initials: 'PM',
-  },
-  {
-    id: '2',
-    quote:
-      'I used to spend 2 hours a day replying to DMs. Now it takes 15 minutes.',
-    author: 'Rahul S.',
-    role: 'Tech Reviewer',
-    metric: 'Save 10hrs/week',
-    avatar: '/asian-man-tech-youtuber.jpg',
-    initials: 'RS',
-  },
-  {
-    id: '3',
-    quote: 'The best investment for my personal brand. It just works.',
-    author: 'Anika T.',
-    role: 'Lifestyle Vlogger',
-    metric: '30% More Leads',
-    avatar: '/lifestyle-instagram-avatar.jpg',
-    initials: 'AT',
-  },
-];
 
 function TestimonialCard({
   testimonial,
@@ -56,32 +34,46 @@ function TestimonialCard({
   index: number;
 }) {
   const ref = useTrackSectionView(`testimonial_card_${index + 1}`);
+  const initials = testimonial.author
+    .split(' ')
+    .map(n => n[0])
+    .join('')
+    .slice(0, 2)
+    .toUpperCase();
 
   return (
-    <Card
+    <div
       ref={ref as React.RefObject<HTMLDivElement>}
-      className='relative p-6 flex flex-col h-full'
+      className='group relative flex flex-col h-full rounded-2xl border border-border/60 bg-card overflow-hidden p-6 hover:border-primary/30 transition-all duration-300 hover:-translate-y-0.5 hover:shadow-[0_8px_32px_oklch(0_0_0/0.3)]'
     >
-      <Quote className='w-8 h-8 text-primary/20 mb-4' />
+      {/* Hover glow */}
+      <div className='pointer-events-none absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-[radial-gradient(ellipse_at_top_left,oklch(0.65_0.18_265/0.05)_0%,transparent_70%)]' />
+      <div className='absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-primary/25 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300' />
 
-      <blockquote className='text-foreground flex-1 mb-6 text-lg'>
-        "{testimonial.quote}"
-      </blockquote>
+      <div className='relative flex flex-col h-full'>
+        {/* Stars */}
+        <div className='flex gap-0.5 mb-4'>
+          {[...Array(5)].map((_, i) => (
+            <Star key={i} className='w-4 h-4 fill-warning text-warning' />
+          ))}
+        </div>
 
-      {/* Metric highlight */}
-      <div className='mb-6 py-2 px-3 rounded-lg bg-success/10 border border-success/20 w-fit'>
-        <p className='text-sm font-semibold text-success'>
-          {testimonial.metric}
-        </p>
-      </div>
+        <Quote className='w-7 h-7 text-primary/20 mb-3' />
 
-      <div className='flex items-center gap-3 pt-4 border-t border-border mt-auto'>
-        <Avatar>
-          <AvatarImage src={testimonial.avatar} alt={testimonial.author} />
-          <AvatarFallback>{testimonial.initials}</AvatarFallback>
-        </Avatar>
+        <blockquote className='text-foreground/90 flex-1 mb-5 text-base leading-relaxed'>
+          &ldquo;{testimonial.quote}&rdquo;
+        </blockquote>
+
+        {/* Metric highlight */}
+        <div className='mb-5 py-2 px-3 rounded-lg bg-success/10 border border-success/20 w-fit'>
+          <p className='text-sm font-semibold text-success'>
+            {testimonial.metric}
+          </p>
+        </div>
+
+        {/* Author */}
         <div
-          className='cursor-pointer'
+          className='flex items-center gap-3 pt-4 border-t border-border/60 mt-auto cursor-pointer'
           onClick={() => {
             sendGAEvent({
               action: 'testimonial_author_click',
@@ -90,41 +82,70 @@ function TestimonialCard({
             });
           }}
         >
-          <p className='font-medium text-sm'>{testimonial.author}</p>
-          <p className='text-xs text-muted-foreground'>{testimonial.role}</p>
+          <Avatar className='w-10 h-10 ring-2 ring-primary/15'>
+            <AvatarImage src={testimonial.avatar} alt={testimonial.author} />
+            <AvatarFallback className='text-xs font-semibold bg-primary/10 text-primary'>
+              {initials}
+            </AvatarFallback>
+          </Avatar>
+          <div>
+            <p className='font-semibold text-sm'>{testimonial.author}</p>
+            <p className='text-xs text-muted-foreground'>{testimonial.role}</p>
+          </div>
         </div>
       </div>
-    </Card>
+    </div>
   );
 }
 
 export function TestimonialsSection() {
   const ref = useTrackSectionView('testimonials_section');
+  const { data: config, isLoading } = useLandingConfig();
+  const testimonials = config?.testimonials ?? [];
 
   return (
-    <section ref={ref} id='testimonials' className='py-20 sm:py-32'>
-      <div className='mx-auto max-w-7xl px-4 sm:px-6'>
-        <div className='mx-auto max-w-2xl text-center mb-16'>
-          <h2 className='text-3xl font-bold tracking-tight sm:text-4xl'>
-            Trusted by creators who value their time
+    <section
+      ref={ref}
+      id='testimonials'
+      className='py-20 sm:py-32 border-t border-border/50'
+    >
+      <div className='mx-auto max-w-6xl px-4 sm:px-6'>
+        <div className='mx-auto max-w-2xl text-center mb-14'>
+          <div className='inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-warning/10 border border-warning/20 text-warning text-sm font-medium mb-5'>
+            <Star className='w-4 h-4 fill-warning' />
+            Real Results
+          </div>
+          <h2 className='text-3xl sm:text-4xl font-bold tracking-tight'>
+            Creators who{' '}
+            <span
+              className='text-transparent bg-clip-text'
+              style={{
+                backgroundImage:
+                  'linear-gradient(135deg, oklch(0.75 0.18 265) 0%, oklch(0.65 0.18 265) 100%)',
+              }}
+            >
+              got their time back
+            </span>
           </h2>
-          <p className='mt-6 text-lg leading-8 text-muted-foreground'>
-            See how PostEngage.ai is helping creators and businesses scale their
-            engagement without burnout.
+          <p className='mt-4 text-lg text-muted-foreground'>
+            Real creators, real results. See how PostEngage.ai is changing the
+            way people grow on Instagram.
           </p>
         </div>
 
-        <div className='mx-auto mt-16 grid max-w-2xl grid-cols-1 gap-8 lg:mx-0 lg:max-w-none lg:grid-cols-3'>
-          {TESTIMONIALS.map((testimonial, index) => (
-            <TestimonialCard
-              key={testimonial.id}
-              testimonial={testimonial}
-              index={index}
-            />
-          ))}
+        <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5'>
+          {isLoading
+            ? [1, 2, 3].map(i => <TestimonialSkeleton key={i} />)
+            : testimonials.map((testimonial, index) => (
+                <TestimonialCard
+                  key={testimonial.id}
+                  testimonial={testimonial}
+                  index={index}
+                />
+              ))}
         </div>
 
-        <p className='text-center text-xs text-muted-foreground mt-12 opacity-60'>
+        <p className='text-center text-xs text-muted-foreground mt-10 opacity-50'>
           * Results may vary based on account size and engagement strategy.
         </p>
       </div>

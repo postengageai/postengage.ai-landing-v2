@@ -12,9 +12,12 @@ import {
 } from '@/components/ui/dropdown-menu';
 import { APP_URL } from '@/lib/constants';
 import { sendGAEvent } from '@/lib/gtag';
+import { useLandingConfig } from '@/hooks/use-landing-config';
 
 export function LandingHeader() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const { data: landingConfig } = useLandingConfig();
+  const signupBonus = landingConfig?.signup_bonus ?? 500;
 
   const handleNavClick = (linkName: string) => {
     sendGAEvent({
@@ -112,7 +115,9 @@ export function LandingHeader() {
               <Link href={`${APP_URL}/login`}>Sign In</Link>
             </Button>
             <Button size='sm' asChild onClick={handleSignUpClick}>
-              <Link href={`${APP_URL}/signup`}>Get 500 free credits</Link>
+              <Link href={`${APP_URL}/signup`}>
+                Get {signupBonus} free credits
+              </Link>
             </Button>
           </div>
 
@@ -160,7 +165,9 @@ export function LandingHeader() {
                   <Link href={`${APP_URL}/login`}>Sign In</Link>
                 </Button>
                 <Button size='sm' asChild>
-                  <Link href={`${APP_URL}/signup`}>Get 500 free credits</Link>
+                  <Link href={`${APP_URL}/signup`}>
+                    Get {signupBonus} free credits
+                  </Link>
                 </Button>
               </div>
             </nav>

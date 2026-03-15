@@ -21,4 +21,8 @@ export interface LandingConfigResponse {
   testimonials: Testimonial[];
   faqs: FaqItem[];
   signup_bonus: number;
+  meta?: {
+    country: string;
+    currency: string;
+  };
 }

@@ -141,7 +141,6 @@ export default function BlogPostPage() {
             </div>
           </header>
 
-
           <div className='relative mx-auto mb-16 aspect-[21/9] max-w-5xl overflow-hidden rounded-2xl border shadow-sm bg-gradient-to-br from-primary/20 via-primary/10 to-muted/20'>
             <div className='absolute inset-0 flex flex-col items-center justify-center gap-4'>
               <div className='flex h-16 w-16 items-center justify-center rounded-2xl bg-background/60 border border-border/40 shadow-inner'>
