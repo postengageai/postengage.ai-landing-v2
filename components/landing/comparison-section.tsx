@@ -123,7 +123,7 @@ export function ComparisonSection() {
               className='text-transparent bg-clip-text'
               style={{
                 backgroundImage:
-                  'linear-gradient(135deg, oklch(0.75 0.18 265) 0%, oklch(0.65 0.18 265) 100%)',
+                  'linear-gradient(135deg, #a78bfa 0%, #6c47ff 100%)',
               }}
             >
               built for Indian creators
@@ -138,7 +138,7 @@ export function ComparisonSection() {
         {/* Comparison Table */}
         <div
           ref={tableRef as React.RefObject<HTMLDivElement>}
-          className='mb-20 overflow-hidden rounded-2xl border border-border/60 shadow-[0_4px_24px_oklch(0_0_0/0.2)]'
+          className='mb-20 overflow-hidden rounded-2xl border border-border/60 shadow-[0_4px_24px_rgba(0,0,0,0.2)]'
         >
           <div className='overflow-x-auto'>
             <table className='w-full'>
@@ -303,9 +303,8 @@ export function ComparisonSection() {
             size='lg'
             className='font-semibold'
             style={{
-              background:
-                'linear-gradient(135deg, oklch(0.7 0.18 265) 0%, oklch(0.6 0.22 275) 100%)',
-              boxShadow: '0 0 24px oklch(0.65 0.18 265 / 0.3)',
+              background: 'linear-gradient(135deg, #8b5cf6 0%, #7c3aed 100%)',
+              boxShadow: '0 0 24px #6c47ff4d',
             }}
             asChild
           >

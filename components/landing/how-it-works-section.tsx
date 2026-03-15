@@ -58,7 +58,7 @@ function StepCard({ step }: { step: Step }) {
       ref={ref as React.RefObject<HTMLDivElement>}
       className='relative group text-center'
     >
-      <div className='relative z-10 w-16 h-16 rounded-2xl border border-border/60 bg-card flex items-center justify-center mx-auto mb-5 group-hover:border-primary/40 group-hover:bg-primary/8 transition-all duration-300 shadow-[0_2px_12px_oklch(0_0_0/0.2)]'>
+      <div className='relative z-10 w-16 h-16 rounded-2xl border border-border/60 bg-card flex items-center justify-center mx-auto mb-5 group-hover:border-primary/40 group-hover:bg-primary/8 transition-all duration-300 shadow-[0_2px_12px_rgba(0,0,0,0.2)]'>
         <step.icon className='w-6 h-6 text-primary' />
       </div>
       <span className='font-mono text-xs font-bold text-primary/60 tracking-widest uppercase'>
@@ -96,7 +96,7 @@ export function HowItWorksSection() {
               className='text-transparent bg-clip-text'
               style={{
                 backgroundImage:
-                  'linear-gradient(135deg, oklch(0.75 0.18 265) 0%, oklch(0.65 0.18 265) 100%)',
+                  'linear-gradient(135deg, #a78bfa 0%, #6c47ff 100%)',
               }}
             >
               in 5 minutes

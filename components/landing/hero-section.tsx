@@ -95,15 +95,15 @@ export function HeroSection() {
     <section className='relative overflow-hidden pt-28 pb-20 sm:pt-36 sm:pb-32'>
       {/* Multi-layer background glow */}
       <div className='pointer-events-none absolute inset-0'>
-        <div className='absolute top-0 left-1/2 -translate-x-1/2 w-[900px] h-[700px] bg-[radial-gradient(ellipse_at_center,oklch(0.65_0.18_265/0.12)_0%,transparent_70%)]' />
-        <div className='absolute top-1/4 left-1/4 w-[400px] h-[400px] bg-[radial-gradient(ellipse_at_center,oklch(0.65_0.18_265/0.05)_0%,transparent_70%)] blur-2xl' />
-        <div className='absolute top-1/3 right-1/4 w-[300px] h-[300px] bg-[radial-gradient(ellipse_at_center,oklch(0.65_0.2_145/0.06)_0%,transparent_70%)] blur-2xl' />
+        <div className='absolute top-0 left-1/2 -translate-x-1/2 w-[900px] h-[700px] bg-[radial-gradient(ellipse_at_center,#6c47ff1f_0%,transparent_70%)]' />
+        <div className='absolute top-1/4 left-1/4 w-[400px] h-[400px] bg-[radial-gradient(ellipse_at_center,#6c47ff0d_0%,transparent_70%)] blur-2xl' />
+        <div className='absolute top-1/3 right-1/4 w-[300px] h-[300px] bg-[radial-gradient(ellipse_at_center,#22c55e0f_0%,transparent_70%)] blur-2xl' />
         {/* Subtle grid */}
         <div
           className='absolute inset-0 opacity-[0.018]'
           style={{
             backgroundImage:
-              'linear-gradient(oklch(0.98 0 0) 1px, transparent 1px), linear-gradient(90deg, oklch(0.98 0 0) 1px, transparent 1px)',
+              'linear-gradient(#f1f1f4 1px, transparent 1px), linear-gradient(90deg, #f1f1f4 1px, transparent 1px)',
             backgroundSize: '60px 60px',
           }}
         />
@@ -166,7 +166,7 @@ export function HeroSection() {
                 className='text-transparent bg-clip-text'
                 style={{
                   backgroundImage:
-                    'linear-gradient(135deg, oklch(0.85 0.18 265) 0%, oklch(0.65 0.18 265) 50%, oklch(0.55 0.22 280) 100%)',
+                    'linear-gradient(135deg, #c4b5fd 0%, #6c47ff 50%, #6d28d9 100%)',
                 }}
               >
                 your comments.
@@ -188,8 +188,8 @@ export function HeroSection() {
                 className='min-w-[220px] h-13 text-base font-semibold relative overflow-hidden group'
                 style={{
                   background:
-                    'linear-gradient(135deg, oklch(0.7 0.18 265) 0%, oklch(0.6 0.22 275) 100%)',
-                  boxShadow: '0 0 32px oklch(0.65 0.18 265 / 0.4)',
+                    'linear-gradient(135deg, #8b5cf6 0%, #7c3aed 100%)',
+                  boxShadow: '0 0 32px #6c47ff66',
                 }}
                 asChild
                 onClick={handleCtaClick}
@@ -257,7 +257,7 @@ export function HeroSection() {
           {/* Right: Demo */}
           <div className='relative flex items-center justify-center'>
             <div className='relative'>
-              <div className='absolute inset-0 -m-8 bg-[radial-gradient(ellipse_at_center,oklch(0.65_0.18_265/0.15)_0%,transparent_70%)] blur-2xl pointer-events-none' />
+              <div className='absolute inset-0 -m-8 bg-[radial-gradient(ellipse_at_center,#6c47ff26_0%,transparent_70%)] blur-2xl pointer-events-none' />
               <LiveReplyDemo />
             </div>
           </div>

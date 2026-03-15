@@ -29,7 +29,7 @@ export function FeaturesSection() {
               className='text-transparent bg-clip-text'
               style={{
                 backgroundImage:
-                  'linear-gradient(135deg, oklch(0.75 0.18 265) 0%, oklch(0.65 0.18 265) 100%)',
+                  'linear-gradient(135deg, #a78bfa 0%, #6c47ff 100%)',
               }}
             >
               Nothing you don&apos;t.
@@ -45,7 +45,7 @@ export function FeaturesSection() {
         <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5'>
           {/* Large card: AI Voice DNA */}
           <div className='lg:col-span-2 group relative rounded-2xl border border-border/60 bg-card overflow-hidden p-7 hover:border-primary/40 transition-all duration-300'>
-            <div className='pointer-events-none absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-[radial-gradient(ellipse_at_top_right,oklch(0.65_0.18_265/0.06)_0%,transparent_60%)]' />
+            <div className='pointer-events-none absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-[radial-gradient(ellipse_at_top_right,#6c47ff0f_0%,transparent_60%)]' />
             <div className='relative'>
               <div className='w-12 h-12 rounded-xl bg-primary/10 border border-primary/20 flex items-center justify-center mb-5'>
                 <BrainCircuit className='w-6 h-6 text-primary' />
@@ -78,7 +78,7 @@ export function FeaturesSection() {
 
           {/* Control */}
           <div className='group relative rounded-2xl border border-border/60 bg-card overflow-hidden p-6 hover:border-primary/40 transition-all duration-300'>
-            <div className='pointer-events-none absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-[radial-gradient(ellipse_at_bottom_left,oklch(0.65_0.18_265/0.06)_0%,transparent_70%)]' />
+            <div className='pointer-events-none absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-[radial-gradient(ellipse_at_bottom_left,#6c47ff0f_0%,transparent_70%)]' />
             <div className='relative'>
               <div className='w-11 h-11 rounded-xl bg-primary/10 border border-primary/20 flex items-center justify-center mb-4'>
                 <Shield className='w-5 h-5 text-primary' />
@@ -95,7 +95,7 @@ export function FeaturesSection() {
 
           {/* Visual Flow Builder */}
           <div className='group relative rounded-2xl border border-border/60 bg-card overflow-hidden p-6 hover:border-primary/40 transition-all duration-300'>
-            <div className='pointer-events-none absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-[radial-gradient(ellipse_at_top_right,oklch(0.65_0.18_265/0.06)_0%,transparent_70%)]' />
+            <div className='pointer-events-none absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-[radial-gradient(ellipse_at_top_right,#6c47ff0f_0%,transparent_70%)]' />
             <div className='relative'>
               <div className='w-11 h-11 rounded-xl bg-primary/10 border border-primary/20 flex items-center justify-center mb-4'>
                 <GitBranch className='w-5 h-5 text-primary' />
@@ -110,7 +110,7 @@ export function FeaturesSection() {
 
           {/* Speed */}
           <div className='group relative rounded-2xl border border-border/60 bg-card overflow-hidden p-6 hover:border-success/30 transition-all duration-300'>
-            <div className='pointer-events-none absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-[radial-gradient(ellipse_at_bottom_right,oklch(0.65_0.2_145/0.05)_0%,transparent_70%)]' />
+            <div className='pointer-events-none absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-[radial-gradient(ellipse_at_bottom_right,#22c55e0d_0%,transparent_70%)]' />
             <div className='relative'>
               <div className='w-11 h-11 rounded-xl bg-success/10 border border-success/20 flex items-center justify-center mb-4'>
                 <Gauge className='w-5 h-5 text-success' />
@@ -125,7 +125,7 @@ export function FeaturesSection() {
 
           {/* Content Scheduling */}
           <div className='group relative rounded-2xl border border-border/60 bg-card overflow-hidden p-6 hover:border-primary/40 transition-all duration-300'>
-            <div className='pointer-events-none absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-[radial-gradient(ellipse_at_top_left,oklch(0.65_0.18_265/0.06)_0%,transparent_70%)]' />
+            <div className='pointer-events-none absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-[radial-gradient(ellipse_at_top_left,#6c47ff0f_0%,transparent_70%)]' />
             <div className='relative'>
               <div className='w-11 h-11 rounded-xl bg-primary/10 border border-primary/20 flex items-center justify-center mb-4'>
                 <Calendar className='w-5 h-5 text-primary' />
@@ -140,7 +140,7 @@ export function FeaturesSection() {
 
           {/* Analytics — large card */}
           <div className='lg:col-span-2 group relative rounded-2xl border border-border/60 bg-card overflow-hidden p-7 hover:border-primary/40 transition-all duration-300'>
-            <div className='pointer-events-none absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-[radial-gradient(ellipse_at_bottom_left,oklch(0.65_0.18_265/0.06)_0%,transparent_60%)]' />
+            <div className='pointer-events-none absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-[radial-gradient(ellipse_at_bottom_left,#6c47ff0f_0%,transparent_60%)]' />
             <div className='relative grid sm:grid-cols-2 gap-6 items-center'>
               <div>
                 <div className='w-12 h-12 rounded-xl bg-primary/10 border border-primary/20 flex items-center justify-center mb-5'>
@@ -161,7 +161,7 @@ export function FeaturesSection() {
                     className='flex-1 rounded-sm transition-all duration-500'
                     style={{
                       height: `${h}%`,
-                      background: `oklch(${0.55 + i * 0.02} 0.18 265 / ${0.4 + i * 0.08})`,
+                      background: `rgb(108 71 255 / ${0.4 + i * 0.08})`,
                     }}
                   />
                 ))}

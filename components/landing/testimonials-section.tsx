@@ -44,10 +44,10 @@ function TestimonialCard({
   return (
     <div
       ref={ref as React.RefObject<HTMLDivElement>}
-      className='group relative flex flex-col h-full rounded-2xl border border-border/60 bg-card overflow-hidden p-6 hover:border-primary/30 transition-all duration-300 hover:-translate-y-0.5 hover:shadow-[0_8px_32px_oklch(0_0_0/0.3)]'
+      className='group relative flex flex-col h-full rounded-2xl border border-border/60 bg-card overflow-hidden p-6 hover:border-primary/30 transition-all duration-300 hover:-translate-y-0.5 hover:shadow-[0_8px_32px_rgba(0,0,0,0.3)]'
     >
       {/* Hover glow */}
-      <div className='pointer-events-none absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-[radial-gradient(ellipse_at_top_left,oklch(0.65_0.18_265/0.05)_0%,transparent_70%)]' />
+      <div className='pointer-events-none absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-[radial-gradient(ellipse_at_top_left,#6c47ff0d_0%,transparent_70%)]' />
       <div className='absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-primary/25 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300' />
 
       <div className='relative flex flex-col h-full'>
@@ -121,7 +121,7 @@ export function TestimonialsSection() {
               className='text-transparent bg-clip-text'
               style={{
                 backgroundImage:
-                  'linear-gradient(135deg, oklch(0.75 0.18 265) 0%, oklch(0.65 0.18 265) 100%)',
+                  'linear-gradient(135deg, #a78bfa 0%, #6c47ff 100%)',
               }}
             >
               got their time back

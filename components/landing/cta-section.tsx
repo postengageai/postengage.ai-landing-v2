@@ -38,13 +38,13 @@ export function CTASection() {
           className='relative overflow-hidden rounded-3xl border border-primary/25 p-10 sm:p-16 text-center'
           style={{
             background:
-              'radial-gradient(ellipse at top, oklch(0.65 0.18 265 / 0.12) 0%, oklch(0.16 0.004 285 / 0.6) 60%)',
+              'radial-gradient(ellipse at top, rgb(108 71 255 / 0.12) 0%, #1a1a2499 60%)',
           }}
         >
           {/* Background glow layers */}
           <div className='pointer-events-none absolute inset-0'>
-            <div className='absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-[400px] bg-[radial-gradient(ellipse_at_center,oklch(0.65_0.18_265/0.15)_0%,transparent_70%)] blur-2xl' />
-            <div className='absolute bottom-0 left-1/4 w-[300px] h-[200px] bg-[radial-gradient(ellipse_at_center,oklch(0.65_0.2_145/0.08)_0%,transparent_70%)] blur-2xl' />
+            <div className='absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-[400px] bg-[radial-gradient(ellipse_at_center,#6c47ff26_0%,transparent_70%)] blur-2xl' />
+            <div className='absolute bottom-0 left-1/4 w-[300px] h-[200px] bg-[radial-gradient(ellipse_at_center,#22c55e14_0%,transparent_70%)] blur-2xl' />
           </div>
 
           {/* Top border glow */}
@@ -88,9 +88,8 @@ export function CTASection() {
                 className='min-w-[260px] h-14 text-lg font-bold relative overflow-hidden group'
                 style={{
                   background:
-                    'linear-gradient(135deg, oklch(0.72 0.18 265) 0%, oklch(0.58 0.22 275) 100%)',
-                  boxShadow:
-                    '0 0 40px oklch(0.65 0.18 265 / 0.45), 0 4px 20px oklch(0 0 0 / 0.3)',
+                    'linear-gradient(135deg, #9333ea 0%, #7c3aed 100%)',
+                  boxShadow: '0 0 40px #6c47ff73, 0 4px 20px rgba(0,0,0,0.3)',
                 }}
                 asChild
                 onClick={handleCtaClick}

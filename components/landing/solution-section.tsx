@@ -64,7 +64,7 @@ export function SolutionSection() {
               className='text-transparent bg-clip-text'
               style={{
                 backgroundImage:
-                  'linear-gradient(135deg, oklch(0.75 0.18 265) 0%, oklch(0.65 0.18 265) 100%)',
+                  'linear-gradient(135deg, #a78bfa 0%, #6c47ff 100%)',
               }}
             >
               sounds like you
@@ -92,7 +92,7 @@ export function SolutionSection() {
                 }}
                 className={`w-full text-left p-5 rounded-2xl border transition-all duration-200 ${
                   activeFeature === i
-                    ? 'border-primary bg-primary/8 shadow-[0_0_20px_oklch(0.65_0.18_265/0.12)]'
+                    ? 'border-primary bg-primary/8 shadow-[0_0_20px_#6c47ff1f]'
                     : 'border-border/60 bg-card hover:border-primary/40 hover:bg-primary/4'
                 }`}
               >
@@ -128,7 +128,7 @@ export function SolutionSection() {
 
           {/* Demo preview */}
           <div className='relative'>
-            <div className='rounded-2xl border border-border/60 bg-card p-6 sticky top-24 shadow-[0_0_40px_oklch(0_0_0/0.3)]'>
+            <div className='rounded-2xl border border-border/60 bg-card p-6 sticky top-24 shadow-[0_0_40px_rgba(0,0,0,0.3)]'>
               {/* Top label */}
               <div className='flex items-center justify-between mb-5'>
                 <span className='text-xs font-medium text-muted-foreground uppercase tracking-wider'>

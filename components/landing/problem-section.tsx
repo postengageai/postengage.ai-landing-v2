@@ -33,7 +33,7 @@ function ProblemCard({ problem, index }: { problem: Problem; index: number }) {
       }}
     >
       {/* Hover glow */}
-      <div className='pointer-events-none absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-[radial-gradient(ellipse_at_top_left,oklch(0.75_0.15_70/0.06)_0%,transparent_70%)]' />
+      <div className='pointer-events-none absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-[radial-gradient(ellipse_at_top_left,#f59e0b0f_0%,transparent_70%)]' />
       {/* Top accent line */}
       <div className='absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-warning/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300' />
 
@@ -102,7 +102,7 @@ export function ProblemSection() {
               className='text-transparent bg-clip-text'
               style={{
                 backgroundImage:
-                  'linear-gradient(135deg, oklch(0.75 0.15 70) 0%, oklch(0.65 0.2 45) 100%)',
+                  'linear-gradient(135deg, #f59e0b 0%, #ff6b35 100%)',
               }}
             >
               costing you
