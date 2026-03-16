@@ -20,6 +20,14 @@ export const metadata: Metadata = {
     description:
       'Stop asking for "Follow + Tag 3 friends". Learn the new, compliant way to run viral giveaways that actually build a qualified list.',
     type: 'article',
+    images: [
+      {
+        url: '/og-default.png',
+        width: 1200,
+        height: 630,
+        alt: 'Instagram Giveaways in 2026: The Anti-Spam Automation Guide',
+      },
+    ],
     publishedTime: '2026-03-01',
     authors: ['PostEngageAI Team'],
   },

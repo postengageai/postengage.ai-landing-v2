@@ -29,6 +29,14 @@ export const metadata: Metadata = {
     description:
       'Follower count is a vanity metric. These 5 Instagram automation KPIs reveal whether your DM system is actually generating revenue — and how to improve each one.',
     type: 'article',
+    images: [
+      {
+        url: '/blog/automation-kpis-cover.png',
+        width: 1200,
+        height: 630,
+        alt: 'The 5 Instagram Automation KPIs That Actually Matter (And How to Track Them)',
+      },
+    ],
     publishedTime: '2026-03-08',
     authors: ['PostEngageAI Team'],
   },

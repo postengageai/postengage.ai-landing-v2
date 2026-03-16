@@ -23,6 +23,14 @@ export const metadata: Metadata = {
     description:
       "Reels get views. But views don't pay bills. Learn the comment-to-DM strategy turning Reel virality into real revenue in 2026.",
     type: 'article',
+    images: [
+      {
+        url: '/blog/reels-automation-cover.png',
+        width: 1200,
+        height: 630,
+        alt: 'Instagram Reels Automation in 2026: Turn Every View into a Conversation',
+      },
+    ],
     publishedTime: '2026-03-08',
     authors: ['PostEngageAI Team'],
   },

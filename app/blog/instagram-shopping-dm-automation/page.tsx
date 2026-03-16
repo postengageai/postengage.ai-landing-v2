@@ -21,6 +21,14 @@ export const metadata: Metadata = {
     description:
       'Stop paying for Instagram ads when your existing followers are ready to buy. Combine Instagram Shopping tags with DM automation to sell 24/7 without ad spend.',
     type: 'article',
+    images: [
+      {
+        url: '/og-default.png',
+        width: 1200,
+        height: 630,
+        alt: 'Instagram Shopping + DM Automation: The $0 Ads Sales Machine',
+      },
+    ],
     publishedTime: '2026-03-07',
     authors: ['PostEngageAI Team'],
   },

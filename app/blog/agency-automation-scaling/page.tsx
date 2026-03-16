@@ -26,6 +26,14 @@ export const metadata: Metadata = {
     description:
       'Stop selling hours. Start selling systems. Learn how agencies are productizing Instagram automation to retain clients and increase MRR.',
     type: 'article',
+    images: [
+      {
+        url: '/og-default.png',
+        width: 1200,
+        height: 630,
+        alt: 'How Agencies Are Scaling to $50k/mo with DM Automation Services',
+      },
+    ],
     publishedTime: '2026-03-04',
     authors: ['PostEngageAI Team'],
   },

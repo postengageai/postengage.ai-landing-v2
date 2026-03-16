@@ -26,6 +26,14 @@ export const metadata: Metadata = {
     description:
       'Landing pages have a 2% conversion rate. DM Ads have 10%+. Here is why the "Conversation Funnel" is the new standard for paid social.',
     type: 'article',
+    images: [
+      {
+        url: '/og-default.png',
+        width: 1200,
+        height: 630,
+        alt: 'Why Click-to-DM Ads Are Killing Landing Pages in 2026',
+      },
+    ],
     publishedTime: '2026-03-02',
     authors: ['PostEngageAI Team'],
   },

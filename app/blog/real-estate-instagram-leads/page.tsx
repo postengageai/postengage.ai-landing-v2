@@ -20,6 +20,14 @@ export const metadata: Metadata = {
     description:
       'Speed to lead is everything. Learn how top agents are using Instagram automation to qualify buyers and book showings 24/7.',
     type: 'article',
+    images: [
+      {
+        url: '/og-default.png',
+        width: 1200,
+        height: 630,
+        alt: 'Real Estate Lead Gen 2026: Automate Your Instagram DMs',
+      },
+    ],
     publishedTime: '2026-03-08',
     authors: ['PostEngageAI Team'],
   },

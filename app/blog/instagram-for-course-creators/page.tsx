@@ -22,6 +22,14 @@ export const metadata: Metadata = {
     description:
       "Launching a cohort and terrified it won't fill? Learn how course creators are using Instagram DM automation to go from waitlist to sold-out in 72 hours.",
     type: 'article',
+    images: [
+      {
+        url: '/blog/course-creators-cover.png',
+        width: 1200,
+        height: 630,
+        alt: 'Fill Cohorts via Instagram DM Automation',
+      },
+    ],
     publishedTime: '2026-03-05',
     authors: ['PostEngageAI Team'],
   },

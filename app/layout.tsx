@@ -14,10 +14,15 @@ import { TimeOnPageTracker } from '@/components/analytics/time-on-page-tracker';
 import { JsonLd } from '@/components/seo/json-ld';
 import { MicrosoftClarity } from '@/components/analytics/clarity';
 
-const inter = Inter({ subsets: ['latin'], variable: '--font-inter' });
+const inter = Inter({
+  subsets: ['latin'],
+  variable: '--font-inter',
+  display: 'swap',
+});
 const jetbrainsMono = JetBrains_Mono({
   subsets: ['latin'],
   variable: '--font-jetbrains',
+  display: 'swap',
 });
 
 export const metadata: Metadata = {
@@ -52,6 +57,14 @@ export const metadata: Metadata = {
     url: 'https://postengage.ai',
     siteName: 'PostEngage.ai',
     type: 'website',
+    images: [
+      {
+        url: '/og-default.png',
+        width: 1200,
+        height: 630,
+        alt: 'PostEngage.ai — AI Instagram Automation & DM Replies',
+      },
+    ],
   },
   twitter: {
     card: 'summary_large_image',

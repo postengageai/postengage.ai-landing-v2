@@ -12,11 +12,11 @@ import { useLandingConfig } from '@/hooks/use-landing-config';
 import { usePlatformStats } from '@/hooks/use-platform-stats';
 
 const AVATARS = [
-  '/indian-woman-fashion-creator.jpg',
-  '/asian-man-tech-youtuber.jpg',
-  '/latina-woman-entrepreneur.jpg',
-  '/professional-man-portrait.png',
-  '/business-woman-portrait.png',
+  { src: '/indian-woman-fashion-creator.jpg', alt: 'Indian fashion creator using PostEngage.ai' },
+  { src: '/asian-man-tech-youtuber.jpg', alt: 'Tech YouTuber automating Instagram replies' },
+  { src: '/latina-woman-entrepreneur.jpg', alt: 'Latina entrepreneur growing Instagram with automation' },
+  { src: '/professional-man-portrait.png', alt: 'Business owner using Instagram DM automation' },
+  { src: '/business-woman-portrait.png', alt: 'Creator automating Instagram engagement' },
 ];
 
 function AnimatedCounter({
@@ -125,6 +125,7 @@ export function HeroSection() {
               height={44}
               src='https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=1067654&theme=light&t=1769428844503'
               unoptimized
+              priority
             />
           </a>
 
@@ -217,14 +218,14 @@ export function HeroSection() {
             <div className='mt-10 pt-8 border-t border-border/60'>
               <div className='flex items-center gap-6 justify-center lg:justify-start flex-wrap'>
                 <div className='flex -space-x-2.5'>
-                  {AVATARS.map((src, i) => (
+                  {AVATARS.map((avatar, i) => (
                     <div
                       key={i}
                       className='relative w-9 h-9 rounded-full border-2 border-background overflow-hidden bg-secondary ring-1 ring-primary/20'
                     >
                       <Image
-                        src={src}
-                        alt={`Community member ${i + 1}`}
+                        src={avatar.src}
+                        alt={avatar.alt}
                         fill
                         className='object-cover'
                         sizes='36px'

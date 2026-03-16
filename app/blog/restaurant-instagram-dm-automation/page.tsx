@@ -30,6 +30,14 @@ export const metadata: Metadata = {
     description:
       'Empty tables on Tuesday nights? Learn how restaurants are using Instagram DM automation to fill slow periods, push specials, and increase reservations without paid ads.',
     type: 'article',
+    images: [
+      {
+        url: '/blog/restaurant-automation-cover.png',
+        width: 1200,
+        height: 630,
+        alt: 'Restaurant Instagram DM Automation: Fill Tables and Increase Reservations on Autopilot',
+      },
+    ],
     publishedTime: '2026-03-07',
     authors: ['PostEngageAI Team'],
   },

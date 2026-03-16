@@ -23,6 +23,14 @@ export const metadata: Metadata = {
     description:
       'Stop guessing which CTAs work. Here are 50 proven Instagram trigger words organized by niche — with caption templates you can copy and use today.',
     type: 'article',
+    images: [
+      {
+        url: '/og-default.png',
+        width: 1200,
+        height: 630,
+        alt: '50 Instagram Trigger Words That Convert: The Ultimate 2026 Swipe File',
+      },
+    ],
     publishedTime: '2026-03-07',
     authors: ['PostEngageAI Team'],
   },

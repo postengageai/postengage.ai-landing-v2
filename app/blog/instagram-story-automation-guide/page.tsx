@@ -26,6 +26,14 @@ export const metadata: Metadata = {
     description:
       'Stories have the highest engagement but the lowest retention. Learn how to use automation to capture leads before they swipe away.',
     type: 'article',
+    images: [
+      {
+        url: '/og-default.png',
+        width: 1200,
+        height: 630,
+        alt: 'Instagram Story Automation: How to Turn Views into Leads (2026)',
+      },
+    ],
     publishedTime: '2026-03-03',
     authors: ['PostEngageAI Team'],
   },

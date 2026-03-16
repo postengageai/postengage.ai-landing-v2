@@ -28,6 +28,14 @@ export const metadata: Metadata = {
     description:
       'New to PostEngage.ai? This step-by-step first-week guide will have you automating Instagram DMs and comments in under 30 minutes — no technical experience needed.',
     type: 'article',
+    images: [
+      {
+        url: '/blog/getting-started-cover.png',
+        width: 1200,
+        height: 630,
+        alt: 'Getting Started with PostEngage.ai: Your First Week Setup Guide',
+      },
+    ],
     publishedTime: '2026-03-08',
     authors: ['PostEngageAI Team'],
   },

@@ -23,6 +23,14 @@ export const metadata: Metadata = {
     description:
       "Podcasters with huge Instagram followings often have tiny listener counts. Here's the DM automation strategy that converts Instagram followers into podcast subscribers.",
     type: 'article',
+    images: [
+      {
+        url: '/blog/podcasters-instagram-cover.png',
+        width: 1200,
+        height: 630,
+        alt: 'The Podcaster',
+      },
+    ],
     publishedTime: '2026-03-08',
     authors: ['PostEngageAI Team'],
   },

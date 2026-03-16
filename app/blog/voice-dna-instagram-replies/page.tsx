@@ -23,6 +23,14 @@ export const metadata: Metadata = {
     description:
       'Discover how Voice DNA technology analyzes your writing style to create AI replies that sound indistinguishable from you — even to your closest followers.',
     type: 'article',
+    images: [
+      {
+        url: '/og-default.png',
+        width: 1200,
+        height: 630,
+        alt: 'Voice DNA: The Technology That Makes Your Instagram Bot Sound Exactly Like You',
+      },
+    ],
     publishedTime: '2026-03-09',
     authors: ['PostEngageAI Team'],
   },

@@ -359,7 +359,7 @@ export default function BlogPostPage() {
               <div className='mt-16 border-t pt-8'>
                 <div className='flex items-center gap-4'>
                   <Avatar className='h-12 w-12'>
-                    <AvatarImage src='/logo.jpeg' />
+                    <AvatarImage src='/logo.jpeg' alt='PostEngage.ai Team' />
                     <AvatarFallback>PE</AvatarFallback>
                   </Avatar>
                   <div>

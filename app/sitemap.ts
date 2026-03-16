@@ -139,8 +139,13 @@ const pagePriorities: Record<
   '/demo': { priority: 0.8, changeFrequency: 'monthly' },
   '/about': { priority: 0.6, changeFrequency: 'monthly' },
   '/contact': { priority: 0.6, changeFrequency: 'monthly' },
+  '/product': { priority: 0.8, changeFrequency: 'monthly' },
+  '/roadmap': { priority: 0.6, changeFrequency: 'weekly' },
+  '/changelog': { priority: 0.7, changeFrequency: 'weekly' },
+  '/security': { priority: 0.4, changeFrequency: 'yearly' },
   '/privacy': { priority: 0.3, changeFrequency: 'yearly' },
   '/terms': { priority: 0.3, changeFrequency: 'yearly' },
+  '/data-deletion': { priority: 0.2, changeFrequency: 'yearly' },
 };
 
 export default function sitemap(): MetadataRoute.Sitemap {

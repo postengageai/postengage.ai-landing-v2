@@ -30,6 +30,14 @@ export const metadata: Metadata = {
     description:
       'The link sticker gets clicks, but DMs start conversations. Learn how to combine Instagram Story link stickers with DM automation for maximum conversion.',
     type: 'article',
+    images: [
+      {
+        url: '/og-default.png',
+        width: 1200,
+        height: 630,
+        alt: 'Instagram Story Link Sticker + DM Automation: The Ultimate Traffic Combo',
+      },
+    ],
     publishedTime: '2026-03-07',
     authors: ['PostEngageAI Team'],
   },

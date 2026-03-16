@@ -22,6 +22,14 @@ export const metadata: Metadata = {
     description:
       "B2B SaaS brands are ignoring Instagram's 2 billion users. Learn the exact playbook for converting Instagram followers into trial signups using DM automation.",
     type: 'article',
+    images: [
+      {
+        url: '/og-default.png',
+        width: 1200,
+        height: 630,
+        alt: 'Instagram for SaaS: DM Signups Without Ads',
+      },
+    ],
     publishedTime: '2026-03-06',
     authors: ['PostEngageAI Team'],
   },

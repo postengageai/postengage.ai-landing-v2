@@ -26,6 +26,14 @@ export const metadata: Metadata = {
     description:
       'Stop chasing low-ticket sales. Learn how to use automated qualification to fill your calendar with high-value coaching prospects.',
     type: 'article',
+    images: [
+      {
+        url: '/og-default.png',
+        width: 1200,
+        height: 630,
+        alt: 'High-Ticket Sales: Selling $5k+ Coaching Programs in DMs',
+      },
+    ],
     publishedTime: '2026-03-14',
     authors: ['PostEngageAI Team'],
   },

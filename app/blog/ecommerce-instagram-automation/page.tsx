@@ -26,6 +26,14 @@ export const metadata: Metadata = {
     description:
       'Stop losing sales to "Link in Bio". Learn how to sync your Shopify catalog to Instagram and sell directly in DMs with AI.',
     type: 'article',
+    images: [
+      {
+        url: '/og-default.png',
+        width: 1200,
+        height: 630,
+        alt: 'E-commerce Automation 2026: Sync Shopify to Instagram DMs',
+      },
+    ],
     publishedTime: '2026-03-06',
     authors: ['PostEngageAI Team'],
   },

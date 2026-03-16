@@ -20,6 +20,14 @@ export const metadata: Metadata = {
     description:
       'Landing pages convert at 20%. DM conversations convert at 60%. Learn how to double your webinar show-up rate with automation.',
     type: 'article',
+    images: [
+      {
+        url: '/og-default.png',
+        width: 1200,
+        height: 630,
+        alt: 'Webinar Automation: How to Fill Seats Using Instagram DMs',
+      },
+    ],
     publishedTime: '2026-03-16',
     authors: ['PostEngageAI Team'],
   },

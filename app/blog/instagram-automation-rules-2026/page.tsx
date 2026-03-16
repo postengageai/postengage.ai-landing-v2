@@ -19,7 +19,7 @@ import { NewsletterForm } from '@/components/blog/newsletter-form';
 export const metadata: Metadata = {
   title: 'The Ultimate Guide to Instagram Automation Rules in 2026',
   description:
-    'How to automate your engagement without risking your account health. The definitive guide for modern creators on rate limits, authentic interactions, and safety.',
+    'Automate Instagram engagement safely in 2026. Learn rate limits, authentic interactions, and how to protect your account health.',
   openGraph: {
     title: 'The Ultimate Guide to Instagram Automation Rules in 2026',
     description:

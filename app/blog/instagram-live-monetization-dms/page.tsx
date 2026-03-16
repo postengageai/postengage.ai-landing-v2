@@ -21,6 +21,14 @@ export const metadata: Metadata = {
     description:
       "Instagram Lives generate massive engagement but most creators earn nothing from them. Here's how to use DM automation to convert live viewers into paying customers.",
     type: 'article',
+    images: [
+      {
+        url: '/blog/live-monetization-cover.png',
+        width: 1200,
+        height: 630,
+        alt: 'How to Monetize Instagram Lives with DM Automation (Step-by-Step)',
+      },
+    ],
     publishedTime: '2026-03-05',
     authors: ['PostEngageAI Team'],
   },
