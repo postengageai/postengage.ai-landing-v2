@@ -206,7 +206,7 @@ export default function TermsPage() {
               <div className='mt-4 p-4 bg-muted/50 rounded-lg'>
                 <p className='font-medium text-foreground'>PostEngageAI</p>
                 <p className='text-muted-foreground text-sm mt-1'>
-                  Email: postengage.ai@gmail.com
+                  Email: support@postengage.ai
                 </p>
                 <p className='text-muted-foreground text-sm'>
                   Website: https://postengage.ai
@@ -222,10 +222,10 @@ export default function TermsPage() {
               <p className='text-muted-foreground mt-4'>
                 <strong className='text-foreground'>Email:</strong>{' '}
                 <a
-                  href='mailto:postengage.ai@gmail.com'
+                  href='mailto:support@postengage.ai'
                   className='text-primary hover:underline'
                 >
-                  postengage.ai@gmail.com
+                  support@postengage.ai
                 </a>
               </p>
             </div>

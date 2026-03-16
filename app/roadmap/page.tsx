@@ -133,7 +133,7 @@ export default function RoadmapPage() {
                 based on user feedback and technical constraints. Want to
                 influence what we build next?{' '}
                 <a
-                  href='mailto:postengage.ai@gmail.com'
+                  href='mailto:support@postengage.ai'
                   className='text-primary hover:underline'
                 >
                   Tell us what matters to you

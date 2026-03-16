@@ -89,7 +89,7 @@ export default function DataDeletionPage() {
               <div className='rounded-lg bg-muted/50 p-6 font-mono text-sm'>
                 <p>
                   <strong className='text-foreground'>To:</strong>{' '}
-                  postengage.ai@gmail.com
+                  support@postengage.ai
                 </p>
                 <p className='mt-2'>
                   <strong className='text-foreground'>Subject:</strong> Data

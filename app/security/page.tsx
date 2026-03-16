@@ -197,10 +197,10 @@ export default function SecurityPage() {
               and protect your account.
             </p>
             <a
-              href='mailto:postengage.ai@gmail.com'
+              href='mailto:support@postengage.ai'
               className='text-primary hover:underline'
             >
-              postengage.ai@gmail.com
+              support@postengage.ai
             </a>
           </div>
         </section>
