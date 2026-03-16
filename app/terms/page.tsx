@@ -1,8 +1,22 @@
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
+  title: 'Terms of Service — PostEngage.ai',
+  description:
+    'Read the PostEngage.ai terms of service. Understand your rights and responsibilities when using our platform.',
   alternates: {
     canonical: 'https://postengage.ai/terms',
+  },
+  openGraph: {
+    title: 'Terms of Service — PostEngage.ai',
+    description: 'Read the PostEngage.ai terms of service.',
+    url: 'https://postengage.ai/terms',
+    siteName: 'PostEngage.ai',
+    type: 'website',
+  },
+  robots: {
+    index: false,
+    follow: false,
   },
 };
 

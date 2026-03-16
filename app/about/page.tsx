@@ -1,8 +1,25 @@
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
+  title: 'About — PostEngage.ai',
+  description:
+    'PostEngage.ai is an AI-powered Instagram automation platform for creators and businesses in 21 countries. Learn who we are and why we built it.',
   alternates: {
     canonical: 'https://postengage.ai/about',
+  },
+  openGraph: {
+    title: 'About PostEngage.ai',
+    description:
+      'AI-powered Instagram automation for creators and businesses in 21 countries. Your voice, amplified — while you sleep.',
+    url: 'https://postengage.ai/about',
+    siteName: 'PostEngage.ai',
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'About PostEngage.ai',
+    description:
+      'AI-powered Instagram automation for creators and businesses in 21 countries. Your voice, amplified — while you sleep.',
   },
 };
 

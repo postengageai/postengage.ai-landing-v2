@@ -12,12 +12,12 @@ import { TableOfContents } from '@/components/blog/table-of-contents';
 import { NewsletterForm } from '@/components/blog/newsletter-form';
 
 export const metadata: Metadata = {
-  title: 'Stop Using Link in Bio: Why DM Automation Conversions Are 5x Higher',
+  title: 'DM Automation Converts 5x vs Link in Bio',
   description:
     'The "Link in Bio" is dead. Discover why top creators are switching to DM automation to skyrocket their sales and engagement.',
   openGraph: {
     title:
-      'Stop Using Link in Bio: Why DM Automation Conversions Are 5x Higher',
+      'DM Automation Converts 5x vs Link in Bio',
     description:
       'The "Link in Bio" is dead. Discover why top creators are switching to DM automation to skyrocket their sales and engagement.',
     url: 'https://postengage.ai/blog/stop-using-link-in-bio',
@@ -38,7 +38,7 @@ export const metadata: Metadata = {
   twitter: {
     card: 'summary_large_image',
     title:
-      'Stop Using Link in Bio: Why DM Automation Conversions Are 5x Higher',
+      'DM Automation Converts 5x vs Link in Bio',
     description:
       'The "Link in Bio" is dead. Discover why top creators are switching to DM automation.',
     images: ['/blog/link-in-bio-dead-cover.png'],
@@ -51,7 +51,7 @@ export default function BlogPostPage() {
     '@context': 'https://schema.org',
     '@type': 'BlogPosting',
     headline:
-      'Stop Using Link in Bio: Why DM Automation Conversions Are 5x Higher',
+      'DM Automation Converts 5x vs Link in Bio',
     image: ['/blog/link-in-bio-dead-cover.png'],
     datePublished: '2026-03-01T09:00:00.000Z',
     dateModified: '2026-03-01T09:00:00.000Z',
@@ -84,7 +84,7 @@ export default function BlogPostPage() {
               Back to Blog
             </Link>
             <SocialShareButtons
-              title='Stop Using Link in Bio: Why DM Automation Conversions Are 5x Higher'
+              title='DM Automation Converts 5x vs Link in Bio'
               url='https://postengage.ai/blog/stop-using-link-in-bio'
             />
           </div>

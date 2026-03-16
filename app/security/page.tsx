@@ -1,8 +1,25 @@
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
+  title: 'Security — PostEngage.ai',
+  description:
+    'PostEngage.ai is built with enterprise-grade security. Instagram OAuth, encrypted data, and responsible AI practices.',
   alternates: {
     canonical: 'https://postengage.ai/security',
+  },
+  openGraph: {
+    title: 'Security at PostEngage.ai',
+    description:
+      'Enterprise-grade security: Instagram OAuth, encrypted data, and responsible AI practices.',
+    url: 'https://postengage.ai/security',
+    siteName: 'PostEngage.ai',
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Security at PostEngage.ai',
+    description:
+      'Enterprise-grade security: Instagram OAuth, encrypted data, and responsible AI practices.',
   },
 };
 

@@ -12,12 +12,12 @@ import { TableOfContents } from '@/components/blog/table-of-contents';
 import { NewsletterForm } from '@/components/blog/newsletter-form';
 
 export const metadata: Metadata = {
-  title: 'How Travel Bloggers Monetize Instagram DMs While Actually Traveling',
+  title: 'Travel Bloggers: Monetize Instagram DMs',
   description:
     'Learn how travel bloggers and lifestyle influencers use Instagram DM automation to earn income from home services, affiliate commissions, and sponsorships without stopping their travels.',
   openGraph: {
     title:
-      'How Travel Bloggers Monetize Instagram DMs While Actually Traveling',
+      'Travel Bloggers: Monetize Instagram DMs',
     description:
       'Learn how travel bloggers and lifestyle influencers use Instagram DM automation to earn income from home services, affiliate commissions, and sponsorships without stopping their travels.',
     url: 'https://postengage.ai/blog/instagram-automation-travel-bloggers',
@@ -38,7 +38,7 @@ export const metadata: Metadata = {
   twitter: {
     card: 'summary_large_image',
     title:
-      'How Travel Bloggers Monetize Instagram DMs While Actually Traveling',
+      'Travel Bloggers: Monetize Instagram DMs',
     description:
       'Automate DM income streams while traveling the world with Instagram DM automation.',
     images: ['/blog/instagram-automation-travel-bloggers-cover.png'],
@@ -51,7 +51,7 @@ export default function BlogPostPage() {
     '@context': 'https://schema.org',
     '@type': 'BlogPosting',
     headline:
-      'How Travel Bloggers Monetize Instagram DMs While Actually Traveling',
+      'Travel Bloggers: Monetize Instagram DMs',
     image: ['/blog/instagram-automation-travel-bloggers-cover.png'],
     datePublished: '2026-03-05T09:00:00.000Z',
     dateModified: '2026-03-05T09:00:00.000Z',
@@ -82,7 +82,7 @@ export default function BlogPostPage() {
               Back to Blog
             </Link>
             <SocialShareButtons
-              title='How Travel Bloggers Monetize Instagram DMs While Actually Traveling'
+              title='Travel Bloggers: Monetize Instagram DMs'
               url='https://postengage.ai/blog/instagram-automation-travel-bloggers'
             />
           </div>

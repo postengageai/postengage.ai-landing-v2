@@ -12,12 +12,12 @@ import { TableOfContents } from '@/components/blog/table-of-contents';
 import { NewsletterForm } from '@/components/blog/newsletter-form';
 
 export const metadata: Metadata = {
-  title: 'Content Creator Agencies: Scaling Client Accounts With DM Automation',
+  title: 'DM Automation for Content Creator Agencies',
   description:
     'Learn how agencies manage 10+ creator accounts and scale DM engagement with automation without losing authenticity.',
   openGraph: {
     title:
-      'Content Creator Agencies: Scaling Client Accounts With DM Automation',
+      'DM Automation for Content Creator Agencies',
     description:
       'Learn how agencies manage 10+ creator accounts and scale DM engagement with automation without losing authenticity.',
     url: 'https://postengage.ai/blog/instagram-automation-content-creator-agencies',
@@ -38,7 +38,7 @@ export const metadata: Metadata = {
   twitter: {
     card: 'summary_large_image',
     title:
-      'Content Creator Agencies: Scaling Client Accounts With DM Automation',
+      'DM Automation for Content Creator Agencies',
     description: 'Manage 10+ creator accounts with DM automation at scale.',
     images: ['/blog/instagram-automation-content-creator-agencies-cover.png'],
     creator: '@postengageai',
@@ -50,7 +50,7 @@ export default function BlogPostPage() {
     '@context': 'https://schema.org',
     '@type': 'BlogPosting',
     headline:
-      'Content Creator Agencies: Scaling Client Accounts With DM Automation',
+      'DM Automation for Content Creator Agencies',
     image: ['/blog/instagram-automation-content-creator-agencies-cover.png'],
     datePublished: '2026-03-04T09:00:00.000Z',
     dateModified: '2026-03-04T09:00:00.000Z',
@@ -81,7 +81,7 @@ export default function BlogPostPage() {
               Back to Blog
             </Link>
             <SocialShareButtons
-              title='Content Creator Agencies: Scaling Client Accounts With DM Automation'
+              title='DM Automation for Content Creator Agencies'
               url='https://postengage.ai/blog/instagram-automation-content-creator-agencies'
             />
           </div>

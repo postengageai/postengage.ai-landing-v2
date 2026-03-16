@@ -1,8 +1,23 @@
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
+  title: 'Privacy Policy — PostEngage.ai',
+  description:
+    'How PostEngage.ai collects, uses, and protects your data. Read our full privacy policy.',
   alternates: {
     canonical: 'https://postengage.ai/privacy',
+  },
+  openGraph: {
+    title: 'Privacy Policy — PostEngage.ai',
+    description:
+      'How PostEngage.ai collects, uses, and protects your data.',
+    url: 'https://postengage.ai/privacy',
+    siteName: 'PostEngage.ai',
+    type: 'website',
+  },
+  robots: {
+    index: false,
+    follow: false,
   },
 };
 

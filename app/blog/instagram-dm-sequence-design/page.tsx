@@ -19,12 +19,12 @@ import { TableOfContents } from '@/components/blog/table-of-contents';
 import { NewsletterForm } from '@/components/blog/newsletter-form';
 
 export const metadata: Metadata = {
-  title: 'How to Design High-Converting Instagram DM Sequences (Step-by-Step)',
+  title: 'High-Converting Instagram DM Sequences',
   description:
     'A complete framework for building multi-step DM flows that move prospects from curious to converted.',
   openGraph: {
     title:
-      'How to Design High-Converting Instagram DM Sequences (Step-by-Step)',
+      'High-Converting Instagram DM Sequences',
     description:
       'A complete framework for building multi-step DM flows that move prospects from curious to converted.',
     url: 'https://postengage.ai/blog/instagram-dm-sequence-design',
@@ -45,7 +45,7 @@ export const metadata: Metadata = {
   twitter: {
     card: 'summary_large_image',
     title:
-      'How to Design High-Converting Instagram DM Sequences (Step-by-Step)',
+      'High-Converting Instagram DM Sequences',
     description: 'Build multi-step DM flows that convert.',
     images: ['/blog/instagram-dm-sequence-design-cover.png'],
     creator: '@postengageai',
@@ -57,7 +57,7 @@ export default function BlogPostPage() {
     '@context': 'https://schema.org',
     '@type': 'BlogPosting',
     headline:
-      'How to Design High-Converting Instagram DM Sequences (Step-by-Step)',
+      'High-Converting Instagram DM Sequences',
     image: ['/blog/instagram-dm-sequence-design-cover.png'],
     datePublished: '2026-03-01T09:00:00.000Z',
     dateModified: '2026-03-01T09:00:00.000Z',
@@ -87,7 +87,7 @@ export default function BlogPostPage() {
               Back to Blog
             </Link>
             <SocialShareButtons
-              title='How to Design High-Converting Instagram DM Sequences (Step-by-Step)'
+              title='High-Converting Instagram DM Sequences'
               url='https://postengage.ai/blog/instagram-dm-sequence-design'
             />
           </div>
@@ -110,7 +110,7 @@ export default function BlogPostPage() {
               </span>
             </div>
             <h1 className='mb-6 text-4xl font-extrabold tracking-tight sm:text-5xl lg:text-6xl bg-gradient-to-r from-foreground via-foreground/90 to-muted-foreground bg-clip-text text-transparent'>
-              How to Design High-Converting Instagram DM Sequences
+              High-Converting Instagram DM Sequences
               (Step-by-Step)
             </h1>
             <p className='mx-auto max-w-2xl text-xl text-muted-foreground leading-relaxed'>

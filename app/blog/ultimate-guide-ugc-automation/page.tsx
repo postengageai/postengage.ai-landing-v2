@@ -18,12 +18,12 @@ import { SocialShareButtons } from '@/components/blog/social-share-buttons';
 import { NewsletterForm } from '@/components/blog/newsletter-form';
 
 export const metadata: Metadata = {
-  title: 'The Ultimate Guide to UGC Automation: Turn Customers into Advocates',
+  title: 'UGC Automation: Customers into Advocates',
   description:
     'User Generated Content (UGC) is the most powerful social proof. Learn how to automate rewards for Story mentions, post tags, and viral sharing.',
   openGraph: {
     title:
-      'The Ultimate Guide to UGC Automation: Turn Customers into Advocates',
+      'UGC Automation: Customers into Advocates',
     description:
       'User Generated Content (UGC) is the most powerful social proof. Learn how to automate rewards for Story mentions, post tags, and viral sharing.',
     type: 'article',
@@ -40,7 +40,7 @@ export const metadata: Metadata = {
   twitter: {
     card: 'summary_large_image',
     title:
-      'The Ultimate Guide to UGC Automation: Turn Customers into Advocates',
+      'UGC Automation: Customers into Advocates',
     description:
       'User Generated Content (UGC) is the most powerful social proof. Learn how to automate rewards for Story mentions, post tags, and viral sharing.',
     images: ['/blog/ugc-automation-guide.jpg'],
@@ -300,7 +300,7 @@ export default function BlogPost() {
                 </p>
                 <SocialShareButtons
                   url='https://postengage.ai/blog/ultimate-guide-ugc-automation'
-                  title='The Ultimate Guide to UGC Automation: Turn Customers into Advocates'
+                  title='UGC Automation: Customers into Advocates'
                 />
               </div>
             </aside>

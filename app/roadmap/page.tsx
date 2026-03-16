@@ -1,8 +1,25 @@
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
+  title: 'Roadmap — PostEngage.ai',
+  description:
+    "See what's coming next on PostEngage.ai. New features, integrations, and improvements we're actively building for creators and businesses.",
   alternates: {
     canonical: 'https://postengage.ai/roadmap',
+  },
+  openGraph: {
+    title: 'PostEngage.ai Product Roadmap',
+    description:
+      "See what's coming next on PostEngage.ai — new features, integrations, and improvements.",
+    url: 'https://postengage.ai/roadmap',
+    siteName: 'PostEngage.ai',
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'PostEngage.ai Product Roadmap',
+    description:
+      "See what's coming next on PostEngage.ai — new features, integrations, and improvements.",
   },
 };
 
