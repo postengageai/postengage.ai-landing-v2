@@ -19,16 +19,16 @@ import { useTrackSectionView } from '@/hooks/use-track-section-view';
 // Fallback costs if loading
 const DEFAULT_COSTS = {
   REPLY_COMMENT: 0,
-  AI_REPLY_COMMENT: 6,
+  AI_REPLY_COMMENT: 9,
   SEND_DM: 0,
-  AI_SEND_DM: 13,
+  AI_SEND_DM: 19,
 };
 
 export function PricingPreviewSection() {
   const ref = useTrackSectionView('pricing_section');
   const { data: config, isLoading } = useLandingConfig();
   const costs = config?.costs || DEFAULT_COSTS;
-  const signupBonus = config?.signup_bonus || 500;
+  const signupBonus = config?.signup_bonus || 200;
 
   return (
     <section

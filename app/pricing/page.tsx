@@ -21,18 +21,18 @@ import { Skeleton } from '@/components/ui/skeleton';
 import { APP_URL } from '@/lib/constants';
 
 const DEFAULT_COSTS = {
-  REPLY_COMMENT: 2,
-  AI_REPLY_COMMENT: 4,
-  SEND_DM: 2,
-  AI_SEND_DM: 4,
-  PRIVATE_REPLY: 2,
-  AI_PRIVATE_REPLY: 4,
+  REPLY_COMMENT: 0,
+  AI_REPLY_COMMENT: 9,
+  SEND_DM: 0,
+  AI_SEND_DM: 19,
+  PRIVATE_REPLY: 0,
+  AI_PRIVATE_REPLY: 13,
 };
 
 export default function PricingPage() {
   const { data: landingConfig, isLoading } = useLandingConfig();
   const costs = landingConfig?.costs || DEFAULT_COSTS;
-  const signupBonus = landingConfig?.signup_bonus || 500;
+  const signupBonus = landingConfig?.signup_bonus ?? 200;
   const aiActions = Math.floor(signupBonus / costs.AI_REPLY_COMMENT);
   const aiActionsAtMaxCost = Math.floor(signupBonus / costs.AI_SEND_DM);
 
@@ -41,21 +41,21 @@ export default function PricingPage() {
       persona: 'Small Creator',
       followers: '5K-10K',
       commentsPerDay: '10-20',
-      creditsPerMonth: '~300',
+      creditsPerMonth: '~270',
       recommendation: 'Starter Pack',
     },
     {
       persona: 'Growing Influencer',
       followers: '25K-50K',
       commentsPerDay: '40-80',
-      creditsPerMonth: '~1,200',
+      creditsPerMonth: '~1,800',
       recommendation: 'Pro Pack',
     },
     {
       persona: 'Brand / Agency',
       followers: '100K+',
       commentsPerDay: '150+',
-      creditsPerMonth: '~5,000+',
+      creditsPerMonth: '~6,000+',
       recommendation: 'Business Pack',
     },
   ];
