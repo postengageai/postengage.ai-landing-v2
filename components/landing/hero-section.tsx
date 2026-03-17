@@ -12,11 +12,26 @@ import { useLandingConfig } from '@/hooks/use-landing-config';
 import { usePlatformStats } from '@/hooks/use-platform-stats';
 
 const AVATARS = [
-  { src: '/indian-woman-fashion-creator.jpg', alt: 'Indian fashion creator using PostEngage.ai' },
-  { src: '/asian-man-tech-youtuber.jpg', alt: 'Tech YouTuber automating Instagram replies' },
-  { src: '/latina-woman-entrepreneur.jpg', alt: 'Latina entrepreneur growing Instagram with automation' },
-  { src: '/professional-man-portrait.png', alt: 'Business owner using Instagram DM automation' },
-  { src: '/business-woman-portrait.png', alt: 'Creator automating Instagram engagement' },
+  {
+    src: '/indian-woman-fashion-creator.jpg',
+    alt: 'Indian fashion creator using PostEngage.ai',
+  },
+  {
+    src: '/asian-man-tech-youtuber.jpg',
+    alt: 'Tech YouTuber automating Instagram replies',
+  },
+  {
+    src: '/latina-woman-entrepreneur.jpg',
+    alt: 'Latina entrepreneur growing Instagram with automation',
+  },
+  {
+    src: '/professional-man-portrait.png',
+    alt: 'Business owner using Instagram DM automation',
+  },
+  {
+    src: '/business-woman-portrait.png',
+    alt: 'Creator automating Instagram engagement',
+  },
 ];
 
 function AnimatedCounter({
@@ -57,7 +72,7 @@ function AnimatedCounter({
 export function HeroSection() {
   const { data: landingConfig } = useLandingConfig();
   const { data: platformStats } = usePlatformStats();
-  const signupBonus = landingConfig?.signup_bonus ?? 500;
+  const signupBonus = landingConfig?.signup_bonus ?? 200;
   const [ignoredCount, setIgnoredCount] = useState(2847);
 
   useEffect(() => {

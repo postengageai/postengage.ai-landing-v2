@@ -11,7 +11,7 @@ export function LiveReplyDemo() {
   const [step, setStep] = useState(0);
   const [currentExample, setCurrentExample] = useState(0);
   const { data: landingConfig } = useLandingConfig();
-  const signupBonus = landingConfig?.signup_bonus ?? 500;
+  const signupBonus = landingConfig?.signup_bonus ?? 200;
 
   const EXAMPLES = [
     {

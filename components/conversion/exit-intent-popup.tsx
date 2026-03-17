@@ -13,7 +13,7 @@ export function ExitIntentPopup() {
   const [isVisible, setIsVisible] = useState(false);
   const [hasShown, setHasShown] = useState(false);
   const { data: landingConfig } = useLandingConfig();
-  const signupBonus = landingConfig?.signup_bonus || 500;
+  const signupBonus = landingConfig?.signup_bonus || 200;
 
   const handleMouseLeave = useCallback(
     (e: MouseEvent) => {
