@@ -36,27 +36,34 @@ export default function PricingPage() {
   const aiActions = Math.floor(signupBonus / costs.AI_REPLY_COMMENT);
   const aiActionsAtMaxCost = Math.floor(signupBonus / costs.AI_SEND_DM);
 
+  // creditsPerMonth = estimated AI replies per month × AI_REPLY_COMMENT cost
+  // (Not all comments get AI replies — only high-intent ones)
+  // Small creator: ~30 AI replies/mo | Influencer: ~200/mo | Brand: ~700/mo
+  const starterPack = landingConfig?.packs?.[0];
+  const proPack = landingConfig?.packs?.[1];
+  const businessPack = landingConfig?.packs?.[2];
+
   const usageExamples = [
     {
       persona: 'Small Creator',
       followers: '5K-10K',
       commentsPerDay: '10-20',
-      creditsPerMonth: '~270',
-      recommendation: 'Starter Pack',
+      creditsPerMonth: `~${(30 * costs.AI_REPLY_COMMENT).toLocaleString()}`,
+      recommendation: starterPack?.name ?? 'Starter Pack',
     },
     {
       persona: 'Growing Influencer',
       followers: '25K-50K',
       commentsPerDay: '40-80',
-      creditsPerMonth: '~1,800',
-      recommendation: 'Pro Pack',
+      creditsPerMonth: `~${(200 * costs.AI_REPLY_COMMENT).toLocaleString()}`,
+      recommendation: proPack?.name ?? 'Pro Pack',
     },
     {
       persona: 'Brand / Agency',
       followers: '100K+',
       commentsPerDay: '150+',
-      creditsPerMonth: '~6,000+',
-      recommendation: 'Business Pack',
+      creditsPerMonth: `~${(700 * costs.AI_REPLY_COMMENT).toLocaleString()}+`,
+      recommendation: businessPack?.name ?? 'Business Pack',
     },
   ];
 
