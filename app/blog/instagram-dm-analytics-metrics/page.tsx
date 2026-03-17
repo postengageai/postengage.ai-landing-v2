@@ -2,162 +2,118 @@ import { Metadata } from 'next';
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
-import {
-  ArrowRight,
-  Calendar,
-  Clock,
-  Zap,
-} from 'lucide-react';
-import { LandingHeader } from '@/components/landing/landing-header';
-import { LandingFooter } from '@/components/landing/landing-footer';
-import { TableOfContents } from '@/components/blog/table-of-contents';
-import { SocialShareButtons } from '@/components/blog/social-share-buttons';
-import { NewsletterForm } from '@/components/blog/newsletter-form';
+import { LandingHeader } from '@/components/landing-header';
+import { LandingFooter } from '@/components/landing-footer';
+import { TableOfContents } from '@/components/table-of-contents';
+import { SocialShareButtons } from '@/components/social-share-buttons';
+import { NewsletterForm } from '@/components/newsletter-form';
 
 export const metadata: Metadata = {
-  title: 'Instagram DM Analytics: The 6 Metrics That Actually Matter',
-  description: 'Forget reach and impressions. The brands winning with DM automation obsess over 6 specific metrics. Here is what to track and how to benchmark.',
-  openGraph: {
-    title: 'Instagram DM Analytics: The 6 Metrics That Actually Matter',
-    description: 'Forget reach and impressions. The brands winning with DM automation obsess over 6 specific metrics. Here is what to track and how to benchmark.',
-    type: 'article',
-    url: 'https://postengage.ai/blog/instagram-dm-analytics-metrics',
-    images: [{ url: '/blog/instagram-dm-analytics-metrics-cover.png', width: 1200, height: 630, alt: 'Instagram DM Analytics: The 6 Metrics That Actually Matter' }],
-  },
-  twitter: {
-    card: 'summary_large_image',
-    title: 'Instagram DM Analytics: The 6 Metrics That Actually Matter',
-    description: 'Forget reach and impressions. The brands winning with DM automation obsess over 6 specific metrics. Here is what to track and how to benchmark.',
-    images: ['/blog/instagram-dm-analytics-metrics-cover.png'],
-  },
+  title: 'Instagram DM Analytics: The Metrics That Actually Tell You What Is Working | PostEngage Blog',
+  description: 'A complete guide to tracking and interpreting Instagram DM automation analytics, from basic open rates to advanced revenue attribution and funnel analysis.',
 };
 
 export default function BlogPost() {
   const tocItems = [
-    { id: 'why-it-matters', title: 'Why This Matters in 2026' },
-    { id: 'the-core-strategy', title: 'The Core Strategy' },
-    { id: 'practical-implementation', title: 'Practical Implementation' },
-    { id: 'advanced-tips', title: 'Advanced Tips' },
+    { id: 'analytics-foundation', title: 'Building Your Analytics Foundation' },
+    { id: 'top-funnel-metrics', title: 'Top-of-Funnel Metrics: Measuring Reach and Engagement' },
+    { id: 'mid-funnel-metrics', title: 'Mid-Funnel Metrics: Measuring Conversion' },
+    { id: 'revenue-metrics', title: 'Revenue Metrics: Connecting DMs to Dollars' },
+    { id: 'analytics-workflow', title: 'The Weekly Analytics Review Workflow' },
   ];
-
   return (
-    <div className='min-h-screen bg-background text-foreground font-sans selection:bg-primary/20'>
+    <div className="min-h-screen bg-white">
       <LandingHeader />
-      <main className='relative pt-32 pb-24'>
-        <div className='absolute inset-0 -z-10 overflow-hidden'>
-          <div className='absolute top-0 left-1/2 -translate-x-1/2 w-full h-[600px] bg-gradient-to-b from-primary/5 via-transparent to-transparent opacity-60' />
+      <main>
+        <div className="bg-linear-to-b from-violet-50 to-white border-b border-gray-100">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+            <div className="max-w-3xl mx-auto text-center">
+              <Badge className="mb-4 bg-violet-100 text-violet-700 hover:bg-violet-100">Analytics</Badge>
+              <h1 className="text-4xl font-bold text-gray-900 mb-4">Instagram DM Analytics: The Metrics That Actually Tell You What Is Working</h1>
+              <p className="text-xl text-gray-600 mb-6">A complete guide to tracking and interpreting Instagram DM automation analytics, from basic open rates to advanced revenue attribution and funnel analysis.</p>
+              <div className="flex items-center justify-center gap-4 text-sm text-gray-500">
+                <span>May 13, 2026</span><span>·</span><span>9 min read</span>
+              </div>
+            </div>
+          </div>
         </div>
-        <div className='container mx-auto px-4 max-w-7xl'>
-          <div className='grid grid-cols-1 lg:grid-cols-12 gap-12'>
-            <aside className='hidden lg:block lg:col-span-3 lg:sticky lg:top-32 lg:self-start space-y-8'>
-              <div className='flex items-center gap-2 text-sm text-muted-foreground mb-4'>
-                <Link href='/blog' className='hover:text-primary transition-colors'>Blog</Link>
-                <span>/</span>
-                <span className='text-foreground font-medium'>Analytics</span>
-              </div>
-              <TableOfContents items={tocItems} />
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+          <div className="grid grid-cols-12 gap-8">
+            <aside className="hidden lg:block lg:col-span-3">
+              <div className="sticky top-24"><TableOfContents items={tocItems} /></div>
             </aside>
+            <article className="col-span-12 lg:col-span-7">
 
-            <article className='lg:col-span-7 prose prose-lg dark:prose-invert max-w-none'>
-              <header className='mb-12 not-prose'>
-                <Badge variant='secondary' className='mb-6 text-sm font-medium px-3 py-1'>
-                  Analytics
-                </Badge>
-                <h1 className='text-4xl md:text-5xl font-extrabold tracking-tight mb-6 leading-tight'>
-                  Instagram DM Analytics: The 6 Metrics That Actually Matter
-                </h1>
-                <div className='flex items-center gap-6 text-muted-foreground'>
-                  <div className='flex items-center gap-2'>
-                    <div className='h-10 w-10 rounded-full bg-primary/10 flex items-center justify-center'>
-                      <Zap className='h-5 w-5 text-primary' />
-                    </div>
-                    <div>
-                      <p className='text-sm font-medium text-foreground'>PostEngageAI Team</p>
-                      <p className='text-xs'>Automation Experts</p>
-                    </div>
-                  </div>
-                  <div className='flex items-center gap-2 text-sm'>
-                    <Calendar className='h-4 w-4' />
-                    <span>April 24, 2026</span>
-                  </div>
-                  <div className='flex items-center gap-2 text-sm'>
-                    <Clock className='h-4 w-4' />
-                    <span>6 min read</span>
-                  </div>
-                </div>
-              </header>
-
-              <div className='relative w-full aspect-[21/9] rounded-2xl overflow-hidden mb-12 bg-muted'>
-                <div className='absolute inset-0 flex items-center justify-center bg-gradient-to-br from-gray-900 to-gray-800 text-white'>
-                  <div className='text-center p-8'>
-                    <Zap className='h-16 w-16 mx-auto mb-4 text-primary/80' />
-                    <p className='text-xl font-medium text-white/80'>Analytics</p>
-                  </div>
-                </div>
+          <section id="analytics-foundation" className="mb-12">
+            <h2 className="text-2xl font-bold text-gray-900 mb-4">Building Your Analytics Foundation</h2>
+              <p className="text-gray-700 mb-4 leading-relaxed">Most Instagram automation platforms provide analytics dashboards that show open rates, response rates, and conversation volumes. These are a starting point. Building a real analytics foundation means connecting your Instagram DM data to your broader marketing stack: email platform, CRM, and if relevant, your e-commerce or booking system.</p>
+              <p className="text-gray-700 mb-4 leading-relaxed">The principle: a DM conversation that generates a lead is only valuable if you can trace that lead forward through your funnel. If someone enters your DM flow, gives you their email, joins your list, and buys 30 days later — that revenue should be attributed to the DM automation that started the journey. Without the connection between platforms, you are flying blind on true ROI.</p>
+              <p className="text-gray-700 mb-4 leading-relaxed">Analytics setup checklist: configure UTM parameters on every link sent via DM automation, tag DM-sourced contacts in your email platform with a DM-source tag, set up a 90-day attribution window for DM-originated leads, and establish a monthly reporting process that pulls data from DM platform, email platform, and revenue data together.</p>
+              <p className="font-semibold text-gray-800 mt-6 mb-2">Analytics setup checklist:</p>
+              <ul className="list-disc list-inside space-y-2 text-gray-700 mb-4">
+                <li>Configure UTM parameters on all DM automation links</li>
+                <li>Tag DM-sourced contacts in email platform and CRM</li>
+                <li>Set 90-day attribution window for DM-originated leads</li>
+                <li>Connect DM platform analytics to revenue tracking</li>
+                <li>Establish monthly cross-platform reporting process</li>
+              </ul>
+          </section>
+          <section id="top-funnel-metrics" className="mb-12">
+            <h2 className="text-2xl font-bold text-gray-900 mb-4">Top-of-Funnel Metrics: Measuring Reach and Engagement</h2>
+              <p className="text-gray-700 mb-4 leading-relaxed">Keyword trigger rate: the percentage of post commenters who use your specific keyword trigger vs. commenting generally. A high trigger rate (15-30% of commenters using the keyword) indicates your CTA is clear and compelling. A low rate (under 5%) suggests the keyword is unclear, buried in the caption, or the offer is not compelling.</p>
+              <p className="text-gray-700 mb-4 leading-relaxed">DM open rate: the percentage of automated DMs that are opened by recipients. Standard range: 80-92%. Below 80% may indicate deliverability issues or that you are automating to accounts that are not actively using Instagram.</p>
+              <p className="text-gray-700 mb-4 leading-relaxed">First response rate: the percentage of DM recipients who reply to your first automated message. This is the single most important early-funnel metric — it tells you whether your opening message is engaging or ignored. Benchmark: 25-45%. This metric is more actionable than open rate because you can directly influence it by improving your opening message.</p>
+              <div className="bg-violet-50 border border-violet-200 rounded-xl p-6 my-6">
+                <h3 className="font-bold text-violet-900 mb-3">Top-Funnel Metric Reference</h3>
+                <ul className="space-y-2">
+                  <li className="flex items-start gap-2 text-sm text-violet-800"><span>&#x2192;</span>Keyword trigger rate: 15-30% of commenters is strong</li>
+                  <li className="flex items-start gap-2 text-sm text-violet-800"><span>&#x2192;</span>DM open rate: 80-92% is typical, above 88% is excellent</li>
+                  <li className="flex items-start gap-2 text-sm text-violet-800"><span>&#x2192;</span>First response rate: 25-45% is typical, above 40% is excellent</li>
+                  <li className="flex items-start gap-2 text-sm text-violet-800"><span>&#x2192;</span>Sequence completion rate: 55-75% reaching final message is good</li>
+                  <li className="flex items-start gap-2 text-sm text-violet-800"><span>&#x2192;</span>Drop-off analysis: identify which step loses the most people</li>
+                </ul>
               </div>
-
-              <div className='lead text-xl text-muted-foreground mb-12 leading-relaxed'>
-                Forget reach and impressions. The brands winning with DM automation obsess over 6 specific metrics. Here is what to track and how to benchmark. This guide covers everything you need to know to get started and see results quickly.
+          </section>
+          <section id="mid-funnel-metrics" className="mb-12">
+            <h2 className="text-2xl font-bold text-gray-900 mb-4">Mid-Funnel Metrics: Measuring Conversion</h2>
+              <p className="text-gray-700 mb-4 leading-relaxed">Lead capture rate: percentage of DM flow entrants who provide their email. Benchmark: 18-35%. This is the primary mid-funnel metric for most businesses — it measures how effectively your automation converts interest into an owned contact you can market to across channels.</p>
+              <p className="text-gray-700 mb-4 leading-relaxed">Qualification rate: for businesses with multi-step qualification flows, the percentage of leads who meet your ideal customer profile criteria. Track this alongside lead capture rate — a high lead capture rate with a low qualification rate means you are capturing lots of contacts who will not buy.</p>
+              <p className="text-gray-700 mb-4 leading-relaxed">Sequence engagement score: an aggregate measure of how engaged a lead is across all messages in your sequence. Calculated as average of (messages read / messages sent) per lead. Leads with scores above 0.7 (opened 70%+ of messages) convert to customers at significantly higher rates than lower-engagement leads.</p>
+          </section>
+          <section id="revenue-metrics" className="mb-12">
+            <h2 className="text-2xl font-bold text-gray-900 mb-4">Revenue Metrics: Connecting DMs to Dollars</h2>
+              <p className="text-gray-700 mb-4 leading-relaxed">DM-sourced pipeline value: the total value of opportunities in your sales pipeline that originated from Instagram DM automation. This requires CRM tagging of DM-sourced leads and pipeline tracking. For e-commerce, it is replaced by DM-sourced revenue (orders with DM-source attribution).</p>
+              <p className="text-gray-700 mb-4 leading-relaxed">Cost per DM lead: total cost of Instagram automation (tool cost + time cost) divided by number of email leads generated per month. Compare this to your cost per lead from other channels (paid ads, SEO, referrals) to understand the relative efficiency of DM automation.</p>
+              <p className="text-gray-700 mb-4 leading-relaxed">DM-to-customer conversion rate and customer lifetime value: the ultimate downstream metrics. Track what percentage of DM-sourced leads become customers, and what the average lifetime value of those customers is compared to customers from other channels. DM-sourced customers typically have higher lifetime values because the relationship started with a personal interaction.</p>
+          </section>
+          <section id="analytics-workflow" className="mb-12">
+            <h2 className="text-2xl font-bold text-gray-900 mb-4">The Weekly Analytics Review Workflow</h2>
+              <p className="text-gray-700 mb-4 leading-relaxed">A 30-minute weekly analytics review is sufficient to stay on top of DM automation performance and identify optimization opportunities before they become problems.</p>
+              <p className="text-gray-700 mb-4 leading-relaxed">Weekly review: check first response rate across all active flows (flag any below 20%), review lead capture rate (flag if below 18%), check total DM conversations vs. previous week (understand volume trends), and scan the previous week's conversations for any patterns in drop-off points or unusual responses.</p>
+              <p className="text-gray-700 mb-4 leading-relaxed">Monthly deep dive: pull all metrics from the week into a monthly report, calculate cost per lead and compare to benchmark, review revenue attribution from DM-sourced leads, and run one optimization based on the biggest performance gap you identified. Document the optimization and expected impact so you can measure the result next month.</p>
+              <p className="font-semibold text-gray-800 mt-6 mb-2">Analytics review schedule:</p>
+              <ul className="list-disc list-inside space-y-2 text-gray-700 mb-4">
+                <li>Weekly: first response rate, lead capture rate, volume trends</li>
+                <li>Weekly: manual review of 20-30 conversations for quality signals</li>
+                <li>Monthly: cost per lead, revenue attribution, full funnel report</li>
+                <li>Monthly: identify largest performance gap and run one optimization</li>
+                <li>Quarterly: benchmark all metrics against industry comparisons</li>
+              </ul>
+          </section>
+              <div className="bg-linear-to-r from-violet-600 to-purple-600 rounded-2xl p-8 text-white text-center mt-12">
+                <h2 className="text-2xl font-bold mb-3">Ready to Automate Your Instagram Growth?</h2>
+                <p className="text-violet-100 mb-6">PostEngage helps you turn Instagram engagement into leads, bookings, and sales automatically.</p>
+                <Button asChild size="lg" className="bg-white text-violet-600 hover:bg-violet-50">
+                  <Link href="/#waitlist">Start Free Today</Link>
+                </Button>
               </div>
-
-              <h2
-                id='why-it-matters'
-                className='scroll-mt-24 text-2xl font-bold mt-12 mb-6'
-              >
-                Why Analytics on Instagram Matters in 2026
-              </h2>
-              <p>Instagram has over 2 billion monthly active users, and direct engagement through DMs and comments has never been higher. For analytics professionals and businesses, the platform represents an unmatched opportunity to reach qualified prospects where they are already spending time.</p>
-              <p>The shift happening in 2026 is from passive social media presence to active, AI-powered conversation funnels. Brands that treat Instagram as a two-way communication channel — rather than just a broadcast medium — are seeing 3–5x better ROI on every hour invested.</p>
-
-              <h2
-                id='the-core-strategy'
-                className='scroll-mt-24 text-2xl font-bold mt-12 mb-6'
-              >
-                The Core Strategy: From Engagement to Conversion
-              </h2>
-              <p>The most effective Instagram automation strategies follow a consistent three-step pattern: attract attention with content, capture intent with a trigger (comment, DM keyword, Story reply), then convert with a personalized automated conversation.</p>
-              <p>What separates high-performing accounts from average ones is the quality of that third step — the automated conversation itself. Rule-based bots send the same canned response to everyone. AI-powered bots like PostEngage read the context of each interaction and craft replies that feel genuinely personal, dramatically improving conversion rates at every stage of the funnel.</p>
-
-              <h2
-                id='practical-implementation'
-                className='scroll-mt-24 text-2xl font-bold mt-12 mb-6'
-              >
-                Practical Implementation: Getting Started
-              </h2>
-              <p>Start with one trigger and one goal. The most common mistake brands make is trying to automate everything at once — welcome messages, comment replies, story responses, and DM sequences simultaneously. The result is a confusing mess.</p>
-              <p>Instead, pick the trigger that aligns with your highest-volume touchpoint. For most accounts, that is comment automation on Reels. Set up a single keyword trigger, write a compelling CTA in your caption, and measure results for two weeks before expanding. Once you see the conversion data, you will have a clear picture of where to invest next.</p>
-
-              <h2
-                id='advanced-tips'
-                className='scroll-mt-24 text-2xl font-bold mt-12 mb-6'
-              >
-                Advanced Tips for Maximum Results
-              </h2>
-              <p>Once your baseline automation is running, layer in AI personalization. PostEngage allows you to train a custom AI model on your brand voice — feeding it examples of your past replies, your tone guidelines, and your product knowledge. The result is an AI that responds to nuanced questions the way you would, not the way a generic chatbot would.</p>
-              <p>Also use time-window scheduling to match your automation to your audience's active hours. A bot that replies at 3am to someone in your target timezone creates a better first impression than one that batches responses at irregular times. Even small improvements in response quality and timing compound into significant conversion rate gains over weeks and months.</p>
-
-              <div className='bg-primary/5 p-8 rounded-2xl border border-primary/20 my-12'>
-                <h3 className='text-2xl font-bold mb-4'>Start Automating Your Instagram Today</h3>
-                <p className='mb-6'>Join thousands of brands using PostEngage to turn Instagram engagement into revenue.</p>
-                <Link href='https://app.postengage.ai/signup'>
-                  <Button size='lg' className='w-full sm:w-auto text-lg px-8'>
-                    Get Started Free <ArrowRight className='ml-2 h-5 w-5' />
-                  </Button>
-                </Link>
-              </div>
+              <div className="mt-12"><NewsletterForm /></div>
             </article>
-
-            <aside className='hidden lg:block lg:col-span-2 lg:sticky lg:top-32 lg:self-start'>
-              <div className='flex flex-col gap-4 items-center'>
-                <p className='text-xs font-semibold uppercase tracking-wider text-muted-foreground mb-2'>Share</p>
-                <SocialShareButtons
-                  url='https://postengage.ai/blog/instagram-dm-analytics-metrics'
-                  title='Instagram DM Analytics: The 6 Metrics That Actually Matter' />
-              </div>
+            <aside className="hidden lg:block lg:col-span-2">
+              <div className="sticky top-24"><SocialShareButtons title="Instagram DM Analytics: The Metrics That Actually Tell You What Is Working" /></div>
             </aside>
           </div>
         </div>
-        <NewsletterForm />
       </main>
       <LandingFooter />
     </div>

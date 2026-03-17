@@ -2,162 +2,150 @@ import { Metadata } from 'next';
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
-import {
-  ArrowRight,
-  Calendar,
-  Clock,
-  Zap,
-} from 'lucide-react';
-import { LandingHeader } from '@/components/landing/landing-header';
-import { LandingFooter } from '@/components/landing/landing-footer';
-import { TableOfContents } from '@/components/blog/table-of-contents';
-import { SocialShareButtons } from '@/components/blog/social-share-buttons';
-import { NewsletterForm } from '@/components/blog/newsletter-form';
+import { LandingHeader } from '@/components/landing-header';
+import { LandingFooter } from '@/components/landing-footer';
+import { TableOfContents } from '@/components/table-of-contents';
+import { SocialShareButtons } from '@/components/social-share-buttons';
+import { NewsletterForm } from '@/components/newsletter-form';
 
 export const metadata: Metadata = {
-  title: 'Travel Agency Lead Gen: Booking More Clients with Instagram Automation',
-  description: 'Travel buyers research for weeks before booking. Instagram DM automation lets you stay top of mind throughout the consideration phase and close when they are ready.',
-  openGraph: {
-    title: 'Travel Agency Lead Gen: Booking More Clients with Instagram Automation',
-    description: 'Travel buyers research for weeks before booking. Instagram DM automation lets you stay top of mind throughout the consideration phase and close when they are ready.',
-    type: 'article',
-    url: 'https://postengage.ai/blog/travel-agency-instagram-leads',
-    images: [{ url: '/blog/travel-agency-instagram-leads-cover.png', width: 1200, height: 630, alt: 'Travel Agency Lead Gen: Booking More Clients with Instagram Automation' }],
-  },
-  twitter: {
-    card: 'summary_large_image',
-    title: 'Travel Agency Lead Gen: Booking More Clients with Instagram Automation',
-    description: 'Travel buyers research for weeks before booking. Instagram DM automation lets you stay top of mind throughout the consideration phase and close when they are ready.',
-    images: ['/blog/travel-agency-instagram-leads-cover.png'],
-  },
+  title: 'Travel Agency Instagram Automation: From Dreamer to Booked Client | PostEngage Blog',
+  description: 'How travel agencies and independent travel advisors use Instagram DM automation to capture leads, qualify travelers, and book trips without chasing inquiries manually.',
 };
 
 export default function BlogPost() {
   const tocItems = [
-    { id: 'why-it-matters', title: 'Why This Matters in 2026' },
-    { id: 'the-core-strategy', title: 'The Core Strategy' },
-    { id: 'practical-implementation', title: 'Practical Implementation' },
-    { id: 'advanced-tips', title: 'Advanced Tips' },
+    { id: 'travel-instagram-opportunity', title: 'Why Instagram Is Perfect for Travel Agencies' },
+    { id: 'dreamer-to-lead', title: 'Turning Dreamers Into Qualified Leads' },
+    { id: 'destination-specific-flows', title: 'Destination-Specific DM Flows' },
+    { id: 'inquiry-to-booking', title: 'From First Inquiry to Confirmed Booking' },
+    { id: 'off-season-strategy', title: 'Off-Season Lead Generation Strategy' }
   ];
 
   return (
-    <div className='min-h-screen bg-background text-foreground font-sans selection:bg-primary/20'>
+    <div className="min-h-screen bg-white">
       <LandingHeader />
-      <main className='relative pt-32 pb-24'>
-        <div className='absolute inset-0 -z-10 overflow-hidden'>
-          <div className='absolute top-0 left-1/2 -translate-x-1/2 w-full h-[600px] bg-gradient-to-b from-primary/5 via-transparent to-transparent opacity-60' />
-        </div>
-        <div className='container mx-auto px-4 max-w-7xl'>
-          <div className='grid grid-cols-1 lg:grid-cols-12 gap-12'>
-            <aside className='hidden lg:block lg:col-span-3 lg:sticky lg:top-32 lg:self-start space-y-8'>
-              <div className='flex items-center gap-2 text-sm text-muted-foreground mb-4'>
-                <Link href='/blog' className='hover:text-primary transition-colors'>Blog</Link>
-                <span>/</span>
-                <span className='text-foreground font-medium'>Local Business</span>
+      <main>
+        {/* Hero */}
+        <div className="bg-linear-to-b from-violet-50 to-white border-b border-gray-100">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+            <div className="max-w-3xl mx-auto text-center">
+              <Badge className="mb-4 bg-violet-100 text-violet-700 hover:bg-violet-100">Travel & Hospitality</Badge>
+              <h1 className="text-4xl font-bold text-gray-900 mb-4">Travel Agency Instagram Automation: From Dreamer to Booked Client</h1>
+              <p className="text-xl text-gray-600 mb-6">How travel agencies and independent travel advisors use Instagram DM automation to capture leads, qualify travelers, and book trips without chasing inquiries manually.</p>
+              <div className="flex items-center justify-center gap-4 text-sm text-gray-500">
+                <span>May 20, 2026</span>
+                <span>·</span>
+                <span>8 min read</span>
               </div>
-              <TableOfContents items={tocItems} />
+            </div>
+          </div>
+        </div>
+
+        {/* Content */}
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+          <div className="grid grid-cols-12 gap-8">
+            {/* TOC Sidebar */}
+            <aside className="hidden lg:block lg:col-span-3">
+              <div className="sticky top-24">
+                <TableOfContents items={tocItems} />
+              </div>
             </aside>
 
-            <article className='lg:col-span-7 prose prose-lg dark:prose-invert max-w-none'>
-              <header className='mb-12 not-prose'>
-                <Badge variant='secondary' className='mb-6 text-sm font-medium px-3 py-1'>
-                  Local Business
-                </Badge>
-                <h1 className='text-4xl md:text-5xl font-extrabold tracking-tight mb-6 leading-tight'>
-                  Travel Agency Lead Gen: Booking More Clients with Instagram Automation
-                </h1>
-                <div className='flex items-center gap-6 text-muted-foreground'>
-                  <div className='flex items-center gap-2'>
-                    <div className='h-10 w-10 rounded-full bg-primary/10 flex items-center justify-center'>
-                      <Zap className='h-5 w-5 text-primary' />
-                    </div>
-                    <div>
-                      <p className='text-sm font-medium text-foreground'>PostEngageAI Team</p>
-                      <p className='text-xs'>Automation Experts</p>
-                    </div>
-                  </div>
-                  <div className='flex items-center gap-2 text-sm'>
-                    <Calendar className='h-4 w-4' />
-                    <span>May 4, 2026</span>
-                  </div>
-                  <div className='flex items-center gap-2 text-sm'>
-                    <Clock className='h-4 w-4' />
-                    <span>7 min read</span>
-                  </div>
-                </div>
-              </header>
+            {/* Article */}
+            <article className="col-span-12 lg:col-span-7">
 
-              <div className='relative w-full aspect-[21/9] rounded-2xl overflow-hidden mb-12 bg-muted'>
-                <div className='absolute inset-0 flex items-center justify-center bg-gradient-to-br from-gray-900 to-gray-800 text-white'>
-                  <div className='text-center p-8'>
-                    <Zap className='h-16 w-16 mx-auto mb-4 text-primary/80' />
-                    <p className='text-xl font-medium text-white/80'>Local Business</p>
-                  </div>
-                </div>
+          <section id="travel-instagram-opportunity" className="mb-12">
+            <h2 className="text-2xl font-bold text-gray-900 mb-4">Why Instagram Is Perfect for Travel Agencies</h2>
+              <p className="text-gray-700 mb-4 leading-relaxed">Travel is the most visual category on the internet. A stunning photo of Santorini, a Reel of a Maldives overwater bungalow at sunset, a Story poll about dream destinations — these are naturally shareable, naturally engaging, and naturally lead to conversations about booking.</p>
+              <p className="text-gray-700 mb-4 leading-relaxed">The challenge for travel agencies is that Instagram drives curiosity but not necessarily action. Someone can follow your account, engage with every post about the Amalfi Coast for six months, and never reach out because there is no clear next step. Automation creates that next step.</p>
+              <p className="text-gray-700 mb-4 leading-relaxed">When someone comments "I need to go here" on your Italy Reel, they have just told you their destination interest, their emotional state (aspirational), and their engagement level. An automated DM that delivers immediate value — an Italy packing guide, a 2-week itinerary PDF, a price range overview — captures that moment before they scroll past and forget.</p>
+              <p className="font-semibold text-gray-800 mt-6 mb-2">Instagram content types that drive travel DMs:</p>
+              <ul className="list-disc list-inside space-y-2 text-gray-700 mb-4">
+                <li>Destination showcase Reels with keyword triggers for a free guide</li>
+                <li>Price transparency posts showing what a trip actually costs</li>
+                <li>Client transformation stories and travel testimonials</li>
+                <li>Behind-the-scenes of trips you are on personally</li>
+                <li>Destination comparison polls that invite engagement</li>
+              </ul>
+          </section>
+
+          <section id="dreamer-to-lead" className="mb-12">
+            <h2 className="text-2xl font-bold text-gray-900 mb-4">Turning Dreamers Into Qualified Leads</h2>
+              <p className="text-gray-700 mb-4 leading-relaxed">Most travel agency Instagram followers are in the dreaming phase. They love travel content. They save posts. Converting dreamers to buyers requires moving them from aspiration to specificity — and DM automation does this through questions.</p>
+              <p className="text-gray-700 mb-4 leading-relaxed">After delivering the promised resource, your DM sequence asks: "Where on your list is this destination? Still a dream or are you thinking this year?" This single question sorts leads into active planners (high priority) and dreamers (keep engaging).</p>
+              <p className="text-gray-700 mb-4 leading-relaxed">For active planners, the next message asks two qualifying questions: roughly when were they thinking, and is it just them or are they bringing people? These two data points — timeline and group size — are enough to start a real booking conversation. Collect their email at this stage for follow-up outside Instagram.</p>
+              <div className="bg-violet-50 border border-violet-200 rounded-xl p-6 my-6">
+                <h3 className="font-bold text-violet-900 mb-3">Lead Qualification Flow for Travel</h3>
+                <ul className="space-y-2">
+                  <li className="flex items-start gap-2 text-sm text-violet-800"><span className="text-violet-500 mt-0.5">→</span>Comment trigger — deliver destination resource (instant)</li>
+                  <li className="flex items-start gap-2 text-sm text-violet-800"><span className="text-violet-500 mt-0.5">→</span>"Is this destination still a dream or are you thinking this year?"</li>
+                  <li className="flex items-start gap-2 text-sm text-violet-800"><span className="text-violet-500 mt-0.5">→</span>Active planner path: ask for timeline and group size</li>
+                  <li className="flex items-start gap-2 text-sm text-violet-800"><span className="text-violet-500 mt-0.5">→</span>Dreamer path: add to destination-interest nurture list</li>
+                  <li className="flex items-start gap-2 text-sm text-violet-800"><span className="text-violet-500 mt-0.5">→</span>Active planners: personal follow-up from travel advisor within 24 hours</li>
+                </ul>
+              </div>
+          </section>
+
+          <section id="destination-specific-flows" className="mb-12">
+            <h2 className="text-2xl font-bold text-gray-900 mb-4">Destination-Specific DM Flows</h2>
+              <p className="text-gray-700 mb-4 leading-relaxed">The highest-converting travel automation strategy is destination-specific flows. Instead of one generic travel inquiry sequence, build separate flows for your top 5-10 destinations.</p>
+              <p className="text-gray-700 mb-4 leading-relaxed">A Bali flow knows to mention the best time to visit (avoid monsoon season), approximate price ranges for the types of trips you book there, and the most common questions Bali travelers ask. When your automation speaks specifically about the destination someone expressed interest in, it feels like talking to an expert — not a generic form.</p>
+              <p className="text-gray-700 mb-4 leading-relaxed">Each destination flow should end with a clear next step specific to that destination: current availability for group departures, an invitation to book a custom itinerary call, or a link to a destination-specific planning guide.</p>
+              <p className="font-semibold text-gray-800 mt-6 mb-2">What to include in destination flows:</p>
+              <ul className="list-disc list-inside space-y-2 text-gray-700 mb-4">
+                <li>Best time to visit and what to avoid</li>
+                <li>Price range for the types of trips you book there</li>
+                <li>What makes your version of this destination unique</li>
+                <li>Specific current availability or upcoming group departures</li>
+                <li>Clear CTA: call booking, custom quote request, or itinerary download</li>
+              </ul>
+          </section>
+
+          <section id="inquiry-to-booking" className="mb-12">
+            <h2 className="text-2xl font-bold text-gray-900 mb-4">From First Inquiry to Confirmed Booking</h2>
+              <p className="text-gray-700 mb-4 leading-relaxed">The DM is the first touch. The booking confirmation is 3-7 touches later for most travel purchases. Your automation handles touches 1-3; your human follow-up handles 4-7.</p>
+              <p className="text-gray-700 mb-4 leading-relaxed">Touch 1 (automation): deliver resource and establish destination interest. Touch 2 (automation): qualify timeline and group. Touch 3 (automation): invite to consultation call or send to custom quote request form. Touch 4 through 7 (human): personalized itinerary concept, proposal with pricing, and deposit collection.</p>
+              <p className="text-gray-700 mb-4 leading-relaxed">The automation job is to ensure that by the time a human touches the lead, they already know the destination, timeline, group size, and budget range. A 20-minute consultation with that context converts at 4x the rate of a cold inquiry call.</p>
+          </section>
+
+          <section id="off-season-strategy" className="mb-12">
+            <h2 className="text-2xl font-bold text-gray-900 mb-4">Off-Season Lead Generation Strategy</h2>
+              <p className="text-gray-700 mb-4 leading-relaxed">Travel agencies have a booking seasonality problem: everyone inquires in January for summer travel, and inquiries go quiet in September. DM automation can smooth that curve by capturing off-season dreamers for future trips.</p>
+              <p className="text-gray-700 mb-4 leading-relaxed">In October, run a "next year travel planning" campaign. Post content inviting people to comment their number one dream destination. Everyone who responds enters a long-term nurture sequence that delivers relevant content and prompts them when the best booking windows open.</p>
+              <p className="text-gray-700 mb-4 leading-relaxed">Travel agencies using this strategy report 40-60% of their Q1 bookings coming from leads captured in Q4 through Instagram automation. Building that pipeline proactively eliminates the January scramble.</p>
+              <p className="font-semibold text-gray-800 mt-6 mb-2">Off-season automation tactics:</p>
+              <ul className="list-disc list-inside space-y-2 text-gray-700 mb-4">
+                <li>Capture destination wishes in October-November for next-year planning</li>
+                <li>Set up drip sequences aligned with optimal booking windows per destination</li>
+                <li>Send price alert style DMs when good deals emerge for saved destinations</li>
+                <li>Run annual bucket list campaigns to identify high-intent future travelers</li>
+                <li>Reactivate past clients with new destination inspiration content</li>
+              </ul>
+          </section>
+
+              {/* CTA */}
+              <div className="bg-linear-to-r from-violet-600 to-purple-600 rounded-2xl p-8 text-white text-center mt-12">
+                <h2 className="text-2xl font-bold mb-3">Ready to Automate Your Instagram Growth?</h2>
+                <p className="text-violet-100 mb-6">PostEngage helps you turn Instagram engagement into leads, bookings, and sales — automatically.</p>
+                <Button asChild size="lg" className="bg-white text-violet-600 hover:bg-violet-50">
+                  <Link href="/#waitlist">Start Free Today</Link>
+                </Button>
               </div>
 
-              <div className='lead text-xl text-muted-foreground mb-12 leading-relaxed'>
-                Travel buyers research for weeks before booking. Instagram DM automation lets you stay top of mind throughout the consideration phase and close when they are ready. This guide covers everything you need to know to get started and see results quickly.
-              </div>
-
-              <h2
-                id='why-it-matters'
-                className='scroll-mt-24 text-2xl font-bold mt-12 mb-6'
-              >
-                Why Local Business on Instagram Matters in 2026
-              </h2>
-              <p>Instagram has over 2 billion monthly active users, and direct engagement through DMs and comments has never been higher. For local business professionals and businesses, the platform represents an unmatched opportunity to reach qualified prospects where they are already spending time.</p>
-              <p>The shift happening in 2026 is from passive social media presence to active, AI-powered conversation funnels. Brands that treat Instagram as a two-way communication channel — rather than just a broadcast medium — are seeing 3–5x better ROI on every hour invested.</p>
-
-              <h2
-                id='the-core-strategy'
-                className='scroll-mt-24 text-2xl font-bold mt-12 mb-6'
-              >
-                The Core Strategy: From Engagement to Conversion
-              </h2>
-              <p>The most effective Instagram automation strategies follow a consistent three-step pattern: attract attention with content, capture intent with a trigger (comment, DM keyword, Story reply), then convert with a personalized automated conversation.</p>
-              <p>What separates high-performing accounts from average ones is the quality of that third step — the automated conversation itself. Rule-based bots send the same canned response to everyone. AI-powered bots like PostEngage read the context of each interaction and craft replies that feel genuinely personal, dramatically improving conversion rates at every stage of the funnel.</p>
-
-              <h2
-                id='practical-implementation'
-                className='scroll-mt-24 text-2xl font-bold mt-12 mb-6'
-              >
-                Practical Implementation: Getting Started
-              </h2>
-              <p>Start with one trigger and one goal. The most common mistake brands make is trying to automate everything at once — welcome messages, comment replies, story responses, and DM sequences simultaneously. The result is a confusing mess.</p>
-              <p>Instead, pick the trigger that aligns with your highest-volume touchpoint. For most accounts, that is comment automation on Reels. Set up a single keyword trigger, write a compelling CTA in your caption, and measure results for two weeks before expanding. Once you see the conversion data, you will have a clear picture of where to invest next.</p>
-
-              <h2
-                id='advanced-tips'
-                className='scroll-mt-24 text-2xl font-bold mt-12 mb-6'
-              >
-                Advanced Tips for Maximum Results
-              </h2>
-              <p>Once your baseline automation is running, layer in AI personalization. PostEngage allows you to train a custom AI model on your brand voice — feeding it examples of your past replies, your tone guidelines, and your product knowledge. The result is an AI that responds to nuanced questions the way you would, not the way a generic chatbot would.</p>
-              <p>Also use time-window scheduling to match your automation to your audience's active hours. A bot that replies at 3am to someone in your target timezone creates a better first impression than one that batches responses at irregular times. Even small improvements in response quality and timing compound into significant conversion rate gains over weeks and months.</p>
-
-              <div className='bg-primary/5 p-8 rounded-2xl border border-primary/20 my-12'>
-                <h3 className='text-2xl font-bold mb-4'>Start Automating Your Instagram Today</h3>
-                <p className='mb-6'>Join thousands of brands using PostEngage to turn Instagram engagement into revenue.</p>
-                <Link href='https://app.postengage.ai/signup'>
-                  <Button size='lg' className='w-full sm:w-auto text-lg px-8'>
-                    Get Started Free <ArrowRight className='ml-2 h-5 w-5' />
-                  </Button>
-                </Link>
+              <div className="mt-12">
+                <NewsletterForm />
               </div>
             </article>
 
-            <aside className='hidden lg:block lg:col-span-2 lg:sticky lg:top-32 lg:self-start'>
-              <div className='flex flex-col gap-4 items-center'>
-                <p className='text-xs font-semibold uppercase tracking-wider text-muted-foreground mb-2'>Share</p>
-                <SocialShareButtons
-                  url='https://postengage.ai/blog/travel-agency-instagram-leads'
-                  title='Travel Agency Lead Gen: Booking More Clients with Instagram Automation' />
+            {/* Share Sidebar */}
+            <aside className="hidden lg:block lg:col-span-2">
+              <div className="sticky top-24">
+                <SocialShareButtons title="Travel Agency Instagram Automation: From Dreamer to Booked Client" />
               </div>
             </aside>
           </div>
         </div>
-        <NewsletterForm />
       </main>
       <LandingFooter />
     </div>

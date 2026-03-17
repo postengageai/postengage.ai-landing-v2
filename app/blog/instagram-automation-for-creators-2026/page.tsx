@@ -2,162 +2,111 @@ import { Metadata } from 'next';
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
-import {
-  ArrowRight,
-  Calendar,
-  Clock,
-  Zap,
-} from 'lucide-react';
-import { LandingHeader } from '@/components/landing/landing-header';
-import { LandingFooter } from '@/components/landing/landing-footer';
-import { TableOfContents } from '@/components/blog/table-of-contents';
-import { SocialShareButtons } from '@/components/blog/social-share-buttons';
-import { NewsletterForm } from '@/components/blog/newsletter-form';
+import { LandingHeader } from '@/components/landing-header';
+import { LandingFooter } from '@/components/landing-footer';
+import { TableOfContents } from '@/components/table-of-contents';
+import { SocialShareButtons } from '@/components/social-share-buttons';
+import { NewsletterForm } from '@/components/newsletter-form';
 
 export const metadata: Metadata = {
-  title: 'The Creator Economy Playbook: Instagram Automation for Monetized Accounts',
-  description: 'Creators with 10k followers and smart automation can out-earn creators with 500k who reply manually. Here is the DM monetization strategy every creator should be running.',
-  openGraph: {
-    title: 'The Creator Economy Playbook: Instagram Automation for Monetized Accounts',
-    description: 'Creators with 10k followers and smart automation can out-earn creators with 500k who reply manually. Here is the DM monetization strategy every creator should be running.',
-    type: 'article',
-    url: 'https://postengage.ai/blog/instagram-automation-for-creators-2026',
-    images: [{ url: '/blog/instagram-automation-for-creators-2026-cover.png', width: 1200, height: 630, alt: 'The Creator Economy Playbook: Instagram Automation for Monetized Accounts' }],
-  },
-  twitter: {
-    card: 'summary_large_image',
-    title: 'The Creator Economy Playbook: Instagram Automation for Monetized Accounts',
-    description: 'Creators with 10k followers and smart automation can out-earn creators with 500k who reply manually. Here is the DM monetization strategy every creator should be running.',
-    images: ['/blog/instagram-automation-for-creators-2026-cover.png'],
-  },
+  title: 'Instagram Automation for Creators in 2026: Monetize Your Audience Smarter | PostEngage Blog',
+  description: 'How content creators, influencers, and digital creators use Instagram DM automation to monetize their audience, sell digital products, land brand deals, and build sustainable income.',
 };
 
 export default function BlogPost() {
   const tocItems = [
-    { id: 'why-it-matters', title: 'Why This Matters in 2026' },
-    { id: 'the-core-strategy', title: 'The Core Strategy' },
-    { id: 'practical-implementation', title: 'Practical Implementation' },
-    { id: 'advanced-tips', title: 'Advanced Tips' },
+    { id: 'creator-economy-shift', title: 'The Creator Economy Shift in 2026' },
+    { id: 'digital-product-sales', title: 'Selling Digital Products Through DMs' },
+    { id: 'brand-deal-pipeline', title: 'Building a Brand Deal Pipeline via Instagram DMs' },
+    { id: 'community-monetization', title: 'Community Monetization Strategies' },
+    { id: 'scaling-without-burnout', title: 'Scaling Without Burnout' },
   ];
-
   return (
-    <div className='min-h-screen bg-background text-foreground font-sans selection:bg-primary/20'>
+    <div className="min-h-screen bg-white">
       <LandingHeader />
-      <main className='relative pt-32 pb-24'>
-        <div className='absolute inset-0 -z-10 overflow-hidden'>
-          <div className='absolute top-0 left-1/2 -translate-x-1/2 w-full h-[600px] bg-gradient-to-b from-primary/5 via-transparent to-transparent opacity-60' />
+      <main>
+        <div className="bg-linear-to-b from-violet-50 to-white border-b border-gray-100">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+            <div className="max-w-3xl mx-auto text-center">
+              <Badge className="mb-4 bg-violet-100 text-violet-700 hover:bg-violet-100">Creators & Influencers</Badge>
+              <h1 className="text-4xl font-bold text-gray-900 mb-4">Instagram Automation for Creators in 2026: Monetize Your Audience Smarter</h1>
+              <p className="text-xl text-gray-600 mb-6">How content creators, influencers, and digital creators use Instagram DM automation to monetize their audience, sell digital products, land brand deals, and build sustainable income.</p>
+              <div className="flex items-center justify-center gap-4 text-sm text-gray-500">
+                <span>May 3, 2026</span><span>·</span><span>9 min read</span>
+              </div>
+            </div>
+          </div>
         </div>
-        <div className='container mx-auto px-4 max-w-7xl'>
-          <div className='grid grid-cols-1 lg:grid-cols-12 gap-12'>
-            <aside className='hidden lg:block lg:col-span-3 lg:sticky lg:top-32 lg:self-start space-y-8'>
-              <div className='flex items-center gap-2 text-sm text-muted-foreground mb-4'>
-                <Link href='/blog' className='hover:text-primary transition-colors'>Blog</Link>
-                <span>/</span>
-                <span className='text-foreground font-medium'>Creator Economy</span>
-              </div>
-              <TableOfContents items={tocItems} />
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+          <div className="grid grid-cols-12 gap-8">
+            <aside className="hidden lg:block lg:col-span-3">
+              <div className="sticky top-24"><TableOfContents items={tocItems} /></div>
             </aside>
+            <article className="col-span-12 lg:col-span-7">
 
-            <article className='lg:col-span-7 prose prose-lg dark:prose-invert max-w-none'>
-              <header className='mb-12 not-prose'>
-                <Badge variant='secondary' className='mb-6 text-sm font-medium px-3 py-1'>
-                  Creator Economy
-                </Badge>
-                <h1 className='text-4xl md:text-5xl font-extrabold tracking-tight mb-6 leading-tight'>
-                  The Creator Economy Playbook: Instagram Automation for Monetized Accounts
-                </h1>
-                <div className='flex items-center gap-6 text-muted-foreground'>
-                  <div className='flex items-center gap-2'>
-                    <div className='h-10 w-10 rounded-full bg-primary/10 flex items-center justify-center'>
-                      <Zap className='h-5 w-5 text-primary' />
-                    </div>
-                    <div>
-                      <p className='text-sm font-medium text-foreground'>PostEngageAI Team</p>
-                      <p className='text-xs'>Automation Experts</p>
-                    </div>
-                  </div>
-                  <div className='flex items-center gap-2 text-sm'>
-                    <Calendar className='h-4 w-4' />
-                    <span>May 22, 2026</span>
-                  </div>
-                  <div className='flex items-center gap-2 text-sm'>
-                    <Clock className='h-4 w-4' />
-                    <span>9 min read</span>
-                  </div>
-                </div>
-              </header>
-
-              <div className='relative w-full aspect-[21/9] rounded-2xl overflow-hidden mb-12 bg-muted'>
-                <div className='absolute inset-0 flex items-center justify-center bg-gradient-to-br from-gray-900 to-gray-800 text-white'>
-                  <div className='text-center p-8'>
-                    <Zap className='h-16 w-16 mx-auto mb-4 text-primary/80' />
-                    <p className='text-xl font-medium text-white/80'>Creator Economy</p>
-                  </div>
-                </div>
+          <section id="creator-economy-shift" className="mb-12">
+            <h2 className="text-2xl font-bold text-gray-900 mb-4">The Creator Economy Shift in 2026</h2>
+              <p className="text-gray-700 mb-4 leading-relaxed">The creator economy in 2026 is bifurcating. Creators who rely primarily on platform payouts (ad revenue, creator funds, view counts) are seeing declining per-view rates and increasing competition. Creators who have built direct audience relationships and direct revenue channels are seeing income grow independent of algorithm changes.</p>
+              <p className="text-gray-700 mb-4 leading-relaxed">Instagram DM automation is one of the clearest dividing lines between these two groups. Creators who use DMs strategically have email lists, sell products directly, and can generate income from any post through direct audience interaction. Creators who do not are entirely dependent on platform traffic and third-party monetization rates.</p>
+              <p className="text-gray-700 mb-4 leading-relaxed">The conversion to creator-owned monetization does not require a massive following. A creator with 15,000 highly engaged followers using DM automation consistently outperforms a creator with 150,000 followers who has not built direct revenue channels. Engagement quality and the ability to activate that engagement commercially are the new metrics that matter.</p>
+              <p className="font-semibold text-gray-800 mt-6 mb-2">2026 creator economy realities:</p>
+              <ul className="list-disc list-inside space-y-2 text-gray-700 mb-4">
+                <li>Platform payout rates declining — owned revenue becoming essential</li>
+                <li>DM automation enables direct sales without large audiences</li>
+                <li>Email list from DM opt-ins = audience you own regardless of platform</li>
+                <li>10-15k engaged followers can outperform 100k passive ones commercially</li>
+                <li>Direct product sales generating 3-10x creator fund revenue per follower</li>
+              </ul>
+          </section>
+          <section id="digital-product-sales" className="mb-12">
+            <h2 className="text-2xl font-bold text-gray-900 mb-4">Selling Digital Products Through DMs</h2>
+              <p className="text-gray-700 mb-4 leading-relaxed">Digital products — courses, templates, presets, ebooks, workshops, memberships — are the highest-margin revenue stream available to most creators. DM automation makes selling them systematic rather than sporadic.</p>
+              <p className="text-gray-700 mb-4 leading-relaxed">The digital product DM funnel: post content that demonstrates the skill or knowledge your product is based on. Invite people to comment a keyword for a free sample (a preview chapter, one template, a sample lesson). Deliver the sample via DM immediately. Follow up 24 hours later: "Did you get a chance to check out the sample? If it resonates, the full [product] covers X, Y, and Z as well — here is the link."</p>
+              <p className="text-gray-700 mb-4 leading-relaxed">Pricing insight from creators using this method: the DM delivery of a free sample converts to paid product at 8-15%, compared to 1-3% for a link-in-bio that goes to a product page directly. The sample-first approach builds enough trust in the DM conversation to overcome the price objection before the buyer even sees the price.</p>
+              <div className="bg-violet-50 border border-violet-200 rounded-xl p-6 my-6">
+                <h3 className="font-bold text-violet-900 mb-3">Digital Product DM Flow</h3>
+                <ul className="space-y-2">
+                  <li className="flex items-start gap-2 text-sm text-violet-800"><span>&#x2192;</span>Content: shows skill your product teaches</li>
+                  <li className="flex items-start gap-2 text-sm text-violet-800"><span>&#x2192;</span>CTA: comment keyword for free sample</li>
+                  <li className="flex items-start gap-2 text-sm text-violet-800"><span>&#x2192;</span>Instant DM: deliver sample + brief product mention</li>
+                  <li className="flex items-start gap-2 text-sm text-violet-800"><span>&#x2192;</span>Day 1 follow-up: "Did you check it out? Here is what else is included"</li>
+                  <li className="flex items-start gap-2 text-sm text-violet-800"><span>&#x2192;</span>Day 3: direct offer with purchase link</li>
+                  <li className="flex items-start gap-2 text-sm text-violet-800"><span>&#x2192;</span>Day 7 (non-buyers): last-chance or different angle</li>
+                </ul>
               </div>
-
-              <div className='lead text-xl text-muted-foreground mb-12 leading-relaxed'>
-                Creators with 10k followers and smart automation can out-earn creators with 500k who reply manually. Here is the DM monetization strategy every creator should be running. This guide covers everything you need to know to get started and see results quickly.
+          </section>
+          <section id="brand-deal-pipeline" className="mb-12">
+            <h2 className="text-2xl font-bold text-gray-900 mb-4">Building a Brand Deal Pipeline via Instagram DMs</h2>
+              <p className="text-gray-700 mb-4 leading-relaxed">Brand deals typically come through DMs — either inbound (brands reaching out to you) or outbound (you reaching out to brands). DM automation helps on both sides.</p>
+              <p className="text-gray-700 mb-4 leading-relaxed">For inbound brand DMs: set up a flow that responds to brand inquiry messages with your media kit, rate card, and a call booking link. Many creators miss brand deal opportunities because they respond slowly or not at all to initial brand outreach. An instant automated response that delivers your media kit and books a call converts brand interest into deals at much higher rates.</p>
+              <p className="text-gray-700 mb-4 leading-relaxed">For outbound prospecting: DM automation cannot replace the personalization required in genuine brand outreach. But it can help you manage follow-ups. After sending a manual personalized pitch to a brand, set a reminder to follow up in 5-7 days. Keep a pipeline document tracking all brand conversations. The creators who close the most deals are the ones who follow up consistently, not the ones who send the most cold pitches.</p>
+          </section>
+          <section id="community-monetization" className="mb-12">
+            <h2 className="text-2xl font-bold text-gray-900 mb-4">Community Monetization Strategies</h2>
+              <p className="text-gray-700 mb-4 leading-relaxed">The most sustainable creator income comes not from individual product sales but from community relationships that generate recurring revenue. DM automation builds and maintains these relationships at scale.</p>
+              <p className="text-gray-700 mb-4 leading-relaxed">Membership and subscription monetization via DMs: when you launch a membership or subscription offer, use DMs to invite your most engaged followers personally. "I have been building something for my most engaged community members — it is not public yet. You are on the short list for early access. Want the details?" This personalized invitation approach consistently outperforms general post announcements for membership launches.</p>
+              <p className="text-gray-700 mb-4 leading-relaxed">Event monetization via DMs: workshops, masterclasses, and live sessions sell better through DMs than through link-in-bio because the conversation allows you to understand the potential attendee's specific goals and connect the event to those goals personally. DM-sold event tickets also have significantly lower no-show rates because the attendee has had a real interaction and feels a personal commitment.</p>
+          </section>
+          <section id="scaling-without-burnout" className="mb-12">
+            <h2 className="text-2xl font-bold text-gray-900 mb-4">Scaling Without Burnout</h2>
+              <p className="text-gray-700 mb-4 leading-relaxed">Creator burnout is epidemic, and DM volume is one of the leading contributors. When an account grows past 20,000-30,000 followers, the DM volume becomes unmanageable without systems. Many creators either ignore DMs (losing commercial opportunities) or spend 3-4 hours daily responding (losing time for content creation).</p>
+              <p className="text-gray-700 mb-4 leading-relaxed">DM automation is not about removing the human element — it is about removing the robotic, repetitive part of DM management so the human element can go where it matters most. Automation handles routine inquiries, delivers resources, and qualifies leads. You show up for the conversations where your personal presence creates real value.</p>
+              <p className="text-gray-700 mb-4 leading-relaxed">The reframe that changes how creators think about automation: every minute you spend copying and pasting the same link or resource 20 times per day is a minute you are not spending on creative work that builds your audience. Automation is not delegation — it is time allocation. Your time goes where it creates the most value, and automation handles everything else.</p>
+          </section>
+              <div className="bg-linear-to-r from-violet-600 to-purple-600 rounded-2xl p-8 text-white text-center mt-12">
+                <h2 className="text-2xl font-bold mb-3">Ready to Automate Your Instagram Growth?</h2>
+                <p className="text-violet-100 mb-6">PostEngage helps you turn Instagram engagement into leads, bookings, and sales automatically.</p>
+                <Button asChild size="lg" className="bg-white text-violet-600 hover:bg-violet-50">
+                  <Link href="/#waitlist">Start Free Today</Link>
+                </Button>
               </div>
-
-              <h2
-                id='why-it-matters'
-                className='scroll-mt-24 text-2xl font-bold mt-12 mb-6'
-              >
-                Why Creator Economy on Instagram Matters in 2026
-              </h2>
-              <p>Instagram has over 2 billion monthly active users, and direct engagement through DMs and comments has never been higher. For creator economy professionals and businesses, the platform represents an unmatched opportunity to reach qualified prospects where they are already spending time.</p>
-              <p>The shift happening in 2026 is from passive social media presence to active, AI-powered conversation funnels. Brands that treat Instagram as a two-way communication channel — rather than just a broadcast medium — are seeing 3–5x better ROI on every hour invested.</p>
-
-              <h2
-                id='the-core-strategy'
-                className='scroll-mt-24 text-2xl font-bold mt-12 mb-6'
-              >
-                The Core Strategy: From Engagement to Conversion
-              </h2>
-              <p>The most effective Instagram automation strategies follow a consistent three-step pattern: attract attention with content, capture intent with a trigger (comment, DM keyword, Story reply), then convert with a personalized automated conversation.</p>
-              <p>What separates high-performing accounts from average ones is the quality of that third step — the automated conversation itself. Rule-based bots send the same canned response to everyone. AI-powered bots like PostEngage read the context of each interaction and craft replies that feel genuinely personal, dramatically improving conversion rates at every stage of the funnel.</p>
-
-              <h2
-                id='practical-implementation'
-                className='scroll-mt-24 text-2xl font-bold mt-12 mb-6'
-              >
-                Practical Implementation: Getting Started
-              </h2>
-              <p>Start with one trigger and one goal. The most common mistake brands make is trying to automate everything at once — welcome messages, comment replies, story responses, and DM sequences simultaneously. The result is a confusing mess.</p>
-              <p>Instead, pick the trigger that aligns with your highest-volume touchpoint. For most accounts, that is comment automation on Reels. Set up a single keyword trigger, write a compelling CTA in your caption, and measure results for two weeks before expanding. Once you see the conversion data, you will have a clear picture of where to invest next.</p>
-
-              <h2
-                id='advanced-tips'
-                className='scroll-mt-24 text-2xl font-bold mt-12 mb-6'
-              >
-                Advanced Tips for Maximum Results
-              </h2>
-              <p>Once your baseline automation is running, layer in AI personalization. PostEngage allows you to train a custom AI model on your brand voice — feeding it examples of your past replies, your tone guidelines, and your product knowledge. The result is an AI that responds to nuanced questions the way you would, not the way a generic chatbot would.</p>
-              <p>Also use time-window scheduling to match your automation to your audience's active hours. A bot that replies at 3am to someone in your target timezone creates a better first impression than one that batches responses at irregular times. Even small improvements in response quality and timing compound into significant conversion rate gains over weeks and months.</p>
-
-              <div className='bg-primary/5 p-8 rounded-2xl border border-primary/20 my-12'>
-                <h3 className='text-2xl font-bold mb-4'>Start Automating Your Instagram Today</h3>
-                <p className='mb-6'>Join thousands of brands using PostEngage to turn Instagram engagement into revenue.</p>
-                <Link href='https://app.postengage.ai/signup'>
-                  <Button size='lg' className='w-full sm:w-auto text-lg px-8'>
-                    Get Started Free <ArrowRight className='ml-2 h-5 w-5' />
-                  </Button>
-                </Link>
-              </div>
+              <div className="mt-12"><NewsletterForm /></div>
             </article>
-
-            <aside className='hidden lg:block lg:col-span-2 lg:sticky lg:top-32 lg:self-start'>
-              <div className='flex flex-col gap-4 items-center'>
-                <p className='text-xs font-semibold uppercase tracking-wider text-muted-foreground mb-2'>Share</p>
-                <SocialShareButtons
-                  url='https://postengage.ai/blog/instagram-automation-for-creators-2026'
-                  title='The Creator Economy Playbook: Instagram Automation for Monetized Accounts' />
-              </div>
+            <aside className="hidden lg:block lg:col-span-2">
+              <div className="sticky top-24"><SocialShareButtons title="Instagram Automation for Creators in 2026: Monetize Your Audience Smarter" /></div>
             </aside>
           </div>
         </div>
-        <NewsletterForm />
       </main>
       <LandingFooter />
     </div>

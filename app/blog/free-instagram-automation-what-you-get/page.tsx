@@ -2,162 +2,108 @@ import { Metadata } from 'next';
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
-import {
-  ArrowRight,
-  Calendar,
-  Clock,
-  Zap,
-} from 'lucide-react';
-import { LandingHeader } from '@/components/landing/landing-header';
-import { LandingFooter } from '@/components/landing/landing-footer';
-import { TableOfContents } from '@/components/blog/table-of-contents';
-import { SocialShareButtons } from '@/components/blog/social-share-buttons';
-import { NewsletterForm } from '@/components/blog/newsletter-form';
+import { LandingHeader } from '@/components/landing-header';
+import { LandingFooter } from '@/components/landing-footer';
+import { TableOfContents } from '@/components/table-of-contents';
+import { SocialShareButtons } from '@/components/social-share-buttons';
+import { NewsletterForm } from '@/components/newsletter-form';
 
 export const metadata: Metadata = {
-  title: 'Free Instagram DM Automation: What You Get (And What You Are Missing)',
-  description: 'Free plans are tempting. But when automation is your primary lead channel, the limits on free tools can cost more in lost revenue than a paid plan would. Here is the honest comparison.',
-  openGraph: {
-    title: 'Free Instagram DM Automation: What You Get (And What You Are Missing)',
-    description: 'Free plans are tempting. But when automation is your primary lead channel, the limits on free tools can cost more in lost revenue than a paid plan would. Here is the honest comparison.',
-    type: 'article',
-    url: 'https://postengage.ai/blog/free-instagram-automation-what-you-get',
-    images: [{ url: '/blog/free-instagram-automation-what-you-get-cover.png', width: 1200, height: 630, alt: 'Free Instagram DM Automation: What You Get (And What You Are Missing)' }],
-  },
-  twitter: {
-    card: 'summary_large_image',
-    title: 'Free Instagram DM Automation: What You Get (And What You Are Missing)',
-    description: 'Free plans are tempting. But when automation is your primary lead channel, the limits on free tools can cost more in lost revenue than a paid plan would. Here is the honest comparison.',
-    images: ['/blog/free-instagram-automation-what-you-get-cover.png'],
-  },
+  title: 'Free Instagram Automation: What You Actually Get (And When to Upgrade) | PostEngage Blog',
+  description: 'An honest breakdown of what free Instagram automation tools offer, what limitations you will hit, and the point at which paid automation pays for itself.',
 };
 
 export default function BlogPost() {
   const tocItems = [
-    { id: 'why-it-matters', title: 'Why This Matters in 2026' },
-    { id: 'the-core-strategy', title: 'The Core Strategy' },
-    { id: 'practical-implementation', title: 'Practical Implementation' },
-    { id: 'advanced-tips', title: 'Advanced Tips' },
+    { id: 'free-tier-reality', title: 'The Reality of Free Instagram Automation' },
+    { id: 'what-free-covers', title: 'What Free Tiers Actually Cover' },
+    { id: 'free-limitations', title: 'The Limitations That Kill Growth' },
+    { id: 'when-to-upgrade', title: 'When Free Tools Stop Making Sense' },
+    { id: 'upgrade-roi', title: 'Calculating the Upgrade ROI' },
   ];
-
   return (
-    <div className='min-h-screen bg-background text-foreground font-sans selection:bg-primary/20'>
+    <div className="min-h-screen bg-white">
       <LandingHeader />
-      <main className='relative pt-32 pb-24'>
-        <div className='absolute inset-0 -z-10 overflow-hidden'>
-          <div className='absolute top-0 left-1/2 -translate-x-1/2 w-full h-[600px] bg-gradient-to-b from-primary/5 via-transparent to-transparent opacity-60' />
+      <main>
+        <div className="bg-linear-to-b from-violet-50 to-white border-b border-gray-100">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+            <div className="max-w-3xl mx-auto text-center">
+              <Badge className="mb-4 bg-violet-100 text-violet-700 hover:bg-violet-100">Tools & Pricing</Badge>
+              <h1 className="text-4xl font-bold text-gray-900 mb-4">Free Instagram Automation: What You Actually Get (And When to Upgrade)</h1>
+              <p className="text-xl text-gray-600 mb-6">An honest breakdown of what free Instagram automation tools offer, what limitations you will hit, and the point at which paid automation pays for itself.</p>
+              <div className="flex items-center justify-center gap-4 text-sm text-gray-500">
+                <span>April 18, 2026</span><span>·</span><span>8 min read</span>
+              </div>
+            </div>
+          </div>
         </div>
-        <div className='container mx-auto px-4 max-w-7xl'>
-          <div className='grid grid-cols-1 lg:grid-cols-12 gap-12'>
-            <aside className='hidden lg:block lg:col-span-3 lg:sticky lg:top-32 lg:self-start space-y-8'>
-              <div className='flex items-center gap-2 text-sm text-muted-foreground mb-4'>
-                <Link href='/blog' className='hover:text-primary transition-colors'>Blog</Link>
-                <span>/</span>
-                <span className='text-foreground font-medium'>Comparisons</span>
-              </div>
-              <TableOfContents items={tocItems} />
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+          <div className="grid grid-cols-12 gap-8">
+            <aside className="hidden lg:block lg:col-span-3">
+              <div className="sticky top-24"><TableOfContents items={tocItems} /></div>
             </aside>
+            <article className="col-span-12 lg:col-span-7">
 
-            <article className='lg:col-span-7 prose prose-lg dark:prose-invert max-w-none'>
-              <header className='mb-12 not-prose'>
-                <Badge variant='secondary' className='mb-6 text-sm font-medium px-3 py-1'>
-                  Comparisons
-                </Badge>
-                <h1 className='text-4xl md:text-5xl font-extrabold tracking-tight mb-6 leading-tight'>
-                  Free Instagram DM Automation: What You Get (And What You Are Missing)
-                </h1>
-                <div className='flex items-center gap-6 text-muted-foreground'>
-                  <div className='flex items-center gap-2'>
-                    <div className='h-10 w-10 rounded-full bg-primary/10 flex items-center justify-center'>
-                      <Zap className='h-5 w-5 text-primary' />
-                    </div>
-                    <div>
-                      <p className='text-sm font-medium text-foreground'>PostEngageAI Team</p>
-                      <p className='text-xs'>Automation Experts</p>
-                    </div>
-                  </div>
-                  <div className='flex items-center gap-2 text-sm'>
-                    <Calendar className='h-4 w-4' />
-                    <span>May 16, 2026</span>
-                  </div>
-                  <div className='flex items-center gap-2 text-sm'>
-                    <Clock className='h-4 w-4' />
-                    <span>6 min read</span>
-                  </div>
-                </div>
-              </header>
-
-              <div className='relative w-full aspect-[21/9] rounded-2xl overflow-hidden mb-12 bg-muted'>
-                <div className='absolute inset-0 flex items-center justify-center bg-gradient-to-br from-gray-900 to-gray-800 text-white'>
-                  <div className='text-center p-8'>
-                    <Zap className='h-16 w-16 mx-auto mb-4 text-primary/80' />
-                    <p className='text-xl font-medium text-white/80'>Comparisons</p>
-                  </div>
-                </div>
+          <section id="free-tier-reality" className="mb-12">
+            <h2 className="text-2xl font-bold text-gray-900 mb-4">The Reality of Free Instagram Automation</h2>
+              <p className="text-gray-700 mb-4 leading-relaxed">Every major Instagram automation platform offers a free tier. This is not generosity — it is a growth strategy. The free tier is designed to let you experience the core value of automation, hit a ceiling, and convert to paid. Understanding this dynamic helps you use free tools strategically without getting stuck.</p>
+              <p className="text-gray-700 mb-4 leading-relaxed">Free tiers in 2026 typically include: a limited number of automated conversations per month (50-500 depending on platform), basic keyword triggers, one or two active flows, and essential analytics (open rates, response rates). They exclude: unlimited conversations, advanced AI routing, multi-step complex flows, CRM integrations, team collaboration, and priority support.</p>
+              <p className="text-gray-700 mb-4 leading-relaxed">For accounts with under 2,000 followers or fewer than 100 monthly DM conversations, free tiers are genuinely sufficient. The limitations only become binding when your engagement volume exceeds what the free plan allows — which is a good problem to have.</p>
+              <p className="font-semibold text-gray-800 mt-6 mb-2">Typical free tier inclusions and limits:</p>
+              <ul className="list-disc list-inside space-y-2 text-gray-700 mb-4">
+                <li>Monthly conversation limit (typically 50-500)</li>
+                <li>Maximum 1-2 active automation flows</li>
+                <li>Basic analytics without revenue attribution</li>
+                <li>No CRM or email platform integrations</li>
+                <li>Single user, no team access</li>
+              </ul>
+          </section>
+          <section id="what-free-covers" className="mb-12">
+            <h2 className="text-2xl font-bold text-gray-900 mb-4">What Free Tiers Actually Cover</h2>
+              <p className="text-gray-700 mb-4 leading-relaxed">A well-configured free tier can handle the core Instagram automation use case: someone comments a keyword, they get an instant DM with your resource or link, and optionally a one-step follow-up. For many small creators and solopreneurs, this is all they need.</p>
+              <p className="text-gray-700 mb-4 leading-relaxed">Use case that works well on free: a creator with 3,000-5,000 followers who posts content with keyword CTAs 3-4 times per week. If each post generates 20-40 comments, and the monthly conversation limit is 200, you are right at capacity. You can still capture leads, deliver lead magnets, and grow your email list.</p>
+              <p className="text-gray-700 mb-4 leading-relaxed">Use case that breaks on free: an e-commerce brand running a product drop that generates 400 comments in 2 hours. The free tier caps out mid-drop, leaving hundreds of high-intent prospects without an automated response. This is when free tiers cost you more in lost revenue than an upgrade would.</p>
+              <div className="bg-violet-50 border border-violet-200 rounded-xl p-6 my-6">
+                <h3 className="font-bold text-violet-900 mb-3">Free vs. Paid Use Case Match</h3>
+                <ul className="space-y-2">
+                  <li className="flex items-start gap-2 text-sm text-violet-800"><span>&#x2192;</span>FREE works for: small creators under 5k followers, low-volume consistent posting, single-step lead magnet delivery</li>
+                  <li className="flex items-start gap-2 text-sm text-violet-800"><span>&#x2192;</span>FREE struggles with: product drops or viral posts, multiple simultaneous campaigns, businesses with consistent high DM volume</li>
+                  <li className="flex items-start gap-2 text-sm text-violet-800"><span>&#x2192;</span>PAID needed for: 500+ DM conversations per month, multi-step complex flows, CRM integration, team management</li>
+                </ul>
               </div>
-
-              <div className='lead text-xl text-muted-foreground mb-12 leading-relaxed'>
-                Free plans are tempting. But when automation is your primary lead channel, the limits on free tools can cost more in lost revenue than a paid plan would. Here is the honest comparison. This guide covers everything you need to know to get started and see results quickly.
+          </section>
+          <section id="free-limitations" className="mb-12">
+            <h2 className="text-2xl font-bold text-gray-900 mb-4">The Limitations That Kill Growth</h2>
+              <p className="text-gray-700 mb-4 leading-relaxed">The free tier limitation that kills growth most often is not the conversation limit — it is the absence of multi-step flows. A single-message automation can deliver a resource. But the real ROI from Instagram automation comes from sequences: a resource delivery, followed by a qualifying question, followed by a personalized CTA, followed by a follow-up for non-responders.</p>
+              <p className="text-gray-700 mb-4 leading-relaxed">Without multi-step flows, you are leaving the most valuable part of the automation funnel unbuilt. The first DM captures attention. The follow-up converts. Free tiers that allow only one message per trigger capture attention but miss most conversions.</p>
+              <p className="text-gray-700 mb-4 leading-relaxed">The second growth-killing limitation is the lack of analytics beyond basic open rates. Without knowing which content triggers generate the highest-converting DM conversations, you cannot optimize your content strategy. Paid tiers provide the attribution data that makes your organic Instagram strategy data-driven instead of guesswork.</p>
+          </section>
+          <section id="when-to-upgrade" className="mb-12">
+            <h2 className="text-2xl font-bold text-gray-900 mb-4">When Free Tools Stop Making Sense</h2>
+              <p className="text-gray-700 mb-4 leading-relaxed">Three clear signals that you have outgrown free Instagram automation: you are consistently hitting your monthly conversation limit (means your content is generating more demand than your tool can handle), you are losing potential leads because people commented after your limit was reached, or you are manually handling follow-ups because your tool only allows single messages.</p>
+              <p className="text-gray-700 mb-4 leading-relaxed">The revenue-based threshold: if your average lead value is $50 and your free tool is capping out at 200 conversations per month when you could handle 500, you are losing $15,000/month in potential pipeline to avoid a $49-97/month upgrade. The math makes the decision obvious.</p>
+              <p className="text-gray-700 mb-4 leading-relaxed">Upgrade urgency increases during promotional periods. If you are planning a launch, a product drop, or a high-visibility campaign, upgrade before that event. The worst time to discover your free tier limit is in the middle of your biggest promotional moment.</p>
+          </section>
+          <section id="upgrade-roi" className="mb-12">
+            <h2 className="text-2xl font-bold text-gray-900 mb-4">Calculating the Upgrade ROI</h2>
+              <p className="text-gray-700 mb-4 leading-relaxed">Calculate the ROI of upgrading in three steps: estimate how many additional DM conversations the upgrade enables per month, apply your current DM-to-lead conversion rate to project additional leads, and multiply by your average lead value.</p>
+              <p className="text-gray-700 mb-4 leading-relaxed">Example: upgrading from free (200 conversations) to paid (unlimited) costs $79/month. Your engagement generates 600 DM conversations per month. The upgrade enables 400 additional conversations. At your 15% lead capture rate, that is 60 additional leads. At $200 average lead value, that is $12,000 in monthly pipeline from a $79 investment.</p>
+              <p className="text-gray-700 mb-4 leading-relaxed">Even at a conservative 5% lead-to-customer rate and $200 average order value, that is $600/month in revenue from a $79 investment. The upgrade ROI threshold for most active Instagram accounts is hit within the first month of paid use — often within the first week.</p>
+          </section>
+              <div className="bg-linear-to-r from-violet-600 to-purple-600 rounded-2xl p-8 text-white text-center mt-12">
+                <h2 className="text-2xl font-bold mb-3">Ready to Automate Your Instagram Growth?</h2>
+                <p className="text-violet-100 mb-6">PostEngage helps you turn Instagram engagement into leads, bookings, and sales automatically.</p>
+                <Button asChild size="lg" className="bg-white text-violet-600 hover:bg-violet-50">
+                  <Link href="/#waitlist">Start Free Today</Link>
+                </Button>
               </div>
-
-              <h2
-                id='why-it-matters'
-                className='scroll-mt-24 text-2xl font-bold mt-12 mb-6'
-              >
-                Why Comparisons on Instagram Matters in 2026
-              </h2>
-              <p>Instagram has over 2 billion monthly active users, and direct engagement through DMs and comments has never been higher. For comparisons professionals and businesses, the platform represents an unmatched opportunity to reach qualified prospects where they are already spending time.</p>
-              <p>The shift happening in 2026 is from passive social media presence to active, AI-powered conversation funnels. Brands that treat Instagram as a two-way communication channel — rather than just a broadcast medium — are seeing 3–5x better ROI on every hour invested.</p>
-
-              <h2
-                id='the-core-strategy'
-                className='scroll-mt-24 text-2xl font-bold mt-12 mb-6'
-              >
-                The Core Strategy: From Engagement to Conversion
-              </h2>
-              <p>The most effective Instagram automation strategies follow a consistent three-step pattern: attract attention with content, capture intent with a trigger (comment, DM keyword, Story reply), then convert with a personalized automated conversation.</p>
-              <p>What separates high-performing accounts from average ones is the quality of that third step — the automated conversation itself. Rule-based bots send the same canned response to everyone. AI-powered bots like PostEngage read the context of each interaction and craft replies that feel genuinely personal, dramatically improving conversion rates at every stage of the funnel.</p>
-
-              <h2
-                id='practical-implementation'
-                className='scroll-mt-24 text-2xl font-bold mt-12 mb-6'
-              >
-                Practical Implementation: Getting Started
-              </h2>
-              <p>Start with one trigger and one goal. The most common mistake brands make is trying to automate everything at once — welcome messages, comment replies, story responses, and DM sequences simultaneously. The result is a confusing mess.</p>
-              <p>Instead, pick the trigger that aligns with your highest-volume touchpoint. For most accounts, that is comment automation on Reels. Set up a single keyword trigger, write a compelling CTA in your caption, and measure results for two weeks before expanding. Once you see the conversion data, you will have a clear picture of where to invest next.</p>
-
-              <h2
-                id='advanced-tips'
-                className='scroll-mt-24 text-2xl font-bold mt-12 mb-6'
-              >
-                Advanced Tips for Maximum Results
-              </h2>
-              <p>Once your baseline automation is running, layer in AI personalization. PostEngage allows you to train a custom AI model on your brand voice — feeding it examples of your past replies, your tone guidelines, and your product knowledge. The result is an AI that responds to nuanced questions the way you would, not the way a generic chatbot would.</p>
-              <p>Also use time-window scheduling to match your automation to your audience's active hours. A bot that replies at 3am to someone in your target timezone creates a better first impression than one that batches responses at irregular times. Even small improvements in response quality and timing compound into significant conversion rate gains over weeks and months.</p>
-
-              <div className='bg-primary/5 p-8 rounded-2xl border border-primary/20 my-12'>
-                <h3 className='text-2xl font-bold mb-4'>Start Automating Your Instagram Today</h3>
-                <p className='mb-6'>Join thousands of brands using PostEngage to turn Instagram engagement into revenue.</p>
-                <Link href='https://app.postengage.ai/signup'>
-                  <Button size='lg' className='w-full sm:w-auto text-lg px-8'>
-                    Get Started Free <ArrowRight className='ml-2 h-5 w-5' />
-                  </Button>
-                </Link>
-              </div>
+              <div className="mt-12"><NewsletterForm /></div>
             </article>
-
-            <aside className='hidden lg:block lg:col-span-2 lg:sticky lg:top-32 lg:self-start'>
-              <div className='flex flex-col gap-4 items-center'>
-                <p className='text-xs font-semibold uppercase tracking-wider text-muted-foreground mb-2'>Share</p>
-                <SocialShareButtons
-                  url='https://postengage.ai/blog/free-instagram-automation-what-you-get'
-                  title='Free Instagram DM Automation: What You Get (And What You Are Missing)' />
-              </div>
+            <aside className="hidden lg:block lg:col-span-2">
+              <div className="sticky top-24"><SocialShareButtons title="Free Instagram Automation: What You Actually Get (And When to Upgrade)" /></div>
             </aside>
           </div>
         </div>
-        <NewsletterForm />
       </main>
       <LandingFooter />
     </div>

@@ -2,162 +2,114 @@ import { Metadata } from 'next';
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
-import {
-  ArrowRight,
-  Calendar,
-  Clock,
-  Zap,
-} from 'lucide-react';
-import { LandingHeader } from '@/components/landing/landing-header';
-import { LandingFooter } from '@/components/landing/landing-footer';
-import { TableOfContents } from '@/components/blog/table-of-contents';
-import { SocialShareButtons } from '@/components/blog/social-share-buttons';
-import { NewsletterForm } from '@/components/blog/newsletter-form';
+import { LandingHeader } from '@/components/landing-header';
+import { LandingFooter } from '@/components/landing-footer';
+import { TableOfContents } from '@/components/table-of-contents';
+import { SocialShareButtons } from '@/components/social-share-buttons';
+import { NewsletterForm } from '@/components/newsletter-form';
 
 export const metadata: Metadata = {
-  title: 'How to 10x Your Instagram Story Views and Capture Every Lead',
-  description: 'Story viewers are the warmest audience on Instagram. Learn how to create Stories that generate replies, then automate the DM follow-up so no lead slips through.',
-  openGraph: {
-    title: 'How to 10x Your Instagram Story Views and Capture Every Lead',
-    description: 'Story viewers are the warmest audience on Instagram. Learn how to create Stories that generate replies, then automate the DM follow-up so no lead slips through.',
-    type: 'article',
-    url: 'https://postengage.ai/blog/instagram-story-views-leads',
-    images: [{ url: '/blog/instagram-story-views-leads-cover.png', width: 1200, height: 630, alt: 'How to 10x Your Instagram Story Views and Capture Every Lead' }],
-  },
-  twitter: {
-    card: 'summary_large_image',
-    title: 'How to 10x Your Instagram Story Views and Capture Every Lead',
-    description: 'Story viewers are the warmest audience on Instagram. Learn how to create Stories that generate replies, then automate the DM follow-up so no lead slips through.',
-    images: ['/blog/instagram-story-views-leads-cover.png'],
-  },
+  title: 'Instagram Story Views to Leads: The Complete Conversion Guide | PostEngage Blog',
+  description: 'How to convert Instagram Story viewers into DM conversations, email subscribers, and paying customers using automation sequences triggered by Story engagement.',
 };
 
 export default function BlogPost() {
   const tocItems = [
-    { id: 'why-it-matters', title: 'Why This Matters in 2026' },
-    { id: 'the-core-strategy', title: 'The Core Strategy' },
-    { id: 'practical-implementation', title: 'Practical Implementation' },
-    { id: 'advanced-tips', title: 'Advanced Tips' },
+    { id: 'story-lead-gen-opportunity', title: 'Why Stories Are Your Most Underused Lead Gen Tool' },
+    { id: 'story-formats-that-convert', title: 'Story Formats That Drive DM Conversations' },
+    { id: 'story-to-dm-flows', title: 'Building Story-to-DM Automation Flows' },
+    { id: 'story-sequences', title: 'The 5-Story Sequence Framework' },
+    { id: 'measuring-story-performance', title: 'Measuring Story Lead Generation Performance' },
   ];
-
   return (
-    <div className='min-h-screen bg-background text-foreground font-sans selection:bg-primary/20'>
+    <div className="min-h-screen bg-white">
       <LandingHeader />
-      <main className='relative pt-32 pb-24'>
-        <div className='absolute inset-0 -z-10 overflow-hidden'>
-          <div className='absolute top-0 left-1/2 -translate-x-1/2 w-full h-[600px] bg-gradient-to-b from-primary/5 via-transparent to-transparent opacity-60' />
+      <main>
+        <div className="bg-linear-to-b from-violet-50 to-white border-b border-gray-100">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+            <div className="max-w-3xl mx-auto text-center">
+              <Badge className="mb-4 bg-violet-100 text-violet-700 hover:bg-violet-100">Content Strategy</Badge>
+              <h1 className="text-4xl font-bold text-gray-900 mb-4">Instagram Story Views to Leads: The Complete Conversion Guide</h1>
+              <p className="text-xl text-gray-600 mb-6">How to convert Instagram Story viewers into DM conversations, email subscribers, and paying customers using automation sequences triggered by Story engagement.</p>
+              <div className="flex items-center justify-center gap-4 text-sm text-gray-500">
+                <span>May 21, 2026</span><span>·</span><span>8 min read</span>
+              </div>
+            </div>
+          </div>
         </div>
-        <div className='container mx-auto px-4 max-w-7xl'>
-          <div className='grid grid-cols-1 lg:grid-cols-12 gap-12'>
-            <aside className='hidden lg:block lg:col-span-3 lg:sticky lg:top-32 lg:self-start space-y-8'>
-              <div className='flex items-center gap-2 text-sm text-muted-foreground mb-4'>
-                <Link href='/blog' className='hover:text-primary transition-colors'>Blog</Link>
-                <span>/</span>
-                <span className='text-foreground font-medium'>Stories Strategy</span>
-              </div>
-              <TableOfContents items={tocItems} />
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+          <div className="grid grid-cols-12 gap-8">
+            <aside className="hidden lg:block lg:col-span-3">
+              <div className="sticky top-24"><TableOfContents items={tocItems} /></div>
             </aside>
+            <article className="col-span-12 lg:col-span-7">
 
-            <article className='lg:col-span-7 prose prose-lg dark:prose-invert max-w-none'>
-              <header className='mb-12 not-prose'>
-                <Badge variant='secondary' className='mb-6 text-sm font-medium px-3 py-1'>
-                  Stories Strategy
-                </Badge>
-                <h1 className='text-4xl md:text-5xl font-extrabold tracking-tight mb-6 leading-tight'>
-                  How to 10x Your Instagram Story Views and Capture Every Lead
-                </h1>
-                <div className='flex items-center gap-6 text-muted-foreground'>
-                  <div className='flex items-center gap-2'>
-                    <div className='h-10 w-10 rounded-full bg-primary/10 flex items-center justify-center'>
-                      <Zap className='h-5 w-5 text-primary' />
-                    </div>
-                    <div>
-                      <p className='text-sm font-medium text-foreground'>PostEngageAI Team</p>
-                      <p className='text-xs'>Automation Experts</p>
-                    </div>
-                  </div>
-                  <div className='flex items-center gap-2 text-sm'>
-                    <Calendar className='h-4 w-4' />
-                    <span>May 6, 2026</span>
-                  </div>
-                  <div className='flex items-center gap-2 text-sm'>
-                    <Clock className='h-4 w-4' />
-                    <span>7 min read</span>
-                  </div>
-                </div>
-              </header>
-
-              <div className='relative w-full aspect-[21/9] rounded-2xl overflow-hidden mb-12 bg-muted'>
-                <div className='absolute inset-0 flex items-center justify-center bg-gradient-to-br from-gray-900 to-gray-800 text-white'>
-                  <div className='text-center p-8'>
-                    <Zap className='h-16 w-16 mx-auto mb-4 text-primary/80' />
-                    <p className='text-xl font-medium text-white/80'>Stories Strategy</p>
-                  </div>
-                </div>
+          <section id="story-lead-gen-opportunity" className="mb-12">
+            <h2 className="text-2xl font-bold text-gray-900 mb-4">Why Stories Are Your Most Underused Lead Gen Tool</h2>
+              <p className="text-gray-700 mb-4 leading-relaxed">Instagram Stories are viewed by a highly engaged subset of your followers — the people who actively check your account rather than just passively seeing your posts in their feed. Story viewers have higher purchase intent and higher relationship value than your average follower.</p>
+              <p className="text-gray-700 mb-4 leading-relaxed">Story reply rates are typically 3-5% of viewers, which sounds low but translates to meaningful volume for active accounts. An account with 5,000 followers and 800 Story views generates 24-40 Story replies per day from engaged, high-intent followers. These are among the warmest leads available to any business.</p>
+              <p className="text-gray-700 mb-4 leading-relaxed">Most accounts waste this asset by treating Story replies like casual conversation rather than lead generation opportunities. The shift in mindset: every Story reply is a potential lead. Automation helps you respond to all of them at scale — instantly and consistently — without spending hours in the DMs.</p>
+              <p className="font-semibold text-gray-800 mt-6 mb-2">Why Stories are a lead gen goldmine:</p>
+              <ul className="list-disc list-inside space-y-2 text-gray-700 mb-4">
+                <li>Story viewers are more engaged than average followers</li>
+                <li>Story reply rates: 3-5% of viewers, highly warm leads</li>
+                <li>800 story views = 24-40 potential lead conversations daily</li>
+                <li>Stories feel more personal and intimate than posts</li>
+                <li>Story swipe-ups (for eligible accounts) convert at higher rates than bio links</li>
+              </ul>
+          </section>
+          <section id="story-formats-that-convert" className="mb-12">
+            <h2 className="text-2xl font-bold text-gray-900 mb-4">Story Formats That Drive DM Conversations</h2>
+              <p className="text-gray-700 mb-4 leading-relaxed">Poll stories: present a question with two options relevant to a pain point your audience has. "Are you handling [X] manually or have you found a better way?" The people who vote "manually" (the painful option) are highly qualified leads. Follow up with those specific voters via DM.</p>
+              <p className="text-gray-700 mb-4 leading-relaxed">Question sticker stories: invite viewers to ask a question or share a challenge. Every response is a warm lead who has identified themselves and their problem. Respond to each one personally or with a relevant automated response that delivers value specific to what they shared.</p>
+              <p className="text-gray-700 mb-4 leading-relaxed">Countdown stories with keyword triggers: "The [resource/offer] drops in X hours. DM [KEYWORD] now to get first access." Creates urgency while collecting DM conversations from your most engaged followers.</p>
+              <p className="text-gray-700 mb-4 leading-relaxed">Tease-and-reveal series: post a Story that shows a compelling result and says "DM me [KEYWORD] if you want to know how I did this." The personal "DM me" framing feels like an exclusive invitation rather than a mass CTA.</p>
+              <div className="bg-violet-50 border border-violet-200 rounded-xl p-6 my-6">
+                <h3 className="font-bold text-violet-900 mb-3">Story Formats by DM Conversion Rate</h3>
+                <ul className="space-y-2">
+                  <li className="flex items-start gap-2 text-sm text-violet-800"><span>&#x2192;</span>Poll with follow-up DM to specific voters: highest conversion, most personal</li>
+                  <li className="flex items-start gap-2 text-sm text-violet-800"><span>&#x2192;</span>Question sticker with DM follow-up: high conversion, builds strong relationships</li>
+                  <li className="flex items-start gap-2 text-sm text-violet-800"><span>&#x2192;</span>Keyword DM invitation: reliable volume driver, scalable</li>
+                  <li className="flex items-start gap-2 text-sm text-violet-800"><span>&#x2192;</span>Swipe-up to lead page: good for conversion, depends on eligibility</li>
+                  <li className="flex items-start gap-2 text-sm text-violet-800"><span>&#x2192;</span>Link sticker to lead magnet: moderate conversion, good for passive audience</li>
+                </ul>
               </div>
-
-              <div className='lead text-xl text-muted-foreground mb-12 leading-relaxed'>
-                Story viewers are the warmest audience on Instagram. Learn how to create Stories that generate replies, then automate the DM follow-up so no lead slips through. This guide covers everything you need to know to get started and see results quickly.
+          </section>
+          <section id="story-to-dm-flows" className="mb-12">
+            <h2 className="text-2xl font-bold text-gray-900 mb-4">Building Story-to-DM Automation Flows</h2>
+              <p className="text-gray-700 mb-4 leading-relaxed">Story-to-DM automation requires your automation platform to either support Story reply triggers or for you to manually identify Story reply leads and initiate DM conversations with them. The former is preferred and increasingly available in 2026 on compliant platforms.</p>
+              <p className="text-gray-700 mb-4 leading-relaxed">Story reply trigger flow: when someone replies to a specific Story, your automation sends a DM that acknowledges their reply, delivers relevant value, and asks a qualifying question. "Thanks for responding — here is a bit more context on what you asked about: [resource]. Quick question: are you dealing with this for yourself or for a team?"</p>
+              <p className="text-gray-700 mb-4 leading-relaxed">Manual Story reply approach: review your Story replies daily, identify high-intent responses, and initiate personalized DM conversations. This is more time-intensive but allows for genuine personalization in the opening message. Automation then takes over at the follow-up stage.</p>
+          </section>
+          <section id="story-sequences" className="mb-12">
+            <h2 className="text-2xl font-bold text-gray-900 mb-4">The 5-Story Sequence Framework</h2>
+              <p className="text-gray-700 mb-4 leading-relaxed">A Story sequence designed for lead generation follows a deliberate progression across 5-7 Stories posted over 2-3 days: awareness, engagement, proof, offer, and urgency.</p>
+              <p className="text-gray-700 mb-4 leading-relaxed">Story 1 (Awareness): introduce the topic or problem. Ask a poll question to identify who is dealing with it. "Are you currently struggling with [problem]?" This creates segmentation — you know who your most relevant audience members are.</p>
+              <p className="text-gray-700 mb-4 leading-relaxed">Story 2 (Engagement): go deeper on the problem or topic. Use a question sticker to invite them to share their specific version of the problem. "What is the most frustrating part of dealing with [problem] for you?"</p>
+              <p className="text-gray-700 mb-4 leading-relaxed">Story 3 (Proof): show a specific result or transformation related to the topic. Brief, specific, visual. Let the result speak.</p>
+              <p className="text-gray-700 mb-4 leading-relaxed">Story 4 (Soft offer): introduce your resource or offer. "I put together [resource] specifically for people dealing with [problem]. DM me [KEYWORD] if you want it."</p>
+              <p className="text-gray-700 mb-4 leading-relaxed">Story 5 (Urgency/CTA): reminder with genuine urgency if applicable. "Last day to get [resource] at no cost — DM [KEYWORD] before tonight."</p>
+          </section>
+          <section id="measuring-story-performance" className="mb-12">
+            <h2 className="text-2xl font-bold text-gray-900 mb-4">Measuring Story Lead Generation Performance</h2>
+              <p className="text-gray-700 mb-4 leading-relaxed">Key Story performance metrics for lead generation: Story views (baseline), poll participation rate (engaged viewers), question sticker response rate (warm leads), DM reply rate from Story-triggered automations, and lead capture rate from Story-sourced DM conversations.</p>
+              <p className="text-gray-700 mb-4 leading-relaxed">Story view-to-DM conversion rate is the key diagnostic metric: of everyone who viewed a specific Story, what percentage ended up in a DM conversation? Above 2% is excellent for a keyword-triggered Story; above 5% for a poll follow-up Story targeting specific voters.</p>
+              <p className="text-gray-700 mb-4 leading-relaxed">A/B test Story formats to identify what generates the highest-quality DM conversations for your specific audience. Some audiences respond best to polls, others to question stickers, others to direct keyword CTAs. After 30 days of testing, you will have clear data on which formats to prioritize in your content calendar.</p>
+          </section>
+              <div className="bg-linear-to-r from-violet-600 to-purple-600 rounded-2xl p-8 text-white text-center mt-12">
+                <h2 className="text-2xl font-bold mb-3">Ready to Automate Your Instagram Growth?</h2>
+                <p className="text-violet-100 mb-6">PostEngage helps you turn Instagram engagement into leads, bookings, and sales automatically.</p>
+                <Button asChild size="lg" className="bg-white text-violet-600 hover:bg-violet-50">
+                  <Link href="/#waitlist">Start Free Today</Link>
+                </Button>
               </div>
-
-              <h2
-                id='why-it-matters'
-                className='scroll-mt-24 text-2xl font-bold mt-12 mb-6'
-              >
-                Why Stories Strategy on Instagram Matters in 2026
-              </h2>
-              <p>Instagram has over 2 billion monthly active users, and direct engagement through DMs and comments has never been higher. For stories strategy professionals and businesses, the platform represents an unmatched opportunity to reach qualified prospects where they are already spending time.</p>
-              <p>The shift happening in 2026 is from passive social media presence to active, AI-powered conversation funnels. Brands that treat Instagram as a two-way communication channel — rather than just a broadcast medium — are seeing 3–5x better ROI on every hour invested.</p>
-
-              <h2
-                id='the-core-strategy'
-                className='scroll-mt-24 text-2xl font-bold mt-12 mb-6'
-              >
-                The Core Strategy: From Engagement to Conversion
-              </h2>
-              <p>The most effective Instagram automation strategies follow a consistent three-step pattern: attract attention with content, capture intent with a trigger (comment, DM keyword, Story reply), then convert with a personalized automated conversation.</p>
-              <p>What separates high-performing accounts from average ones is the quality of that third step — the automated conversation itself. Rule-based bots send the same canned response to everyone. AI-powered bots like PostEngage read the context of each interaction and craft replies that feel genuinely personal, dramatically improving conversion rates at every stage of the funnel.</p>
-
-              <h2
-                id='practical-implementation'
-                className='scroll-mt-24 text-2xl font-bold mt-12 mb-6'
-              >
-                Practical Implementation: Getting Started
-              </h2>
-              <p>Start with one trigger and one goal. The most common mistake brands make is trying to automate everything at once — welcome messages, comment replies, story responses, and DM sequences simultaneously. The result is a confusing mess.</p>
-              <p>Instead, pick the trigger that aligns with your highest-volume touchpoint. For most accounts, that is comment automation on Reels. Set up a single keyword trigger, write a compelling CTA in your caption, and measure results for two weeks before expanding. Once you see the conversion data, you will have a clear picture of where to invest next.</p>
-
-              <h2
-                id='advanced-tips'
-                className='scroll-mt-24 text-2xl font-bold mt-12 mb-6'
-              >
-                Advanced Tips for Maximum Results
-              </h2>
-              <p>Once your baseline automation is running, layer in AI personalization. PostEngage allows you to train a custom AI model on your brand voice — feeding it examples of your past replies, your tone guidelines, and your product knowledge. The result is an AI that responds to nuanced questions the way you would, not the way a generic chatbot would.</p>
-              <p>Also use time-window scheduling to match your automation to your audience's active hours. A bot that replies at 3am to someone in your target timezone creates a better first impression than one that batches responses at irregular times. Even small improvements in response quality and timing compound into significant conversion rate gains over weeks and months.</p>
-
-              <div className='bg-primary/5 p-8 rounded-2xl border border-primary/20 my-12'>
-                <h3 className='text-2xl font-bold mb-4'>Start Automating Your Instagram Today</h3>
-                <p className='mb-6'>Join thousands of brands using PostEngage to turn Instagram engagement into revenue.</p>
-                <Link href='https://app.postengage.ai/signup'>
-                  <Button size='lg' className='w-full sm:w-auto text-lg px-8'>
-                    Get Started Free <ArrowRight className='ml-2 h-5 w-5' />
-                  </Button>
-                </Link>
-              </div>
+              <div className="mt-12"><NewsletterForm /></div>
             </article>
-
-            <aside className='hidden lg:block lg:col-span-2 lg:sticky lg:top-32 lg:self-start'>
-              <div className='flex flex-col gap-4 items-center'>
-                <p className='text-xs font-semibold uppercase tracking-wider text-muted-foreground mb-2'>Share</p>
-                <SocialShareButtons
-                  url='https://postengage.ai/blog/instagram-story-views-leads'
-                  title='How to 10x Your Instagram Story Views and Capture Every Lead' />
-              </div>
+            <aside className="hidden lg:block lg:col-span-2">
+              <div className="sticky top-24"><SocialShareButtons title="Instagram Story Views to Leads: The Complete Conversion Guide" /></div>
             </aside>
           </div>
         </div>
-        <NewsletterForm />
       </main>
       <LandingFooter />
     </div>

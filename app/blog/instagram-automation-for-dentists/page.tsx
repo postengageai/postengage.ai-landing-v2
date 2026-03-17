@@ -2,162 +2,113 @@ import { Metadata } from 'next';
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
-import {
-  ArrowRight,
-  Calendar,
-  Clock,
-  Zap,
-} from 'lucide-react';
-import { LandingHeader } from '@/components/landing/landing-header';
-import { LandingFooter } from '@/components/landing/landing-footer';
-import { TableOfContents } from '@/components/blog/table-of-contents';
-import { SocialShareButtons } from '@/components/blog/social-share-buttons';
-import { NewsletterForm } from '@/components/blog/newsletter-form';
+import { LandingHeader } from '@/components/landing-header';
+import { LandingFooter } from '@/components/landing-footer';
+import { TableOfContents } from '@/components/table-of-contents';
+import { SocialShareButtons } from '@/components/social-share-buttons';
+import { NewsletterForm } from '@/components/newsletter-form';
 
 export const metadata: Metadata = {
-  title: 'How Dental Practices Use Instagram to Book Patients Automatically',
-  description: 'Here is how forward-thinking practices use Instagram comment automation to capture patient inquiries and fill their appointment calendar without phone calls.',
-  openGraph: {
-    title: 'How Dental Practices Use Instagram to Book Patients Automatically',
-    description: 'Here is how forward-thinking practices use Instagram comment automation to capture patient inquiries and fill their appointment calendar without phone calls.',
-    type: 'article',
-    url: 'https://postengage.ai/blog/instagram-automation-for-dentists',
-    images: [{ url: '/blog/instagram-automation-for-dentists-cover.png', width: 1200, height: 630, alt: 'How Dental Practices Use Instagram to Book Patients Automatically' }],
-  },
-  twitter: {
-    card: 'summary_large_image',
-    title: 'How Dental Practices Use Instagram to Book Patients Automatically',
-    description: 'Here is how forward-thinking practices use Instagram comment automation to capture patient inquiries and fill their appointment calendar without phone calls.',
-    images: ['/blog/instagram-automation-for-dentists-cover.png'],
-  },
+  title: 'Instagram Automation for Dentists: More New Patients Without More Calls | PostEngage Blog',
+  description: 'How dental practices use Instagram DM automation to convert followers into new patients, fill appointment slots, and build trust before patients ever walk through the door.',
 };
 
 export default function BlogPost() {
   const tocItems = [
-    { id: 'why-it-matters', title: 'Why This Matters in 2026' },
-    { id: 'the-core-strategy', title: 'The Core Strategy' },
-    { id: 'practical-implementation', title: 'Practical Implementation' },
-    { id: 'advanced-tips', title: 'Advanced Tips' },
+    { id: 'dental-instagram-opportunity', title: 'Why Instagram Works for Dental Practices' },
+    { id: 'new-patient-dm-flow', title: 'The New Patient DM Flow' },
+    { id: 'treatment-specific-flows', title: 'Treatment-Specific Automation Flows' },
+    { id: 'trust-building-content', title: 'Trust-Building Content and DM Sequences' },
+    { id: 'compliance-considerations', title: 'HIPAA Considerations for Dental DM Automation' },
   ];
-
   return (
-    <div className='min-h-screen bg-background text-foreground font-sans selection:bg-primary/20'>
+    <div className="min-h-screen bg-white">
       <LandingHeader />
-      <main className='relative pt-32 pb-24'>
-        <div className='absolute inset-0 -z-10 overflow-hidden'>
-          <div className='absolute top-0 left-1/2 -translate-x-1/2 w-full h-[600px] bg-gradient-to-b from-primary/5 via-transparent to-transparent opacity-60' />
+      <main>
+        <div className="bg-linear-to-b from-violet-50 to-white border-b border-gray-100">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+            <div className="max-w-3xl mx-auto text-center">
+              <Badge className="mb-4 bg-violet-100 text-violet-700 hover:bg-violet-100">Healthcare & Dental</Badge>
+              <h1 className="text-4xl font-bold text-gray-900 mb-4">Instagram Automation for Dentists: More New Patients Without More Calls</h1>
+              <p className="text-xl text-gray-600 mb-6">How dental practices use Instagram DM automation to convert followers into new patients, fill appointment slots, and build trust before patients ever walk through the door.</p>
+              <div className="flex items-center justify-center gap-4 text-sm text-gray-500">
+                <span>May 5, 2026</span><span>·</span><span>8 min read</span>
+              </div>
+            </div>
+          </div>
         </div>
-        <div className='container mx-auto px-4 max-w-7xl'>
-          <div className='grid grid-cols-1 lg:grid-cols-12 gap-12'>
-            <aside className='hidden lg:block lg:col-span-3 lg:sticky lg:top-32 lg:self-start space-y-8'>
-              <div className='flex items-center gap-2 text-sm text-muted-foreground mb-4'>
-                <Link href='/blog' className='hover:text-primary transition-colors'>Blog</Link>
-                <span>/</span>
-                <span className='text-foreground font-medium'>Healthcare</span>
-              </div>
-              <TableOfContents items={tocItems} />
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+          <div className="grid grid-cols-12 gap-8">
+            <aside className="hidden lg:block lg:col-span-3">
+              <div className="sticky top-24"><TableOfContents items={tocItems} /></div>
             </aside>
+            <article className="col-span-12 lg:col-span-7">
 
-            <article className='lg:col-span-7 prose prose-lg dark:prose-invert max-w-none'>
-              <header className='mb-12 not-prose'>
-                <Badge variant='secondary' className='mb-6 text-sm font-medium px-3 py-1'>
-                  Healthcare
-                </Badge>
-                <h1 className='text-4xl md:text-5xl font-extrabold tracking-tight mb-6 leading-tight'>
-                  How Dental Practices Use Instagram to Book Patients Automatically
-                </h1>
-                <div className='flex items-center gap-6 text-muted-foreground'>
-                  <div className='flex items-center gap-2'>
-                    <div className='h-10 w-10 rounded-full bg-primary/10 flex items-center justify-center'>
-                      <Zap className='h-5 w-5 text-primary' />
-                    </div>
-                    <div>
-                      <p className='text-sm font-medium text-foreground'>PostEngageAI Team</p>
-                      <p className='text-xs'>Automation Experts</p>
-                    </div>
-                  </div>
-                  <div className='flex items-center gap-2 text-sm'>
-                    <Calendar className='h-4 w-4' />
-                    <span>May 24, 2026</span>
-                  </div>
-                  <div className='flex items-center gap-2 text-sm'>
-                    <Clock className='h-4 w-4' />
-                    <span>6 min read</span>
-                  </div>
-                </div>
-              </header>
-
-              <div className='relative w-full aspect-[21/9] rounded-2xl overflow-hidden mb-12 bg-muted'>
-                <div className='absolute inset-0 flex items-center justify-center bg-gradient-to-br from-gray-900 to-gray-800 text-white'>
-                  <div className='text-center p-8'>
-                    <Zap className='h-16 w-16 mx-auto mb-4 text-primary/80' />
-                    <p className='text-xl font-medium text-white/80'>Healthcare</p>
-                  </div>
-                </div>
+          <section id="dental-instagram-opportunity" className="mb-12">
+            <h2 className="text-2xl font-bold text-gray-900 mb-4">Why Instagram Works for Dental Practices</h2>
+              <p className="text-gray-700 mb-4 leading-relaxed">Dentistry is not an obvious Instagram category, but the practices using Instagram effectively are seeing significant new patient generation through the platform. The reason: dental work is highly visual, transformation-driven, and tied to confidence and aesthetics — all of which resonate strongly with Instagram audiences.</p>
+              <p className="text-gray-700 mb-4 leading-relaxed">Before-and-after photos of smile transformations generate some of the highest engagement rates in any healthcare category on Instagram. Veneers, whitening results, Invisalign transformations — these posts attract follows, saves, and comments from people who want similar results. That interest is commercial intent waiting to be captured.</p>
+              <p className="text-gray-700 mb-4 leading-relaxed">The gap most dental practices face: they post great content, get strong engagement, and then have no system to capture the interest and convert it to appointments. Someone who comments "I need to do something about my smile" is ready to become a patient — but without an automated response that captures that moment, they scroll on and forget.</p>
+              <p className="font-semibold text-gray-800 mt-6 mb-2">Why dental practices win on Instagram:</p>
+              <ul className="list-disc list-inside space-y-2 text-gray-700 mb-4">
+                <li>Smile transformations drive high engagement (highly visual, aspirational)</li>
+                <li>Aesthetic procedures attract self-motivated patients ready to invest</li>
+                <li>Instagram demographics align well with elective dental procedure audiences</li>
+                <li>DM automation can provide instant pricing estimates and booking links</li>
+                <li>Educational content builds trust and reduces pre-appointment anxiety</li>
+              </ul>
+          </section>
+          <section id="new-patient-dm-flow" className="mb-12">
+            <h2 className="text-2xl font-bold text-gray-900 mb-4">The New Patient DM Flow</h2>
+              <p className="text-gray-700 mb-4 leading-relaxed">The new patient DM flow starts with a content trigger. "Comment SMILE to learn about our transformation process" on a before-and-after post. Or "Comment COST for our Invisalign pricing guide" on treatment content.</p>
+              <p className="text-gray-700 mb-4 leading-relaxed">The initial DM delivers the promised resource and asks one qualifying question: "Are you looking at this for yourself, or is this for someone in your family?" This simple question does several things: it confirms human interest (bots and casual browsers rarely answer), it segments the prospect, and it starts a real conversation.</p>
+              <p className="text-gray-700 mb-4 leading-relaxed">Follow-up messages: if they respond, offer to answer their specific questions or invite them to book a complimentary consultation. The consultation offer converts at much higher rates when it comes after a DM conversation than when it is offered cold via a link-in-bio. The pre-existing exchange creates familiarity and trust.</p>
+              <div className="bg-violet-50 border border-violet-200 rounded-xl p-6 my-6">
+                <h3 className="font-bold text-violet-900 mb-3">New Patient DM Flow Template</h3>
+                <ul className="space-y-2">
+                  <li className="flex items-start gap-2 text-sm text-violet-800"><span>&#x2192;</span>Comment trigger: SMILE, COST, or INVISALIGN on relevant posts</li>
+                  <li className="flex items-start gap-2 text-sm text-violet-800"><span>&#x2192;</span>Instant DM: deliver resource + qualifying question (for self or family?)</li>
+                  <li className="flex items-start gap-2 text-sm text-violet-800"><span>&#x2192;</span>If response: answer their specific concern or question</li>
+                  <li className="flex items-start gap-2 text-sm text-violet-800"><span>&#x2192;</span>Next step: offer complimentary consultation with direct booking link</li>
+                  <li className="flex items-start gap-2 text-sm text-violet-800"><span>&#x2192;</span>If no response: one follow-up at 48h with a different angle</li>
+                  <li className="flex items-start gap-2 text-sm text-violet-800"><span>&#x2192;</span>Post-booking: automated confirmation + pre-appointment information</li>
+                </ul>
               </div>
-
-              <div className='lead text-xl text-muted-foreground mb-12 leading-relaxed'>
-                Here is how forward-thinking practices use Instagram comment automation to capture patient inquiries and fill their appointment calendar without phone calls. This guide covers everything you need to know to get started and see results quickly.
+          </section>
+          <section id="treatment-specific-flows" className="mb-12">
+            <h2 className="text-2xl font-bold text-gray-900 mb-4">Treatment-Specific Automation Flows</h2>
+              <p className="text-gray-700 mb-4 leading-relaxed">Different treatments attract different patient profiles with different information needs. Building treatment-specific flows ensures every prospect gets relevant information rather than generic dental marketing.</p>
+              <p className="text-gray-700 mb-4 leading-relaxed">Invisalign flow: focuses on discreet appearance, adult-appropriate lifestyle, treatment timeline, and payment options. The prospect who is interested in Invisalign is typically an adult professional who is self-conscious about traditional braces. Your DM content should speak to their specific concerns.</p>
+              <p className="text-gray-700 mb-4 leading-relaxed">Cosmetic dentistry flow (veneers, whitening): focuses on transformation results, the consultation and design process, and realistic outcome expectations. These patients tend to have done significant research already — your DM should position your practice as the expert they want guiding their smile design, not just a provider offering services.</p>
+              <p className="text-gray-700 mb-4 leading-relaxed">Emergency/pain flow: fastest possible response and direct call booking. Someone DMing about tooth pain needs a human response within minutes. Automation should immediately deliver emergency contact information and a booking link, then flag the conversation for immediate human follow-up.</p>
+          </section>
+          <section id="trust-building-content" className="mb-12">
+            <h2 className="text-2xl font-bold text-gray-900 mb-4">Trust-Building Content and DM Sequences</h2>
+              <p className="text-gray-700 mb-4 leading-relaxed">Trust is the primary purchase consideration in healthcare. Patients do not choose a dentist the way they choose a product — they need to feel confident in the provider's competence and care before they walk through the door.</p>
+              <p className="text-gray-700 mb-4 leading-relaxed">Content that builds trust for dental practices: doctor introduction videos (the dentist speaking directly to camera, explaining their philosophy and approach), procedure explanation videos (demystifying treatments that patients fear), patient testimonial stories (video or written, with permission), and "day in the practice" content that shows the team and environment.</p>
+              <p className="text-gray-700 mb-4 leading-relaxed">DM trust sequences: when someone expresses interest but has not yet booked, send a sequence over 5-7 days that delivers trust-building content rather than sales pressure. Day 2: "Here is a 2-minute video explaining exactly what the Invisalign consultation looks like." Day 4: "This patient had the same concerns you mentioned — their experience might be helpful." Day 6: "Ready to take the first step? Our consultation is completely complimentary, no pressure." This approach converts hesitant prospects without feeling pushy.</p>
+          </section>
+          <section id="compliance-considerations" className="mb-12">
+            <h2 className="text-2xl font-bold text-gray-900 mb-4">HIPAA Considerations for Dental DM Automation</h2>
+              <p className="text-gray-700 mb-4 leading-relaxed">HIPAA compliance is essential for dental practices using any digital communication tool. The good news: Instagram DM automation for new patient acquisition does not typically involve Protected Health Information (PHI) and therefore operates in a lower-risk compliance zone than, say, sending treatment records via email.</p>
+              <p className="text-gray-700 mb-4 leading-relaxed">What is generally safe in Instagram DM automation: responding to general inquiries about procedures, providing pricing information, sending educational content about treatments, and directing people to booking links. These interactions do not involve PHI because no specific patient health information is being transmitted.</p>
+              <p className="text-gray-700 mb-4 leading-relaxed">What requires careful handling: any conversation that moves into discussing a specific patient's health condition, treatment history, or personal medical information. If a DM conversation crosses into PHI territory, that conversation should be moved to a HIPAA-compliant secure messaging system. Train your automation to recognize these signals and route them appropriately.</p>
+              <p className="text-gray-700 mb-4 leading-relaxed">Best practice: include a brief disclosure in your Instagram bio or automation welcome message noting that for specific health questions, patients should contact your practice directly through your secure patient portal. This sets appropriate expectations and keeps automation interactions in the compliant zone.</p>
+          </section>
+              <div className="bg-linear-to-r from-violet-600 to-purple-600 rounded-2xl p-8 text-white text-center mt-12">
+                <h2 className="text-2xl font-bold mb-3">Ready to Automate Your Instagram Growth?</h2>
+                <p className="text-violet-100 mb-6">PostEngage helps you turn Instagram engagement into leads, bookings, and sales automatically.</p>
+                <Button asChild size="lg" className="bg-white text-violet-600 hover:bg-violet-50">
+                  <Link href="/#waitlist">Start Free Today</Link>
+                </Button>
               </div>
-
-              <h2
-                id='why-it-matters'
-                className='scroll-mt-24 text-2xl font-bold mt-12 mb-6'
-              >
-                Why Healthcare on Instagram Matters in 2026
-              </h2>
-              <p>Instagram has over 2 billion monthly active users, and direct engagement through DMs and comments has never been higher. For healthcare professionals and businesses, the platform represents an unmatched opportunity to reach qualified prospects where they are already spending time.</p>
-              <p>The shift happening in 2026 is from passive social media presence to active, AI-powered conversation funnels. Brands that treat Instagram as a two-way communication channel — rather than just a broadcast medium — are seeing 3–5x better ROI on every hour invested.</p>
-
-              <h2
-                id='the-core-strategy'
-                className='scroll-mt-24 text-2xl font-bold mt-12 mb-6'
-              >
-                The Core Strategy: From Engagement to Conversion
-              </h2>
-              <p>The most effective Instagram automation strategies follow a consistent three-step pattern: attract attention with content, capture intent with a trigger (comment, DM keyword, Story reply), then convert with a personalized automated conversation.</p>
-              <p>What separates high-performing accounts from average ones is the quality of that third step — the automated conversation itself. Rule-based bots send the same canned response to everyone. AI-powered bots like PostEngage read the context of each interaction and craft replies that feel genuinely personal, dramatically improving conversion rates at every stage of the funnel.</p>
-
-              <h2
-                id='practical-implementation'
-                className='scroll-mt-24 text-2xl font-bold mt-12 mb-6'
-              >
-                Practical Implementation: Getting Started
-              </h2>
-              <p>Start with one trigger and one goal. The most common mistake brands make is trying to automate everything at once — welcome messages, comment replies, story responses, and DM sequences simultaneously. The result is a confusing mess.</p>
-              <p>Instead, pick the trigger that aligns with your highest-volume touchpoint. For most accounts, that is comment automation on Reels. Set up a single keyword trigger, write a compelling CTA in your caption, and measure results for two weeks before expanding. Once you see the conversion data, you will have a clear picture of where to invest next.</p>
-
-              <h2
-                id='advanced-tips'
-                className='scroll-mt-24 text-2xl font-bold mt-12 mb-6'
-              >
-                Advanced Tips for Maximum Results
-              </h2>
-              <p>Once your baseline automation is running, layer in AI personalization. PostEngage allows you to train a custom AI model on your brand voice — feeding it examples of your past replies, your tone guidelines, and your product knowledge. The result is an AI that responds to nuanced questions the way you would, not the way a generic chatbot would.</p>
-              <p>Also use time-window scheduling to match your automation to your audience's active hours. A bot that replies at 3am to someone in your target timezone creates a better first impression than one that batches responses at irregular times. Even small improvements in response quality and timing compound into significant conversion rate gains over weeks and months.</p>
-
-              <div className='bg-primary/5 p-8 rounded-2xl border border-primary/20 my-12'>
-                <h3 className='text-2xl font-bold mb-4'>Start Automating Your Instagram Today</h3>
-                <p className='mb-6'>Join thousands of brands using PostEngage to turn Instagram engagement into revenue.</p>
-                <Link href='https://app.postengage.ai/signup'>
-                  <Button size='lg' className='w-full sm:w-auto text-lg px-8'>
-                    Get Started Free <ArrowRight className='ml-2 h-5 w-5' />
-                  </Button>
-                </Link>
-              </div>
+              <div className="mt-12"><NewsletterForm /></div>
             </article>
-
-            <aside className='hidden lg:block lg:col-span-2 lg:sticky lg:top-32 lg:self-start'>
-              <div className='flex flex-col gap-4 items-center'>
-                <p className='text-xs font-semibold uppercase tracking-wider text-muted-foreground mb-2'>Share</p>
-                <SocialShareButtons
-                  url='https://postengage.ai/blog/instagram-automation-for-dentists'
-                  title='How Dental Practices Use Instagram to Book Patients Automatically' />
-              </div>
+            <aside className="hidden lg:block lg:col-span-2">
+              <div className="sticky top-24"><SocialShareButtons title="Instagram Automation for Dentists: More New Patients Without More Calls" /></div>
             </aside>
           </div>
         </div>
-        <NewsletterForm />
       </main>
       <LandingFooter />
     </div>

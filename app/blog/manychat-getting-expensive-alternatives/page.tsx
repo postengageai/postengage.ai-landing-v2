@@ -2,162 +2,111 @@ import { Metadata } from 'next';
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
-import {
-  ArrowRight,
-  Calendar,
-  Clock,
-  Zap,
-} from 'lucide-react';
-import { LandingHeader } from '@/components/landing/landing-header';
-import { LandingFooter } from '@/components/landing/landing-footer';
-import { TableOfContents } from '@/components/blog/table-of-contents';
-import { SocialShareButtons } from '@/components/blog/social-share-buttons';
-import { NewsletterForm } from '@/components/blog/newsletter-form';
+import { LandingHeader } from '@/components/landing-header';
+import { LandingFooter } from '@/components/landing-footer';
+import { TableOfContents } from '@/components/table-of-contents';
+import { SocialShareButtons } from '@/components/social-share-buttons';
+import { NewsletterForm } from '@/components/newsletter-form';
 
 export const metadata: Metadata = {
-  title: 'ManyChat Getting Too Expensive? Here Are Your Best Alternatives in 2026',
-  description: 'ManyChat raised prices again. Here is an honest breakdown of the best alternatives — including which one is built specifically for Instagram AI from the ground up.',
-  openGraph: {
-    title: 'ManyChat Getting Too Expensive? Here Are Your Best Alternatives in 2026',
-    description: 'ManyChat raised prices again. Here is an honest breakdown of the best alternatives — including which one is built specifically for Instagram AI from the ground up.',
-    type: 'article',
-    url: 'https://postengage.ai/blog/manychat-getting-expensive-alternatives',
-    images: [{ url: '/blog/manychat-getting-expensive-alternatives-cover.png', width: 1200, height: 630, alt: 'ManyChat Getting Too Expensive? Here Are Your Best Alternatives in 2026' }],
-  },
-  twitter: {
-    card: 'summary_large_image',
-    title: 'ManyChat Getting Too Expensive? Here Are Your Best Alternatives in 2026',
-    description: 'ManyChat raised prices again. Here is an honest breakdown of the best alternatives — including which one is built specifically for Instagram AI from the ground up.',
-    images: ['/blog/manychat-getting-expensive-alternatives-cover.png'],
-  },
+  title: 'ManyChat Getting Too Expensive? Here Are Your Best Options | PostEngage Blog',
+  description: 'ManyChat pricing has increased significantly. If you are paying too much for your usage level, here are the best alternatives with honest cost comparisons and migration advice.',
 };
 
 export default function BlogPost() {
   const tocItems = [
-    { id: 'why-it-matters', title: 'Why This Matters in 2026' },
-    { id: 'the-core-strategy', title: 'The Core Strategy' },
-    { id: 'practical-implementation', title: 'Practical Implementation' },
-    { id: 'advanced-tips', title: 'Advanced Tips' },
+    { id: 'manychat-pricing-reality', title: 'The ManyChat Pricing Reality in 2026' },
+    { id: 'cost-comparison', title: 'Real Cost Comparison: ManyChat vs. Alternatives' },
+    { id: 'who-should-switch', title: 'Who Should Actually Switch' },
+    { id: 'top-cheaper-alternatives', title: 'Top Alternatives at Each Price Point' },
+    { id: 'switching-without-disruption', title: 'Switching Without Disrupting Your Automation' },
   ];
-
   return (
-    <div className='min-h-screen bg-background text-foreground font-sans selection:bg-primary/20'>
+    <div className="min-h-screen bg-white">
       <LandingHeader />
-      <main className='relative pt-32 pb-24'>
-        <div className='absolute inset-0 -z-10 overflow-hidden'>
-          <div className='absolute top-0 left-1/2 -translate-x-1/2 w-full h-[600px] bg-gradient-to-b from-primary/5 via-transparent to-transparent opacity-60' />
+      <main>
+        <div className="bg-linear-to-b from-violet-50 to-white border-b border-gray-100">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+            <div className="max-w-3xl mx-auto text-center">
+              <Badge className="mb-4 bg-violet-100 text-violet-700 hover:bg-violet-100">Tools & Pricing</Badge>
+              <h1 className="text-4xl font-bold text-gray-900 mb-4">ManyChat Getting Too Expensive? Here Are Your Best Options</h1>
+              <p className="text-xl text-gray-600 mb-6">ManyChat pricing has increased significantly. If you are paying too much for your usage level, here are the best alternatives with honest cost comparisons and migration advice.</p>
+              <div className="flex items-center justify-center gap-4 text-sm text-gray-500">
+                <span>May 23, 2026</span><span>·</span><span>8 min read</span>
+              </div>
+            </div>
+          </div>
         </div>
-        <div className='container mx-auto px-4 max-w-7xl'>
-          <div className='grid grid-cols-1 lg:grid-cols-12 gap-12'>
-            <aside className='hidden lg:block lg:col-span-3 lg:sticky lg:top-32 lg:self-start space-y-8'>
-              <div className='flex items-center gap-2 text-sm text-muted-foreground mb-4'>
-                <Link href='/blog' className='hover:text-primary transition-colors'>Blog</Link>
-                <span>/</span>
-                <span className='text-foreground font-medium'>Comparisons</span>
-              </div>
-              <TableOfContents items={tocItems} />
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+          <div className="grid grid-cols-12 gap-8">
+            <aside className="hidden lg:block lg:col-span-3">
+              <div className="sticky top-24"><TableOfContents items={tocItems} /></div>
             </aside>
+            <article className="col-span-12 lg:col-span-7">
 
-            <article className='lg:col-span-7 prose prose-lg dark:prose-invert max-w-none'>
-              <header className='mb-12 not-prose'>
-                <Badge variant='secondary' className='mb-6 text-sm font-medium px-3 py-1'>
-                  Comparisons
-                </Badge>
-                <h1 className='text-4xl md:text-5xl font-extrabold tracking-tight mb-6 leading-tight'>
-                  ManyChat Getting Too Expensive? Here Are Your Best Alternatives in 2026
-                </h1>
-                <div className='flex items-center gap-6 text-muted-foreground'>
-                  <div className='flex items-center gap-2'>
-                    <div className='h-10 w-10 rounded-full bg-primary/10 flex items-center justify-center'>
-                      <Zap className='h-5 w-5 text-primary' />
-                    </div>
-                    <div>
-                      <p className='text-sm font-medium text-foreground'>PostEngageAI Team</p>
-                      <p className='text-xs'>Automation Experts</p>
-                    </div>
-                  </div>
-                  <div className='flex items-center gap-2 text-sm'>
-                    <Calendar className='h-4 w-4' />
-                    <span>May 8, 2026</span>
-                  </div>
-                  <div className='flex items-center gap-2 text-sm'>
-                    <Clock className='h-4 w-4' />
-                    <span>7 min read</span>
-                  </div>
-                </div>
-              </header>
-
-              <div className='relative w-full aspect-[21/9] rounded-2xl overflow-hidden mb-12 bg-muted'>
-                <div className='absolute inset-0 flex items-center justify-center bg-gradient-to-br from-gray-900 to-gray-800 text-white'>
-                  <div className='text-center p-8'>
-                    <Zap className='h-16 w-16 mx-auto mb-4 text-primary/80' />
-                    <p className='text-xl font-medium text-white/80'>Comparisons</p>
-                  </div>
-                </div>
+          <section id="manychat-pricing-reality" className="mb-12">
+            <h2 className="text-2xl font-bold text-gray-900 mb-4">The ManyChat Pricing Reality in 2026</h2>
+              <p className="text-gray-700 mb-4 leading-relaxed">ManyChat's pricing structure has evolved significantly since 2022. The free tier is more restricted than it was. The Pro tier pricing has increased and the features included at each price point have shifted. For many small and mid-size businesses, the cost-to-value equation has changed.</p>
+              <p className="text-gray-700 mb-4 leading-relaxed">The specific pain points: the free tier now caps at 1,000 contacts (reduced from unlimited in earlier versions), the Pro tier charges based on contacts rather than conversation volume (meaning your costs scale with your audience size, not your usage), and certain features that were previously included at lower tiers now require higher tiers.</p>
+              <p className="text-gray-700 mb-4 leading-relaxed">The honest assessment: ManyChat is not overpriced for what it delivers if you are using the full feature set. It becomes expensive relative to alternatives if you are using only core DM automation features and paying for enterprise capabilities you do not need. The question is whether your actual usage justifies the cost at your current tier.</p>
+              <p className="font-semibold text-gray-800 mt-6 mb-2">ManyChat pricing changes since 2022:</p>
+              <ul className="list-disc list-inside space-y-2 text-gray-700 mb-4">
+                <li>Free tier: now capped at 1,000 contacts (previously unlimited)</li>
+                <li>Contact-based pricing scales costs with audience growth, not just usage</li>
+                <li>Higher-tier features bundled into plans most users do not fully utilize</li>
+                <li>Pro plan pricing has increased approximately 40% since 2022</li>
+                <li>Cost comparison only valid when comparing equivalent feature usage</li>
+              </ul>
+          </section>
+          <section id="cost-comparison" className="mb-12">
+            <h2 className="text-2xl font-bold text-gray-900 mb-4">Real Cost Comparison: ManyChat vs. Alternatives</h2>
+              <p className="text-gray-700 mb-4 leading-relaxed">For a business with 5,000 contacts and 500 monthly DM conversations: ManyChat Pro runs approximately $65-85/month at this scale. PostEngage at comparable features runs $49-79/month. Chatfuel at similar usage runs $49-59/month. The difference is not dramatic — but it adds up to $180-420/year.</p>
+              <p className="text-gray-700 mb-4 leading-relaxed">For a business with 20,000 contacts and 2,000 monthly DM conversations: ManyChat Pro scales to $150-200/month. Competitors with flat-rate or conversation-based pricing may run $79-99/month at this level. The savings are meaningful: $700-1,500/year.</p>
+              <p className="text-gray-700 mb-4 leading-relaxed">The comparison that matters most: total cost of ownership, including the time to migrate and the risk of disruption during transition. Switching platforms has a cost — typically 2-4 weeks of setup and testing time. Factor that in before deciding that a $50/month savings justifies the switch. For businesses paying $200+/month more than they need to, the math clearly favors switching. For businesses with smaller gaps, the migration cost may not be worth it.</p>
+              <div className="bg-violet-50 border border-violet-200 rounded-xl p-6 my-6">
+                <h3 className="font-bold text-violet-900 mb-3">Annual Cost Comparison at Different Usage Levels</h3>
+                <ul className="space-y-2">
+                  <li className="flex items-start gap-2 text-sm text-violet-800"><span>&#x2192;</span>500 conversations/month, 5k contacts: ManyChat ~$840/yr vs. alternatives ~$600/yr</li>
+                  <li className="flex items-start gap-2 text-sm text-violet-800"><span>&#x2192;</span>2,000 conversations/month, 20k contacts: ManyChat ~$2,000/yr vs. alternatives ~$1,100/yr</li>
+                  <li className="flex items-start gap-2 text-sm text-violet-800"><span>&#x2192;</span>5,000+ conversations/month: custom pricing applies, compare quotes directly</li>
+                  <li className="flex items-start gap-2 text-sm text-violet-800"><span>&#x2192;</span>Migration cost: estimate 20-30 hours of setup and testing time</li>
+                  <li className="flex items-start gap-2 text-sm text-violet-800"><span>&#x2192;</span>Breakeven: typically 3-4 months of savings covers migration time cost</li>
+                </ul>
               </div>
-
-              <div className='lead text-xl text-muted-foreground mb-12 leading-relaxed'>
-                ManyChat raised prices again. Here is an honest breakdown of the best alternatives — including which one is built specifically for Instagram AI from the ground up. This guide covers everything you need to know to get started and see results quickly.
+          </section>
+          <section id="who-should-switch" className="mb-12">
+            <h2 className="text-2xl font-bold text-gray-900 mb-4">Who Should Actually Switch</h2>
+              <p className="text-gray-700 mb-4 leading-relaxed">Switch if: you are paying for ManyChat features you do not use and the base cost at your usage level is 30%+ higher than comparable alternatives, you need features (like AI-powered intent routing or native revenue attribution) that ManyChat does not offer at your plan level, or you are using ManyChat for Instagram only and a competitor offers a better Instagram-specific product at lower cost.</p>
+              <p className="text-gray-700 mb-4 leading-relaxed">Do not switch if: your current flows are complex and stable (the migration cost will take 6-12 months to recover in savings), your team is deeply familiar with ManyChat and retraining would be costly, or the pricing difference is under $50/month (the ROI of switching is low at small gaps).</p>
+              <p className="text-gray-700 mb-4 leading-relaxed">The best time to switch: when you are rebuilding your automation flows anyway (after a major offer change, a rebrand, or a strategic shift). Rebuilding on a new platform during a planned rebuild costs no more than rebuilding on ManyChat — and you get the savings going forward.</p>
+          </section>
+          <section id="top-cheaper-alternatives" className="mb-12">
+            <h2 className="text-2xl font-bold text-gray-900 mb-4">Top Alternatives at Each Price Point</h2>
+              <p className="text-gray-700 mb-4 leading-relaxed">Under $50/month: MobileMonkey (Instagram DM automation with strong ad integration), basic tiers of Chatfuel, and PostEngage's entry plan. These work well for accounts with under 1,000 monthly DM conversations and simple single-flow automation needs.</p>
+              <p className="text-gray-700 mb-4 leading-relaxed">$50-100/month: PostEngage growth tier, Chatfuel business tier, and Tidio (if customer service is your primary use case). At this range, you get multi-flow automation, basic CRM integration, and reasonable analytics. Best for accounts with 500-2,000 monthly DM conversations.</p>
+              <p className="text-gray-700 mb-4 leading-relaxed">$100-200/month: PostEngage pro, Chatfuel enterprise, and specialized platforms for specific use cases. At this range, expect full feature parity with ManyChat Pro and in some cases better AI routing and analytics. Best for agencies, high-volume accounts, and businesses where DM automation is a primary revenue driver.</p>
+          </section>
+          <section id="switching-without-disruption" className="mb-12">
+            <h2 className="text-2xl font-bold text-gray-900 mb-4">Switching Without Disrupting Your Automation</h2>
+              <p className="text-gray-700 mb-4 leading-relaxed">The biggest risk of switching platforms is disrupting active automation flows during the transition. A properly planned migration eliminates this risk.</p>
+              <p className="text-gray-700 mb-4 leading-relaxed">Pre-migration: document every flow in your current platform with screenshots. Export all contact data. Identify your highest-impact flows (the ones generating the most leads or revenue) and prioritize rebuilding these first.</p>
+              <p className="text-gray-700 mb-4 leading-relaxed">During migration: build and test all flows on the new platform before going live. Run both platforms simultaneously for 7-14 days — new conversations go to the new platform, existing conversations stay on the old platform. This prevents any lead from falling through the cracks during the transition.</p>
+              <p className="text-gray-700 mb-4 leading-relaxed">Post-migration: monitor your key metrics (first response rate, lead capture rate, DM-to-sale rate) for the first 30 days to confirm performance is comparable to your previous platform. It is normal to see slight performance variations in the first few weeks as the new platform's AI models learn from your specific audience.</p>
+          </section>
+              <div className="bg-linear-to-r from-violet-600 to-purple-600 rounded-2xl p-8 text-white text-center mt-12">
+                <h2 className="text-2xl font-bold mb-3">Ready to Automate Your Instagram Growth?</h2>
+                <p className="text-violet-100 mb-6">PostEngage helps you turn Instagram engagement into leads, bookings, and sales automatically.</p>
+                <Button asChild size="lg" className="bg-white text-violet-600 hover:bg-violet-50">
+                  <Link href="/#waitlist">Start Free Today</Link>
+                </Button>
               </div>
-
-              <h2
-                id='why-it-matters'
-                className='scroll-mt-24 text-2xl font-bold mt-12 mb-6'
-              >
-                Why Comparisons on Instagram Matters in 2026
-              </h2>
-              <p>Instagram has over 2 billion monthly active users, and direct engagement through DMs and comments has never been higher. For comparisons professionals and businesses, the platform represents an unmatched opportunity to reach qualified prospects where they are already spending time.</p>
-              <p>The shift happening in 2026 is from passive social media presence to active, AI-powered conversation funnels. Brands that treat Instagram as a two-way communication channel — rather than just a broadcast medium — are seeing 3–5x better ROI on every hour invested.</p>
-
-              <h2
-                id='the-core-strategy'
-                className='scroll-mt-24 text-2xl font-bold mt-12 mb-6'
-              >
-                The Core Strategy: From Engagement to Conversion
-              </h2>
-              <p>The most effective Instagram automation strategies follow a consistent three-step pattern: attract attention with content, capture intent with a trigger (comment, DM keyword, Story reply), then convert with a personalized automated conversation.</p>
-              <p>What separates high-performing accounts from average ones is the quality of that third step — the automated conversation itself. Rule-based bots send the same canned response to everyone. AI-powered bots like PostEngage read the context of each interaction and craft replies that feel genuinely personal, dramatically improving conversion rates at every stage of the funnel.</p>
-
-              <h2
-                id='practical-implementation'
-                className='scroll-mt-24 text-2xl font-bold mt-12 mb-6'
-              >
-                Practical Implementation: Getting Started
-              </h2>
-              <p>Start with one trigger and one goal. The most common mistake brands make is trying to automate everything at once — welcome messages, comment replies, story responses, and DM sequences simultaneously. The result is a confusing mess.</p>
-              <p>Instead, pick the trigger that aligns with your highest-volume touchpoint. For most accounts, that is comment automation on Reels. Set up a single keyword trigger, write a compelling CTA in your caption, and measure results for two weeks before expanding. Once you see the conversion data, you will have a clear picture of where to invest next.</p>
-
-              <h2
-                id='advanced-tips'
-                className='scroll-mt-24 text-2xl font-bold mt-12 mb-6'
-              >
-                Advanced Tips for Maximum Results
-              </h2>
-              <p>Once your baseline automation is running, layer in AI personalization. PostEngage allows you to train a custom AI model on your brand voice — feeding it examples of your past replies, your tone guidelines, and your product knowledge. The result is an AI that responds to nuanced questions the way you would, not the way a generic chatbot would.</p>
-              <p>Also use time-window scheduling to match your automation to your audience's active hours. A bot that replies at 3am to someone in your target timezone creates a better first impression than one that batches responses at irregular times. Even small improvements in response quality and timing compound into significant conversion rate gains over weeks and months.</p>
-
-              <div className='bg-primary/5 p-8 rounded-2xl border border-primary/20 my-12'>
-                <h3 className='text-2xl font-bold mb-4'>Start Automating Your Instagram Today</h3>
-                <p className='mb-6'>Join thousands of brands using PostEngage to turn Instagram engagement into revenue.</p>
-                <Link href='https://app.postengage.ai/signup'>
-                  <Button size='lg' className='w-full sm:w-auto text-lg px-8'>
-                    Get Started Free <ArrowRight className='ml-2 h-5 w-5' />
-                  </Button>
-                </Link>
-              </div>
+              <div className="mt-12"><NewsletterForm /></div>
             </article>
-
-            <aside className='hidden lg:block lg:col-span-2 lg:sticky lg:top-32 lg:self-start'>
-              <div className='flex flex-col gap-4 items-center'>
-                <p className='text-xs font-semibold uppercase tracking-wider text-muted-foreground mb-2'>Share</p>
-                <SocialShareButtons
-                  url='https://postengage.ai/blog/manychat-getting-expensive-alternatives'
-                  title='ManyChat Getting Too Expensive? Here Are Your Best Alternatives in 2026' />
-              </div>
+            <aside className="hidden lg:block lg:col-span-2">
+              <div className="sticky top-24"><SocialShareButtons title="ManyChat Getting Too Expensive? Here Are Your Best Options" /></div>
             </aside>
           </div>
         </div>
-        <NewsletterForm />
       </main>
       <LandingFooter />
     </div>

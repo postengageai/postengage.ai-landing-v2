@@ -2,162 +2,143 @@ import { Metadata } from 'next';
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
-import {
-  ArrowRight,
-  Calendar,
-  Clock,
-  Zap,
-} from 'lucide-react';
-import { LandingHeader } from '@/components/landing/landing-header';
-import { LandingFooter } from '@/components/landing/landing-footer';
-import { TableOfContents } from '@/components/blog/table-of-contents';
-import { SocialShareButtons } from '@/components/blog/social-share-buttons';
-import { NewsletterForm } from '@/components/blog/newsletter-form';
+import { LandingHeader } from '@/components/landing-header';
+import { LandingFooter } from '@/components/landing-footer';
+import { TableOfContents } from '@/components/table-of-contents';
+import { SocialShareButtons } from '@/components/social-share-buttons';
+import { NewsletterForm } from '@/components/newsletter-form';
 
 export const metadata: Metadata = {
-  title: 'What Is a "Hot Lead" on Instagram — And How to Capture Them Automatically',
-  description: 'A hot lead is someone showing active purchase intent. Learn how AI detects buying signals in Instagram comments and DMs.',
-  openGraph: {
-    title: 'What Is a "Hot Lead" on Instagram — And How to Capture Them Automatically',
-    description: 'A hot lead is someone showing active purchase intent. Learn how AI detects buying signals in Instagram comments and DMs.',
-    type: 'article',
-    url: 'https://postengage.ai/blog/what-is-a-hot-lead-instagram',
-    images: [{ url: '/blog/what-is-a-hot-lead-instagram-cover.png', width: 1200, height: 630, alt: 'What Is a "Hot Lead" on Instagram — And How to Capture Them Automatically' }],
-  },
-  twitter: {
-    card: 'summary_large_image',
-    title: 'What Is a "Hot Lead" on Instagram — And How to Capture Them Automatically',
-    description: 'A hot lead is someone showing active purchase intent. Learn how AI detects buying signals in Instagram comments and DMs.',
-    images: ['/blog/what-is-a-hot-lead-instagram-cover.png'],
-  },
+  title: 'What Is a Hot Lead on Instagram? (And How to Automate Your Response) | PostEngage Blog',
+  description: 'Learn how to identify hot leads from Instagram signals, set up automated responses that strike while interest is peak, and never let a high-intent prospect go cold again.',
 };
 
 export default function BlogPost() {
   const tocItems = [
-    { id: 'why-it-matters', title: 'Why This Matters in 2026' },
-    { id: 'the-core-strategy', title: 'The Core Strategy' },
-    { id: 'practical-implementation', title: 'Practical Implementation' },
-    { id: 'advanced-tips', title: 'Advanced Tips' },
+    { id: 'defining-hot-lead', title: 'Defining a Hot Lead on Instagram' },
+    { id: 'signals-and-triggers', title: 'Hot Lead Signals and Triggers' },
+    { id: 'instant-response-strategy', title: 'The Instant Response Strategy' },
+    { id: 'scoring-leads', title: 'Lead Scoring in Your DM Automation' },
+    { id: 'hot-lead-mistakes', title: 'Mistakes That Let Hot Leads Go Cold' }
   ];
 
   return (
-    <div className='min-h-screen bg-background text-foreground font-sans selection:bg-primary/20'>
+    <div className="min-h-screen bg-white">
       <LandingHeader />
-      <main className='relative pt-32 pb-24'>
-        <div className='absolute inset-0 -z-10 overflow-hidden'>
-          <div className='absolute top-0 left-1/2 -translate-x-1/2 w-full h-[600px] bg-gradient-to-b from-primary/5 via-transparent to-transparent opacity-60' />
-        </div>
-        <div className='container mx-auto px-4 max-w-7xl'>
-          <div className='grid grid-cols-1 lg:grid-cols-12 gap-12'>
-            <aside className='hidden lg:block lg:col-span-3 lg:sticky lg:top-32 lg:self-start space-y-8'>
-              <div className='flex items-center gap-2 text-sm text-muted-foreground mb-4'>
-                <Link href='/blog' className='hover:text-primary transition-colors'>Blog</Link>
-                <span>/</span>
-                <span className='text-foreground font-medium'>Lead Generation</span>
+      <main>
+        {/* Hero */}
+        <div className="bg-linear-to-b from-violet-50 to-white border-b border-gray-100">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+            <div className="max-w-3xl mx-auto text-center">
+              <Badge className="mb-4 bg-violet-100 text-violet-700 hover:bg-violet-100">Lead Generation</Badge>
+              <h1 className="text-4xl font-bold text-gray-900 mb-4">What Is a Hot Lead on Instagram? (And How to Automate Your Response)</h1>
+              <p className="text-xl text-gray-600 mb-6">Learn how to identify hot leads from Instagram signals, set up automated responses that strike while interest is peak, and never let a high-intent prospect go cold again.</p>
+              <div className="flex items-center justify-center gap-4 text-sm text-gray-500">
+                <span>May 24, 2026</span>
+                <span>·</span>
+                <span>7 min read</span>
               </div>
-              <TableOfContents items={tocItems} />
+            </div>
+          </div>
+        </div>
+
+        {/* Content */}
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+          <div className="grid grid-cols-12 gap-8">
+            {/* TOC Sidebar */}
+            <aside className="hidden lg:block lg:col-span-3">
+              <div className="sticky top-24">
+                <TableOfContents items={tocItems} />
+              </div>
             </aside>
 
-            <article className='lg:col-span-7 prose prose-lg dark:prose-invert max-w-none'>
-              <header className='mb-12 not-prose'>
-                <Badge variant='secondary' className='mb-6 text-sm font-medium px-3 py-1'>
-                  Lead Generation
-                </Badge>
-                <h1 className='text-4xl md:text-5xl font-extrabold tracking-tight mb-6 leading-tight'>
-                  What Is a "Hot Lead" on Instagram — And How to Capture Them Automatically
-                </h1>
-                <div className='flex items-center gap-6 text-muted-foreground'>
-                  <div className='flex items-center gap-2'>
-                    <div className='h-10 w-10 rounded-full bg-primary/10 flex items-center justify-center'>
-                      <Zap className='h-5 w-5 text-primary' />
-                    </div>
-                    <div>
-                      <p className='text-sm font-medium text-foreground'>PostEngageAI Team</p>
-                      <p className='text-xs'>Automation Experts</p>
-                    </div>
-                  </div>
-                  <div className='flex items-center gap-2 text-sm'>
-                    <Calendar className='h-4 w-4' />
-                    <span>April 9, 2026</span>
-                  </div>
-                  <div className='flex items-center gap-2 text-sm'>
-                    <Clock className='h-4 w-4' />
-                    <span>6 min read</span>
-                  </div>
-                </div>
-              </header>
+            {/* Article */}
+            <article className="col-span-12 lg:col-span-7">
 
-              <div className='relative w-full aspect-[21/9] rounded-2xl overflow-hidden mb-12 bg-muted'>
-                <div className='absolute inset-0 flex items-center justify-center bg-gradient-to-br from-gray-900 to-gray-800 text-white'>
-                  <div className='text-center p-8'>
-                    <Zap className='h-16 w-16 mx-auto mb-4 text-primary/80' />
-                    <p className='text-xl font-medium text-white/80'>Lead Generation</p>
-                  </div>
-                </div>
+          <section id="defining-hot-lead" className="mb-12">
+            <h2 className="text-2xl font-bold text-gray-900 mb-4">Defining a Hot Lead on Instagram</h2>
+              <p className="text-gray-700 mb-4 leading-relaxed">A hot lead is someone who has recently demonstrated high purchase intent through their behavior. On Instagram, this looks different than in a CRM. There is no form fill, no page visit duration — just a collection of behavioral signals that, when interpreted correctly, indicate someone is close to a buying decision.</p>
+              <p className="text-gray-700 mb-4 leading-relaxed">Hot leads on Instagram share three characteristics: recency (the signal happened within 24-48 hours), specificity (they engaged with purchase-related content, not just general interest content), and directness (they took an action that required effort, like commenting a keyword, sending a DM, or clicking a link in bio).</p>
+              <p className="text-gray-700 mb-4 leading-relaxed">The critical distinction: a warm lead is someone who follows you and likes your posts. A hot lead is someone who just commented on your offer post, DM'd you a question about your product, or clicked your link in bio for the third time this week. Every hour of delay reduces conversion probability by approximately 40% for intent-based leads.</p>
+          </section>
+
+          <section id="signals-and-triggers" className="mb-12">
+            <h2 className="text-2xl font-bold text-gray-900 mb-4">Hot Lead Signals and Triggers</h2>
+              <p className="text-gray-700 mb-4 leading-relaxed">Instagram gives you more buying intent signals than most businesses realize. The key is setting up your automation to respond to them in real time.</p>
+              <p className="text-gray-700 mb-4 leading-relaxed">Strongest signals that warrant an immediate personalized response: comments a keyword on an offer post, DMs asking a price or logistics question, comments on a testimonial or case study post.</p>
+              <p className="text-gray-700 mb-4 leading-relaxed">Medium signals that warrant a nurture sequence: saves a post about your offer, watches a full product demo Reel, DMs asking a general question about how something works, engages with 3 or more posts in a single day.</p>
+              <div className="bg-violet-50 border border-violet-200 rounded-xl p-6 my-6">
+                <h3 className="font-bold text-violet-900 mb-3">Hot Lead Signal Hierarchy</h3>
+                <ul className="space-y-2">
+                  <li className="flex items-start gap-2 text-sm text-violet-800"><span className="text-violet-500 mt-0.5">→</span>HOT: Keyword comment on offer post — trigger instant automated DM</li>
+                  <li className="flex items-start gap-2 text-sm text-violet-800"><span className="text-violet-500 mt-0.5">→</span>HOT: Price question in DMs — trigger instant human or auto response</li>
+                  <li className="flex items-start gap-2 text-sm text-violet-800"><span className="text-violet-500 mt-0.5">→</span>WARM: Post save on product content — enter DM nurture sequence</li>
+                  <li className="flex items-start gap-2 text-sm text-violet-800"><span className="text-violet-500 mt-0.5">→</span>WARM: Full Reel view on demo content — Story retargeting plus DM invite</li>
+                  <li className="flex items-start gap-2 text-sm text-violet-800"><span className="text-violet-500 mt-0.5">→</span>COLD: New follower — welcome sequence (low urgency)</li>
+                </ul>
+              </div>
+          </section>
+
+          <section id="instant-response-strategy" className="mb-12">
+            <h2 className="text-2xl font-bold text-gray-900 mb-4">The Instant Response Strategy</h2>
+              <p className="text-gray-700 mb-4 leading-relaxed">Speed is everything for hot leads. Research consistently shows that responding within 5 minutes of a high-intent signal is 21x more effective than responding within 30 minutes. Automation makes sub-minute response times possible at any scale.</p>
+              <p className="text-gray-700 mb-4 leading-relaxed">Your instant response needs to do three things: acknowledge the specific action they took (so it feels relevant, not generic), deliver immediate value (so the interaction starts with them receiving, not you asking), and create a natural next step.</p>
+              <p className="text-gray-700 mb-4 leading-relaxed">Example for a "PRICING" keyword comment: acknowledge their interest, give a quick pricing summary, and ask one qualifying question to understand their situation before going deeper. Keep it conversational — a starting point for a real exchange, not a sales script.</p>
+              <p className="font-semibold text-gray-800 mt-6 mb-2">Elements of a perfect hot lead instant response:</p>
+              <ul className="list-disc list-inside space-y-2 text-gray-700 mb-4">
+                <li>Acknowledge their specific action (not a generic greeting)</li>
+                <li>Deliver immediate value before asking anything</li>
+                <li>Ask ONE qualifying question to understand their situation</li>
+                <li>Keep it conversational — not a sales pitch, a conversation starter</li>
+                <li>Include a soft next step: a question, resource, or easy yes/no</li>
+              </ul>
+          </section>
+
+          <section id="scoring-leads" className="mb-12">
+            <h2 className="text-2xl font-bold text-gray-900 mb-4">Lead Scoring in Your DM Automation</h2>
+              <p className="text-gray-700 mb-4 leading-relaxed">As leads move through your DM sequences, they provide data that lets you score their likelihood to buy. Basic lead scoring in Instagram automation works by assigning points to behaviors and branching the sequence based on score.</p>
+              <p className="text-gray-700 mb-4 leading-relaxed">Point assignments (example): responds to first DM (+10), answers a qualifying question (+15), clicks a product link (+20), asks a price-related question (+25), mentions a timeline (+20), mentions a budget (+30). Leads above a threshold score get flagged for priority human follow-up.</p>
+              <p className="text-gray-700 mb-4 leading-relaxed">In practice, your automation handles lead qualification while you personally only spend time on the leads most likely to buy. A business getting 500 DM conversations per month might identify 50-75 as high-score hot leads — the ones worth personal attention.</p>
+          </section>
+
+          <section id="hot-lead-mistakes" className="mb-12">
+            <h2 className="text-2xl font-bold text-gray-900 mb-4">Mistakes That Let Hot Leads Go Cold</h2>
+              <p className="text-gray-700 mb-4 leading-relaxed">Mistake 1: Slow response. If your automation does not trigger within 60 seconds of the signal, you are losing hot leads. Test your flows regularly to confirm they fire instantly.</p>
+              <p className="text-gray-700 mb-4 leading-relaxed">Mistake 2: Generic opening message. A hot lead who just asked about pricing and gets "Thanks for reaching out! What are you interested in?" is immediately less excited. Reference their specific action.</p>
+              <p className="text-gray-700 mb-4 leading-relaxed">Mistake 3: Too many messages too fast. Hot does not mean desperate. One message, wait for a reply. One follow-up after 4-6 hours of no reply. One final follow-up at 24 hours. Then stop.</p>
+              <p className="text-gray-700 mb-4 leading-relaxed">Mistake 4: Forgetting to close the loop. When a hot lead says they are interested but will get back to you — set a reminder to follow up in 48 hours. A personal check-in message from a real person at the right moment closes deals that full automation cannot.</p>
+              <p className="font-semibold text-gray-800 mt-6 mb-2">Hot lead recovery checklist:</p>
+              <ul className="list-disc list-inside space-y-2 text-gray-700 mb-4">
+                <li>Check automation trigger timing — should fire within 60 seconds</li>
+                <li>Review opening message — is it specific to their action?</li>
+                <li>Audit follow-up cadence — max 2-3 touchpoints before pausing</li>
+                <li>Flag high-score leads for personal follow-up within 48 hours</li>
+                <li>Review drop-off points in sequence — where are hot leads going cold?</li>
+              </ul>
+          </section>
+
+              {/* CTA */}
+              <div className="bg-linear-to-r from-violet-600 to-purple-600 rounded-2xl p-8 text-white text-center mt-12">
+                <h2 className="text-2xl font-bold mb-3">Ready to Automate Your Instagram Growth?</h2>
+                <p className="text-violet-100 mb-6">PostEngage helps you turn Instagram engagement into leads, bookings, and sales — automatically.</p>
+                <Button asChild size="lg" className="bg-white text-violet-600 hover:bg-violet-50">
+                  <Link href="/#waitlist">Start Free Today</Link>
+                </Button>
               </div>
 
-              <div className='lead text-xl text-muted-foreground mb-12 leading-relaxed'>
-                A hot lead is someone showing active purchase intent. Learn how AI detects buying signals in Instagram comments and DMs. This guide covers everything you need to know to get started and see results quickly.
-              </div>
-
-              <h2
-                id='why-it-matters'
-                className='scroll-mt-24 text-2xl font-bold mt-12 mb-6'
-              >
-                Why Lead Generation on Instagram Matters in 2026
-              </h2>
-              <p>Instagram has over 2 billion monthly active users, and direct engagement through DMs and comments has never been higher. For lead generation professionals and businesses, the platform represents an unmatched opportunity to reach qualified prospects where they are already spending time.</p>
-              <p>The shift happening in 2026 is from passive social media presence to active, AI-powered conversation funnels. Brands that treat Instagram as a two-way communication channel — rather than just a broadcast medium — are seeing 3–5x better ROI on every hour invested.</p>
-
-              <h2
-                id='the-core-strategy'
-                className='scroll-mt-24 text-2xl font-bold mt-12 mb-6'
-              >
-                The Core Strategy: From Engagement to Conversion
-              </h2>
-              <p>The most effective Instagram automation strategies follow a consistent three-step pattern: attract attention with content, capture intent with a trigger (comment, DM keyword, Story reply), then convert with a personalized automated conversation.</p>
-              <p>What separates high-performing accounts from average ones is the quality of that third step — the automated conversation itself. Rule-based bots send the same canned response to everyone. AI-powered bots like PostEngage read the context of each interaction and craft replies that feel genuinely personal, dramatically improving conversion rates at every stage of the funnel.</p>
-
-              <h2
-                id='practical-implementation'
-                className='scroll-mt-24 text-2xl font-bold mt-12 mb-6'
-              >
-                Practical Implementation: Getting Started
-              </h2>
-              <p>Start with one trigger and one goal. The most common mistake brands make is trying to automate everything at once — welcome messages, comment replies, story responses, and DM sequences simultaneously. The result is a confusing mess.</p>
-              <p>Instead, pick the trigger that aligns with your highest-volume touchpoint. For most accounts, that is comment automation on Reels. Set up a single keyword trigger, write a compelling CTA in your caption, and measure results for two weeks before expanding. Once you see the conversion data, you will have a clear picture of where to invest next.</p>
-
-              <h2
-                id='advanced-tips'
-                className='scroll-mt-24 text-2xl font-bold mt-12 mb-6'
-              >
-                Advanced Tips for Maximum Results
-              </h2>
-              <p>Once your baseline automation is running, layer in AI personalization. PostEngage allows you to train a custom AI model on your brand voice — feeding it examples of your past replies, your tone guidelines, and your product knowledge. The result is an AI that responds to nuanced questions the way you would, not the way a generic chatbot would.</p>
-              <p>Also use time-window scheduling to match your automation to your audience's active hours. A bot that replies at 3am to someone in your target timezone creates a better first impression than one that batches responses at irregular times. Even small improvements in response quality and timing compound into significant conversion rate gains over weeks and months.</p>
-
-              <div className='bg-primary/5 p-8 rounded-2xl border border-primary/20 my-12'>
-                <h3 className='text-2xl font-bold mb-4'>Start Automating Your Instagram Today</h3>
-                <p className='mb-6'>Join thousands of brands using PostEngage to turn Instagram engagement into revenue.</p>
-                <Link href='https://app.postengage.ai/signup'>
-                  <Button size='lg' className='w-full sm:w-auto text-lg px-8'>
-                    Get Started Free <ArrowRight className='ml-2 h-5 w-5' />
-                  </Button>
-                </Link>
+              <div className="mt-12">
+                <NewsletterForm />
               </div>
             </article>
 
-            <aside className='hidden lg:block lg:col-span-2 lg:sticky lg:top-32 lg:self-start'>
-              <div className='flex flex-col gap-4 items-center'>
-                <p className='text-xs font-semibold uppercase tracking-wider text-muted-foreground mb-2'>Share</p>
-                <SocialShareButtons
-                  url='https://postengage.ai/blog/what-is-a-hot-lead-instagram'
-                  title='What Is a "Hot Lead" on Instagram — And How to Capture Them Automatically' />
+            {/* Share Sidebar */}
+            <aside className="hidden lg:block lg:col-span-2">
+              <div className="sticky top-24">
+                <SocialShareButtons title="What Is a Hot Lead on Instagram? (And How to Automate Your Response)" />
               </div>
             </aside>
           </div>
         </div>
-        <NewsletterForm />
       </main>
       <LandingFooter />
     </div>

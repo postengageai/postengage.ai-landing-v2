@@ -2,162 +2,111 @@ import { Metadata } from 'next';
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
-import {
-  ArrowRight,
-  Calendar,
-  Clock,
-  Zap,
-} from 'lucide-react';
-import { LandingHeader } from '@/components/landing/landing-header';
-import { LandingFooter } from '@/components/landing/landing-footer';
-import { TableOfContents } from '@/components/blog/table-of-contents';
-import { SocialShareButtons } from '@/components/blog/social-share-buttons';
-import { NewsletterForm } from '@/components/blog/newsletter-form';
+import { LandingHeader } from '@/components/landing-header';
+import { LandingFooter } from '@/components/landing-footer';
+import { TableOfContents } from '@/components/table-of-contents';
+import { SocialShareButtons } from '@/components/social-share-buttons';
+import { NewsletterForm } from '@/components/newsletter-form';
 
 export const metadata: Metadata = {
-  title: 'Why Response Time Destroys Instagram Sales (And How Automation Fixes It)',
-  description: 'Studies show 78% of customers buy from the business that responds first. If your team takes hours to reply to DMs, you are handing sales to a competitor.',
-  openGraph: {
-    title: 'Why Response Time Destroys Instagram Sales (And How Automation Fixes It)',
-    description: 'Studies show 78% of customers buy from the business that responds first. If your team takes hours to reply to DMs, you are handing sales to a competitor.',
-    type: 'article',
-    url: 'https://postengage.ai/blog/instagram-automation-response-time',
-    images: [{ url: '/blog/instagram-automation-response-time-cover.png', width: 1200, height: 630, alt: 'Why Response Time Destroys Instagram Sales (And How Automation Fixes It)' }],
-  },
-  twitter: {
-    card: 'summary_large_image',
-    title: 'Why Response Time Destroys Instagram Sales (And How Automation Fixes It)',
-    description: 'Studies show 78% of customers buy from the business that responds first. If your team takes hours to reply to DMs, you are handing sales to a competitor.',
-    images: ['/blog/instagram-automation-response-time-cover.png'],
-  },
+  title: 'Instagram Automation Response Time: Why Speed Is Your Biggest Conversion Lever | PostEngage Blog',
+  description: 'The data on how response time affects Instagram DM conversion rates, the optimal speed benchmarks to hit, and how to ensure your automation is responding at the right moments.',
 };
 
 export default function BlogPost() {
   const tocItems = [
-    { id: 'why-it-matters', title: 'Why This Matters in 2026' },
-    { id: 'the-core-strategy', title: 'The Core Strategy' },
-    { id: 'practical-implementation', title: 'Practical Implementation' },
-    { id: 'advanced-tips', title: 'Advanced Tips' },
+    { id: 'response-time-data', title: 'The Data: What Response Time Does to Conversion Rates' },
+    { id: 'speed-benchmarks', title: 'Speed Benchmarks by Interaction Type' },
+    { id: 'ensuring-speed', title: 'Ensuring Your Automation Actually Responds Instantly' },
+    { id: 'after-hours-strategy', title: 'The After-Hours Advantage' },
+    { id: 'speed-vs-quality', title: 'When Speed and Quality Are in Tension' },
   ];
-
   return (
-    <div className='min-h-screen bg-background text-foreground font-sans selection:bg-primary/20'>
+    <div className="min-h-screen bg-white">
       <LandingHeader />
-      <main className='relative pt-32 pb-24'>
-        <div className='absolute inset-0 -z-10 overflow-hidden'>
-          <div className='absolute top-0 left-1/2 -translate-x-1/2 w-full h-[600px] bg-gradient-to-b from-primary/5 via-transparent to-transparent opacity-60' />
+      <main>
+        <div className="bg-linear-to-b from-violet-50 to-white border-b border-gray-100">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+            <div className="max-w-3xl mx-auto text-center">
+              <Badge className="mb-4 bg-violet-100 text-violet-700 hover:bg-violet-100">Optimization</Badge>
+              <h1 className="text-4xl font-bold text-gray-900 mb-4">Instagram Automation Response Time: Why Speed Is Your Biggest Conversion Lever</h1>
+              <p className="text-xl text-gray-600 mb-6">The data on how response time affects Instagram DM conversion rates, the optimal speed benchmarks to hit, and how to ensure your automation is responding at the right moments.</p>
+              <div className="flex items-center justify-center gap-4 text-sm text-gray-500">
+                <span>May 8, 2026</span><span>·</span><span>8 min read</span>
+              </div>
+            </div>
+          </div>
         </div>
-        <div className='container mx-auto px-4 max-w-7xl'>
-          <div className='grid grid-cols-1 lg:grid-cols-12 gap-12'>
-            <aside className='hidden lg:block lg:col-span-3 lg:sticky lg:top-32 lg:self-start space-y-8'>
-              <div className='flex items-center gap-2 text-sm text-muted-foreground mb-4'>
-                <Link href='/blog' className='hover:text-primary transition-colors'>Blog</Link>
-                <span>/</span>
-                <span className='text-foreground font-medium'>Sales</span>
-              </div>
-              <TableOfContents items={tocItems} />
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+          <div className="grid grid-cols-12 gap-8">
+            <aside className="hidden lg:block lg:col-span-3">
+              <div className="sticky top-24"><TableOfContents items={tocItems} /></div>
             </aside>
+            <article className="col-span-12 lg:col-span-7">
 
-            <article className='lg:col-span-7 prose prose-lg dark:prose-invert max-w-none'>
-              <header className='mb-12 not-prose'>
-                <Badge variant='secondary' className='mb-6 text-sm font-medium px-3 py-1'>
-                  Sales
-                </Badge>
-                <h1 className='text-4xl md:text-5xl font-extrabold tracking-tight mb-6 leading-tight'>
-                  Why Response Time Destroys Instagram Sales (And How Automation Fixes It)
-                </h1>
-                <div className='flex items-center gap-6 text-muted-foreground'>
-                  <div className='flex items-center gap-2'>
-                    <div className='h-10 w-10 rounded-full bg-primary/10 flex items-center justify-center'>
-                      <Zap className='h-5 w-5 text-primary' />
-                    </div>
-                    <div>
-                      <p className='text-sm font-medium text-foreground'>PostEngageAI Team</p>
-                      <p className='text-xs'>Automation Experts</p>
-                    </div>
-                  </div>
-                  <div className='flex items-center gap-2 text-sm'>
-                    <Calendar className='h-4 w-4' />
-                    <span>May 7, 2026</span>
-                  </div>
-                  <div className='flex items-center gap-2 text-sm'>
-                    <Clock className='h-4 w-4' />
-                    <span>5 min read</span>
-                  </div>
-                </div>
-              </header>
-
-              <div className='relative w-full aspect-[21/9] rounded-2xl overflow-hidden mb-12 bg-muted'>
-                <div className='absolute inset-0 flex items-center justify-center bg-gradient-to-br from-gray-900 to-gray-800 text-white'>
-                  <div className='text-center p-8'>
-                    <Zap className='h-16 w-16 mx-auto mb-4 text-primary/80' />
-                    <p className='text-xl font-medium text-white/80'>Sales</p>
-                  </div>
-                </div>
+          <section id="response-time-data" className="mb-12">
+            <h2 className="text-2xl font-bold text-gray-900 mb-4">The Data: What Response Time Does to Conversion Rates</h2>
+              <p className="text-gray-700 mb-4 leading-relaxed">The relationship between response time and conversion rate is one of the most well-documented findings in digital marketing — and it is more dramatic than most people realize.</p>
+              <p className="text-gray-700 mb-4 leading-relaxed">The foundational data point: responding to a sales inquiry within 5 minutes makes you 21x more likely to qualify the lead than responding after 30 minutes. This is not specific to Instagram — it applies across channels. But it is especially powerful on Instagram because the platform is mobile-first, habit-driven, and full of competing content. The window of peak interest when someone comments on your post or sends you a DM is typically 2-15 minutes. After that, they are scrolling somewhere else.</p>
+              <p className="text-gray-700 mb-4 leading-relaxed">Instagram-specific data: accounts that respond to comment-triggered DMs within 60 seconds see 4.2x higher conversation continuation rates than accounts that respond after 4 hours. The decay curve is steep — at 1 hour, conversion probability is at 60% of the immediate-response rate. At 4 hours, it is at 20%. At 24 hours, it is at 8%.</p>
+              <p className="font-semibold text-gray-800 mt-6 mb-2">Response time conversion data:</p>
+              <ul className="list-disc list-inside space-y-2 text-gray-700 mb-4">
+                <li>Under 60 seconds: 4.2x higher conversation continuation vs. 4-hour response</li>
+                <li>5 minutes vs. 30 minutes: 21x difference in lead qualification rate</li>
+                <li>1 hour: 60% of immediate response conversion probability</li>
+                <li>4 hours: 20% of immediate response conversion probability</li>
+                <li>24 hours: 8% of immediate response conversion probability</li>
+              </ul>
+          </section>
+          <section id="speed-benchmarks" className="mb-12">
+            <h2 className="text-2xl font-bold text-gray-900 mb-4">Speed Benchmarks by Interaction Type</h2>
+              <p className="text-gray-700 mb-4 leading-relaxed">Different types of Instagram interactions have different optimal response time windows. Prioritizing correctly ensures the most valuable interactions get the fastest responses.</p>
+              <p className="text-gray-700 mb-4 leading-relaxed">Keyword comment trigger (someone comments on a post): respond within 60 seconds. This is the highest-intent interaction and the window closes fastest. Any delay means the person has moved on to other content. This is where automation pays its clearest dividend — humans cannot respond to 200 comments in 60 seconds; automation can.</p>
+              <p className="text-gray-700 mb-4 leading-relaxed">Direct DM received (someone messages you directly): respond within 5 minutes during business hours. Direct DMs indicate higher intent than comment interactions because the prospect took additional effort to reach out. For out-of-hours DMs, respond with an automated acknowledgment instantly and a full response within 2 hours of business hours resuming.</p>
+              <p className="text-gray-700 mb-4 leading-relaxed">Story reply received: respond within 30 minutes. Story replies are highly personal and conversational — they feel like tapping on a friend's shoulder. Delayed responses to Story replies are the highest-missed opportunity in Instagram automation because most accounts have no automation for this trigger.</p>
+              <div className="bg-violet-50 border border-violet-200 rounded-xl p-6 my-6">
+                <h3 className="font-bold text-violet-900 mb-3">Response Time Targets</h3>
+                <ul className="space-y-2">
+                  <li className="flex items-start gap-2 text-sm text-violet-800"><span>&#x2192;</span>Keyword comment trigger: under 60 seconds (automation required)</li>
+                  <li className="flex items-start gap-2 text-sm text-violet-800"><span>&#x2192;</span>Direct DM inquiry: under 5 minutes during hours, under 2 hours overnight</li>
+                  <li className="flex items-start gap-2 text-sm text-violet-800"><span>&#x2192;</span>Story reply: under 30 minutes</li>
+                  <li className="flex items-start gap-2 text-sm text-violet-800"><span>&#x2192;</span>DM follow-up (non-responder): 4-6 hours after first message</li>
+                  <li className="flex items-start gap-2 text-sm text-violet-800"><span>&#x2192;</span>Re-engagement sequence: 24-48 hours between messages</li>
+                </ul>
               </div>
-
-              <div className='lead text-xl text-muted-foreground mb-12 leading-relaxed'>
-                Studies show 78% of customers buy from the business that responds first. If your team takes hours to reply to DMs, you are handing sales to a competitor. This guide covers everything you need to know to get started and see results quickly.
+          </section>
+          <section id="ensuring-speed" className="mb-12">
+            <h2 className="text-2xl font-bold text-gray-900 mb-4">Ensuring Your Automation Actually Responds Instantly</h2>
+              <p className="text-gray-700 mb-4 leading-relaxed">Setting up automation is not the same as verifying it responds at the required speed. Many automation setups have unnoticed delays caused by trigger processing time, API queue delays, or misconfigured webhook timing.</p>
+              <p className="text-gray-700 mb-4 leading-relaxed">Test your setup: have someone comment your keyword trigger on a live post and measure the exact time until they receive the DM response. Do this multiple times at different times of day. If you see consistent delays above 60 seconds, investigate the cause.</p>
+              <p className="text-gray-700 mb-4 leading-relaxed">Common delay causes: processing queue backlogs during high-volume periods (common after viral posts — set up rate limiting that queues responses but maintains sub-60-second delivery), platform processing delays (some automation tools have higher API polling intervals — look for platforms that use real-time webhooks rather than polling), and iOS/Android notification delays (recipient-side; nothing you can control, but average out to under 30 seconds).</p>
+          </section>
+          <section id="after-hours-strategy" className="mb-12">
+            <h2 className="text-2xl font-bold text-gray-900 mb-4">The After-Hours Advantage</h2>
+              <p className="text-gray-700 mb-4 leading-relaxed">One of the most significant competitive advantages of Instagram DM automation is the after-hours coverage it provides. Businesses with human-only DM response have a dead zone from roughly 6 PM to 9 AM — 15 hours every day where high-intent prospects receive no response.</p>
+              <p className="text-gray-700 mb-4 leading-relaxed">In most businesses, 35-45% of Instagram DMs are received during these after-hours windows. For accounts without automation, these represent entirely lost opportunities. For accounts with automation, these are opportunities that convert at the same rate as daytime DMs.</p>
+              <p className="text-gray-700 mb-4 leading-relaxed">After-hours automation note: when automating responses to after-hours messages, acknowledge the time if it is genuinely relevant. "Just saw your message from last night" feels more authentic than a response that arrives at 3 AM with no acknowledgment of the timing. Some automation platforms allow time-aware responses that adapt messaging based on when the response is actually being sent.</p>
+          </section>
+          <section id="speed-vs-quality" className="mb-12">
+            <h2 className="text-2xl font-bold text-gray-900 mb-4">When Speed and Quality Are in Tension</h2>
+              <p className="text-gray-700 mb-4 leading-relaxed">Speed is critical, but not at the expense of relevance. A response that arrives in 30 seconds but is clearly generic and off-target is worse than a response that arrives in 5 minutes and feels personalized.</p>
+              <p className="text-gray-700 mb-4 leading-relaxed">The resolution: invest in building high-quality, well-targeted automation flows once, and then let them run at full speed. The tension between speed and quality is a false dilemma when your automation is properly built — great automation is both fast and high-quality.</p>
+              <p className="text-gray-700 mb-4 leading-relaxed">The exception: when a conversation goes off-script and requires a genuinely custom response. When your automation cannot handle a specific question or situation, flag it immediately for human follow-up and send an acknowledgment: "Great question — let me get back to you on this specifically." This maintains the speed of acknowledgment while buying time for a quality custom response. The acknowledgment response should arrive within 60 seconds; the quality custom response within 2 hours.</p>
+          </section>
+              <div className="bg-linear-to-r from-violet-600 to-purple-600 rounded-2xl p-8 text-white text-center mt-12">
+                <h2 className="text-2xl font-bold mb-3">Ready to Automate Your Instagram Growth?</h2>
+                <p className="text-violet-100 mb-6">PostEngage helps you turn Instagram engagement into leads, bookings, and sales automatically.</p>
+                <Button asChild size="lg" className="bg-white text-violet-600 hover:bg-violet-50">
+                  <Link href="/#waitlist">Start Free Today</Link>
+                </Button>
               </div>
-
-              <h2
-                id='why-it-matters'
-                className='scroll-mt-24 text-2xl font-bold mt-12 mb-6'
-              >
-                Why Sales on Instagram Matters in 2026
-              </h2>
-              <p>Instagram has over 2 billion monthly active users, and direct engagement through DMs and comments has never been higher. For sales professionals and businesses, the platform represents an unmatched opportunity to reach qualified prospects where they are already spending time.</p>
-              <p>The shift happening in 2026 is from passive social media presence to active, AI-powered conversation funnels. Brands that treat Instagram as a two-way communication channel — rather than just a broadcast medium — are seeing 3–5x better ROI on every hour invested.</p>
-
-              <h2
-                id='the-core-strategy'
-                className='scroll-mt-24 text-2xl font-bold mt-12 mb-6'
-              >
-                The Core Strategy: From Engagement to Conversion
-              </h2>
-              <p>The most effective Instagram automation strategies follow a consistent three-step pattern: attract attention with content, capture intent with a trigger (comment, DM keyword, Story reply), then convert with a personalized automated conversation.</p>
-              <p>What separates high-performing accounts from average ones is the quality of that third step — the automated conversation itself. Rule-based bots send the same canned response to everyone. AI-powered bots like PostEngage read the context of each interaction and craft replies that feel genuinely personal, dramatically improving conversion rates at every stage of the funnel.</p>
-
-              <h2
-                id='practical-implementation'
-                className='scroll-mt-24 text-2xl font-bold mt-12 mb-6'
-              >
-                Practical Implementation: Getting Started
-              </h2>
-              <p>Start with one trigger and one goal. The most common mistake brands make is trying to automate everything at once — welcome messages, comment replies, story responses, and DM sequences simultaneously. The result is a confusing mess.</p>
-              <p>Instead, pick the trigger that aligns with your highest-volume touchpoint. For most accounts, that is comment automation on Reels. Set up a single keyword trigger, write a compelling CTA in your caption, and measure results for two weeks before expanding. Once you see the conversion data, you will have a clear picture of where to invest next.</p>
-
-              <h2
-                id='advanced-tips'
-                className='scroll-mt-24 text-2xl font-bold mt-12 mb-6'
-              >
-                Advanced Tips for Maximum Results
-              </h2>
-              <p>Once your baseline automation is running, layer in AI personalization. PostEngage allows you to train a custom AI model on your brand voice — feeding it examples of your past replies, your tone guidelines, and your product knowledge. The result is an AI that responds to nuanced questions the way you would, not the way a generic chatbot would.</p>
-              <p>Also use time-window scheduling to match your automation to your audience's active hours. A bot that replies at 3am to someone in your target timezone creates a better first impression than one that batches responses at irregular times. Even small improvements in response quality and timing compound into significant conversion rate gains over weeks and months.</p>
-
-              <div className='bg-primary/5 p-8 rounded-2xl border border-primary/20 my-12'>
-                <h3 className='text-2xl font-bold mb-4'>Start Automating Your Instagram Today</h3>
-                <p className='mb-6'>Join thousands of brands using PostEngage to turn Instagram engagement into revenue.</p>
-                <Link href='https://app.postengage.ai/signup'>
-                  <Button size='lg' className='w-full sm:w-auto text-lg px-8'>
-                    Get Started Free <ArrowRight className='ml-2 h-5 w-5' />
-                  </Button>
-                </Link>
-              </div>
+              <div className="mt-12"><NewsletterForm /></div>
             </article>
-
-            <aside className='hidden lg:block lg:col-span-2 lg:sticky lg:top-32 lg:self-start'>
-              <div className='flex flex-col gap-4 items-center'>
-                <p className='text-xs font-semibold uppercase tracking-wider text-muted-foreground mb-2'>Share</p>
-                <SocialShareButtons
-                  url='https://postengage.ai/blog/instagram-automation-response-time'
-                  title='Why Response Time Destroys Instagram Sales (And How Automation Fixes It)' />
-              </div>
+            <aside className="hidden lg:block lg:col-span-2">
+              <div className="sticky top-24"><SocialShareButtons title="Instagram Automation Response Time: Why Speed Is Your Biggest Conversion Lever" /></div>
             </aside>
           </div>
         </div>
-        <NewsletterForm />
       </main>
       <LandingFooter />
     </div>

@@ -2,162 +2,113 @@ import { Metadata } from 'next';
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
-import {
-  ArrowRight,
-  Calendar,
-  Clock,
-  Zap,
-} from 'lucide-react';
-import { LandingHeader } from '@/components/landing/landing-header';
-import { LandingFooter } from '@/components/landing/landing-footer';
-import { TableOfContents } from '@/components/blog/table-of-contents';
-import { SocialShareButtons } from '@/components/blog/social-share-buttons';
-import { NewsletterForm } from '@/components/blog/newsletter-form';
+import { LandingHeader } from '@/components/landing-header';
+import { LandingFooter } from '@/components/landing-footer';
+import { TableOfContents } from '@/components/table-of-contents';
+import { SocialShareButtons } from '@/components/social-share-buttons';
+import { NewsletterForm } from '@/components/newsletter-form';
 
 export const metadata: Metadata = {
-  title: 'Why Instagram DMs Have 90%+ Open Rates (And How to Use That)',
-  description: 'Email averages 22% open rates. Instagram DMs hit 90%+. Here is the psychology behind it and how to build your entire funnel inside the DM inbox.',
-  openGraph: {
-    title: 'Why Instagram DMs Have 90%+ Open Rates (And How to Use That)',
-    description: 'Email averages 22% open rates. Instagram DMs hit 90%+. Here is the psychology behind it and how to build your entire funnel inside the DM inbox.',
-    type: 'article',
-    url: 'https://postengage.ai/blog/instagram-dm-open-rates-why-so-high',
-    images: [{ url: '/blog/instagram-dm-open-rates-why-so-high-cover.png', width: 1200, height: 630, alt: 'Why Instagram DMs Have 90%+ Open Rates (And How to Use That)' }],
-  },
-  twitter: {
-    card: 'summary_large_image',
-    title: 'Why Instagram DMs Have 90%+ Open Rates (And How to Use That)',
-    description: 'Email averages 22% open rates. Instagram DMs hit 90%+. Here is the psychology behind it and how to build your entire funnel inside the DM inbox.',
-    images: ['/blog/instagram-dm-open-rates-why-so-high-cover.png'],
-  },
+  title: 'Why Instagram DM Open Rates Are So High (And How to Maintain Them) | PostEngage Blog',
+  description: 'The psychology and platform mechanics behind Instagram DM open rates of 80-95%, and the specific practices that keep your open rates high as your automation volume grows.',
 };
 
 export default function BlogPost() {
   const tocItems = [
-    { id: 'why-it-matters', title: 'Why This Matters in 2026' },
-    { id: 'the-core-strategy', title: 'The Core Strategy' },
-    { id: 'practical-implementation', title: 'Practical Implementation' },
-    { id: 'advanced-tips', title: 'Advanced Tips' },
+    { id: 'the-open-rate-phenomenon', title: 'The Open Rate Phenomenon: Why DMs Beat Email' },
+    { id: 'psychology-of-opens', title: 'The Psychology Behind High DM Open Rates' },
+    { id: 'what-kills-open-rates', title: 'What Kills DM Open Rates' },
+    { id: 'maintaining-high-opens', title: 'Practices That Maintain High Open Rates' },
+    { id: 'open-rate-benchmarks', title: 'Open Rate Benchmarks and What to Do If Yours Are Low' },
   ];
-
   return (
-    <div className='min-h-screen bg-background text-foreground font-sans selection:bg-primary/20'>
+    <div className="min-h-screen bg-white">
       <LandingHeader />
-      <main className='relative pt-32 pb-24'>
-        <div className='absolute inset-0 -z-10 overflow-hidden'>
-          <div className='absolute top-0 left-1/2 -translate-x-1/2 w-full h-[600px] bg-gradient-to-b from-primary/5 via-transparent to-transparent opacity-60' />
+      <main>
+        <div className="bg-linear-to-b from-violet-50 to-white border-b border-gray-100">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+            <div className="max-w-3xl mx-auto text-center">
+              <Badge className="mb-4 bg-violet-100 text-violet-700 hover:bg-violet-100">Analytics & Psychology</Badge>
+              <h1 className="text-4xl font-bold text-gray-900 mb-4">Why Instagram DM Open Rates Are So High (And How to Maintain Them)</h1>
+              <p className="text-xl text-gray-600 mb-6">The psychology and platform mechanics behind Instagram DM open rates of 80-95%, and the specific practices that keep your open rates high as your automation volume grows.</p>
+              <div className="flex items-center justify-center gap-4 text-sm text-gray-500">
+                <span>May 15, 2026</span><span>·</span><span>8 min read</span>
+              </div>
+            </div>
+          </div>
         </div>
-        <div className='container mx-auto px-4 max-w-7xl'>
-          <div className='grid grid-cols-1 lg:grid-cols-12 gap-12'>
-            <aside className='hidden lg:block lg:col-span-3 lg:sticky lg:top-32 lg:self-start space-y-8'>
-              <div className='flex items-center gap-2 text-sm text-muted-foreground mb-4'>
-                <Link href='/blog' className='hover:text-primary transition-colors'>Blog</Link>
-                <span>/</span>
-                <span className='text-foreground font-medium'>Strategy</span>
-              </div>
-              <TableOfContents items={tocItems} />
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+          <div className="grid grid-cols-12 gap-8">
+            <aside className="hidden lg:block lg:col-span-3">
+              <div className="sticky top-24"><TableOfContents items={tocItems} /></div>
             </aside>
+            <article className="col-span-12 lg:col-span-7">
 
-            <article className='lg:col-span-7 prose prose-lg dark:prose-invert max-w-none'>
-              <header className='mb-12 not-prose'>
-                <Badge variant='secondary' className='mb-6 text-sm font-medium px-3 py-1'>
-                  Strategy
-                </Badge>
-                <h1 className='text-4xl md:text-5xl font-extrabold tracking-tight mb-6 leading-tight'>
-                  Why Instagram DMs Have 90%+ Open Rates (And How to Use That)
-                </h1>
-                <div className='flex items-center gap-6 text-muted-foreground'>
-                  <div className='flex items-center gap-2'>
-                    <div className='h-10 w-10 rounded-full bg-primary/10 flex items-center justify-center'>
-                      <Zap className='h-5 w-5 text-primary' />
-                    </div>
-                    <div>
-                      <p className='text-sm font-medium text-foreground'>PostEngageAI Team</p>
-                      <p className='text-xs'>Automation Experts</p>
-                    </div>
-                  </div>
-                  <div className='flex items-center gap-2 text-sm'>
-                    <Calendar className='h-4 w-4' />
-                    <span>April 4, 2026</span>
-                  </div>
-                  <div className='flex items-center gap-2 text-sm'>
-                    <Clock className='h-4 w-4' />
-                    <span>5 min read</span>
-                  </div>
-                </div>
-              </header>
-
-              <div className='relative w-full aspect-[21/9] rounded-2xl overflow-hidden mb-12 bg-muted'>
-                <div className='absolute inset-0 flex items-center justify-center bg-gradient-to-br from-gray-900 to-gray-800 text-white'>
-                  <div className='text-center p-8'>
-                    <Zap className='h-16 w-16 mx-auto mb-4 text-primary/80' />
-                    <p className='text-xl font-medium text-white/80'>Strategy</p>
-                  </div>
-                </div>
+          <section id="the-open-rate-phenomenon" className="mb-12">
+            <h2 className="text-2xl font-bold text-gray-900 mb-4">The Open Rate Phenomenon: Why DMs Beat Email</h2>
+              <p className="text-gray-700 mb-4 leading-relaxed">Instagram DM open rates average 80-92% for automated messages triggered by user actions. Compare this to email marketing (20-25% average), SMS (45-60%), or push notifications (4-8%). The difference is not marginal — DMs are 3-4x more likely to be opened than email.</p>
+              <p className="text-gray-700 mb-4 leading-relaxed">This is not primarily a technology difference. SMS and push notifications also arrive with immediate notifications but convert at far lower rates. The DM open rate advantage is behavioral and psychological.</p>
+              <p className="text-gray-700 mb-4 leading-relaxed">Understanding why DMs get opened — and why that rate stays high — is the foundation of a sustainable Instagram automation strategy. It also explains exactly what behaviors will cause that open rate to drop and how to avoid them.</p>
+              <p className="font-semibold text-gray-800 mt-6 mb-2">Open rate comparison across channels:</p>
+              <ul className="list-disc list-inside space-y-2 text-gray-700 mb-4">
+                <li>DM open rates: 80-92% average for triggered automation</li>
+                <li>Email open rates: 20-25% average</li>
+                <li>SMS open rates: 45-60%</li>
+                <li>Push notifications: 4-8%</li>
+                <li>The gap is psychological, not just technological</li>
+              </ul>
+          </section>
+          <section id="psychology-of-opens" className="mb-12">
+            <h2 className="text-2xl font-bold text-gray-900 mb-4">The Psychology Behind High DM Open Rates</h2>
+              <p className="text-gray-700 mb-4 leading-relaxed">Four psychological factors drive high DM open rates: reciprocity, personal context, platform habituation, and notification design.</p>
+              <p className="text-gray-700 mb-4 leading-relaxed">Reciprocity: the person opened your DM because they did something first — they commented, they engaged with your Story, they searched for your account. There is a social contract in that prior action. Opening the DM response feels like completing a natural social exchange.</p>
+              <p className="text-gray-700 mb-4 leading-relaxed">Personal context: DMs feel personal in a way that email does not. Email inboxes are full of newsletters and automated sequences. DMs feel like messages from people you follow — which they are. The social media context creates an expectation of personal, relevant content that makes opening feel natural rather than optional.</p>
+              <p className="text-gray-700 mb-4 leading-relaxed">Notification design: Instagram DM notifications appear on the home screen of the phone most people have in their hand most of the day. The tap-to-open behavior is the same as opening a message from a friend. The platform has trained billions of users to open DM notifications reflexively.</p>
+          </section>
+          <section id="what-kills-open-rates" className="mb-12">
+            <h2 className="text-2xl font-bold text-gray-900 mb-4">What Kills DM Open Rates</h2>
+              <p className="text-gray-700 mb-4 leading-relaxed">DM open rates drop when recipients start treating your messages like marketing rather than messages from someone they follow. The shift from "personal" to "marketing" in the recipient's perception is gradual and largely irreversible.</p>
+              <p className="text-gray-700 mb-4 leading-relaxed">Behaviors that trigger the shift: sending too frequently (daily or multiple messages per week from the same automation), sending messages that clearly have nothing to do with any prior engagement (unsolicited), sending content that does not match the established voice and relationship, and sending messages where the commercial intent is more prominent than the value.</p>
+              <p className="text-gray-700 mb-4 leading-relaxed">Once a recipient starts ignoring your DMs — even if they do not block or mute you — Instagram's algorithm notes lower engagement from that account and may reduce the notification prominence of your future messages. Open rate degradation tends to be slow but compounding.</p>
+              <div className="bg-violet-50 border border-violet-200 rounded-xl p-6 my-6">
+                <h3 className="font-bold text-violet-900 mb-3">Open Rate Killers</h3>
+                <ul className="space-y-2">
+                  <li className="flex items-start gap-2 text-sm text-violet-800"><span>&#x2192;</span>Sending too frequently: more than 2-3 messages per week feels spammy</li>
+                  <li className="flex items-start gap-2 text-sm text-violet-800"><span>&#x2192;</span>Irrelevant content: messages with no connection to prior engagement</li>
+                  <li className="flex items-start gap-2 text-sm text-violet-800"><span>&#x2192;</span>Brand voice mismatch: messages that feel like a different person sent them</li>
+                  <li className="flex items-start gap-2 text-sm text-violet-800"><span>&#x2192;</span>Commercial-first framing: leading with an offer before establishing value</li>
+                  <li className="flex items-start gap-2 text-sm text-violet-800"><span>&#x2192;</span>Low personalization: messages that clearly could have been sent to anyone</li>
+                </ul>
               </div>
-
-              <div className='lead text-xl text-muted-foreground mb-12 leading-relaxed'>
-                Email averages 22% open rates. Instagram DMs hit 90%+. Here is the psychology behind it and how to build your entire funnel inside the DM inbox. This guide covers everything you need to know to get started and see results quickly.
+          </section>
+          <section id="maintaining-high-opens" className="mb-12">
+            <h2 className="text-2xl font-bold text-gray-900 mb-4">Practices That Maintain High Open Rates</h2>
+              <p className="text-gray-700 mb-4 leading-relaxed">The practices that maintain high DM open rates are the same practices that make automation feel human: relevance, timing, voice, and value.</p>
+              <p className="text-gray-700 mb-4 leading-relaxed">Relevance: every automated message should be directly connected to something the recipient did. If they commented on a post about topic X, your DM is about topic X. If they watched a Story about product Y, your follow-up is about product Y. The tighter the connection between their action and your message, the higher the open rate.</p>
+              <p className="text-gray-700 mb-4 leading-relaxed">Timing: the first message should arrive within 60 seconds of the triggering action. This is when the recipient's context is fresh and the message feels like a natural continuation of what they were doing. Messages that arrive hours later feel less connected to the original action and open at lower rates.</p>
+              <p className="text-gray-700 mb-4 leading-relaxed">Value-first sequencing: your highest-value message in a sequence should be the first one. The common mistake is building to a value reveal — teasing value over multiple messages before delivering. DM recipients will not wait. Front-load your best content and let the conversation deepen from there.</p>
+          </section>
+          <section id="open-rate-benchmarks" className="mb-12">
+            <h2 className="text-2xl font-bold text-gray-900 mb-4">Open Rate Benchmarks and What to Do If Yours Are Low</h2>
+              <p className="text-gray-700 mb-4 leading-relaxed">Above 88% open rate: excellent. Your automation is well-connected to user actions and your brand voice is strong. Focus on conversion rate optimization rather than open rate improvement.</p>
+              <p className="text-gray-700 mb-4 leading-relaxed">75-88% open rate: good. Some messages are not landing as well as others. Do a sequence audit to identify which specific messages have lower open rates and rewrite them.</p>
+              <p className="text-gray-700 mb-4 leading-relaxed">Below 75% open rate: investigate. Check whether your automation is triggering correctly (are messages being sent immediately after the triggering action?), review your message content for brand voice consistency, and check whether you are over-messaging (reducing frequency often improves open rates).</p>
+              <p className="text-gray-700 mb-4 leading-relaxed">If your open rate is declining month-over-month: this is a signal that your automation is gradually moving from "personal" to "marketing" in your audience's perception. Audit your entire sequence for over-commercialization, reduce send frequency, and refresh your opening messages to feel more current and connected to your recent content.</p>
+          </section>
+              <div className="bg-linear-to-r from-violet-600 to-purple-600 rounded-2xl p-8 text-white text-center mt-12">
+                <h2 className="text-2xl font-bold mb-3">Ready to Automate Your Instagram Growth?</h2>
+                <p className="text-violet-100 mb-6">PostEngage helps you turn Instagram engagement into leads, bookings, and sales automatically.</p>
+                <Button asChild size="lg" className="bg-white text-violet-600 hover:bg-violet-50">
+                  <Link href="/#waitlist">Start Free Today</Link>
+                </Button>
               </div>
-
-              <h2
-                id='why-it-matters'
-                className='scroll-mt-24 text-2xl font-bold mt-12 mb-6'
-              >
-                Why Strategy on Instagram Matters in 2026
-              </h2>
-              <p>Instagram has over 2 billion monthly active users, and direct engagement through DMs and comments has never been higher. For strategy professionals and businesses, the platform represents an unmatched opportunity to reach qualified prospects where they are already spending time.</p>
-              <p>The shift happening in 2026 is from passive social media presence to active, AI-powered conversation funnels. Brands that treat Instagram as a two-way communication channel — rather than just a broadcast medium — are seeing 3–5x better ROI on every hour invested.</p>
-
-              <h2
-                id='the-core-strategy'
-                className='scroll-mt-24 text-2xl font-bold mt-12 mb-6'
-              >
-                The Core Strategy: From Engagement to Conversion
-              </h2>
-              <p>The most effective Instagram automation strategies follow a consistent three-step pattern: attract attention with content, capture intent with a trigger (comment, DM keyword, Story reply), then convert with a personalized automated conversation.</p>
-              <p>What separates high-performing accounts from average ones is the quality of that third step — the automated conversation itself. Rule-based bots send the same canned response to everyone. AI-powered bots like PostEngage read the context of each interaction and craft replies that feel genuinely personal, dramatically improving conversion rates at every stage of the funnel.</p>
-
-              <h2
-                id='practical-implementation'
-                className='scroll-mt-24 text-2xl font-bold mt-12 mb-6'
-              >
-                Practical Implementation: Getting Started
-              </h2>
-              <p>Start with one trigger and one goal. The most common mistake brands make is trying to automate everything at once — welcome messages, comment replies, story responses, and DM sequences simultaneously. The result is a confusing mess.</p>
-              <p>Instead, pick the trigger that aligns with your highest-volume touchpoint. For most accounts, that is comment automation on Reels. Set up a single keyword trigger, write a compelling CTA in your caption, and measure results for two weeks before expanding. Once you see the conversion data, you will have a clear picture of where to invest next.</p>
-
-              <h2
-                id='advanced-tips'
-                className='scroll-mt-24 text-2xl font-bold mt-12 mb-6'
-              >
-                Advanced Tips for Maximum Results
-              </h2>
-              <p>Once your baseline automation is running, layer in AI personalization. PostEngage allows you to train a custom AI model on your brand voice — feeding it examples of your past replies, your tone guidelines, and your product knowledge. The result is an AI that responds to nuanced questions the way you would, not the way a generic chatbot would.</p>
-              <p>Also use time-window scheduling to match your automation to your audience's active hours. A bot that replies at 3am to someone in your target timezone creates a better first impression than one that batches responses at irregular times. Even small improvements in response quality and timing compound into significant conversion rate gains over weeks and months.</p>
-
-              <div className='bg-primary/5 p-8 rounded-2xl border border-primary/20 my-12'>
-                <h3 className='text-2xl font-bold mb-4'>Start Automating Your Instagram Today</h3>
-                <p className='mb-6'>Join thousands of brands using PostEngage to turn Instagram engagement into revenue.</p>
-                <Link href='https://app.postengage.ai/signup'>
-                  <Button size='lg' className='w-full sm:w-auto text-lg px-8'>
-                    Get Started Free <ArrowRight className='ml-2 h-5 w-5' />
-                  </Button>
-                </Link>
-              </div>
+              <div className="mt-12"><NewsletterForm /></div>
             </article>
-
-            <aside className='hidden lg:block lg:col-span-2 lg:sticky lg:top-32 lg:self-start'>
-              <div className='flex flex-col gap-4 items-center'>
-                <p className='text-xs font-semibold uppercase tracking-wider text-muted-foreground mb-2'>Share</p>
-                <SocialShareButtons
-                  url='https://postengage.ai/blog/instagram-dm-open-rates-why-so-high'
-                  title='Why Instagram DMs Have 90%+ Open Rates (And How to Use That)' />
-              </div>
+            <aside className="hidden lg:block lg:col-span-2">
+              <div className="sticky top-24"><SocialShareButtons title="Why Instagram DM Open Rates Are So High (And How to Maintain Them)" /></div>
             </aside>
           </div>
         </div>
-        <NewsletterForm />
       </main>
       <LandingFooter />
     </div>

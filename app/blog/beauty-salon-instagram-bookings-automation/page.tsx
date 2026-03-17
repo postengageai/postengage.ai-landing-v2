@@ -2,162 +2,119 @@ import { Metadata } from 'next';
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
-import {
-  ArrowRight,
-  Calendar,
-  Clock,
-  Zap,
-} from 'lucide-react';
-import { LandingHeader } from '@/components/landing/landing-header';
-import { LandingFooter } from '@/components/landing/landing-footer';
-import { TableOfContents } from '@/components/blog/table-of-contents';
-import { SocialShareButtons } from '@/components/blog/social-share-buttons';
-import { NewsletterForm } from '@/components/blog/newsletter-form';
+import { LandingHeader } from '@/components/landing-header';
+import { LandingFooter } from '@/components/landing-footer';
+import { TableOfContents } from '@/components/table-of-contents';
+import { SocialShareButtons } from '@/components/social-share-buttons';
+import { NewsletterForm } from '@/components/newsletter-form';
 
 export const metadata: Metadata = {
-  title: 'Beauty Salon Instagram Automation: Book Appointments 24/7',
-  description: 'Your salon is closed at 11pm but your clients are scrolling Instagram. Learn how beauty businesses capture bookings around the clock.',
-  openGraph: {
-    title: 'Beauty Salon Instagram Automation: Book Appointments 24/7',
-    description: 'Your salon is closed at 11pm but your clients are scrolling Instagram. Learn how beauty businesses capture bookings around the clock.',
-    type: 'article',
-    url: 'https://postengage.ai/blog/beauty-salon-instagram-bookings-automation',
-    images: [{ url: '/blog/beauty-salon-instagram-bookings-automation-cover.png', width: 1200, height: 630, alt: 'Beauty Salon Instagram Automation: Book Appointments 24/7' }],
-  },
-  twitter: {
-    card: 'summary_large_image',
-    title: 'Beauty Salon Instagram Automation: Book Appointments 24/7',
-    description: 'Your salon is closed at 11pm but your clients are scrolling Instagram. Learn how beauty businesses capture bookings around the clock.',
-    images: ['/blog/beauty-salon-instagram-bookings-automation-cover.png'],
-  },
+  title: 'Beauty Salon Instagram Automation: Fill Your Chair Without Chasing Bookings | PostEngage Blog',
+  description: 'How hair salons, nail studios, and beauty professionals use Instagram DM automation to turn followers into booked appointments and build loyal client relationships at scale.',
 };
 
 export default function BlogPost() {
   const tocItems = [
-    { id: 'why-it-matters', title: 'Why This Matters in 2026' },
-    { id: 'the-core-strategy', title: 'The Core Strategy' },
-    { id: 'practical-implementation', title: 'Practical Implementation' },
-    { id: 'advanced-tips', title: 'Advanced Tips' },
+    { id: 'beauty-instagram-opportunity', title: 'Why Instagram Is a Beauty Business Goldmine' },
+    { id: 'booking-dm-flow', title: 'The Booking DM Flow' },
+    { id: 'slow-day-strategy', title: 'Filling Slow Days with Automation' },
+    { id: 'client-retention', title: 'Client Retention Through DM Sequences' },
+    { id: 'before-after-content', title: 'Before/After Content That Drives Bookings' },
   ];
-
   return (
-    <div className='min-h-screen bg-background text-foreground font-sans selection:bg-primary/20'>
+    <div className="min-h-screen bg-white">
       <LandingHeader />
-      <main className='relative pt-32 pb-24'>
-        <div className='absolute inset-0 -z-10 overflow-hidden'>
-          <div className='absolute top-0 left-1/2 -translate-x-1/2 w-full h-[600px] bg-gradient-to-b from-primary/5 via-transparent to-transparent opacity-60' />
+      <main>
+        <div className="bg-linear-to-b from-violet-50 to-white border-b border-gray-100">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+            <div className="max-w-3xl mx-auto text-center">
+              <Badge className="mb-4 bg-violet-100 text-violet-700 hover:bg-violet-100">Beauty & Wellness</Badge>
+              <h1 className="text-4xl font-bold text-gray-900 mb-4">Beauty Salon Instagram Automation: Fill Your Chair Without Chasing Bookings</h1>
+              <p className="text-xl text-gray-600 mb-6">How hair salons, nail studios, and beauty professionals use Instagram DM automation to turn followers into booked appointments and build loyal client relationships at scale.</p>
+              <div className="flex items-center justify-center gap-4 text-sm text-gray-500">
+                <span>April 5, 2026</span><span>·</span><span>8 min read</span>
+              </div>
+            </div>
+          </div>
         </div>
-        <div className='container mx-auto px-4 max-w-7xl'>
-          <div className='grid grid-cols-1 lg:grid-cols-12 gap-12'>
-            <aside className='hidden lg:block lg:col-span-3 lg:sticky lg:top-32 lg:self-start space-y-8'>
-              <div className='flex items-center gap-2 text-sm text-muted-foreground mb-4'>
-                <Link href='/blog' className='hover:text-primary transition-colors'>Blog</Link>
-                <span>/</span>
-                <span className='text-foreground font-medium'>Local Business</span>
-              </div>
-              <TableOfContents items={tocItems} />
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+          <div className="grid grid-cols-12 gap-8">
+            <aside className="hidden lg:block lg:col-span-3">
+              <div className="sticky top-24"><TableOfContents items={tocItems} /></div>
             </aside>
+            <article className="col-span-12 lg:col-span-7">
 
-            <article className='lg:col-span-7 prose prose-lg dark:prose-invert max-w-none'>
-              <header className='mb-12 not-prose'>
-                <Badge variant='secondary' className='mb-6 text-sm font-medium px-3 py-1'>
-                  Local Business
-                </Badge>
-                <h1 className='text-4xl md:text-5xl font-extrabold tracking-tight mb-6 leading-tight'>
-                  Beauty Salon Instagram Automation: Book Appointments 24/7
-                </h1>
-                <div className='flex items-center gap-6 text-muted-foreground'>
-                  <div className='flex items-center gap-2'>
-                    <div className='h-10 w-10 rounded-full bg-primary/10 flex items-center justify-center'>
-                      <Zap className='h-5 w-5 text-primary' />
-                    </div>
-                    <div>
-                      <p className='text-sm font-medium text-foreground'>PostEngageAI Team</p>
-                      <p className='text-xs'>Automation Experts</p>
-                    </div>
-                  </div>
-                  <div className='flex items-center gap-2 text-sm'>
-                    <Calendar className='h-4 w-4' />
-                    <span>April 14, 2026</span>
-                  </div>
-                  <div className='flex items-center gap-2 text-sm'>
-                    <Clock className='h-4 w-4' />
-                    <span>6 min read</span>
-                  </div>
-                </div>
-              </header>
-
-              <div className='relative w-full aspect-[21/9] rounded-2xl overflow-hidden mb-12 bg-muted'>
-                <div className='absolute inset-0 flex items-center justify-center bg-gradient-to-br from-gray-900 to-gray-800 text-white'>
-                  <div className='text-center p-8'>
-                    <Zap className='h-16 w-16 mx-auto mb-4 text-primary/80' />
-                    <p className='text-xl font-medium text-white/80'>Local Business</p>
-                  </div>
-                </div>
+          <section id="beauty-instagram-opportunity" className="mb-12">
+            <h2 className="text-2xl font-bold text-gray-900 mb-4">Why Instagram Is a Beauty Business Goldmine</h2>
+              <p className="text-gray-700 mb-4 leading-relaxed">Beauty is one of the most visual industries on Instagram, which makes it a natural fit for the platform. Before-and-after transformations, color reveals, nail art tutorials, and styling videos generate massive engagement — and that engagement converts to bookings when there is a clear next step.</p>
+              <p className="text-gray-700 mb-4 leading-relaxed">The problem most beauty professionals face: they post incredible content, get hundreds of comments and DMs, and then spend hours manually responding, only to lose bookings to clients who did not hear back fast enough. A competing salon that responds in 5 minutes gets the appointment. You get the like.</p>
+              <p className="text-gray-700 mb-4 leading-relaxed">DM automation solves the response speed problem and creates a consistent booking experience. When someone comments "I love this color" on your latest balayage Reel, they can receive an instant DM with your booking link before they scroll to the next post.</p>
+              <p className="font-semibold text-gray-800 mt-6 mb-2">What Instagram automation does for beauty professionals:</p>
+              <ul className="list-disc list-inside space-y-2 text-gray-700 mb-4">
+                <li>Instant response to interest comments = more bookings captured</li>
+                <li>Automated booking confirmations and reminders = fewer no-shows</li>
+                <li>New service announcement flows = existing clients rebook faster</li>
+                <li>Referral request sequences = word-of-mouth systematized</li>
+                <li>Seasonal promotion flows = slow periods filled proactively</li>
+              </ul>
+          </section>
+          <section id="booking-dm-flow" className="mb-12">
+            <h2 className="text-2xl font-bold text-gray-900 mb-4">The Booking DM Flow</h2>
+              <p className="text-gray-700 mb-4 leading-relaxed">The core booking flow for a beauty business is simple: someone expresses interest through a comment or DM, your automation responds instantly with a booking link and a brief value statement, and a follow-up message handles any hesitation.</p>
+              <p className="text-gray-700 mb-4 leading-relaxed">Example flow for a hair salon: client comments "I need my hair done like this" on a color transformation Reel. Instant DM: "We would love to recreate something similar for you! Here is a link to book a consultation: [link]. We have openings this week and next. What are you looking for — just color, or a full cut and color?"</p>
+              <p className="text-gray-700 mb-4 leading-relaxed">The question at the end turns a transaction into a conversation. If they reply, you now understand their service needs and can provide a more specific recommendation. If they just click the booking link, perfect. Either path leads to a booked appointment.</p>
+              <div className="bg-violet-50 border border-violet-200 rounded-xl p-6 my-6">
+                <h3 className="font-bold text-violet-900 mb-3">Booking Flow Template</h3>
+                <ul className="space-y-2">
+                  <li className="flex items-start gap-2 text-sm text-violet-800"><span className="text-violet-500 mt-0.5">&#x2192;</span>Client comments interest keyword on portfolio post</li>
+                  <li className="flex items-start gap-2 text-sm text-violet-800"><span className="text-violet-500 mt-0.5">&#x2192;</span>Instant DM: acknowledge + booking link + availability signal</li>
+                  <li className="flex items-start gap-2 text-sm text-violet-800"><span className="text-violet-500 mt-0.5">&#x2192;</span>Question: what service are you looking for?</li>
+                  <li className="flex items-start gap-2 text-sm text-violet-800"><span className="text-violet-500 mt-0.5">&#x2192;</span>If response: personalize service recommendation</li>
+                  <li className="flex items-start gap-2 text-sm text-violet-800"><span className="text-violet-500 mt-0.5">&#x2192;</span>If no response after 24h: one follow-up with soft urgency</li>
+                  <li className="flex items-start gap-2 text-sm text-violet-800"><span className="text-violet-500 mt-0.5">&#x2192;</span>Post-booking: automated confirmation + intake questions</li>
+                </ul>
               </div>
-
-              <div className='lead text-xl text-muted-foreground mb-12 leading-relaxed'>
-                Your salon is closed at 11pm but your clients are scrolling Instagram. Learn how beauty businesses capture bookings around the clock. This guide covers everything you need to know to get started and see results quickly.
+          </section>
+          <section id="slow-day-strategy" className="mb-12">
+            <h2 className="text-2xl font-bold text-gray-900 mb-4">Filling Slow Days with Automation</h2>
+              <p className="text-gray-700 mb-4 leading-relaxed">Every salon has slow days. Tuesdays and Wednesdays in particular tend to be underbooked at most locations. DM automation turns slow days from lost revenue into planned opportunities.</p>
+              <p className="text-gray-700 mb-4 leading-relaxed">Set up a "last minute availability" automation that activates on slow days. Message your past clients and warm followers with something like: "We had a cancellation open up for [day] — first one to claim it gets 15% off. Reply BOOK to snag it." This creates urgency, rewards engaged followers, and fills chairs that would otherwise sit empty.</p>
+              <p className="text-gray-700 mb-4 leading-relaxed">For predictable slow periods (post-holiday, post-summer), build proactive campaigns. Three weeks before your historically slow month, start a "book early and save" DM sequence to your engaged followers. Early booking discounts pay for themselves in guaranteed revenue during slow periods.</p>
+          </section>
+          <section id="client-retention" className="mb-12">
+            <h2 className="text-2xl font-bold text-gray-900 mb-4">Client Retention Through DM Sequences</h2>
+              <p className="text-gray-700 mb-4 leading-relaxed">Acquiring a new salon client costs 5-7x more than retaining an existing one. DM automation makes retention systematic without requiring manual effort from you.</p>
+              <p className="text-gray-700 mb-4 leading-relaxed">Build a rebooking reminder sequence: 4 weeks after someone's last appointment, send a DM reminding them it is time for a touch-up or their next service. Include a direct booking link. This alone can increase rebooking rates by 30-40% compared to hoping clients remember on their own.</p>
+              <p className="text-gray-700 mb-4 leading-relaxed">For special occasions, use birthday and anniversary automations if you collect those dates during intake. A DM on a client's birthday with a small discount on their next service creates the kind of personal touch that turns a regular client into a loyal one who refers friends.</p>
+              <p className="font-semibold text-gray-800 mt-6 mb-2">Retention sequence touchpoints:</p>
+              <ul className="list-disc list-inside space-y-2 text-gray-700 mb-4">
+                <li>4-week post-appointment rebooking reminder</li>
+                <li>Seasonal service suggestion (color refresh before summer, treatments before winter)</li>
+                <li>Birthday DM with special offer</li>
+                <li>Referral request after 3+ appointments</li>
+                <li>New service announcement to past clients first</li>
+              </ul>
+          </section>
+          <section id="before-after-content" className="mb-12">
+            <h2 className="text-2xl font-bold text-gray-900 mb-4">Before/After Content That Drives Bookings</h2>
+              <p className="text-gray-700 mb-4 leading-relaxed">Before/after content is the highest-converting format for beauty businesses on Instagram. It shows proof of skill, creates aspiration, and gives potential clients a tangible picture of what working with you looks like.</p>
+              <p className="text-gray-700 mb-4 leading-relaxed">Optimize your before/after posts for automation: always include a call to action in the caption that invites comments ("Comment BOOK if you want this look"). Set up a keyword trigger so everyone who comments that word gets an instant DM with your booking link.</p>
+              <p className="text-gray-700 mb-4 leading-relaxed">The transformation Reel formula that works: 3-5 second "before" shot, transition effect, 3-5 second "after" reveal with dramatic lighting, text overlay listing the services used. Add trending audio. Post Tuesday through Thursday between 6-9 PM. This format routinely generates 5-10x more bookings than static photos for the same result.</p>
+          </section>
+              <div className="bg-linear-to-r from-violet-600 to-purple-600 rounded-2xl p-8 text-white text-center mt-12">
+                <h2 className="text-2xl font-bold mb-3">Ready to Automate Your Instagram Growth?</h2>
+                <p className="text-violet-100 mb-6">PostEngage helps you turn Instagram engagement into leads, bookings, and sales automatically.</p>
+                <Button asChild size="lg" className="bg-white text-violet-600 hover:bg-violet-50">
+                  <Link href="/#waitlist">Start Free Today</Link>
+                </Button>
               </div>
-
-              <h2
-                id='why-it-matters'
-                className='scroll-mt-24 text-2xl font-bold mt-12 mb-6'
-              >
-                Why Local Business on Instagram Matters in 2026
-              </h2>
-              <p>Instagram has over 2 billion monthly active users, and direct engagement through DMs and comments has never been higher. For local business professionals and businesses, the platform represents an unmatched opportunity to reach qualified prospects where they are already spending time.</p>
-              <p>The shift happening in 2026 is from passive social media presence to active, AI-powered conversation funnels. Brands that treat Instagram as a two-way communication channel — rather than just a broadcast medium — are seeing 3–5x better ROI on every hour invested.</p>
-
-              <h2
-                id='the-core-strategy'
-                className='scroll-mt-24 text-2xl font-bold mt-12 mb-6'
-              >
-                The Core Strategy: From Engagement to Conversion
-              </h2>
-              <p>The most effective Instagram automation strategies follow a consistent three-step pattern: attract attention with content, capture intent with a trigger (comment, DM keyword, Story reply), then convert with a personalized automated conversation.</p>
-              <p>What separates high-performing accounts from average ones is the quality of that third step — the automated conversation itself. Rule-based bots send the same canned response to everyone. AI-powered bots like PostEngage read the context of each interaction and craft replies that feel genuinely personal, dramatically improving conversion rates at every stage of the funnel.</p>
-
-              <h2
-                id='practical-implementation'
-                className='scroll-mt-24 text-2xl font-bold mt-12 mb-6'
-              >
-                Practical Implementation: Getting Started
-              </h2>
-              <p>Start with one trigger and one goal. The most common mistake brands make is trying to automate everything at once — welcome messages, comment replies, story responses, and DM sequences simultaneously. The result is a confusing mess.</p>
-              <p>Instead, pick the trigger that aligns with your highest-volume touchpoint. For most accounts, that is comment automation on Reels. Set up a single keyword trigger, write a compelling CTA in your caption, and measure results for two weeks before expanding. Once you see the conversion data, you will have a clear picture of where to invest next.</p>
-
-              <h2
-                id='advanced-tips'
-                className='scroll-mt-24 text-2xl font-bold mt-12 mb-6'
-              >
-                Advanced Tips for Maximum Results
-              </h2>
-              <p>Once your baseline automation is running, layer in AI personalization. PostEngage allows you to train a custom AI model on your brand voice — feeding it examples of your past replies, your tone guidelines, and your product knowledge. The result is an AI that responds to nuanced questions the way you would, not the way a generic chatbot would.</p>
-              <p>Also use time-window scheduling to match your automation to your audience's active hours. A bot that replies at 3am to someone in your target timezone creates a better first impression than one that batches responses at irregular times. Even small improvements in response quality and timing compound into significant conversion rate gains over weeks and months.</p>
-
-              <div className='bg-primary/5 p-8 rounded-2xl border border-primary/20 my-12'>
-                <h3 className='text-2xl font-bold mb-4'>Start Automating Your Instagram Today</h3>
-                <p className='mb-6'>Join thousands of brands using PostEngage to turn Instagram engagement into revenue.</p>
-                <Link href='https://app.postengage.ai/signup'>
-                  <Button size='lg' className='w-full sm:w-auto text-lg px-8'>
-                    Get Started Free <ArrowRight className='ml-2 h-5 w-5' />
-                  </Button>
-                </Link>
-              </div>
+              <div className="mt-12"><NewsletterForm /></div>
             </article>
-
-            <aside className='hidden lg:block lg:col-span-2 lg:sticky lg:top-32 lg:self-start'>
-              <div className='flex flex-col gap-4 items-center'>
-                <p className='text-xs font-semibold uppercase tracking-wider text-muted-foreground mb-2'>Share</p>
-                <SocialShareButtons
-                  url='https://postengage.ai/blog/beauty-salon-instagram-bookings-automation'
-                  title='Beauty Salon Instagram Automation: Book Appointments 24/7' />
-              </div>
+            <aside className="hidden lg:block lg:col-span-2">
+              <div className="sticky top-24"><SocialShareButtons title="Beauty Salon Instagram Automation: Fill Your Chair Without Chasing Bookings" /></div>
             </aside>
           </div>
         </div>
-        <NewsletterForm />
       </main>
       <LandingFooter />
     </div>

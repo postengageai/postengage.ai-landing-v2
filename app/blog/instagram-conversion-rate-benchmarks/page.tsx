@@ -2,162 +2,110 @@ import { Metadata } from 'next';
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
-import {
-  ArrowRight,
-  Calendar,
-  Clock,
-  Zap,
-} from 'lucide-react';
-import { LandingHeader } from '@/components/landing/landing-header';
-import { LandingFooter } from '@/components/landing/landing-footer';
-import { TableOfContents } from '@/components/blog/table-of-contents';
-import { SocialShareButtons } from '@/components/blog/social-share-buttons';
-import { NewsletterForm } from '@/components/blog/newsletter-form';
+import { LandingHeader } from '@/components/landing-header';
+import { LandingFooter } from '@/components/landing-footer';
+import { TableOfContents } from '@/components/table-of-contents';
+import { SocialShareButtons } from '@/components/social-share-buttons';
+import { NewsletterForm } from '@/components/newsletter-form';
 
 export const metadata: Metadata = {
-  title: 'What Is a Good Instagram DM Conversion Rate? Benchmarks + Tips',
-  description: 'Is a 5% DM-to-sale conversion rate good or bad? Here are the benchmarks across 10 industries and how to beat them with smarter automation.',
-  openGraph: {
-    title: 'What Is a Good Instagram DM Conversion Rate? Benchmarks + Tips',
-    description: 'Is a 5% DM-to-sale conversion rate good or bad? Here are the benchmarks across 10 industries and how to beat them with smarter automation.',
-    type: 'article',
-    url: 'https://postengage.ai/blog/instagram-conversion-rate-benchmarks',
-    images: [{ url: '/blog/instagram-conversion-rate-benchmarks-cover.png', width: 1200, height: 630, alt: 'What Is a Good Instagram DM Conversion Rate? Benchmarks + Tips' }],
-  },
-  twitter: {
-    card: 'summary_large_image',
-    title: 'What Is a Good Instagram DM Conversion Rate? Benchmarks + Tips',
-    description: 'Is a 5% DM-to-sale conversion rate good or bad? Here are the benchmarks across 10 industries and how to beat them with smarter automation.',
-    images: ['/blog/instagram-conversion-rate-benchmarks-cover.png'],
-  },
+  title: 'Instagram DM Conversion Rate Benchmarks: What Good Actually Looks Like | PostEngage Blog',
+  description: 'Real conversion rate benchmarks for Instagram DM automation across industries, funnel stages, and content types — so you know whether your numbers are good, average, or broken.',
 };
 
 export default function BlogPost() {
   const tocItems = [
-    { id: 'why-it-matters', title: 'Why This Matters in 2026' },
-    { id: 'the-core-strategy', title: 'The Core Strategy' },
-    { id: 'practical-implementation', title: 'Practical Implementation' },
-    { id: 'advanced-tips', title: 'Advanced Tips' },
+    { id: 'benchmark-context', title: 'Before the Numbers: Why Context Matters' },
+    { id: 'top-of-funnel', title: 'Top-of-Funnel Benchmarks' },
+    { id: 'mid-funnel', title: 'Mid-Funnel and Lead Capture Benchmarks' },
+    { id: 'bottom-of-funnel', title: 'Bottom-of-Funnel and Conversion Benchmarks' },
+    { id: 'industry-specific', title: 'Industry-Specific Benchmark Variations' },
   ];
-
   return (
-    <div className='min-h-screen bg-background text-foreground font-sans selection:bg-primary/20'>
+    <div className="min-h-screen bg-white">
       <LandingHeader />
-      <main className='relative pt-32 pb-24'>
-        <div className='absolute inset-0 -z-10 overflow-hidden'>
-          <div className='absolute top-0 left-1/2 -translate-x-1/2 w-full h-[600px] bg-gradient-to-b from-primary/5 via-transparent to-transparent opacity-60' />
+      <main>
+        <div className="bg-linear-to-b from-violet-50 to-white border-b border-gray-100">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+            <div className="max-w-3xl mx-auto text-center">
+              <Badge className="mb-4 bg-violet-100 text-violet-700 hover:bg-violet-100">Analytics & Benchmarks</Badge>
+              <h1 className="text-4xl font-bold text-gray-900 mb-4">Instagram DM Conversion Rate Benchmarks: What Good Actually Looks Like</h1>
+              <p className="text-xl text-gray-600 mb-6">Real conversion rate benchmarks for Instagram DM automation across industries, funnel stages, and content types — so you know whether your numbers are good, average, or broken.</p>
+              <div className="flex items-center justify-center gap-4 text-sm text-gray-500">
+                <span>May 12, 2026</span><span>·</span><span>9 min read</span>
+              </div>
+            </div>
+          </div>
         </div>
-        <div className='container mx-auto px-4 max-w-7xl'>
-          <div className='grid grid-cols-1 lg:grid-cols-12 gap-12'>
-            <aside className='hidden lg:block lg:col-span-3 lg:sticky lg:top-32 lg:self-start space-y-8'>
-              <div className='flex items-center gap-2 text-sm text-muted-foreground mb-4'>
-                <Link href='/blog' className='hover:text-primary transition-colors'>Blog</Link>
-                <span>/</span>
-                <span className='text-foreground font-medium'>Analytics</span>
-              </div>
-              <TableOfContents items={tocItems} />
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+          <div className="grid grid-cols-12 gap-8">
+            <aside className="hidden lg:block lg:col-span-3">
+              <div className="sticky top-24"><TableOfContents items={tocItems} /></div>
             </aside>
+            <article className="col-span-12 lg:col-span-7">
 
-            <article className='lg:col-span-7 prose prose-lg dark:prose-invert max-w-none'>
-              <header className='mb-12 not-prose'>
-                <Badge variant='secondary' className='mb-6 text-sm font-medium px-3 py-1'>
-                  Analytics
-                </Badge>
-                <h1 className='text-4xl md:text-5xl font-extrabold tracking-tight mb-6 leading-tight'>
-                  What Is a Good Instagram DM Conversion Rate? Benchmarks + Tips
-                </h1>
-                <div className='flex items-center gap-6 text-muted-foreground'>
-                  <div className='flex items-center gap-2'>
-                    <div className='h-10 w-10 rounded-full bg-primary/10 flex items-center justify-center'>
-                      <Zap className='h-5 w-5 text-primary' />
-                    </div>
-                    <div>
-                      <p className='text-sm font-medium text-foreground'>PostEngageAI Team</p>
-                      <p className='text-xs'>Automation Experts</p>
-                    </div>
-                  </div>
-                  <div className='flex items-center gap-2 text-sm'>
-                    <Calendar className='h-4 w-4' />
-                    <span>May 14, 2026</span>
-                  </div>
-                  <div className='flex items-center gap-2 text-sm'>
-                    <Clock className='h-4 w-4' />
-                    <span>7 min read</span>
-                  </div>
-                </div>
-              </header>
-
-              <div className='relative w-full aspect-[21/9] rounded-2xl overflow-hidden mb-12 bg-muted'>
-                <div className='absolute inset-0 flex items-center justify-center bg-gradient-to-br from-gray-900 to-gray-800 text-white'>
-                  <div className='text-center p-8'>
-                    <Zap className='h-16 w-16 mx-auto mb-4 text-primary/80' />
-                    <p className='text-xl font-medium text-white/80'>Analytics</p>
-                  </div>
-                </div>
+          <section id="benchmark-context" className="mb-12">
+            <h2 className="text-2xl font-bold text-gray-900 mb-4">Before the Numbers: Why Context Matters</h2>
+              <p className="text-gray-700 mb-4 leading-relaxed">Benchmarks are useful as reference points, not as absolute performance standards. A 10% lead capture rate is excellent for a luxury product with a $5,000 price point and a 30-day consideration cycle. The same 10% is poor for a $29 digital product with impulse purchase potential.</p>
+              <p className="text-gray-700 mb-4 leading-relaxed">The benchmarks in this article are based on aggregate data from accounts with 1,000-100,000 followers using official API-compliant DM automation tools, across a range of industries and business types. They represent the distribution of performance, not the average of one specific context.</p>
+              <p className="text-gray-700 mb-4 leading-relaxed">How to use these benchmarks: identify where your current rates fall relative to the typical range, investigate the variables that separate top-quartile from average performance, and set realistic improvement targets based on your specific context rather than aiming blindly for the top of the range.</p>
+              <p className="font-semibold text-gray-800 mt-6 mb-2">Benchmark interpretation notes:</p>
+              <ul className="list-disc list-inside space-y-2 text-gray-700 mb-4">
+                <li>Benchmark ranges represent typical distribution, not aspirational targets</li>
+                <li>Your industry and offer type significantly affect what is achievable</li>
+                <li>Traffic source quality affects all conversion rates downstream</li>
+                <li>Newer accounts tend to have lower rates until automation is optimized</li>
+                <li>High-ticket offers naturally convert at lower rates than low-ticket</li>
+              </ul>
+          </section>
+          <section id="top-of-funnel" className="mb-12">
+            <h2 className="text-2xl font-bold text-gray-900 mb-4">Top-of-Funnel Benchmarks</h2>
+              <p className="text-gray-700 mb-4 leading-relaxed">DM open rate: 80-92% is the typical range for automated DMs sent to people who just commented on a post. This is significantly higher than email open rates (20-25% industry average) because DMs arrive with a notification for a platform the recipient is actively using.</p>
+              <p className="text-gray-700 mb-4 leading-relaxed">DM first-response rate (the percentage of people who respond to your first automated message): 25-45% is the typical range. Below 20% suggests your opening message is not compelling. Above 50% is excellent and typically indicates strong brand voice and relevant, specific content.</p>
+              <p className="text-gray-700 mb-4 leading-relaxed">Comment-to-DM flow completion rate (the percentage of keyword commenters who complete the first DM exchange): 30-55%. This number is affected by how specific your keyword trigger is — generic triggers like "INFO" attract lower-intent audiences and reduce completion rates.</p>
+              <div className="bg-violet-50 border border-violet-200 rounded-xl p-6 my-6">
+                <h3 className="font-bold text-violet-900 mb-3">Top-of-Funnel Benchmark Ranges</h3>
+                <ul className="space-y-2">
+                  <li className="flex items-start gap-2 text-sm text-violet-800"><span>&#x2192;</span>DM open rate: 80-92% (above 88% is excellent)</li>
+                  <li className="flex items-start gap-2 text-sm text-violet-800"><span>&#x2192;</span>First DM response rate: 25-45% (above 40% is excellent)</li>
+                  <li className="flex items-start gap-2 text-sm text-violet-800"><span>&#x2192;</span>Comment-to-DM flow completion: 30-55% (above 48% is excellent)</li>
+                  <li className="flex items-start gap-2 text-sm text-violet-800"><span>&#x2192;</span>Below these ranges: opening message or keyword relevance needs work</li>
+                  <li className="flex items-start gap-2 text-sm text-violet-800"><span>&#x2192;</span>Above these ranges: strong brand voice and high content-audience match</li>
+                </ul>
               </div>
-
-              <div className='lead text-xl text-muted-foreground mb-12 leading-relaxed'>
-                Is a 5% DM-to-sale conversion rate good or bad? Here are the benchmarks across 10 industries and how to beat them with smarter automation. This guide covers everything you need to know to get started and see results quickly.
+          </section>
+          <section id="mid-funnel" className="mb-12">
+            <h2 className="text-2xl font-bold text-gray-900 mb-4">Mid-Funnel and Lead Capture Benchmarks</h2>
+              <p className="text-gray-700 mb-4 leading-relaxed">Lead capture rate (percentage of DM flow entrants who provide their email): 18-35% is the typical range. This is the benchmark most businesses should focus on optimizing — it is the direct measure of how effectively your automation converts interest into an owned contact.</p>
+              <p className="text-gray-700 mb-4 leading-relaxed">Below 18% typically indicates: the lead magnet is not compelling enough for the audience, the ask for email comes too early in the conversation, or the value exchange feels unclear.</p>
+              <p className="text-gray-700 mb-4 leading-relaxed">Above 35% typically indicates: highly specific and valuable lead magnet well-matched to the content and audience, trust built effectively before the ask, and a clean simple email capture process. Top performers in high-trust niches (personal brands, niche experts) regularly hit 40-50% lead capture rates.</p>
+          </section>
+          <section id="bottom-of-funnel" className="mb-12">
+            <h2 className="text-2xl font-bold text-gray-900 mb-4">Bottom-of-Funnel and Conversion Benchmarks</h2>
+              <p className="text-gray-700 mb-4 leading-relaxed">DM-to-sale rate (the percentage of DM flow entrants who make a purchase within 30-90 days): 2-10% for product businesses, 5-15% for service businesses and direct conversion offers. The wide range reflects the significant variation by price point, industry, and DM sequence quality.</p>
+              <p className="text-gray-700 mb-4 leading-relaxed">For context: a 5% DM-to-sale rate means that for every 100 people who enter your DM flow, 5 become paying customers. At an average order value of $100, that is $500 in revenue per 100 DM conversations. Understanding this per-conversation revenue value tells you exactly how much you can invest in driving more DM conversations.</p>
+              <p className="text-gray-700 mb-4 leading-relaxed">Consultation booking rate (for service businesses): 8-20% of qualified DM conversations converting to a booked consultation. Above 20% is excellent and typically indicates strong qualification (you are only booking conversations with genuinely interested prospects) and compelling offer framing.</p>
+          </section>
+          <section id="industry-specific" className="mb-12">
+            <h2 className="text-2xl font-bold text-gray-900 mb-4">Industry-Specific Benchmark Variations</h2>
+              <p className="text-gray-700 mb-4 leading-relaxed">E-commerce (physical products): DM-to-purchase rates of 3-7% on standard products, 8-15% during promotional periods or for drops with genuine scarcity. Lead capture rates tend to be lower (15-22%) because email opt-in has less clear value for one-time purchasers.</p>
+              <p className="text-gray-700 mb-4 leading-relaxed">Coaches and consultants: highest DM-to-booking rates across industries (10-25%) because the conversational format is the natural sales medium for these businesses. Lead capture rates are strong (25-40%) because the lead magnet (a free training, a mini consultation, a guide) directly previews the paid service.</p>
+              <p className="text-gray-700 mb-4 leading-relaxed">SaaS and software: trial signup rates from DM conversations of 8-15% for SMB-focused products. Enterprise SaaS sees lower direct conversion rates but higher average deal values — prioritize quality of conversation over volume. E-learning and course creators: enrollment rates of 8-20% from DM conversations during launch periods, 3-8% for evergreen offers.</p>
+          </section>
+              <div className="bg-linear-to-r from-violet-600 to-purple-600 rounded-2xl p-8 text-white text-center mt-12">
+                <h2 className="text-2xl font-bold mb-3">Ready to Automate Your Instagram Growth?</h2>
+                <p className="text-violet-100 mb-6">PostEngage helps you turn Instagram engagement into leads, bookings, and sales automatically.</p>
+                <Button asChild size="lg" className="bg-white text-violet-600 hover:bg-violet-50">
+                  <Link href="/#waitlist">Start Free Today</Link>
+                </Button>
               </div>
-
-              <h2
-                id='why-it-matters'
-                className='scroll-mt-24 text-2xl font-bold mt-12 mb-6'
-              >
-                Why Analytics on Instagram Matters in 2026
-              </h2>
-              <p>Instagram has over 2 billion monthly active users, and direct engagement through DMs and comments has never been higher. For analytics professionals and businesses, the platform represents an unmatched opportunity to reach qualified prospects where they are already spending time.</p>
-              <p>The shift happening in 2026 is from passive social media presence to active, AI-powered conversation funnels. Brands that treat Instagram as a two-way communication channel — rather than just a broadcast medium — are seeing 3–5x better ROI on every hour invested.</p>
-
-              <h2
-                id='the-core-strategy'
-                className='scroll-mt-24 text-2xl font-bold mt-12 mb-6'
-              >
-                The Core Strategy: From Engagement to Conversion
-              </h2>
-              <p>The most effective Instagram automation strategies follow a consistent three-step pattern: attract attention with content, capture intent with a trigger (comment, DM keyword, Story reply), then convert with a personalized automated conversation.</p>
-              <p>What separates high-performing accounts from average ones is the quality of that third step — the automated conversation itself. Rule-based bots send the same canned response to everyone. AI-powered bots like PostEngage read the context of each interaction and craft replies that feel genuinely personal, dramatically improving conversion rates at every stage of the funnel.</p>
-
-              <h2
-                id='practical-implementation'
-                className='scroll-mt-24 text-2xl font-bold mt-12 mb-6'
-              >
-                Practical Implementation: Getting Started
-              </h2>
-              <p>Start with one trigger and one goal. The most common mistake brands make is trying to automate everything at once — welcome messages, comment replies, story responses, and DM sequences simultaneously. The result is a confusing mess.</p>
-              <p>Instead, pick the trigger that aligns with your highest-volume touchpoint. For most accounts, that is comment automation on Reels. Set up a single keyword trigger, write a compelling CTA in your caption, and measure results for two weeks before expanding. Once you see the conversion data, you will have a clear picture of where to invest next.</p>
-
-              <h2
-                id='advanced-tips'
-                className='scroll-mt-24 text-2xl font-bold mt-12 mb-6'
-              >
-                Advanced Tips for Maximum Results
-              </h2>
-              <p>Once your baseline automation is running, layer in AI personalization. PostEngage allows you to train a custom AI model on your brand voice — feeding it examples of your past replies, your tone guidelines, and your product knowledge. The result is an AI that responds to nuanced questions the way you would, not the way a generic chatbot would.</p>
-              <p>Also use time-window scheduling to match your automation to your audience's active hours. A bot that replies at 3am to someone in your target timezone creates a better first impression than one that batches responses at irregular times. Even small improvements in response quality and timing compound into significant conversion rate gains over weeks and months.</p>
-
-              <div className='bg-primary/5 p-8 rounded-2xl border border-primary/20 my-12'>
-                <h3 className='text-2xl font-bold mb-4'>Start Automating Your Instagram Today</h3>
-                <p className='mb-6'>Join thousands of brands using PostEngage to turn Instagram engagement into revenue.</p>
-                <Link href='https://app.postengage.ai/signup'>
-                  <Button size='lg' className='w-full sm:w-auto text-lg px-8'>
-                    Get Started Free <ArrowRight className='ml-2 h-5 w-5' />
-                  </Button>
-                </Link>
-              </div>
+              <div className="mt-12"><NewsletterForm /></div>
             </article>
-
-            <aside className='hidden lg:block lg:col-span-2 lg:sticky lg:top-32 lg:self-start'>
-              <div className='flex flex-col gap-4 items-center'>
-                <p className='text-xs font-semibold uppercase tracking-wider text-muted-foreground mb-2'>Share</p>
-                <SocialShareButtons
-                  url='https://postengage.ai/blog/instagram-conversion-rate-benchmarks'
-                  title='What Is a Good Instagram DM Conversion Rate? Benchmarks + Tips' />
-              </div>
+            <aside className="hidden lg:block lg:col-span-2">
+              <div className="sticky top-24"><SocialShareButtons title="Instagram DM Conversion Rate Benchmarks: What Good Actually Looks Like" /></div>
             </aside>
           </div>
         </div>
-        <NewsletterForm />
       </main>
       <LandingFooter />
     </div>

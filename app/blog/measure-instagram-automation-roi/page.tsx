@@ -2,162 +2,150 @@ import { Metadata } from 'next';
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
-import {
-  ArrowRight,
-  Calendar,
-  Clock,
-  Zap,
-} from 'lucide-react';
-import { LandingHeader } from '@/components/landing/landing-header';
-import { LandingFooter } from '@/components/landing/landing-footer';
-import { TableOfContents } from '@/components/blog/table-of-contents';
-import { SocialShareButtons } from '@/components/blog/social-share-buttons';
-import { NewsletterForm } from '@/components/blog/newsletter-form';
+import { LandingHeader } from '@/components/landing-header';
+import { LandingFooter } from '@/components/landing-footer';
+import { TableOfContents } from '@/components/table-of-contents';
+import { SocialShareButtons } from '@/components/social-share-buttons';
+import { NewsletterForm } from '@/components/newsletter-form';
 
 export const metadata: Metadata = {
-  title: 'How to Measure the ROI of Instagram Automation',
-  description: 'Likes and comments are not revenue. Learn the five metrics that actually tell you whether your Instagram automation is making money.',
-  openGraph: {
-    title: 'How to Measure the ROI of Instagram Automation',
-    description: 'Likes and comments are not revenue. Learn the five metrics that actually tell you whether your Instagram automation is making money.',
-    type: 'article',
-    url: 'https://postengage.ai/blog/measure-instagram-automation-roi',
-    images: [{ url: '/blog/measure-instagram-automation-roi-cover.png', width: 1200, height: 630, alt: 'How to Measure the ROI of Instagram Automation' }],
-  },
-  twitter: {
-    card: 'summary_large_image',
-    title: 'How to Measure the ROI of Instagram Automation',
-    description: 'Likes and comments are not revenue. Learn the five metrics that actually tell you whether your Instagram automation is making money.',
-    images: ['/blog/measure-instagram-automation-roi-cover.png'],
-  },
+  title: 'How to Measure Instagram Automation ROI: The Metrics That Actually Matter | PostEngage Blog',
+  description: 'Stop guessing whether your Instagram automation is working. Learn the exact metrics to track, benchmarks to hit, and how to calculate real ROI from DM automation.',
 };
 
 export default function BlogPost() {
   const tocItems = [
-    { id: 'why-it-matters', title: 'Why This Matters in 2026' },
-    { id: 'the-core-strategy', title: 'The Core Strategy' },
-    { id: 'practical-implementation', title: 'Practical Implementation' },
-    { id: 'advanced-tips', title: 'Advanced Tips' },
+    { id: 'why-roi-is-hard', title: 'Why Instagram Automation ROI Is Hard to Measure' },
+    { id: 'the-five-metrics', title: 'The 5 Metrics That Actually Matter' },
+    { id: 'calculating-roi', title: 'Calculating Your Real ROI' },
+    { id: 'benchmarks', title: 'Industry Benchmarks for 2026' },
+    { id: 'optimization', title: 'Optimizing Based on Data' }
   ];
 
   return (
-    <div className='min-h-screen bg-background text-foreground font-sans selection:bg-primary/20'>
+    <div className="min-h-screen bg-white">
       <LandingHeader />
-      <main className='relative pt-32 pb-24'>
-        <div className='absolute inset-0 -z-10 overflow-hidden'>
-          <div className='absolute top-0 left-1/2 -translate-x-1/2 w-full h-[600px] bg-gradient-to-b from-primary/5 via-transparent to-transparent opacity-60' />
-        </div>
-        <div className='container mx-auto px-4 max-w-7xl'>
-          <div className='grid grid-cols-1 lg:grid-cols-12 gap-12'>
-            <aside className='hidden lg:block lg:col-span-3 lg:sticky lg:top-32 lg:self-start space-y-8'>
-              <div className='flex items-center gap-2 text-sm text-muted-foreground mb-4'>
-                <Link href='/blog' className='hover:text-primary transition-colors'>Blog</Link>
-                <span>/</span>
-                <span className='text-foreground font-medium'>Analytics</span>
+      <main>
+        {/* Hero */}
+        <div className="bg-linear-to-b from-violet-50 to-white border-b border-gray-100">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+            <div className="max-w-3xl mx-auto text-center">
+              <Badge className="mb-4 bg-violet-100 text-violet-700 hover:bg-violet-100">Analytics</Badge>
+              <h1 className="text-4xl font-bold text-gray-900 mb-4">How to Measure Instagram Automation ROI: The Metrics That Actually Matter</h1>
+              <p className="text-xl text-gray-600 mb-6">Stop guessing whether your Instagram automation is working. Learn the exact metrics to track, benchmarks to hit, and how to calculate real ROI from DM automation.</p>
+              <div className="flex items-center justify-center gap-4 text-sm text-gray-500">
+                <span>May 10, 2026</span>
+                <span>·</span>
+                <span>9 min read</span>
               </div>
-              <TableOfContents items={tocItems} />
+            </div>
+          </div>
+        </div>
+
+        {/* Content */}
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+          <div className="grid grid-cols-12 gap-8">
+            {/* TOC Sidebar */}
+            <aside className="hidden lg:block lg:col-span-3">
+              <div className="sticky top-24">
+                <TableOfContents items={tocItems} />
+              </div>
             </aside>
 
-            <article className='lg:col-span-7 prose prose-lg dark:prose-invert max-w-none'>
-              <header className='mb-12 not-prose'>
-                <Badge variant='secondary' className='mb-6 text-sm font-medium px-3 py-1'>
-                  Analytics
-                </Badge>
-                <h1 className='text-4xl md:text-5xl font-extrabold tracking-tight mb-6 leading-tight'>
-                  How to Measure the ROI of Instagram Automation
-                </h1>
-                <div className='flex items-center gap-6 text-muted-foreground'>
-                  <div className='flex items-center gap-2'>
-                    <div className='h-10 w-10 rounded-full bg-primary/10 flex items-center justify-center'>
-                      <Zap className='h-5 w-5 text-primary' />
-                    </div>
-                    <div>
-                      <p className='text-sm font-medium text-foreground'>PostEngageAI Team</p>
-                      <p className='text-xs'>Automation Experts</p>
-                    </div>
-                  </div>
-                  <div className='flex items-center gap-2 text-sm'>
-                    <Calendar className='h-4 w-4' />
-                    <span>April 23, 2026</span>
-                  </div>
-                  <div className='flex items-center gap-2 text-sm'>
-                    <Clock className='h-4 w-4' />
-                    <span>8 min read</span>
-                  </div>
-                </div>
-              </header>
+            {/* Article */}
+            <article className="col-span-12 lg:col-span-7">
 
-              <div className='relative w-full aspect-[21/9] rounded-2xl overflow-hidden mb-12 bg-muted'>
-                <div className='absolute inset-0 flex items-center justify-center bg-gradient-to-br from-gray-900 to-gray-800 text-white'>
-                  <div className='text-center p-8'>
-                    <Zap className='h-16 w-16 mx-auto mb-4 text-primary/80' />
-                    <p className='text-xl font-medium text-white/80'>Analytics</p>
-                  </div>
-                </div>
+          <section id="why-roi-is-hard" className="mb-12">
+            <h2 className="text-2xl font-bold text-gray-900 mb-4">Why Instagram Automation ROI Is Hard to Measure</h2>
+              <p className="text-gray-700 mb-4 leading-relaxed">Most businesses set up Instagram automation, watch the follower count go up, and call it a day. But follower count is a vanity metric. It tells you nothing about whether your automation is generating revenue.</p>
+              <p className="text-gray-700 mb-4 leading-relaxed">The real challenge: Instagram automation touches multiple parts of your funnel simultaneously. A single well-timed DM sequence can drive email signups, product purchases, consultation bookings, and brand awareness — each of which has different dollar values and different measurement methods.</p>
+              <p className="text-gray-700 mb-4 leading-relaxed">The second challenge is attribution. When someone DMs you from a Reel comment, gets an automated reply, joins your email list, and buys three weeks later — how much credit does the automation get? Most analytics tools will attribute that sale to email. The automation gets zero credit even though it started the journey.</p>
+              <p className="font-semibold text-gray-800 mt-6 mb-2">Common measurement mistakes:</p>
+              <ul className="list-disc list-inside space-y-2 text-gray-700 mb-4">
+                <li>Measuring DM volume instead of DM conversion rate</li>
+                <li>Not tracking the source of email subscribers who came from Instagram</li>
+                <li>Ignoring response time as a revenue driver</li>
+                <li>Failing to A/B test automation sequences</li>
+                <li>Not calculating cost-per-acquisition from DM automation vs. other channels</li>
+              </ul>
+          </section>
+
+          <section id="the-five-metrics" className="mb-12">
+            <h2 className="text-2xl font-bold text-gray-900 mb-4">The 5 Metrics That Actually Matter</h2>
+              <p className="text-gray-700 mb-4 leading-relaxed">After analyzing thousands of Instagram automation campaigns, five metrics consistently separate high-performing automations from mediocre ones.</p>
+              <p className="text-gray-700 mb-4 leading-relaxed">Metric 1: DM Conversation Rate (DCR). This is the percentage of people who DM you after seeing your content who actually continue the conversation past the first automated reply. A DCR above 35% is good. Above 50% is excellent. Below 20% means your opening message needs work.</p>
+              <p className="text-gray-700 mb-4 leading-relaxed">Metric 2: Lead Capture Rate. Of everyone who enters your DM flow, what percentage gives you a name and email? Industry average is 22-28%. Top performers hit 40%+. This is the single most important metric if email list growth is your goal.</p>
+              <div className="bg-violet-50 border border-violet-200 rounded-xl p-6 my-6">
+                <h3 className="font-bold text-violet-900 mb-3">Metrics Quick Reference</h3>
+                <ul className="space-y-2">
+                  <li className="flex items-start gap-2 text-sm text-violet-800"><span className="text-violet-500 mt-0.5">→</span>DM Conversation Rate: 35%+ is good, 50%+ is excellent</li>
+                  <li className="flex items-start gap-2 text-sm text-violet-800"><span className="text-violet-500 mt-0.5">→</span>Lead Capture Rate: 22-28% average, 40%+ is top tier</li>
+                  <li className="flex items-start gap-2 text-sm text-violet-800"><span className="text-violet-500 mt-0.5">→</span>Sequence Completion Rate: 60%+ means strong messaging</li>
+                  <li className="flex items-start gap-2 text-sm text-violet-800"><span className="text-violet-500 mt-0.5">→</span>DM-to-Sale Rate: 3-8% for product businesses</li>
+                  <li className="flex items-start gap-2 text-sm text-violet-800"><span className="text-violet-500 mt-0.5">→</span>Cost Per DM Lead: should be 60-80% below email ad CPL</li>
+                </ul>
+              </div>
+          </section>
+
+          <section id="calculating-roi" className="mb-12">
+            <h2 className="text-2xl font-bold text-gray-900 mb-4">Calculating Your Real ROI</h2>
+              <p className="text-gray-700 mb-4 leading-relaxed">Here is the formula most people skip: ROI = (Revenue from DM leads - Cost of automation) / Cost of automation x 100.</p>
+              <p className="text-gray-700 mb-4 leading-relaxed">The tricky part is "Revenue from DM leads." You need to tag everyone who enters your DM flow in your CRM or email platform. When they buy, that purchase gets attributed to the DM channel. After 90 days, you will have enough data to calculate a reliable DM-lead-to-customer conversion rate.</p>
+              <p className="text-gray-700 mb-4 leading-relaxed">For a simple example: if you spend $97/month on automation tools, capture 200 leads/month from DMs, and 4% of those leads buy a $297 product within 90 days, your monthly revenue from the channel is: 200 x 0.04 x $297 = $2,376. ROI = ($2,376 - $97) / $97 x 100 = 2,349%. That is not unusual for well-run Instagram automation.</p>
+              <p className="font-semibold text-gray-800 mt-6 mb-2">Revenue tracking setup checklist:</p>
+              <ul className="list-disc list-inside space-y-2 text-gray-700 mb-4">
+                <li>Use UTM parameters in every link sent via DM automation</li>
+                <li>Tag all DM-sourced leads in your email platform</li>
+                <li>Set up a 90-day attribution window for DM-originated leads</li>
+                <li>Track average order value by lead source</li>
+                <li>Calculate lifetime value of DM leads vs. other channels</li>
+              </ul>
+          </section>
+
+          <section id="benchmarks" className="mb-12">
+            <h2 className="text-2xl font-bold text-gray-900 mb-4">Industry Benchmarks for 2026</h2>
+              <p className="text-gray-700 mb-4 leading-relaxed">Benchmarks vary wildly by industry, but here are reliable baselines across the businesses we have analyzed. E-commerce brands see an average of 3.2% DM-to-purchase rate, with top performers hitting 8%. Service businesses (coaches, consultants, agencies) see 6-12% DM-to-booking rates.</p>
+              <p className="text-gray-700 mb-4 leading-relaxed">Cost efficiency benchmark: DM leads should cost 60-80% less than equivalent leads from paid ads. If you are spending $5 per email subscriber from Facebook ads but $1.50 per subscriber from Instagram DM automation, you are in the right range.</p>
+              <p className="text-gray-700 mb-4 leading-relaxed">Response time correlation: brands that respond to initial DMs within 60 seconds (via automation) see 4.2x higher conversion rates than those who respond hours later. This alone justifies the cost of any automation tool — speed to response is the single highest-leverage variable in Instagram sales.</p>
+          </section>
+
+          <section id="optimization" className="mb-12">
+            <h2 className="text-2xl font-bold text-gray-900 mb-4">Optimizing Based on Data</h2>
+              <p className="text-gray-700 mb-4 leading-relaxed">Once you are tracking the right metrics, optimization becomes systematic rather than guesswork. Start with your lowest-performing step in the sequence. If your DCR is 45% but your Lead Capture Rate is only 18%, the problem is not getting people to respond — it is the ask for their email. Test a different value prop in your lead capture message.</p>
+              <p className="text-gray-700 mb-4 leading-relaxed">Run A/B tests on one variable at a time: opening message, lead magnet type, sequence length, send timing, call-to-action wording. Give each test at least 200 conversations before drawing conclusions.</p>
+              <p className="text-gray-700 mb-4 leading-relaxed">The most impactful optimization most brands miss: segmenting by comment source. People who commented on a tutorial Reel have different intent than people who commented on a promotional post. Build separate sequences for each and watch your conversion rates climb.</p>
+              <p className="font-semibold text-gray-800 mt-6 mb-2">Monthly optimization checklist:</p>
+              <ul className="list-disc list-inside space-y-2 text-gray-700 mb-4">
+                <li>Review DCR across all entry points — flag any below 25%</li>
+                <li>Check lead capture rate — A/B test messaging if below 25%</li>
+                <li>Audit sequence completion rate — tighten any step with &gt;30% drop-off</li>
+                <li>Calculate cost-per-lead and compare to previous month</li>
+                <li>Review revenue attribution report from email platform</li>
+              </ul>
+          </section>
+
+              {/* CTA */}
+              <div className="bg-linear-to-r from-violet-600 to-purple-600 rounded-2xl p-8 text-white text-center mt-12">
+                <h2 className="text-2xl font-bold mb-3">Ready to Automate Your Instagram Growth?</h2>
+                <p className="text-violet-100 mb-6">PostEngage helps you turn Instagram engagement into leads, bookings, and sales — automatically.</p>
+                <Button asChild size="lg" className="bg-white text-violet-600 hover:bg-violet-50">
+                  <Link href="/#waitlist">Start Free Today</Link>
+                </Button>
               </div>
 
-              <div className='lead text-xl text-muted-foreground mb-12 leading-relaxed'>
-                Likes and comments are not revenue. Learn the five metrics that actually tell you whether your Instagram automation is making money. This guide covers everything you need to know to get started and see results quickly.
-              </div>
-
-              <h2
-                id='why-it-matters'
-                className='scroll-mt-24 text-2xl font-bold mt-12 mb-6'
-              >
-                Why Analytics on Instagram Matters in 2026
-              </h2>
-              <p>Instagram has over 2 billion monthly active users, and direct engagement through DMs and comments has never been higher. For analytics professionals and businesses, the platform represents an unmatched opportunity to reach qualified prospects where they are already spending time.</p>
-              <p>The shift happening in 2026 is from passive social media presence to active, AI-powered conversation funnels. Brands that treat Instagram as a two-way communication channel — rather than just a broadcast medium — are seeing 3–5x better ROI on every hour invested.</p>
-
-              <h2
-                id='the-core-strategy'
-                className='scroll-mt-24 text-2xl font-bold mt-12 mb-6'
-              >
-                The Core Strategy: From Engagement to Conversion
-              </h2>
-              <p>The most effective Instagram automation strategies follow a consistent three-step pattern: attract attention with content, capture intent with a trigger (comment, DM keyword, Story reply), then convert with a personalized automated conversation.</p>
-              <p>What separates high-performing accounts from average ones is the quality of that third step — the automated conversation itself. Rule-based bots send the same canned response to everyone. AI-powered bots like PostEngage read the context of each interaction and craft replies that feel genuinely personal, dramatically improving conversion rates at every stage of the funnel.</p>
-
-              <h2
-                id='practical-implementation'
-                className='scroll-mt-24 text-2xl font-bold mt-12 mb-6'
-              >
-                Practical Implementation: Getting Started
-              </h2>
-              <p>Start with one trigger and one goal. The most common mistake brands make is trying to automate everything at once — welcome messages, comment replies, story responses, and DM sequences simultaneously. The result is a confusing mess.</p>
-              <p>Instead, pick the trigger that aligns with your highest-volume touchpoint. For most accounts, that is comment automation on Reels. Set up a single keyword trigger, write a compelling CTA in your caption, and measure results for two weeks before expanding. Once you see the conversion data, you will have a clear picture of where to invest next.</p>
-
-              <h2
-                id='advanced-tips'
-                className='scroll-mt-24 text-2xl font-bold mt-12 mb-6'
-              >
-                Advanced Tips for Maximum Results
-              </h2>
-              <p>Once your baseline automation is running, layer in AI personalization. PostEngage allows you to train a custom AI model on your brand voice — feeding it examples of your past replies, your tone guidelines, and your product knowledge. The result is an AI that responds to nuanced questions the way you would, not the way a generic chatbot would.</p>
-              <p>Also use time-window scheduling to match your automation to your audience's active hours. A bot that replies at 3am to someone in your target timezone creates a better first impression than one that batches responses at irregular times. Even small improvements in response quality and timing compound into significant conversion rate gains over weeks and months.</p>
-
-              <div className='bg-primary/5 p-8 rounded-2xl border border-primary/20 my-12'>
-                <h3 className='text-2xl font-bold mb-4'>Start Automating Your Instagram Today</h3>
-                <p className='mb-6'>Join thousands of brands using PostEngage to turn Instagram engagement into revenue.</p>
-                <Link href='https://app.postengage.ai/signup'>
-                  <Button size='lg' className='w-full sm:w-auto text-lg px-8'>
-                    Get Started Free <ArrowRight className='ml-2 h-5 w-5' />
-                  </Button>
-                </Link>
+              <div className="mt-12">
+                <NewsletterForm />
               </div>
             </article>
 
-            <aside className='hidden lg:block lg:col-span-2 lg:sticky lg:top-32 lg:self-start'>
-              <div className='flex flex-col gap-4 items-center'>
-                <p className='text-xs font-semibold uppercase tracking-wider text-muted-foreground mb-2'>Share</p>
-                <SocialShareButtons
-                  url='https://postengage.ai/blog/measure-instagram-automation-roi'
-                  title='How to Measure the ROI of Instagram Automation' />
+            {/* Share Sidebar */}
+            <aside className="hidden lg:block lg:col-span-2">
+              <div className="sticky top-24">
+                <SocialShareButtons title="How to Measure Instagram Automation ROI: The Metrics That Actually Matter" />
               </div>
             </aside>
           </div>
         </div>
-        <NewsletterForm />
       </main>
       <LandingFooter />
     </div>

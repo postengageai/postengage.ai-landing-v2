@@ -2,162 +2,112 @@ import { Metadata } from 'next';
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
-import {
-  ArrowRight,
-  Calendar,
-  Clock,
-  Zap,
-} from 'lucide-react';
-import { LandingHeader } from '@/components/landing/landing-header';
-import { LandingFooter } from '@/components/landing/landing-footer';
-import { TableOfContents } from '@/components/blog/table-of-contents';
-import { SocialShareButtons } from '@/components/blog/social-share-buttons';
-import { NewsletterForm } from '@/components/blog/newsletter-form';
+import { LandingHeader } from '@/components/landing-header';
+import { LandingFooter } from '@/components/landing-footer';
+import { TableOfContents } from '@/components/table-of-contents';
+import { SocialShareButtons } from '@/components/social-share-buttons';
+import { NewsletterForm } from '@/components/newsletter-form';
 
 export const metadata: Metadata = {
-  title: 'Instagram Engagement Rate Benchmarks 2026: Is Yours Good?',
-  description: 'The average Instagram engagement rate dropped to 0.98% in 2026. But accounts using DM automation see 4x higher engagement. Here is why.',
-  openGraph: {
-    title: 'Instagram Engagement Rate Benchmarks 2026: Is Yours Good?',
-    description: 'The average Instagram engagement rate dropped to 0.98% in 2026. But accounts using DM automation see 4x higher engagement. Here is why.',
-    type: 'article',
-    url: 'https://postengage.ai/blog/instagram-engagement-rate-benchmarks-2026',
-    images: [{ url: '/blog/instagram-engagement-rate-benchmarks-2026-cover.png', width: 1200, height: 630, alt: 'Instagram Engagement Rate Benchmarks 2026: Is Yours Good?' }],
-  },
-  twitter: {
-    card: 'summary_large_image',
-    title: 'Instagram Engagement Rate Benchmarks 2026: Is Yours Good?',
-    description: 'The average Instagram engagement rate dropped to 0.98% in 2026. But accounts using DM automation see 4x higher engagement. Here is why.',
-    images: ['/blog/instagram-engagement-rate-benchmarks-2026-cover.png'],
-  },
+  title: 'Instagram Engagement Rate Benchmarks 2026: What Is Actually Good? | PostEngage Blog',
+  description: 'Updated Instagram engagement rate benchmarks for 2026 by follower count, industry, and content type — with context on what drives high engagement and how to improve yours.',
 };
 
 export default function BlogPost() {
   const tocItems = [
-    { id: 'why-it-matters', title: 'Why This Matters in 2026' },
-    { id: 'the-core-strategy', title: 'The Core Strategy' },
-    { id: 'practical-implementation', title: 'Practical Implementation' },
-    { id: 'advanced-tips', title: 'Advanced Tips' },
+    { id: 'engagement-rate-defined', title: 'How Engagement Rate Is Calculated in 2026' },
+    { id: 'benchmarks-by-account-size', title: 'Benchmarks by Account Size' },
+    { id: 'benchmarks-by-industry', title: 'Benchmarks by Industry' },
+    { id: 'content-type-benchmarks', title: 'Benchmarks by Content Type' },
+    { id: 'improving-engagement', title: 'Improving Engagement Rate Strategically' },
   ];
-
   return (
-    <div className='min-h-screen bg-background text-foreground font-sans selection:bg-primary/20'>
+    <div className="min-h-screen bg-white">
       <LandingHeader />
-      <main className='relative pt-32 pb-24'>
-        <div className='absolute inset-0 -z-10 overflow-hidden'>
-          <div className='absolute top-0 left-1/2 -translate-x-1/2 w-full h-[600px] bg-gradient-to-b from-primary/5 via-transparent to-transparent opacity-60' />
+      <main>
+        <div className="bg-linear-to-b from-violet-50 to-white border-b border-gray-100">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+            <div className="max-w-3xl mx-auto text-center">
+              <Badge className="mb-4 bg-violet-100 text-violet-700 hover:bg-violet-100">Analytics & Benchmarks</Badge>
+              <h1 className="text-4xl font-bold text-gray-900 mb-4">Instagram Engagement Rate Benchmarks 2026: What Is Actually Good?</h1>
+              <p className="text-xl text-gray-600 mb-6">Updated Instagram engagement rate benchmarks for 2026 by follower count, industry, and content type — with context on what drives high engagement and how to improve yours.</p>
+              <div className="flex items-center justify-center gap-4 text-sm text-gray-500">
+                <span>May 16, 2026</span><span>·</span><span>8 min read</span>
+              </div>
+            </div>
+          </div>
         </div>
-        <div className='container mx-auto px-4 max-w-7xl'>
-          <div className='grid grid-cols-1 lg:grid-cols-12 gap-12'>
-            <aside className='hidden lg:block lg:col-span-3 lg:sticky lg:top-32 lg:self-start space-y-8'>
-              <div className='flex items-center gap-2 text-sm text-muted-foreground mb-4'>
-                <Link href='/blog' className='hover:text-primary transition-colors'>Blog</Link>
-                <span>/</span>
-                <span className='text-foreground font-medium'>Analytics</span>
-              </div>
-              <TableOfContents items={tocItems} />
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+          <div className="grid grid-cols-12 gap-8">
+            <aside className="hidden lg:block lg:col-span-3">
+              <div className="sticky top-24"><TableOfContents items={tocItems} /></div>
             </aside>
+            <article className="col-span-12 lg:col-span-7">
 
-            <article className='lg:col-span-7 prose prose-lg dark:prose-invert max-w-none'>
-              <header className='mb-12 not-prose'>
-                <Badge variant='secondary' className='mb-6 text-sm font-medium px-3 py-1'>
-                  Analytics
-                </Badge>
-                <h1 className='text-4xl md:text-5xl font-extrabold tracking-tight mb-6 leading-tight'>
-                  Instagram Engagement Rate Benchmarks 2026: Is Yours Good?
-                </h1>
-                <div className='flex items-center gap-6 text-muted-foreground'>
-                  <div className='flex items-center gap-2'>
-                    <div className='h-10 w-10 rounded-full bg-primary/10 flex items-center justify-center'>
-                      <Zap className='h-5 w-5 text-primary' />
-                    </div>
-                    <div>
-                      <p className='text-sm font-medium text-foreground'>PostEngageAI Team</p>
-                      <p className='text-xs'>Automation Experts</p>
-                    </div>
-                  </div>
-                  <div className='flex items-center gap-2 text-sm'>
-                    <Calendar className='h-4 w-4' />
-                    <span>April 26, 2026</span>
-                  </div>
-                  <div className='flex items-center gap-2 text-sm'>
-                    <Clock className='h-4 w-4' />
-                    <span>7 min read</span>
-                  </div>
-                </div>
-              </header>
-
-              <div className='relative w-full aspect-[21/9] rounded-2xl overflow-hidden mb-12 bg-muted'>
-                <div className='absolute inset-0 flex items-center justify-center bg-gradient-to-br from-gray-900 to-gray-800 text-white'>
-                  <div className='text-center p-8'>
-                    <Zap className='h-16 w-16 mx-auto mb-4 text-primary/80' />
-                    <p className='text-xl font-medium text-white/80'>Analytics</p>
-                  </div>
-                </div>
+          <section id="engagement-rate-defined" className="mb-12">
+            <h2 className="text-2xl font-bold text-gray-900 mb-4">How Engagement Rate Is Calculated in 2026</h2>
+              <p className="text-gray-700 mb-4 leading-relaxed">Engagement rate is calculated as (likes + comments + saves + shares) divided by total followers, multiplied by 100. In 2026, saves and shares are weighted more heavily by the algorithm than likes and comments — Instagram uses them as signals of content quality.</p>
+              <p className="text-gray-700 mb-4 leading-relaxed">Some platforms calculate engagement rate based on reach rather than followers (engagements divided by accounts reached). Reach-based engagement rate is typically higher and more accurate for measuring content performance, but follower-based rate is more useful for comparing accounts across sizes.</p>
+              <p className="text-gray-700 mb-4 leading-relaxed">A note on gaming: engagement rate metrics have been manipulated by services that sell likes and comments. Always look at the quality of engagement (are comments substantive?) not just the quantity. Fake engagement inflates metrics but does not generate real business outcomes.</p>
+              <p className="font-semibold text-gray-800 mt-6 mb-2">Engagement rate fundamentals:</p>
+              <ul className="list-disc list-inside space-y-2 text-gray-700 mb-4">
+                <li>Engagement rate = (likes + comments + saves + shares) / followers x 100</li>
+                <li>Saves and shares weighted more heavily in algorithm than likes</li>
+                <li>Reach-based rate (per post) more accurate than follower-based rate</li>
+                <li>Quality of engagement matters as much as quantity</li>
+                <li>Inflated metrics from purchased engagement do not drive real outcomes</li>
+              </ul>
+          </section>
+          <section id="benchmarks-by-account-size" className="mb-12">
+            <h2 className="text-2xl font-bold text-gray-900 mb-4">Benchmarks by Account Size</h2>
+              <p className="text-gray-700 mb-4 leading-relaxed">Nano accounts (under 10,000 followers): average engagement rate of 3-7%. These accounts benefit from tight community relationships and high audience relevance. Many followers know the creator personally or through a specific community, which drives genuine interaction.</p>
+              <p className="text-gray-700 mb-4 leading-relaxed">Micro accounts (10,000-100,000 followers): average engagement rate of 1.5-4%. The decrease from nano reflects audience dilution as growth moves beyond personal networks. Accounts in this range with consistent 3%+ engagement rates are genuinely strong performers.</p>
+              <p className="text-gray-700 mb-4 leading-relaxed">Mid-size accounts (100,000-1,000,000 followers): average engagement rate of 0.8-2%. Large accounts face the audience fragmentation challenge — followers have diverse interests and not all content resonates with all segments. Above 1.5% in this range is strong. Macro accounts (over 1,000,000 followers): average engagement rate of 0.4-1.2%.</p>
+              <div className="bg-violet-50 border border-violet-200 rounded-xl p-6 my-6">
+                <h3 className="font-bold text-violet-900 mb-3">Engagement Rate Benchmarks by Size</h3>
+                <ul className="space-y-2">
+                  <li className="flex items-start gap-2 text-sm text-violet-800"><span>&#x2192;</span>Nano (under 10k): 3-7% average, above 5% is excellent</li>
+                  <li className="flex items-start gap-2 text-sm text-violet-800"><span>&#x2192;</span>Micro (10k-100k): 1.5-4% average, above 3% is excellent</li>
+                  <li className="flex items-start gap-2 text-sm text-violet-800"><span>&#x2192;</span>Mid-size (100k-1M): 0.8-2% average, above 1.5% is excellent</li>
+                  <li className="flex items-start gap-2 text-sm text-violet-800"><span>&#x2192;</span>Macro (over 1M): 0.4-1.2% average, above 0.8% is excellent</li>
+                  <li className="flex items-start gap-2 text-sm text-violet-800"><span>&#x2192;</span>Note: niche accounts consistently outperform general audience accounts at every size</li>
+                </ul>
               </div>
-
-              <div className='lead text-xl text-muted-foreground mb-12 leading-relaxed'>
-                The average Instagram engagement rate dropped to 0.98% in 2026. But accounts using DM automation see 4x higher engagement. Here is why. This guide covers everything you need to know to get started and see results quickly.
+          </section>
+          <section id="benchmarks-by-industry" className="mb-12">
+            <h2 className="text-2xl font-bold text-gray-900 mb-4">Benchmarks by Industry</h2>
+              <p className="text-gray-700 mb-4 leading-relaxed">Food and beverage: among the highest engagement rates on Instagram, averaging 2-4% across account sizes. Highly visual, universally relatable, and emotionally engaging content drives strong interaction.</p>
+              <p className="text-gray-700 mb-4 leading-relaxed">Fashion and beauty: 1.5-3% average. Strong visual format with high save rates on aspirational content. Engagement tends to be concentrated on product reveal and transformation content.</p>
+              <p className="text-gray-700 mb-4 leading-relaxed">Business, marketing, and SaaS: 0.8-1.8% average. Lower engagement rate than consumer categories but higher commercial intent behind individual interactions. One high-intent DM from a business-focused account is worth more than 10 likes on a fashion post.</p>
+              <p className="text-gray-700 mb-4 leading-relaxed">Fitness and wellness: 2-3.5% average. Strong community dynamics and high motivational content engagement. Fitness transformations and challenge content are particularly high performers.</p>
+          </section>
+          <section id="content-type-benchmarks" className="mb-12">
+            <h2 className="text-2xl font-bold text-gray-900 mb-4">Benchmarks by Content Type</h2>
+              <p className="text-gray-700 mb-4 leading-relaxed">Reels: highest reach of any content format, but engagement rate (based on views) tends to be 1-3%. The high reach means total engagement is still strong even if the rate is lower.</p>
+              <p className="text-gray-700 mb-4 leading-relaxed">Carousels: highest engagement rate of any format for followers who see the post, averaging 3-5% for well-designed educational carousels. The multi-slide format rewards attention and drives significantly higher save rates than single images.</p>
+              <p className="text-gray-700 mb-4 leading-relaxed">Static images: 1-2.5% engagement rate. Strong for aesthetic and aspirational content but declining relative to video formats. Best used for quote cards, product images, and before/after content.</p>
+              <p className="text-gray-700 mb-4 leading-relaxed">Stories: engagement measured differently (taps, polls, replies) — but reply rates of 2-5% on Stories with interactive elements are strong, and Stories consistently drive the highest DM conversation rates because they feel more intimate and real-time.</p>
+          </section>
+          <section id="improving-engagement" className="mb-12">
+            <h2 className="text-2xl font-bold text-gray-900 mb-4">Improving Engagement Rate Strategically</h2>
+              <p className="text-gray-700 mb-4 leading-relaxed">Engagement rate is a symptom of audience-content fit. The most reliable way to improve it is to create content that is more specifically relevant to a more specifically defined audience. Trying to appeal to everyone produces mediocre engagement. Owning a specific niche — even a narrow one — produces strong engagement.</p>
+              <p className="text-gray-700 mb-4 leading-relaxed">Practical improvement tactics: end every post with a specific question (not "what do you think?" but a question so specific that your ideal audience member has a strong opinion), use carousels for educational content (saves are weighted highly and tell the algorithm your content has long-term value), and post consistently enough that your followers develop a habit of checking your content.</p>
+              <p className="text-gray-700 mb-4 leading-relaxed">What not to do: engagement pods (mutual fake engagement), buying likes or comments, or following and unfollowing to game follower counts. These tactics inflate metrics without improving content quality, waste your time, and violate Instagram policies. Focus on producing content that your specific audience genuinely wants to engage with — sustainable high engagement follows from that.</p>
+          </section>
+              <div className="bg-linear-to-r from-violet-600 to-purple-600 rounded-2xl p-8 text-white text-center mt-12">
+                <h2 className="text-2xl font-bold mb-3">Ready to Automate Your Instagram Growth?</h2>
+                <p className="text-violet-100 mb-6">PostEngage helps you turn Instagram engagement into leads, bookings, and sales automatically.</p>
+                <Button asChild size="lg" className="bg-white text-violet-600 hover:bg-violet-50">
+                  <Link href="/#waitlist">Start Free Today</Link>
+                </Button>
               </div>
-
-              <h2
-                id='why-it-matters'
-                className='scroll-mt-24 text-2xl font-bold mt-12 mb-6'
-              >
-                Why Analytics on Instagram Matters in 2026
-              </h2>
-              <p>Instagram has over 2 billion monthly active users, and direct engagement through DMs and comments has never been higher. For analytics professionals and businesses, the platform represents an unmatched opportunity to reach qualified prospects where they are already spending time.</p>
-              <p>The shift happening in 2026 is from passive social media presence to active, AI-powered conversation funnels. Brands that treat Instagram as a two-way communication channel — rather than just a broadcast medium — are seeing 3–5x better ROI on every hour invested.</p>
-
-              <h2
-                id='the-core-strategy'
-                className='scroll-mt-24 text-2xl font-bold mt-12 mb-6'
-              >
-                The Core Strategy: From Engagement to Conversion
-              </h2>
-              <p>The most effective Instagram automation strategies follow a consistent three-step pattern: attract attention with content, capture intent with a trigger (comment, DM keyword, Story reply), then convert with a personalized automated conversation.</p>
-              <p>What separates high-performing accounts from average ones is the quality of that third step — the automated conversation itself. Rule-based bots send the same canned response to everyone. AI-powered bots like PostEngage read the context of each interaction and craft replies that feel genuinely personal, dramatically improving conversion rates at every stage of the funnel.</p>
-
-              <h2
-                id='practical-implementation'
-                className='scroll-mt-24 text-2xl font-bold mt-12 mb-6'
-              >
-                Practical Implementation: Getting Started
-              </h2>
-              <p>Start with one trigger and one goal. The most common mistake brands make is trying to automate everything at once — welcome messages, comment replies, story responses, and DM sequences simultaneously. The result is a confusing mess.</p>
-              <p>Instead, pick the trigger that aligns with your highest-volume touchpoint. For most accounts, that is comment automation on Reels. Set up a single keyword trigger, write a compelling CTA in your caption, and measure results for two weeks before expanding. Once you see the conversion data, you will have a clear picture of where to invest next.</p>
-
-              <h2
-                id='advanced-tips'
-                className='scroll-mt-24 text-2xl font-bold mt-12 mb-6'
-              >
-                Advanced Tips for Maximum Results
-              </h2>
-              <p>Once your baseline automation is running, layer in AI personalization. PostEngage allows you to train a custom AI model on your brand voice — feeding it examples of your past replies, your tone guidelines, and your product knowledge. The result is an AI that responds to nuanced questions the way you would, not the way a generic chatbot would.</p>
-              <p>Also use time-window scheduling to match your automation to your audience's active hours. A bot that replies at 3am to someone in your target timezone creates a better first impression than one that batches responses at irregular times. Even small improvements in response quality and timing compound into significant conversion rate gains over weeks and months.</p>
-
-              <div className='bg-primary/5 p-8 rounded-2xl border border-primary/20 my-12'>
-                <h3 className='text-2xl font-bold mb-4'>Start Automating Your Instagram Today</h3>
-                <p className='mb-6'>Join thousands of brands using PostEngage to turn Instagram engagement into revenue.</p>
-                <Link href='https://app.postengage.ai/signup'>
-                  <Button size='lg' className='w-full sm:w-auto text-lg px-8'>
-                    Get Started Free <ArrowRight className='ml-2 h-5 w-5' />
-                  </Button>
-                </Link>
-              </div>
+              <div className="mt-12"><NewsletterForm /></div>
             </article>
-
-            <aside className='hidden lg:block lg:col-span-2 lg:sticky lg:top-32 lg:self-start'>
-              <div className='flex flex-col gap-4 items-center'>
-                <p className='text-xs font-semibold uppercase tracking-wider text-muted-foreground mb-2'>Share</p>
-                <SocialShareButtons
-                  url='https://postengage.ai/blog/instagram-engagement-rate-benchmarks-2026'
-                  title='Instagram Engagement Rate Benchmarks 2026: Is Yours Good?' />
-              </div>
+            <aside className="hidden lg:block lg:col-span-2">
+              <div className="sticky top-24"><SocialShareButtons title="Instagram Engagement Rate Benchmarks 2026: What Is Actually Good?" /></div>
             </aside>
           </div>
         </div>
-        <NewsletterForm />
       </main>
       <LandingFooter />
     </div>

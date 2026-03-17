@@ -2,162 +2,112 @@ import { Metadata } from 'next';
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
-import {
-  ArrowRight,
-  Calendar,
-  Clock,
-  Zap,
-} from 'lucide-react';
-import { LandingHeader } from '@/components/landing/landing-header';
-import { LandingFooter } from '@/components/landing/landing-footer';
-import { TableOfContents } from '@/components/blog/table-of-contents';
-import { SocialShareButtons } from '@/components/blog/social-share-buttons';
-import { NewsletterForm } from '@/components/blog/newsletter-form';
+import { LandingHeader } from '@/components/landing-header';
+import { LandingFooter } from '@/components/landing-footer';
+import { TableOfContents } from '@/components/table-of-contents';
+import { SocialShareButtons } from '@/components/social-share-buttons';
+import { NewsletterForm } from '@/components/newsletter-form';
 
 export const metadata: Metadata = {
-  title: 'Instagram Automation vs Hiring a VA: The True Cost Comparison',
-  description: 'A VA costs $800–$2,000/month and works 8 hours a day. Instagram automation costs a fraction and works 24/7. Here is the full breakdown.',
-  openGraph: {
-    title: 'Instagram Automation vs Hiring a VA: The True Cost Comparison',
-    description: 'A VA costs $800–$2,000/month and works 8 hours a day. Instagram automation costs a fraction and works 24/7. Here is the full breakdown.',
-    type: 'article',
-    url: 'https://postengage.ai/blog/instagram-automation-vs-hiring-va',
-    images: [{ url: '/blog/instagram-automation-vs-hiring-va-cover.png', width: 1200, height: 630, alt: 'Instagram Automation vs Hiring a VA: The True Cost Comparison' }],
-  },
-  twitter: {
-    card: 'summary_large_image',
-    title: 'Instagram Automation vs Hiring a VA: The True Cost Comparison',
-    description: 'A VA costs $800–$2,000/month and works 8 hours a day. Instagram automation costs a fraction and works 24/7. Here is the full breakdown.',
-    images: ['/blog/instagram-automation-vs-hiring-va-cover.png'],
-  },
+  title: 'Instagram Automation vs. Hiring a VA: A Brutally Honest Comparison | PostEngage Blog',
+  description: 'An unfiltered comparison of Instagram DM automation tools vs. hiring a virtual assistant, including real cost analysis, capability comparison, and when to choose each option.',
 };
 
 export default function BlogPost() {
   const tocItems = [
-    { id: 'why-it-matters', title: 'Why This Matters in 2026' },
-    { id: 'the-core-strategy', title: 'The Core Strategy' },
-    { id: 'practical-implementation', title: 'Practical Implementation' },
-    { id: 'advanced-tips', title: 'Advanced Tips' },
+    { id: 'the-real-question', title: 'The Real Question You Are Trying to Answer' },
+    { id: 'cost-comparison', title: 'Real Cost Comparison' },
+    { id: 'capability-comparison', title: 'Capability Comparison' },
+    { id: 'when-va-wins', title: 'When a VA Is the Better Choice' },
+    { id: 'hybrid-approach', title: 'The Hybrid Approach: Automation Plus Human' },
   ];
-
   return (
-    <div className='min-h-screen bg-background text-foreground font-sans selection:bg-primary/20'>
+    <div className="min-h-screen bg-white">
       <LandingHeader />
-      <main className='relative pt-32 pb-24'>
-        <div className='absolute inset-0 -z-10 overflow-hidden'>
-          <div className='absolute top-0 left-1/2 -translate-x-1/2 w-full h-[600px] bg-gradient-to-b from-primary/5 via-transparent to-transparent opacity-60' />
+      <main>
+        <div className="bg-linear-to-b from-violet-50 to-white border-b border-gray-100">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+            <div className="max-w-3xl mx-auto text-center">
+              <Badge className="mb-4 bg-violet-100 text-violet-700 hover:bg-violet-100">Business Strategy</Badge>
+              <h1 className="text-4xl font-bold text-gray-900 mb-4">Instagram Automation vs. Hiring a VA: A Brutally Honest Comparison</h1>
+              <p className="text-xl text-gray-600 mb-6">An unfiltered comparison of Instagram DM automation tools vs. hiring a virtual assistant, including real cost analysis, capability comparison, and when to choose each option.</p>
+              <div className="flex items-center justify-center gap-4 text-sm text-gray-500">
+                <span>May 9, 2026</span><span>·</span><span>9 min read</span>
+              </div>
+            </div>
+          </div>
         </div>
-        <div className='container mx-auto px-4 max-w-7xl'>
-          <div className='grid grid-cols-1 lg:grid-cols-12 gap-12'>
-            <aside className='hidden lg:block lg:col-span-3 lg:sticky lg:top-32 lg:self-start space-y-8'>
-              <div className='flex items-center gap-2 text-sm text-muted-foreground mb-4'>
-                <Link href='/blog' className='hover:text-primary transition-colors'>Blog</Link>
-                <span>/</span>
-                <span className='text-foreground font-medium'>Operations</span>
-              </div>
-              <TableOfContents items={tocItems} />
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+          <div className="grid grid-cols-12 gap-8">
+            <aside className="hidden lg:block lg:col-span-3">
+              <div className="sticky top-24"><TableOfContents items={tocItems} /></div>
             </aside>
+            <article className="col-span-12 lg:col-span-7">
 
-            <article className='lg:col-span-7 prose prose-lg dark:prose-invert max-w-none'>
-              <header className='mb-12 not-prose'>
-                <Badge variant='secondary' className='mb-6 text-sm font-medium px-3 py-1'>
-                  Operations
-                </Badge>
-                <h1 className='text-4xl md:text-5xl font-extrabold tracking-tight mb-6 leading-tight'>
-                  Instagram Automation vs Hiring a VA: The True Cost Comparison
-                </h1>
-                <div className='flex items-center gap-6 text-muted-foreground'>
-                  <div className='flex items-center gap-2'>
-                    <div className='h-10 w-10 rounded-full bg-primary/10 flex items-center justify-center'>
-                      <Zap className='h-5 w-5 text-primary' />
-                    </div>
-                    <div>
-                      <p className='text-sm font-medium text-foreground'>PostEngageAI Team</p>
-                      <p className='text-xs'>Automation Experts</p>
-                    </div>
-                  </div>
-                  <div className='flex items-center gap-2 text-sm'>
-                    <Calendar className='h-4 w-4' />
-                    <span>April 25, 2026</span>
-                  </div>
-                  <div className='flex items-center gap-2 text-sm'>
-                    <Clock className='h-4 w-4' />
-                    <span>6 min read</span>
-                  </div>
-                </div>
-              </header>
-
-              <div className='relative w-full aspect-[21/9] rounded-2xl overflow-hidden mb-12 bg-muted'>
-                <div className='absolute inset-0 flex items-center justify-center bg-gradient-to-br from-gray-900 to-gray-800 text-white'>
-                  <div className='text-center p-8'>
-                    <Zap className='h-16 w-16 mx-auto mb-4 text-primary/80' />
-                    <p className='text-xl font-medium text-white/80'>Operations</p>
-                  </div>
-                </div>
+          <section id="the-real-question" className="mb-12">
+            <h2 className="text-2xl font-bold text-gray-900 mb-4">The Real Question You Are Trying to Answer</h2>
+              <p className="text-gray-700 mb-4 leading-relaxed">The automation vs. VA debate is usually framed as a cost question. It is actually a capability question. The right choice depends on what you need to accomplish with your Instagram DMs, not on which option is cheaper.</p>
+              <p className="text-gray-700 mb-4 leading-relaxed">What you are really asking: do my Instagram DMs require human judgment, relationship-building, and real-time adaptability? Or do they primarily involve delivering resources, answering common questions, and routing qualified prospects? The more your needs fall into the second category, the more automation wins. The more they fall into the first, the more a VA wins.</p>
+              <p className="text-gray-700 mb-4 leading-relaxed">The honest reality: most Instagram DM volume for businesses is routine. The same 10-15 questions get asked repeatedly. The same resources get requested over and over. The same lead qualification questions come up in every conversation. For this 80% of DM work, automation handles it better, faster, and cheaper than any VA. The remaining 20% of high-value, complex, relationship-critical conversations is where human judgment is irreplaceable.</p>
+              <p className="font-semibold text-gray-800 mt-6 mb-2">Capability breakdown:</p>
+              <ul className="list-disc list-inside space-y-2 text-gray-700 mb-4">
+                <li>Automation wins: routine inquiries, resource delivery, basic qualification</li>
+                <li>Automation wins: response speed (instant vs. minutes or hours for VA)</li>
+                <li>Automation wins: after-hours coverage (VA works set hours)</li>
+                <li>VA wins: complex negotiations and relationship-building conversations</li>
+                <li>VA wins: unique situations that require real-time judgment</li>
+                <li>VA wins: high-value accounts requiring personalized attention</li>
+              </ul>
+          </section>
+          <section id="cost-comparison" className="mb-12">
+            <h2 className="text-2xl font-bold text-gray-900 mb-4">Real Cost Comparison</h2>
+              <p className="text-gray-700 mb-4 leading-relaxed">Automation cost: Instagram DM automation platforms range from $49-197/month for most businesses. The total cost including setup time (5-10 hours initially, 1-2 hours/month ongoing) and tool cost runs approximately $200-400/month in Year 1 for a mid-size account.</p>
+              <p className="text-gray-700 mb-4 leading-relaxed">VA cost: a competent English-speaking VA who can handle Instagram DMs professionally runs $8-15/hour. For 3 hours/day of DM management (covering business hours), that is $24-45/day or $480-900/month. A VA who can also do strategy, content creation, and proactive outreach costs more — $1,200-2,000+/month.</p>
+              <p className="text-gray-700 mb-4 leading-relaxed">The math for a typical business: automation at $97/month handles 80% of DM volume 24/7 at consistent quality. A VA at $700/month handles DMs during business hours only, with quality that varies based on the VA's skill and attention on a given day. The economic case for automation on the routine work is overwhelming.</p>
+              <div className="bg-violet-50 border border-violet-200 rounded-xl p-6 my-6">
+                <h3 className="font-bold text-violet-900 mb-3">Annual Cost Comparison</h3>
+                <ul className="space-y-2">
+                  <li className="flex items-start gap-2 text-sm text-violet-800"><span>&#x2192;</span>Automation only: ~$1,200-2,400/year + 2-3 hours/month maintenance</li>
+                  <li className="flex items-start gap-2 text-sm text-violet-800"><span>&#x2192;</span>VA only (part-time): ~$8,400-10,800/year, business hours only</li>
+                  <li className="flex items-start gap-2 text-sm text-violet-800"><span>&#x2192;</span>Hybrid (automation + part-time VA): ~$5,000-7,200/year, best coverage</li>
+                  <li className="flex items-start gap-2 text-sm text-violet-800"><span>&#x2192;</span>VA only (full coverage): ~$15,000-24,000+/year for real 24/7 coverage</li>
+                  <li className="flex items-start gap-2 text-sm text-violet-800"><span>&#x2192;</span>Opportunity cost of manual DMs: calculate based on hours x your hourly rate</li>
+                </ul>
               </div>
-
-              <div className='lead text-xl text-muted-foreground mb-12 leading-relaxed'>
-                A VA costs $800–$2,000/month and works 8 hours a day. Instagram automation costs a fraction and works 24/7. Here is the full breakdown. This guide covers everything you need to know to get started and see results quickly.
+          </section>
+          <section id="capability-comparison" className="mb-12">
+            <h2 className="text-2xl font-bold text-gray-900 mb-4">Capability Comparison</h2>
+              <p className="text-gray-700 mb-4 leading-relaxed">Response speed: automation wins categorically. Sub-60-second response to any trigger, 24/7, regardless of volume. No VA can match this for keyword-triggered comment responses. A VA responding to 200 comments in an hour, each within 60 seconds, is physically impossible.</p>
+              <p className="text-gray-700 mb-4 leading-relaxed">Quality of complex conversations: VA wins. When a high-value prospect has unusual objections, asks for custom arrangements, or needs relationship-building before making a significant purchase, a skilled VA with real judgment outperforms even the best automation.</p>
+              <p className="text-gray-700 mb-4 leading-relaxed">Consistency: automation wins. A VA has good days and bad days. Their replies are inconsistent in tone and quality across time. Automation delivers the same quality response at 3 PM on a Tuesday as at 2 AM on a Sunday.</p>
+              <p className="text-gray-700 mb-4 leading-relaxed">Scalability: automation wins. When a post goes viral and generates 500 comments in 2 hours, automation handles all 500 simultaneously. A VA drowns. No degradation in response time or quality regardless of volume spikes.</p>
+          </section>
+          <section id="when-va-wins" className="mb-12">
+            <h2 className="text-2xl font-bold text-gray-900 mb-4">When a VA Is the Better Choice</h2>
+              <p className="text-gray-700 mb-4 leading-relaxed">A VA is the better choice when your Instagram DMs are primarily high-complexity, high-value interactions that require judgment. Enterprise B2B accounts where every DM is potentially a significant deal, luxury brands where relationship quality is the product, and accounts where DM conversations are genuinely unique and unpredictable each time.</p>
+              <p className="text-gray-700 mb-4 leading-relaxed">A VA is also better when your brand personality is so specific and nuanced that automation cannot capture it — when followers would immediately detect the non-human quality and it would damage your brand reputation. Some personal brands and high-personality accounts fall into this category.</p>
+              <p className="text-gray-700 mb-4 leading-relaxed">Even in these VA-wins scenarios, consider automation for the tier-1 routine inquiries (product links, FAQs, resource delivery) and reserve the VA for the conversations that genuinely require human engagement. This hybrid approach is almost always more efficient than pure VA management.</p>
+          </section>
+          <section id="hybrid-approach" className="mb-12">
+            <h2 className="text-2xl font-bold text-gray-900 mb-4">The Hybrid Approach: Automation Plus Human</h2>
+              <p className="text-gray-700 mb-4 leading-relaxed">The most effective Instagram DM strategy for most businesses is a hybrid: automation handles the routine work and qualifies leads, humans handle the high-value conversations that automation identifies.</p>
+              <p className="text-gray-700 mb-4 leading-relaxed">How it works: automation manages all comment-triggered DMs, all resource delivery, all FAQ responses, and all initial qualification. It scores leads based on their responses. When a lead crosses a qualification threshold (asks about pricing for a large contract, mentions a specific enterprise need, shows high engagement across multiple messages), automation flags the conversation and notifies the appropriate human team member.</p>
+              <p className="text-gray-700 mb-4 leading-relaxed">The human then picks up the conversation at the exact point automation left off, with full context about what the prospect has already said. The transition is seamless from the prospect's perspective if the human match the tone and information from the automation. Result: the speed and scale benefits of automation plus the relationship quality of human engagement, at a fraction of the cost of pure VA management.</p>
+          </section>
+              <div className="bg-linear-to-r from-violet-600 to-purple-600 rounded-2xl p-8 text-white text-center mt-12">
+                <h2 className="text-2xl font-bold mb-3">Ready to Automate Your Instagram Growth?</h2>
+                <p className="text-violet-100 mb-6">PostEngage helps you turn Instagram engagement into leads, bookings, and sales automatically.</p>
+                <Button asChild size="lg" className="bg-white text-violet-600 hover:bg-violet-50">
+                  <Link href="/#waitlist">Start Free Today</Link>
+                </Button>
               </div>
-
-              <h2
-                id='why-it-matters'
-                className='scroll-mt-24 text-2xl font-bold mt-12 mb-6'
-              >
-                Why Operations on Instagram Matters in 2026
-              </h2>
-              <p>Instagram has over 2 billion monthly active users, and direct engagement through DMs and comments has never been higher. For operations professionals and businesses, the platform represents an unmatched opportunity to reach qualified prospects where they are already spending time.</p>
-              <p>The shift happening in 2026 is from passive social media presence to active, AI-powered conversation funnels. Brands that treat Instagram as a two-way communication channel — rather than just a broadcast medium — are seeing 3–5x better ROI on every hour invested.</p>
-
-              <h2
-                id='the-core-strategy'
-                className='scroll-mt-24 text-2xl font-bold mt-12 mb-6'
-              >
-                The Core Strategy: From Engagement to Conversion
-              </h2>
-              <p>The most effective Instagram automation strategies follow a consistent three-step pattern: attract attention with content, capture intent with a trigger (comment, DM keyword, Story reply), then convert with a personalized automated conversation.</p>
-              <p>What separates high-performing accounts from average ones is the quality of that third step — the automated conversation itself. Rule-based bots send the same canned response to everyone. AI-powered bots like PostEngage read the context of each interaction and craft replies that feel genuinely personal, dramatically improving conversion rates at every stage of the funnel.</p>
-
-              <h2
-                id='practical-implementation'
-                className='scroll-mt-24 text-2xl font-bold mt-12 mb-6'
-              >
-                Practical Implementation: Getting Started
-              </h2>
-              <p>Start with one trigger and one goal. The most common mistake brands make is trying to automate everything at once — welcome messages, comment replies, story responses, and DM sequences simultaneously. The result is a confusing mess.</p>
-              <p>Instead, pick the trigger that aligns with your highest-volume touchpoint. For most accounts, that is comment automation on Reels. Set up a single keyword trigger, write a compelling CTA in your caption, and measure results for two weeks before expanding. Once you see the conversion data, you will have a clear picture of where to invest next.</p>
-
-              <h2
-                id='advanced-tips'
-                className='scroll-mt-24 text-2xl font-bold mt-12 mb-6'
-              >
-                Advanced Tips for Maximum Results
-              </h2>
-              <p>Once your baseline automation is running, layer in AI personalization. PostEngage allows you to train a custom AI model on your brand voice — feeding it examples of your past replies, your tone guidelines, and your product knowledge. The result is an AI that responds to nuanced questions the way you would, not the way a generic chatbot would.</p>
-              <p>Also use time-window scheduling to match your automation to your audience's active hours. A bot that replies at 3am to someone in your target timezone creates a better first impression than one that batches responses at irregular times. Even small improvements in response quality and timing compound into significant conversion rate gains over weeks and months.</p>
-
-              <div className='bg-primary/5 p-8 rounded-2xl border border-primary/20 my-12'>
-                <h3 className='text-2xl font-bold mb-4'>Start Automating Your Instagram Today</h3>
-                <p className='mb-6'>Join thousands of brands using PostEngage to turn Instagram engagement into revenue.</p>
-                <Link href='https://app.postengage.ai/signup'>
-                  <Button size='lg' className='w-full sm:w-auto text-lg px-8'>
-                    Get Started Free <ArrowRight className='ml-2 h-5 w-5' />
-                  </Button>
-                </Link>
-              </div>
+              <div className="mt-12"><NewsletterForm /></div>
             </article>
-
-            <aside className='hidden lg:block lg:col-span-2 lg:sticky lg:top-32 lg:self-start'>
-              <div className='flex flex-col gap-4 items-center'>
-                <p className='text-xs font-semibold uppercase tracking-wider text-muted-foreground mb-2'>Share</p>
-                <SocialShareButtons
-                  url='https://postengage.ai/blog/instagram-automation-vs-hiring-va'
-                  title='Instagram Automation vs Hiring a VA: The True Cost Comparison' />
-              </div>
+            <aside className="hidden lg:block lg:col-span-2">
+              <div className="sticky top-24"><SocialShareButtons title="Instagram Automation vs. Hiring a VA: A Brutally Honest Comparison" /></div>
             </aside>
           </div>
         </div>
-        <NewsletterForm />
       </main>
       <LandingFooter />
     </div>

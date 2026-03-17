@@ -2,162 +2,111 @@ import { Metadata } from 'next';
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
-import {
-  ArrowRight,
-  Calendar,
-  Clock,
-  Zap,
-} from 'lucide-react';
-import { LandingHeader } from '@/components/landing/landing-header';
-import { LandingFooter } from '@/components/landing/landing-footer';
-import { TableOfContents } from '@/components/blog/table-of-contents';
-import { SocialShareButtons } from '@/components/blog/social-share-buttons';
-import { NewsletterForm } from '@/components/blog/newsletter-form';
+import { LandingHeader } from '@/components/landing-header';
+import { LandingFooter } from '@/components/landing-footer';
+import { TableOfContents } from '@/components/table-of-contents';
+import { SocialShareButtons } from '@/components/social-share-buttons';
+import { NewsletterForm } from '@/components/newsletter-form';
 
 export const metadata: Metadata = {
-  title: 'Dropshipping on Instagram: Automate DMs to Scale Sales Without a Team',
-  description: 'The biggest dropshipping bottleneck is customer communication. Here is how solo operators use DM automation to handle product questions, upsells, and follow-ups at scale.',
-  openGraph: {
-    title: 'Dropshipping on Instagram: Automate DMs to Scale Sales Without a Team',
-    description: 'The biggest dropshipping bottleneck is customer communication. Here is how solo operators use DM automation to handle product questions, upsells, and follow-ups at scale.',
-    type: 'article',
-    url: 'https://postengage.ai/blog/dropshipping-instagram-dm-sales',
-    images: [{ url: '/blog/dropshipping-instagram-dm-sales-cover.png', width: 1200, height: 630, alt: 'Dropshipping on Instagram: Automate DMs to Scale Sales Without a Team' }],
-  },
-  twitter: {
-    card: 'summary_large_image',
-    title: 'Dropshipping on Instagram: Automate DMs to Scale Sales Without a Team',
-    description: 'The biggest dropshipping bottleneck is customer communication. Here is how solo operators use DM automation to handle product questions, upsells, and follow-ups at scale.',
-    images: ['/blog/dropshipping-instagram-dm-sales-cover.png'],
-  },
+  title: 'Dropshipping and Instagram DM Automation: From Comment to Order Without Ads | PostEngage Blog',
+  description: 'How dropshipping stores use Instagram DM automation to drive sales organically, qualify buyers, handle shipping questions, and turn one-time customers into repeat buyers.',
 };
 
 export default function BlogPost() {
   const tocItems = [
-    { id: 'why-it-matters', title: 'Why This Matters in 2026' },
-    { id: 'the-core-strategy', title: 'The Core Strategy' },
-    { id: 'practical-implementation', title: 'Practical Implementation' },
-    { id: 'advanced-tips', title: 'Advanced Tips' },
+    { id: 'dropship-instagram-opportunity', title: 'The Dropshipping Instagram Opportunity' },
+    { id: 'product-discovery-flow', title: 'The Product Discovery DM Flow' },
+    { id: 'objection-handling', title: 'Handling Shipping and Quality Objections in DMs' },
+    { id: 'post-purchase-sequence', title: 'Post-Purchase DM Sequences' },
+    { id: 'organic-vs-ads', title: 'Organic DM Sales vs. Ad Spend: The Comparison' },
   ];
-
   return (
-    <div className='min-h-screen bg-background text-foreground font-sans selection:bg-primary/20'>
+    <div className="min-h-screen bg-white">
       <LandingHeader />
-      <main className='relative pt-32 pb-24'>
-        <div className='absolute inset-0 -z-10 overflow-hidden'>
-          <div className='absolute top-0 left-1/2 -translate-x-1/2 w-full h-[600px] bg-gradient-to-b from-primary/5 via-transparent to-transparent opacity-60' />
+      <main>
+        <div className="bg-linear-to-b from-violet-50 to-white border-b border-gray-100">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+            <div className="max-w-3xl mx-auto text-center">
+              <Badge className="mb-4 bg-violet-100 text-violet-700 hover:bg-violet-100">E-commerce</Badge>
+              <h1 className="text-4xl font-bold text-gray-900 mb-4">Dropshipping and Instagram DM Automation: From Comment to Order Without Ads</h1>
+              <p className="text-xl text-gray-600 mb-6">How dropshipping stores use Instagram DM automation to drive sales organically, qualify buyers, handle shipping questions, and turn one-time customers into repeat buyers.</p>
+              <div className="flex items-center justify-center gap-4 text-sm text-gray-500">
+                <span>April 14, 2026</span><span>·</span><span>8 min read</span>
+              </div>
+            </div>
+          </div>
         </div>
-        <div className='container mx-auto px-4 max-w-7xl'>
-          <div className='grid grid-cols-1 lg:grid-cols-12 gap-12'>
-            <aside className='hidden lg:block lg:col-span-3 lg:sticky lg:top-32 lg:self-start space-y-8'>
-              <div className='flex items-center gap-2 text-sm text-muted-foreground mb-4'>
-                <Link href='/blog' className='hover:text-primary transition-colors'>Blog</Link>
-                <span>/</span>
-                <span className='text-foreground font-medium'>E-commerce</span>
-              </div>
-              <TableOfContents items={tocItems} />
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+          <div className="grid grid-cols-12 gap-8">
+            <aside className="hidden lg:block lg:col-span-3">
+              <div className="sticky top-24"><TableOfContents items={tocItems} /></div>
             </aside>
+            <article className="col-span-12 lg:col-span-7">
 
-            <article className='lg:col-span-7 prose prose-lg dark:prose-invert max-w-none'>
-              <header className='mb-12 not-prose'>
-                <Badge variant='secondary' className='mb-6 text-sm font-medium px-3 py-1'>
-                  E-commerce
-                </Badge>
-                <h1 className='text-4xl md:text-5xl font-extrabold tracking-tight mb-6 leading-tight'>
-                  Dropshipping on Instagram: Automate DMs to Scale Sales Without a Team
-                </h1>
-                <div className='flex items-center gap-6 text-muted-foreground'>
-                  <div className='flex items-center gap-2'>
-                    <div className='h-10 w-10 rounded-full bg-primary/10 flex items-center justify-center'>
-                      <Zap className='h-5 w-5 text-primary' />
-                    </div>
-                    <div>
-                      <p className='text-sm font-medium text-foreground'>PostEngageAI Team</p>
-                      <p className='text-xs'>Automation Experts</p>
-                    </div>
-                  </div>
-                  <div className='flex items-center gap-2 text-sm'>
-                    <Calendar className='h-4 w-4' />
-                    <span>May 15, 2026</span>
-                  </div>
-                  <div className='flex items-center gap-2 text-sm'>
-                    <Clock className='h-4 w-4' />
-                    <span>7 min read</span>
-                  </div>
-                </div>
-              </header>
-
-              <div className='relative w-full aspect-[21/9] rounded-2xl overflow-hidden mb-12 bg-muted'>
-                <div className='absolute inset-0 flex items-center justify-center bg-gradient-to-br from-gray-900 to-gray-800 text-white'>
-                  <div className='text-center p-8'>
-                    <Zap className='h-16 w-16 mx-auto mb-4 text-primary/80' />
-                    <p className='text-xl font-medium text-white/80'>E-commerce</p>
-                  </div>
-                </div>
+          <section id="dropship-instagram-opportunity" className="mb-12">
+            <h2 className="text-2xl font-bold text-gray-900 mb-4">The Dropshipping Instagram Opportunity</h2>
+              <p className="text-gray-700 mb-4 leading-relaxed">Most dropshipping advice focuses on paid ads: Facebook ads, TikTok ads, Google Shopping. These work, but they require constant spend and compete against every other dropshipper with the same product and the same audiences. Instagram DM automation offers a different model: organic reach plus conversation-based selling.</p>
+              <p className="text-gray-700 mb-4 leading-relaxed">The dropshipping stores winning on Instagram organically share a key characteristic: they build product content around a niche identity rather than a product catalog. They are not "a store that sells things" — they are "the account for people who love minimalist home office setups" or "the go-to for outdoor enthusiasts." The niche builds a following; the DMs convert that following to customers.</p>
+              <p className="text-gray-700 mb-4 leading-relaxed">DM automation fits this model perfectly: post content that resonates with your niche audience, invite them to comment for product details or links, automate the response with product information and purchase links. No ad budget required for the conversion layer.</p>
+              <p className="font-semibold text-gray-800 mt-6 mb-2">Why Instagram DM automation works for dropshipping:</p>
+              <ul className="list-disc list-inside space-y-2 text-gray-700 mb-4">
+                <li>Niche identity builds organic following without paid ads</li>
+                <li>High-intent audience already interested in your product category</li>
+                <li>DM automation converts engagement to orders 24/7</li>
+                <li>Post-purchase sequences drive repeat orders and referrals</li>
+                <li>Lower cost per customer than ad-driven dropshipping</li>
+              </ul>
+          </section>
+          <section id="product-discovery-flow" className="mb-12">
+            <h2 className="text-2xl font-bold text-gray-900 mb-4">The Product Discovery DM Flow</h2>
+              <p className="text-gray-700 mb-4 leading-relaxed">The product discovery flow starts with content designed to generate questions. "What is this?" and "Where can I get this?" are the most valuable comments a dropshipping account can receive. They indicate high purchase intent.</p>
+              <p className="text-gray-700 mb-4 leading-relaxed">Post content that shows the product in use — lifestyle shots, transformation videos, problem-solution demonstrations. The caption should create curiosity without immediately revealing the product source: "I finally found the [product description] I have been looking for — comment INFO if you want to know where I got it."</p>
+              <p className="text-gray-700 mb-4 leading-relaxed">When they comment INFO, the automated DM delivers: the product link, a brief benefit statement (not just specs — the transformation or problem solved), and a soft urgency element if genuine ("these sold out last month, back in stock now"). Include one qualifying question: "Are you looking for [use case A] or [use case B]?" which helps you recommend the right variant and adds personalization.</p>
+              <div className="bg-violet-50 border border-violet-200 rounded-xl p-6 my-6">
+                <h3 className="font-bold text-violet-900 mb-3">Product Discovery DM Template</h3>
+                <ul className="space-y-2">
+                  <li className="flex items-start gap-2 text-sm text-violet-800"><span>&#x2192;</span>Trigger: comment INFO/LINK/DETAILS on lifestyle product post</li>
+                  <li className="flex items-start gap-2 text-sm text-violet-800"><span>&#x2192;</span>Instant DM: product link + 1-sentence benefit statement</li>
+                  <li className="flex items-start gap-2 text-sm text-violet-800"><span>&#x2192;</span>Urgency element (only if genuine): stock/availability signal</li>
+                  <li className="flex items-start gap-2 text-sm text-violet-800"><span>&#x2192;</span>Question: which use case or variant are you looking for?</li>
+                  <li className="flex items-start gap-2 text-sm text-violet-800"><span>&#x2192;</span>If response: personalized product recommendation</li>
+                  <li className="flex items-start gap-2 text-sm text-violet-800"><span>&#x2192;</span>If no response in 24h: one follow-up with social proof</li>
+                </ul>
               </div>
-
-              <div className='lead text-xl text-muted-foreground mb-12 leading-relaxed'>
-                The biggest dropshipping bottleneck is customer communication. Here is how solo operators use DM automation to handle product questions, upsells, and follow-ups at scale. This guide covers everything you need to know to get started and see results quickly.
+          </section>
+          <section id="objection-handling" className="mb-12">
+            <h2 className="text-2xl font-bold text-gray-900 mb-4">Handling Shipping and Quality Objections in DMs</h2>
+              <p className="text-gray-700 mb-4 leading-relaxed">Dropshipping has a trust problem that direct brands do not face. Customers have been burned by long shipping times and poor product quality from dropshippers before, and they bring that skepticism to every new purchase.</p>
+              <p className="text-gray-700 mb-4 leading-relaxed">The most common objections you will face in DMs: "How long does shipping take?" (be honest — if it is 2-3 weeks, say so and explain why the product is worth the wait), "Is this good quality?" (respond with specific details about the product, not generic reassurance, and include a link to your reviews), and "Can I return it if I do not like it?" (have a clear returns policy and state it proactively).</p>
+              <p className="text-gray-700 mb-4 leading-relaxed">Proactive objection handling outperforms reactive. In your initial product DM, include: a shipping time estimate (honest), a brief quality note ("I tested this myself for 3 months before selling it"), and a returns/guarantee statement. Addressing the three main objections before they are asked increases add-to-cart rates by 25-35%.</p>
+          </section>
+          <section id="post-purchase-sequence" className="mb-12">
+            <h2 className="text-2xl font-bold text-gray-900 mb-4">Post-Purchase DM Sequences</h2>
+              <p className="text-gray-700 mb-4 leading-relaxed">One sale is good. A repeat customer is great. A customer who refers friends is the best. Post-purchase DM sequences build toward all three.</p>
+              <p className="text-gray-700 mb-4 leading-relaxed">Post-purchase flow: 2 days after order, send a DM checking if they have questions about their order. This creates a touchpoint that feels caring rather than sales-y. When the product is delivered (use estimated delivery date), send a check-in: "Your order should have arrived — how is it?" If they respond positively, follow up 3-5 days later with related products or a referral offer.</p>
+              <p className="text-gray-700 mb-4 leading-relaxed">The referral DM is the highest-leverage post-purchase message: "If you love it, I would really appreciate you sharing it with someone who might be interested — and if they order using your name in the DM, I will send you a discount on your next order." This creates a word-of-mouth loop that costs you nothing until it converts.</p>
+          </section>
+          <section id="organic-vs-ads" className="mb-12">
+            <h2 className="text-2xl font-bold text-gray-900 mb-4">Organic DM Sales vs. Ad Spend: The Comparison</h2>
+              <p className="text-gray-700 mb-4 leading-relaxed">The comparison most dropshippers should make is not "should I run ads OR use Instagram automation?" — it is "what is the right balance and which should come first?"</p>
+              <p className="text-gray-700 mb-4 leading-relaxed">Organic DM automation is better as a starting point because it costs nothing beyond the platform subscription, forces you to develop product content that actually resonates with your niche audience, and generates real data about which products and angles convert before you spend on ads.</p>
+              <p className="text-gray-700 mb-4 leading-relaxed">Once you know which products generate the most DMs and which DM scripts convert best, you have the data to run profitable ads. Use organic Instagram automation to find your winners cheaply; use ads to scale what is already proven. This sequence reduces ad spend waste by 60-80% compared to testing products through paid traffic from day one.</p>
+          </section>
+              <div className="bg-linear-to-r from-violet-600 to-purple-600 rounded-2xl p-8 text-white text-center mt-12">
+                <h2 className="text-2xl font-bold mb-3">Ready to Automate Your Instagram Growth?</h2>
+                <p className="text-violet-100 mb-6">PostEngage helps you turn Instagram engagement into leads, bookings, and sales automatically.</p>
+                <Button asChild size="lg" className="bg-white text-violet-600 hover:bg-violet-50">
+                  <Link href="/#waitlist">Start Free Today</Link>
+                </Button>
               </div>
-
-              <h2
-                id='why-it-matters'
-                className='scroll-mt-24 text-2xl font-bold mt-12 mb-6'
-              >
-                Why E-commerce on Instagram Matters in 2026
-              </h2>
-              <p>Instagram has over 2 billion monthly active users, and direct engagement through DMs and comments has never been higher. For e-commerce professionals and businesses, the platform represents an unmatched opportunity to reach qualified prospects where they are already spending time.</p>
-              <p>The shift happening in 2026 is from passive social media presence to active, AI-powered conversation funnels. Brands that treat Instagram as a two-way communication channel — rather than just a broadcast medium — are seeing 3–5x better ROI on every hour invested.</p>
-
-              <h2
-                id='the-core-strategy'
-                className='scroll-mt-24 text-2xl font-bold mt-12 mb-6'
-              >
-                The Core Strategy: From Engagement to Conversion
-              </h2>
-              <p>The most effective Instagram automation strategies follow a consistent three-step pattern: attract attention with content, capture intent with a trigger (comment, DM keyword, Story reply), then convert with a personalized automated conversation.</p>
-              <p>What separates high-performing accounts from average ones is the quality of that third step — the automated conversation itself. Rule-based bots send the same canned response to everyone. AI-powered bots like PostEngage read the context of each interaction and craft replies that feel genuinely personal, dramatically improving conversion rates at every stage of the funnel.</p>
-
-              <h2
-                id='practical-implementation'
-                className='scroll-mt-24 text-2xl font-bold mt-12 mb-6'
-              >
-                Practical Implementation: Getting Started
-              </h2>
-              <p>Start with one trigger and one goal. The most common mistake brands make is trying to automate everything at once — welcome messages, comment replies, story responses, and DM sequences simultaneously. The result is a confusing mess.</p>
-              <p>Instead, pick the trigger that aligns with your highest-volume touchpoint. For most accounts, that is comment automation on Reels. Set up a single keyword trigger, write a compelling CTA in your caption, and measure results for two weeks before expanding. Once you see the conversion data, you will have a clear picture of where to invest next.</p>
-
-              <h2
-                id='advanced-tips'
-                className='scroll-mt-24 text-2xl font-bold mt-12 mb-6'
-              >
-                Advanced Tips for Maximum Results
-              </h2>
-              <p>Once your baseline automation is running, layer in AI personalization. PostEngage allows you to train a custom AI model on your brand voice — feeding it examples of your past replies, your tone guidelines, and your product knowledge. The result is an AI that responds to nuanced questions the way you would, not the way a generic chatbot would.</p>
-              <p>Also use time-window scheduling to match your automation to your audience's active hours. A bot that replies at 3am to someone in your target timezone creates a better first impression than one that batches responses at irregular times. Even small improvements in response quality and timing compound into significant conversion rate gains over weeks and months.</p>
-
-              <div className='bg-primary/5 p-8 rounded-2xl border border-primary/20 my-12'>
-                <h3 className='text-2xl font-bold mb-4'>Start Automating Your Instagram Today</h3>
-                <p className='mb-6'>Join thousands of brands using PostEngage to turn Instagram engagement into revenue.</p>
-                <Link href='https://app.postengage.ai/signup'>
-                  <Button size='lg' className='w-full sm:w-auto text-lg px-8'>
-                    Get Started Free <ArrowRight className='ml-2 h-5 w-5' />
-                  </Button>
-                </Link>
-              </div>
+              <div className="mt-12"><NewsletterForm /></div>
             </article>
-
-            <aside className='hidden lg:block lg:col-span-2 lg:sticky lg:top-32 lg:self-start'>
-              <div className='flex flex-col gap-4 items-center'>
-                <p className='text-xs font-semibold uppercase tracking-wider text-muted-foreground mb-2'>Share</p>
-                <SocialShareButtons
-                  url='https://postengage.ai/blog/dropshipping-instagram-dm-sales'
-                  title='Dropshipping on Instagram: Automate DMs to Scale Sales Without a Team' />
-              </div>
+            <aside className="hidden lg:block lg:col-span-2">
+              <div className="sticky top-24"><SocialShareButtons title="Dropshipping and Instagram DM Automation: From Comment to Order Without Ads" /></div>
             </aside>
           </div>
         </div>
-        <NewsletterForm />
       </main>
       <LandingFooter />
     </div>

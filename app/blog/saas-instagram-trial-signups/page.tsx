@@ -2,162 +2,151 @@ import { Metadata } from 'next';
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
-import {
-  ArrowRight,
-  Calendar,
-  Clock,
-  Zap,
-} from 'lucide-react';
-import { LandingHeader } from '@/components/landing/landing-header';
-import { LandingFooter } from '@/components/landing/landing-footer';
-import { TableOfContents } from '@/components/blog/table-of-contents';
-import { SocialShareButtons } from '@/components/blog/social-share-buttons';
-import { NewsletterForm } from '@/components/blog/newsletter-form';
+import { LandingHeader } from '@/components/landing-header';
+import { LandingFooter } from '@/components/landing-footer';
+import { TableOfContents } from '@/components/table-of-contents';
+import { SocialShareButtons } from '@/components/social-share-buttons';
+import { NewsletterForm } from '@/components/newsletter-form';
 
 export const metadata: Metadata = {
-  title: 'How SaaS Companies Use Instagram to Drive Free Trial Signups',
-  description: 'B2B SaaS on Instagram sounds wrong. But top SaaS brands are generating thousands of free trial signups through comment-to-DM automation.',
-  openGraph: {
-    title: 'How SaaS Companies Use Instagram to Drive Free Trial Signups',
-    description: 'B2B SaaS on Instagram sounds wrong. But top SaaS brands are generating thousands of free trial signups through comment-to-DM automation.',
-    type: 'article',
-    url: 'https://postengage.ai/blog/saas-instagram-trial-signups',
-    images: [{ url: '/blog/saas-instagram-trial-signups-cover.png', width: 1200, height: 630, alt: 'How SaaS Companies Use Instagram to Drive Free Trial Signups' }],
-  },
-  twitter: {
-    card: 'summary_large_image',
-    title: 'How SaaS Companies Use Instagram to Drive Free Trial Signups',
-    description: 'B2B SaaS on Instagram sounds wrong. But top SaaS brands are generating thousands of free trial signups through comment-to-DM automation.',
-    images: ['/blog/saas-instagram-trial-signups-cover.png'],
-  },
+  title: 'SaaS Instagram Automation: Driving Trial Signups Through DMs | PostEngage Blog',
+  description: 'How SaaS companies use Instagram DM automation to convert followers into trial users, qualify leads, and accelerate pipeline without a single sales rep touching Instagram.',
 };
 
 export default function BlogPost() {
   const tocItems = [
-    { id: 'why-it-matters', title: 'Why This Matters in 2026' },
-    { id: 'the-core-strategy', title: 'The Core Strategy' },
-    { id: 'practical-implementation', title: 'Practical Implementation' },
-    { id: 'advanced-tips', title: 'Advanced Tips' },
+    { id: 'saas-instagram-opportunity', title: 'The Underrated SaaS Channel: Instagram' },
+    { id: 'qualifying-leads-in-dms', title: 'Qualifying SaaS Leads Inside DMs' },
+    { id: 'trial-signup-flow', title: 'The Trial Signup DM Flow' },
+    { id: 'content-strategy', title: 'Content Strategy That Generates Qualified DMs' },
+    { id: 'handoff-to-sales', title: 'The Automation-to-Human Handoff' }
   ];
 
   return (
-    <div className='min-h-screen bg-background text-foreground font-sans selection:bg-primary/20'>
+    <div className="min-h-screen bg-white">
       <LandingHeader />
-      <main className='relative pt-32 pb-24'>
-        <div className='absolute inset-0 -z-10 overflow-hidden'>
-          <div className='absolute top-0 left-1/2 -translate-x-1/2 w-full h-[600px] bg-gradient-to-b from-primary/5 via-transparent to-transparent opacity-60' />
-        </div>
-        <div className='container mx-auto px-4 max-w-7xl'>
-          <div className='grid grid-cols-1 lg:grid-cols-12 gap-12'>
-            <aside className='hidden lg:block lg:col-span-3 lg:sticky lg:top-32 lg:self-start space-y-8'>
-              <div className='flex items-center gap-2 text-sm text-muted-foreground mb-4'>
-                <Link href='/blog' className='hover:text-primary transition-colors'>Blog</Link>
-                <span>/</span>
-                <span className='text-foreground font-medium'>SaaS Growth</span>
+      <main>
+        {/* Hero */}
+        <div className="bg-linear-to-b from-violet-50 to-white border-b border-gray-100">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+            <div className="max-w-3xl mx-auto text-center">
+              <Badge className="mb-4 bg-violet-100 text-violet-700 hover:bg-violet-100">SaaS & Tech</Badge>
+              <h1 className="text-4xl font-bold text-gray-900 mb-4">SaaS Instagram Automation: Driving Trial Signups Through DMs</h1>
+              <p className="text-xl text-gray-600 mb-6">How SaaS companies use Instagram DM automation to convert followers into trial users, qualify leads, and accelerate pipeline without a single sales rep touching Instagram.</p>
+              <div className="flex items-center justify-center gap-4 text-sm text-gray-500">
+                <span>May 15, 2026</span>
+                <span>·</span>
+                <span>9 min read</span>
               </div>
-              <TableOfContents items={tocItems} />
+            </div>
+          </div>
+        </div>
+
+        {/* Content */}
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+          <div className="grid grid-cols-12 gap-8">
+            {/* TOC Sidebar */}
+            <aside className="hidden lg:block lg:col-span-3">
+              <div className="sticky top-24">
+                <TableOfContents items={tocItems} />
+              </div>
             </aside>
 
-            <article className='lg:col-span-7 prose prose-lg dark:prose-invert max-w-none'>
-              <header className='mb-12 not-prose'>
-                <Badge variant='secondary' className='mb-6 text-sm font-medium px-3 py-1'>
-                  SaaS Growth
-                </Badge>
-                <h1 className='text-4xl md:text-5xl font-extrabold tracking-tight mb-6 leading-tight'>
-                  How SaaS Companies Use Instagram to Drive Free Trial Signups
-                </h1>
-                <div className='flex items-center gap-6 text-muted-foreground'>
-                  <div className='flex items-center gap-2'>
-                    <div className='h-10 w-10 rounded-full bg-primary/10 flex items-center justify-center'>
-                      <Zap className='h-5 w-5 text-primary' />
-                    </div>
-                    <div>
-                      <p className='text-sm font-medium text-foreground'>PostEngageAI Team</p>
-                      <p className='text-xs'>Automation Experts</p>
-                    </div>
-                  </div>
-                  <div className='flex items-center gap-2 text-sm'>
-                    <Calendar className='h-4 w-4' />
-                    <span>April 13, 2026</span>
-                  </div>
-                  <div className='flex items-center gap-2 text-sm'>
-                    <Clock className='h-4 w-4' />
-                    <span>8 min read</span>
-                  </div>
-                </div>
-              </header>
+            {/* Article */}
+            <article className="col-span-12 lg:col-span-7">
 
-              <div className='relative w-full aspect-[21/9] rounded-2xl overflow-hidden mb-12 bg-muted'>
-                <div className='absolute inset-0 flex items-center justify-center bg-gradient-to-br from-gray-900 to-gray-800 text-white'>
-                  <div className='text-center p-8'>
-                    <Zap className='h-16 w-16 mx-auto mb-4 text-primary/80' />
-                    <p className='text-xl font-medium text-white/80'>SaaS Growth</p>
-                  </div>
-                </div>
+          <section id="saas-instagram-opportunity" className="mb-12">
+            <h2 className="text-2xl font-bold text-gray-900 mb-4">The Underrated SaaS Channel: Instagram</h2>
+              <p className="text-gray-700 mb-4 leading-relaxed">Most SaaS companies treat Instagram as a brand awareness play. They post company culture content, product screenshots, and thought leadership — and wonder why their follower count grows but trial signups do not.</p>
+              <p className="text-gray-700 mb-4 leading-relaxed">The companies winning on Instagram are not using it for awareness. They are using it for demand capture. Every person who follows a SaaS account on Instagram already has some level of problem-awareness. They are in your category. The job of Instagram automation is to convert that awareness into action.</p>
+              <p className="text-gray-700 mb-4 leading-relaxed">The data is compelling: B2B SaaS companies using Instagram DM automation report trial-start rates of 8-15% from DM conversations — higher than cold email (1-3%) and competitive with paid search intent traffic. The difference is the conversational nature of DMs allows for qualification and objection-handling before the trial ask.</p>
+              <p className="font-semibold text-gray-800 mt-6 mb-2">Why Instagram works for SaaS:</p>
+              <ul className="list-disc list-inside space-y-2 text-gray-700 mb-4">
+                <li>Decision-makers are increasingly on Instagram, especially in the SMB space</li>
+                <li>DM conversations allow real-time qualification unlike landing pages</li>
+                <li>Visual content demos product value faster than text ads</li>
+                <li>Comment-triggered flows capture high-intent prospects at peak interest</li>
+                <li>Cost per trial start is often 60-80% below paid search</li>
+              </ul>
+          </section>
+
+          <section id="qualifying-leads-in-dms" className="mb-12">
+            <h2 className="text-2xl font-bold text-gray-900 mb-4">Qualifying SaaS Leads Inside DMs</h2>
+              <p className="text-gray-700 mb-4 leading-relaxed">The biggest mistake SaaS companies make with Instagram DM automation is asking for the trial too soon. Someone who comments "this looks interesting" on a product demo Reel is not ready to start a trial — they are curious. Pitch them immediately and you will get ignored.</p>
+              <p className="text-gray-700 mb-4 leading-relaxed">DM qualification works in 2-3 conversational exchanges. Exchange 1: deliver the promised content (the demo, the guide, the resource). Exchange 2: ask one qualification question — "Are you managing a team, or is this for your own workflow?" Exchange 3: based on their answer, route to the appropriate next step.</p>
+              <p className="text-gray-700 mb-4 leading-relaxed">Qualified leads (those who describe a problem your product solves) get sent to a tailored trial or demo booking page. Unqualified leads (wrong use case, wrong company size) get routed to educational content — you stay top of mind without wasting sales resources.</p>
+              <div className="bg-violet-50 border border-violet-200 rounded-xl p-6 my-6">
+                <h3 className="font-bold text-violet-900 mb-3">Qualification Question Bank for SaaS</h3>
+                <ul className="space-y-2">
+                  <li className="flex items-start gap-2 text-sm text-violet-800"><span className="text-violet-500 mt-0.5">→</span>"What is your biggest challenge with this problem area right now?"</li>
+                  <li className="flex items-start gap-2 text-sm text-violet-800"><span className="text-violet-500 mt-0.5">→</span>"Are you managing this solo or with a team?"</li>
+                  <li className="flex items-start gap-2 text-sm text-violet-800"><span className="text-violet-500 mt-0.5">→</span>"What have you tried before that did not work?"</li>
+                  <li className="flex items-start gap-2 text-sm text-violet-800"><span className="text-violet-500 mt-0.5">→</span>"How quickly are you looking to solve this?"</li>
+                  <li className="flex items-start gap-2 text-sm text-violet-800"><span className="text-violet-500 mt-0.5">→</span>"What is your current setup for handling this workflow?"</li>
+                </ul>
+              </div>
+          </section>
+
+          <section id="trial-signup-flow" className="mb-12">
+            <h2 className="text-2xl font-bold text-gray-900 mb-4">The Trial Signup DM Flow</h2>
+              <p className="text-gray-700 mb-4 leading-relaxed">Here is a high-converting trial signup flow for SaaS: start with a content-first hook. Post a Reel showing a specific pain point your product solves — not a product demo, a problem demonstration. Invite comments with a keyword like "SOLVE".</p>
+              <p className="text-gray-700 mb-4 leading-relaxed">Message 1 (instant): deliver the demo link and a personal note connecting their comment to the specific problem you solve.</p>
+              <p className="text-gray-700 mb-4 leading-relaxed">Message 2 (after demo view or 4 hours): ask one qualifying question about their specific situation. Wait for their reply. Now you are in a real conversation.</p>
+              <p className="text-gray-700 mb-4 leading-relaxed">Message 3 (after qualification): "Given what you described, our core feature would solve that directly. Want to try it free for 14 days? Setup takes 8 minutes." Include a personalized trial link with UTM tagging.</p>
+              <p className="font-semibold text-gray-800 mt-6 mb-2">Trial flow optimization tips:</p>
+              <ul className="list-disc list-inside space-y-2 text-gray-700 mb-4">
+                <li>Use personalized trial links with UTM parameters to track conversion</li>
+                <li>Offer a setup call for high-ticket plans as the CTA, not just self-serve trial</li>
+                <li>Segment by role (founder vs. manager vs. IC) for tailored messaging</li>
+                <li>Follow up on trial starts with an onboarding DM sequence</li>
+                <li>Flag no-reply leads for sales team follow-up after 48 hours</li>
+              </ul>
+          </section>
+
+          <section id="content-strategy" className="mb-12">
+            <h2 className="text-2xl font-bold text-gray-900 mb-4">Content Strategy That Generates Qualified DMs</h2>
+              <p className="text-gray-700 mb-4 leading-relaxed">The content that drives qualified SaaS DMs has one thing in common: it makes the viewer feel seen. Not "here is our product" but "here is a problem I bet you have and here is proof we understand it deeply."</p>
+              <p className="text-gray-700 mb-4 leading-relaxed">Formats that work: problem-first Reels (60-90 seconds showing a painful workflow), before-after demonstrations (messy spreadsheet to clean automation), customer story clips, and controversial takes that challenge conventional wisdom in your category.</p>
+              <p className="text-gray-700 mb-4 leading-relaxed">The comment trigger should feel natural. Ask people to comment something that indicates intent: "HATE IT" (for a pain-point post), "SHOW ME" (for a teaser), "TEMPLATE" (for a resource giveaway), or simply "YES" if the post ends with "Comment YES if this is you."</p>
+          </section>
+
+          <section id="handoff-to-sales" className="mb-12">
+            <h2 className="text-2xl font-bold text-gray-900 mb-4">The Automation-to-Human Handoff</h2>
+              <p className="text-gray-700 mb-4 leading-relaxed">The most powerful SaaS Instagram automation strategy is not fully automated — it is automation that identifies the right moment for a human to step in. When a prospect mentions they manage a team of 50 and have budget approved, that is not a trial link moment. That is a sales call moment.</p>
+              <p className="text-gray-700 mb-4 leading-relaxed">Build your automation to flag high-value leads. Any DM conversation where the prospect mentions a team size above your enterprise threshold, a budget number, or enterprise features should automatically notify a sales rep via Slack or email with the full conversation context.</p>
+              <p className="text-gray-700 mb-4 leading-relaxed">The handoff message from automation: "This sounds like it might be worth a quick 20-minute conversation with our team — they can walk you through exactly how this would work for your specific setup. Want me to grab a time?" If they say yes, they get booked directly into the sales calendar.</p>
+              <p className="font-semibold text-gray-800 mt-6 mb-2">High-value lead signals to flag for sales:</p>
+              <ul className="list-disc list-inside space-y-2 text-gray-700 mb-4">
+                <li>Mentions team size above enterprise threshold</li>
+                <li>References a competitor by name (high intent to switch)</li>
+                <li>Asks about enterprise features like SSO, custom integrations, or SLAs</li>
+                <li>Mentions a specific budget or procurement process</li>
+                <li>Has been in a DM conversation for more than 5 exchanges</li>
+              </ul>
+          </section>
+
+              {/* CTA */}
+              <div className="bg-linear-to-r from-violet-600 to-purple-600 rounded-2xl p-8 text-white text-center mt-12">
+                <h2 className="text-2xl font-bold mb-3">Ready to Automate Your Instagram Growth?</h2>
+                <p className="text-violet-100 mb-6">PostEngage helps you turn Instagram engagement into leads, bookings, and sales — automatically.</p>
+                <Button asChild size="lg" className="bg-white text-violet-600 hover:bg-violet-50">
+                  <Link href="/#waitlist">Start Free Today</Link>
+                </Button>
               </div>
 
-              <div className='lead text-xl text-muted-foreground mb-12 leading-relaxed'>
-                B2B SaaS on Instagram sounds wrong. But top SaaS brands are generating thousands of free trial signups through comment-to-DM automation. This guide covers everything you need to know to get started and see results quickly.
-              </div>
-
-              <h2
-                id='why-it-matters'
-                className='scroll-mt-24 text-2xl font-bold mt-12 mb-6'
-              >
-                Why SaaS Growth on Instagram Matters in 2026
-              </h2>
-              <p>Instagram has over 2 billion monthly active users, and direct engagement through DMs and comments has never been higher. For saas growth professionals and businesses, the platform represents an unmatched opportunity to reach qualified prospects where they are already spending time.</p>
-              <p>The shift happening in 2026 is from passive social media presence to active, AI-powered conversation funnels. Brands that treat Instagram as a two-way communication channel — rather than just a broadcast medium — are seeing 3–5x better ROI on every hour invested.</p>
-
-              <h2
-                id='the-core-strategy'
-                className='scroll-mt-24 text-2xl font-bold mt-12 mb-6'
-              >
-                The Core Strategy: From Engagement to Conversion
-              </h2>
-              <p>The most effective Instagram automation strategies follow a consistent three-step pattern: attract attention with content, capture intent with a trigger (comment, DM keyword, Story reply), then convert with a personalized automated conversation.</p>
-              <p>What separates high-performing accounts from average ones is the quality of that third step — the automated conversation itself. Rule-based bots send the same canned response to everyone. AI-powered bots like PostEngage read the context of each interaction and craft replies that feel genuinely personal, dramatically improving conversion rates at every stage of the funnel.</p>
-
-              <h2
-                id='practical-implementation'
-                className='scroll-mt-24 text-2xl font-bold mt-12 mb-6'
-              >
-                Practical Implementation: Getting Started
-              </h2>
-              <p>Start with one trigger and one goal. The most common mistake brands make is trying to automate everything at once — welcome messages, comment replies, story responses, and DM sequences simultaneously. The result is a confusing mess.</p>
-              <p>Instead, pick the trigger that aligns with your highest-volume touchpoint. For most accounts, that is comment automation on Reels. Set up a single keyword trigger, write a compelling CTA in your caption, and measure results for two weeks before expanding. Once you see the conversion data, you will have a clear picture of where to invest next.</p>
-
-              <h2
-                id='advanced-tips'
-                className='scroll-mt-24 text-2xl font-bold mt-12 mb-6'
-              >
-                Advanced Tips for Maximum Results
-              </h2>
-              <p>Once your baseline automation is running, layer in AI personalization. PostEngage allows you to train a custom AI model on your brand voice — feeding it examples of your past replies, your tone guidelines, and your product knowledge. The result is an AI that responds to nuanced questions the way you would, not the way a generic chatbot would.</p>
-              <p>Also use time-window scheduling to match your automation to your audience's active hours. A bot that replies at 3am to someone in your target timezone creates a better first impression than one that batches responses at irregular times. Even small improvements in response quality and timing compound into significant conversion rate gains over weeks and months.</p>
-
-              <div className='bg-primary/5 p-8 rounded-2xl border border-primary/20 my-12'>
-                <h3 className='text-2xl font-bold mb-4'>Start Automating Your Instagram Today</h3>
-                <p className='mb-6'>Join thousands of brands using PostEngage to turn Instagram engagement into revenue.</p>
-                <Link href='https://app.postengage.ai/signup'>
-                  <Button size='lg' className='w-full sm:w-auto text-lg px-8'>
-                    Get Started Free <ArrowRight className='ml-2 h-5 w-5' />
-                  </Button>
-                </Link>
+              <div className="mt-12">
+                <NewsletterForm />
               </div>
             </article>
 
-            <aside className='hidden lg:block lg:col-span-2 lg:sticky lg:top-32 lg:self-start'>
-              <div className='flex flex-col gap-4 items-center'>
-                <p className='text-xs font-semibold uppercase tracking-wider text-muted-foreground mb-2'>Share</p>
-                <SocialShareButtons
-                  url='https://postengage.ai/blog/saas-instagram-trial-signups'
-                  title='How SaaS Companies Use Instagram to Drive Free Trial Signups' />
+            {/* Share Sidebar */}
+            <aside className="hidden lg:block lg:col-span-2">
+              <div className="sticky top-24">
+                <SocialShareButtons title="SaaS Instagram Automation: Driving Trial Signups Through DMs" />
               </div>
             </aside>
           </div>
         </div>
-        <NewsletterForm />
       </main>
       <LandingFooter />
     </div>

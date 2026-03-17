@@ -2,162 +2,111 @@ import { Metadata } from 'next';
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
-import {
-  ArrowRight,
-  Calendar,
-  Clock,
-  Zap,
-} from 'lucide-react';
-import { LandingHeader } from '@/components/landing/landing-header';
-import { LandingFooter } from '@/components/landing/landing-footer';
-import { TableOfContents } from '@/components/blog/table-of-contents';
-import { SocialShareButtons } from '@/components/blog/social-share-buttons';
-import { NewsletterForm } from '@/components/blog/newsletter-form';
+import { LandingHeader } from '@/components/landing-header';
+import { LandingFooter } from '@/components/landing-footer';
+import { TableOfContents } from '@/components/table-of-contents';
+import { SocialShareButtons } from '@/components/social-share-buttons';
+import { NewsletterForm } from '@/components/newsletter-form';
 
 export const metadata: Metadata = {
-  title: 'A/B Testing Your Instagram DM Scripts: What Actually Converts',
-  description: 'Most brands pick a DM script and never test another. The ones growing fastest run weekly A/B tests on openers, CTAs, and follow-ups. Here is the framework.',
-  openGraph: {
-    title: 'A/B Testing Your Instagram DM Scripts: What Actually Converts',
-    description: 'Most brands pick a DM script and never test another. The ones growing fastest run weekly A/B tests on openers, CTAs, and follow-ups. Here is the framework.',
-    type: 'article',
-    url: 'https://postengage.ai/blog/instagram-ab-testing-dm-scripts',
-    images: [{ url: '/blog/instagram-ab-testing-dm-scripts-cover.png', width: 1200, height: 630, alt: 'A/B Testing Your Instagram DM Scripts: What Actually Converts' }],
-  },
-  twitter: {
-    card: 'summary_large_image',
-    title: 'A/B Testing Your Instagram DM Scripts: What Actually Converts',
-    description: 'Most brands pick a DM script and never test another. The ones growing fastest run weekly A/B tests on openers, CTAs, and follow-ups. Here is the framework.',
-    images: ['/blog/instagram-ab-testing-dm-scripts-cover.png'],
-  },
+  title: 'A/B Testing Your Instagram DM Scripts: The Data-Driven Guide | PostEngage Blog',
+  description: 'How to run proper A/B tests on your Instagram DM automation scripts to systematically improve conversion rates and find what actually resonates with your audience.',
 };
 
 export default function BlogPost() {
   const tocItems = [
-    { id: 'why-it-matters', title: 'Why This Matters in 2026' },
-    { id: 'the-core-strategy', title: 'The Core Strategy' },
-    { id: 'practical-implementation', title: 'Practical Implementation' },
-    { id: 'advanced-tips', title: 'Advanced Tips' },
+    { id: 'why-ab-test', title: 'Why Most Accounts Never Test Their DM Scripts' },
+    { id: 'what-to-test', title: 'What to A/B Test in DM Automation' },
+    { id: 'running-a-test', title: 'How to Run a Proper A/B Test' },
+    { id: 'reading-results', title: 'Reading and Interpreting Your Results' },
+    { id: 'iteration-cadence', title: 'The Iteration Cadence That Compounds' },
   ];
-
   return (
-    <div className='min-h-screen bg-background text-foreground font-sans selection:bg-primary/20'>
+    <div className="min-h-screen bg-white">
       <LandingHeader />
-      <main className='relative pt-32 pb-24'>
-        <div className='absolute inset-0 -z-10 overflow-hidden'>
-          <div className='absolute top-0 left-1/2 -translate-x-1/2 w-full h-[600px] bg-gradient-to-b from-primary/5 via-transparent to-transparent opacity-60' />
+      <main>
+        <div className="bg-linear-to-b from-violet-50 to-white border-b border-gray-100">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+            <div className="max-w-3xl mx-auto text-center">
+              <Badge className="mb-4 bg-violet-100 text-violet-700 hover:bg-violet-100">Analytics & Optimization</Badge>
+              <h1 className="text-4xl font-bold text-gray-900 mb-4">A/B Testing Your Instagram DM Scripts: The Data-Driven Guide</h1>
+              <p className="text-xl text-gray-600 mb-6">How to run proper A/B tests on your Instagram DM automation scripts to systematically improve conversion rates and find what actually resonates with your audience.</p>
+              <div className="flex items-center justify-center gap-4 text-sm text-gray-500">
+                <span>April 22, 2026</span><span>·</span><span>9 min read</span>
+              </div>
+            </div>
+          </div>
         </div>
-        <div className='container mx-auto px-4 max-w-7xl'>
-          <div className='grid grid-cols-1 lg:grid-cols-12 gap-12'>
-            <aside className='hidden lg:block lg:col-span-3 lg:sticky lg:top-32 lg:self-start space-y-8'>
-              <div className='flex items-center gap-2 text-sm text-muted-foreground mb-4'>
-                <Link href='/blog' className='hover:text-primary transition-colors'>Blog</Link>
-                <span>/</span>
-                <span className='text-foreground font-medium'>Optimization</span>
-              </div>
-              <TableOfContents items={tocItems} />
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+          <div className="grid grid-cols-12 gap-8">
+            <aside className="hidden lg:block lg:col-span-3">
+              <div className="sticky top-24"><TableOfContents items={tocItems} /></div>
             </aside>
+            <article className="col-span-12 lg:col-span-7">
 
-            <article className='lg:col-span-7 prose prose-lg dark:prose-invert max-w-none'>
-              <header className='mb-12 not-prose'>
-                <Badge variant='secondary' className='mb-6 text-sm font-medium px-3 py-1'>
-                  Optimization
-                </Badge>
-                <h1 className='text-4xl md:text-5xl font-extrabold tracking-tight mb-6 leading-tight'>
-                  A/B Testing Your Instagram DM Scripts: What Actually Converts
-                </h1>
-                <div className='flex items-center gap-6 text-muted-foreground'>
-                  <div className='flex items-center gap-2'>
-                    <div className='h-10 w-10 rounded-full bg-primary/10 flex items-center justify-center'>
-                      <Zap className='h-5 w-5 text-primary' />
-                    </div>
-                    <div>
-                      <p className='text-sm font-medium text-foreground'>PostEngageAI Team</p>
-                      <p className='text-xs'>Automation Experts</p>
-                    </div>
-                  </div>
-                  <div className='flex items-center gap-2 text-sm'>
-                    <Calendar className='h-4 w-4' />
-                    <span>May 2, 2026</span>
-                  </div>
-                  <div className='flex items-center gap-2 text-sm'>
-                    <Clock className='h-4 w-4' />
-                    <span>7 min read</span>
-                  </div>
-                </div>
-              </header>
-
-              <div className='relative w-full aspect-[21/9] rounded-2xl overflow-hidden mb-12 bg-muted'>
-                <div className='absolute inset-0 flex items-center justify-center bg-gradient-to-br from-gray-900 to-gray-800 text-white'>
-                  <div className='text-center p-8'>
-                    <Zap className='h-16 w-16 mx-auto mb-4 text-primary/80' />
-                    <p className='text-xl font-medium text-white/80'>Optimization</p>
-                  </div>
-                </div>
+          <section id="why-ab-test" className="mb-12">
+            <h2 className="text-2xl font-bold text-gray-900 mb-4">Why Most Accounts Never Test Their DM Scripts</h2>
+              <p className="text-gray-700 mb-4 leading-relaxed">Most Instagram automation users set up their DM scripts once, see a reasonable response rate, and leave them untouched for months or years. This is one of the most expensive mistakes in Instagram marketing — not because the scripts are failing, but because they could be performing 30-50% better with systematic testing.</p>
+              <p className="text-gray-700 mb-4 leading-relaxed">The reluctance to test comes from two places: not knowing what to test, and not having a clear process for running tests without disrupting live automation. Both are solvable problems.</p>
+              <p className="text-gray-700 mb-4 leading-relaxed">The accounts that consistently outperform their peers on Instagram DM conversion are not the ones with the most followers or the best content — they are the ones running the most disciplined testing cycles. A 15% improvement in DM response rate from a single test can translate to dozens or hundreds of additional leads per month at no additional cost.</p>
+              <p className="font-semibold text-gray-800 mt-6 mb-2">A/B testing principles for Instagram DMs:</p>
+              <ul className="list-disc list-inside space-y-2 text-gray-700 mb-4">
+                <li>Set a baseline — know your current DM response rate and lead capture rate before testing</li>
+                <li>Test one variable at a time — changing multiple things makes results uninterpretable</li>
+                <li>Run tests long enough — minimum 100 conversations per variation</li>
+                <li>Track the right metric — response rate is surface level; lead capture rate is what matters</li>
+                <li>Document everything — build a testing log so you learn from every test</li>
+              </ul>
+          </section>
+          <section id="what-to-test" className="mb-12">
+            <h2 className="text-2xl font-bold text-gray-900 mb-4">What to A/B Test in DM Automation</h2>
+              <p className="text-gray-700 mb-4 leading-relaxed">The highest-impact variables to test, in rough order of potential uplift: opening line (first sentence of your first message), value proposition framing (how you describe what they will get), call-to-action wording (the specific ask), message length (short punchy vs. detailed explanatory), and send timing (immediate vs. slight delay on follow-up messages).</p>
+              <p className="text-gray-700 mb-4 leading-relaxed">Opening line tests consistently produce the biggest results. Compare a direct opener ("Here is your free guide: [link]") against a conversational opener ("Just saw your comment — here is the [topic] resource I promised!") against a curiosity opener ("Before I send this, quick question..."). The differences in response rate can be dramatic — often 20-40% between worst and best performers.</p>
+              <p className="text-gray-700 mb-4 leading-relaxed">Value proposition framing is the second highest-impact test. "Free Instagram audit" vs. "The exact mistakes slowing down your Instagram growth" vs. "What 3,000 Instagram accounts taught me about reaching the right people" — these describe the same thing but land very differently.</p>
+              <div className="bg-violet-50 border border-violet-200 rounded-xl p-6 my-6">
+                <h3 className="font-bold text-violet-900 mb-3">High-Impact A/B Test Ideas</h3>
+                <ul className="space-y-2">
+                  <li className="flex items-start gap-2 text-sm text-violet-800"><span>&#x2192;</span>Opening line: direct vs. conversational vs. curiosity-driven</li>
+                  <li className="flex items-start gap-2 text-sm text-violet-800"><span>&#x2192;</span>Value prop: feature-based vs. outcome-based vs. story-based framing</li>
+                  <li className="flex items-start gap-2 text-sm text-violet-800"><span>&#x2192;</span>CTA: "reply YES" vs. "drop your email" vs. "click the link"</li>
+                  <li className="flex items-start gap-2 text-sm text-violet-800"><span>&#x2192;</span>Message length: 1-2 sentences vs. 3-5 sentences</li>
+                  <li className="flex items-start gap-2 text-sm text-violet-800"><span>&#x2192;</span>Follow-up timing: 4 hours vs. 12 hours vs. 24 hours after no reply</li>
+                  <li className="flex items-start gap-2 text-sm text-violet-800"><span>&#x2192;</span>Personal touch: with vs. without recipient name in message</li>
+                </ul>
               </div>
-
-              <div className='lead text-xl text-muted-foreground mb-12 leading-relaxed'>
-                Most brands pick a DM script and never test another. The ones growing fastest run weekly A/B tests on openers, CTAs, and follow-ups. Here is the framework. This guide covers everything you need to know to get started and see results quickly.
+          </section>
+          <section id="running-a-test" className="mb-12">
+            <h2 className="text-2xl font-bold text-gray-900 mb-4">How to Run a Proper A/B Test</h2>
+              <p className="text-gray-700 mb-4 leading-relaxed">Split your audience by timing: run variation A for the first half of your test period, then switch to variation B. Or if your platform supports it, run simultaneous splits. The key is consistency — do not change anything else about your content or posting schedule during a test.</p>
+              <p className="text-gray-700 mb-4 leading-relaxed">Sample size requirement: you need a minimum of 100 conversations per variation to have statistically meaningful results. For high-volume accounts (1,000+ DM conversations per month), you can run a week-long test and have your answer. For lower-volume accounts, you may need 3-4 weeks per test.</p>
+              <p className="text-gray-700 mb-4 leading-relaxed">Document your hypothesis before running the test: "I think variation B will outperform variation A because [specific reason]." This forces you to think clearly about what you are testing and why, and it builds your testing intuition over time as you see which hypotheses prove correct.</p>
+          </section>
+          <section id="reading-results" className="mb-12">
+            <h2 className="text-2xl font-bold text-gray-900 mb-4">Reading and Interpreting Your Results</h2>
+              <p className="text-gray-700 mb-4 leading-relaxed">The primary metric: lead capture rate (what percentage of people who entered the DM flow gave you their email or took the conversion action). Secondary metric: DM response rate (what percentage responded to the first message). Do not optimize for response rate alone — a clever opener might get more responses but fail to convert.</p>
+              <p className="text-gray-700 mb-4 leading-relaxed">Statistical significance for DM testing: if one variation has a lead capture rate of 18% and another has 24%, and you have 150 conversations in each, that difference is meaningful. If the difference is 18% vs. 19% with 100 conversations each, it is noise.</p>
+              <p className="text-gray-700 mb-4 leading-relaxed">Be cautious of false positives: if you test during an unusual period (a viral post, a holiday, a major announcement), your results will be skewed. The best tests run during normal operating conditions with normal content output.</p>
+          </section>
+          <section id="iteration-cadence" className="mb-12">
+            <h2 className="text-2xl font-bold text-gray-900 mb-4">The Iteration Cadence That Compounds</h2>
+              <p className="text-gray-700 mb-4 leading-relaxed">One test is an experiment. Systematic testing is a competitive advantage. The accounts that run monthly tests for 12 months compound their DM conversion improvements dramatically.</p>
+              <p className="text-gray-700 mb-4 leading-relaxed">Recommended cadence: run one A/B test per month. Month 1: opening line. Month 2: value proposition framing. Month 3: CTA wording. Month 4: message length. Month 5: follow-up timing. By month 6, you have a DM sequence that has been optimized across all major variables — and your conversion rate may be 2-3x what it was before you started testing.</p>
+              <p className="text-gray-700 mb-4 leading-relaxed">Keep a testing log documenting: the hypothesis, the variables tested, the results, and the winner. After 12 months, this log becomes one of the most valuable assets for your business — a record of what your specific audience responds to that no competitor can replicate.</p>
+          </section>
+              <div className="bg-linear-to-r from-violet-600 to-purple-600 rounded-2xl p-8 text-white text-center mt-12">
+                <h2 className="text-2xl font-bold mb-3">Ready to Automate Your Instagram Growth?</h2>
+                <p className="text-violet-100 mb-6">PostEngage helps you turn Instagram engagement into leads, bookings, and sales automatically.</p>
+                <Button asChild size="lg" className="bg-white text-violet-600 hover:bg-violet-50">
+                  <Link href="/#waitlist">Start Free Today</Link>
+                </Button>
               </div>
-
-              <h2
-                id='why-it-matters'
-                className='scroll-mt-24 text-2xl font-bold mt-12 mb-6'
-              >
-                Why Optimization on Instagram Matters in 2026
-              </h2>
-              <p>Instagram has over 2 billion monthly active users, and direct engagement through DMs and comments has never been higher. For optimization professionals and businesses, the platform represents an unmatched opportunity to reach qualified prospects where they are already spending time.</p>
-              <p>The shift happening in 2026 is from passive social media presence to active, AI-powered conversation funnels. Brands that treat Instagram as a two-way communication channel — rather than just a broadcast medium — are seeing 3–5x better ROI on every hour invested.</p>
-
-              <h2
-                id='the-core-strategy'
-                className='scroll-mt-24 text-2xl font-bold mt-12 mb-6'
-              >
-                The Core Strategy: From Engagement to Conversion
-              </h2>
-              <p>The most effective Instagram automation strategies follow a consistent three-step pattern: attract attention with content, capture intent with a trigger (comment, DM keyword, Story reply), then convert with a personalized automated conversation.</p>
-              <p>What separates high-performing accounts from average ones is the quality of that third step — the automated conversation itself. Rule-based bots send the same canned response to everyone. AI-powered bots like PostEngage read the context of each interaction and craft replies that feel genuinely personal, dramatically improving conversion rates at every stage of the funnel.</p>
-
-              <h2
-                id='practical-implementation'
-                className='scroll-mt-24 text-2xl font-bold mt-12 mb-6'
-              >
-                Practical Implementation: Getting Started
-              </h2>
-              <p>Start with one trigger and one goal. The most common mistake brands make is trying to automate everything at once — welcome messages, comment replies, story responses, and DM sequences simultaneously. The result is a confusing mess.</p>
-              <p>Instead, pick the trigger that aligns with your highest-volume touchpoint. For most accounts, that is comment automation on Reels. Set up a single keyword trigger, write a compelling CTA in your caption, and measure results for two weeks before expanding. Once you see the conversion data, you will have a clear picture of where to invest next.</p>
-
-              <h2
-                id='advanced-tips'
-                className='scroll-mt-24 text-2xl font-bold mt-12 mb-6'
-              >
-                Advanced Tips for Maximum Results
-              </h2>
-              <p>Once your baseline automation is running, layer in AI personalization. PostEngage allows you to train a custom AI model on your brand voice — feeding it examples of your past replies, your tone guidelines, and your product knowledge. The result is an AI that responds to nuanced questions the way you would, not the way a generic chatbot would.</p>
-              <p>Also use time-window scheduling to match your automation to your audience's active hours. A bot that replies at 3am to someone in your target timezone creates a better first impression than one that batches responses at irregular times. Even small improvements in response quality and timing compound into significant conversion rate gains over weeks and months.</p>
-
-              <div className='bg-primary/5 p-8 rounded-2xl border border-primary/20 my-12'>
-                <h3 className='text-2xl font-bold mb-4'>Start Automating Your Instagram Today</h3>
-                <p className='mb-6'>Join thousands of brands using PostEngage to turn Instagram engagement into revenue.</p>
-                <Link href='https://app.postengage.ai/signup'>
-                  <Button size='lg' className='w-full sm:w-auto text-lg px-8'>
-                    Get Started Free <ArrowRight className='ml-2 h-5 w-5' />
-                  </Button>
-                </Link>
-              </div>
+              <div className="mt-12"><NewsletterForm /></div>
             </article>
-
-            <aside className='hidden lg:block lg:col-span-2 lg:sticky lg:top-32 lg:self-start'>
-              <div className='flex flex-col gap-4 items-center'>
-                <p className='text-xs font-semibold uppercase tracking-wider text-muted-foreground mb-2'>Share</p>
-                <SocialShareButtons
-                  url='https://postengage.ai/blog/instagram-ab-testing-dm-scripts'
-                  title='A/B Testing Your Instagram DM Scripts: What Actually Converts' />
-              </div>
+            <aside className="hidden lg:block lg:col-span-2">
+              <div className="sticky top-24"><SocialShareButtons title="A/B Testing Your Instagram DM Scripts: The Data-Driven Guide" /></div>
             </aside>
           </div>
         </div>
-        <NewsletterForm />
       </main>
       <LandingFooter />
     </div>
