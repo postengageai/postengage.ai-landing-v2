@@ -15,7 +15,7 @@ export const metadata: Metadata = {
 
 export default function BlogPost() {
   const tocItems = [
-    { id: 'designer-instagram-challenge', title: 'The Designer's Instagram Challenge' },
+    { id: 'designer-instagram-challenge', title: "The Designer's Instagram Challenge" },
     { id: 'portfolio-to-inquiry', title: 'Turning Portfolio Views Into Project Inquiries' },
     { id: 'project-qualification', title: 'Qualifying Design Projects Automatically' },
     { id: 'proposal-automation', title: 'Streamlining Proposal and Discovery Call Booking' },

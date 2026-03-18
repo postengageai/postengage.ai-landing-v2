@@ -10,7 +10,7 @@ import { NewsletterForm } from '@/components/newsletter-form';
 
 export const metadata: Metadata = {
   title: 'Instagram DM Automation for Interior Designers: Convert Portfolio Views Into Projects | PostEngage Blog',
-  description: 'Interior designers who automate DMs turn every 'I love this room' comment into a potential design consultation.',
+  description: "Interior designers who automate DMs turn every 'I love this room' comment into a potential design consultation.",
 };
 
 export default function BlogPost() {

@@ -18,7 +18,7 @@ export default function BlogPost() {
     { id: 'florist-instagram-challenge', title: 'The Florist Instagram Challenge' },
     { id: 'inquiry-automation', title: 'Automating Floral Inquiry Responses' },
     { id: 'custom-arrangement-flow', title: 'The Custom Arrangement Order Flow' },
-    { id: 'seasonal-peaks', title: 'Managing Valentine's Day and Mother's Day Traffic' },
+    { id: 'seasonal-peaks', title: "Managing Valentine's Day and Mother's Day Traffic" },
     { id: 'subscription-flowers', title: 'Selling Flower Subscription Services via DM' },
   ];
   return (

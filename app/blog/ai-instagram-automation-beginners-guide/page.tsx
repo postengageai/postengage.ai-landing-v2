@@ -10,7 +10,7 @@ import { NewsletterForm } from '@/components/newsletter-form';
 
 export const metadata: Metadata = {
   title: 'Instagram AI Automation for Beginners: Everything You Need to Know to Start | PostEngage Blog',
-  description: 'The complete beginner's guide to Instagram AI automation — from understanding how it works to setting up your first DM sequence.',
+  description: "The complete beginner's guide to Instagram AI automation — from understanding how it works to setting up your first DM sequence.",
 };
 
 export default function BlogPost() {

@@ -10,7 +10,7 @@ import { NewsletterForm } from '@/components/newsletter-form';
 
 export const metadata: Metadata = {
   title: 'Instagram DM Automation for Jewelry Designers: Turn Admirers Into Buyers | PostEngage Blog',
-  description: 'Jewelry designers whose Instagram automation system converts every 'gorgeous!' comment into a potential purchase inquiry.',
+  description: "Jewelry designers whose Instagram automation system converts every 'gorgeous!' comment into a potential purchase inquiry.",
 };
 
 export default function BlogPost() {
