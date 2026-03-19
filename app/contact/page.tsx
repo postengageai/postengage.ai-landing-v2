@@ -97,15 +97,20 @@ const faqs = [
   },
 ];
 
+const API_BASE = process.env.NEXT_PUBLIC_API_URL ?? 'http://localhost:3001';
+
 export default function ContactPage() {
   const [formData, setFormData] = useState({
     name: '',
     email: '',
     subject: '',
+    company: '',
+    phone: '',
     message: '',
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitted, setSubmitted] = useState(false);
+  const [error, setError] = useState<string | null>(null);
 
   const handleChange = (
     e: React.ChangeEvent<
@@ -120,10 +125,34 @@ export default function ContactPage() {
     if (!formData.name || !formData.email || !formData.message) return;
 
     setIsSubmitting(true);
-    // Simulate a small delay — replace with real API call when ready
-    await new Promise(resolve => setTimeout(resolve, 1200));
-    setIsSubmitting(false);
-    setSubmitted(true);
+    setError(null);
+    try {
+      const res = await fetch(`${API_BASE}/api/v1/marketing/contact`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          name: formData.name,
+          email: formData.email,
+          message: formData.message,
+          subject: formData.subject || undefined,
+          company: formData.company || undefined,
+          phone: formData.phone || undefined,
+        }),
+      });
+      if (!res.ok) {
+        const body = await res.json().catch(() => ({}));
+        throw new Error(body?.message ?? 'Failed to send message');
+      }
+      setSubmitted(true);
+    } catch (err) {
+      setError(
+        err instanceof Error
+          ? err.message
+          : 'Something went wrong. Please try again or email us directly.'
+      );
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -215,7 +244,7 @@ export default function ContactPage() {
                       className='mt-6'
                       onClick={() => {
                         setSubmitted(false);
-                        setFormData({ name: '', email: '', subject: '', message: '' });
+                        setFormData({ name: '', email: '', subject: '', company: '', phone: '', message: '' });
                       }}
                     >
                       Send another message
@@ -277,6 +306,37 @@ export default function ContactPage() {
                       </select>
                     </div>
 
+                    {/* Company + Phone row */}
+                    <div className='grid gap-4 sm:grid-cols-2'>
+                      <div className='space-y-1.5'>
+                        <label htmlFor='company' className='text-sm font-medium'>
+                          Company <span className='text-muted-foreground font-normal'>(optional)</span>
+                        </label>
+                        <Input
+                          id='company'
+                          name='company'
+                          placeholder='Acme Inc.'
+                          value={formData.company}
+                          onChange={handleChange}
+                          className='bg-card border-border h-11'
+                        />
+                      </div>
+                      <div className='space-y-1.5'>
+                        <label htmlFor='phone' className='text-sm font-medium'>
+                          Phone <span className='text-muted-foreground font-normal'>(optional)</span>
+                        </label>
+                        <Input
+                          id='phone'
+                          name='phone'
+                          type='tel'
+                          placeholder='+91 98765 43210'
+                          value={formData.phone}
+                          onChange={handleChange}
+                          className='bg-card border-border h-11'
+                        />
+                      </div>
+                    </div>
+
                     {/* Message */}
                     <div className='space-y-1.5'>
                       <label htmlFor='message' className='text-sm font-medium'>
@@ -293,6 +353,12 @@ export default function ContactPage() {
                         className='bg-card border-border resize-none'
                       />
                     </div>
+
+                    {error && (
+                      <div className='rounded-lg border border-red-500/30 bg-red-500/5 px-4 py-3 text-sm text-red-400'>
+                        {error}
+                      </div>
+                    )}
 
                     <Button
                       type='submit'

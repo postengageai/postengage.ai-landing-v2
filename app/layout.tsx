@@ -13,6 +13,7 @@ import { PageViewTracker } from '@/components/analytics/page-view-tracker';
 import { TimeOnPageTracker } from '@/components/analytics/time-on-page-tracker';
 import { JsonLd } from '@/components/seo/json-ld';
 import { MicrosoftClarity } from '@/components/analytics/clarity';
+import { MetaPixel } from '@/components/analytics/meta-pixel';
 
 const inter = Inter({
   subsets: ['latin'],
@@ -128,6 +129,7 @@ export default function RootLayout({
         <GoogleTagManager />
         <GoogleAnalytics />
         <MicrosoftClarity />
+        <MetaPixel />
         <ConversionTracker />
         <ScrollTracker />
         <PageViewTracker />
