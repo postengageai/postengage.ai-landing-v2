@@ -17,6 +17,7 @@ import { CTASection } from '@/components/landing/cta-section';
 import { LandingFooter } from '@/components/landing/landing-footer';
 import { ComparisonSection } from '@/components/landing/comparison-section';
 import { FaqSection } from '@/components/landing/faq-section';
+import { ContactSection } from '@/components/landing/contact-section';
 import { ExitIntentPopup } from '@/components/conversion/exit-intent-popup';
 import { organizationSchema, faqSchema } from '@/lib/schema';
 
@@ -119,6 +120,9 @@ export default function LandingPage() {
 
           {/* Urgency: Final push with live counter */}
           <CTASection />
+
+          {/* Contact: Embedded form so users never have to leave */}
+          <ContactSection />
         </main>
         <LandingFooter />
       </div>
