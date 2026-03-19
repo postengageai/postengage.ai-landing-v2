@@ -1,8 +1,0 @@
-REPLACE_THIS_FILE_NAME_AND_CONTENT_WITH_YOUR_INDEXNOW_KEY
-
-Steps:
-1. Generate your key: node -e "console.log(require('crypto').randomUUID().replace(/-/g,''))"
-2. Rename this file to {your-key}.txt  (e.g. a1b2c3d4e5f6.txt)
-3. Replace this file content with just the key string (no spaces, no newline)
-4. Set INDEXNOW_KEY={your-key} in postengage.ai-backend/.env
-5. Verify: curl https://postengage.ai/{your-key}.txt  → should return the key
