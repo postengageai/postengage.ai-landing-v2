@@ -6,12 +6,13 @@ import { toast } from 'sonner';
 
 interface SocialShareButtonsProps {
   title: string;
-  url: string;
+  url?: string;
 }
 
 export function SocialShareButtons({ title, url }: SocialShareButtonsProps) {
+  const resolvedUrl = url || (typeof window !== 'undefined' ? window.location.href : '');
   const encodedTitle = encodeURIComponent(title);
-  const encodedUrl = encodeURIComponent(url);
+  const encodedUrl = encodeURIComponent(resolvedUrl);
 
   const handleTwitterShare = () => {
     window.open(
@@ -34,14 +35,14 @@ export function SocialShareButtons({ title, url }: SocialShareButtonsProps) {
       try {
         await navigator.share({
           title: title,
-          url: url,
+          url: resolvedUrl,
         });
       } catch (err) {
         console.error('Error sharing:', err); // eslint-disable-line no-console
       }
     } else {
       // Fallback: Copy to clipboard
-      navigator.clipboard.writeText(url);
+      navigator.clipboard.writeText(resolvedUrl);
       toast.success('Link copied to clipboard!');
     }
   };
