@@ -9,8 +9,26 @@ import { SocialShareButtons } from '@/components/social-share-buttons';
 import { NewsletterForm } from '@/components/newsletter-form';
 
 export const metadata: Metadata = {
-  title: 'How Agencies Scale Instagram Automation Across 50+ Client Accounts | PostEngage Blog',
-  description: 'The exact systems, tools, and team structures agencies use to manage Instagram DM automation at scale without burning out or losing quality.',
+  title: 'Agency Instagram Automation at Scale | PostEngage.ai',
+  description: 'The exact systems, tools, and team structures agencies use to manage Instagram DM automation across 50+ client accounts without burning out.',
+  openGraph: {
+    title: 'Agency Instagram Automation at Scale | PostEngage.ai',
+    description: 'The exact systems, tools, and team structures agencies use to manage Instagram DM automation across 50+ client accounts without burning out.',
+    url: 'https://postengage.ai/blog/agency-instagram-automation-scale',
+    siteName: 'PostEngage.ai',
+    locale: 'en_US',
+    type: 'article',
+    publishedTime: '2026-03-10T09:00:00.000Z',
+    authors: ['PostEngageAI Team'],
+    images: [{ url: '/og-default.png', width: 1200, height: 630, alt: 'Agency Instagram Automation at Scale' }],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Agency Instagram Automation at Scale | PostEngage.ai',
+    description: 'Systems and team structures for managing Instagram DM automation across 50+ client accounts.',
+    images: ['/og-default.png'],
+    creator: '@postengageai',
+  },
 };
 
 export default function BlogPost() {

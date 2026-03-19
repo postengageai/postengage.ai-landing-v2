@@ -9,8 +9,26 @@ import { SocialShareButtons } from '@/components/social-share-buttons';
 import { NewsletterForm } from '@/components/newsletter-form';
 
 export const metadata: Metadata = {
-  title: 'AI Caption Generation for Instagram: How to Write Faster Without Losing Your Voice | PostEngage Blog',
-  description: 'A practical guide to using AI caption generation tools to produce Instagram captions in minutes while maintaining authentic brand voice and strong CTAs.',
+  title: 'AI Caption Generator for Instagram | PostEngage.ai',
+  description: 'A practical guide to using AI caption tools to produce Instagram captions in minutes while maintaining authentic brand voice and strong CTAs.',
+  openGraph: {
+    title: 'AI Caption Generator for Instagram | PostEngage.ai',
+    description: 'A practical guide to using AI caption tools to produce Instagram captions in minutes while maintaining authentic brand voice and strong CTAs.',
+    url: 'https://postengage.ai/blog/ai-caption-generator-instagram',
+    siteName: 'PostEngage.ai',
+    locale: 'en_US',
+    type: 'article',
+    publishedTime: '2026-03-10T09:00:00.000Z',
+    authors: ['PostEngageAI Team'],
+    images: [{ url: '/og-default.png', width: 1200, height: 630, alt: 'AI Caption Generator for Instagram' }],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'AI Caption Generator for Instagram | PostEngage.ai',
+    description: 'Write Instagram captions in minutes with AI while keeping your authentic brand voice.',
+    images: ['/og-default.png'],
+    creator: '@postengageai',
+  },
 };
 
 export default function BlogPost() {

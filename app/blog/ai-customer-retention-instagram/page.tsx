@@ -9,8 +9,26 @@ import { SocialShareButtons } from '@/components/social-share-buttons';
 import { NewsletterForm } from '@/components/newsletter-form';
 
 export const metadata: Metadata = {
-  title: 'AI Customer Retention on Instagram: How to Keep Buyers Coming Back Automatically | PostEngage Blog',
+  title: 'AI Customer Retention on Instagram | PostEngage.ai',
   description: 'How to use AI automation to run post-purchase retention campaigns, loyalty sequences, and win-back flows on Instagram.',
+  openGraph: {
+    title: 'AI Customer Retention on Instagram | PostEngage.ai',
+    description: 'How to use AI automation to run post-purchase retention campaigns, loyalty sequences, and win-back flows on Instagram.',
+    url: 'https://postengage.ai/blog/ai-customer-retention-instagram',
+    siteName: 'PostEngage.ai',
+    locale: 'en_US',
+    type: 'article',
+    publishedTime: '2026-03-10T09:00:00.000Z',
+    authors: ['PostEngageAI Team'],
+    images: [{ url: '/og-default.png', width: 1200, height: 630, alt: 'AI Customer Retention on Instagram' }],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'AI Customer Retention on Instagram | PostEngage.ai',
+    description: 'Run post-purchase retention campaigns, loyalty sequences, and win-back flows on Instagram with AI.',
+    images: ['/og-default.png'],
+    creator: '@postengageai',
+  },
 };
 
 export default function BlogPost() {

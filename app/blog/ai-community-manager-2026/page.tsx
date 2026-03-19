@@ -12,11 +12,11 @@ import { NewsletterForm } from '@/components/blog/newsletter-form';
 import { TableOfContents } from '@/components/blog/table-of-contents';
 
 export const metadata: Metadata = {
-  title: "Why 2026 is the Year of the 'AI Community Manager'",
+  title: "AI Community Manager 2026 Guide | PostEngage.ai",
   description:
     'Forget chatbots. The new wave of AI Community Managers can understand context, tone, and intent, handling 90% of your engagement automatically.',
   openGraph: {
-    title: "Why 2026 is the Year of the 'AI Community Manager'",
+    title: "AI Community Manager 2026 Guide | PostEngage.ai",
     description:
       'Forget chatbots. The new wave of AI Community Managers can understand context, tone, and intent, handling 90% of your engagement automatically.',
     url: 'https://postengage.ai/blog/ai-community-manager-2026',
@@ -30,13 +30,13 @@ export const metadata: Metadata = {
         url: '/blog/ai-community-manager-cover.png',
         width: 1200,
         height: 630,
-        alt: 'AI Community Manager',
+        alt: 'AI Community Manager 2026',
       },
     ],
   },
   twitter: {
     card: 'summary_large_image',
-    title: "Why 2026 is the Year of the 'AI Community Manager'",
+    title: "AI Community Manager 2026 Guide | PostEngage.ai",
     description:
       'Forget chatbots. The new wave of AI Community Managers can understand context, tone, and intent.',
     images: ['/blog/ai-community-manager-cover.png'],

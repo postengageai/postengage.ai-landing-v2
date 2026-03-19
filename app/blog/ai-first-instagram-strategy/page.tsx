@@ -9,8 +9,26 @@ import { SocialShareButtons } from '@/components/social-share-buttons';
 import { NewsletterForm } from '@/components/newsletter-form';
 
 export const metadata: Metadata = {
-  title: 'The AI-First Instagram Strategy: How to Build for Automation From Day One | PostEngage Blog',
-  description: 'How to build an Instagram presence from scratch with AI automation as the core — so every piece of content feeds a conversion system.',
+  title: 'AI-First Instagram Strategy Guide | PostEngage.ai',
+  description: 'How to build an Instagram presence with AI automation as the core — so every piece of content feeds a conversion system from day one.',
+  openGraph: {
+    title: 'AI-First Instagram Strategy Guide | PostEngage.ai',
+    description: 'How to build an Instagram presence with AI automation as the core — so every piece of content feeds a conversion system from day one.',
+    url: 'https://postengage.ai/blog/ai-first-instagram-strategy',
+    siteName: 'PostEngage.ai',
+    locale: 'en_US',
+    type: 'article',
+    publishedTime: '2026-03-10T09:00:00.000Z',
+    authors: ['PostEngageAI Team'],
+    images: [{ url: '/og-default.png', width: 1200, height: 630, alt: 'AI-First Instagram Strategy Guide' }],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'AI-First Instagram Strategy Guide | PostEngage.ai',
+    description: 'Build your Instagram presence with AI automation at the core — every post feeds a conversion system.',
+    images: ['/og-default.png'],
+    creator: '@postengageai',
+  },
 };
 
 export default function BlogPost() {

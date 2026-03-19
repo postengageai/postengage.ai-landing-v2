@@ -160,6 +160,72 @@ export default function BlogPage() {
       featured: false,
     },
     {
+      slug: 'ai-audience-segmentation-instagram',
+      title: 'AI Audience Segmentation on Instagram',
+      excerpt:
+        'How to use AI-powered segmentation to identify different audience segments in your Instagram followers and deliver personalized automation sequences to each one.',
+      date: 'Mar 10, 2026',
+      category: 'AI Strategy',
+      readTime: '8 min read',
+      image: '/blog/ai-audience-segmentation-cover.png',
+      featured: false,
+    },
+    {
+      slug: 'ai-customer-retention-instagram',
+      title: 'AI Customer Retention on Instagram',
+      excerpt:
+        'How to use AI automation to run post-purchase retention campaigns, loyalty sequences, and win-back flows on Instagram so buyers keep coming back.',
+      date: 'Mar 10, 2026',
+      category: 'Retention',
+      readTime: '7 min read',
+      image: '/blog/ai-customer-retention-cover.png',
+      featured: false,
+    },
+    {
+      slug: 'ai-caption-generator-instagram',
+      title: 'AI Caption Generator for Instagram',
+      excerpt:
+        'A practical guide to using AI caption generation tools to produce Instagram captions in minutes while maintaining authentic brand voice and strong CTAs.',
+      date: 'Mar 10, 2026',
+      category: 'Content Creation',
+      readTime: '6 min read',
+      image: '/blog/ai-caption-generator-cover.png',
+      featured: false,
+    },
+    {
+      slug: 'ai-automation-freelancers-instagram',
+      title: 'Instagram Automation for Freelancers',
+      excerpt:
+        'How freelancers in design, writing, development, and other fields use AI DM automation to generate client inquiries from Instagram content without more hustle.',
+      date: 'Mar 10, 2026',
+      category: 'Freelancing',
+      readTime: '7 min read',
+      image: '/blog/ai-freelancer-automation-cover.png',
+      featured: false,
+    },
+    {
+      slug: 'agency-automation-scaling',
+      title: 'How Agencies Scale to $50k/mo with DM Automation',
+      excerpt:
+        'The exact systems, pricing models, and white-label strategies agencies are using to build $50k/month businesses around Instagram DM automation services.',
+      date: 'Mar 10, 2026',
+      category: 'Agency Growth',
+      readTime: '8 min read',
+      image: '/blog/agency-automation-scaling-cover.png',
+      featured: false,
+    },
+    {
+      slug: 'ai-first-instagram-strategy',
+      title: 'The AI-First Instagram Strategy Guide',
+      excerpt:
+        'How to build an Instagram presence from scratch with AI automation as the core — so every piece of content feeds a conversion system from day one.',
+      date: 'Mar 10, 2026',
+      category: 'AI Strategy',
+      readTime: '8 min read',
+      image: '/blog/ai-first-instagram-strategy-cover.png',
+      featured: false,
+    },
+    {
       slug: 'ai-community-manager-2026',
       title: "Why 2026 is the Year of the 'AI Community Manager'",
       excerpt:

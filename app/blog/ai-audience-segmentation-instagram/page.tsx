@@ -9,8 +9,26 @@ import { SocialShareButtons } from '@/components/social-share-buttons';
 import { NewsletterForm } from '@/components/newsletter-form';
 
 export const metadata: Metadata = {
-  title: 'AI Audience Segmentation on Instagram: How to Speak Differently to Every Buyer Type | PostEngage Blog',
-  description: 'How to use AI-powered segmentation to identify different audience segments in your Instagram followers and deliver personalized automation sequences to each one.',
+  title: 'AI Audience Segmentation on Instagram | PostEngage.ai',
+  description: 'Use AI-powered segmentation to identify audience segments in your Instagram followers and deliver personalized automation sequences to each one.',
+  openGraph: {
+    title: 'AI Audience Segmentation on Instagram | PostEngage.ai',
+    description: 'Use AI-powered segmentation to identify audience segments in your Instagram followers and deliver personalized automation sequences to each one.',
+    url: 'https://postengage.ai/blog/ai-audience-segmentation-instagram',
+    siteName: 'PostEngage.ai',
+    locale: 'en_US',
+    type: 'article',
+    publishedTime: '2026-03-10T09:00:00.000Z',
+    authors: ['PostEngageAI Team'],
+    images: [{ url: '/og-default.png', width: 1200, height: 630, alt: 'AI Audience Segmentation on Instagram' }],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'AI Audience Segmentation on Instagram | PostEngage.ai',
+    description: 'Use AI-powered segmentation to deliver personalized automation sequences to every Instagram audience segment.',
+    images: ['/og-default.png'],
+    creator: '@postengageai',
+  },
 };
 
 export default function BlogPost() {

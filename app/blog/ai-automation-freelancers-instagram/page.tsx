@@ -9,8 +9,26 @@ import { SocialShareButtons } from '@/components/social-share-buttons';
 import { NewsletterForm } from '@/components/newsletter-form';
 
 export const metadata: Metadata = {
-  title: 'AI Instagram Automation for Freelancers: Get More Clients Without More Hustle | PostEngage Blog',
-  description: 'How freelancers in design, writing, development, and other fields use AI DM automation to generate client inquiries from Instagram content.',
+  title: 'Instagram Automation for Freelancers | PostEngage.ai',
+  description: 'How freelancers in design, writing, and development use AI DM automation to generate client inquiries from Instagram content without more hustle.',
+  openGraph: {
+    title: 'Instagram Automation for Freelancers | PostEngage.ai',
+    description: 'How freelancers in design, writing, and development use AI DM automation to generate client inquiries from Instagram content without more hustle.',
+    url: 'https://postengage.ai/blog/ai-automation-freelancers-instagram',
+    siteName: 'PostEngage.ai',
+    locale: 'en_US',
+    type: 'article',
+    publishedTime: '2026-03-10T09:00:00.000Z',
+    authors: ['PostEngageAI Team'],
+    images: [{ url: '/og-default.png', width: 1200, height: 630, alt: 'Instagram Automation for Freelancers' }],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Instagram Automation for Freelancers | PostEngage.ai',
+    description: 'Get more clients without more hustle — AI DM automation for freelancers on Instagram.',
+    images: ['/og-default.png'],
+    creator: '@postengageai',
+  },
 };
 
 export default function BlogPost() {

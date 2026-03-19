@@ -18,11 +18,11 @@ import { TableOfContents } from '@/components/blog/table-of-contents';
 import { NewsletterForm } from '@/components/blog/newsletter-form';
 
 export const metadata: Metadata = {
-  title: 'How Agencies Are Scaling to $50k/mo with DM Automation Services',
+  title: 'Agency DM Automation: Scale to $50k/mo | PostEngage.ai',
   description:
     'Stop selling hours. Start selling systems. Learn how agencies are productizing Instagram automation to retain clients and increase MRR.',
   openGraph: {
-    title: 'How Agencies Are Scaling to $50k/mo with DM Automation Services',
+    title: 'Agency DM Automation: Scale to $50k/mo | PostEngage.ai',
     description:
       'Stop selling hours. Start selling systems. Learn how agencies are productizing Instagram automation to retain clients and increase MRR.',
     type: 'article',
