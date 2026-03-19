@@ -91,6 +91,9 @@ export function LandingHeader() {
                 <DropdownMenuItem asChild>
                   <Link href='/security'>Security</Link>
                 </DropdownMenuItem>
+                <DropdownMenuItem asChild>
+                  <Link href='/contact'>Contact</Link>
+                </DropdownMenuItem>
               </DropdownMenuContent>
             </DropdownMenu>
           </nav>
@@ -142,6 +145,9 @@ export function LandingHeader() {
               </Link>
               <Link href='/roadmap' className='text-sm text-muted-foreground'>
                 Roadmap
+              </Link>
+              <Link href='/contact' className='text-sm text-muted-foreground'>
+                Contact
               </Link>
               <Link href='/changelog' className='text-sm text-muted-foreground'>
                 Changelog

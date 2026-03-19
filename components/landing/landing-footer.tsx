@@ -18,6 +18,7 @@ export function LandingFooter() {
       { label: 'Blog', href: '/blog' },
       { label: 'Roadmap', href: '/roadmap' },
       { label: 'Changelog', href: '/changelog' },
+      { label: 'Contact', href: '/contact' },
     ],
     Legal: [
       { label: 'Privacy Policy', href: '/privacy' },
