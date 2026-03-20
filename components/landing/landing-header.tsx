@@ -3,7 +3,8 @@
 import { useState } from 'react';
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
-import { Menu, X, Zap, ChevronDown } from 'lucide-react';
+import { Menu, X, ChevronDown } from 'lucide-react';
+import { AppLogo } from '@/components/app-logo';
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -45,14 +46,7 @@ export function LandingHeader() {
       <div className='mx-auto max-w-6xl px-4 sm:px-6'>
         <div className='flex h-16 items-center justify-between'>
           {/* Logo */}
-          <Link href='/' className='flex items-center gap-2'>
-            <div className='flex h-8 w-8 items-center justify-center rounded-lg bg-primary'>
-              <Zap className='h-4 w-4 text-primary-foreground' />
-            </div>
-            <span className='text-lg font-semibold tracking-tight'>
-              PostEngageAI
-            </span>
-          </Link>
+          <AppLogo variant='wordmark' colorScheme='auto' height={28} href='/' priority />
 
           {/* Desktop Navigation */}
           <nav className='hidden items-center gap-8 md:flex'>
@@ -97,6 +91,9 @@ export function LandingHeader() {
                 <DropdownMenuItem asChild>
                   <Link href='/security'>Security</Link>
                 </DropdownMenuItem>
+                <DropdownMenuItem asChild>
+                  <Link href='/contact'>Contact</Link>
+                </DropdownMenuItem>
               </DropdownMenuContent>
             </DropdownMenu>
           </nav>
@@ -112,7 +109,7 @@ export function LandingHeader() {
               <Link href={`${APP_URL}/login`}>Sign In</Link>
             </Button>
             <Button size='sm' asChild onClick={handleSignUpClick}>
-              <Link href={`${APP_URL}/signup`}>Get 500 free credits</Link>
+              <Link href={`${APP_URL}/signup`}>Start free forever</Link>
             </Button>
           </div>
 
@@ -149,6 +146,9 @@ export function LandingHeader() {
               <Link href='/roadmap' className='text-sm text-muted-foreground'>
                 Roadmap
               </Link>
+              <Link href='/contact' className='text-sm text-muted-foreground'>
+                Contact
+              </Link>
               <Link href='/changelog' className='text-sm text-muted-foreground'>
                 Changelog
               </Link>
@@ -160,7 +160,7 @@ export function LandingHeader() {
                   <Link href={`${APP_URL}/login`}>Sign In</Link>
                 </Button>
                 <Button size='sm' asChild>
-                  <Link href={`${APP_URL}/signup`}>Get 500 free credits</Link>
+                  <Link href={`${APP_URL}/signup`}>Start free forever</Link>
                 </Button>
               </div>
             </nav>

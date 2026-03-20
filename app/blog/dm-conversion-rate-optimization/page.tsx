@@ -29,6 +29,14 @@ export const metadata: Metadata = {
     description:
       'Most Instagram DM conversations die after the first message. Learn the CRO principles that triple DM close rates without being pushy or salesy.',
     type: 'article',
+    images: [
+      {
+        url: '/blog/dm-cro-cover.png',
+        width: 1200,
+        height: 630,
+        alt: 'DM Conversion Rate Optimization: How to Go from 10% to 30%+ Close Rate',
+      },
+    ],
     publishedTime: '2026-03-09',
     authors: ['PostEngageAI Team'],
   },

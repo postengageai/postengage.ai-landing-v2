@@ -2,17 +2,16 @@
 
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
-import { ArrowRight, Clock } from 'lucide-react';
+import { ArrowRight, Clock, Star, Shield, Zap } from 'lucide-react';
 import { useEffect, useState } from 'react';
 import { APP_URL } from '@/lib/constants';
 import { sendGAEvent } from '@/lib/gtag';
 import { useTrackSectionView } from '@/hooks/use-track-section-view';
-
 import { useLandingConfig } from '@/hooks/use-landing-config';
 
 export function CTASection() {
   const { data: landingConfig } = useLandingConfig();
-  const signupBonus = landingConfig?.signup_bonus || 500;
+  const signupBonus = landingConfig?.signup_bonus ?? 200;
   const ref = useTrackSectionView('cta_section');
   const bannerRef = useTrackSectionView('cta_urgency_banner');
   const [lostComments, setLostComments] = useState(0);
@@ -33,58 +32,94 @@ export function CTASection() {
   };
 
   return (
-    <section ref={ref} className='py-16 sm:py-24 bg-secondary/30'>
+    <section ref={ref} className='py-20 sm:py-28 bg-secondary/20'>
       <div className='mx-auto max-w-4xl px-4 sm:px-6'>
-        <div className='relative overflow-hidden rounded-2xl border border-primary/20 bg-gradient-to-b from-primary/5 to-transparent p-8 sm:p-12'>
-          {/* Subtle glow */}
+        <div
+          className='relative overflow-hidden rounded-3xl border border-primary/25 p-10 sm:p-16 text-center'
+          style={{
+            background:
+              'radial-gradient(ellipse at top, rgb(108 71 255 / 0.12) 0%, #1a1a2499 60%)',
+          }}
+        >
+          {/* Background glow layers */}
           <div className='pointer-events-none absolute inset-0'>
-            <div className='absolute top-0 left-1/2 -translate-x-1/2 w-[500px] h-[300px] bg-primary/10 rounded-full blur-3xl' />
+            <div className='absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-[400px] bg-[radial-gradient(ellipse_at_center,#6c47ff26_0%,transparent_70%)] blur-2xl' />
+            <div className='absolute bottom-0 left-1/4 w-[300px] h-[200px] bg-[radial-gradient(ellipse_at_center,#22c55e14_0%,transparent_70%)] blur-2xl' />
           </div>
 
-          <div className='relative text-center'>
+          {/* Top border glow */}
+          <div className='absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-primary/50 to-transparent' />
+
+          <div className='relative'>
+            {/* Urgency counter */}
             <div
               ref={bannerRef as React.RefObject<HTMLDivElement>}
-              className='inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-warning/10 border border-warning/20 text-warning text-sm mb-6'
+              className='inline-flex items-center gap-2 px-4 py-2 rounded-full bg-warning/10 border border-warning/25 text-warning text-sm mb-8'
             >
               <Clock className='w-4 h-4' />
               <span>
                 {lostComments > 0 && (
                   <span className='font-mono font-bold'>
-                    {lostComments} comments
+                    {lostComments} leads
                   </span>
                 )}{' '}
                 went cold while you read this page
               </span>
             </div>
 
-            <h2 className='text-3xl sm:text-4xl font-bold tracking-tight'>
-              Every minute you wait,
+            {/* Main headline */}
+            <h2 className='text-3xl sm:text-5xl font-bold tracking-tight mb-4'>
+              Go live once,
               <br />
-              <span className='text-muted-foreground'>
-                another follower moves on.
-              </span>
+              <span className='text-muted-foreground'>auto-reply forever.</span>
             </h2>
 
-            <p className='mt-4 text-muted-foreground max-w-lg mx-auto'>
-              Start replying in 5 minutes. No credit card. No commitment. Just
-              faster engagement.
+            <p className='text-lg text-muted-foreground max-w-lg mx-auto mb-10'>
+              Auto comment reply and keyword DM are free forever. Use AI credits
+              only when you need personalisation.
             </p>
 
-            <div className='mt-8 flex flex-col items-center gap-4'>
+            {/* CTA button */}
+            <div className='flex flex-col items-center gap-5'>
               <Button
                 size='lg'
-                className='min-w-[240px] h-12 text-base'
+                className='min-w-[260px] h-14 text-lg font-bold relative overflow-hidden group'
+                style={{
+                  background:
+                    'linear-gradient(135deg, #9333ea 0%, #7c3aed 100%)',
+                  boxShadow: '0 0 40px #6c47ff73, 0 4px 20px rgba(0,0,0,0.3)',
+                }}
                 asChild
                 onClick={handleCtaClick}
               >
                 <Link href={`${APP_URL}/signup`}>
-                  Get 500 free credits
-                  <ArrowRight className='ml-2 h-4 w-4' />
+                  <span className='flex items-center gap-2'>
+                    Start free forever
+                    <ArrowRight className='h-5 w-5 transition-transform group-hover:translate-x-1' />
+                  </span>
                 </Link>
               </Button>
-              <span className='text-sm text-muted-foreground'>
-                {signupBonus} free credits • Setup in 5 min • Cancel anytime
-              </span>
+
+              {/* Trust indicators */}
+              <div className='flex flex-wrap items-center justify-center gap-x-6 gap-y-2 text-sm text-muted-foreground'>
+                <div className='flex items-center gap-1.5'>
+                  <Star className='w-4 h-4 fill-warning text-warning' />
+                  <span>No credit card</span>
+                </div>
+                <div className='flex items-center gap-1.5'>
+                  <Zap className='w-4 h-4 text-primary' />
+                  <span>Setup in 3 minutes</span>
+                </div>
+                <div className='flex items-center gap-1.5'>
+                  <Shield className='w-4 h-4 text-success' />
+                  <span>Cancel anytime</span>
+                </div>
+              </div>
+
+              <p className='text-xs text-muted-foreground/60'>
+                Free forever automation • +{signupBonus} AI credits • Official
+                Instagram API
+              </p>
             </div>
           </div>
         </div>

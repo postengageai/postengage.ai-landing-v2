@@ -16,19 +16,20 @@ import { PricingCard } from '@/components/pricing/pricing-card';
 import { Skeleton } from '@/components/ui/skeleton';
 import { useTrackSectionView } from '@/hooks/use-track-section-view';
 
-// Fallback costs if loading
+// Fallback costs shown while loading — matches backend INTELLIGENCE_CREDIT_PRICING defaults.
+// STANDARD (8 cr) + ai_infra (1 cr) = 9 total | FULL_CONTEXT (18 cr) + ai_infra (1 cr) = 19 total
 const DEFAULT_COSTS = {
-  REPLY_COMMENT: 2,
-  AI_REPLY_COMMENT: 4,
-  SEND_DM: 2,
-  AI_SEND_DM: 4,
+  REPLY_COMMENT: 0,
+  AI_REPLY_COMMENT: 9,
+  SEND_DM: 0,
+  AI_SEND_DM: 19,
 };
 
 export function PricingPreviewSection() {
   const ref = useTrackSectionView('pricing_section');
   const { data: config, isLoading } = useLandingConfig();
   const costs = config?.costs || DEFAULT_COSTS;
-  const signupBonus = config?.signup_bonus || 500;
+  const signupBonus = config?.signup_bonus ?? 100;
 
   return (
     <section
@@ -44,10 +45,11 @@ export function PricingPreviewSection() {
             Simple Pricing
           </div>
           <h2 className='text-3xl sm:text-4xl font-bold tracking-tight text-balance'>
-            Simple, credit-based pricing
+            Free forever automation + transparent AI credits
           </h2>
           <p className='mt-4 text-lg text-muted-foreground'>
-            Pay for what you use. No subscriptions. No surprises.
+            Auto comment reply and keyword DM are free forever. Credits are used
+            only for AI-personalised replies.
           </p>
         </div>
 
@@ -61,7 +63,7 @@ export function PricingPreviewSection() {
               <div>
                 <h3 className='font-semibold'>How credits work</h3>
                 <p className='text-sm text-muted-foreground'>
-                  Transparent pricing per action
+                  Free basics + pay only for AI
                 </p>
               </div>
             </div>
@@ -77,7 +79,7 @@ export function PricingPreviewSection() {
                     Comment Reply
                   </div>
                   <div className='text-xs text-muted-foreground'>
-                    {costs.REPLY_COMMENT} credits
+                    Free forever
                   </div>
                 </div>
               </div>
@@ -90,7 +92,7 @@ export function PricingPreviewSection() {
                 <div className='min-w-0'>
                   <div className='text-sm font-medium truncate'>AI Reply</div>
                   <div className='text-xs text-muted-foreground'>
-                    {costs.AI_REPLY_COMMENT} credits
+                    {costs.AI_REPLY_COMMENT} to {costs.AI_SEND_DM} credits
                   </div>
                 </div>
               </div>
@@ -103,7 +105,7 @@ export function PricingPreviewSection() {
                 <div className='min-w-0'>
                   <div className='text-sm font-medium truncate'>Auto DM</div>
                   <div className='text-xs text-muted-foreground'>
-                    {costs.SEND_DM} credits
+                    Free forever
                   </div>
                 </div>
               </div>
@@ -116,7 +118,7 @@ export function PricingPreviewSection() {
                 <div className='min-w-0'>
                   <div className='text-sm font-medium truncate'>AI DM</div>
                   <div className='text-xs text-muted-foreground'>
-                    {costs.AI_SEND_DM} credits
+                    up to {costs.AI_SEND_DM} credits
                   </div>
                 </div>
               </div>
@@ -124,10 +126,10 @@ export function PricingPreviewSection() {
           </div>
         </div>
 
-        {/* Pricing Cards */}
-        <div className='grid gap-6 lg:grid-cols-3'>
+        {/* Pricing Cards — 3 purchasable tiers + Enterprise */}
+        <div className='grid gap-6 md:grid-cols-2 lg:grid-cols-4'>
           {isLoading
-            ? [1, 2, 3].map(i => (
+            ? [1, 2, 3, 4].map(i => (
                 <div
                   key={i}
                   className='rounded-2xl border border-border bg-card p-8'
@@ -152,11 +154,12 @@ export function PricingPreviewSection() {
         <div className='rounded-2xl border border-border bg-card/50 p-8 mt-6'>
           <div className='grid gap-4 sm:grid-cols-2 lg:grid-cols-3'>
             {[
+              'Auto comment reply + keyword DM free forever',
               `${signupBonus} free credits to start`,
+              `AI-personalised replies use ${costs.AI_REPLY_COMMENT}–${costs.AI_SEND_DM} credits`,
               'Credits never expire',
               'No monthly commitment',
               'Bulk discounts available',
-              'Cancel anytime',
               'Priority support',
             ].map((feature, i) => (
               <div key={i} className='flex items-center gap-3'>

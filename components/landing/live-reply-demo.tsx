@@ -5,39 +5,41 @@ import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 import { Card } from '@/components/ui/card';
 import { Bot, Zap, Send } from 'lucide-react';
 import { cn } from '@/lib/utils';
+import { useLandingConfig } from '@/hooks/use-landing-config';
 
 export function LiveReplyDemo() {
   const [step, setStep] = useState(0);
   const [currentExample, setCurrentExample] = useState(0);
+  const { data: landingConfig } = useLandingConfig();
+  const signupBonus = landingConfig?.signup_bonus ?? 200;
 
   const EXAMPLES = [
     {
-      user: { name: 'john_doe', initials: 'JD', color: 'bg-blue-500' },
-      comment: 'How do I get access to the early beta? 🚀',
-      reply:
-        'Hey John! 👋 Check your DMs, I just sent you a personal invite code with 500 free credits!',
-      trigger: 'Triggered by "beta"',
+      user: { name: 'nina_creates', initials: 'NC', color: 'bg-blue-500' },
+      comment: 'price please 👀',
+      reply: `Sent you a DM with the pricing and setup steps. You also get ${signupBonus} free AI credits on signup ✨`,
+      trigger: 'Triggered by "price"',
     },
     {
       user: { name: 'sarah_design', initials: 'SD', color: 'bg-purple-500' },
-      comment: 'Does this work for Indian creators? 🇮🇳',
+      comment: 'Does this work for creators in India and abroad? 🌍',
       reply:
-        'Yes Sarah! We support INR payments via UPI and have servers in Mumbai for low latency.',
-      trigger: 'Triggered by "Indian"',
+        'Yes! We support INR + UPI, and teams across multiple countries use the same workflows.',
+      trigger: 'Triggered by "India"',
     },
     {
       user: { name: 'mike_tech', initials: 'MT', color: 'bg-green-500' },
-      comment: 'What is the pricing model? 💰',
+      comment: 'Is auto-reply really free forever? 💬',
       reply:
-        'Hi Mike! It’s pay-as-you-go. No monthly fees. Credits start at ₹1/credit. Sent you the link!',
-      trigger: 'Triggered by "pricing"',
+        'Yes, auto comment reply and keyword DM are free forever. AI personalisation runs on credits when needed.',
+      trigger: 'Triggered by "free"',
     },
     {
       user: { name: 'priya_vlogs', initials: 'PV', color: 'bg-orange-500' },
-      comment: 'Can I auto-reply to Story mentions too?',
+      comment: 'How fast does it reply to comments?',
       reply:
-        'Absolutely Priya! We handle comments, DMs, and Story mentions. Full automation suite. ✨',
-      trigger: 'Triggered by "Story"',
+        'Replies usually go out in around 0.3 seconds, so hot leads get a response before they bounce.',
+      trigger: 'Triggered by "fast"',
     },
   ];
 
@@ -51,19 +53,19 @@ export function LiveReplyDemo() {
         }
         return prev + 1;
       });
-    }, 2000); // Change step every 2 seconds
+    }, 2000);
     return () => clearInterval(interval);
   }, []);
 
   const example = EXAMPLES[currentExample];
 
   return (
-    <div className='relative mx-auto max-w-[400px] perspective-1000'>
+    <div className='relative mx-auto max-w-[400px]'>
       {/* Phone/App Frame */}
       <Card className='relative overflow-hidden border-border bg-background shadow-2xl rounded-[2.5rem] border-4 h-[400px] flex flex-col'>
         {/* Header */}
         <div className='bg-card/80 backdrop-blur-md border-b border-border p-4 flex items-center gap-3 sticky top-0 z-10'>
-          <div className='w-8 h-8 rounded-full bg-linear-to-tr from-purple-500 to-pink-500 flex items-center justify-center text-white font-bold text-xs'>
+          <div className='w-8 h-8 rounded-full bg-gradient-to-tr from-purple-500 to-pink-500 flex items-center justify-center text-white font-bold text-xs'>
             IG
           </div>
           <div className='flex-1'>
@@ -134,8 +136,7 @@ export function LiveReplyDemo() {
             <div className='flex-1 space-y-2'>
               <div className='bg-primary/5 border border-primary/10 rounded-2xl rounded-tl-none p-3'>
                 <p className='text-sm text-foreground/90 leading-snug'>
-                  Hey John! 👋 Check your DMs, I just sent you a personal invite
-                  code with 500 free credits!
+                  {example.reply}
                 </p>
               </div>
               <div className='flex items-center gap-2 text-[10px] text-muted-foreground'>

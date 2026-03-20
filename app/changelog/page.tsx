@@ -1,3 +1,28 @@
+import type { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'Changelog — PostEngage.ai',
+  description:
+    "What's new in PostEngage.ai. See the latest feature releases, improvements, and updates to the platform.",
+  alternates: {
+    canonical: 'https://postengage.ai/changelog',
+  },
+  openGraph: {
+    title: 'PostEngage.ai Changelog',
+    description:
+      "What's new in PostEngage.ai — latest feature releases, fixes, and improvements.",
+    url: 'https://postengage.ai/changelog',
+    siteName: 'PostEngage.ai',
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'PostEngage.ai Changelog',
+    description:
+      "What's new in PostEngage.ai — latest feature releases, fixes, and improvements.",
+  },
+};
+
 import { LandingHeader } from '@/components/landing/landing-header';
 import { LandingFooter } from '@/components/landing/landing-footer';
 import { PageHeader } from '@/components/marketing/page-header';

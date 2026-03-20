@@ -1,131 +1,109 @@
 'use client';
 
-import { Quote } from 'lucide-react';
+import { BadgeCheck, ShieldCheck, Lock, Globe, Zap } from 'lucide-react';
 import { useTrackSectionView } from '@/hooks/use-track-section-view';
 import { sendGAEvent } from '@/lib/gtag';
-import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
-import { Card } from '@/components/ui/card';
-
-interface Testimonial {
-  id: string;
-  quote: string;
-  author: string;
-  role: string;
-  metric: string;
-  avatar: string;
-  initials: string;
-}
-
-const TESTIMONIALS: Testimonial[] = [
+const trustSignals = [
   {
-    id: '1',
-    quote:
-      "Finally an automation tool that doesn't feel like a bot. My engagement has doubled.",
-    author: 'Priya M.',
-    role: 'Fashion Creator',
-    metric: '2x Engagement',
-    avatar: '/indian-woman-fashion-creator.jpg',
-    initials: 'PM',
+    icon: BadgeCheck,
+    title: 'Meta-ready infrastructure',
+    description:
+      'Built for official Instagram API workflows and policy-safe automation patterns.',
   },
   {
-    id: '2',
-    quote:
-      'I used to spend 2 hours a day replying to DMs. Now it takes 15 minutes.',
-    author: 'Rahul S.',
-    role: 'Tech Reviewer',
-    metric: 'Save 10hrs/week',
-    avatar: '/asian-man-tech-youtuber.jpg',
-    initials: 'RS',
+    icon: ShieldCheck,
+    title: 'Policy-first automation',
+    description:
+      'Every flow is designed around platform limits, safe pacing, and account protection.',
   },
   {
-    id: '3',
-    quote: 'The best investment for my personal brand. It just works.',
-    author: 'Anika T.',
-    role: 'Lifestyle Vlogger',
-    metric: '30% More Leads',
-    avatar: '/lifestyle-instagram-avatar.jpg',
-    initials: 'AT',
+    icon: Lock,
+    title: 'Security-focused architecture',
+    description:
+      'OAuth-based account connection, scoped access, and production-grade backend controls.',
+  },
+  {
+    icon: Globe,
+    title: 'Built for global creators',
+    description:
+      'Used across 21+ countries with geo-aware pricing and creator-first onboarding.',
+  },
+  {
+    icon: Zap,
+    title: 'Reliable partner stack',
+    description:
+      'Cloud-native services and verified APIs to keep automations stable at scale.',
   },
 ];
 
-function TestimonialCard({
-  testimonial,
-  index,
-}: {
-  testimonial: Testimonial;
-  index: number;
-}) {
-  const ref = useTrackSectionView(`testimonial_card_${index + 1}`);
-
+export function TrustPartnersSection() {
+  const ref = useTrackSectionView('trust_partners_section');
   return (
-    <Card
-      ref={ref as React.RefObject<HTMLDivElement>}
-      className='relative p-6 flex flex-col h-full'
+    <section
+      ref={ref}
+      id='trust'
+      className='py-20 sm:py-32 border-t border-border/50'
     >
-      <Quote className='w-8 h-8 text-primary/20 mb-4' />
-
-      <blockquote className='text-foreground flex-1 mb-6 text-lg'>
-        "{testimonial.quote}"
-      </blockquote>
-
-      {/* Metric highlight */}
-      <div className='mb-6 py-2 px-3 rounded-lg bg-success/10 border border-success/20 w-fit'>
-        <p className='text-sm font-semibold text-success'>
-          {testimonial.metric}
-        </p>
-      </div>
-
-      <div className='flex items-center gap-3 pt-4 border-t border-border mt-auto'>
-        <Avatar>
-          <AvatarImage src={testimonial.avatar} alt={testimonial.author} />
-          <AvatarFallback>{testimonial.initials}</AvatarFallback>
-        </Avatar>
-        <div
-          className='cursor-pointer'
-          onClick={() => {
-            sendGAEvent({
-              action: 'testimonial_author_click',
-              category: 'content',
-              label: testimonial.author,
-            });
-          }}
-        >
-          <p className='font-medium text-sm'>{testimonial.author}</p>
-          <p className='text-xs text-muted-foreground'>{testimonial.role}</p>
-        </div>
-      </div>
-    </Card>
-  );
-}
-
-export function TestimonialsSection() {
-  const ref = useTrackSectionView('testimonials_section');
-
-  return (
-    <section ref={ref} id='testimonials' className='py-20 sm:py-32'>
-      <div className='mx-auto max-w-7xl px-4 sm:px-6'>
-        <div className='mx-auto max-w-2xl text-center mb-16'>
-          <h2 className='text-3xl font-bold tracking-tight sm:text-4xl'>
-            Trusted by creators who value their time
+      <div className='mx-auto max-w-6xl px-4 sm:px-6'>
+        <div className='mx-auto max-w-2xl text-center mb-14'>
+          <div className='inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-primary/10 border border-primary/20 text-primary text-sm font-medium mb-5'>
+            <BadgeCheck className='w-4 h-4' />
+            Trusted Technology
+          </div>
+          <h2 className='text-3xl sm:text-4xl font-bold tracking-tight'>
+            Built on trusted APIs and{' '}
+            <span
+              className='text-transparent bg-clip-text'
+              style={{
+                backgroundImage:
+                  'linear-gradient(135deg, #a78bfa 0%, #6c47ff 100%)',
+              }}
+            >
+              partner-grade infrastructure
+            </span>
           </h2>
-          <p className='mt-6 text-lg leading-8 text-muted-foreground'>
-            See how PostEngage.ai is helping creators and businesses scale their
-            engagement without burnout.
+          <p className='mt-4 text-lg text-muted-foreground'>
+            We are focused on reliable automation with official Meta-compatible
+            workflows, secure integrations, and a stack designed for scale.
           </p>
         </div>
 
-        <div className='mx-auto mt-16 grid max-w-2xl grid-cols-1 gap-8 lg:mx-0 lg:max-w-none lg:grid-cols-3'>
-          {TESTIMONIALS.map((testimonial, index) => (
-            <TestimonialCard
-              key={testimonial.id}
-              testimonial={testimonial}
-              index={index}
-            />
+        <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5'>
+          {trustSignals.map(item => (
+            <button
+              key={item.title}
+              type='button'
+              className='group relative flex flex-col h-full rounded-2xl border border-border/60 bg-card overflow-hidden p-6 text-left hover:border-primary/30 transition-all duration-300 hover:-translate-y-0.5 hover:shadow-[0_8px_32px_rgba(0,0,0,0.3)]'
+              onClick={() => {
+                sendGAEvent({
+                  action: 'trust_signal_click',
+                  category: 'content',
+                  label: item.title,
+                });
+              }}
+            >
+              <div className='pointer-events-none absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-[radial-gradient(ellipse_at_top_left,#6c47ff0d_0%,transparent_70%)]' />
+              <div className='absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-primary/25 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300' />
+              <div className='relative flex flex-col h-full'>
+                <div className='w-12 h-12 rounded-xl bg-primary/10 border border-primary/15 flex items-center justify-center mb-4'>
+                  <item.icon className='w-5 h-5 text-primary' />
+                </div>
+                <h3 className='font-semibold mb-2'>{item.title}</h3>
+                <p className='text-sm text-muted-foreground leading-relaxed'>
+                  {item.description}
+                </p>
+                <div className='mt-4 inline-flex items-center gap-2 text-xs text-primary/80'>
+                  <span>Learn more</span>
+                  <span aria-hidden='true'>→</span>
+                </div>
+              </div>
+            </button>
           ))}
         </div>
 
-        <p className='text-center text-xs text-muted-foreground mt-12 opacity-60'>
-          * Results may vary based on account size and engagement strategy.
+        <p className='text-center text-xs text-muted-foreground mt-10 opacity-70'>
+          Official Meta API compatible • Security-first implementation • Built
+          for long-term reliability
         </p>
       </div>
     </section>

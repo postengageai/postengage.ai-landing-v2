@@ -29,6 +29,14 @@ export const metadata: Metadata = {
     description:
       "Paid ads are expensive. Organic Instagram growth in 2026 requires mastering the algorithm, Reels, and DM automation. Here's the complete playbook.",
     type: 'article',
+    images: [
+      {
+        url: '/blog/organic-growth-cover.png',
+        width: 1200,
+        height: 630,
+        alt: 'Organic Instagram Growth in 2026: The Complete Algorithm Guide + DM Strategy',
+      },
+    ],
     publishedTime: '2026-03-06',
     authors: ['PostEngageAI Team'],
   },

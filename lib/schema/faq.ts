@@ -36,7 +36,7 @@ export const faqSchema = {
       name: 'How does the credit-based pricing work?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'You purchase credits that are consumed based on actions: 2 credits for basic comment replies, 4 credits for AI-powered replies, 2 credits for DMs, and 4 credits for AI DMs. Pay only for what you use with no monthly subscriptions required.',
+        text: 'You purchase credits that are consumed based on actions: comment replies, DMs, and private replies are free. AI-powered replies use 9–19 credits depending on complexity (Standard, Knowledge-enhanced, or Full Context). Pay only for what you use with no monthly subscriptions required.',
       },
     },
     {
@@ -44,7 +44,7 @@ export const faqSchema = {
       name: 'Can I try PostEngage.ai for free?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'Yes! New users receive 500 free credits to test all features. No credit card required to start. Setup takes less than 5 minutes.',
+        text: 'Yes! New users receive 200 free credits to test all features. No credit card required to start. Setup takes less than 5 minutes.',
       },
     },
     {

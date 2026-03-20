@@ -6,6 +6,7 @@ import { Button } from '@/components/ui/button';
 import { ArrowLeft, Heart, Star } from 'lucide-react';
 import { Metadata } from 'next';
 import { SocialShareButtons } from '@/components/blog/social-share-buttons';
+import { NewsletterForm } from '@/components/blog/newsletter-form';
 
 export const metadata: Metadata = {
   title: 'Turning Story Mentions into Brand Ambassadors with Auto-DMs',
@@ -102,12 +103,16 @@ export default function BlogPostPage() {
             </header>
 
             {/* Featured Image Placeholder */}
-            <div className='relative mx-auto mb-16 aspect-[21/9] max-w-5xl overflow-hidden rounded-2xl border bg-muted/30 shadow-sm'>
-              <div className='absolute inset-0 flex items-center justify-center bg-gradient-to-br from-primary/5 via-transparent to-primary/5'>
-                <span className='text-muted-foreground/20 font-medium'>
-                  Featured Image: Story Mention Notification &gt; Auto DM &gt;
-                  Ambassador Signup
-                </span>
+            <div className='relative mx-auto mb-16 aspect-[21/9] max-w-5xl overflow-hidden rounded-2xl border shadow-sm bg-gradient-to-br from-rose-500/20 via-pink-500/10 to-red-500/5'>
+              <div className='absolute inset-0 flex flex-col items-center justify-center gap-4'>
+                <div className='flex h-16 w-16 items-center justify-center rounded-2xl bg-background/60 border border-border/40 shadow-inner'>
+                  <Heart className='h-8 w-8 text-primary/70' />
+                </div>
+                <div className='flex items-center gap-2'>
+                  <div className='h-1.5 w-1.5 rounded-full bg-primary/40' />
+                  <div className='h-1.5 w-12 rounded-full bg-primary/20' />
+                  <div className='h-1.5 w-1.5 rounded-full bg-primary/40' />
+                </div>
               </div>
             </div>
 
@@ -317,6 +322,7 @@ export default function BlogPostPage() {
             </div>
           </article>
         </div>
+        <NewsletterForm />
       </main>
 
       <LandingFooter />

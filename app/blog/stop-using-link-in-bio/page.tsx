@@ -12,12 +12,12 @@ import { TableOfContents } from '@/components/blog/table-of-contents';
 import { NewsletterForm } from '@/components/blog/newsletter-form';
 
 export const metadata: Metadata = {
-  title: 'Stop Using Link in Bio: Why DM Automation Conversions Are 5x Higher',
+  title: 'DM Automation Converts 5x vs Link in Bio',
   description:
     'The "Link in Bio" is dead. Discover why top creators are switching to DM automation to skyrocket their sales and engagement.',
   openGraph: {
     title:
-      'Stop Using Link in Bio: Why DM Automation Conversions Are 5x Higher',
+      'DM Automation Converts 5x vs Link in Bio',
     description:
       'The "Link in Bio" is dead. Discover why top creators are switching to DM automation to skyrocket their sales and engagement.',
     url: 'https://postengage.ai/blog/stop-using-link-in-bio',
@@ -38,7 +38,7 @@ export const metadata: Metadata = {
   twitter: {
     card: 'summary_large_image',
     title:
-      'Stop Using Link in Bio: Why DM Automation Conversions Are 5x Higher',
+      'DM Automation Converts 5x vs Link in Bio',
     description:
       'The "Link in Bio" is dead. Discover why top creators are switching to DM automation.',
     images: ['/blog/link-in-bio-dead-cover.png'],
@@ -51,7 +51,7 @@ export default function BlogPostPage() {
     '@context': 'https://schema.org',
     '@type': 'BlogPosting',
     headline:
-      'Stop Using Link in Bio: Why DM Automation Conversions Are 5x Higher',
+      'DM Automation Converts 5x vs Link in Bio',
     image: ['/blog/link-in-bio-dead-cover.png'],
     datePublished: '2026-03-01T09:00:00.000Z',
     dateModified: '2026-03-01T09:00:00.000Z',
@@ -84,7 +84,7 @@ export default function BlogPostPage() {
               Back to Blog
             </Link>
             <SocialShareButtons
-              title='Stop Using Link in Bio: Why DM Automation Conversions Are 5x Higher'
+              title='DM Automation Converts 5x vs Link in Bio'
               url='https://postengage.ai/blog/stop-using-link-in-bio'
             />
           </div>
@@ -141,6 +141,18 @@ export default function BlogPostPage() {
             </div>
           </header>
 
+          <div className='relative mx-auto mb-16 aspect-[21/9] max-w-5xl overflow-hidden rounded-2xl border shadow-sm bg-gradient-to-br from-primary/20 via-primary/10 to-muted/20'>
+            <div className='absolute inset-0 flex flex-col items-center justify-center gap-4'>
+              <div className='flex h-16 w-16 items-center justify-center rounded-2xl bg-background/60 border border-border/40 shadow-inner'>
+                <MousePointerClick className='h-8 w-8 text-primary/70' />
+              </div>
+              <div className='flex items-center gap-2'>
+                <div className='h-1.5 w-1.5 rounded-full bg-primary/40' />
+                <div className='h-1.5 w-12 rounded-full bg-primary/20' />
+                <div className='h-1.5 w-1.5 rounded-full bg-primary/40' />
+              </div>
+            </div>
+          </div>
           {/* Featured Image */}
           <div className='relative mx-auto mb-20 aspect-video w-full max-w-4xl overflow-hidden rounded-2xl border border-border/50 shadow-2xl'>
             <div className='absolute inset-0 bg-gradient-to-br from-red-500/20 to-orange-500/20 mix-blend-multiply' />

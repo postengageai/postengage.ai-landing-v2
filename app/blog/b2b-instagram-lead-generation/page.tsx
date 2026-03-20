@@ -23,6 +23,14 @@ export const metadata: Metadata = {
     description:
       "Instagram isn't just for B2C. Discover the exact DM automation playbook B2B companies are using to book sales calls and generate six-figure pipeline.",
     type: 'article',
+    images: [
+      {
+        url: '/blog/b2b-lead-gen-cover.png',
+        width: 1200,
+        height: 630,
+        alt: 'B2B Instagram Lead Generation: How to Get Enterprise Clients from Your DMs',
+      },
+    ],
     publishedTime: '2026-03-05',
     authors: ['PostEngageAI Team'],
   },

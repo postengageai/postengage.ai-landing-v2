@@ -13,15 +13,23 @@ import { TableOfContents } from '@/components/blog/table-of-contents';
 import { NewsletterForm } from '@/components/blog/newsletter-form';
 
 export const metadata: Metadata = {
-  title: 'Instagram for SaaS: How to Get Trial Signups from DMs (Without Ads)',
+  title: 'Instagram for SaaS: DM Signups Without Ads',
   description:
     "B2B SaaS brands are ignoring Instagram's 2 billion users. Learn the exact playbook for converting Instagram followers into trial signups using DM automation.",
   openGraph: {
     title:
-      'Instagram for SaaS: How to Get Trial Signups from DMs (Without Ads)',
+      'Instagram for SaaS: DM Signups Without Ads',
     description:
       "B2B SaaS brands are ignoring Instagram's 2 billion users. Learn the exact playbook for converting Instagram followers into trial signups using DM automation.",
     type: 'article',
+    images: [
+      {
+        url: '/og-default.png',
+        width: 1200,
+        height: 630,
+        alt: 'Instagram for SaaS: DM Signups Without Ads',
+      },
+    ],
     publishedTime: '2026-03-06',
     authors: ['PostEngageAI Team'],
   },

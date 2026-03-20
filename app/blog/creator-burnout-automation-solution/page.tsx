@@ -23,6 +23,14 @@ export const metadata: Metadata = {
     description:
       'Replying to 200+ DMs a day was destroying my mental health. This is how I automated my Instagram without losing the personal touch my audience loves.',
     type: 'article',
+    images: [
+      {
+        url: '/blog/creator-burnout-cover.png',
+        width: 1200,
+        height: 630,
+        alt: 'I Was Burnt Out Replying to DMs. Here',
+      },
+    ],
     publishedTime: '2026-03-06',
     authors: ['PostEngageAI Team'],
   },

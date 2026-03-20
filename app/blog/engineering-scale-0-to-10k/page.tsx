@@ -8,6 +8,7 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { ArrowLeft, Server, Zap, Cpu } from 'lucide-react';
 import { Metadata } from 'next';
 import { SocialShareButtons } from '@/components/blog/social-share-buttons';
+import { NewsletterForm } from '@/components/blog/newsletter-form';
 import { TableOfContents } from '@/components/blog/table-of-contents';
 
 export const metadata: Metadata = {
@@ -341,6 +342,7 @@ export default function BlogPostPage() {
             </div>
           </div>
         </section>
+        <NewsletterForm />
       </main>
       <LandingFooter />
     </div>

@@ -21,16 +21,22 @@ import { TableOfContents } from '@/components/blog/table-of-contents';
 import { NewsletterForm } from '@/components/blog/newsletter-form';
 
 export const metadata: Metadata = {
-  title:
-    'Affiliate Marketing on Instagram: How to Earn Passive Commissions with DM Automation',
+  title: 'Instagram Affiliate DM Automation Guide | PostEngage.ai',
   description:
-    "Stop putting affiliate links in your bio and hoping for the best. Here's how Instagram DM automation creates a passive commission engine that earns while you sleep.",
+    'Stop putting affiliate links in your bio. Here is how Instagram DM automation creates a passive commission engine that earns while you sleep.',
   openGraph: {
-    title:
-      'Affiliate Marketing on Instagram: How to Earn Passive Commissions with DM Automation',
+    title: 'Instagram Affiliate DM Automation Guide | PostEngage.ai',
     description:
-      "Stop putting affiliate links in your bio and hoping for the best. Here's how Instagram DM automation creates a passive commission engine that earns while you sleep.",
+      'Stop putting affiliate links in your bio. Here is how Instagram DM automation creates a passive commission engine that earns while you sleep.',
     type: 'article',
+    images: [
+      {
+        url: '/blog/affiliate-dms-cover.png',
+        width: 1200,
+        height: 630,
+        alt: 'Affiliate Marketing on Instagram: How to Earn Passive Commissions with DM Automation',
+      },
+    ],
     publishedTime: '2026-03-09',
     authors: ['PostEngageAI Team'],
   },

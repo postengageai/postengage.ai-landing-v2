@@ -29,6 +29,14 @@ export const metadata: Metadata = {
     description:
       "Nonprofits that master Instagram DM automation are raising more, spending less, and building stronger donor relationships. Here's how to do it ethically.",
     type: 'article',
+    images: [
+      {
+        url: '/blog/nonprofit-automation-cover.png',
+        width: 1200,
+        height: 630,
+        alt: 'Instagram Automation for Nonprofits: How to Grow Your Donor Base with DMs',
+      },
+    ],
     publishedTime: '2026-03-09',
     authors: ['PostEngageAI Team'],
   },

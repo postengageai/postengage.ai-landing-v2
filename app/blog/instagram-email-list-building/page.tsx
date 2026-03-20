@@ -23,6 +23,14 @@ export const metadata: Metadata = {
     description:
       'Your Instagram following is rented land. Learn how to convert followers into email subscribers using DM automation — and own your audience forever.',
     type: 'article',
+    images: [
+      {
+        url: '/blog/email-list-cover.png',
+        width: 1200,
+        height: 630,
+        alt: 'Instagram to Email: How to Build a 10,000-Person List Using DM Automation',
+      },
+    ],
     publishedTime: '2026-03-09',
     authors: ['PostEngageAI Team'],
   },

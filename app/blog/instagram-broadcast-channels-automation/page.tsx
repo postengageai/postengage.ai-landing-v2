@@ -23,6 +23,14 @@ export const metadata: Metadata = {
     description:
       'Instagram Broadcast Channels have 10x the reach of feed posts. Combine them with DM automation and you have the most powerful engagement system on any platform.',
     type: 'article',
+    images: [
+      {
+        url: '/blog/broadcast-channels-cover.png',
+        width: 1200,
+        height: 630,
+        alt: 'Instagram Broadcast Channels + DM Automation: The 1-2 Punch Nobody',
+      },
+    ],
     publishedTime: '2026-03-07',
     authors: ['PostEngageAI Team'],
   },

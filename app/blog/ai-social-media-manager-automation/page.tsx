@@ -136,6 +136,18 @@ export default function BlogPostPage() {
             </div>
           </header>
 
+          <div className='relative mx-auto mb-16 aspect-[21/9] max-w-5xl overflow-hidden rounded-2xl border shadow-sm bg-gradient-to-br from-violet-500/20 via-purple-500/10 to-indigo-500/5'>
+            <div className='absolute inset-0 flex flex-col items-center justify-center gap-4'>
+              <div className='flex h-16 w-16 items-center justify-center rounded-2xl bg-background/60 border border-border/40 shadow-inner'>
+                <Bot className='h-8 w-8 text-primary/70' />
+              </div>
+              <div className='flex items-center gap-2'>
+                <div className='h-1.5 w-1.5 rounded-full bg-primary/40' />
+                <div className='h-1.5 w-12 rounded-full bg-primary/20' />
+                <div className='h-1.5 w-1.5 rounded-full bg-primary/40' />
+              </div>
+            </div>
+          </div>
           {/* Featured Image */}
           <div className='relative mx-auto mb-20 aspect-video w-full max-w-4xl overflow-hidden rounded-2xl border border-border/50 shadow-2xl'>
             <div className='absolute inset-0 bg-gradient-to-br from-blue-500/20 to-cyan-500/20 mix-blend-multiply' />

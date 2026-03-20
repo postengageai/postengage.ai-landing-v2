@@ -1,3 +1,25 @@
+import type { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'Data Deletion — PostEngage.ai',
+  description:
+    'Request deletion of your PostEngage.ai account data. We comply with all data protection regulations.',
+  alternates: {
+    canonical: 'https://postengage.ai/data-deletion',
+  },
+  openGraph: {
+    title: 'Data Deletion Request — PostEngage.ai',
+    description: 'Request deletion of your PostEngage.ai account data.',
+    url: 'https://postengage.ai/data-deletion',
+    siteName: 'PostEngage.ai',
+    type: 'website',
+  },
+  robots: {
+    index: false,
+    follow: false,
+  },
+};
+
 import { LandingHeader } from '@/components/landing/landing-header';
 import { LandingFooter } from '@/components/landing/landing-footer';
 import { PageHeader } from '@/components/marketing/page-header';
@@ -67,7 +89,7 @@ export default function DataDeletionPage() {
               <div className='rounded-lg bg-muted/50 p-6 font-mono text-sm'>
                 <p>
                   <strong className='text-foreground'>To:</strong>{' '}
-                  postengage.ai@gmail.com
+                  support@postengage.ai
                 </p>
                 <p className='mt-2'>
                   <strong className='text-foreground'>Subject:</strong> Data

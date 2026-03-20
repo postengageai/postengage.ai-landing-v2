@@ -31,6 +31,14 @@ export const metadata: Metadata = {
     description:
       "Coaches and therapists have unique ethical obligations around client communication. Here's how to use Instagram DM automation to grow your practice without compromising integrity.",
     type: 'article',
+    images: [
+      {
+        url: '/blog/coaches-automation-cover.png',
+        width: 1200,
+        height: 630,
+        alt: 'Instagram Automation for Coaches and Therapists: Grow Your Practice Ethically',
+      },
+    ],
     publishedTime: '2026-03-05',
     authors: ['PostEngageAI Team'],
   },

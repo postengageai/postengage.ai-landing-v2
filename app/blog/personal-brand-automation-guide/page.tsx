@@ -23,6 +23,14 @@ export const metadata: Metadata = {
     description:
       'The biggest fear with automation is "sounding fake." Here\'s how top personal brand creators use AI to scale without losing the voice their audience fell in love with.',
     type: 'article',
+    images: [
+      {
+        url: '/blog/personal-brand-cover.png',
+        width: 1200,
+        height: 630,
+        alt: 'The Personal Brand Automation Playbook: Stay Authentic While Scaling to Millions',
+      },
+    ],
     publishedTime: '2026-03-08',
     authors: ['PostEngageAI Team'],
   },

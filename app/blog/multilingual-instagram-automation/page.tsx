@@ -31,6 +31,14 @@ export const metadata: Metadata = {
     description:
       'Your audience speaks multiple languages, but your automation only speaks one. Learn how to set up multilingual DM sequences that feel local to every follower.',
     type: 'article',
+    images: [
+      {
+        url: '/blog/multilingual-automation-cover.png',
+        width: 1200,
+        height: 630,
+        alt: 'Multilingual Instagram Automation: How to Serve a Global Audience in Any Language',
+      },
+    ],
     publishedTime: '2026-03-05',
     authors: ['PostEngageAI Team'],
   },

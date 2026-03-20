@@ -8,14 +8,15 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { ArrowLeft, Users, Bot } from 'lucide-react';
 import { Metadata } from 'next';
 import { SocialShareButtons } from '@/components/blog/social-share-buttons';
+import { NewsletterForm } from '@/components/blog/newsletter-form';
 import { TableOfContents } from '@/components/blog/table-of-contents';
 
 export const metadata: Metadata = {
-  title: "Why 2026 is the Year of the 'AI Community Manager'",
+  title: "AI Community Manager 2026 Guide | PostEngage.ai",
   description:
     'Forget chatbots. The new wave of AI Community Managers can understand context, tone, and intent, handling 90% of your engagement automatically.',
   openGraph: {
-    title: "Why 2026 is the Year of the 'AI Community Manager'",
+    title: "AI Community Manager 2026 Guide | PostEngage.ai",
     description:
       'Forget chatbots. The new wave of AI Community Managers can understand context, tone, and intent, handling 90% of your engagement automatically.',
     url: 'https://postengage.ai/blog/ai-community-manager-2026',
@@ -29,13 +30,13 @@ export const metadata: Metadata = {
         url: '/blog/ai-community-manager-cover.png',
         width: 1200,
         height: 630,
-        alt: 'AI Community Manager',
+        alt: 'AI Community Manager 2026',
       },
     ],
   },
   twitter: {
     card: 'summary_large_image',
-    title: "Why 2026 is the Year of the 'AI Community Manager'",
+    title: "AI Community Manager 2026 Guide | PostEngage.ai",
     description:
       'Forget chatbots. The new wave of AI Community Managers can understand context, tone, and intent.',
     images: ['/blog/ai-community-manager-cover.png'],
@@ -114,12 +115,16 @@ export default function BlogPostPage() {
           </header>
 
           {/* Featured Image Placeholder */}
-          <div className='relative mx-auto mb-16 aspect-[21/9] max-w-5xl overflow-hidden rounded-2xl border bg-muted/30 shadow-sm'>
-            <div className='absolute inset-0 flex items-center justify-center bg-gradient-to-br from-primary/5 via-transparent to-primary/5'>
-              <span className='text-muted-foreground/20 font-medium'>
-                Featured Image: AI Robot shaking hands with a human (Future
-                Style)
-              </span>
+          <div className='relative mx-auto mb-16 aspect-[21/9] max-w-5xl overflow-hidden rounded-2xl border shadow-sm bg-gradient-to-br from-blue-500/20 via-indigo-500/10 to-violet-500/5'>
+            <div className='absolute inset-0 flex flex-col items-center justify-center gap-4'>
+              <div className='flex h-16 w-16 items-center justify-center rounded-2xl bg-background/60 border border-border/40 shadow-inner'>
+                <Users className='h-8 w-8 text-primary/70' />
+              </div>
+              <div className='flex items-center gap-2'>
+                <div className='h-1.5 w-1.5 rounded-full bg-primary/40' />
+                <div className='h-1.5 w-12 rounded-full bg-primary/20' />
+                <div className='h-1.5 w-1.5 rounded-full bg-primary/40' />
+              </div>
             </div>
           </div>
 
@@ -292,7 +297,7 @@ export default function BlogPostPage() {
               <div className='mt-16 border-t pt-8'>
                 <div className='flex items-center gap-4'>
                   <Avatar className='h-12 w-12'>
-                    <AvatarImage src='/logo.jpeg' />
+                    <AvatarImage src='/logo.jpeg' alt='PostEngage.ai Team' />
                     <AvatarFallback>PE</AvatarFallback>
                   </Avatar>
                   <div>
@@ -306,6 +311,7 @@ export default function BlogPostPage() {
             </div>
           </div>
         </article>
+        <NewsletterForm />
       </main>
 
       <LandingFooter />

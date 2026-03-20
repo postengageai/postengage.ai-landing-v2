@@ -23,6 +23,14 @@ export const metadata: Metadata = {
     description:
       'ManyChat is the industry standard — but is it still the best choice for Instagram automation in 2026? We break down pricing, features, and who each tool is built for.',
     type: 'article',
+    images: [
+      {
+        url: '/og-default.png',
+        width: 1200,
+        height: 630,
+        alt: 'PostEngage.ai vs ManyChat in 2026: An Honest Comparison for Instagram Creators',
+      },
+    ],
     publishedTime: '2026-03-06',
     authors: ['PostEngageAI Team'],
   },

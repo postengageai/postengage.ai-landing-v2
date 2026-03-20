@@ -10,49 +10,42 @@ export const CREDIT_COSTS = {
   SEND_DM: 0,
 
   // AI Actions (Tiered)
-  AI_STANDARD: 5, // Standard AI response
-  AI_KNOWLEDGE: 8, // With knowledge base context
-  AI_FULL_CONTEXT: 12, // Full conversation history + knowledge
+  AI_STANDARD: 8, // Standard AI response
+  AI_KNOWLEDGE: 12, // With knowledge base context
+  AI_FULL_CONTEXT: 18, // Full conversation history + knowledge
 
   // BYOM (Infrastructure Cost)
   BYOM_INFRA: 1, // Using own API key
 } as const;
 
-export const CREDIT_PACKS = [
-  {
-    id: 'starter',
-    name: 'Starter Pack',
+// Fallback packs shown before the API responds.
+// These mirror the INR packages from credit-packages.config.ts on the backend.
+// API values always take precedence at runtime.
+// Savings % calculated from Starter per-credit rate — no hardcoded strings.
+const _fallbackPacks = [
+  { id: 'starter_in', name: 'Starter', credits: 650,  price: 749,  currency: 'INR', popular: false, badge: undefined as string | undefined },
+  { id: 'growth_in',  name: 'Growth',  credits: 3500, price: 3299, currency: 'INR', popular: true,  badge: 'Most Popular' },
+  { id: 'agency_in',  name: 'Agency',  credits: 10000,price: 8299, currency: 'INR', popular: false, badge: 'Best Value' },
+];
+
+const _starterRatePerCredit = _fallbackPacks[0].price / _fallbackPacks[0].credits;
+
+export const CREDIT_PACKS = _fallbackPacks.map(p => {
+  const ratePerCredit = p.price / p.credits;
+  const savingsPct = Math.round((1 - ratePerCredit / _starterRatePerCredit) * 100);
+  const aiActions = calculateActions(p.credits, true);
+  return {
+    ...p,
     description:
-      'Start Your Growth Engine. Automate ~190 interactions and never miss a lead.',
-    credits: 500,
-    price: 149,
-    currency: 'INR',
-    popular: false,
-    savings: '0%',
-  },
-  {
-    id: 'pro',
-    name: 'Pro Pack',
-    description:
-      'Scale Your Presence. Handle 4x more volume and turn engagement into revenue.',
-    credits: 2800,
-    price: 699,
-    currency: 'INR',
-    popular: true,
-    savings: '15%',
-  },
-  {
-    id: 'business',
-    name: 'Business Pack',
-    description:
-      'Dominate Your Niche. Maximum power for agencies & brands at our best rate.',
-    credits: 15000,
-    price: 2999,
-    currency: 'INR',
-    popular: false,
-    savings: '35%',
-  },
-] as const;
+      p.name === 'Starter'
+        ? `Try it out — ~${aiActions} AI-powered replies to get started.`
+        : p.name === 'Growth'
+          ? `Best for active creators — ~${aiActions} AI-powered replies per month.`
+          : `For power users and agencies — ~${aiActions} AI-powered replies.`,
+    savings: savingsPct > 0 ? `Save ${savingsPct}%` : '',
+    approx_actions: aiActions,
+  };
+});
 
 /**
  * Calculate actions from credits based on average action cost
@@ -61,7 +54,7 @@ export const CREDIT_PACKS = [
  */
 export function calculateActions(credits: number, withAI = true): number {
   if (!withAI) return Infinity; // Manual actions are free
-  // Standard AI cost (5) + Infrastructure cost (1) = 6 credits per reply
-  const averageAiCost = 6;
+  // Standard AI cost (8) + Infrastructure cost (1) = 9 credits per reply
+  const averageAiCost = 9;
   return Math.floor(credits / averageAiCost);
 }

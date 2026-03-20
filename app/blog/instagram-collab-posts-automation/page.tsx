@@ -31,6 +31,14 @@ export const metadata: Metadata = {
     description:
       "Collab posts give you access to another creator's audience. Add DM automation and you can convert every new follower from the collab into a warm lead within minutes.",
     type: 'article',
+    images: [
+      {
+        url: '/blog/collab-posts-cover.png',
+        width: 1200,
+        height: 630,
+        alt: 'Instagram Collab Posts + DM Automation: The Viral Growth Hack for 2026',
+      },
+    ],
     publishedTime: '2026-03-06',
     authors: ['PostEngageAI Team'],
   },

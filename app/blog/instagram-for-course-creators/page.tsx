@@ -13,15 +13,23 @@ import { TableOfContents } from '@/components/blog/table-of-contents';
 import { NewsletterForm } from '@/components/blog/newsletter-form';
 
 export const metadata: Metadata = {
-  title: 'How Course Creators Are Filling Cohorts with Instagram DM Automation',
+  title: 'Fill Cohorts via Instagram DM Automation',
   description:
     "Launching a cohort and terrified it won't fill? Learn how course creators are using Instagram DM automation to go from waitlist to sold-out in 72 hours.",
   openGraph: {
     title:
-      'How Course Creators Are Filling Cohorts with Instagram DM Automation',
+      'Fill Cohorts via Instagram DM Automation',
     description:
       "Launching a cohort and terrified it won't fill? Learn how course creators are using Instagram DM automation to go from waitlist to sold-out in 72 hours.",
     type: 'article',
+    images: [
+      {
+        url: '/blog/course-creators-cover.png',
+        width: 1200,
+        height: 630,
+        alt: 'Fill Cohorts via Instagram DM Automation',
+      },
+    ],
     publishedTime: '2026-03-05',
     authors: ['PostEngageAI Team'],
   },
@@ -102,7 +110,7 @@ export default function BlogPost() {
                   </h4>
                   <SocialShareButtons
                     url='https://postengage.ai/blog/instagram-for-course-creators'
-                    title='How Course Creators Are Filling Cohorts with Instagram DM Automation'
+                    title='Fill Cohorts via Instagram DM Automation'
                   />
                 </div>
               </div>

@@ -1,3 +1,28 @@
+import type { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'Product — PostEngage.ai',
+  description:
+    'See how PostEngage.ai works: AI DM automation, Voice DNA, lead capture, Bot Memory, and more. Reply to every Instagram comment in your voice.',
+  alternates: {
+    canonical: 'https://postengage.ai/product',
+  },
+  openGraph: {
+    title: 'PostEngage.ai Product — AI Instagram Automation',
+    description:
+      'AI that replies to every comment and DM in your exact voice. Free to start, no credit card needed.',
+    url: 'https://postengage.ai/product',
+    siteName: 'PostEngage.ai',
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'PostEngage.ai Product — AI Instagram Automation',
+    description:
+      'AI that replies to every comment and DM in your exact voice. Free to start, no credit card needed.',
+  },
+};
+
 import { LandingHeader } from '@/components/landing/landing-header';
 import { LandingFooter } from '@/components/landing/landing-footer';
 import { PageHeader } from '@/components/marketing/page-header';

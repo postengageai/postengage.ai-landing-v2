@@ -26,6 +26,14 @@ export const metadata: Metadata = {
     description:
       'Landing pages have a 2% conversion rate. DM Ads have 10%+. Here is why the "Conversation Funnel" is the new standard for paid social.',
     type: 'article',
+    images: [
+      {
+        url: '/og-default.png',
+        width: 1200,
+        height: 630,
+        alt: 'Why Click-to-DM Ads Are Killing Landing Pages in 2026',
+      },
+    ],
     publishedTime: '2026-03-02',
     authors: ['PostEngageAI Team'],
   },
@@ -87,11 +95,16 @@ export default function BlogPost() {
           </header>
 
           {/* Featured Image Placeholder */}
-          <div className='relative mx-auto mb-16 aspect-[21/9] max-w-5xl overflow-hidden rounded-2xl border bg-muted/30 shadow-sm'>
-            <div className='absolute inset-0 flex items-center justify-center bg-linear-to-br from-primary/5 via-transparent to-primary/5'>
-              <span className='text-muted-foreground/20 font-medium'>
-                Featured Image: Ad Comparison (Landing Page Funnel vs DM Funnel)
-              </span>
+          <div className='relative mx-auto mb-16 aspect-[21/9] max-w-5xl overflow-hidden rounded-2xl border shadow-sm bg-gradient-to-br from-yellow-500/20 via-amber-500/10 to-orange-500/5'>
+            <div className='absolute inset-0 flex flex-col items-center justify-center gap-4'>
+              <div className='flex h-16 w-16 items-center justify-center rounded-2xl bg-background/60 border border-border/40 shadow-inner'>
+                <Zap className='h-8 w-8 text-primary/70' />
+              </div>
+              <div className='flex items-center gap-2'>
+                <div className='h-1.5 w-1.5 rounded-full bg-primary/40' />
+                <div className='h-1.5 w-12 rounded-full bg-primary/20' />
+                <div className='h-1.5 w-1.5 rounded-full bg-primary/40' />
+              </div>
             </div>
           </div>
 
