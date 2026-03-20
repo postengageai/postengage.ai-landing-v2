@@ -16,7 +16,8 @@ import { PricingCard } from '@/components/pricing/pricing-card';
 import { Skeleton } from '@/components/ui/skeleton';
 import { useTrackSectionView } from '@/hooks/use-track-section-view';
 
-// Fallback costs if loading
+// Fallback costs shown while loading — matches backend INTELLIGENCE_CREDIT_PRICING defaults.
+// STANDARD (8 cr) + ai_infra (1 cr) = 9 total | FULL_CONTEXT (18 cr) + ai_infra (1 cr) = 19 total
 const DEFAULT_COSTS = {
   REPLY_COMMENT: 0,
   AI_REPLY_COMMENT: 9,
@@ -28,7 +29,7 @@ export function PricingPreviewSection() {
   const ref = useTrackSectionView('pricing_section');
   const { data: config, isLoading } = useLandingConfig();
   const costs = config?.costs || DEFAULT_COSTS;
-  const signupBonus = config?.signup_bonus || 200;
+  const signupBonus = config?.signup_bonus ?? 100;
 
   return (
     <section
@@ -125,10 +126,10 @@ export function PricingPreviewSection() {
           </div>
         </div>
 
-        {/* Pricing Cards */}
-        <div className='grid gap-6 lg:grid-cols-3'>
+        {/* Pricing Cards — 3 purchasable tiers + Enterprise */}
+        <div className='grid gap-6 md:grid-cols-2 lg:grid-cols-4'>
           {isLoading
-            ? [1, 2, 3].map(i => (
+            ? [1, 2, 3, 4].map(i => (
                 <div
                   key={i}
                   className='rounded-2xl border border-border bg-card p-8'
@@ -155,7 +156,7 @@ export function PricingPreviewSection() {
             {[
               'Auto comment reply + keyword DM free forever',
               `${signupBonus} free credits to start`,
-              'AI-personalised replies use 6–13 credits',
+              `AI-personalised replies use ${costs.AI_REPLY_COMMENT}–${costs.AI_SEND_DM} credits`,
               'Credits never expire',
               'No monthly commitment',
               'Bulk discounts available',
