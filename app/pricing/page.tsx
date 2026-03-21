@@ -240,9 +240,9 @@ export default function PricingPage() {
                       <Skeleton className='h-12 w-full mt-8' />
                     </div>
                   ))
-                : landingConfig?.packs.map(pack => (
-                    <PricingCard key={pack.id} pack={pack} />
-                  ))}
+                : landingConfig?.packs
+                    .filter(pack => !pack.is_enterprise)
+                    .map(pack => <PricingCard key={pack.id} pack={pack} />)}
             </div>
           </div>
         </section>
