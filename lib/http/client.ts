@@ -38,6 +38,7 @@ import {
   NetworkError,
   createAppropriateError,
 } from './errors';
+import { IS_DEV } from '../constants';
 
 // Callback for handling 401 responses
 let onUnauthorized: (() => void) | null = null;
@@ -95,7 +96,7 @@ export class HttpClient {
     this.axiosInstance.interceptors.request.use(
       (config: InternalAxiosRequestConfig) => {
         // Log request in development
-        if (process.env.NODE_ENV === 'development') {
+        if (IS_DEV) {
           // eslint-disable-next-line no-console
           console.log(`🚀 ${config.method?.toUpperCase()} ${config.url}`, {
             data: config.data,
@@ -106,7 +107,7 @@ export class HttpClient {
         return config;
       },
       (error: AxiosError) => {
-        if (process.env.NODE_ENV === 'development') {
+        if (IS_DEV) {
           // eslint-disable-next-line no-console
           console.error('❌ Request Error:', error);
         }
@@ -118,7 +119,7 @@ export class HttpClient {
     this.axiosInstance.interceptors.response.use(
       (response: AxiosResponse) => {
         // Log response in development
-        if (process.env.NODE_ENV === 'development') {
+        if (IS_DEV) {
           // eslint-disable-next-line no-console
           console.log(`✅ ${response.status} ${response.config.url}`, {
             data: response.data,
@@ -127,7 +128,7 @@ export class HttpClient {
         return response;
       },
       (error: AxiosError) => {
-        if (process.env.NODE_ENV === 'development') {
+        if (IS_DEV) {
           // eslint-disable-next-line no-console
           console.error('❌ Response Error:', {
             status: error.response?.status,

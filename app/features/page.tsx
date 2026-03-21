@@ -1,3 +1,28 @@
+import type { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'Features — AI Instagram Automation',
+  description:
+    'Explore PostEngage.ai features: AI comment replies, auto DMs, Voice DNA, Lead CRM, Bot Memory, A/B testing, and multilingual automation. Free to start.',
+  alternates: {
+    canonical: 'https://postengage.ai/features',
+  },
+  openGraph: {
+    title: 'PostEngage.ai Features — AI Instagram Automation',
+    description:
+      'AI comment replies, auto DMs, Voice DNA, Lead CRM, and more. Everything to automate Instagram engagement in your exact voice.',
+    url: 'https://postengage.ai/features',
+    siteName: 'PostEngage.ai',
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'PostEngage.ai Features — AI Instagram Automation',
+    description:
+      'AI comment replies, auto DMs, Voice DNA, Lead CRM, and more. Everything to automate Instagram engagement in your exact voice.',
+  },
+};
+
 import { LandingHeader } from '@/components/landing/landing-header';
 import { LandingFooter } from '@/components/landing/landing-footer';
 import { PageHeader } from '@/components/marketing/page-header';

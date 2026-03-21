@@ -1,113 +1,110 @@
-import Image from 'next/image';
-import { Star, Quote } from 'lucide-react';
+'use client';
 
-export function TestimonialsSection() {
-  const testimonials = [
-    {
-      quote:
-        "I used to spend 3 hours daily on comments. Now it's 10 minutes reviewing what AI handled. I got my mornings back.",
-      author: 'Priya Sharma',
-      role: 'Fashion Creator',
-      metric: '47 hours saved last month',
-      avatar: '/indian-woman-fashion-creator.jpg',
-    },
-    {
-      quote:
-        "The AI actually uses my 'lol' and '😭' correctly. My audience thinks I'm just really on top of things now.",
-      author: 'Marcus Chen',
-      role: 'Tech Reviewer',
-      metric: '890 comments/week handled',
-      avatar: '/asian-man-tech-youtuber.jpg',
-    },
-    {
-      quote:
-        'DM conversions went up 40% because replies happen in seconds, not hours. This paid for itself day one.',
-      author: 'Sofia Rodriguez',
-      role: 'Course Creator',
-      metric: '$12K extra revenue',
-      avatar: '/latina-woman-entrepreneur.jpg',
-    },
-    {
-      quote:
-        'The flow builder is incredibly intuitive. I set up my entire sales funnel in 30 minutes without writing a single line of code.',
-      author: 'David Kim',
-      role: 'SaaS Founder',
-      metric: '300+ leads/month',
-      avatar: '/professional-man-portrait.png',
-    },
-    {
-      quote:
-        'PostEngage.ai has completely transformed how I handle customer support on Instagram. No more copy-pasting answers all day.',
-      author: 'Sarah Johnson',
-      role: 'Small Business Owner',
-      metric: '95% response rate',
-      avatar: '/business-woman-portrait.png',
-    },
-    {
-      quote:
-        'Finally, a tool that understands the creator economy. The analytics help me prove ROI to brands I work with.',
-      author: 'Alex Rivera',
-      role: 'Lifestyle Influencer',
-      metric: '2x brand deal value',
-      avatar: '/lifestyle-instagram-avatar.jpg',
-    },
-  ];
+import { BadgeCheck, ShieldCheck, Lock, Globe, Zap } from 'lucide-react';
+import { useTrackSectionView } from '@/hooks/use-track-section-view';
+import { sendGAEvent } from '@/lib/gtag';
+const trustSignals = [
+  {
+    icon: BadgeCheck,
+    title: 'Meta-ready infrastructure',
+    description:
+      'Built for official Instagram API workflows and policy-safe automation patterns.',
+  },
+  {
+    icon: ShieldCheck,
+    title: 'Policy-first automation',
+    description:
+      'Every flow is designed around platform limits, safe pacing, and account protection.',
+  },
+  {
+    icon: Lock,
+    title: 'Security-focused architecture',
+    description:
+      'OAuth-based account connection, scoped access, and production-grade backend controls.',
+  },
+  {
+    icon: Globe,
+    title: 'Built for global creators',
+    description:
+      'Used across 21+ countries with geo-aware pricing and creator-first onboarding.',
+  },
+  {
+    icon: Zap,
+    title: 'Reliable partner stack',
+    description:
+      'Cloud-native services and verified APIs to keep automations stable at scale.',
+  },
+];
 
+export function TrustPartnersSection() {
+  const ref = useTrackSectionView('trust_partners_section');
   return (
-    <section className='py-16 sm:py-24 bg-secondary/30'>
+    <section
+      ref={ref}
+      id='trust'
+      className='py-20 sm:py-32 border-t border-border/50'
+    >
       <div className='mx-auto max-w-6xl px-4 sm:px-6'>
-        <div className='text-center max-w-2xl mx-auto mb-12'>
-          <h2 className='text-2xl sm:text-3xl font-bold tracking-tight'>
-            Creators who got their{' '}
-            <span className='text-primary'>time back</span>
+        <div className='mx-auto max-w-2xl text-center mb-14'>
+          <div className='inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-primary/10 border border-primary/20 text-primary text-sm font-medium mb-5'>
+            <BadgeCheck className='w-4 h-4' />
+            Trusted Technology
+          </div>
+          <h2 className='text-3xl sm:text-4xl font-bold tracking-tight'>
+            Built on trusted APIs and{' '}
+            <span
+              className='text-transparent bg-clip-text'
+              style={{
+                backgroundImage:
+                  'linear-gradient(135deg, #a78bfa 0%, #6c47ff 100%)',
+              }}
+            >
+              partner-grade infrastructure
+            </span>
           </h2>
+          <p className='mt-4 text-lg text-muted-foreground'>
+            We are focused on reliable automation with official Meta-compatible
+            workflows, secure integrations, and a stack designed for scale.
+          </p>
         </div>
 
-        <div className='grid md:grid-cols-3 gap-6'>
-          {testimonials.map((testimonial, i) => (
-            <div
-              key={i}
-              className='relative rounded-xl border border-border bg-card p-6 flex flex-col'
+        <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5'>
+          {trustSignals.map(item => (
+            <button
+              key={item.title}
+              type='button'
+              className='group relative flex flex-col h-full rounded-2xl border border-border/60 bg-card overflow-hidden p-6 text-left hover:border-primary/30 transition-all duration-300 hover:-translate-y-0.5 hover:shadow-[0_8px_32px_rgba(0,0,0,0.3)]'
+              onClick={() => {
+                sendGAEvent({
+                  action: 'trust_signal_click',
+                  category: 'content',
+                  label: item.title,
+                });
+              }}
             >
-              <Quote className='w-8 h-8 text-primary/20 mb-4' />
-
-              <blockquote className='text-foreground flex-1'>
-                "{testimonial.quote}"
-              </blockquote>
-
-              {/* Metric highlight */}
-              <div className='my-4 py-3 px-4 rounded-lg bg-success/10 border border-success/20'>
-                <p className='text-sm font-semibold text-success'>
-                  {testimonial.metric}
+              <div className='pointer-events-none absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-[radial-gradient(ellipse_at_top_left,#6c47ff0d_0%,transparent_70%)]' />
+              <div className='absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-primary/25 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300' />
+              <div className='relative flex flex-col h-full'>
+                <div className='w-12 h-12 rounded-xl bg-primary/10 border border-primary/15 flex items-center justify-center mb-4'>
+                  <item.icon className='w-5 h-5 text-primary' />
+                </div>
+                <h3 className='font-semibold mb-2'>{item.title}</h3>
+                <p className='text-sm text-muted-foreground leading-relaxed'>
+                  {item.description}
                 </p>
-              </div>
-
-              <div className='flex items-center gap-3 pt-4 border-t border-border'>
-                <Image
-                  src={testimonial.avatar || '/placeholder.svg'}
-                  alt={testimonial.author}
-                  width={40}
-                  height={40}
-                  className='rounded-full bg-secondary object-cover'
-                />
-                <div>
-                  <p className='font-medium text-sm'>{testimonial.author}</p>
-                  <p className='text-xs text-muted-foreground'>
-                    {testimonial.role}
-                  </p>
-                </div>
-                <div className='ml-auto flex gap-0.5'>
-                  {[...Array(5)].map((_, j) => (
-                    <Star
-                      key={j}
-                      className='w-3 h-3 fill-primary text-primary'
-                    />
-                  ))}
+                <div className='mt-4 inline-flex items-center gap-2 text-xs text-primary/80'>
+                  <span>Learn more</span>
+                  <span aria-hidden='true'>→</span>
                 </div>
               </div>
-            </div>
+            </button>
           ))}
         </div>
+
+        <p className='text-center text-xs text-muted-foreground mt-10 opacity-70'>
+          Official Meta API compatible • Security-first implementation • Built
+          for long-term reliability
+        </p>
       </div>
     </section>
   );

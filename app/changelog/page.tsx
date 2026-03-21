@@ -1,3 +1,28 @@
+import type { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'Changelog — PostEngage.ai',
+  description:
+    "What's new in PostEngage.ai. See the latest feature releases, improvements, and updates to the platform.",
+  alternates: {
+    canonical: 'https://postengage.ai/changelog',
+  },
+  openGraph: {
+    title: 'PostEngage.ai Changelog',
+    description:
+      "What's new in PostEngage.ai — latest feature releases, fixes, and improvements.",
+    url: 'https://postengage.ai/changelog',
+    siteName: 'PostEngage.ai',
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'PostEngage.ai Changelog',
+    description:
+      "What's new in PostEngage.ai — latest feature releases, fixes, and improvements.",
+  },
+};
+
 import { LandingHeader } from '@/components/landing/landing-header';
 import { LandingFooter } from '@/components/landing/landing-footer';
 import { PageHeader } from '@/components/marketing/page-header';
@@ -7,16 +32,16 @@ export default function ChangelogPage() {
   const changelog = [
     {
       version: '0.4.0',
-      date: 'January 8, 2026',
-      title: 'Voice Training Improvements',
-      type: 'improvement',
+      date: 'February 3, 2026',
+      title: 'Strategic Partnership: RecentReborn Integration',
+      type: 'feature',
       changes: [
-        'Improved AI voice matching accuracy by 40%',
-        'Added ability to provide negative examples (what NOT to say)',
-        'Better handling of emoji and casual language patterns',
+        'Integrated RecentReborn discovery engine',
+        'Real-time engagement triggers for keyword monitoring',
+        'Unified dashboard for discovery and engagement',
       ],
       whyItMatters:
-        "Your AI responses now sound even more like you. The voice training system learns nuances that matter — like when you use emojis and when you don't.",
+        "The missing piece of the puzzle. Now you don't just engage with people who find you — you find them first.",
     },
     {
       version: '0.3.2',

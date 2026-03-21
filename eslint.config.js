@@ -24,6 +24,7 @@ export default [
       '*.min.js',
       '*.min.css',
       '*.bundle.js',
+      'fix-imports.js',
     ],
   },
   js.configs.recommended,

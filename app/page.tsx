@@ -1,15 +1,25 @@
+import type { Metadata } from 'next';
 import { LandingHeader } from '@/components/landing/landing-header';
 import { HeroSection } from '@/components/landing/hero-section';
-import { SocialProofSection } from '@/components/landing/social-proof-section';
+
+export const metadata: Metadata = {
+  alternates: {
+    canonical: 'https://postengage.ai',
+  },
+};
 import { ProblemSection } from '@/components/landing/problem-section';
 import { SolutionSection } from '@/components/landing/solution-section';
 import { HowItWorksSection } from '@/components/landing/how-it-works-section';
 import { FeaturesSection } from '@/components/landing/features-section';
-import { TestimonialsSection } from '@/components/landing/testimonials-section';
+import { TrustPartnersSection } from '@/components/landing/testimonials-section';
 import { PricingPreviewSection } from '@/components/landing/pricing-preview-section';
 import { CTASection } from '@/components/landing/cta-section';
 import { LandingFooter } from '@/components/landing/landing-footer';
 import { ComparisonSection } from '@/components/landing/comparison-section';
+import { FaqSection } from '@/components/landing/faq-section';
+import { ContactSection } from '@/components/landing/contact-section';
+import { ExitIntentPopup } from '@/components/conversion/exit-intent-popup';
+import { organizationSchema, faqSchema } from '@/lib/schema';
 
 export default function LandingPage() {
   return (
@@ -24,14 +34,14 @@ export default function LandingPage() {
             applicationCategory: 'BusinessApplication',
             operatingSystem: 'Web',
             description:
-              'AI-powered social media automation platform. Features include Visual Flow Builder for DMs, Instagram Content Scheduling, Advanced Analytics, and Auto-replies for comments and stories.',
+              'AI-powered Instagram engagement automation platform. Automatically reply to comments and DMs in your brand voice, capture leads, and scale conversations 24/7.',
             image: 'https://postengage.ai/logo.jpeg',
             featureList: [
-              'Visual Automation Builder',
-              'Instagram Post Scheduling',
-              'Advanced Analytics & Insights',
-              'Auto-DM & Comment Reply',
-              'Lead Management System',
+              'Auto Comment Reply',
+              'Keyword-based Auto DM',
+              'AI Personalised Replies in Your Voice',
+              'Lead Capture from Instagram Comments and DMs',
+              'Visual Automation Flow Builder',
               'Credit-based Pay-as-you-go Pricing',
             ],
             offers: {
@@ -63,6 +73,19 @@ export default function LandingPage() {
         data-key='O2+6Avr4IoWf6dlPe6uMCQ'
         async
       ></script>
+      <script
+        type='application/ld+json'
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(organizationSchema),
+        }}
+      />
+      <script
+        type='application/ld+json'
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(faqSchema),
+        }}
+      />
+      <ExitIntentPopup />
       <div className='min-h-screen bg-background'>
         <LandingHeader />
         <main>
@@ -70,7 +93,7 @@ export default function LandingPage() {
           <HeroSection />
 
           {/* Trust: Quick brand validation */}
-          <SocialProofSection />
+          {/* <SocialProofSection /> */}
 
           {/* Pain: Show the cost of inaction */}
           <ProblemSection />
@@ -84,8 +107,7 @@ export default function LandingPage() {
           {/* Reassurance: Control, speed, analytics */}
           <FeaturesSection />
 
-          {/* Proof: Real results from real creators */}
-          <TestimonialsSection />
+          <TrustPartnersSection />
 
           {/* Trust: Why PostEngageAI over alternatives */}
           <ComparisonSection />
@@ -93,8 +115,14 @@ export default function LandingPage() {
           {/* Value: Simple pricing preview */}
           <PricingPreviewSection />
 
+          {/* FAQ: Address common objections */}
+          <FaqSection />
+
           {/* Urgency: Final push with live counter */}
           <CTASection />
+
+          {/* Contact: Embedded form so users never have to leave */}
+          <ContactSection />
         </main>
         <LandingFooter />
       </div>

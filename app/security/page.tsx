@@ -1,3 +1,28 @@
+import type { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'Security — PostEngage.ai',
+  description:
+    'PostEngage.ai is built with enterprise-grade security. Instagram OAuth, encrypted data, and responsible AI practices.',
+  alternates: {
+    canonical: 'https://postengage.ai/security',
+  },
+  openGraph: {
+    title: 'Security at PostEngage.ai',
+    description:
+      'Enterprise-grade security: Instagram OAuth, encrypted data, and responsible AI practices.',
+    url: 'https://postengage.ai/security',
+    siteName: 'PostEngage.ai',
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Security at PostEngage.ai',
+    description:
+      'Enterprise-grade security: Instagram OAuth, encrypted data, and responsible AI practices.',
+  },
+};
+
 import { LandingHeader } from '@/components/landing/landing-header';
 import { LandingFooter } from '@/components/landing/landing-footer';
 import { PageHeader } from '@/components/marketing/page-header';
@@ -172,10 +197,10 @@ export default function SecurityPage() {
               and protect your account.
             </p>
             <a
-              href='mailto:postengage.ai@gmail.com'
+              href='mailto:support@postengage.ai'
               className='text-primary hover:underline'
             >
-              postengage.ai@gmail.com
+              support@postengage.ai
             </a>
           </div>
         </section>

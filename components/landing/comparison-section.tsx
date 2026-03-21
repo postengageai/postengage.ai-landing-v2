@@ -1,3 +1,5 @@
+'use client';
+
 import {
   Check,
   X,
@@ -11,57 +13,16 @@ import {
 import { Button } from '@/components/ui/button';
 import Link from 'next/link';
 import { APP_URL } from '@/lib/constants';
-
-const competitors = [
-  {
-    name: 'Manychat',
-    pricing: '$15+/mo',
-    pricingType: 'subscription',
-    instagram: true,
-    aiReplies: false,
-    indianPayments: false,
-    freeTier: 'Limited',
-    support: 'Email only',
-  },
-  {
-    name: 'SendPulse',
-    pricing: '$12+/mo',
-    pricingType: 'subscription',
-    instagram: true,
-    aiReplies: false,
-    indianPayments: false,
-    freeTier: 'Limited',
-    support: 'Email only',
-  },
-  {
-    name: 'InstantDM',
-    pricing: '$29+/mo',
-    pricingType: 'subscription',
-    instagram: true,
-    aiReplies: true,
-    indianPayments: false,
-    freeTier: 'No',
-    support: 'Email only',
-  },
-  {
-    name: 'PostEngageAI',
-    pricing: '₹499+',
-    pricingType: 'credits',
-    instagram: true,
-    aiReplies: true,
-    indianPayments: true,
-    freeTier: '50 credits',
-    support: 'Priority',
-    highlighted: true,
-  },
-];
+import { useTrackSectionView } from '@/hooks/use-track-section-view';
+import { sendGAEvent } from '@/lib/gtag';
+import { usePlatformStats } from '@/hooks/use-platform-stats';
 
 const advantages = [
   {
     icon: IndianRupee,
-    title: 'Made for India',
+    title: 'Local + global friendly',
     description:
-      'INR pricing, UPI payments, Razorpay integration. No forex markup or hidden fees.',
+      'INR pricing and UPI support for Indian creators, with workflows used by global teams too.',
   },
   {
     icon: Zap,
@@ -90,13 +51,62 @@ const advantages = [
     icon: Users,
     title: 'Built by creators, for creators',
     description:
-      'We understand Indian creator economy. Features designed for your workflow.',
+      'Created from real creator workflows: comments, inbox, and lead capture in one place.',
   },
 ];
 
 export function ComparisonSection() {
+  const ref = useTrackSectionView('comparison_section');
+  const tableRef = useTrackSectionView('comparison_table_view');
+  const { data: platformStats } = usePlatformStats();
+  const activeUsers = platformStats?.active_users;
+
+  const competitors = [
+    {
+      name: 'Manychat',
+      pricing: '$15+/mo',
+      pricingType: 'subscription',
+      instagram: true,
+      aiReplies: true,
+      indianPayments: false,
+      freeTier: 'Limited',
+      support: 'Email only',
+    },
+    {
+      name: 'SendPulse',
+      pricing: '$12+/mo',
+      pricingType: 'subscription',
+      instagram: true,
+      aiReplies: false,
+      indianPayments: false,
+      freeTier: 'Limited',
+      support: 'Email only',
+    },
+    {
+      name: 'InstantDM',
+      pricing: '$29+/mo',
+      pricingType: 'subscription',
+      instagram: true,
+      aiReplies: true,
+      indianPayments: false,
+      freeTier: 'No',
+      support: 'Email only',
+    },
+    {
+      name: 'PostEngageAI',
+      pricing: 'Free + credits',
+      pricingType: 'free_credits',
+      instagram: true,
+      aiReplies: true,
+      indianPayments: true,
+      freeTier: 'Free forever',
+      support: 'Priority',
+      highlighted: true,
+    },
+  ];
+
   return (
-    <section className='py-20 sm:py-32 border-t border-border/50'>
+    <section ref={ref} className='py-20 sm:py-32 border-t border-border/50'>
       <div className='mx-auto max-w-6xl px-4 sm:px-6'>
         {/* Header */}
         <div className='text-center max-w-2xl mx-auto mb-16'>
@@ -104,35 +114,54 @@ export function ComparisonSection() {
             <Zap className='w-3.5 h-3.5' />
             Why PostEngageAI?
           </div>
-          <h2 className='text-3xl sm:text-4xl font-bold tracking-tight text-balance'>
-            The only automation tool built for Indian creators
+          <h2 className='text-3xl sm:text-4xl font-bold tracking-tight'>
+            Automation that combines speed, control, and{' '}
+            <span
+              className='text-transparent bg-clip-text'
+              style={{
+                backgroundImage:
+                  'linear-gradient(135deg, #a78bfa 0%, #6c47ff 100%)',
+              }}
+            >
+              transparent pricing
+            </span>
           </h2>
           <p className='mt-4 text-lg text-muted-foreground'>
-            While others charge in dollars with monthly subscriptions, we offer
-            INR pricing with pay-as-you-go credits.
+            Start free forever, then pay only for AI usage when your volume
+            grows.
           </p>
         </div>
 
         {/* Comparison Table */}
-        <div className='mb-20 overflow-hidden rounded-2xl border border-border'>
+        <div
+          ref={tableRef as React.RefObject<HTMLDivElement>}
+          className='mb-20 overflow-hidden rounded-2xl border border-border/60 shadow-[0_4px_24px_rgba(0,0,0,0.2)]'
+        >
           <div className='overflow-x-auto'>
             <table className='w-full'>
               <thead>
-                <tr className='bg-muted/50'>
+                <tr className='bg-secondary/40'>
                   <th className='px-6 py-4 text-left text-sm font-semibold'>
                     Feature
                   </th>
                   {competitors.map(c => (
                     <th
                       key={c.name}
-                      className={`px-4 py-4 text-center text-sm font-semibold ${c.highlighted ? 'bg-primary/10' : ''}`}
+                      className={`px-4 py-4 text-center text-sm font-semibold cursor-default ${c.highlighted ? 'bg-primary/10' : ''}`}
+                      onMouseEnter={() => {
+                        sendGAEvent({
+                          action: 'competitor_logo_hover',
+                          category: 'content',
+                          label: c.name,
+                        });
+                      }}
                     >
                       <div className={c.highlighted ? 'text-primary' : ''}>
                         {c.name}
                       </div>
                       {c.highlighted && (
-                        <div className='mt-1 text-xs font-normal text-primary/80'>
-                          You are here
+                        <div className='mt-1 text-xs font-normal text-primary/70'>
+                          ✓ Best choice
                         </div>
                       )}
                     </th>
@@ -140,93 +169,58 @@ export function ComparisonSection() {
                 </tr>
               </thead>
               <tbody>
-                {/* Pricing Row */}
-                <tr className='border-t border-border'>
-                  <td className='px-6 py-4 text-sm font-medium'>Pricing</td>
-                  {competitors.map(c => (
-                    <td
-                      key={c.name}
-                      className={`px-4 py-4 text-center text-sm ${c.highlighted ? 'bg-primary/5' : ''}`}
-                    >
-                      <div
-                        className={
-                          c.highlighted ? 'font-semibold text-primary' : ''
-                        }
-                      >
-                        {c.pricing}
-                      </div>
-                      <div className='text-xs text-muted-foreground mt-0.5'>
-                        {c.pricingType === 'credits' ? 'one-time' : 'per month'}
-                      </div>
-                    </td>
-                  ))}
-                </tr>
-
-                {/* Instagram Row */}
-                <tr className='border-t border-border'>
-                  <td className='px-6 py-4 text-sm font-medium'>
-                    Instagram Support
-                  </td>
-                  {competitors.map(c => (
-                    <td
-                      key={c.name}
-                      className={`px-4 py-4 text-center ${c.highlighted ? 'bg-primary/5' : ''}`}
-                    >
-                      {c.instagram ? (
+                {[
+                  {
+                    label: 'Pricing',
+                    render: (c: (typeof competitors)[number]) => (
+                      <>
+                        <div
+                          className={
+                            c.highlighted ? 'font-semibold text-primary' : ''
+                          }
+                        >
+                          {c.pricing}
+                        </div>
+                        <div className='text-xs text-muted-foreground mt-0.5'>
+                          {c.pricingType === 'credits'
+                            ? 'pay as you go'
+                            : c.pricingType === 'free_credits'
+                              ? 'free forever + usage'
+                              : 'per month'}
+                        </div>
+                      </>
+                    ),
+                  },
+                  {
+                    label: 'Instagram Support',
+                    render: (c: (typeof competitors)[number]) =>
+                      c.instagram ? (
                         <Check className='w-5 h-5 text-success mx-auto' />
                       ) : (
-                        <X className='w-5 h-5 text-muted-foreground mx-auto' />
-                      )}
-                    </td>
-                  ))}
-                </tr>
-
-                {/* AI Replies Row */}
-                <tr className='border-t border-border'>
-                  <td className='px-6 py-4 text-sm font-medium'>
-                    AI-Powered Replies
-                  </td>
-                  {competitors.map(c => (
-                    <td
-                      key={c.name}
-                      className={`px-4 py-4 text-center ${c.highlighted ? 'bg-primary/5' : ''}`}
-                    >
-                      {c.aiReplies ? (
+                        <X className='w-5 h-5 text-muted-foreground/50 mx-auto' />
+                      ),
+                  },
+                  {
+                    label: 'AI-Powered Replies',
+                    render: (c: (typeof competitors)[number]) =>
+                      c.aiReplies ? (
                         <Check className='w-5 h-5 text-success mx-auto' />
                       ) : (
-                        <X className='w-5 h-5 text-muted-foreground mx-auto' />
-                      )}
-                    </td>
-                  ))}
-                </tr>
-
-                {/* Indian Payments Row */}
-                <tr className='border-t border-border'>
-                  <td className='px-6 py-4 text-sm font-medium'>
-                    Indian Payments (UPI)
-                  </td>
-                  {competitors.map(c => (
-                    <td
-                      key={c.name}
-                      className={`px-4 py-4 text-center ${c.highlighted ? 'bg-primary/5' : ''}`}
-                    >
-                      {c.indianPayments ? (
+                        <X className='w-5 h-5 text-muted-foreground/50 mx-auto' />
+                      ),
+                  },
+                  {
+                    label: 'Indian Payments (UPI)',
+                    render: (c: (typeof competitors)[number]) =>
+                      c.indianPayments ? (
                         <Check className='w-5 h-5 text-success mx-auto' />
                       ) : (
-                        <X className='w-5 h-5 text-muted-foreground mx-auto' />
-                      )}
-                    </td>
-                  ))}
-                </tr>
-
-                {/* Free Tier Row */}
-                <tr className='border-t border-border'>
-                  <td className='px-6 py-4 text-sm font-medium'>Free Tier</td>
-                  {competitors.map(c => (
-                    <td
-                      key={c.name}
-                      className={`px-4 py-4 text-center text-sm ${c.highlighted ? 'bg-primary/5' : ''}`}
-                    >
+                        <X className='w-5 h-5 text-muted-foreground/50 mx-auto' />
+                      ),
+                  },
+                  {
+                    label: 'Free Tier',
+                    render: (c: (typeof competitors)[number]) => (
                       <span
                         className={
                           c.highlighted
@@ -236,18 +230,11 @@ export function ComparisonSection() {
                       >
                         {c.freeTier}
                       </span>
-                    </td>
-                  ))}
-                </tr>
-
-                {/* Support Row */}
-                <tr className='border-t border-border'>
-                  <td className='px-6 py-4 text-sm font-medium'>Support</td>
-                  {competitors.map(c => (
-                    <td
-                      key={c.name}
-                      className={`px-4 py-4 text-center text-sm ${c.highlighted ? 'bg-primary/5' : ''}`}
-                    >
+                    ),
+                  },
+                  {
+                    label: 'Support',
+                    render: (c: (typeof competitors)[number]) => (
                       <span
                         className={
                           c.highlighted
@@ -257,9 +244,23 @@ export function ComparisonSection() {
                       >
                         {c.support}
                       </span>
+                    ),
+                  },
+                ].map(row => (
+                  <tr key={row.label} className='border-t border-border/50'>
+                    <td className='px-6 py-4 text-sm font-medium'>
+                      {row.label}
                     </td>
-                  ))}
-                </tr>
+                    {competitors.map(c => (
+                      <td
+                        key={c.name}
+                        className={`px-4 py-4 text-center text-sm ${c.highlighted ? 'bg-primary/5' : ''}`}
+                      >
+                        {row.render(c)}
+                      </td>
+                    ))}
+                  </tr>
+                ))}
               </tbody>
             </table>
           </div>
@@ -267,17 +268,17 @@ export function ComparisonSection() {
 
         {/* Advantages Grid */}
         <div className='mb-16'>
-          <h3 className='text-2xl font-bold text-center mb-12'>
+          <h3 className='text-2xl font-bold text-center mb-10'>
             Why creators choose PostEngageAI
           </h3>
-          <div className='grid gap-6 sm:grid-cols-2 lg:grid-cols-3'>
+          <div className='grid gap-5 sm:grid-cols-2 lg:grid-cols-3'>
             {advantages.map((item, index) => (
               <div
                 key={index}
-                className='rounded-2xl border border-border bg-card p-6 hover:border-primary/30 transition-colors group'
+                className='group rounded-2xl border border-border/60 bg-card p-6 hover:border-primary/30 transition-all duration-300 hover:-translate-y-0.5'
               >
-                <div className='w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center mb-4 group-hover:bg-primary/20 transition-colors'>
-                  <item.icon className='w-6 h-6 text-primary' />
+                <div className='w-12 h-12 rounded-xl bg-primary/10 border border-primary/15 flex items-center justify-center mb-4 group-hover:bg-primary/20 transition-colors'>
+                  <item.icon className='w-5 h-5 text-primary' />
                 </div>
                 <h4 className='font-semibold mb-2'>{item.title}</h4>
                 <p className='text-sm text-muted-foreground leading-relaxed'>
@@ -291,11 +292,23 @@ export function ComparisonSection() {
         {/* CTA */}
         <div className='text-center'>
           <p className='text-muted-foreground mb-6'>
-            Join thousands of Indian creators who switched to PostEngageAI
+            Join{' '}
+            <span className='font-semibold text-foreground'>
+              {activeUsers != null ? `${activeUsers}+` : 'hundreds of'}
+            </span>{' '}
+            creators already automating replies
           </p>
-          <Button size='lg' asChild>
+          <Button
+            size='lg'
+            className='font-semibold'
+            style={{
+              background: 'linear-gradient(135deg, #8b5cf6 0%, #7c3aed 100%)',
+              boxShadow: '0 0 24px #6c47ff4d',
+            }}
+            asChild
+          >
             <Link href={`${APP_URL}/signup`}>
-              Start Free with 50 Credits
+              Start free forever
               <Zap className='ml-2 h-4 w-4' />
             </Link>
           </Button>
