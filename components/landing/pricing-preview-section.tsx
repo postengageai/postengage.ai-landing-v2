@@ -126,10 +126,10 @@ export function PricingPreviewSection() {
           </div>
         </div>
 
-        {/* Pricing Cards — 3 purchasable tiers + Enterprise */}
-        <div className='grid gap-6 md:grid-cols-2 lg:grid-cols-4'>
+        {/* Pricing Cards — 3 purchasable tiers */}
+        <div className='grid gap-6 md:grid-cols-3'>
           {isLoading
-            ? [1, 2, 3, 4].map(i => (
+            ? [1, 2, 3].map(i => (
                 <div
                   key={i}
                   className='rounded-2xl border border-border bg-card p-8'
@@ -145,9 +145,9 @@ export function PricingPreviewSection() {
                   <Skeleton className='h-12 w-full mt-8' />
                 </div>
               ))
-            : config?.packs.map(pack => (
-                <PricingCard key={pack.id} pack={pack} />
-              ))}
+            : config?.packs
+                .filter(pack => !pack.is_enterprise)
+                .map(pack => <PricingCard key={pack.id} pack={pack} />)}
         </div>
 
         {/* Features */}
