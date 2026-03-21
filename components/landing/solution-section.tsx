@@ -103,7 +103,14 @@ export function SolutionSection() {
 
               {/* Comment */}
               <div className='flex gap-3 mb-4'>
-                <div className='w-8 h-8 rounded-full bg-secondary shrink-0' />
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img
+                  src='https://i.pravatar.cc/64?img=47'
+                  alt='potential_customer'
+                  width={32}
+                  height={32}
+                  className='w-8 h-8 rounded-full shrink-0 object-cover'
+                />
                 <div className='flex-1'>
                   <p className='text-sm font-medium'>@potential_customer</p>
                   <p className='text-sm text-muted-foreground mt-1'>
