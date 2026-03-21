@@ -3,9 +3,17 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import { Button } from '@/components/ui/button';
-import { ArrowRight, MessageCircle, Heart, Send, Clock } from 'lucide-react';
-import { useEffect, useState } from 'react';
+import {
+  ArrowRight,
+  TrendingUp,
+  Users,
+  Target,
+  DollarSign,
+} from 'lucide-react';
+import { useEffect, useState, useRef } from 'react';
 import { APP_URL } from '@/lib/constants';
+
+// ── Avatar strip ───────────────────────────────────────────────────────────────
 
 const AVATARS = [
   '/indian-woman-fashion-creator.jpg',
@@ -15,70 +23,161 @@ const AVATARS = [
   '/business-woman-portrait.png',
 ];
 
+// ── Count-up hook ─────────────────────────────────────────────────────────────
+
+function useCountUp(target: number, duration = 1800, start = false): number {
+  const [value, setValue] = useState(0);
+  useEffect(() => {
+    if (!start) return;
+    const startTime = performance.now();
+    const tick = (now: number) => {
+      const progress = Math.min((now - startTime) / duration, 1);
+      const eased = 1 - Math.pow(1 - progress, 3); // ease-out cubic
+      setValue(Math.round(eased * target));
+      if (progress < 1) requestAnimationFrame(tick);
+    };
+    requestAnimationFrame(tick);
+  }, [target, duration, start]);
+  return value;
+}
+
+// ── Animated ImpactHero mockup ─────────────────────────────────────────────────
+
+function ImpactHeroMockup({ animate }: { animate: boolean }) {
+  const followers = useCountUp(650, 1800, animate);
+  const leads = useCountUp(312, 1600, animate);
+  const value = useCountUp(1300, 2000, animate);
+
+  return (
+    <div className='rounded-2xl border border-border bg-card/80 backdrop-blur p-5 shadow-2xl shadow-black/20'>
+      {/* Header */}
+      <div className='flex items-center justify-between mb-4'>
+        <div>
+          <p className='text-xs text-muted-foreground'>PostEngage Impact</p>
+          <p className='text-xs text-muted-foreground/60 mt-0.5'>
+            since Feb 1, 2026
+          </p>
+        </div>
+        <div className='flex items-center gap-1.5'>
+          <span className='relative flex h-2 w-2'>
+            <span className='animate-ping absolute inline-flex h-full w-full rounded-full bg-success opacity-75' />
+            <span className='relative inline-flex h-2 w-2 rounded-full bg-success' />
+          </span>
+          <span className='text-[10px] text-success font-medium'>Live</span>
+        </div>
+      </div>
+
+      {/* Stats grid */}
+      <div className='grid grid-cols-2 gap-3'>
+        {/* Followers */}
+        <div className='rounded-xl bg-background/60 p-3'>
+          <Users className='h-4 w-4 text-info mb-1.5' />
+          <p className='text-xl font-bold text-foreground tabular-nums'>
+            +{animate ? followers.toLocaleString() : '0'}
+          </p>
+          <p className='text-[10px] text-muted-foreground mt-0.5'>
+            Followers gained
+          </p>
+          <p className='text-[10px] text-info font-medium mt-0.5'>
+            +52% attributed
+          </p>
+        </div>
+
+        {/* Engagement */}
+        <div className='rounded-xl bg-background/60 p-3'>
+          <TrendingUp className='h-4 w-4 text-success mb-1.5' />
+          <p className='text-xl font-bold text-foreground tabular-nums'>
+            {animate ? '4.7%' : '0%'}
+          </p>
+          <p className='text-[10px] text-muted-foreground mt-0.5'>
+            Engagement rate
+          </p>
+          <p className='text-[10px] text-success font-medium mt-0.5'>
+            +124% vs before
+          </p>
+        </div>
+
+        {/* Leads */}
+        <div className='rounded-xl bg-background/60 p-3'>
+          <Target className='h-4 w-4 text-primary mb-1.5' />
+          <p className='text-xl font-bold text-foreground tabular-nums'>
+            {animate ? leads.toLocaleString() : '0'}
+          </p>
+          <p className='text-[10px] text-muted-foreground mt-0.5'>
+            Leads captured
+          </p>
+          <p className='text-[10px] text-primary font-medium mt-0.5'>
+            from DM automations
+          </p>
+        </div>
+
+        {/* Value */}
+        <div className='rounded-xl bg-background/60 p-3'>
+          <DollarSign className='h-4 w-4 text-warning mb-1.5' />
+          <p className='text-xl font-bold text-foreground tabular-nums'>
+            ${animate ? value.toLocaleString() : '0'}
+          </p>
+          <p className='text-[10px] text-muted-foreground mt-0.5'>
+            Value delivered
+          </p>
+          <p className='text-[10px] text-warning font-medium mt-0.5'>
+            26 hrs × $50/hr
+          </p>
+        </div>
+      </div>
+
+      {/* Footer bar */}
+      <div className='mt-3 pt-3 border-t border-border/50 flex items-center justify-between'>
+        <span className='text-[10px] text-muted-foreground'>
+          30-day snapshot
+        </span>
+        <span className='text-[10px] px-2 py-0.5 rounded-full bg-success/10 text-success font-medium'>
+          High confidence attribution
+        </span>
+      </div>
+    </div>
+  );
+}
+
+// ── Main section ───────────────────────────────────────────────────────────────
+
 export function HeroSection() {
-  const [ignoredCount, setIgnoredCount] = useState(2847);
-  const [showReply, setShowReply] = useState(false);
+  const [animate, setAnimate] = useState(false);
+  const mockupRef = useRef<HTMLDivElement>(null);
 
-  // Simulate comments being ignored in real-time
   useEffect(() => {
-    const interval = setInterval(() => {
-      setIgnoredCount(prev => prev + Math.floor(Math.random() * 3) + 1);
-    }, 2000);
-    return () => clearInterval(interval);
-  }, []);
-
-  // Show AI reply animation
-  useEffect(() => {
-    const timeout = setTimeout(() => setShowReply(true), 1500);
-    return () => clearTimeout(timeout);
+    const timer = setTimeout(() => setAnimate(true), 600);
+    return () => clearTimeout(timer);
   }, []);
 
   return (
     <section className='relative overflow-hidden pt-28 pb-16 sm:pt-36 sm:pb-24'>
-      {/* Subtle radial gradient */}
+      {/* Radial gradient */}
       <div className='pointer-events-none absolute inset-0'>
-        <div className='absolute top-0 left-1/2 -translate-x-1/2 w-[1000px] h-[600px] bg-gradient-to-b from-primary/8 via-primary/3 to-transparent rounded-full blur-3xl' />
+        <div className='absolute top-0 left-1/2 -translate-x-1/2 w-[1000px] h-[600px] bg-linear-to-b from-primary/8 via-primary/3 to-transparent rounded-full blur-3xl' />
       </div>
 
       <div className='relative mx-auto max-w-6xl px-4 sm:px-6'>
-        <div className='flex flex-col sm:flex-row items-center justify-center gap-4 mb-8'>
+        {/* Badge row */}
+        <div className='flex flex-wrap items-center justify-center gap-4 mb-8'>
           <a
-            href='https://www.producthunt.com/products/postengageai?embed=true&amp;utm_source=badge-featured&amp;utm_medium=badge&amp;utm_campaign=badge-postengageai-2'
+            href='https://www.producthunt.com/products/postengageai?embed=true&utm_source=badge-featured&utm_medium=badge&utm_campaign=badge-postengageai-2'
             target='_blank'
             rel='noopener noreferrer'
           >
             <Image
-              alt='PostEngageAI - Auto-reply to Instagram comments &amp; DMs in your own voice | Product Hunt'
+              alt='PostEngageAI on Product Hunt'
               width='250'
               height='54'
-              src='https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=1067654&amp;theme=light&amp;t=1769428844503'
-              unoptimized={true}
+              src='https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=1067654&theme=light&t=1769428844503'
+              unoptimized
             />
           </a>
-
-          <div className='inline-flex items-center gap-3 rounded-full border border-primary/30 bg-primary/5 px-4 py-2'>
-            <MessageCircle className='w-4 h-4 text-primary' />
-            <span className='text-sm text-muted-foreground'>
-              <span className='font-bold text-foreground'>
-                70% of followers
-              </span>{' '}
-              expect a reply within 24 hours
-            </span>
-          </div>
-        </div>
-
-        {/* Live counter badge */}
-        <div className='flex justify-center mb-8'>
-          <div className='inline-flex items-center gap-3 rounded-full border border-warning/30 bg-warning/5 px-4 py-2'>
-            <span className='relative flex h-2 w-2'>
-              <span className='animate-ping absolute inline-flex h-full w-full rounded-full bg-warning opacity-75'></span>
-              <span className='relative inline-flex rounded-full h-2 w-2 bg-warning'></span>
-            </span>
-            <span className='text-sm text-warning'>
-              <span className='font-mono font-bold'>
-                {ignoredCount.toLocaleString()}
-              </span>{' '}
-              comments ignored by creators today
+          <div className='inline-flex items-center gap-2 rounded-full border border-primary/30 bg-primary/5 px-4 py-2 text-sm text-muted-foreground'>
+            <TrendingUp className='h-4 w-4 text-primary' />
+            The only Instagram tool that{' '}
+            <span className='font-bold text-foreground'>
+              proves its own ROI
             </span>
           </div>
         </div>
@@ -87,35 +186,36 @@ export function HeroSection() {
           {/* Left: Copy */}
           <div className='text-center lg:text-left'>
             <h1 className='text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight leading-[1.1]'>
-              <span className='text-muted-foreground'>Stop ignoring</span>
+              <span className='text-muted-foreground'>See your before.</span>
               <br />
-              <span className='text-foreground'>your comments.</span>
+              <span className='text-foreground'>See your after.</span>
             </h1>
 
             <p className='mt-6 text-lg sm:text-xl text-muted-foreground max-w-lg mx-auto lg:mx-0'>
-              Every unanswered comment is a lost follower, a missed sale, a
-              dying algorithm.
-              <span className='text-foreground font-medium'>
-                {' '}
-                PostEngageAI replies in your voice — automatically.
-              </span>
+              Connect your Instagram. PostEngage captures your starting point.
+              Then it shows you — in real numbers — every way it&apos;s growing
+              your account.
             </p>
 
             <div className='mt-8 flex flex-col sm:flex-row items-center gap-4 justify-center lg:justify-start'>
               <Button
                 size='lg'
-                className='min-w-[200px] h-12 text-base'
+                className='min-w-[220px] h-12 text-base'
                 asChild
               >
                 <Link href={`${APP_URL}/signup`}>
-                  Start Replying Now
+                  Start tracking your growth
                   <ArrowRight className='ml-2 h-4 w-4' />
                 </Link>
               </Button>
               <span className='text-sm text-muted-foreground'>
-                50 free replies • No credit card
+                Free 14-day trial · No credit card · Connects in 60 seconds
               </span>
             </div>
+
+            <p className='mt-3 text-xs text-muted-foreground/70 text-center lg:text-left'>
+              Baseline captured the moment you connect. Your before starts now.
+            </p>
 
             {/* Social proof strip */}
             <div className='mt-10 pt-8 border-t border-border'>
@@ -124,11 +224,11 @@ export function HeroSection() {
                   {AVATARS.map((src, i) => (
                     <div
                       key={i}
-                      className='relative w-8 h-8 rounded-full border-2 border-background overflow-hidden bg-secondary'
+                      className='relative h-8 w-8 rounded-full border-2 border-background overflow-hidden bg-secondary'
                     >
                       <Image
                         src={src}
-                        alt={`Community member ${i + 1}`}
+                        alt={`Creator ${i + 1}`}
                         fill
                         className='object-cover'
                         sizes='32px'
@@ -140,119 +240,46 @@ export function HeroSection() {
                   <span className='font-semibold text-foreground'>2,400+</span>
                   <span className='text-muted-foreground'>
                     {' '}
-                    creators saving{' '}
+                    creators tracking{' '}
                   </span>
                   <span className='font-semibold text-foreground'>
-                    47 hours/month
+                    their Instagram growth
                   </span>
                 </div>
               </div>
             </div>
           </div>
 
-          {/* Right: Instagram-like demo */}
-          <div className='relative'>
-            {/* Phone frame */}
-            <div className='relative mx-auto max-w-[320px] lg:max-w-[360px]'>
-              <div className='rounded-[2.5rem] border border-border bg-card p-2 shadow-2xl shadow-black/20'>
-                <div className='rounded-[2rem] overflow-hidden bg-background'>
-                  {/* Instagram post header */}
-                  <div className='flex items-center gap-3 p-3 border-b border-border'>
-                    <div className='w-8 h-8 rounded-full bg-gradient-to-br from-primary to-primary/60' />
-                    <div className='flex-1'>
-                      <p className='text-sm font-semibold'>your_brand</p>
-                    </div>
-                  </div>
+          {/* Right: Animated ImpactHero mockup */}
+          <div ref={mockupRef} className='relative'>
+            <div className='relative mx-auto max-w-[380px]'>
+              <ImpactHeroMockup animate={animate} />
 
-                  {/* Post image placeholder */}
-                  <div className='aspect-square bg-secondary/50 flex items-center justify-center'>
-                    <div className='text-center p-4'>
-                      <div className='w-16 h-16 mx-auto mb-3 rounded-xl bg-primary/10 flex items-center justify-center'>
-                        <Heart className='w-8 h-8 text-primary' />
-                      </div>
-                      <p className='text-sm text-muted-foreground'>
-                        Your latest post
-                      </p>
-                    </div>
-                  </div>
-
-                  {/* Engagement bar */}
-                  <div className='flex items-center gap-4 p-3 border-b border-border'>
-                    <Heart className='w-6 h-6' />
-                    <MessageCircle className='w-6 h-6' />
-                    <Send className='w-6 h-6' />
-                  </div>
-
-                  {/* Comments section */}
-                  <div className='p-3 space-y-3 min-h-[180px]'>
-                    {/* Incoming comment */}
-                    <div className='flex gap-2'>
-                      <div className='w-7 h-7 rounded-full bg-secondary shrink-0' />
-                      <div>
-                        <p className='text-sm'>
-                          <span className='font-semibold'>@sarah_creates</span>
-                          <span className='text-muted-foreground ml-2'>
-                            Omg love this! Where did you get that? 😍
-                          </span>
-                        </p>
-                        <p className='text-xs text-muted-foreground mt-0.5 flex items-center gap-2'>
-                          <Clock className='w-3 h-3' /> 2s ago
-                        </p>
-                      </div>
-                    </div>
-
-                    {/* AI Reply - animated */}
-                    <div
-                      className={`flex gap-2 transition-all duration-500 ${
-                        showReply
-                          ? 'opacity-100 translate-y-0'
-                          : 'opacity-0 translate-y-2'
-                      }`}
-                    >
-                      <div className='w-7 h-7 rounded-full bg-gradient-to-br from-primary to-primary/60 shrink-0 flex items-center justify-center'>
-                        <span className='text-[10px] text-white font-bold'>
-                          AI
-                        </span>
-                      </div>
-                      <div className='flex-1'>
-                        <div className='bg-primary/10 rounded-xl rounded-tl-none p-2.5'>
-                          <p className='text-sm'>
-                            <span className='font-semibold text-primary'>
-                              your_brand
-                            </span>
-                            <span className='text-foreground ml-2'>
-                              Thank you Sarah! 💕 It's from the new collection -
-                              link in bio! DM me if you need help picking a size
-                              🛍️
-                            </span>
-                          </p>
-                        </div>
-                        <div className='flex items-center gap-2 mt-1'>
-                          <span className='text-[10px] px-1.5 py-0.5 rounded bg-success/10 text-success font-medium'>
-                            Replied by AI
-                          </span>
-                          <span className='text-xs text-muted-foreground'>
-                            just now
-                          </span>
-                        </div>
-                      </div>
-                    </div>
+              {/* Floating "Milestone" badge */}
+              <div
+                className={`absolute -left-4 bottom-16 bg-card border border-border rounded-xl p-3 shadow-lg transition-all duration-700 delay-1000 ${animate ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-4'}`}
+              >
+                <div className='flex items-center gap-2'>
+                  <span className='text-xl'>🎯</span>
+                  <div>
+                    <p className='text-xs font-semibold'>First 100 leads!</p>
+                    <p className='text-[10px] text-muted-foreground'>
+                      Milestone achieved
+                    </p>
                   </div>
                 </div>
               </div>
 
-              {/* Floating notification */}
+              {/* Floating "Growth" badge */}
               <div
-                className={`absolute -right-4 top-20 bg-card border border-border rounded-lg p-3 shadow-lg transition-all duration-700 ${showReply ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-4'}`}
+                className={`absolute -right-4 top-8 bg-card border border-border rounded-xl p-3 shadow-lg transition-all duration-700 delay-700 ${animate ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-4'}`}
               >
                 <div className='flex items-center gap-2'>
-                  <div className='w-8 h-8 rounded-full bg-success/10 flex items-center justify-center'>
-                    <MessageCircle className='w-4 h-4 text-success' />
-                  </div>
+                  <span className='text-xl'>📈</span>
                   <div>
-                    <p className='text-xs font-medium'>Comment Handled</p>
+                    <p className='text-xs font-semibold'>+52 followers today</p>
                     <p className='text-[10px] text-muted-foreground'>
-                      In your voice
+                      via PostEngage
                     </p>
                   </div>
                 </div>

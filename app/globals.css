@@ -116,3 +116,9 @@ html {
 ::selection {
   background: oklch(0.65 0.18 265 / 0.3);
 }
+
+/* Marquee animation for MilestoneTicker */
+@keyframes marquee {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}

@@ -1,15 +1,21 @@
 import { LandingHeader } from '@/components/landing/landing-header';
 import { HeroSection } from '@/components/landing/hero-section';
 import { SocialProofSection } from '@/components/landing/social-proof-section';
+import { BeforeAfterSection } from '@/components/landing/before-after-section';
+import { ImpactScoreSection } from '@/components/landing/impact-score-section';
 import { ProblemSection } from '@/components/landing/problem-section';
 import { SolutionSection } from '@/components/landing/solution-section';
 import { HowItWorksSection } from '@/components/landing/how-it-works-section';
+import { SchedulerFeatureSection } from '@/components/landing/scheduler-feature-section';
 import { FeaturesSection } from '@/components/landing/features-section';
 import { TestimonialsSection } from '@/components/landing/testimonials-section';
+import { ComparisonSection } from '@/components/landing/comparison-section';
+import { ROICalculatorSection } from '@/components/landing/roi-calculator-section';
+import { MilestoneTicker } from '@/components/landing/milestone-ticker';
 import { PricingPreviewSection } from '@/components/landing/pricing-preview-section';
+import { FAQSection } from '@/components/landing/faq-section';
 import { CTASection } from '@/components/landing/cta-section';
 import { LandingFooter } from '@/components/landing/landing-footer';
-import { ComparisonSection } from '@/components/landing/comparison-section';
 
 export default function LandingPage() {
   return (
@@ -24,15 +30,17 @@ export default function LandingPage() {
             applicationCategory: 'BusinessApplication',
             operatingSystem: 'Web',
             description:
-              'AI-powered social media automation platform. Features include Visual Flow Builder for DMs, Instagram Content Scheduling, Advanced Analytics, and Auto-replies for comments and stories.',
+              'Instagram automation that tracks its own ROI. PostEngage automates DMs, comments, and story replies — and shows you the before vs after in real follower growth, leads captured, and time saved.',
             image: 'https://postengage.ai/logo.jpeg',
             featureList: [
+              'Before vs After Growth Tracking',
+              'Cumulative Impact Score',
               'Visual Automation Builder',
               'Instagram Post Scheduling',
-              'Advanced Analytics & Insights',
+              'ROI Calculator',
+              'Lead Attribution',
               'Auto-DM & Comment Reply',
-              'Lead Management System',
-              'Credit-based Pay-as-you-go Pricing',
+              'Best Time to Post AI',
             ],
             offers: {
               '@type': 'Offer',
@@ -45,7 +53,7 @@ export default function LandingPage() {
                 referenceQuantity: {
                   '@type': 'QuantitativeValue',
                   value: '1',
-                  unitCode: 'C62', // 'One' unit
+                  unitCode: 'C62',
                 },
               },
               description: 'Pay-as-you-go credit system starting at ₹1/credit',
@@ -66,11 +74,17 @@ export default function LandingPage() {
       <div className='min-h-screen bg-background'>
         <LandingHeader />
         <main>
-          {/* Hook: Emotional entry with live counter + Instagram demo */}
+          {/* Hook: Outcome-first hero with animated Impact mockup */}
           <HeroSection />
 
           {/* Trust: Quick brand validation */}
           <SocialProofSection />
+
+          {/* Value: Before vs After growth chart */}
+          <BeforeAfterSection />
+
+          {/* Value: Cumulative Impact Score */}
+          <ImpactScoreSection />
 
           {/* Pain: Show the cost of inaction */}
           <ProblemSection />
@@ -81,19 +95,31 @@ export default function LandingPage() {
           {/* Simplicity: 3 steps to start */}
           <HowItWorksSection />
 
+          {/* Feature: Content Scheduler + linked automations */}
+          <SchedulerFeatureSection />
+
           {/* Reassurance: Control, speed, analytics */}
           <FeaturesSection />
 
-          {/* Proof: Real results from real creators */}
+          {/* Proof: Real results — metrics first */}
           <TestimonialsSection />
 
-          {/* Trust: Why PostEngageAI over alternatives */}
+          {/* Live feed: Real milestone events */}
+          <MilestoneTicker />
+
+          {/* Trust: Why PostEngage over alternatives */}
           <ComparisonSection />
+
+          {/* Interactive: ROI Calculator */}
+          <ROICalculatorSection />
 
           {/* Value: Simple pricing preview */}
           <PricingPreviewSection />
 
-          {/* Urgency: Final push with live counter */}
+          {/* FAQ: New value-feature questions */}
+          <FAQSection />
+
+          {/* Urgency: Final push */}
           <CTASection />
         </main>
         <LandingFooter />

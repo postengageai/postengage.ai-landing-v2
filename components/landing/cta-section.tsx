@@ -39,16 +39,17 @@ export function CTASection() {
             </div>
 
             <h2 className='text-3xl sm:text-4xl font-bold tracking-tight'>
-              Every minute you wait,
+              Start tracking your growth.
               <br />
               <span className='text-muted-foreground'>
-                another follower moves on.
+                Your before starts now.
               </span>
             </h2>
 
             <p className='mt-4 text-muted-foreground max-w-lg mx-auto'>
-              Start replying in 5 minutes. No credit card. No commitment. Just
-              faster engagement.
+              Connect your Instagram. PostEngage captures your baseline. Then it
+              shows you — in real numbers — every way it&apos;s growing your
+              account.
             </p>
 
             <div className='mt-8 flex flex-col items-center gap-4'>
@@ -58,12 +59,12 @@ export function CTASection() {
                 asChild
               >
                 <Link href={`${APP_URL}/signup`}>
-                  Start Your Free Trial
+                  Start tracking your growth
                   <ArrowRight className='ml-2 h-4 w-4' />
                 </Link>
               </Button>
               <span className='text-sm text-muted-foreground'>
-                50 free credits • Setup in 5 min • Cancel anytime
+                Free 14-day trial · No credit card · Connects in 60 seconds
               </span>
             </div>
           </div>

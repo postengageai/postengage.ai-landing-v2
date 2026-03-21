@@ -14,7 +14,21 @@ import { APP_URL } from '@/lib/constants';
 
 const competitors = [
   {
-    name: 'Manychat',
+    name: 'Buffer',
+    pricing: '$6+/mo',
+    pricingType: 'subscription',
+    instagram: true,
+    aiReplies: false,
+    indianPayments: false,
+    freeTier: 'Limited',
+    support: 'Email only',
+    beforeAfter: false,
+    impactScore: false,
+    timeSavedDollars: false,
+    scheduler: true,
+  },
+  {
+    name: 'ManyChat',
     pricing: '$15+/mo',
     pricingType: 'subscription',
     instagram: true,
@@ -22,26 +36,10 @@ const competitors = [
     indianPayments: false,
     freeTier: 'Limited',
     support: 'Email only',
-  },
-  {
-    name: 'SendPulse',
-    pricing: '$12+/mo',
-    pricingType: 'subscription',
-    instagram: true,
-    aiReplies: false,
-    indianPayments: false,
-    freeTier: 'Limited',
-    support: 'Email only',
-  },
-  {
-    name: 'InstantDM',
-    pricing: '$29+/mo',
-    pricingType: 'subscription',
-    instagram: true,
-    aiReplies: true,
-    indianPayments: false,
-    freeTier: 'No',
-    support: 'Email only',
+    beforeAfter: false,
+    impactScore: false,
+    timeSavedDollars: false,
+    scheduler: false,
   },
   {
     name: 'PostEngageAI',
@@ -53,6 +51,10 @@ const competitors = [
     freeTier: '50 credits',
     support: 'Priority',
     highlighted: true,
+    beforeAfter: true,
+    impactScore: true,
+    timeSavedDollars: true,
+    scheduler: true,
   },
 ];
 
@@ -105,11 +107,16 @@ export function ComparisonSection() {
             Why PostEngageAI?
           </div>
           <h2 className='text-3xl sm:text-4xl font-bold tracking-tight text-balance'>
-            The only automation tool built for Indian creators
+            Every other Instagram tool tells you what happened.{' '}
+            <span className='text-primary'>
+              Only PostEngage tells you what it&apos;s worth.
+            </span>
           </h2>
           <p className='mt-4 text-lg text-muted-foreground'>
-            While others charge in dollars with monthly subscriptions, we offer
-            INR pricing with pay-as-you-go credits.
+            ManyChat counts messages. Buffer counts posts. Neither shows you
+            whether any of it is growing your business. PostEngage was built
+            around one question:{' '}
+            <strong className='text-foreground'>Is it worth it?</strong>
           </p>
         </div>
 
@@ -236,6 +243,82 @@ export function ComparisonSection() {
                       >
                         {c.freeTier}
                       </span>
+                    </td>
+                  ))}
+                </tr>
+
+                {/* Before vs After Row */}
+                <tr className='border-t border-border'>
+                  <td className='px-6 py-4 text-sm font-medium'>
+                    Before vs After comparison
+                  </td>
+                  {competitors.map(c => (
+                    <td
+                      key={c.name}
+                      className={`px-4 py-4 text-center ${c.highlighted ? 'bg-primary/5' : ''}`}
+                    >
+                      {c.beforeAfter ? (
+                        <Check className='w-5 h-5 text-success mx-auto' />
+                      ) : (
+                        <X className='w-5 h-5 text-muted-foreground mx-auto' />
+                      )}
+                    </td>
+                  ))}
+                </tr>
+
+                {/* Impact Score Row */}
+                <tr className='border-t border-border'>
+                  <td className='px-6 py-4 text-sm font-medium'>
+                    Cumulative Impact Score
+                  </td>
+                  {competitors.map(c => (
+                    <td
+                      key={c.name}
+                      className={`px-4 py-4 text-center ${c.highlighted ? 'bg-primary/5' : ''}`}
+                    >
+                      {c.impactScore ? (
+                        <Check className='w-5 h-5 text-success mx-auto' />
+                      ) : (
+                        <X className='w-5 h-5 text-muted-foreground mx-auto' />
+                      )}
+                    </td>
+                  ))}
+                </tr>
+
+                {/* Time saved Row */}
+                <tr className='border-t border-border'>
+                  <td className='px-6 py-4 text-sm font-medium'>
+                    Time saved in dollars
+                  </td>
+                  {competitors.map(c => (
+                    <td
+                      key={c.name}
+                      className={`px-4 py-4 text-center ${c.highlighted ? 'bg-primary/5' : ''}`}
+                    >
+                      {c.timeSavedDollars ? (
+                        <Check className='w-5 h-5 text-success mx-auto' />
+                      ) : (
+                        <X className='w-5 h-5 text-muted-foreground mx-auto' />
+                      )}
+                    </td>
+                  ))}
+                </tr>
+
+                {/* Content Scheduler Row */}
+                <tr className='border-t border-border'>
+                  <td className='px-6 py-4 text-sm font-medium'>
+                    Content Scheduler
+                  </td>
+                  {competitors.map(c => (
+                    <td
+                      key={c.name}
+                      className={`px-4 py-4 text-center ${c.highlighted ? 'bg-primary/5' : ''}`}
+                    >
+                      {c.scheduler ? (
+                        <Check className='w-5 h-5 text-success mx-auto' />
+                      ) : (
+                        <X className='w-5 h-5 text-muted-foreground mx-auto' />
+                      )}
                     </td>
                   ))}
                 </tr>
