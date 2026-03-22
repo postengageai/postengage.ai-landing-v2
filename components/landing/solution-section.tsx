@@ -49,10 +49,10 @@ export function SolutionSection() {
             <Sparkles className='w-4 h-4' />
             The Solution
           </div>
-          <h2 className='text-2xl sm:text-3xl font-bold tracking-tight'>
+          <h2 className='text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight'>
             AI that <span className='text-primary'>sounds like you</span>
           </h2>
-          <p className='mt-3 text-muted-foreground'>
+          <p className='mt-4 text-lg text-muted-foreground font-light'>
             Not generic. Not robotic. Trained on your style.
           </p>
         </div>

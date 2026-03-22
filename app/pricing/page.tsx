@@ -76,7 +76,7 @@ export default function PricingPage() {
     },
     {
       q: 'Is PostEngage free to use?',
-      a: 'Yes — core automation actions (comment replies, private DMs, fixed-text DM replies) are always free with no time limit. AI-powered responses that generate personalised replies consume credits. New accounts also get 50 free credits to try AI features — no credit card required.',
+      a: 'Yes — core automation actions (comment replies, private DMs, fixed-text DM replies) are always free with no time limit. AI-powered responses that generate personalised replies consume credits. New accounts also get 100 free credits to try AI features — no credit card required.',
     },
     {
       q: 'Do you support UPI / Indian payments?',
@@ -392,8 +392,8 @@ export default function PricingPage() {
                 Ready to automate your engagement?
               </h2>
               <p className='text-lg text-muted-foreground mb-8 max-w-xl mx-auto'>
-                Start with 50 free credits. That's 25 basic actions or 12
-                AI-powered replies to test the waters.
+                Start with 100 free credits — enough for ~11 AI-powered replies
+                to test the waters. No credit card needed.
               </p>
               <div className='flex flex-col sm:flex-row items-center justify-center gap-4'>
                 <Button size='lg' className='w-full sm:w-auto' asChild>

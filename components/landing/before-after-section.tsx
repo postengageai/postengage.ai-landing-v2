@@ -258,13 +258,13 @@ export function BeforeAfterSection() {
             <div className='inline-flex items-center gap-2 rounded-full bg-primary/10 border border-primary/20 px-4 py-1.5 text-sm text-primary mb-6'>
               Before vs After
             </div>
-            <h2 className='text-3xl sm:text-4xl font-bold tracking-tight text-balance'>
+            <h2 className='text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-balance leading-[1.1]'>
               Every Instagram tool tells you what happened.{' '}
               <span className='text-primary'>
                 PostEngage shows you what changed.
               </span>
             </h2>
-            <p className='mt-4 text-muted-foreground leading-relaxed'>
+            <p className='mt-5 text-lg text-muted-foreground font-light leading-relaxed'>
               The moment you connect Instagram, PostEngage captures a baseline
               snapshot: your follower count, engagement rate, average reach.
               That&apos;s your &ldquo;before.&rdquo;

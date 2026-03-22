@@ -144,13 +144,13 @@ export function ImpactScoreSection() {
             <div className='inline-flex items-center gap-2 rounded-full bg-primary/10 border border-primary/20 px-4 py-1.5 text-sm text-primary mb-6'>
               Impact Score
             </div>
-            <h2 className='text-3xl sm:text-4xl font-bold tracking-tight text-balance'>
+            <h2 className='text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-balance leading-[1.1]'>
               A number that grows{' '}
               <span className='text-primary'>
                 every day you use PostEngage.
               </span>
             </h2>
-            <p className='mt-4 text-muted-foreground leading-relaxed'>
+            <p className='mt-5 text-lg text-muted-foreground font-light leading-relaxed'>
               Unlike tools that reset their stats monthly, PostEngage shows you
               the cumulative impact from day one. Every lead captured, every
               follower attributed, every hour saved — added to a running total.

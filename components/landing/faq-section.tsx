@@ -87,10 +87,10 @@ export function FAQSection() {
     <section className='py-16 sm:py-24 border-t border-border/50'>
       <div className='mx-auto max-w-3xl px-4 sm:px-6'>
         <div className='text-center mb-12'>
-          <h2 className='text-3xl sm:text-4xl font-bold tracking-tight'>
+          <h2 className='text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight'>
             Frequently asked questions
           </h2>
-          <p className='mt-4 text-muted-foreground'>
+          <p className='mt-4 text-lg text-muted-foreground font-light'>
             Everything you need to know about PostEngage and how it grows your
             Instagram.
           </p>

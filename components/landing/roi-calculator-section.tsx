@@ -85,11 +85,11 @@ export function ROICalculatorSection() {
     <section className='py-16 sm:py-24 bg-secondary/30'>
       <div className='mx-auto max-w-4xl px-4 sm:px-6'>
         <div className='text-center max-w-2xl mx-auto mb-12'>
-          <h2 className='text-3xl sm:text-4xl font-bold tracking-tight'>
+          <h2 className='text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight'>
             How much is your Instagram time{' '}
             <span className='text-primary'>actually worth?</span>
           </h2>
-          <p className='mt-4 text-muted-foreground'>
+          <p className='mt-4 text-lg text-muted-foreground font-light'>
             Adjust the sliders to see your personalised ROI — all calculated
             client-side, no sign-up needed.
           </p>

@@ -34,10 +34,10 @@ export function ProblemSection() {
     <section className='py-16 sm:py-24 border-t border-border'>
       <div className='mx-auto max-w-6xl px-4 sm:px-6'>
         <div className='text-center max-w-2xl mx-auto mb-12'>
-          <h2 className='text-2xl sm:text-3xl font-bold tracking-tight'>
+          <h2 className='text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight'>
             The cost of <span className='text-warning'>silence</span>
           </h2>
-          <p className='mt-3 text-muted-foreground'>
+          <p className='mt-4 text-lg text-muted-foreground font-light'>
             Every comment you ignore sends a signal — to followers and
             algorithms.
           </p>

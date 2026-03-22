@@ -108,7 +108,7 @@ export function SchedulerFeatureSection() {
               <CalendarDays className='h-3.5 w-3.5' />
               Content Scheduler
             </div>
-            <h2 className='text-3xl sm:text-4xl font-bold tracking-tight text-balance'>
+            <h2 className='text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-balance leading-[1.1]'>
               Schedule posts. Then watch them{' '}
               <span className='text-primary'>
                 work — with automation attached.

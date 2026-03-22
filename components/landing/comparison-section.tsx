@@ -48,7 +48,7 @@ const competitors = [
     instagram: true,
     aiReplies: true,
     indianPayments: true,
-    freeTier: '50 credits',
+    freeTier: '100 credits',
     support: 'Priority',
     highlighted: true,
     beforeAfter: true,
@@ -106,7 +106,7 @@ export function ComparisonSection() {
             <Zap className='w-3.5 h-3.5' />
             Why PostEngageAI?
           </div>
-          <h2 className='text-3xl sm:text-4xl font-bold tracking-tight text-balance'>
+          <h2 className='text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-balance leading-[1.1]'>
             Every other Instagram tool tells you what happened.{' '}
             <span className='text-primary'>
               Only PostEngage tells you what it&apos;s worth.

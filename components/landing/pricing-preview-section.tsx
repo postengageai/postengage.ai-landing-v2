@@ -36,10 +36,10 @@ export function PricingPreviewSection() {
             <Zap className='w-3.5 h-3.5' />
             Simple Pricing
           </div>
-          <h2 className='text-3xl sm:text-4xl font-bold tracking-tight text-balance'>
+          <h2 className='text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-balance'>
             Simple, credit-based pricing
           </h2>
-          <p className='mt-4 text-lg text-muted-foreground'>
+          <p className='mt-4 text-lg text-muted-foreground font-light'>
             Pay for what you use. No subscriptions. No surprises.
           </p>
         </div>
@@ -145,7 +145,7 @@ export function PricingPreviewSection() {
         <div className='rounded-2xl border border-border bg-card/50 p-8 mt-6'>
           <div className='grid gap-4 sm:grid-cols-2 lg:grid-cols-3'>
             {[
-              '50 free credits to start',
+              '100 free credits to start',
               'Credits never expire',
               'No monthly commitment',
               'Bulk discounts available',
