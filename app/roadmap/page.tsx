@@ -1,36 +1,143 @@
 import { LandingHeader } from '@/components/landing/landing-header';
 import { LandingFooter } from '@/components/landing/landing-footer';
 import { PageHeader } from '@/components/marketing/page-header';
-import { Circle, CircleDot, CircleDashed } from 'lucide-react';
+import {
+  CircleDot,
+  Circle,
+  CircleDashed,
+  MessageSquareReply,
+  Send,
+  Lock,
+  AudioWaveform,
+  UserCircle,
+  BookOpen,
+  Brain,
+  CalendarClock,
+  Target,
+  BarChart3,
+  CreditCard,
+  Trophy,
+  Users2,
+  Key,
+  Flame,
+  Timer,
+  TrendingUp,
+  Building2,
+  ShieldCheck,
+  Webhook,
+  Filter,
+  LayoutTemplate,
+  Music2,
+  Twitter,
+  Linkedin,
+  MessageCircle,
+  FileBarChart,
+  GitBranch,
+} from 'lucide-react';
 
 export default function RoadmapPage() {
   const roadmapSections = [
     {
       title: 'Now',
-      subtitle: 'Currently available',
+      subtitle: 'Shipped — Available today',
       icon: CircleDot,
       iconColor: 'text-green-500',
       items: [
         {
-          title: 'Instagram Comment Auto-Reply',
-          description: 'AI-powered responses that match your voice.',
-        },
-        {
-          title: 'Instagram Auto DM',
+          title: 'Comment Auto-Reply',
           description:
-            'Trigger-based direct messages for new followers and story mentions.',
+            'Template and AI-powered replies to comments on posts, reels, stories, and live videos.',
+          icon: MessageSquareReply,
         },
         {
-          title: 'Voice Training',
-          description: 'Teach the AI your tone through examples.',
+          title: 'Auto DM',
+          description:
+            'Keyword-triggered direct messages with text, images, and quick replies.',
+          icon: Send,
+        },
+        {
+          title: 'Private Reply',
+          description:
+            'Send private responses to public comments automatically.',
+          icon: Lock,
+        },
+        {
+          title: 'Voice DNA',
+          description:
+            'AI voice cloning trained from your own content samples.',
+          icon: AudioWaveform,
+        },
+        {
+          title: 'Brand Voice Profiles',
+          description:
+            'Create multiple voice personas per account for different contexts.',
+          icon: UserCircle,
+        },
+        {
+          title: 'Knowledge Base',
+          description:
+            'Upload PDFs, URLs, and text to give AI full context about your brand.',
+          icon: BookOpen,
+        },
+        {
+          title: 'Bot Memory',
+          description:
+            'Structured and semantic memory for ongoing conversation context.',
+          icon: Brain,
+        },
+        {
+          title: 'Content Scheduler',
+          description:
+            'Schedule posts with best-time recommendations for maximum reach.',
+          icon: CalendarClock,
+        },
+        {
+          title: 'Lead Capture',
+          description:
+            'Auto-capture leads from comments and DMs with smart tagging.',
+          icon: Target,
+        },
+        {
+          title: 'Analytics Dashboard',
+          description:
+            'Growth charts, impact score, ROI calculator, and performance metrics.',
+          icon: BarChart3,
         },
         {
           title: 'Credit-Based Billing',
-          description: 'Pay only for what you use. No subscriptions.',
+          description:
+            'Razorpay integration with INR and USD support. Pay for what you use.',
+          icon: CreditCard,
         },
         {
-          title: 'Activity Dashboard',
-          description: 'See what PostEngageAI is doing on your behalf.',
+          title: 'Achievements & Milestones',
+          description:
+            'Gamified progress tracking to celebrate your engagement wins.',
+          icon: Trophy,
+        },
+        {
+          title: 'Affiliate Program',
+          description:
+            'Referral links and commission tracking for advocates.',
+          icon: Users2,
+        },
+        {
+          title: 'BYOM Support',
+          description:
+            'Bring your own OpenAI or Anthropic API keys for AI responses.',
+          icon: Key,
+        },
+        {
+          title: 'Hot Leads Detection',
+          description:
+            'Identify high-value conversation threads worth your attention.',
+          icon: Flame,
+        },
+        {
+          title: 'Human-Like Timing',
+          description:
+            'Configurable delays and rate limits so replies feel natural.',
+          icon: Timer,
         },
       ],
     },
@@ -43,19 +150,38 @@ export default function RoadmapPage() {
         {
           title: 'Advanced Analytics',
           description:
-            'Deeper insights into engagement patterns and response effectiveness.',
+            'Deeper intent analysis and conversation quality scoring.',
+          icon: TrendingUp,
+        },
+        {
+          title: 'Multi-Account Management',
+          description:
+            'Manage multiple Instagram accounts from a single dashboard.',
+          icon: Building2,
+        },
+        {
+          title: 'Team Access & Roles',
+          description:
+            'Invite team members with granular permissions and role-based access.',
+          icon: ShieldCheck,
+        },
+        {
+          title: 'API & Webhooks',
+          description:
+            'Developer API for custom integrations and real-time event hooks.',
+          icon: Webhook,
         },
         {
           title: 'Comment Filtering',
-          description: 'Smarter rules for which comments to reply to.',
+          description:
+            'Smart spam and toxicity detection to keep conversations clean.',
+          icon: Filter,
         },
         {
-          title: 'Team Access',
-          description: 'Invite collaborators to manage automations.',
-        },
-        {
-          title: 'API Access',
-          description: 'Programmatic control for power users and agencies.',
+          title: 'Automation Templates',
+          description:
+            'Pre-built automation flows to get started in minutes.',
+          icon: LayoutTemplate,
         },
       ],
     },
@@ -67,19 +193,39 @@ export default function RoadmapPage() {
       items: [
         {
           title: 'TikTok Integration',
-          description: 'Exploring comment automation for TikTok creators.',
+          description:
+            'Extend comment and DM automation to TikTok creators.',
+          icon: Music2,
         },
         {
-          title: 'Twitter/X Support',
-          description: 'Investigating reply automation for Twitter threads.',
+          title: 'Twitter/X Integration',
+          description:
+            'Cross-platform expansion for reply and thread automation.',
+          icon: Twitter,
         },
         {
-          title: 'LinkedIn Engagement',
-          description: 'Considering professional network automation.',
+          title: 'LinkedIn Integration',
+          description:
+            'B2B creator support for professional network engagement.',
+          icon: Linkedin,
         },
         {
-          title: 'Multi-Account Management',
-          description: 'Agency-grade features for managing multiple brands.',
+          title: 'WhatsApp Business Integration',
+          description:
+            'Messaging automation for WhatsApp Business accounts.',
+          icon: MessageCircle,
+        },
+        {
+          title: 'Advanced Reporting',
+          description:
+            'Custom reports, data exports, and white-label analytics.',
+          icon: FileBarChart,
+        },
+        {
+          title: 'AI Conversation Flows',
+          description:
+            'Multi-step conversation automation with branching logic.',
+          icon: GitBranch,
         },
       ],
     },
@@ -95,7 +241,7 @@ export default function RoadmapPage() {
           <PageHeader
             badge='Roadmap'
             title="Where we're headed"
-            description="A transparent look at what we're building. No promises, no deadlines — just honest direction."
+            description="A transparent look at what we've built and what's coming next. No empty promises — just honest direction."
           />
         </section>
 
@@ -127,7 +273,9 @@ export default function RoadmapPage() {
                 <div key={sectionIndex}>
                   {/* Section Header */}
                   <div className='flex items-center gap-3 mb-8'>
-                    <section.icon className={`h-6 w-6 ${section.iconColor}`} />
+                    <section.icon
+                      className={`h-6 w-6 ${section.iconColor}`}
+                    />
                     <div>
                       <h2 className='text-2xl font-bold'>{section.title}</h2>
                       <p className='text-sm text-muted-foreground'>
@@ -149,10 +297,25 @@ export default function RoadmapPage() {
                               : 'border-border bg-card'
                         }`}
                       >
-                        <h3 className='font-semibold mb-2'>{item.title}</h3>
-                        <p className='text-sm text-muted-foreground'>
-                          {item.description}
-                        </p>
+                        <div className='flex items-start gap-3'>
+                          <item.icon
+                            className={`h-5 w-5 mt-0.5 shrink-0 ${
+                              sectionIndex === 0
+                                ? 'text-green-500'
+                                : sectionIndex === 1
+                                  ? 'text-primary'
+                                  : 'text-muted-foreground'
+                            }`}
+                          />
+                          <div>
+                            <h3 className='font-semibold mb-1'>
+                              {item.title}
+                            </h3>
+                            <p className='text-sm text-muted-foreground'>
+                              {item.description}
+                            </p>
+                          </div>
+                        </div>
                       </div>
                     ))}
                   </div>
