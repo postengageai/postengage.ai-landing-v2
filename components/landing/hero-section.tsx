@@ -175,26 +175,28 @@ export function HeroSection() {
           </a>
           <div className='inline-flex items-center gap-2 rounded-full border border-primary/30 bg-primary/5 px-4 py-2 text-sm text-muted-foreground'>
             <TrendingUp className='h-4 w-4 text-primary' />
-            The only Instagram tool that{' '}
-            <span className='font-bold text-foreground'>
-              proves its own ROI
-            </span>
+            No-code Instagram automation —{' '}
+            <span className='font-bold text-foreground'>live in 5 minutes</span>
           </div>
         </div>
 
         <div className='grid lg:grid-cols-2 gap-12 lg:gap-16 items-center'>
           {/* Left: Copy */}
           <div className='text-center lg:text-left'>
-            <h1 className='text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight leading-[1.1]'>
-              <span className='text-muted-foreground'>See your before.</span>
+            <h1 className='text-4xl sm:text-5xl lg:text-[3.5rem] font-extrabold tracking-tight leading-[1.08]'>
+              <span className='text-foreground'>Reply to every comment.</span>
               <br />
-              <span className='text-foreground'>See your after.</span>
+              <span className='text-foreground'>Capture every lead.</span>
+              <br />
+              <span className='bg-gradient-to-r from-primary to-primary/70 bg-clip-text text-transparent'>
+                On autopilot.
+              </span>
             </h1>
 
-            <p className='mt-6 text-lg sm:text-xl text-muted-foreground max-w-lg mx-auto lg:mx-0'>
-              Connect your Instagram. PostEngage captures your starting point.
-              Then it shows you — in real numbers — every way it&apos;s growing
-              your account.
+            <p className='mt-6 text-lg text-muted-foreground max-w-lg mx-auto lg:mx-0 leading-relaxed'>
+              The fastest Instagram automation for Indian creators. Auto-reply
+              to comments and DMs, capture leads, and track real growth — setup
+              takes 5 minutes, no code needed.
             </p>
 
             <div className='mt-8 flex flex-col sm:flex-row items-center gap-4 justify-center lg:justify-start'>
@@ -204,18 +206,18 @@ export function HeroSection() {
                 asChild
               >
                 <Link href={`${APP_URL}/signup`}>
-                  Start tracking your growth
+                  Start free — no card needed
                   <ArrowRight className='ml-2 h-4 w-4' />
                 </Link>
               </Button>
               <span className='text-sm text-muted-foreground'>
-                Free forever for basic actions · No credit card · Connects in 60
-                seconds
+                Free forever for basic actions · 60-second setup
               </span>
             </div>
 
             <p className='mt-3 text-xs text-muted-foreground/70 text-center lg:text-left'>
-              Baseline captured the moment you connect. Your before starts now.
+              Trusted by 8,200+ creators · 1.2M+ replies sent · ₹4.2Cr+ value
+              delivered
             </p>
 
             {/* Social proof strip */}
@@ -238,13 +240,13 @@ export function HeroSection() {
                   ))}
                 </div>
                 <div className='text-sm'>
-                  <span className='font-semibold text-foreground'>2,400+</span>
+                  <span className='font-semibold text-foreground'>8,200+</span>
                   <span className='text-muted-foreground'>
                     {' '}
-                    creators tracking{' '}
+                    creators automating{' '}
                   </span>
                   <span className='font-semibold text-foreground'>
-                    their Instagram growth
+                    their Instagram engagement
                   </span>
                 </div>
               </div>

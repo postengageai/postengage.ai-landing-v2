@@ -1,6 +1,5 @@
 import { LandingHeader } from '@/components/landing/landing-header';
 import { HeroSection } from '@/components/landing/hero-section';
-import { SocialProofSection } from '@/components/landing/social-proof-section';
 import { BeforeAfterSection } from '@/components/landing/before-after-section';
 import { ImpactScoreSection } from '@/components/landing/impact-score-section';
 import { ProblemSection } from '@/components/landing/problem-section';
@@ -8,7 +7,6 @@ import { SolutionSection } from '@/components/landing/solution-section';
 import { HowItWorksSection } from '@/components/landing/how-it-works-section';
 import { SchedulerFeatureSection } from '@/components/landing/scheduler-feature-section';
 import { FeaturesSection } from '@/components/landing/features-section';
-import { TestimonialsSection } from '@/components/landing/testimonials-section';
 import { ComparisonSection } from '@/components/landing/comparison-section';
 import { ROICalculatorSection } from '@/components/landing/roi-calculator-section';
 import { MilestoneTicker } from '@/components/landing/milestone-ticker';
@@ -77,9 +75,6 @@ export default function LandingPage() {
           {/* Hook: Outcome-first hero with animated Impact mockup */}
           <HeroSection />
 
-          {/* Trust: Quick brand validation */}
-          <SocialProofSection />
-
           {/* Value: Before vs After growth chart */}
           <BeforeAfterSection />
 
@@ -100,9 +95,6 @@ export default function LandingPage() {
 
           {/* Reassurance: Control, speed, analytics */}
           <FeaturesSection />
-
-          {/* Proof: Real results — metrics first */}
-          <TestimonialsSection />
 
           {/* Live feed: Real milestone events */}
           <MilestoneTicker />
