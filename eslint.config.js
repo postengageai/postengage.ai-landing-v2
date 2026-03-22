@@ -24,11 +24,12 @@ export default [
       '*.min.js',
       '*.min.css',
       '*.bundle.js',
+      'next-env.d.ts',
     ],
   },
   js.configs.recommended,
   {
-    files: ['**/*.{js,jsx,ts,tsx}'],
+    files: ['**/*.{js,jsx,mjs,ts,tsx}'],
     languageOptions: {
       parser: typescriptParser,
       ecmaVersion: 2022,
@@ -86,6 +87,12 @@ export default [
     rules: {
       ...next.configs.recommended.rules,
       ...next.configs['core-web-vitals'].rules,
+    },
+  },
+  {
+    files: ['scripts/**/*.{js,mjs,ts}'],
+    rules: {
+      'no-console': 'off',
     },
   },
 ];

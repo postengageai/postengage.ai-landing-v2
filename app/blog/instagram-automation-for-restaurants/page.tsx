@@ -8,7 +8,6 @@ import {
   Calendar,
   UserPlus,
   Clock,
-  Zap,
   UtensilsCrossed,
   MessageCircle,
 } from 'lucide-react';

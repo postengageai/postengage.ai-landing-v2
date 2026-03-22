@@ -24,12 +24,12 @@ function getBlogSlugs() {
   return output
     .trim()
     .split('\n')
-    .map((line) => {
+    .map(line => {
       // app/blog/some-slug/page.tsx -> some-slug
       const match = line.match(/^app\/blog\/([^/]+)\/page\.tsx$/);
       return match ? match[1] : null;
     })
-    .filter((s) => s && s !== '[slug]');
+    .filter(s => s && s !== '[slug]');
 }
 
 // Read a file from the feature/blog branch
@@ -61,9 +61,7 @@ function extractMetadata(source, slug) {
 
   // Multi-line title (template literals or concatenation)
   if (!meta.title) {
-    const multiTitle = source.match(
-      /title:\s*\n\s*['"`](.+?)['"`],?\s*\n/s
-    );
+    const multiTitle = source.match(/title:\s*\n\s*['"`](.+?)['"`],?\s*\n/s);
     if (multiTitle) meta.title = multiTitle[1].replace(/\s+/g, ' ').trim();
   }
 
@@ -77,21 +75,16 @@ function extractMetadata(source, slug) {
     const multiDesc = source.match(
       /description:\s*\n\s*['"`](.+?)['"`],?\s*\n/s
     );
-    if (multiDesc)
-      meta.description = multiDesc[1].replace(/\s+/g, ' ').trim();
+    if (multiDesc) meta.description = multiDesc[1].replace(/\s+/g, ' ').trim();
   }
 
   // Extract publishedTime / date
-  const dateMatch = source.match(
-    /publishedTime:\s*['"`]([^'"`]+)['"`]/
-  );
+  const dateMatch = source.match(/publishedTime:\s*['"`]([^'"`]+)['"`]/);
   if (dateMatch) meta.date = dateMatch[1];
 
   // Fallback: extract from publishDate variable
   if (!meta.date) {
-    const pubDate = source.match(
-      /publishDate\s*=\s*['"`]([^'"`]+)['"`]/
-    );
+    const pubDate = source.match(/publishDate\s*=\s*['"`]([^'"`]+)['"`]/);
     if (pubDate) {
       try {
         const d = new Date(pubDate[1]);
@@ -111,13 +104,10 @@ function extractMetadata(source, slug) {
   if (badgeMatch) meta.category = badgeMatch[1].trim();
 
   // Extract image
-  const imgMatch = source.match(
-    /src=['"`]([^'"`]*blog[^'"`]*)['"`]/
-  );
+  const imgMatch = source.match(/src=['"`]([^'"`]*blog[^'"`]*)['"`]/);
   if (imgMatch) meta.image = imgMatch[1];
 
   // Derive tags from slug and category
-  const slugParts = slug.split('-');
   const tagSet = new Set();
   if (slug.includes('instagram')) tagSet.add('Instagram');
   if (slug.includes('automation')) tagSet.add('Automation');
@@ -131,8 +121,7 @@ function extractMetadata(source, slug) {
   if (slug.includes('brand')) tagSet.add('Branding');
   if (slug.includes('content')) tagSet.add('Content Strategy');
   if (slug.includes('analytics')) tagSet.add('Analytics');
-  if (slug.includes('story') || slug.includes('stories'))
-    tagSet.add('Stories');
+  if (slug.includes('story') || slug.includes('stories')) tagSet.add('Stories');
   if (slug.includes('reel') || slug.includes('reels')) tagSet.add('Reels');
   if (slug.includes('comment')) tagSet.add('Comments');
   if (slug.includes('lead')) tagSet.add('Lead Generation');
@@ -161,9 +150,7 @@ function jsxToMarkdown(source) {
     content = proseMatch[1];
   } else {
     // Fallback: get everything between article tags
-    const articleMatch = content.match(
-      /<article[^>]*>([\s\S]*?)<\/article>/
-    );
+    const articleMatch = content.match(/<article[^>]*>([\s\S]*?)<\/article>/);
     if (articleMatch) content = articleMatch[1];
   }
 
@@ -184,9 +171,12 @@ function jsxToMarkdown(source) {
   });
 
   // Convert h2 with id
-  md = md.replace(/<h2[^>]*?(?:id=['"`]([^'"`]*)['"`])?[^>]*>([\s\S]*?)<\/h2>/g, (_, id, text) => {
-    return `## ${cleanText(text)}\n\n`;
-  });
+  md = md.replace(
+    /<h2[^>]*?(?:id=['"`]([^'"`]*)['"`])?[^>]*>([\s\S]*?)<\/h2>/g,
+    (_, id, text) => {
+      return `## ${cleanText(text)}\n\n`;
+    }
+  );
 
   // Convert h3
   md = md.replace(/<h3[^>]*>([\s\S]*?)<\/h3>/g, (_, text) => {
@@ -248,16 +238,21 @@ function jsxToMarkdown(source) {
 
   // Convert blockquotes
   md = md.replace(/<blockquote[^>]*>([\s\S]*?)<\/blockquote>/g, (_, text) => {
-    return cleanText(text)
-      .split('\n')
-      .map((l) => `> ${l}`)
-      .join('\n') + '\n\n';
+    return (
+      cleanText(text)
+        .split('\n')
+        .map(l => `> ${l}`)
+        .join('\n') + '\n\n'
+    );
   });
 
   // Convert code blocks
-  md = md.replace(/<pre[^>]*><code[^>]*>([\s\S]*?)<\/code><\/pre>/g, (_, code) => {
-    return `\`\`\`\n${decodeHtml(code.trim())}\n\`\`\`\n\n`;
-  });
+  md = md.replace(
+    /<pre[^>]*><code[^>]*>([\s\S]*?)<\/code><\/pre>/g,
+    (_, code) => {
+      return `\`\`\`\n${decodeHtml(code.trim())}\n\`\`\`\n\n`;
+    }
+  );
 
   // Convert inline code
   md = md.replace(/<code[^>]*>([\s\S]*?)<\/code>/g, '`$1`');
@@ -334,7 +329,7 @@ function generateMDX(meta, markdownContent) {
     'author:',
     `  name: "${meta.author}"`,
     'tags:',
-    ...meta.tags.map((t) => `  - "${t}"`),
+    ...meta.tags.map(t => `  - "${t}"`),
     `category: "${meta.category}"`,
   ];
 
@@ -361,8 +356,8 @@ async function main() {
   const existing = new Set(
     fs
       .readdirSync(CONTENT_DIR)
-      .filter((f) => f.endsWith('.mdx'))
-      .map((f) => f.replace('.mdx', ''))
+      .filter(f => f.endsWith('.mdx'))
+      .map(f => f.replace('.mdx', ''))
   );
 
   let converted = 0;
@@ -372,7 +367,14 @@ async function main() {
 
   for (const slug of slugs) {
     // Skip only the 3 original hand-written MDX files
-    if (existing.has(slug) && ['ai-voice-matching-instagram', 'instagram-engagement-automation-2026', 'measure-instagram-roi-before-after'].includes(slug)) {
+    if (
+      existing.has(slug) &&
+      [
+        'ai-voice-matching-instagram',
+        'instagram-engagement-automation-2026',
+        'measure-instagram-roi-before-after',
+      ].includes(slug)
+    ) {
       console.log(`⏭️  Skipping ${slug} (original MDX)`);
       skipped++;
       continue;
@@ -396,7 +398,7 @@ async function main() {
         console.log(`⚠️  No title found for ${slug}, using slug`);
         meta.title = slug
           .split('-')
-          .map((w) => w.charAt(0).toUpperCase() + w.slice(1))
+          .map(w => w.charAt(0).toUpperCase() + w.slice(1))
           .join(' ');
       }
 
@@ -404,7 +406,9 @@ async function main() {
       const outPath = path.join(CONTENT_DIR, `${slug}.mdx`);
 
       if (DRY_RUN) {
-        console.log(`[DRY RUN] Would write: ${outPath} (${mdxContent.length} chars)`);
+        console.log(
+          `[DRY RUN] Would write: ${outPath} (${mdxContent.length} chars)`
+        );
       } else {
         fs.writeFileSync(outPath, mdxContent, 'utf-8');
         console.log(`✅ ${slug}.mdx (${mdxContent.length} chars)`);
@@ -423,7 +427,7 @@ async function main() {
   console.log(`❌ Failed: ${failed}`);
   if (errors.length > 0) {
     console.log(`\nFailed slugs:`);
-    errors.forEach((s) => console.log(`  - ${s}`));
+    errors.forEach(s => console.log(`  - ${s}`));
   }
   console.log(`\nMDX files saved to: ${CONTENT_DIR}`);
 }
