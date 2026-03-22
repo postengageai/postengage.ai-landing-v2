@@ -21,12 +21,12 @@ import { Skeleton } from '@/components/ui/skeleton';
 import { APP_URL } from '@/lib/constants';
 
 const DEFAULT_COSTS = {
-  REPLY_COMMENT: 2,
-  AI_REPLY_COMMENT: 4,
-  SEND_DM: 2,
-  AI_SEND_DM: 4,
-  PRIVATE_REPLY: 2,
-  AI_PRIVATE_REPLY: 4,
+  REPLY_COMMENT: 0,
+  AI_REPLY_COMMENT: 9,
+  SEND_DM: 0,
+  AI_SEND_DM: 19,
+  PRIVATE_REPLY: 0,
+  AI_PRIVATE_REPLY: 13,
 };
 
 export default function PricingPage() {
@@ -64,7 +64,7 @@ export default function PricingPage() {
     },
     {
       q: "What's the difference between basic and AI actions?",
-      a: `Basic actions (reply/DM with templates) cost ${costs.REPLY_COMMENT} credits. AI-powered personalized replies cost ${costs.AI_REPLY_COMMENT} credits.`,
+      a: `Basic actions (reply/DM with templates) are always free. AI-powered personalized replies cost ${costs.AI_REPLY_COMMENT}–${costs.AI_SEND_DM} credits depending on context depth.`,
     },
     {
       q: 'Can I get a refund?',
@@ -125,35 +125,29 @@ export default function PricingPage() {
 
               <div className='grid gap-4 sm:grid-cols-2'>
                 {/* Basic Actions */}
-                <div className='rounded-xl border border-border bg-background/50 p-5'>
-                  <h3 className='font-medium mb-4 flex items-center gap-2'>
-                    <MessageCircle className='w-4 h-4 text-muted-foreground' />
-                    Basic Actions
+                <div className='rounded-xl border border-success/30 bg-success/5 p-5'>
+                  <h3 className='font-medium mb-4 flex items-center gap-2 text-success'>
+                    <MessageCircle className='w-4 h-4' />
+                    Basic Actions — Free Forever
                   </h3>
                   <div className='space-y-3'>
                     <div className='flex items-center justify-between'>
                       <span className='text-sm text-muted-foreground'>
                         Comment Reply
                       </span>
-                      <span className='font-semibold'>
-                        {costs.REPLY_COMMENT} credits
-                      </span>
+                      <span className='font-semibold text-success'>Free</span>
                     </div>
                     <div className='flex items-center justify-between'>
                       <span className='text-sm text-muted-foreground'>
                         Private Reply (DM)
                       </span>
-                      <span className='font-semibold'>
-                        {costs.PRIVATE_REPLY} credits
-                      </span>
+                      <span className='font-semibold text-success'>Free</span>
                     </div>
                     <div className='flex items-center justify-between'>
                       <span className='text-sm text-muted-foreground'>
                         Auto DM
                       </span>
-                      <span className='font-semibold'>
-                        {costs.SEND_DM} credits
-                      </span>
+                      <span className='font-semibold text-success'>Free</span>
                     </div>
                   </div>
                 </div>
@@ -194,8 +188,8 @@ export default function PricingPage() {
               </div>
 
               <p className='text-sm text-muted-foreground mt-6 text-center'>
-                AI actions cost +2 credits more because they use advanced
-                language models to personalize each reply
+                Basic actions are always free. AI credits cover language model
+                costs for personalized, voice-matched replies
               </p>
             </div>
           </div>

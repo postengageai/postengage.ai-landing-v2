@@ -15,12 +15,12 @@ import { usePricing } from '@/hooks/use-pricing';
 import { PricingCard } from '@/components/pricing/pricing-card';
 import { Skeleton } from '@/components/ui/skeleton';
 
-// Fallback costs if loading
+// Fallback costs — must match backend credit-pricing.config.ts
 const DEFAULT_COSTS = {
-  REPLY_COMMENT: 2,
-  AI_REPLY_COMMENT: 4,
-  SEND_DM: 2,
-  AI_SEND_DM: 4,
+  REPLY_COMMENT: 0,
+  AI_REPLY_COMMENT: 9,
+  SEND_DM: 0,
+  AI_SEND_DM: 19,
 };
 
 export function PricingPreviewSection() {
@@ -61,16 +61,16 @@ export function PricingPreviewSection() {
 
             <div className='grid gap-4 sm:grid-cols-2 lg:grid-cols-4'>
               {/* Basic Reply */}
-              <div className='flex items-center gap-4 rounded-xl border border-border bg-background/50 px-4 py-3'>
-                <div className='w-9 h-9 rounded-lg bg-muted flex items-center justify-center shrink-0'>
-                  <MessageCircle className='w-4 h-4 text-muted-foreground' />
+              <div className='flex items-center gap-4 rounded-xl border border-success/30 bg-success/5 px-4 py-3'>
+                <div className='w-9 h-9 rounded-lg bg-success/10 flex items-center justify-center shrink-0'>
+                  <MessageCircle className='w-4 h-4 text-success' />
                 </div>
                 <div className='min-w-0'>
                   <div className='text-sm font-medium truncate'>
                     Comment Reply
                   </div>
-                  <div className='text-xs text-muted-foreground'>
-                    {costs.REPLY_COMMENT} credits
+                  <div className='text-xs font-semibold text-success'>
+                    Free forever
                   </div>
                 </div>
               </div>
@@ -89,14 +89,14 @@ export function PricingPreviewSection() {
               </div>
 
               {/* Basic DM */}
-              <div className='flex items-center gap-4 rounded-xl border border-border bg-background/50 px-4 py-3'>
-                <div className='w-9 h-9 rounded-lg bg-muted flex items-center justify-center shrink-0'>
-                  <Send className='w-4 h-4 text-muted-foreground' />
+              <div className='flex items-center gap-4 rounded-xl border border-success/30 bg-success/5 px-4 py-3'>
+                <div className='w-9 h-9 rounded-lg bg-success/10 flex items-center justify-center shrink-0'>
+                  <Send className='w-4 h-4 text-success' />
                 </div>
                 <div className='min-w-0'>
                   <div className='text-sm font-medium truncate'>Auto DM</div>
-                  <div className='text-xs text-muted-foreground'>
-                    {costs.SEND_DM} credits
+                  <div className='text-xs font-semibold text-success'>
+                    Free forever
                   </div>
                 </div>
               </div>
