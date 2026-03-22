@@ -5,6 +5,7 @@ import { Analytics } from '@vercel/analytics/next';
 import { Providers } from '@/components/providers';
 import './globals.css';
 import { ScrollToTop } from '@/components/scroll-to-top';
+import { MetaPixel } from '@/components/analytics/meta-pixel';
 
 const inter = Inter({ subsets: ['latin'], variable: '--font-inter' });
 const jetbrainsMono = JetBrains_Mono({
@@ -91,6 +92,7 @@ export default function RootLayout({
         <ScrollToTop />
         <Providers>{children}</Providers>
         <Analytics />
+        <MetaPixel />
       </body>
     </html>
   );
