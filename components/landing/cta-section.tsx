@@ -64,7 +64,8 @@ export function CTASection() {
                 </Link>
               </Button>
               <span className='text-sm text-muted-foreground'>
-                Free 14-day trial · No credit card · Connects in 60 seconds
+                Free forever for basic actions · No credit card · Connects in 60
+                seconds
               </span>
             </div>
           </div>

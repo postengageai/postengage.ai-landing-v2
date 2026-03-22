@@ -32,8 +32,8 @@ const FAQS = [
     a: 'Yes — PostEngage is built exclusively for Instagram. It connects via the official Instagram API, meaning your account is safe and compliant. You can automate comment replies, DMs, and story replies.',
   },
   {
-    q: 'Is there a free trial?',
-    a: 'Yes. You get a 14-day free trial with no credit card required. You can connect your Instagram, run your first automations, and see your baseline captured — all before spending anything.',
+    q: 'Is PostEngage free to use?',
+    a: 'Yes — PostEngage has a free plan, forever. Core automation actions like replying to comments, sending private DMs, and replying to DMs with fixed text are always free with no time limit. AI-powered responses (where PostEngage writes a personalised reply using AI) consume credits. No credit card required to start.',
   },
   {
     q: 'How quickly does PostEngage reply to comments?',

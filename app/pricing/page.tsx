@@ -75,8 +75,8 @@ export default function PricingPage() {
       a: "Automations pause until you add more. You'll get a notification before running low.",
     },
     {
-      q: 'Is there a free trial?',
-      a: 'Yes! New accounts get 50 free credits to test the service - enough for 25 basic actions or 12 AI actions.',
+      q: 'Is PostEngage free to use?',
+      a: 'Yes — core automation actions (comment replies, private DMs, fixed-text DM replies) are always free with no time limit. AI-powered responses that generate personalised replies consume credits. New accounts also get 50 free credits to try AI features — no credit card required.',
     },
     {
       q: 'Do you support UPI / Indian payments?',
