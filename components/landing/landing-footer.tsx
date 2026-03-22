@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { Zap } from 'lucide-react';
+import { AppLogo } from '@/components/app/app-logo';
 
 export function LandingFooter() {
   const footerLinks = {
@@ -27,14 +27,7 @@ export function LandingFooter() {
         <div className='grid gap-8 md:grid-cols-2 lg:grid-cols-5'>
           {/* Brand */}
           <div className='lg:col-span-2'>
-            <Link href='/' className='flex items-center gap-2'>
-              <div className='flex h-8 w-8 items-center justify-center rounded-lg bg-primary'>
-                <Zap className='h-4 w-4 text-primary-foreground' />
-              </div>
-              <span className='text-lg font-semibold tracking-tight'>
-                PostEngageAI
-              </span>
-            </Link>
+            <AppLogo height={28} />
             <p className='mt-4 max-w-xs text-sm text-muted-foreground'>
               AI-powered Instagram engagement that sounds like you. Your voice,
               amplified — while you sleep.
