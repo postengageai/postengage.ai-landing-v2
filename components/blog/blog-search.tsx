@@ -3,7 +3,7 @@
 import { useState, useMemo } from 'react';
 import { Search } from 'lucide-react';
 import { BlogCard } from './blog-card';
-import type { BlogPostMeta } from '@/lib/blog';
+import type { BlogPostMeta } from '@/lib/types';
 
 export function BlogSearch({
   posts,

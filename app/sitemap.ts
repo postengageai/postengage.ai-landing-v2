@@ -1,7 +1,6 @@
 import { MetadataRoute } from 'next';
 import fs from 'fs';
 import path from 'path';
-import { getAllPosts } from '@/lib/blog';
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = 'https://postengage.ai';
@@ -54,14 +53,5 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: route === '' ? 1 : highPriority.includes(route) ? 0.9 : 0.8,
   }));
 
-  // Blog post entries — high priority for search engines
-  const blogPosts = getAllPosts();
-  const blogEntries: MetadataRoute.Sitemap = blogPosts.map(post => ({
-    url: `${baseUrl}/blog/${post.slug}`,
-    lastModified: new Date(post.date),
-    changeFrequency: 'weekly',
-    priority: 0.8,
-  }));
-
-  return [...staticEntries, ...blogEntries];
+  return staticEntries;
 }
