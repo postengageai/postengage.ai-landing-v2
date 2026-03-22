@@ -18,13 +18,14 @@ const competitors = [
     pricing: '$6+/mo',
     pricingType: 'subscription',
     instagram: true,
-    aiReplies: false,
+    aiReplies: 'Limited',
+    voiceDna: false,
     indianPayments: false,
     freeTier: 'Limited',
     support: 'Email only',
     beforeAfter: false,
     impactScore: false,
-    timeSavedDollars: false,
+    creditBased: false,
     scheduler: true,
   },
   {
@@ -32,14 +33,15 @@ const competitors = [
     pricing: '$15+/mo',
     pricingType: 'subscription',
     instagram: true,
-    aiReplies: false,
+    aiReplies: 'Basic',
+    voiceDna: false,
     indianPayments: false,
     freeTier: 'Limited',
     support: 'Email only',
     beforeAfter: false,
     impactScore: false,
-    timeSavedDollars: false,
-    scheduler: false,
+    creditBased: false,
+    scheduler: true,
   },
   {
     name: 'PostEngageAI',
@@ -47,13 +49,14 @@ const competitors = [
     pricingType: 'credits',
     instagram: true,
     aiReplies: true,
+    voiceDna: true,
     indianPayments: true,
     freeTier: '100 credits',
     support: 'Priority',
     highlighted: true,
     beforeAfter: true,
     impactScore: true,
-    timeSavedDollars: true,
+    creditBased: true,
     scheduler: true,
   },
 ];
@@ -113,9 +116,8 @@ export function ComparisonSection() {
             </span>
           </h2>
           <p className='mt-4 text-lg text-muted-foreground'>
-            ManyChat counts messages. Buffer counts posts. Neither shows you
-            whether any of it is growing your business. PostEngage was built
-            around one question:{' '}
+            Buffer and ManyChat are great tools, but they weren&apos;t built for
+            Indian creators. PostEngage was built around one question:{' '}
             <strong className='text-foreground'>Is it worth it?</strong>
           </p>
         </div>
@@ -196,9 +198,32 @@ export function ComparisonSection() {
                   {competitors.map(c => (
                     <td
                       key={c.name}
+                      className={`px-4 py-4 text-center text-sm ${c.highlighted ? 'bg-primary/5' : ''}`}
+                    >
+                      {c.aiReplies === true ? (
+                        <Check className='w-5 h-5 text-success mx-auto' />
+                      ) : typeof c.aiReplies === 'string' ? (
+                        <span className='text-muted-foreground'>
+                          {c.aiReplies}
+                        </span>
+                      ) : (
+                        <X className='w-5 h-5 text-muted-foreground mx-auto' />
+                      )}
+                    </td>
+                  ))}
+                </tr>
+
+                {/* Voice DNA Row */}
+                <tr className='border-t border-border'>
+                  <td className='px-6 py-4 text-sm font-medium'>
+                    Voice DNA (learns your tone)
+                  </td>
+                  {competitors.map(c => (
+                    <td
+                      key={c.name}
                       className={`px-4 py-4 text-center ${c.highlighted ? 'bg-primary/5' : ''}`}
                     >
-                      {c.aiReplies ? (
+                      {c.voiceDna ? (
                         <Check className='w-5 h-5 text-success mx-auto' />
                       ) : (
                         <X className='w-5 h-5 text-muted-foreground mx-auto' />
@@ -285,17 +310,17 @@ export function ComparisonSection() {
                   ))}
                 </tr>
 
-                {/* Time saved Row */}
+                {/* Credit-based pricing Row */}
                 <tr className='border-t border-border'>
                   <td className='px-6 py-4 text-sm font-medium'>
-                    Time saved in dollars
+                    Credit-based pricing (no subscription)
                   </td>
                   {competitors.map(c => (
                     <td
                       key={c.name}
                       className={`px-4 py-4 text-center ${c.highlighted ? 'bg-primary/5' : ''}`}
                     >
-                      {c.timeSavedDollars ? (
+                      {c.creditBased ? (
                         <Check className='w-5 h-5 text-success mx-auto' />
                       ) : (
                         <X className='w-5 h-5 text-muted-foreground mx-auto' />

@@ -1,0 +1,48 @@
+# PostEngage.ai
+
+> PostEngage is an Instagram automation platform that automates DMs, comment replies, and story responses using AI voice adaptation — and tracks its own ROI with before/after analytics.
+
+## What PostEngage Does
+
+PostEngage automates Instagram engagement:
+- **Auto DM Responses**: AI-powered direct message replies that match your brand voice
+- **Comment Automation**: Automatically respond to comments with contextual, personalized replies
+- **Story Reply Automation**: Engage with story mentions and replies instantly
+- **AI Voice Adaptation**: Learns your tone and writing style for authentic responses
+- **ROI Dashboard**: Before vs after metrics showing follower growth, leads captured, and time saved
+- **Post Scheduling**: Schedule and manage Instagram content
+- **Lead Capture**: Convert engagement into leads with automated funnels
+- **Analytics**: Deep insights into engagement, growth, and conversion metrics
+
+## Key Pages
+
+- Homepage: https://postengage.ai
+- Pricing: https://postengage.ai/pricing
+- Features: https://postengage.ai/features
+- Blog: https://postengage.ai/blog
+- About: https://postengage.ai/about
+- Contact: https://postengage.ai/contact
+
+## Blog Topics
+
+The PostEngage blog covers 350+ articles on:
+- Instagram automation strategies and guides
+- AI-powered engagement and DM automation
+- Social media growth and analytics
+- E-commerce and lead generation on Instagram
+- Industry-specific Instagram strategies (SaaS, real estate, fitness, beauty, etc.)
+- Content strategy and scheduling
+- Compliance and best practices
+
+## API & Integrations
+
+PostEngage integrates with Instagram's official API and supports:
+- Instagram Business and Creator accounts
+- Webhook-based real-time engagement
+- CRM and email marketing integrations
+
+## Company
+
+- Website: https://postengage.ai
+- Blog RSS: https://postengage.ai/feed.xml
+- Sitemap: https://postengage.ai/sitemap.xml

@@ -1,0 +1,297 @@
+import { LandingHeader } from '@/components/landing/landing-header';
+import { LandingFooter } from '@/components/landing/landing-footer';
+import { ArrowLeft, Dumbbell, UserPlus, Trophy } from 'lucide-react';
+import Link from 'next/link';
+import { Button } from '@/components/ui/button';
+import { Card, CardContent } from '@/components/ui/card';
+import { Badge } from '@/components/ui/badge';
+import { Metadata } from 'next';
+import { TableOfContents } from '@/components/blog/table-of-contents';
+import { SocialShareButtons } from '@/components/blog/social-share-buttons';
+import { NewsletterForm } from '@/components/blog/newsletter-form';
+import { ArticleJsonLd } from '@/components/blog/article-jsonld';
+import { BlogJsonLd } from '@/components/blog/blog-json-ld';
+
+export const metadata: Metadata = {
+  title: 'Gym & Fitness Automation: How to Fill Classes on Autopilot',
+  description:
+    'Stop relying on walk-ins. Learn how gyms and fitness studios are using Instagram DM automation to book trials and sell memberships 24/7.',
+  openGraph: {
+    title: 'Gym & Fitness Automation: How to Fill Classes on Autopilot',
+    description:
+      'Stop relying on walk-ins. Learn how gyms and fitness studios are using Instagram DM automation to book trials and sell memberships 24/7.',
+    url: 'https://postengage.ai/blog/fitness-studio-membership-automation',
+    siteName: 'PostEngage.ai',
+    locale: 'en_US',
+    type: 'article',
+    publishedTime: '2026-03-30T00:00:00.000Z',
+    authors: ['PostEngage Team'],
+    images: [
+      {
+        url: 'https://postengage.ai/blog/fitness-automation-cover.png',
+        width: 1200,
+        height: 630,
+        alt: 'Fitness Studio Automation',
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Gym & Fitness Automation: How to Fill Classes on Autopilot',
+    description:
+      'Stop relying on walk-ins. Learn how gyms and fitness studios are using Instagram DM automation to book trials and sell memberships 24/7.',
+    images: ['https://postengage.ai/blog/fitness-automation-cover.png'],
+  },
+};
+
+export default function BlogPostPage() {
+  const jsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'BlogPosting',
+    headline: 'Gym & Fitness Automation: How to Fill Classes on Autopilot',
+    image: 'https://postengage.ai/blog/fitness-automation-cover.png',
+    datePublished: '2026-03-30T00:00:00.000Z',
+    dateModified: '2026-03-30T00:00:00.000Z',
+    author: {
+      '@type': 'Organization',
+      name: 'PostEngage Team',
+      url: 'https://postengage.ai',
+    },
+    publisher: {
+      '@type': 'Organization',
+      name: 'PostEngage.ai',
+      logo: {
+        '@type': 'ImageObject',
+        url: 'https://postengage.ai/logo.png',
+      },
+    },
+    description:
+      'Stop relying on walk-ins. Learn how gyms and fitness studios are using Instagram DM automation to book trials and sell memberships 24/7.',
+  };
+
+  return (
+    <div className='min-h-screen bg-background text-foreground font-sans selection:bg-primary/20'>
+      <ArticleJsonLd
+        title='Gym & Fitness Automation: How to Fill Classes on Autopilot'
+        description='Stop relying on walk-ins. Learn how gyms and fitness studios are using Instagram DM automation to book trials and sell memberships 24/7.'
+        slug='fitness-studio-membership-automation'
+        datePublished='2026-03-30T00:00:00.000Z'
+        category='Local Business'
+      />
+
+      <script
+        type='application/ld+json'
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
+      <LandingHeader />
+
+      <main className='pt-32 pb-20'>
+        <BlogJsonLd
+          title='Gym & Fitness Automation: How to Fill Classes on Autopilot'
+          description='Stop relying on walk-ins. Learn how gyms and fitness studios are using Instagram DM automation to book trials and sell memberships 24/7.'
+          slug='fitness-studio-membership-automation'
+          date='2026-03-30T00:00:00.000Z'
+          category='Local Business'
+        />
+        <article className='container mx-auto px-4 sm:px-6 max-w-7xl'>
+          {/* Breadcrumb & Navigation */}
+          <div className='mb-8 flex items-center gap-2 text-sm text-muted-foreground'>
+            <Link
+              href='/blog'
+              className='hover:text-primary transition-colors flex items-center gap-1'
+            >
+              <ArrowLeft className='w-4 h-4' />
+              Back to Blog
+            </Link>
+            <span>/</span>
+            <span className='text-foreground font-medium'>
+              Fitness Automation
+            </span>
+          </div>
+
+          <div className='grid grid-cols-1 lg:grid-cols-12 gap-12'>
+            {/* Main Content */}
+            <div className='lg:col-span-8'>
+              {/* Header */}
+              <header className='mb-12'>
+                <div className='flex items-center gap-3 mb-6'>
+                  <Badge variant='secondary' className='rounded-full px-4 py-1'>
+                    Local Business
+                  </Badge>
+                  <span className='text-sm text-muted-foreground'>
+                    Mar 30, 2026 • 5 min read
+                  </span>
+                </div>
+                <h1 className='mb-6 text-4xl font-extrabold tracking-tight sm:text-5xl lg:text-6xl bg-gradient-to-r from-foreground via-foreground/90 to-muted-foreground bg-clip-text text-transparent'>
+                  Gym & Fitness Automation: How to Fill Classes on Autopilot
+                </h1>
+                <p className='text-xl text-muted-foreground leading-relaxed border-l-4 border-primary/20 pl-6 italic'>
+                  Your front desk is busy. You miss calls. You miss DMs. And you
+                  lose members. It's time to automate the member acquisition
+                  flow.
+                </p>
+              </header>
+
+              <div className='relative mx-auto mb-16 aspect-[21/9] max-w-5xl overflow-hidden rounded-2xl border shadow-sm bg-gradient-to-br from-primary/20 via-primary/10 to-muted/20'>
+                <div className='absolute inset-0 flex flex-col items-center justify-center gap-4'>
+                  <div className='flex h-16 w-16 items-center justify-center rounded-2xl bg-background/60 border border-border/40 shadow-inner'>
+                    <Dumbbell className='h-8 w-8 text-primary/70' />
+                  </div>
+                  <div className='flex items-center gap-2'>
+                    <div className='h-1.5 w-1.5 rounded-full bg-primary/40' />
+                    <div className='h-1.5 w-12 rounded-full bg-primary/20' />
+                    <div className='h-1.5 w-1.5 rounded-full bg-primary/40' />
+                  </div>
+                </div>
+              </div>
+              {/* Featured Image Placeholder */}
+              <div className='mb-12 rounded-3xl overflow-hidden border border-border/50 shadow-2xl bg-muted/30 aspect-video flex items-center justify-center relative group'>
+                <div className='absolute inset-0 bg-gradient-to-br from-primary/5 via-transparent to-primary/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500' />
+                <span className='text-muted-foreground/20 font-medium flex flex-col items-center gap-4'>
+                  <Dumbbell className='w-16 h-16' />
+                  Featured Image: Gym Interior & Phone
+                </span>
+              </div>
+
+              {/* Content */}
+              <div className='prose prose-lg prose-slate dark:prose-invert max-w-none'>
+                <h2 className='scroll-m-20 text-3xl font-bold tracking-tight mb-6 flex items-center gap-3'>
+                  <span className='flex items-center justify-center w-10 h-10 rounded-xl bg-primary/10 text-primary text-xl'>
+                    1
+                  </span>
+                  The "Free Pass" Funnel
+                </h2>
+                <p className='leading-relaxed text-muted-foreground'>
+                  The most effective offer for gyms is a free day pass or trial
+                  class. But the friction of filling out a web form kills
+                  conversions.
+                </p>
+                <div className='bg-muted/30 p-6 rounded-xl border border-border/50 my-6'>
+                  <h3 className='font-bold mb-2'>Automated Workflow:</h3>
+                  <ul className='list-disc pl-5 space-y-2 text-muted-foreground'>
+                    <li>User comments "SWEAT" on your reel.</li>
+                    <li>
+                      DM sent: "Hey! Ready to crush a workout? Tap below to
+                      claim your Free Day Pass."
+                    </li>
+                    <li>User taps "Claim Pass".</li>
+                    <li>We capture their Name/Phone number automatically.</li>
+                    <li>QR Code for entry is sent instantly to their DM.</li>
+                  </ul>
+                </div>
+
+                <h2 className='scroll-m-20 text-3xl font-bold tracking-tight mt-16 mb-6 flex items-center gap-3'>
+                  <span className='flex items-center justify-center w-10 h-10 rounded-xl bg-primary/10 text-primary text-xl'>
+                    2
+                  </span>
+                  Story Mentions = Member Referrals
+                </h2>
+                <p className='leading-relaxed text-muted-foreground'>
+                  Your current members are your best marketers. Incentivize them
+                  to post about their workout.
+                </p>
+                <p className='leading-relaxed text-muted-foreground mt-4'>
+                  <strong>Trigger:</strong> Member mentions @YourGym in their
+                  Story. <br />
+                  <strong>Automation:</strong> "Thanks for repping us! Here is a
+                  free smoothie voucher for your next visit. 🥤"
+                </p>
+                <p className='leading-relaxed text-muted-foreground mt-4'>
+                  This encourages them to post <em>more often</em>, giving you
+                  free exposure to their local friends (who are your ideal
+                  leads).
+                </p>
+
+                <h2 className='scroll-m-20 text-3xl font-bold tracking-tight mt-16 mb-6 flex items-center gap-3'>
+                  <span className='flex items-center justify-center w-10 h-10 rounded-xl bg-primary/10 text-primary text-xl'>
+                    3
+                  </span>
+                  Re-engaging Cancelled Members
+                </h2>
+                <p className='leading-relaxed text-muted-foreground'>
+                  Win-back campaigns are hard via email. But via DM? They are
+                  personal.
+                </p>
+                <div className='grid sm:grid-cols-2 gap-6 my-8'>
+                  <Card className='bg-background/50 backdrop-blur'>
+                    <CardContent className='p-6'>
+                      <div className='flex items-center gap-3 mb-4 text-primary'>
+                        <UserPlus className='w-6 h-6' />
+                        <h3 className='font-bold'>The Offer</h3>
+                      </div>
+                      <p className='text-sm text-muted-foreground'>
+                        "Hey [Name], we missed you! We upgraded our equipment.
+                        Come back for a free week?"
+                      </p>
+                    </CardContent>
+                  </Card>
+                </div>
+
+                <h2 className='scroll-m-20 text-3xl font-bold tracking-tight mt-16 mb-6 flex items-center gap-3'>
+                  <span className='flex items-center justify-center w-10 h-10 rounded-xl bg-primary/10 text-primary text-xl'>
+                    4
+                  </span>
+                  Class Booking Integration
+                </h2>
+                <p className='leading-relaxed text-muted-foreground'>
+                  Connect PostEngage.ai to your booking software (MindBody,
+                  etc.). Allow members to book or cancel classes simply by
+                  messaging "Book 6pm Yoga".
+                </p>
+
+                <div className='my-12 p-8 rounded-3xl bg-gradient-to-br from-primary/10 via-background to-primary/5 border border-primary/20 text-center'>
+                  <h3 className='text-2xl font-bold mb-4'>
+                    Fill your classes automatically
+                  </h3>
+                  <p className='text-muted-foreground mb-8 max-w-lg mx-auto'>
+                    Focus on training your clients, let PostEngage.ai handle the
+                    bookings and leads.
+                  </p>
+                  <Button
+                    size='lg'
+                    className='rounded-full px-8 h-12 text-base'
+                  >
+                    Get Fitness Templates <Trophy className='ml-2 w-4 h-4' />
+                  </Button>
+                </div>
+              </div>
+            </div>
+
+            {/* Sidebar */}
+            <aside className='lg:col-span-4 space-y-8'>
+              <div className='sticky top-32 space-y-8'>
+                <TableOfContents
+                  items={[
+                    {
+                      title: 'The Free Pass Funnel',
+                      id: 'the-free-pass-funnel',
+                    },
+                    {
+                      title: 'Story Mentions & Referrals',
+                      id: 'story-mentions-member-referrals',
+                    },
+                    {
+                      title: 'Win-Back Campaigns',
+                      id: 're-engaging-cancelled-members',
+                    },
+                    {
+                      title: 'Class Booking Integration',
+                      id: 'class-booking-integration',
+                    },
+                  ]}
+                />
+                <SocialShareButtons
+                  url='https://postengage.ai/blog/fitness-studio-membership-automation'
+                  title='Gym & Fitness Automation: How to Fill Classes on Autopilot'
+                />
+              </div>
+            </aside>
+          </div>
+        </article>
+        <NewsletterForm />
+      </main>
+
+      <LandingFooter />
+    </div>
+  );
+}

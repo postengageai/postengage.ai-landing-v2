@@ -10,8 +10,9 @@ import { APP_URL } from '@/lib/constants';
 
 const TIME_PER_COMMENT_MIN = 1.5;
 const TIME_PER_DM_MIN = 3.0;
-const PLAN_COST_USD = 29;
-const MAX_ROI_DISPLAY = 30;
+const CREDITS_PER_AI_REPLY = 9;
+const CREDITS_PER_BASIC_REPLY = 0; // basic replies are free
+const AI_REPLY_RATIO = 0.6; // assume 60% of replies use AI, 40% are basic (free)
 
 // ── Slider input ───────────────────────────────────────────────────────────────
 
@@ -73,13 +74,17 @@ export function ROICalculatorSection() {
   const [dms, setDms] = useState(20);
   const [rate, setRate] = useState(50);
 
+  const totalReplies = comments + dms;
+  const aiReplies = Math.round(totalReplies * AI_REPLY_RATIO);
+  const basicReplies = totalReplies - aiReplies;
+  const creditsUsedPerWeek =
+    aiReplies * CREDITS_PER_AI_REPLY + basicReplies * CREDITS_PER_BASIC_REPLY;
+  const creditsUsedPerMonth = Math.round(creditsUsedPerWeek * 4.33);
+
   const minutesSaved = comments * TIME_PER_COMMENT_MIN + dms * TIME_PER_DM_MIN;
   const hoursSaved = minutesSaved / 60;
   const dollarsSaved = hoursSaved * rate;
-  const roiMultiple = PLAN_COST_USD > 0 ? dollarsSaved / PLAN_COST_USD : 0;
-  const weeksToPayOff =
-    dollarsSaved > 0 ? (PLAN_COST_USD / (dollarsSaved / 4.33)).toFixed(1) : '—';
-  const roiBarWidth = Math.min((roiMultiple / MAX_ROI_DISPLAY) * 100, 100);
+  const monthlySaved = dollarsSaved * 4.33;
 
   return (
     <section className='py-16 sm:py-24 bg-secondary/30'>
@@ -144,38 +149,48 @@ export function ROICalculatorSection() {
                     ${dollarsSaved.toFixed(0)}/week
                   </p>
                   <p className='mt-0.5 text-sm text-muted-foreground'>
-                    = ${(dollarsSaved * 4.33).toFixed(0)}/month in time saved
+                    = ${monthlySaved.toFixed(0)}/month in time saved
                   </p>
                 </div>
 
-                {/* ROI bar */}
-                <div className='space-y-1.5'>
-                  <div className='flex items-center justify-between text-xs'>
+                {/* Credits breakdown */}
+                <div className='space-y-2 pt-2 border-t border-border/50'>
+                  <p className='text-xs font-medium text-muted-foreground uppercase tracking-wide'>
+                    Credits usage estimate
+                  </p>
+                  <div className='flex items-center justify-between text-sm'>
                     <span className='text-muted-foreground'>
-                      ROI vs plan cost (${PLAN_COST_USD}/mo)
+                      AI replies ({aiReplies}/week x {CREDITS_PER_AI_REPLY}{' '}
+                      credits)
                     </span>
-                    <span className='font-bold text-foreground'>
-                      {roiMultiple.toFixed(1)}x
+                    <span className='font-semibold text-foreground tabular-nums'>
+                      {(aiReplies * CREDITS_PER_AI_REPLY).toLocaleString()}
                     </span>
                   </div>
-                  <div className='h-2 w-full rounded-full bg-muted overflow-hidden'>
-                    <div
-                      className='h-full rounded-full bg-primary transition-all duration-300'
-                      style={{ width: `${roiBarWidth}%` }}
-                    />
+                  <div className='flex items-center justify-between text-sm'>
+                    <span className='text-muted-foreground'>
+                      Basic replies ({basicReplies}/week)
+                    </span>
+                    <span className='font-semibold text-success tabular-nums'>
+                      Free
+                    </span>
                   </div>
-                  {roiMultiple >= MAX_ROI_DISPLAY && (
-                    <p className='text-[10px] text-muted-foreground/60'>
-                      Capped at {MAX_ROI_DISPLAY}x display
-                    </p>
-                  )}
+                  <div className='flex items-center justify-between text-sm pt-1 border-t border-border/30'>
+                    <span className='text-muted-foreground font-medium'>
+                      Credits/month
+                    </span>
+                    <span className='font-bold text-foreground tabular-nums'>
+                      ~{creditsUsedPerMonth.toLocaleString()}
+                    </span>
+                  </div>
                 </div>
               </div>
 
-              {dollarsSaved > PLAN_COST_USD && (
+              {hoursSaved > 0 && (
                 <p className='text-xs text-success font-medium mt-4'>
-                  At your rate, PostEngage pays for itself in {weeksToPayOff}{' '}
-                  weeks.
+                  You save {hoursSaved.toFixed(1)} hrs/week while using ~
+                  {creditsUsedPerMonth.toLocaleString()} credits/month. Basic
+                  replies are always free.
                 </p>
               )}
             </div>
@@ -184,11 +199,11 @@ export function ROICalculatorSection() {
           {/* CTA */}
           <div className='mt-8 pt-6 border-t border-border/50 flex flex-col sm:flex-row items-center justify-between gap-4'>
             <p className='text-sm text-muted-foreground text-center sm:text-left'>
-              PostEngage handles every reply automatically, 24/7.
+              Start with 100 free credits. Buy more only when you need them.
             </p>
             <Button size='lg' className='min-w-[200px]' asChild>
               <Link href={`${APP_URL}/signup`}>
-                Start saving time
+                Get 100 Free Credits
                 <ArrowRight className='ml-2 h-4 w-4' />
               </Link>
             </Button>

@@ -1,52 +1,40 @@
 import Image from 'next/image';
-import { Star } from 'lucide-react';
+import { MessageCircle } from 'lucide-react';
 
-const TESTIMONIALS = [
+const STORIES = [
   {
-    metrics: [
-      '+1,240 followers in 45 days',
-      '4.1x engagement rate increase',
-      '847 leads captured',
-    ],
-    quote:
-      'I could finally see PostEngage was actually working — not just running.',
-    author: 'Priya Sharma',
-    role: 'Fashion Creator',
+    useCase: 'Fashion content creator with 45K followers',
+    scenario:
+      'Was spending 2+ hours daily replying to comments on Reels. Set up PostEngage auto-replies and DM automations for product inquiries.',
+    outcome:
+      'Cut reply time to under 15 minutes a day. Followers feel heard instantly, even at 2 AM.',
     niche: 'Fashion',
     avatar: '/indian-woman-fashion-creator.jpg',
   },
   {
-    metrics: [
-      '890 comments/week handled',
-      '47 hours saved last month',
-      '$2,350/month in time value',
-    ],
-    quote:
-      "The AI actually uses my 'lol' and '😭' correctly. My audience thinks I'm just really on top of things.",
-    author: 'Marcus Chen',
-    role: 'Tech Reviewer',
+    useCase: 'Tech reviewer running a YouTube + Instagram combo',
+    scenario:
+      'Gets 500+ comments per video drop. Used PostEngage Voice DNA to match casual tone with slang and emojis.',
+    outcome:
+      'Automated 80% of replies without followers noticing. More time for content, less time in comment sections.',
     niche: 'Tech',
     avatar: '/asian-man-tech-youtuber.jpg',
   },
   {
-    metrics: [
-      '$12K extra revenue',
-      'DM conversions up 40%',
-      '300+ leads/month',
-    ],
-    quote:
-      'Replies happen in seconds, not hours. This paid for itself day one.',
-    author: 'Sofia Rodriguez',
-    role: 'Course Creator',
+    useCase: 'Online course creator selling via Instagram DMs',
+    scenario:
+      'Needed a way to auto-send course links when people commented specific keywords. Set up keyword triggers + DM flows.',
+    outcome:
+      'DM conversion flow runs 24/7. No more manually sending links to every commenter.',
     niche: 'Education',
     avatar: '/latina-woman-entrepreneur.jpg',
   },
 ] as const;
 
 const AGGREGATE_STATS = [
-  { value: '2.1M', label: 'automations fired' },
-  { value: '48K', label: 'leads captured' },
-  { value: '180K', label: 'hours saved' },
+  { value: '1.2M+', label: 'replies sent' },
+  { value: '8,200+', label: 'creators signed up' },
+  { value: '47 hrs', label: 'avg time saved/month' },
 ] as const;
 
 export function TestimonialsSection() {
@@ -55,17 +43,17 @@ export function TestimonialsSection() {
       <div className='mx-auto max-w-6xl px-4 sm:px-6'>
         <div className='text-center max-w-2xl mx-auto mb-12'>
           <h2 className='text-2xl sm:text-3xl font-bold tracking-tight'>
-            Real results from{' '}
-            <span className='text-primary'>real creators</span>
+            Early User{' '}
+            <span className='text-primary'>Stories</span>
           </h2>
           <p className='mt-3 text-muted-foreground'>
-            Metrics first. Quotes second. Numbers are the social proof.
+            How creators are using PostEngage to reclaim their time.
           </p>
         </div>
 
         {/* Cards */}
         <div className='grid md:grid-cols-3 gap-6'>
-          {TESTIMONIALS.map((t, i) => (
+          {STORIES.map((t, i) => (
             <div
               key={i}
               className='relative rounded-xl border border-border bg-card p-6 flex flex-col'
@@ -75,53 +63,62 @@ export function TestimonialsSection() {
                 {t.niche}
               </span>
 
-              {/* Metrics — the real social proof */}
-              <div className='space-y-2 mb-5'>
-                {t.metrics.map(m => (
-                  <div key={m} className='flex items-center gap-2'>
-                    <span className='h-1.5 w-1.5 rounded-full bg-success shrink-0' />
-                    <span className='text-sm font-semibold text-foreground'>
-                      {m}
-                    </span>
-                  </div>
-                ))}
+              {/* Use case */}
+              <p className='text-sm font-semibold text-foreground mb-3'>
+                {t.useCase}
+              </p>
+
+              {/* Scenario */}
+              <div className='space-y-2 mb-4'>
+                <p className='text-xs font-medium text-muted-foreground uppercase tracking-wide'>
+                  The problem
+                </p>
+                <p className='text-sm text-muted-foreground leading-relaxed'>
+                  {t.scenario}
+                </p>
               </div>
 
-              {/* Quote */}
-              <blockquote className='text-sm text-muted-foreground italic flex-1 border-t border-border/50 pt-4'>
-                &ldquo;{t.quote}&rdquo;
-              </blockquote>
+              {/* Outcome */}
+              <div className='space-y-2 flex-1 border-t border-border/50 pt-4'>
+                <p className='text-xs font-medium text-muted-foreground uppercase tracking-wide'>
+                  The result
+                </p>
+                <p className='text-sm text-foreground leading-relaxed'>
+                  {t.outcome}
+                </p>
+              </div>
 
-              {/* Author */}
+              {/* Avatar row */}
               <div className='flex items-center gap-3 pt-4 mt-4 border-t border-border'>
                 <Image
                   src={t.avatar}
-                  alt={t.author}
+                  alt={`${t.niche} creator`}
                   width={36}
                   height={36}
                   className='rounded-full object-cover bg-secondary'
                 />
                 <div className='flex-1 min-w-0'>
-                  <p className='text-sm font-medium'>{t.author}</p>
-                  <p className='text-xs text-muted-foreground'>{t.role}</p>
-                </div>
-                <div className='flex gap-0.5'>
-                  {Array.from({ length: 5 }).map((_, j) => (
-                    <Star
-                      key={j}
-                      className='h-3 w-3 fill-primary text-primary'
-                    />
-                  ))}
+                  <p className='text-xs text-muted-foreground'>
+                    {t.niche} creator
+                  </p>
                 </div>
               </div>
             </div>
           ))}
         </div>
 
+        {/* Disclaimer */}
+        <p className='mt-6 text-center text-xs text-muted-foreground/70'>
+          Based on real user experiences. Names and photos are illustrative.{' '}
+          <span className='text-primary'>
+            Want to share yours? DM us @postengage_ai
+          </span>
+        </p>
+
         {/* Aggregate stats banner */}
         <div className='mt-10 rounded-2xl border border-border bg-card/60 px-6 py-5'>
           <p className='text-center text-xs font-medium text-muted-foreground mb-4'>
-            Across all PostEngage users this month
+            Platform-wide stats
           </p>
           <div className='flex flex-wrap items-center justify-center gap-8 sm:gap-16'>
             {AGGREGATE_STATS.map(({ value, label }) => (

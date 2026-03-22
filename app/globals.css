@@ -122,3 +122,109 @@ html {
   0% { transform: translateX(0); }
   100% { transform: translateX(-50%); }
 }
+
+/* Blog prose styles */
+.blog-prose {
+  @apply text-foreground leading-relaxed;
+}
+
+.blog-prose h1 {
+  @apply mt-12 mb-4 text-3xl font-bold tracking-tight text-foreground;
+}
+
+.blog-prose h2 {
+  @apply mt-10 mb-4 text-2xl font-bold tracking-tight text-foreground scroll-mt-24;
+}
+
+.blog-prose h3 {
+  @apply mt-8 mb-3 text-xl font-semibold text-foreground scroll-mt-24;
+}
+
+.blog-prose h4 {
+  @apply mt-6 mb-2 text-lg font-semibold text-foreground;
+}
+
+.blog-prose h5,
+.blog-prose h6 {
+  @apply mt-4 mb-2 text-base font-semibold text-foreground;
+}
+
+.blog-prose p {
+  @apply mb-5 text-base leading-7 text-muted-foreground;
+}
+
+.blog-prose a {
+  @apply text-primary underline decoration-primary/40 underline-offset-2 transition-colors hover:decoration-primary;
+}
+
+.blog-prose strong {
+  @apply font-semibold text-foreground;
+}
+
+.blog-prose em {
+  @apply italic;
+}
+
+.blog-prose ul {
+  @apply mb-5 ml-6 list-disc space-y-2;
+}
+
+.blog-prose ol {
+  @apply mb-5 ml-6 list-decimal space-y-2;
+}
+
+.blog-prose li {
+  @apply text-base leading-7 text-muted-foreground;
+}
+
+.blog-prose li::marker {
+  @apply text-primary/60;
+}
+
+.blog-prose blockquote {
+  @apply my-6 border-l-4 border-primary/40 bg-primary/5 py-3 pl-5 pr-4 italic text-muted-foreground rounded-r-lg;
+}
+
+.blog-prose blockquote p {
+  @apply mb-0;
+}
+
+.blog-prose code {
+  @apply rounded-md bg-secondary px-1.5 py-0.5 font-mono text-sm text-primary;
+}
+
+.blog-prose pre {
+  @apply my-6 overflow-x-auto rounded-xl border border-border/60 bg-card p-5 font-mono text-sm leading-relaxed;
+}
+
+.blog-prose pre code {
+  @apply bg-transparent p-0 text-foreground;
+}
+
+.blog-prose img {
+  @apply my-8 rounded-xl border border-border/40;
+}
+
+.blog-prose hr {
+  @apply my-10 border-border/40;
+}
+
+.blog-prose table {
+  @apply my-6 w-full border-collapse overflow-hidden rounded-lg border border-border/60;
+}
+
+.blog-prose thead {
+  @apply bg-secondary/60;
+}
+
+.blog-prose th {
+  @apply border border-border/40 px-4 py-2.5 text-left text-sm font-semibold text-foreground;
+}
+
+.blog-prose td {
+  @apply border border-border/40 px-4 py-2.5 text-sm text-muted-foreground;
+}
+
+.blog-prose tbody tr:hover {
+  @apply bg-secondary/30;
+}
