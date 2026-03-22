@@ -86,6 +86,14 @@ export default function RootLayout({
 }>) {
   return (
     <html lang='en' className='dark' suppressHydrationWarning>
+      <head>
+        <link
+          rel='alternate'
+          type='application/rss+xml'
+          title='PostEngage.ai Blog'
+          href='/feed.xml'
+        />
+      </head>
       <body
         className={`${inter.variable} ${jetbrainsMono.variable} font-sans antialiased`}
       >

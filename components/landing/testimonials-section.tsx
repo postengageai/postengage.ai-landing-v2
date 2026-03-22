@@ -43,8 +43,7 @@ export function TestimonialsSection() {
       <div className='mx-auto max-w-6xl px-4 sm:px-6'>
         <div className='text-center max-w-2xl mx-auto mb-12'>
           <h2 className='text-2xl sm:text-3xl font-bold tracking-tight'>
-            Early User{' '}
-            <span className='text-primary'>Stories</span>
+            Early User <span className='text-primary'>Stories</span>
           </h2>
           <p className='mt-3 text-muted-foreground'>
             How creators are using PostEngage to reclaim their time.

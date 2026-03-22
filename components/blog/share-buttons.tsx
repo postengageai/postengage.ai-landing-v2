@@ -3,13 +3,7 @@
 import { useState } from 'react';
 import { Twitter, Linkedin, Link2, Check } from 'lucide-react';
 
-export function ShareButtons({
-  title,
-  slug,
-}: {
-  title: string;
-  slug: string;
-}) {
+export function ShareButtons({ title, slug }: { title: string; slug: string }) {
   const [copied, setCopied] = useState(false);
   const url = `https://postengage.ai/blog/${slug}`;
 

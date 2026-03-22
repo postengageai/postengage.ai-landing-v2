@@ -32,8 +32,8 @@ export default function AboutPage() {
               <div className='my-12 border-l-2 border-primary pl-6'>
                 <p className='text-lg italic text-muted-foreground'>
                   "The more successful you become on Instagram, the less time
-                  you have to do the thing that made you successful —
-                  connecting with your audience."
+                  you have to do the thing that made you successful — connecting
+                  with your audience."
                 </p>
               </div>
 
@@ -45,10 +45,10 @@ export default function AboutPage() {
               </p>
 
               <p className='text-muted-foreground leading-relaxed'>
-                We wanted something fundamentally different. Not just
-                automation — but automation that sounds like you. AI that learns
-                your writing style, your tone, your quirks, and replies the way
-                you would if you had the time.
+                We wanted something fundamentally different. Not just automation
+                — but automation that sounds like you. AI that learns your
+                writing style, your tone, your quirks, and replies the way you
+                would if you had the time.
               </p>
 
               <p className='text-muted-foreground leading-relaxed'>
@@ -120,7 +120,7 @@ export default function AboutPage() {
                 {
                   title: 'Trust is earned through transparency',
                   description:
-                    "We use official Instagram APIs. We never store your password. Your data is yours — never sold, never shared. Your account safety is non-negotiable.",
+                    'We use official Instagram APIs. We never store your password. Your data is yours — never sold, never shared. Your account safety is non-negotiable.',
                 },
                 {
                   title: 'Pay for what you use',
@@ -145,9 +145,7 @@ export default function AboutPage() {
         {/* The Problem We Solve */}
         <section className='mt-32 px-4 sm:px-6'>
           <div className='mx-auto max-w-2xl'>
-            <h2 className='text-2xl font-bold mb-8'>
-              The problem we solve
-            </h2>
+            <h2 className='text-2xl font-bold mb-8'>The problem we solve</h2>
 
             <div className='space-y-6 text-muted-foreground'>
               <p>
@@ -172,10 +170,10 @@ export default function AboutPage() {
               </p>
 
               <p className='text-foreground font-medium'>
-                PostEngage.ai breaks this cycle. Voice DNA learns how you
-                write. Credits mean you only pay for what you use. Before vs
-                After analytics prove the tool's own value. You stay authentic.
-                Your audience feels heard. Your engagement grows.
+                PostEngage.ai breaks this cycle. Voice DNA learns how you write.
+                Credits mean you only pay for what you use. Before vs After
+                analytics prove the tool's own value. You stay authentic. Your
+                audience feels heard. Your engagement grows.
               </p>
             </div>
           </div>
@@ -185,9 +183,7 @@ export default function AboutPage() {
         <section className='mt-32 px-4 sm:px-6'>
           <div className='mx-auto max-w-2xl'>
             <div className='rounded-xl border border-border bg-card p-8'>
-              <h2 className='text-xl font-bold mb-4'>
-                Bring your own model
-              </h2>
+              <h2 className='text-xl font-bold mb-4'>Bring your own model</h2>
               <p className='text-muted-foreground'>
                 Already have an OpenAI or Anthropic API key? Use it directly
                 with PostEngage. BYOM support means you're never locked into our

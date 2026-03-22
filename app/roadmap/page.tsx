@@ -117,8 +117,7 @@ export default function RoadmapPage() {
         },
         {
           title: 'Affiliate Program',
-          description:
-            'Referral links and commission tracking for advocates.',
+          description: 'Referral links and commission tracking for advocates.',
           icon: Users2,
         },
         {
@@ -179,8 +178,7 @@ export default function RoadmapPage() {
         },
         {
           title: 'Automation Templates',
-          description:
-            'Pre-built automation flows to get started in minutes.',
+          description: 'Pre-built automation flows to get started in minutes.',
           icon: LayoutTemplate,
         },
       ],
@@ -193,8 +191,7 @@ export default function RoadmapPage() {
       items: [
         {
           title: 'TikTok Integration',
-          description:
-            'Extend comment and DM automation to TikTok creators.',
+          description: 'Extend comment and DM automation to TikTok creators.',
           icon: Music2,
         },
         {
@@ -211,8 +208,7 @@ export default function RoadmapPage() {
         },
         {
           title: 'WhatsApp Business Integration',
-          description:
-            'Messaging automation for WhatsApp Business accounts.',
+          description: 'Messaging automation for WhatsApp Business accounts.',
           icon: MessageCircle,
         },
         {
@@ -273,9 +269,7 @@ export default function RoadmapPage() {
                 <div key={sectionIndex}>
                   {/* Section Header */}
                   <div className='flex items-center gap-3 mb-8'>
-                    <section.icon
-                      className={`h-6 w-6 ${section.iconColor}`}
-                    />
+                    <section.icon className={`h-6 w-6 ${section.iconColor}`} />
                     <div>
                       <h2 className='text-2xl font-bold'>{section.title}</h2>
                       <p className='text-sm text-muted-foreground'>
@@ -308,9 +302,7 @@ export default function RoadmapPage() {
                             }`}
                           />
                           <div>
-                            <h3 className='font-semibold mb-1'>
-                              {item.title}
-                            </h3>
+                            <h3 className='font-semibold mb-1'>{item.title}</h3>
                             <p className='text-sm text-muted-foreground'>
                               {item.description}
                             </p>

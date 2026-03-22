@@ -47,9 +47,7 @@ export function Callout({
 }) {
   const s = calloutStyles[variant];
   return (
-    <div
-      className={`my-6 rounded-lg border ${s.border} ${s.bg} p-4`}
-    >
+    <div className={`my-6 rounded-lg border ${s.border} ${s.bg} p-4`}>
       <div className='flex items-center gap-2 font-semibold mb-1'>
         {s.icon}
         <span>{title || s.heading}</span>

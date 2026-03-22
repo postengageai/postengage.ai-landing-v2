@@ -47,8 +47,8 @@ export function CTASection() {
             </h2>
 
             <p className='mt-5 text-lg text-muted-foreground font-light max-w-lg mx-auto'>
-              100 free credits. No credit card. Setup in 60 seconds.
-              Your first AI reply goes out in under 5 minutes.
+              100 free credits. No credit card. Setup in 60 seconds. Your first
+              AI reply goes out in under 5 minutes.
             </p>
 
             <div className='mt-8 flex flex-col items-center gap-4'>

@@ -37,8 +37,7 @@ const STATS = [
     target: 8200,
     suffix: '+',
     label: 'creators',
-    format: (v: number) =>
-      v >= 1000 ? `${(v / 1000).toFixed(1)}K` : `${v}`,
+    format: (v: number) => (v >= 1000 ? `${(v / 1000).toFixed(1)}K` : `${v}`),
   },
   {
     icon: Clock,

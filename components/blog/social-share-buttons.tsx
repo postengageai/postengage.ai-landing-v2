@@ -10,7 +10,8 @@ interface SocialShareButtonsProps {
 }
 
 export function SocialShareButtons({ title, url }: SocialShareButtonsProps) {
-  const resolvedUrl = url || (typeof window !== 'undefined' ? window.location.href : '');
+  const resolvedUrl =
+    url || (typeof window !== 'undefined' ? window.location.href : '');
   const encodedTitle = encodeURIComponent(title);
   const encodedUrl = encodeURIComponent(resolvedUrl);
 
